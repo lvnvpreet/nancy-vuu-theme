@@ -1,0 +1,48 @@
+{% comment %}
+  Snippet: image.liquid
+  Renders a responsive image with lazy loading and placeholder.
+
+  Usage:
+  {%- render 'image',
+      image: section.settings.image,
+      alt: 'Description',
+      sizes: '(max-width: 768px) 100vw, 50vw',
+      class: 'my-image-class',
+      loading: 'lazy'
+  -%}
+{% endcomment %}
+
+{%- liquid
+  assign loading = loading | default: 'lazy'
+  assign fetchpriority = fetchpriority | default: 'auto'
+  assign sizes_attr = sizes | default: '100vw'
+  assign img_class = class | default: ''
+  assign alt_text = alt | default: image.alt | default: ''
+-%}
+
+{%- if image != blank -%}
+  <img
+    src="{{ image | image_url: width: 800 }}"
+    srcset="
+      {{ image | image_url: width: 400  }} 400w,
+      {{ image | image_url: width: 800  }} 800w,
+      {{ image | image_url: width: 1200 }} 1200w,
+      {{ image | image_url: width: 1600 }} 1600w,
+      {{ image | image_url: width: 2000 }} 2000w"
+    sizes="{{ sizes_attr }}"
+    alt="{{ alt_text | escape }}"
+    loading="{{ loading }}"
+    fetchpriority="{{ fetchpriority }}"
+    width="{{ image.width }}"
+    height="{{ image.height }}"
+    class="{{ img_class }}"
+    style="object-fit: cover; width: 100%; height: 100%;">
+{%- else -%}
+  <div class="img-placeholder{% if dark_placeholder %} dark{% endif %}" style="width:100%;height:100%;">
+    {%- if placeholder_text != blank -%}
+      <span>{{ placeholder_text }}</span>
+    {%- else -%}
+      <span>{{ 'general.image.placeholder' | t: default: 'Add image in Theme Editor' }}</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

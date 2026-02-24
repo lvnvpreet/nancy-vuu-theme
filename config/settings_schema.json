@@ -1,0 +1,66 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Nancy Vuu",
+    "theme_version": "2.0.0",
+    "theme_author": "Nancy Vuu Atelier",
+    "theme_documentation_url": "https://nancyvuu.com",
+    "theme_support_url": "https://nancyvuu.com/pages/contact"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      { "type": "image_picker", "id": "favicon",      "label": "Favicon (32×32 PNG)" },
+      { "type": "image_picker", "id": "share_image",  "label": "Default social share image (1200×628)" },
+      { "type": "color",        "id": "color_ink",    "label": "Primary ink colour",   "default": "#0f0f0f" },
+      { "type": "color",        "id": "color_cream",  "label": "Cream background",     "default": "#faf8f5" },
+      { "type": "color",        "id": "color_greige", "label": "Greige background",    "default": "#ece9e3" },
+      { "type": "color",        "id": "color_accent", "label": "Accent colour",        "default": "#0f0f0f" }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": "Heading font (override — default is Bodoni Moda via Google Fonts)",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Body font (override — default is Manrope via Google Fonts)",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: This theme uses Bodoni Moda + Manrope loaded from Google Fonts. The font pickers above are optional overrides."
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      { "type": "url", "id": "social_instagram",  "label": "Instagram URL" },
+      { "type": "url", "id": "social_linkedin",   "label": "LinkedIn URL" },
+      { "type": "url", "id": "social_pinterest",  "label": "Pinterest URL" },
+      { "type": "url", "id": "social_tiktok",     "label": "TikTok URL" }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart type",
+        "options": [
+          { "value": "drawer", "label": "Slide-out drawer (recommended)" },
+          { "value": "page",   "label": "Cart page" }
+        ],
+        "default": "drawer"
+      }
+    ]
+  }
+]

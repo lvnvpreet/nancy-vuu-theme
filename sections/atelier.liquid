@@ -1,0 +1,30 @@
+{% comment %} sections/atelier.liquid {% endcomment %}
+<section id="{{ section.settings.section_id | default: 'atelier' }}" class="section-split">
+  <div class="section-split__image order-2 order-md-1">
+    {%- render 'image', image: section.settings.image, sizes: '(max-width:768px) 100vw, 50vw', placeholder_text: 'Upload atelier image' -%}
+  </div>
+  <div class="section-split__text order-1 order-md-2">
+    <span class="eyebrow">{{ section.settings.eyebrow | default: 'San Jose, CA · 1520 Southwest Expy #10' }}</span>
+    <h2 class="serif-font section-title reveal">{{ section.settings.title | default: 'The Atelier' }}</h2>
+    <div class="divider reveal delay-100"></div>
+    <p class="body-copy reveal delay-200">{{ section.settings.description | default: 'A sanctuary of restoration and creation. Formerly a humble alteration shop, now the birthplace of bespoke dreams — where every stitch carries intention.' }}</p>
+    <div class="reveal delay-300">
+      <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial">{{ section.settings.cta_label | default: 'Book Consultation' }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Atelier",
+  "settings": [
+    { "type": "text",      "id": "section_id",  "label": "Section anchor ID", "default": "atelier" },
+    { "type": "image_picker", "id": "image",    "label": "Atelier image" },
+    { "type": "text",      "id": "eyebrow",     "label": "Eyebrow text",   "default": "San Jose, CA · 1520 Southwest Expy #10" },
+    { "type": "text",      "id": "title",       "label": "Title",          "default": "The Atelier" },
+    { "type": "textarea",  "id": "description", "label": "Description" },
+    { "type": "text",      "id": "cta_label",   "label": "Button text",    "default": "Book Consultation" },
+    { "type": "url",       "id": "cta_link",    "label": "Button link" }
+  ],
+  "presets": [{ "name": "Atelier" }]
+}
+{% endschema %}

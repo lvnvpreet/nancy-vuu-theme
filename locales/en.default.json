@@ -1,0 +1,41 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close",
+      "close_menu": "Close menu",
+      "open_menu": "Open menu",
+      "loading": "Loading"
+    },
+    "image": { "placeholder": "Add image in Theme Editor" },
+    "pagination": {
+      "label": "Pagination",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "password_page": { "coming_soon": "Something beautiful is coming." }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "select_options": "Select Options",
+      "on_sale": "Sale"
+    }
+  },
+  "collection": {
+    "products_count": "pieces",
+    "empty": "No products found in this collection.",
+    "shop_all": "Shop All"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty.",
+    "checkout": "Checkout",
+    "subtotal": "Subtotal",
+    "taxes_note": "Taxes and shipping calculated at checkout.",
+    "view_cart": "View Full Cart",
+    "shop_now": "Shop Now"
+  }
+}

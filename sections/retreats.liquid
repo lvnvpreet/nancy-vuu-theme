@@ -1,0 +1,58 @@
+{% comment %} sections/retreats.liquid {% endcomment %}
+<section id="retreats" class="section-retreats">
+  <div class="section-retreats__header reveal">
+    <div>
+      <span class="eyebrow">{{ section.settings.eyebrow | default: 'Restoration for the Soul' }}</span>
+      <h2 class="serif-font section-title">{{ section.settings.title | default: 'Dream Retreats' }}</h2>
+    </div>
+    <a href="{{ section.settings.calendar_link | default: '#' }}" class="underline-link">{{ section.settings.calendar_label | default: 'View Calendar' }} →</a>
+  </div>
+  <div class="retreats-grid">
+    {%- for block in section.blocks -%}
+      <div class="retreat-card group reveal {% if forloop.index > 1 %}delay-100{% endif %}" {{ block.shopify_attributes }}>
+        <div class="retreat-card__image-wrap">
+          {%- render 'image', image: block.settings.image, class: 'retreat-card__img img-zoom', placeholder_text: block.settings.name -%}
+        </div>
+        <div class="retreat-card__info">
+          <h3 class="serif-font">{{ block.settings.name }}</h3>
+          {%- if block.settings.subtitle != blank -%}
+            <p class="eyebrow" style="margin-bottom:0;color:#999;">{{ block.settings.subtitle }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Dream Retreats",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow",         "label": "Eyebrow",        "default": "Restoration for the Soul" },
+    { "type": "text", "id": "title",            "label": "Title",          "default": "Dream Retreats" },
+    { "type": "text", "id": "calendar_label",   "label": "Calendar text",  "default": "View Calendar" },
+    { "type": "url",  "id": "calendar_link",    "label": "Calendar link" }
+  ],
+  "blocks": [
+    {
+      "type": "retreat",
+      "name": "Retreat",
+      "settings": [
+        { "type": "image_picker", "id": "image",    "label": "Image" },
+        { "type": "text",         "id": "name",     "label": "Retreat name",   "default": "Napa Valley" },
+        { "type": "text",         "id": "subtitle", "label": "Subtitle",       "default": "Wine Country Retreat" },
+        { "type": "url",          "id": "link",     "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dream Retreats",
+      "blocks": [
+        { "type": "retreat", "settings": { "name": "Napa Valley", "subtitle": "Wine Country Retreat" } },
+        { "type": "retreat", "settings": { "name": "Hawaii",      "subtitle": "Island Immersion" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

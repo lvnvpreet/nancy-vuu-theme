@@ -1,0 +1,45 @@
+{% comment %} sections/photography.liquid — Photography service + marquee {% endcomment %}
+
+<section id="photography" class="photography-section">
+
+  <!-- Centered editorial content -->
+  <div class="photography-section__content reveal">
+    <span class="eyebrow">{{- section.settings.eyebrow | default: 'Services' -}}</span>
+    <h2 class="serif-font photography-section__title">
+      {{- section.settings.title | default: 'Nancy Vuu Photography' -}}
+    </h2>
+    <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    <p class="body-copy" style="margin-left:auto;margin-right:auto;text-align:center;max-width:38ch;">
+      {{- section.settings.description | default: 'Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary.' -}}
+    </p>
+    <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial">
+      {{- section.settings.cta_label | default: 'View Portfolio' -}}
+    </a>
+  </div>
+
+  <!-- Marquee — ghost watermark text -->
+  <div class="marquee-track photography-section__marquee" aria-hidden="true">
+    <div class="marquee-inner">
+      {%- assign words = section.settings.marquee_text | default: 'CAPTURE · CREATE · MEMORIALIZE · ' -%}
+      {%- for i in (1..6) -%}
+        <span class="serif-font photography-section__marquee-word">{{ words }}</span>
+      {%- endfor -%}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Photography",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",      "label": "Eyebrow",        "default": "Services" },
+    { "type": "text",     "id": "title",        "label": "Title",          "default": "Nancy Vuu Photography" },
+    { "type": "textarea", "id": "description",  "label": "Description",    "default": "Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary." },
+    { "type": "text",     "id": "cta_label",    "label": "Button text",    "default": "View Portfolio" },
+    { "type": "url",      "id": "cta_link",     "label": "Button link" },
+    { "type": "text",     "id": "marquee_text", "label": "Marquee text (repeating)", "default": "CAPTURE · CREATE · MEMORIALIZE · ", "info": "This large ghost text scrolls behind the section for editorial effect." }
+  ],
+  "presets": [{ "name": "Photography", "settings": { "eyebrow": "Services", "title": "Nancy Vuu Photography" } }]
+}
+{% endschema %}

@@ -1,0 +1,85 @@
+{% comment %}
+  Block: text.liquid
+  A reusable rich text block for use inside sections.
+  Registered as a theme block (blocks/ folder — OS 2.0).
+{% endcomment %}
+
+<div class="block-text" {{ block.shopify_attributes }}>
+  {%- if block.settings.eyebrow != blank -%}
+    <span class="eyebrow">{{ block.settings.eyebrow }}</span>
+  {%- endif -%}
+
+  {%- if block.settings.heading != blank -%}
+    <{{ block.settings.heading_tag | default: 'h2' }} class="serif-font block-text__heading">
+      {{ block.settings.heading }}
+    </{{ block.settings.heading_tag | default: 'h2' }}>
+  {%- endif -%}
+
+  {%- if block.settings.text != blank -%}
+    <div class="body-copy block-text__body">{{ block.settings.text }}</div>
+  {%- endif -%}
+
+  {%- if block.settings.button_label != blank -%}
+    <a
+      href="{{ block.settings.button_link | default: '#' }}"
+      class="btn-editorial{% if block.settings.button_style == 'dark' %} btn-editorial--dark{% elsif block.settings.button_style == 'on-dark' %} on-dark{% endif %}">
+      {{ block.settings.button_label }}
+    </a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Text",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading size",
+      "options": [
+        { "value": "h1", "label": "H1 (largest)" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4 (smallest)" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Body text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "default", "label": "Default (light background)" },
+        { "value": "on-dark",  "label": "On dark background" }
+      ],
+      "default": "default"
+    }
+  ]
+}
+{% endschema %}

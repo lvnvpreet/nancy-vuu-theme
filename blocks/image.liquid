@@ -1,0 +1,79 @@
+{% comment %}
+  Block: image.liquid
+  A reusable image block for use inside sections.
+{% endcomment %}
+
+<div class="block-image" {{ block.shopify_attributes }}>
+  {%- if block.settings.image != blank -%}
+    <img
+      src="{{ block.settings.image | image_url: width: 1200 }}"
+      srcset="
+        {{ block.settings.image | image_url: width: 600  }} 600w,
+        {{ block.settings.image | image_url: width: 900  }} 900w,
+        {{ block.settings.image | image_url: width: 1200 }} 1200w"
+      sizes="{{ block.settings.sizes | default: '(max-width: 768px) 100vw, 50vw' }}"
+      alt="{{ block.settings.image.alt | default: block.settings.alt | escape }}"
+      loading="{{ block.settings.loading | default: 'lazy' }}"
+      width="{{ block.settings.image.width }}"
+      height="{{ block.settings.image.height }}"
+      class="block-image__img{% if block.settings.zoom_on_hover %} img-zoom{% endif %}"
+      style="width:100%; height:100%; object-fit:cover;">
+  {%- else -%}
+    <div class="img-placeholder" style="width:100%; height:100%; min-height:300px;">
+      <span>{{ block.settings.placeholder_text | default: 'Upload image in Theme Editor' }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if block.settings.caption != blank -%}
+    <p class="block-image__caption eyebrow" style="margin-top:.75rem; margin-bottom:0;">
+      {{ block.settings.caption }}
+    </p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Image",
+  "target": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt text",
+      "info": "Describe the image for screen readers."
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption (optional)"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_text",
+      "label": "Placeholder text",
+      "default": "Upload image in Theme Editor"
+    },
+    {
+      "type": "checkbox",
+      "id": "zoom_on_hover",
+      "label": "Zoom on hover",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "loading",
+      "label": "Image loading",
+      "options": [
+        { "value": "lazy",  "label": "Lazy (default — better performance)" },
+        { "value": "eager", "label": "Eager (use for above-the-fold images)" }
+      ],
+      "default": "lazy"
+    }
+  ]
+}
+{% endschema %}

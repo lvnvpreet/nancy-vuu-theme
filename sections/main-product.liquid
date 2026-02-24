@@ -1,0 +1,184 @@
+{% comment %} sections/main-product.liquid {% endcomment %}
+
+{%- assign product = product -%}
+
+<section class="product-page" itemscope itemtype="http://schema.org/Product">
+  <div class="product-page__inner">
+
+    <!-- Gallery -->
+    <div class="product-gallery">
+      <div class="product-gallery__main" id="product-gallery-main">
+        {%- if product.featured_media -%}
+          <img
+            id="product-featured-image"
+            src="{{ product.featured_media | image_url: width: 1200 }}"
+            srcset="{{ product.featured_media | image_url: width: 600 }} 600w, {{ product.featured_media | image_url: width: 1200 }} 1200w"
+            sizes="(max-width:768px) 100vw, 55vw"
+            alt="{{ product.featured_media.alt | default: product.title | escape }}"
+            loading="eager"
+            width="{{ product.featured_media.width }}"
+            height="{{ product.featured_media.height }}"
+            class="product-gallery__img"
+            itemprop="image">
+        {%- else -%}
+          <div class="img-placeholder" style="width:100%;height:600px;"><span>{{ product.title }}</span></div>
+        {%- endif -%}
+      </div>
+
+      {%- if product.media.size > 1 -%}
+        <div class="product-gallery__thumbs">
+          {%- for media in product.media limit: 6 -%}
+            <button
+              class="product-gallery__thumb {% if forloop.first %}is-active{% endif %}"
+              onclick="setProductImage('{{ media | image_url: width: 1200 }}', this)"
+              aria-label="View image {{ forloop.index }}">
+              <img
+                src="{{ media | image_url: width: 120 }}"
+                alt="{{ media.alt | default: product.title | escape }}"
+                loading="lazy"
+                width="80" height="80">
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <span class="eyebrow" itemprop="brand">{{ product.vendor }}</span>
+      <h1 class="serif-font product-info__title" itemprop="name">{{ product.title }}</h1>
+
+      <div class="product-info__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price price--sale" itemprop="price" content="{{ product.price | divided_by: 100.0 }}">{{ product.price | money }}</span>
+          <span class="price price--compare">{{ product.compare_at_price | money }}</span>
+        {%- else -%}
+          <span class="price" itemprop="price" content="{{ product.price | divided_by: 100.0 }}">{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      <form action="/cart/add" method="post" id="product-form" class="product-form">
+        <input type="hidden" name="form_type" value="product">
+        <input type="hidden" name="utf8" value="✓">
+
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="product-form__option">
+              <p class="product-form__option-label eyebrow" style="margin-bottom:.5rem;">{{ option.name }}</p>
+              <div class="product-form__option-values">
+                {%- for value in option.values -%}
+                  <button
+                    type="button"
+                    class="option-btn"
+                    data-option="{{ option.name }}"
+                    data-value="{{ value | escape }}"
+                    onclick="selectOption(this)">
+                    {{ value }}
+                  </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        <select name="id" id="product-variant-select" class="visually-hidden" aria-label="Variant">
+          {%- for variant in product.variants -%}
+            <option
+              value="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+              {% unless variant.available %}disabled{% endunless %}>
+              {{ variant.title }} — {{ variant.price | money }}
+            </option>
+          {%- endfor -%}
+        </select>
+
+        <div class="product-form__actions">
+          {%- if product.available -%}
+            <button type="submit" name="add" class="btn-editorial btn-editorial--full" id="add-to-cart-btn">
+              {{ 'products.product.add_to_cart' | t }}
+            </button>
+          {%- else -%}
+            <button type="button" class="btn-editorial btn-editorial--full" disabled>
+              {{ 'products.product.sold_out' | t }}
+            </button>
+          {%- endif -%}
+        </div>
+      </form>
+
+      {%- if product.description != blank -%}
+        <div class="product-info__description body-copy" itemprop="description">
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+
+      <!-- Bespoke note -->
+      {%- if section.settings.show_bespoke_note -%}
+        <div class="product-info__bespoke-note">
+          <div class="divider"></div>
+          <span class="eyebrow">{{ section.settings.bespoke_eyebrow | default: 'Made to Order' }}</span>
+          <p class="body-copy" style="font-size:.8rem;">{{ section.settings.bespoke_text | default: 'This piece is crafted to order. Please allow 6–8 weeks for delivery. Contact us for custom sizing.' }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function setProductImage(src, btn) {
+    document.getElementById('product-featured-image').src = src;
+    document.querySelectorAll('.product-gallery__thumb').forEach(function(b) { b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+  }
+
+  function selectOption(btn) {
+    var option = btn.getAttribute('data-option');
+    var value  = btn.getAttribute('data-value');
+    document.querySelectorAll('.option-btn[data-option="' + option + '"]').forEach(function(b) { b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    updateVariant();
+  }
+
+  function updateVariant() {
+    var selected = {};
+    document.querySelectorAll('.option-btn.is-active').forEach(function(b) {
+      selected[b.getAttribute('data-option')] = b.getAttribute('data-value');
+    });
+    var variants = {{ product.variants | json }};
+    var match = variants.find(function(v) {
+      return v.options.every(function(o, i) {
+        return selected[{{ product.options | json }}[i]] === o;
+      });
+    });
+    if (match) {
+      document.getElementById('product-variant-select').value = match.id;
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_bespoke_note",
+      "label": "Show made-to-order note",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "bespoke_eyebrow",
+      "label": "Made-to-order eyebrow",
+      "default": "Made to Order"
+    },
+    {
+      "type": "textarea",
+      "id": "bespoke_text",
+      "label": "Made-to-order text",
+      "default": "This piece is crafted to order. Please allow 6–8 weeks for delivery. Contact us for custom sizing."
+    }
+  ]
+}
+{% endschema %}

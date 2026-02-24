@@ -1,0 +1,168 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "headline_italic": "for",
+        "headline_end": "HEAVEN",
+        "subheading": "Tailored for Earth",
+        "overlay_opacity": 0,
+        "text_color": "#111111"
+      }
+    },
+    "atelier": {
+      "type": "atelier",
+      "settings": {
+        "section_id": "atelier",
+        "eyebrow": "San Jose, CA · 1520 Southwest Expy #10",
+        "title": "The Atelier",
+        "description": "A sanctuary of restoration and creation. Formerly a humble alteration shop, now the birthplace of bespoke dreams — where every stitch carries intention.",
+        "cta_label": "Book Consultation",
+        "cta_link": "/pages/book-consultation"
+      }
+    },
+    "bridal-collection": {
+      "type": "bridal-collection",
+      "settings": {
+        "eyebrow": "The Collection · 2026",
+        "title": "Bridal",
+        "cta_label": "Shop Collection",
+        "cta_link": "/collections/bridal"
+      }
+    },
+    "bridal-bespoke": {
+      "type": "split-content",
+      "settings": {
+        "section_id": "bridal-bespoke",
+        "bg_color": "dark",
+        "image_position": "right",
+        "eyebrow": "Custom Design",
+        "title": "Bespoke Bridal",
+        "description": "\"You Dream It. We Create It.\" A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.",
+        "cta_label": "Begin Your Journey",
+        "cta_link": "/pages/bespoke"
+      }
+    },
+    "womens-couture": {
+      "type": "split-content",
+      "settings": {
+        "section_id": "womens-couture",
+        "bg_color": "white",
+        "image_position": "right",
+        "eyebrow": "Collection",
+        "title": "Women's Couture",
+        "description": "Elegance, power, and grace — each piece designed for the woman who commands every room she enters.",
+        "cta_label": "Explore Collection",
+        "cta_link": "/collections/womens-couture"
+      }
+    },
+    "mens-suits": {
+      "type": "split-content",
+      "settings": {
+        "section_id": "mens-suits",
+        "bg_color": "greige",
+        "image_position": "right",
+        "eyebrow": "Tailored for Him",
+        "title": "Men's Bespoke",
+        "description": "Precision tailoring for the modern kingdom heir. Italian wools, sharp silhouettes, and an uncompromising fit that speaks before you say a word.",
+        "cta_label": "Book Fitting",
+        "cta_link": "/pages/book-fitting"
+      }
+    },
+    "legacy-collections": {
+      "type": "legacy-collections",
+      "settings": {
+        "eyebrow": "For the Little Ones",
+        "title": "The Legacy Collections"
+      },
+      "blocks": {
+        "children": {
+          "type": "collection_card",
+          "settings": { "title": "Children's Couture", "cta": "Shop Kids", "link": "/collections/childrens" }
+        },
+        "mommy": {
+          "type": "collection_card",
+          "settings": { "title": "Mommy & Me", "cta": "Shop Matching Sets", "link": "/collections/mommy-and-me" }
+        }
+      },
+      "block_order": ["children", "mommy"]
+    },
+    "kingdom": {
+      "type": "split-content",
+      "settings": {
+        "section_id": "kingdom",
+        "bg_color": "greige",
+        "image_position": "left",
+        "eyebrow": "Ready to Wear",
+        "title": "Kingdom Heirs",
+        "description": "Everyday luxury that speaks your identity. T-shirts, hoodies, and essentials tailored for the culture — worn by those who carry purpose.",
+        "cta_label": "Shop The Drop",
+        "cta_link": "/collections/kingdom-heirs"
+      }
+    },
+    "crowns": {
+      "type": "crowns",
+      "settings": {
+        "overlay_opacity": 60,
+        "eyebrow": "Jewelry & Headpieces",
+        "title": "The Crowning",
+        "cta_label": "Adorn Yourself",
+        "cta_link": "/collections/crowns-jewelry"
+      }
+    },
+    "retreats": {
+      "type": "retreats",
+      "settings": {
+        "eyebrow": "Restoration for the Soul",
+        "title": "Dream Retreats",
+        "calendar_label": "View Calendar"
+      },
+      "blocks": {
+        "napa":   { "type": "retreat", "settings": { "name": "Napa Valley", "subtitle": "Wine Country Retreat" } },
+        "hawaii": { "type": "retreat", "settings": { "name": "Hawaii",      "subtitle": "Island Immersion" } }
+      },
+      "block_order": ["napa", "hawaii"]
+    },
+    "photography": {
+      "type": "photography",
+      "settings": {
+        "eyebrow": "Services",
+        "title": "Nancy Vuu Photography",
+        "description": "Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary.",
+        "cta_label": "View Portfolio",
+        "marquee_text": "CAPTURE · CREATE · MEMORIALIZE · "
+      }
+    },
+    "speaker-academy": {
+      "type": "speaker-academy",
+      "settings": {
+        "eyebrow": "The Founder",
+        "role_1": "Speaker.",
+        "role_2": "Mentor.",
+        "role_3": "Author.",
+        "bio": "<p>Author of <em>\"Let There Be Fashion\"</em>. Nancy Vuu bridges the gap between the marketplace and ministry — redefining what it means to lead with purpose.</p>",
+        "link_1_label": "Book for Speaking",
+        "link_2_label": "Mentorship Program",
+        "link_3_label": "Buy The Book",
+        "academy_eyebrow": "Education",
+        "academy_title": "Dream Academy",
+        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
+        "academy_cta_label": "Join The Academy"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "atelier",
+    "bridal-collection",
+    "bridal-bespoke",
+    "womens-couture",
+    "mens-suits",
+    "legacy-collections",
+    "kingdom",
+    "crowns",
+    "retreats",
+    "photography",
+    "speaker-academy"
+  ]
+}

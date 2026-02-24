@@ -1,0 +1,44 @@
+{% comment %}
+  Block: button.liquid
+  A standalone CTA button block.
+{% endcomment %}
+
+{%- if block.settings.label != blank -%}
+  <div class="block-button" {{ block.shopify_attributes }}>
+    <a
+      href="{{ block.settings.link | default: '#' }}"
+      class="btn-editorial{% if block.settings.style == 'on-dark' %} on-dark{% endif %}">
+      {{ block.settings.label }}
+    </a>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Button",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        { "value": "default", "label": "Default (light background)" },
+        { "value": "on-dark",  "label": "On dark background" }
+      ],
+      "default": "default"
+    }
+  ]
+}
+{% endschema %}

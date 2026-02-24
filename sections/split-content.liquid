@@ -1,0 +1,84 @@
+{% comment %} sections/split-content.liquid — reusable for Women's, Men's, Bespoke, Kingdom Heirs {% endcomment %}
+{%- liquid
+  assign bg = section.settings.bg_color
+  assign is_dark = false
+  if bg == 'dark'
+    assign is_dark = true
+  endif
+-%}
+<section
+  id="{{ section.settings.section_id | default: 'split' }}"
+  class="section-split{% if bg == 'greige' %} bg-greige{% elsif bg == 'dark' %} bg-dark text-white{% endif %}"
+  {% if is_dark %}data-dark{% endif %}>
+
+  <div class="section-split__image{% if section.settings.image_position == 'right' %} order-md-2{% else %} order-md-1{% endif %}">
+    {%- render 'image',
+        image: section.settings.image,
+        sizes: '(max-width:768px) 100vw, 50vw',
+        dark_placeholder: is_dark
+    -%}
+  </div>
+
+  <div class="section-split__text{% if section.settings.image_position == 'right' %} order-md-1{% else %} order-md-2{% endif %}">
+    <span class="eyebrow"{% if is_dark %} style="color:#666"{% endif %}>{{ section.settings.eyebrow }}</span>
+    <h2 class="serif-font section-title reveal">{{ section.settings.title }}</h2>
+    <div class="divider reveal delay-100"{% if is_dark %} style="background:#fff"{% endif %}></div>
+    <p class="body-copy reveal delay-200"{% if is_dark %} style="color:#aaa"{% endif %}>{{ section.settings.description }}</p>
+    <div class="reveal delay-300">
+      <a href="{{ section.settings.cta_link | default: '#' }}"
+         class="btn-editorial{% if is_dark %} on-dark{% endif %}">
+        {{ section.settings.cta_label | default: 'Explore' }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Split Content",
+  "settings": [
+    { "type": "text",   "id": "section_id", "label": "Section anchor ID", "default": "split-section" },
+    {
+      "type": "select", "id": "bg_color", "label": "Background",
+      "options": [
+        { "value": "white",  "label": "White" },
+        { "value": "greige", "label": "Greige (warm grey)" },
+        { "value": "dark",   "label": "Dark / Black" }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "select", "id": "image_position", "label": "Image side",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    { "type": "image_picker", "id": "image",       "label": "Image" },
+    { "type": "text",         "id": "eyebrow",     "label": "Eyebrow label" },
+    { "type": "text",         "id": "title",       "label": "Title", "default": "Section Title" },
+    { "type": "textarea",     "id": "description", "label": "Description" },
+    { "type": "text",         "id": "cta_label",   "label": "Button text", "default": "Explore" },
+    { "type": "url",          "id": "cta_link",    "label": "Button link" }
+  ],
+  "presets": [
+    {
+      "name": "Split Content — Women's Couture",
+      "settings": { "section_id": "womens-couture", "eyebrow": "Collection", "title": "Women's Couture", "bg_color": "white", "image_position": "right", "cta_label": "Explore Collection" }
+    },
+    {
+      "name": "Split Content — Men's Bespoke",
+      "settings": { "section_id": "mens-suits", "eyebrow": "Tailored for Him", "title": "Men's Bespoke", "bg_color": "greige", "image_position": "right", "cta_label": "Book Fitting" }
+    },
+    {
+      "name": "Split Content — Bespoke Bridal",
+      "settings": { "section_id": "bridal-bespoke", "eyebrow": "Custom Design", "title": "Bespoke Bridal", "bg_color": "dark", "image_position": "right", "cta_label": "Begin Your Journey" }
+    },
+    {
+      "name": "Split Content — Kingdom Heirs",
+      "settings": { "section_id": "kingdom", "eyebrow": "Ready to Wear", "title": "Kingdom Heirs", "bg_color": "greige", "image_position": "left", "cta_label": "Shop The Drop" }
+    }
+  ]
+}
+{% endschema %}

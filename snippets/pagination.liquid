@@ -1,0 +1,42 @@
+{% comment %}
+  Snippet: pagination.liquid
+  Renders pagination for collection and search pages.
+
+  Usage: {%- render 'pagination', paginate: paginate -%}
+{% endcomment %}
+
+{%- if paginate.pages > 1 -%}
+  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+    <ul class="pagination__list">
+      {%- if paginate.previous -%}
+        <li class="pagination__item pagination__item--prev">
+          <a href="{{ paginate.previous.url }}" class="pagination__link" aria-label="{{ 'general.pagination.previous' | t }}">
+            &larr; {{ 'general.pagination.previous' | t }}
+          </a>
+        </li>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        <li class="pagination__item {% if part.is_link == false %}pagination__item--current{% endif %}">
+          {%- if part.is_link -%}
+            <a href="{{ part.url }}" class="pagination__link">{{ part.title }}</a>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              <span class="pagination__link pagination__link--current" aria-current="page">{{ part.title }}</span>
+            {%- else -%}
+              <span class="pagination__link">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+
+      {%- if paginate.next -%}
+        <li class="pagination__item pagination__item--next">
+          <a href="{{ paginate.next.url }}" class="pagination__link" aria-label="{{ 'general.pagination.next' | t }}">
+            {{ 'general.pagination.next' | t }} &rarr;
+          </a>
+        </li>
+      {%- endif -%}
+    </ul>
+  </nav>
+{%- endif -%}

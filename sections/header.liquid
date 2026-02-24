@@ -1,0 +1,166 @@
+{% comment %} sections/header.liquid {% endcomment %}
+
+<nav id="navbar" class="site-nav" role="navigation">
+  <div class="nav-inner">
+
+    <!-- Menu Toggle -->
+    <button
+      id="menu-toggle-btn"
+      onclick="toggleMenu()"
+      aria-expanded="false"
+      aria-controls="menu-overlay"
+      class="nav-menu-btn">
+      {{- section.settings.menu_label | default: 'Menu' -}}
+    </button>
+
+    <!-- Logo -->
+    <div class="nav-logo">
+      <a href="/" aria-label="{{ shop.name }}">
+        {%- if section.settings.logo != blank -%}
+          <img
+            src="{{ section.settings.logo | image_url: width: 300 }}"
+            alt="{{ shop.name }}"
+            width="140"
+            height="40"
+            loading="eager">
+        {%- else -%}
+          <span class="serif-font nav-logo-text">{{ shop.name | upcase }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+
+    <!-- Right: CTA + Cart -->
+    <div class="nav-right">
+      <a href="{{ section.settings.cta_link | default: '#' }}" class="nav-cta nav-cta--desktop">
+        {{- section.settings.cta_label | default: 'Book Appt' -}}
+      </a>
+      <button
+        id="cart-toggle-btn"
+        onclick="openCart()"
+        class="nav-cart-btn"
+        aria-label="{{ 'cart.title' | t }} ({{ cart.item_count }})">
+        {% render 'icon-cart' %}
+        <span class="cart-count{% if cart.item_count == 0 %} cart-count--hidden{% endif %}" id="cart-count">
+          {{ cart.item_count }}
+        </span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- MENU OVERLAY -->
+<div
+  id="menu-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site navigation"
+  class="menu-overlay menu-overlay--closed">
+
+  <button id="menu-close-btn" onclick="toggleMenu()" class="menu-close-btn" aria-label="Close menu">✕</button>
+
+  <div class="menu-grid">
+    <div class="menu-column">
+      <p class="eyebrow" style="color:#ccc;">{{ section.settings.col1_heading | default: 'Fashion House' }}</p>
+      <nav>
+        {%- for link in linklists[section.settings.menu_fashion].links -%}
+          <a href="{{ link.url }}" onclick="toggleMenu()" data-text="{{ link.title }}">
+            <span>{{ link.title }}</span>
+          </a>
+        {%- else -%}
+          <a href="#atelier"           onclick="toggleMenu()" data-text="Atelier"><span>Atelier</span></a>
+          <a href="#bridal-collection" onclick="toggleMenu()" data-text="Bridal Collection"><span>Bridal Collection</span></a>
+          <a href="#bridal-bespoke"    onclick="toggleMenu()" data-text="Bridal Bespoke"><span>Bridal Bespoke</span></a>
+          <a href="#womens-couture"    onclick="toggleMenu()" data-text="Women's Couture"><span>Women's Couture</span></a>
+          <a href="#mens-suits"        onclick="toggleMenu()" data-text="Men's Suits"><span>Men's Suits</span></a>
+          <a href="#children"          onclick="toggleMenu()" data-text="Children &amp; Mommy"><span>Children &amp; Mommy</span></a>
+          <a href="#kingdom"          onclick="toggleMenu()" data-text="Kingdom Heirs"><span>Kingdom Heirs</span></a>
+          <a href="#crowns"           onclick="toggleMenu()" data-text="Crowns &amp; Jewelry"><span>Crowns &amp; Jewelry</span></a>
+        {%- endfor -%}
+      </nav>
+    </div>
+
+    <div class="menu-column">
+      <p class="eyebrow" style="color:#ccc;">{{ section.settings.col2_heading | default: 'Lifestyle &amp; Legacy' }}</p>
+      <nav>
+        {%- for link in linklists[section.settings.menu_lifestyle].links -%}
+          <a href="{{ link.url }}" onclick="toggleMenu()" data-text="{{ link.title }}">
+            <span>{{ link.title }}</span>
+          </a>
+        {%- else -%}
+          <a href="#retreats"    onclick="toggleMenu()" data-text="Retreats"><span>Retreats</span></a>
+          <a href="#photography" onclick="toggleMenu()" data-text="Photography"><span>Photography</span></a>
+          <a href="#speaker"     onclick="toggleMenu()" data-text="Nancy Vuu"><span>Nancy Vuu &mdash; Speaker</span></a>
+          <a href="#academy"     onclick="toggleMenu()" data-text="Dream Academy"><span>Dream Academy</span></a>
+          <a href="#foundation"  onclick="toggleMenu()" data-text="Foundation"><span>Foundation</span></a>        {%- endfor -%}
+      </nav>
+    </div>
+  </div>
+
+  <div class="menu-footer">
+    <span>{{ section.settings.menu_location | default: 'San Jose, CA' }}</span>
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</span>
+  </div>
+</div>
+
+<!-- Cart Drawer -->
+{% render 'cart-drawer' %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo (leave blank for shop name text)"
+    },
+    {
+      "type": "text",
+      "id": "menu_label",
+      "label": "Menu button label",
+      "default": "Menu"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Book Appt button text",
+      "default": "Book Appt"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Book Appt button link"
+    },
+    {
+      "type": "text",
+      "id": "col1_heading",
+      "label": "Menu column 1 heading",
+      "default": "Fashion House"
+    },
+    {
+      "type": "text",
+      "id": "col2_heading",
+      "label": "Menu column 2 heading",
+      "default": "Lifestyle & Legacy"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_fashion",
+      "label": "Fashion House links",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_lifestyle",
+      "label": "Lifestyle & Legacy links"
+    },
+    {
+      "type": "text",
+      "id": "menu_location",
+      "label": "Menu footer — location text",
+      "default": "San Jose, CA"
+    }
+  ]
+}
+{% endschema %}

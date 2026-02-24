@@ -1,0 +1,63 @@
+{% comment %} sections/main-collection.liquid {% endcomment %}
+
+<section class="collection-page">
+  <div class="collection-page__header">
+    {%- if collection.image -%}
+      <div class="collection-hero">
+        <img src="{{ collection.image | image_url: width: 2000 }}" alt="{{ collection.image.alt | default: collection.title | escape }}" loading="eager" class="collection-hero__img">
+        <div class="collection-hero__overlay"></div>
+        <div class="collection-hero__content">
+          <h1 class="serif-font collection-hero__title">{{ collection.title }}</h1>
+        </div>
+      </div>
+    {%- else -%}
+      <div class="collection-header-text">
+        <span class="eyebrow">{{ collection.products_count }} {{ 'collection.products_count' | t: default: 'pieces' }}</span>
+        <h1 class="serif-font collection-title">{{ collection.title }}</h1>
+        {%- if collection.description != blank -%}
+          <p class="body-copy collection-description">{{ collection.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    <div class="product-grid">
+      {%- for product in collection.products -%}
+        {%- render 'product-card', product: product, lazy_load: true -%}
+      {%- else -%}
+        <div class="collection-empty">
+          <p class="body-copy">{{ 'collection.empty' | t: default: 'No products found in this collection.' }}</p>
+          <a href="/collections/all" class="btn-editorial">{{ 'collection.shop_all' | t: default: 'Shop All' }}</a>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- render 'pagination', paginate: paginate -%}
+  {%- endpaginate -%}
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 8, "max": 48, "step": 4, "default": 24
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Grid columns (desktop)",
+      "options": [
+        { "value": "2", "label": "2 columns" },
+        { "value": "3", "label": "3 columns" },
+        { "value": "4", "label": "4 columns" }
+      ],
+      "default": "3"
+    }
+  ]
+}
+{% endschema %}

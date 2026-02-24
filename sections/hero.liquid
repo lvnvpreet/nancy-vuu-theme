@@ -1,0 +1,77 @@
+{% comment %} sections/hero.liquid {% endcomment %}
+
+<header class="hero" id="hero">
+  <div class="hero__bg">
+    {%- render 'image',
+        image: section.settings.bg_image,
+        alt: shop.name,
+        sizes: '100vw',
+        loading: 'eager',
+        fetchpriority: 'high',
+        class: 'hero__img',
+        placeholder_text: 'Upload hero background in Theme Editor'
+    -%}
+  </div>
+
+  {%- if section.settings.overlay_opacity > 0 -%}
+    <div class="hero__overlay" style="background:rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
+  {%- endif -%}
+
+  <div class="hero__content" style="color:{{ section.settings.text_color }};">
+    <h1 class="hero__title serif-font">
+      <span class="hero-word" style="animation-delay:0.1s;">FASHIONED</span><br>
+      <span class="hero-word italic" style="animation-delay:0.35s; font-style:italic; font-weight:300;">{{ section.settings.headline_italic | default: 'for' }}</span>
+      <span class="hero-word" style="animation-delay:0.6s;"> {{ section.settings.headline_end | default: 'HEAVEN' }}</span>
+    </h1>
+    <p class="hero__subtitle">{{ section.settings.subheading | default: 'Tailored for Earth' }}</p>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Dark overlay",
+      "min": 0, "max": 80, "step": 5, "default": 0, "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "headline_italic",
+      "label": "Italic word (middle)",
+      "default": "for"
+    },
+    {
+      "type": "text",
+      "id": "headline_end",
+      "label": "Last word",
+      "default": "HEAVEN"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Tailored for Earth"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#111111"
+    }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

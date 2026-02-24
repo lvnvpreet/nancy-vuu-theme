@@ -1,0 +1,28 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": { "label": "Skip to content link" },
+      "close_menu":      { "label": "Close menu label" }
+    }
+  },
+  "sections": {
+    "header": {
+      "name":          { "label": "Header section name" },
+      "settings": {
+        "logo":         { "label": "Logo image" },
+        "menu_label":   { "label": "Menu button label" },
+        "cta_label":    { "label": "Book button text" }
+      }
+    },
+    "hero": {
+      "name": { "label": "Hero section name" },
+      "settings": {
+        "bg_image":    { "label": "Background image" },
+        "subheading":  { "label": "Subheading text" }
+      }
+    },
+    "footer": {
+      "name": { "label": "Footer section name" }
+    }
+  }
+}

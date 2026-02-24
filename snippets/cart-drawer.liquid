@@ -1,0 +1,65 @@
+{% comment %}
+  Snippet: cart-drawer.liquid
+  Renders a slide-out cart drawer.
+  Included in header.liquid.
+{% endcomment %}
+
+<div id="cart-drawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'cart.title' | t }}">
+  <div class="cart-drawer__overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer__panel">
+
+    <div class="cart-drawer__header">
+      <h2 class="serif-font cart-drawer__title">{{ 'cart.title' | t }}</h2>
+      <button class="cart-drawer__close" onclick="closeCart()" aria-label="{{ 'general.accessibility.close' | t }}">✕</button>
+    </div>
+
+    <div class="cart-drawer__body" id="cart-items">
+      {% if cart.item_count == 0 %}
+        <div class="cart-drawer__empty">
+          <p class="body-copy">{{ 'cart.empty' | t }}</p>
+          <a href="/collections/all" class="btn-editorial" onclick="closeCart()">{{ 'cart.shop_now' | t }}</a>
+        </div>
+      {% else %}
+        {% for item in cart.items %}
+          <div class="cart-item" data-key="{{ item.key }}">
+            <div class="cart-item__image">
+              {% if item.image %}
+                <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.image.alt | escape }}" loading="lazy" width="80" height="80">
+              {% endif %}
+            </div>
+            <div class="cart-item__details">
+              <p class="cart-item__title serif-font">{{ item.product.title }}</p>
+              {% unless item.product.has_only_default_variant %}
+                <p class="cart-item__variant eyebrow" style="margin-bottom:.25rem;">{{ item.variant.title }}</p>
+              {% endunless %}
+              <div class="cart-item__bottom">
+                <div class="cart-item__qty">
+                  <button class="qty-btn" onclick="updateCartItem('{{ item.key }}', {{ item.quantity | minus: 1 }})">−</button>
+                  <span>{{ item.quantity }}</span>
+                  <button class="qty-btn" onclick="updateCartItem('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+                </div>
+                <span class="cart-item__price">{{ item.final_line_price | money }}</span>
+              </div>
+            </div>
+            <button class="cart-item__remove" onclick="updateCartItem('{{ item.key }}', 0)" aria-label="Remove {{ item.product.title | escape }}">✕</button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% if cart.item_count > 0 %}
+      <div class="cart-drawer__footer">
+        <div class="cart-drawer__subtotal">
+          <span class="eyebrow" style="margin:0;">{{ 'cart.subtotal' | t }}</span>
+          <span class="serif-font cart-drawer__total">{{ cart.total_price | money }}</span>
+        </div>
+        <p class="cart-drawer__note body-copy" style="font-size:.7rem;">
+          {{ 'cart.taxes_note' | t: default: 'Taxes and shipping calculated at checkout.' }}
+        </p>
+        <a href="/checkout" class="btn-editorial btn-editorial--full">{{ 'cart.checkout' | t }}</a>
+        <a href="/cart" class="cart-drawer__view-cart">{{ 'cart.view_cart' | t }}</a>
+      </div>
+    {% endif %}
+
+  </div>
+</div>

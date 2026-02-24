@@ -1,0 +1,67 @@
+{% comment %} sections/footer.liquid {% endcomment %}
+<footer id="foundation" class="site-footer" data-dark>
+  <div class="footer-inner">
+    <div class="footer-foundation">
+      <div class="footer-foundation__text reveal">
+        <span class="eyebrow" style="color:#555;">{{ section.settings.eyebrow | default: 'Give Back' }}</span>
+        <h2 class="serif-font footer-title">{{ section.settings.title | default: 'House of Vuu Foundation' }}</h2>
+        <div class="divider" style="background:#333;"></div>
+        <p class="body-copy" style="color:#aaa;">{{ section.settings.description | default: 'We exist to empower humanity. Our foundation supports global initiatives for the marginalized and the voiceless — one stitch, one life at a time.' }}</p>
+        <a href="{{ section.settings.donate_link | default: '#' }}" class="btn-editorial on-dark">{{ section.settings.donate_label | default: 'Donate / Get Involved' }}</a>
+      </div>
+      <div class="footer-chart reveal delay-100">
+        <div class="chart-container" style="max-width:280px;height:280px;">
+          <canvas id="impactChart"></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#fff;"></span><span class="eyebrow" style="color:#555;margin:0;">Outreach {{ section.settings.pct_outreach | default: 45 }}%</span></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#666;"></span><span class="eyebrow" style="color:#555;margin:0;">Education {{ section.settings.pct_education | default: 30 }}%</span></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#2e2e2e;border:1px solid #555;"></span><span class="eyebrow" style="color:#555;margin:0;">Aid {{ section.settings.pct_aid | default: 25 }}%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved.</p>
+      <div class="footer-social">
+        {%- if section.settings.social_instagram != blank -%}<a href="{{ section.settings.social_instagram }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">Instagram</a>{%- endif -%}
+        {%- if section.settings.social_linkedin  != blank -%}<a href="{{ section.settings.social_linkedin  }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">LinkedIn</a>{%- endif -%}
+        {%- if section.settings.social_pinterest != blank -%}<a href="{{ section.settings.social_pinterest }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">Pinterest</a>{%- endif -%}
+        <a href="/pages/contact" class="footer-link footer-copy">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('impactChart');
+    if (!ctx || !window.Chart) return;
+    new Chart(ctx.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Outreach','Education','Aid'],
+        datasets: [{ data: [{{ section.settings.pct_outreach | default: 45 }},{{ section.settings.pct_education | default: 30 }},{{ section.settings.pct_aid | default: 25 }}], backgroundColor: ['#ffffff','#666666','#2e2e2e'], borderWidth: 0, hoverOffset: 6 }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, cutout: '82%', plugins: { legend: { display: false }, tooltip: { backgroundColor: '#fff', titleColor: '#111', bodyColor: '#555', borderColor: '#333', borderWidth: 1, padding: 10, titleFont: { family: 'Manrope', size: 11, weight: '600' }, bodyFont: { family: 'Manrope', size: 10 } } } }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",              "default": "Give Back" },
+    { "type": "text",     "id": "title",             "label": "Foundation title",     "default": "House of Vuu Foundation" },
+    { "type": "textarea", "id": "description",       "label": "Description" },
+    { "type": "text",     "id": "donate_label",      "label": "Donate button text",   "default": "Donate / Get Involved" },
+    { "type": "url",      "id": "donate_link",       "label": "Donate link" },
+    { "type": "header",   "content": "Impact Chart" },
+    { "type": "range",    "id": "pct_outreach",      "label": "Outreach %",   "min": 0, "max": 100, "step": 1, "default": 45 },
+    { "type": "range",    "id": "pct_education",     "label": "Education %",  "min": 0, "max": 100, "step": 1, "default": 30 },
+    { "type": "range",    "id": "pct_aid",           "label": "Aid %",        "min": 0, "max": 100, "step": 1, "default": 25 },
+    { "type": "header",   "content": "Social Links" },
+    { "type": "url",      "id": "social_instagram",  "label": "Instagram URL" },
+    { "type": "url",      "id": "social_linkedin",   "label": "LinkedIn URL" },
+    { "type": "url",      "id": "social_pinterest",  "label": "Pinterest URL" }
+  ]
+}
+{% endschema %}
