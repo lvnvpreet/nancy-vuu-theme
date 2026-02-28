@@ -67,19 +67,9 @@
           <a href="{{ link.url }}" onclick="toggleMenu()" data-text="{{ link.title }}">
             <span>{{ link.title }}</span>
           </a>
-        {%- else -%}
-          <a href="#atelier"           onclick="toggleMenu()" data-text="Atelier"><span>Atelier</span></a>
-          <a href="#bridal-collection" onclick="toggleMenu()" data-text="Bridal Collection"><span>Bridal Collection</span></a>
-          <a href="#bridal-bespoke"    onclick="toggleMenu()" data-text="Bridal Bespoke"><span>Bridal Bespoke</span></a>
-          <a href="#womens-couture"    onclick="toggleMenu()" data-text="Women's Couture"><span>Women's Couture</span></a>
-          <a href="#mens-suits"        onclick="toggleMenu()" data-text="Men's Suits"><span>Men's Suits</span></a>
-          <a href="#children"          onclick="toggleMenu()" data-text="Children &amp; Mommy"><span>Children &amp; Mommy</span></a>
-          <a href="#kingdom"          onclick="toggleMenu()" data-text="Kingdom Heirs"><span>Kingdom Heirs</span></a>
-          <a href="#crowns"           onclick="toggleMenu()" data-text="Crowns &amp; Jewelry"><span>Crowns &amp; Jewelry</span></a>
         {%- endfor -%}
       </nav>
     </div>
-
     <div class="menu-column">
       <p class="eyebrow" style="color:#ccc;">{{ section.settings.col2_heading | default: 'Lifestyle &amp; Legacy' }}</p>
       <nav>
@@ -87,12 +77,7 @@
           <a href="{{ link.url }}" onclick="toggleMenu()" data-text="{{ link.title }}">
             <span>{{ link.title }}</span>
           </a>
-        {%- else -%}
-          <a href="#retreats"    onclick="toggleMenu()" data-text="Retreats"><span>Retreats</span></a>
-          <a href="#photography" onclick="toggleMenu()" data-text="Photography"><span>Photography</span></a>
-          <a href="#speaker"     onclick="toggleMenu()" data-text="Nancy Vuu"><span>Nancy Vuu &mdash; Speaker</span></a>
-          <a href="#academy"     onclick="toggleMenu()" data-text="Dream Academy"><span>Dream Academy</span></a>
-          <a href="#foundation"  onclick="toggleMenu()" data-text="Foundation"><span>Foundation</span></a>        {%- endfor -%}
+        {%- endfor -%}
       </nav>
     </div>
   </div>

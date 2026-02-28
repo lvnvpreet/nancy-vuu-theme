@@ -280,8 +280,8 @@ body::after {
 .menu-close-btn:hover { opacity: .4; }
 
 .menu-grid {
-  min-height: 100%; display: flex; align-items: center;
-  justify-content: center; padding: 6rem 2rem;
+  min-height: 100%; display: flex; align-items: flex-start;
+  justify-content: center; padding: 10rem 2rem;
   gap: 5rem; flex-wrap: wrap;
 }
 .menu-column { min-width: 220px; }
@@ -298,7 +298,7 @@ body::after {
   letter-spacing: 0.04em;
   line-height: 1.75;
   color: var(--ink);
-  white-space: nowrap; /* prevent wrapping on long names */
+  white-space: nowrap;
 }
 .menu-column a span {
   display: block;
@@ -347,7 +347,7 @@ body::after {
 .hero__img { width: 100%; height: 100%; object-fit: cover; }
 .hero__overlay { pointer-events: none; }
 .hero__content { position: relative; z-index: 10; text-align: center; padding: 0 1.5rem; }
-.hero__title   { font-size: clamp(3rem,12vw,10rem); line-height: 1; margin-bottom: 1.5rem; }
+.hero__title   { font-size: 8rem; line-height: 1; margin-bottom: 1.5rem; }
 
 .hero-word {
   display: inline-block; opacity: 0; transform: translateY(60px);
@@ -356,7 +356,7 @@ body::after {
 @keyframes word-rise { to { opacity:1; transform: translateY(0); } }
 
 .hero__subtitle {
-  font-family: var(--font-sans); font-size: .65rem;
+  font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.25rem;
   letter-spacing: .4em; text-transform: uppercase;
   opacity: 0; animation: fade-in 1s ease 1.2s forwards;
 }
@@ -386,6 +386,8 @@ body::after {
 .section-split {
   display: grid; grid-template-columns: 1fr; min-height: 100vh;
 }
+.section-split--editorial { min-height: 80vh; }
+.section-split--auto      { min-height: 0; padding: 7rem 0; }
 @media (min-width: 768px) { .section-split { grid-template-columns: 1fr 1fr; } }
 
 .section-split__image { min-height: 55vh; overflow: hidden; position: relative; }
@@ -400,7 +402,8 @@ body::after {
 @media (max-width: 767px) { .order-2 { order: 2; } .order-1 { order: 1; } }
 
 /* ── GALLERY (Bridal Collection) ────────────────────────── */
-.section-gallery { background: var(--cream); padding: 5rem 2.5rem; }
+.section-gallery { background: var(--cream); padding: 5rem 1.5rem; min-height: 80vh; }
+@media (min-width: 768px) { .section-gallery { padding: 5rem 2.5rem; } }
 .section-gallery__header { text-align: center; margin-bottom: 3.5rem; }
 
 .gallery-grid {
@@ -460,6 +463,111 @@ body::after {
 }
 .retreat-card:hover .retreat-card__info { transform: translateY(0); }
 .retreat-card__info h3 { font-size: 1.5rem; }
+
+/* ── CROWNS & JEWELRY ───────────────────────────────────── */
+.section-crowns {
+  position: relative; min-height: 65vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 4rem 1rem; overflow: hidden;
+}
+.section-crowns__bg {
+  position: absolute; inset: 0;
+}
+.section-crowns__bg-img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.section-crowns__overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.6);
+}
+.section-crowns__content {
+  position: relative; z-index: 10;
+}
+.section-crowns__title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #fff; margin-bottom: 1.5rem;
+}
+.btn-editorial--crowns {
+  color: #fff;
+  border-color: #fff;
+}
+.btn-editorial--crowns:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* ── PHOTOGRAPHY ────────────────────────────────────────── */
+.section-photography {
+  padding: 6rem 1.5rem; text-align: center; overflow: hidden;
+}
+.section-photography__content {
+  max-width: 42rem; margin: 0 auto;
+}
+.section-photography__description {
+  max-width: 30rem; margin-left: auto; margin-right: auto;
+}
+.section-photography__marquee {
+  margin-top: 4rem; opacity: .07; user-select: none;
+}
+.section-photography__marquee-word {
+  font-size: clamp(4rem, 12vw, 9rem);
+  margin: 0 2rem; white-space: nowrap;
+}
+
+/* ── SPEAKER & ACADEMY ──────────────────────────────────── */
+.section-speaker {
+  padding: 7rem 2.5rem; background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+.section-speaker__inner {
+  max-width: 1600px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 3rem;
+}
+@media (min-width: 1024px) {
+  .section-speaker__inner { grid-template-columns: 8fr 4fr; }
+}
+.section-speaker__profile-grid {
+  display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  .section-speaker__profile-grid { grid-template-columns: 1fr 1fr; }
+}
+.section-speaker__portrait {
+  overflow: hidden; height: clamp(400px, 55vh, 600px);
+}
+.section-speaker__portrait img,
+.section-speaker__portrait .img-placeholder {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.section-speaker__bio {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 1rem 0;
+}
+.section-speaker__title {
+  font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: .25rem;
+}
+.section-speaker__title--italic {
+  font-style: italic; font-weight: 300;
+}
+.section-speaker__links {
+  display: flex; flex-direction: column; gap: .75rem;
+}
+.section-speaker__link {
+  font-family: var(--font-sans); font-size: .65rem; font-weight: 400;
+  text-transform: uppercase; letter-spacing: .2em;
+  transition: color .2s ease;
+}
+.section-speaker__link:hover { color: #888; }
+
+.section-speaker__academy {
+  padding: 2.5rem 3rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.section-speaker__academy-title {
+  font-size: 1.85rem; margin-bottom: .75rem;
+}
 
 /* ── MARQUEE ────────────────────────────────────────────── */
 .marquee-track { display: flex; white-space: nowrap; overflow: hidden; }
@@ -678,216 +786,11 @@ body::after {
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 767px) {
   .section-split__text  { padding: 2.5rem 1.5rem; }
-  .section-gallery      { padding: 3rem 1rem; }
-  .section-cards        { padding: 4rem 1rem; }
-  .section-retreats     { padding: 4rem 1rem; }
+  .section-gallery      { padding: 5rem 1rem; }
+  .section-cards        { padding: 7rem 1.5rem; }
+  .section-retreats     { padding: 7rem 1.5rem; }
   .body-copy            { max-width: 100%; }
   .product-page         { padding: 6rem 1rem 3rem; }
   .product-grid         { padding: 2rem 1rem; gap: 1.5rem; }
   .nav-inner            { padding: 0 1.25rem; }
-}
-
-/* ============================================================
-   MISSING SECTIONS — Added v2.1
-   Crowns · Photography · Speaker & Dream Academy
-   ============================================================ */
-
-/* ── THE CROWNING ────────────────────────────────────────── */
-.crowns-section {
-  position: relative;
-  min-height: 65vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 1.5rem;
-  overflow: hidden;
-}
-.crowns-section__bg {
-  position: absolute; inset: 0; z-index: 0;
-}
-.crowns-section__img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.crowns-section__overlay {
-  position: absolute; inset: 0; z-index: 1;
-  pointer-events: none;
-}
-.crowns-section__content {
-  position: relative; z-index: 10;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 1.5rem;
-}
-.crowns-section__eyebrow {
-  color: #888 !important;
-}
-.crowns-section__title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  color: #fff;
-  line-height: 1;
-  margin: 0;
-}
-.crowns-section__subtitle {
-  font-family: 'Manrope', sans-serif;
-  font-size: .8rem; font-weight: 300;
-  color: rgba(255,255,255,.65);
-  max-width: 38ch;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* ── PHOTOGRAPHY + MARQUEE ───────────────────────────────── */
-.photography-section {
-  padding: 6rem 1.5rem 0;
-  background: var(--cream);
-  text-align: center;
-  overflow: hidden;
-}
-.photography-section__content {
-  max-width: 640px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.photography-section__title {
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: .5rem;
-}
-.photography-section__marquee {
-  margin-top: 4rem;
-  opacity: .07;
-  user-select: none;
-  pointer-events: none;
-  /* override base marquee-track */
-  display: flex;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.photography-section__marquee-word {
-  font-size: clamp(4rem, 12vw, 9rem);
-  padding: 0 2rem;
-  line-height: 1;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-/* ── SPEAKER · MENTOR · AUTHOR + DREAM ACADEMY ──────────── */
-.speaker-section {
-  padding: 7rem 2.5rem;
-  background: #fff;
-  border-top: 1px solid #f0f0f0;
-}
-.speaker-section__inner {
-  max-width: 1600px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-}
-@media (min-width: 1024px) {
-  .speaker-section__inner {
-    /* 8/12 + 4/12 mirroring the original */
-    grid-template-columns: 8fr 4fr;
-    align-items: start;
-  }
-}
-
-/* Profile (left) */
-.speaker-section__profile-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-@media (min-width: 640px) {
-  .speaker-section__profile-grid {
-    flex-direction: row;
-    gap: 3.5rem;
-  }
-}
-.speaker-section__portrait {
-  width: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
-  height: clamp(340px, 55vh, 580px);
-}
-@media (min-width: 640px) {
-  .speaker-section__portrait { width: 48%; }
-}
-.speaker-section__portrait-img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.speaker-section__bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 0;
-}
-
-/* Stacked role titles — Bodoni rhythm */
-.speaker-section__roles {
-  margin-bottom: .5rem;
-}
-.speaker-section__role {
-  font-size: clamp(1.75rem, 3.5vw, 3rem);
-  line-height: 1.2;
-  margin: 0;
-}
-.speaker-section__role--italic {
-  font-style: italic;
-  font-weight: 300;
-}
-
-.speaker-section__bio-text {
-  max-width: 42ch;
-}
-
-/* Inline nav links */
-.speaker-section__links {
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
-  margin-top: .5rem;
-}
-.speaker-section__link {
-  font-family: 'Manrope', sans-serif;
-  font-size: .65rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  color: var(--ink);
-  transition: color .2s ease;
-  display: inline-block;
-}
-.speaker-section__link:hover { color: #999; }
-
-/* Dream Academy (right) */
-.speaker-section__academy {
-  background: var(--greige);
-  padding: 3rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-@media (min-width: 1024px) {
-  /* Ensure academy card stays full height of left panel */
-  .speaker-section__academy {
-    min-height: 100%;
-    padding: 4rem 3rem;
-  }
-}
-.speaker-section__academy-title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  margin-bottom: .5rem;
-}
-.speaker-section__academy-text {
-  max-width: 100%;
-}
-
-/* ── MOBILE ADJUSTMENTS ─────────────────────────────────── */
-@media (max-width: 767px) {
-  .speaker-section { padding: 4rem 1.25rem; }
-  .crowns-section  { padding: 5rem 1.25rem; }
-  .photography-section { padding: 4rem 1rem 0; }
 }

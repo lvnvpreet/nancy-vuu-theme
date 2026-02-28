@@ -1,96 +1,51 @@
-{% comment %}
-  sections/speaker-academy.liquid
-  Two-column layout:
-  - Left (8/12): Nancy Vuu portrait + Speaker / Mentor / Author + inline links
-  - Right (4/12): Dream Academy card on greige background
-{% endcomment %}
+{% comment %} sections/speaker-academy.liquid {% endcomment %}
+<section id="{{ section.settings.section_id | default: 'speaker' }}" class="section-speaker">
+  <div class="section-speaker__inner">
 
-<section id="speaker" class="speaker-section">
-  <div class="speaker-section__inner">
-
-    <!-- ── LEFT: Nancy Vuu Profile ──────────────────── -->
-    <div class="speaker-section__profile reveal">
-      <div class="speaker-section__profile-grid">
-
-        <!-- Portrait -->
-        <div class="speaker-section__portrait">
-          {%- if section.settings.portrait != blank -%}
-            <img
-              src="{{ section.settings.portrait | image_url: width: 900 }}"
-              srcset="{{ section.settings.portrait | image_url: width: 600 }} 600w,
-                      {{ section.settings.portrait | image_url: width: 900 }} 900w"
-              sizes="(max-width:768px) 100vw, 40vw"
-              alt="{{ section.settings.portrait.alt | default: 'Nancy Vuu' | escape }}"
-              loading="lazy"
-              class="speaker-section__portrait-img">
-          {%- else -%}
-            <div class="img-placeholder" style="width:100%;height:100%;background:#f2eee8;">
-              <span>Nancy Vuu Portrait — Upload in Theme Editor</span>
-            </div>
-          {%- endif -%}
+    {%- comment -%} Left: Nancy Vuu Profile {%- endcomment -%}
+    <div class="section-speaker__profile reveal">
+      <div class="section-speaker__profile-grid">
+        <div class="section-speaker__portrait">
+          {%- render 'image',
+              image: section.settings.portrait,
+              sizes: '(max-width:768px) 100vw, 30vw',
+              placeholder_text: 'Nancy Vuu Portrait'
+          -%}
         </div>
+        <div class="section-speaker__bio">
+          <span class="eyebrow">{{ section.settings.eyebrow | default: 'The Founder' }}</span>
 
-        <!-- Text block -->
-        <div class="speaker-section__bio">
-          <span class="eyebrow">{{- section.settings.eyebrow | default: 'The Founder' -}}</span>
-
-          <!-- Stacked role titles — intentional Bodoni rhythm -->
-          <div class="speaker-section__roles">
-            <h2 class="serif-font speaker-section__role">
-              {{- section.settings.role_1 | default: 'Speaker.' -}}
-            </h2>
-            <h2 class="serif-font speaker-section__role speaker-section__role--italic">
-              {{- section.settings.role_2 | default: 'Mentor.' -}}
-            </h2>
-            <h2 class="serif-font speaker-section__role">
-              {{- section.settings.role_3 | default: 'Author.' -}}
-            </h2>
-          </div>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'title_line' -%}
+              <h2 class="serif-font section-speaker__title {% if block.settings.italic %}section-speaker__title--italic{% endif %}" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </h2>
+            {%- endif -%}
+          {%- endfor -%}
 
           <div class="divider"></div>
+          <div class="body-copy">{{ section.settings.bio | default: 'Author of "Let There Be Fashion". Nancy Vuu bridges the gap between the marketplace and ministry &mdash; redefining what it means to lead with purpose.' }}</div>
 
-          <p class="body-copy speaker-section__bio-text">
-            {{ section.settings.bio | default: 'Author of <em>"Let There Be Fashion"</em>. Nancy Vuu bridges the gap between the marketplace and ministry — redefining what it means to lead with purpose.' }}
-          </p>
-
-          <!-- Inline links -->
-          <nav class="speaker-section__links" aria-label="Nancy Vuu links">
-            {%- if section.settings.link_1_label != blank -%}
-              <a href="{{ section.settings.link_1_url | default: '#' }}" class="speaker-section__link">
-                → {{ section.settings.link_1_label }}
-              </a>
-            {%- endif -%}
-            {%- if section.settings.link_2_label != blank -%}
-              <a href="{{ section.settings.link_2_url | default: '#' }}" class="speaker-section__link">
-                → {{ section.settings.link_2_label }}
-              </a>
-            {%- endif -%}
-            {%- if section.settings.link_3_label != blank -%}
-              <a href="{{ section.settings.link_3_url | default: '#' }}" class="speaker-section__link">
-                → {{ section.settings.link_3_label }}
-              </a>
-            {%- endif -%}
-          </nav>
+          <div class="section-speaker__links">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'link' -%}
+                <a href="{{ block.settings.url | default: '#' }}" class="section-speaker__link" {{ block.shopify_attributes }}>
+                  → {{ block.settings.label }}
+                </a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
         </div>
-
       </div>
     </div>
 
-    <!-- ── RIGHT: Dream Academy Card ────────────────── -->
-    <div class="speaker-section__academy reveal delay-100" id="academy">
-      <span class="eyebrow">{{- section.settings.academy_eyebrow | default: 'Education' -}}</span>
-      <h3 class="serif-font speaker-section__academy-title">
-        {{- section.settings.academy_title | default: 'Dream Academy' -}}
-      </h3>
+    {%- comment -%} Right: Dream Academy {%- endcomment -%}
+    <div id="{{ section.settings.academy_id | default: 'academy' }}" class="section-speaker__academy bg-greige reveal delay-100">
+      <span class="eyebrow" style="color:#888;">{{ section.settings.academy_eyebrow | default: 'Education' }}</span>
+      <h3 class="serif-font section-speaker__academy-title">{{ section.settings.academy_title | default: 'Dream Academy' }}</h3>
       <div class="divider"></div>
-      <p class="body-copy speaker-section__academy-text">
-        {{- section.settings.academy_description | default: 'Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.' -}}
-      </p>
-      {%- if section.settings.academy_cta_label != blank -%}
-        <a href="{{ section.settings.academy_cta_link | default: '#' }}" class="btn-editorial">
-          {{- section.settings.academy_cta_label -}}
-        </a>
-      {%- endif -%}
+      <p class="body-copy" style="max-width:100%;">{{ section.settings.academy_description | default: 'Vuu Publishing. Women&rsquo;s CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.' }}</p>
+      <a href="{{ section.settings.academy_link | default: '#' }}" class="btn-editorial">{{ section.settings.academy_cta | default: 'Join The Academy' }}</a>
     </div>
 
   </div>
@@ -98,41 +53,51 @@
 
 {% schema %}
 {
-  "name": "Speaker & Dream Academy",
+  "name": "Speaker & Academy",
+  "max_blocks": 10,
   "settings": [
-    { "type": "header",       "content": "Nancy Vuu — Left Panel" },
-    { "type": "image_picker", "id": "portrait",       "label": "Portrait image" },
-    { "type": "text",         "id": "eyebrow",        "label": "Eyebrow",         "default": "The Founder" },
-    { "type": "text",         "id": "role_1",         "label": "Role 1",          "default": "Speaker." },
-    { "type": "text",         "id": "role_2",         "label": "Role 2 (italic)", "default": "Mentor." },
-    { "type": "text",         "id": "role_3",         "label": "Role 3",          "default": "Author." },
-    { "type": "richtext",     "id": "bio",            "label": "Bio text",        "default": "<p>Author of <em>\"Let There Be Fashion\"</em>. Nancy Vuu bridges the gap between the marketplace and ministry — redefining what it means to lead with purpose.</p>" },
-    { "type": "header",       "content": "Speaker Links" },
-    { "type": "text",         "id": "link_1_label",   "label": "Link 1 text",     "default": "Book for Speaking" },
-    { "type": "url",          "id": "link_1_url",     "label": "Link 1 URL" },
-    { "type": "text",         "id": "link_2_label",   "label": "Link 2 text",     "default": "Mentorship Program" },
-    { "type": "url",          "id": "link_2_url",     "label": "Link 2 URL" },
-    { "type": "text",         "id": "link_3_label",   "label": "Link 3 text",     "default": "Buy The Book" },
-    { "type": "url",          "id": "link_3_url",     "label": "Link 3 URL" },
-    { "type": "header",       "content": "Dream Academy — Right Panel" },
-    { "type": "text",         "id": "academy_eyebrow",     "label": "Academy eyebrow",  "default": "Education" },
-    { "type": "text",         "id": "academy_title",       "label": "Academy title",    "default": "Dream Academy" },
-    { "type": "textarea",     "id": "academy_description", "label": "Academy text",     "default": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity." },
-    { "type": "text",         "id": "academy_cta_label",   "label": "Academy button",   "default": "Join The Academy" },
-    { "type": "url",          "id": "academy_cta_link",    "label": "Academy button URL" }
+    { "type": "text",         "id": "section_id",          "label": "Section anchor ID",      "default": "speaker" },
+    { "type": "image_picker", "id": "portrait",            "label": "Portrait image" },
+    { "type": "text",         "id": "eyebrow",             "label": "Eyebrow text",           "default": "The Founder" },
+    { "type": "richtext",     "id": "bio",                 "label": "Bio paragraph" },
+    { "type": "header",       "content": "Dream Academy" },
+    { "type": "text",         "id": "academy_id",          "label": "Academy anchor ID",      "default": "academy" },
+    { "type": "text",         "id": "academy_eyebrow",     "label": "Academy eyebrow",        "default": "Education" },
+    { "type": "text",         "id": "academy_title",       "label": "Academy title",          "default": "Dream Academy" },
+    { "type": "textarea",     "id": "academy_description", "label": "Academy description",    "default": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity." },
+    { "type": "text",         "id": "academy_cta",         "label": "Academy button text",    "default": "Join The Academy" },
+    { "type": "url",          "id": "academy_link",        "label": "Academy button link" }
   ],
-  "presets": [{
-    "name": "Speaker & Dream Academy",
-    "settings": {
-      "eyebrow": "The Founder",
-      "role_1": "Speaker.", "role_2": "Mentor.", "role_3": "Author.",
-      "link_1_label": "Book for Speaking",
-      "link_2_label": "Mentorship Program",
-      "link_3_label": "Buy The Book",
-      "academy_eyebrow": "Education",
-      "academy_title": "Dream Academy",
-      "academy_cta_label": "Join The Academy"
+  "blocks": [
+    {
+      "type": "title_line",
+      "name": "Title Line",
+      "settings": [
+        { "type": "text",     "id": "text",   "label": "Text",   "default": "Speaker." },
+        { "type": "checkbox", "id": "italic", "label": "Italic", "default": false }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Book for Speaking" },
+        { "type": "url",  "id": "url",   "label": "URL" }
+      ]
     }
-  }]
+  ],
+  "presets": [
+    {
+      "name": "Speaker & Academy",
+      "blocks": [
+        { "type": "title_line", "settings": { "text": "Speaker.", "italic": false } },
+        { "type": "title_line", "settings": { "text": "Mentor.",  "italic": true } },
+        { "type": "title_line", "settings": { "text": "Author.",  "italic": false } },
+        { "type": "link", "settings": { "label": "Book for Speaking" } },
+        { "type": "link", "settings": { "label": "Mentorship Program" } },
+        { "type": "link", "settings": { "label": "Buy The Book" } }
+      ]
+    }
+  ]
 }
 {% endschema %}

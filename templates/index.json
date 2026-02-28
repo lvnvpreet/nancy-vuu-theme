@@ -3,10 +3,10 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "overlay_opacity": 0,
         "headline_italic": "for",
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
-        "overlay_opacity": 0,
         "text_color": "#111111"
       }
     },
@@ -34,6 +34,7 @@
       "type": "split-content",
       "settings": {
         "section_id": "bridal-bespoke",
+        "section_height": "full",
         "bg_color": "dark",
         "image_position": "right",
         "eyebrow": "Custom Design",
@@ -47,6 +48,7 @@
       "type": "split-content",
       "settings": {
         "section_id": "womens-couture",
+        "section_height": "full",
         "bg_color": "white",
         "image_position": "right",
         "eyebrow": "Collection",
@@ -60,6 +62,7 @@
       "type": "split-content",
       "settings": {
         "section_id": "mens-suits",
+        "section_height": "full",
         "bg_color": "greige",
         "image_position": "right",
         "eyebrow": "Tailored for Him",
@@ -71,26 +74,38 @@
     },
     "legacy-collections": {
       "type": "legacy-collections",
-      "settings": {
-        "eyebrow": "For the Little Ones",
-        "title": "The Legacy Collections"
-      },
       "blocks": {
         "children": {
           "type": "collection_card",
-          "settings": { "title": "Children's Couture", "cta": "Shop Kids", "link": "/collections/childrens" }
+          "settings": {
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens"
+          }
         },
         "mommy": {
           "type": "collection_card",
-          "settings": { "title": "Mommy & Me", "cta": "Shop Matching Sets", "link": "/collections/mommy-and-me" }
+          "settings": {
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-and-me"
+          }
         }
       },
-      "block_order": ["children", "mommy"]
+      "block_order": [
+        "children",
+        "mommy"
+      ],
+      "settings": {
+        "eyebrow": "For the Little Ones",
+        "title": "The Legacy Collections"
+      }
     },
     "kingdom": {
       "type": "split-content",
       "settings": {
         "section_id": "kingdom",
+        "section_height": "full",
         "bg_color": "greige",
         "image_position": "left",
         "eyebrow": "Ready to Wear",
@@ -100,54 +115,149 @@
         "cta_link": "/collections/kingdom-heirs"
       }
     },
-    "crowns": {
-      "type": "crowns",
+    "crowns-jewelry": {
+      "type": "crowns-jewelry",
       "settings": {
-        "overlay_opacity": 60,
+        "section_id": "crowns",
         "eyebrow": "Jewelry & Headpieces",
         "title": "The Crowning",
         "cta_label": "Adorn Yourself",
-        "cta_link": "/collections/crowns-jewelry"
+        "cta_link": ""
       }
     },
     "retreats": {
       "type": "retreats",
+      "blocks": {
+        "napa": {
+          "type": "retreat",
+          "settings": {
+            "name": "Napa Valley",
+            "subtitle": "Wine Country Retreat",
+            "link": ""
+          }
+        },
+        "hawaii": {
+          "type": "retreat",
+          "settings": {
+            "name": "Hawaii",
+            "subtitle": "Island Immersion",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "napa",
+        "hawaii"
+      ],
       "settings": {
         "eyebrow": "Restoration for the Soul",
         "title": "Dream Retreats",
-        "calendar_label": "View Calendar"
-      },
-      "blocks": {
-        "napa":   { "type": "retreat", "settings": { "name": "Napa Valley", "subtitle": "Wine Country Retreat" } },
-        "hawaii": { "type": "retreat", "settings": { "name": "Hawaii",      "subtitle": "Island Immersion" } }
-      },
-      "block_order": ["napa", "hawaii"]
+        "calendar_label": "View Calendar",
+        "calendar_link": ""
+      }
     },
     "photography": {
       "type": "photography",
+      "blocks": {
+        "w1": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
+          }
+        },
+        "w2": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CREATE"
+          }
+        },
+        "w3": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "MEMORIALIZE"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "w2",
+        "w3"
+      ],
       "settings": {
+        "section_id": "photography",
         "eyebrow": "Services",
         "title": "Nancy Vuu Photography",
-        "description": "Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary.",
+        "description": "Capturing the essence of your story. Available for editorial, bridal, and portrait sessions that transcend the ordinary.",
         "cta_label": "View Portfolio",
-        "marquee_text": "CAPTURE · CREATE · MEMORIALIZE · "
+        "cta_link": "",
+        "show_marquee": true
       }
     },
     "speaker-academy": {
       "type": "speaker-academy",
+      "blocks": {
+        "t1": {
+          "type": "title_line",
+          "settings": {
+            "text": "Speaker.",
+            "italic": false
+          }
+        },
+        "t2": {
+          "type": "title_line",
+          "settings": {
+            "text": "Mentor.",
+            "italic": true
+          }
+        },
+        "t3": {
+          "type": "title_line",
+          "settings": {
+            "text": "Author.",
+            "italic": false
+          }
+        },
+        "l1": {
+          "type": "link",
+          "settings": {
+            "label": "Book for Speaking",
+            "url": ""
+          }
+        },
+        "l2": {
+          "type": "link",
+          "settings": {
+            "label": "Mentorship Program",
+            "url": ""
+          }
+        },
+        "l3": {
+          "type": "link",
+          "settings": {
+            "label": "Buy The Book",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "l1",
+        "l2",
+        "l3"
+      ],
       "settings": {
+        "section_id": "speaker",
+        "portrait": "shopify://shop_images/untitled-5282_2.jpg",
         "eyebrow": "The Founder",
-        "role_1": "Speaker.",
-        "role_2": "Mentor.",
-        "role_3": "Author.",
-        "bio": "<p>Author of <em>\"Let There Be Fashion\"</em>. Nancy Vuu bridges the gap between the marketplace and ministry — redefining what it means to lead with purpose.</p>",
-        "link_1_label": "Book for Speaking",
-        "link_2_label": "Mentorship Program",
-        "link_3_label": "Buy The Book",
+        "bio": "<p>Author of \"Let There Be Fashion\". Nancy Vuu bridges the gap between fashion and philanthropy — redefining what it means to lead with purpose.</p>",
+        "academy_id": "academy",
         "academy_eyebrow": "Education",
         "academy_title": "Dream Academy",
-        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
-        "academy_cta_label": "Join The Academy"
+        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of  leaders to build with vision and authenticity.",
+        "academy_cta": "Join The Academy",
+        "academy_link": ""
       }
     }
   },
@@ -160,7 +270,7 @@
     "mens-suits",
     "legacy-collections",
     "kingdom",
-    "crowns",
+    "crowns-jewelry",
     "retreats",
     "photography",
     "speaker-academy"

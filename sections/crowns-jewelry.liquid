@@ -1,0 +1,33 @@
+{% comment %} sections/crowns-jewelry.liquid {% endcomment %}
+<section id="{{ section.settings.section_id | default: 'crowns' }}" class="section-crowns" data-dark>
+  <div class="section-crowns__bg">
+    {%- render 'image',
+        image: section.settings.bg_image,
+        sizes: '100vw',
+        class: 'section-crowns__bg-img',
+        dark_placeholder: true,
+        placeholder_text: 'Macro Shot: Diamonds / Gold'
+    -%}
+  </div>
+  <div class="section-crowns__overlay"></div>
+  <div class="section-crowns__content reveal">
+    <span class="eyebrow" style="color:#999;">{{ section.settings.eyebrow | default: 'Jewelry & Headpieces' }}</span>
+    <h2 class="serif-font section-crowns__title">{{ section.settings.title | default: 'The Crowning' }}</h2>
+    <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial btn-editorial--crowns">{{ section.settings.cta_label | default: 'Adorn Yourself' }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crowns & Jewelry",
+  "settings": [
+    { "type": "text",         "id": "section_id", "label": "Section anchor ID", "default": "crowns" },
+    { "type": "image_picker", "id": "bg_image",   "label": "Background image" },
+    { "type": "text",         "id": "eyebrow",    "label": "Eyebrow text",     "default": "Jewelry & Headpieces" },
+    { "type": "text",         "id": "title",      "label": "Title",            "default": "The Crowning" },
+    { "type": "text",         "id": "cta_label",  "label": "Button text",      "default": "Adorn Yourself" },
+    { "type": "url",          "id": "cta_link",   "label": "Button link" }
+  ],
+  "presets": [{ "name": "Crowns & Jewelry" }]
+}
+{% endschema %}

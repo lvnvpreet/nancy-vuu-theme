@@ -5,10 +5,11 @@
   if bg == 'dark'
     assign is_dark = true
   endif
+  assign height = section.settings.section_height | default: 'full'
 -%}
 <section
   id="{{ section.settings.section_id | default: 'split' }}"
-  class="section-split{% if bg == 'greige' %} bg-greige{% elsif bg == 'dark' %} bg-dark text-white{% endif %}"
+  class="section-split{% if height == 'editorial' %} section-split--editorial{% elsif height == 'auto' %} section-split--auto{% endif %}{% if bg == 'greige' %} bg-greige{% elsif bg == 'dark' %} bg-dark text-white{% endif %}"
   {% if is_dark %}data-dark{% endif %}>
 
   <div class="section-split__image{% if section.settings.image_position == 'right' %} order-md-2{% else %} order-md-1{% endif %}">
@@ -39,6 +40,15 @@
   "settings": [
     { "type": "text",   "id": "section_id", "label": "Section anchor ID", "default": "split-section" },
     {
+      "type": "select", "id": "section_height", "label": "Section height",
+      "options": [
+        { "value": "full",      "label": "Full screen (100vh)" },
+        { "value": "editorial", "label": "Editorial (80vh)" },
+        { "value": "auto",      "label": "Content height (auto)" }
+      ],
+      "default": "full"
+    },
+    {
       "type": "select", "id": "bg_color", "label": "Background",
       "options": [
         { "value": "white",  "label": "White" },
@@ -65,19 +75,19 @@
   "presets": [
     {
       "name": "Split Content — Women's Couture",
-      "settings": { "section_id": "womens-couture", "eyebrow": "Collection", "title": "Women's Couture", "bg_color": "white", "image_position": "right", "cta_label": "Explore Collection" }
+      "settings": { "section_id": "womens-couture", "section_height": "full", "eyebrow": "Collection", "title": "Women's Couture", "bg_color": "white", "image_position": "right", "cta_label": "Explore Collection" }
     },
     {
       "name": "Split Content — Men's Bespoke",
-      "settings": { "section_id": "mens-suits", "eyebrow": "Tailored for Him", "title": "Men's Bespoke", "bg_color": "greige", "image_position": "right", "cta_label": "Book Fitting" }
+      "settings": { "section_id": "mens-suits", "section_height": "full", "eyebrow": "Tailored for Him", "title": "Men's Bespoke", "bg_color": "greige", "image_position": "right", "cta_label": "Book Fitting" }
     },
     {
       "name": "Split Content — Bespoke Bridal",
-      "settings": { "section_id": "bridal-bespoke", "eyebrow": "Custom Design", "title": "Bespoke Bridal", "bg_color": "dark", "image_position": "right", "cta_label": "Begin Your Journey" }
+      "settings": { "section_id": "bridal-bespoke", "section_height": "auto", "eyebrow": "Custom Design", "title": "Bespoke Bridal", "bg_color": "dark", "image_position": "right", "cta_label": "Begin Your Journey" }
     },
     {
       "name": "Split Content — Kingdom Heirs",
-      "settings": { "section_id": "kingdom", "eyebrow": "Ready to Wear", "title": "Kingdom Heirs", "bg_color": "greige", "image_position": "left", "cta_label": "Shop The Drop" }
+      "settings": { "section_id": "kingdom", "section_height": "editorial", "eyebrow": "Ready to Wear", "title": "Kingdom Heirs", "bg_color": "greige", "image_position": "left", "cta_label": "Shop The Drop" }
     }
   ]
 }
