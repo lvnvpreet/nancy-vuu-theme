@@ -83,7 +83,7 @@ h1, h2, h3, h4, .serif-font {
   margin-bottom: 2.5rem;
 }
 
-.section-title    { font-size: clamp(2.5rem, 4vw, 4rem);  margin-bottom: .5rem; }
+.section-title    { font-size: clamp(2.5rem, 5vw, 4rem);  margin-bottom: .5rem; }
 .section-title-xl { font-size: clamp(3rem, 8vw, 6rem); }
 
 .divider {
@@ -347,7 +347,7 @@ body::after {
 .hero__img { width: 100%; height: 100%; object-fit: cover; }
 .hero__overlay { pointer-events: none; }
 .hero__content { position: relative; z-index: 10; text-align: center; padding: 0 1.5rem; }
-.hero__title   { font-size: 8rem; line-height: 1; margin-bottom: 1.5rem; }
+.hero__title   { font-size: clamp(3rem, 12vw, 10rem); line-height: 1; margin-bottom: 1.5rem; }
 
 .hero-word {
   display: inline-block; opacity: 0; transform: translateY(60px);
@@ -356,7 +356,7 @@ body::after {
 @keyframes word-rise { to { opacity:1; transform: translateY(0); } }
 
 .hero__subtitle {
-  font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.25rem;
+  font-family: var(--font-sans); font-size: 0.65rem; line-height: 1.25rem;
   letter-spacing: .4em; text-transform: uppercase;
   opacity: 0; animation: fade-in 1s ease 1.2s forwards;
 }
@@ -393,9 +393,9 @@ body::after {
 .section-split__image { min-height: 55vh; overflow: hidden; position: relative; }
 .section-split__text  {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 3rem 2.5rem;
+  padding: 2.5rem;
 }
-@media (min-width: 768px) { .section-split__text { padding: 4rem 5rem; } }
+@media (min-width: 768px) { .section-split__text { padding: 5rem; } }
 
 .order-md-1 { order: 1; }
 .order-md-2 { order: 2; }
@@ -404,6 +404,7 @@ body::after {
 /* ── GALLERY (Bridal Collection) ────────────────────────── */
 .section-gallery { background: var(--cream); padding: 5rem 1.5rem; min-height: 80vh; }
 @media (min-width: 768px) { .section-gallery { padding: 5rem 2.5rem; } }
+.section-gallery__container { max-width: 1600px; margin: 0 auto; }
 .section-gallery__header { text-align: center; margin-bottom: 3.5rem; }
 
 .gallery-grid {
@@ -422,9 +423,10 @@ body::after {
 .section-cards__header { text-align: center; margin-bottom: 4rem; }
 
 .cards-grid {
-  display: grid; grid-template-columns: 1fr; gap: 3rem;
+  display: grid; grid-template-columns: 1fr; gap: 2rem;
   max-width: 1600px; margin: 0 auto;
 }
+@media (min-width: 768px) { .cards-grid { gap: 3rem; } }
 @media (min-width: 768px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
 
 .card { cursor: none; }
@@ -498,12 +500,83 @@ body::after {
   border-color: #fff;
 }
 
+/* ── WOMEN'S COUTURE (Overlay Card) ─────────────────────── */
+.section-couture-overlay {
+  min-height: 100vh; width: 100%;
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+}
+.section-couture-overlay__bg {
+  position: absolute; inset: 0; overflow: hidden;
+}
+.section-couture-overlay__bg-img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.section-couture-overlay__dim {
+  position: absolute; inset: 0; background: rgba(0,0,0,.2);
+}
+.section-couture-overlay__card {
+  position: relative; z-index: 10;
+  background: #fff; padding: 2.5rem;
+  text-align: center; max-width: 24rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+}
+@media (min-width: 768px) {
+  .section-couture-overlay__card { padding: 3.5rem; }
+}
+.section-couture-overlay .divider {
+  margin-left: auto; margin-right: auto;
+}
+.section-couture-overlay__tagline {
+  font-family: var(--font-sans); font-size: .75rem;
+  color: #6b6b6b; text-transform: uppercase;
+  letter-spacing: .2em; margin-bottom: 1.5rem;
+}
+
+/* ── BESPOKE BRIDAL ─────────────────────────────────────── */
+.section-bespoke {
+  padding: 7rem 1.5rem; background: #0f0f0f; color: #fff;
+}
+@media (min-width: 768px) {
+  .section-bespoke { padding: 7rem 2.5rem; }
+}
+.section-bespoke__inner {
+  max-width: 72rem; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr;
+  gap: 4rem; align-items: center;
+}
+@media (min-width: 1024px) {
+  .section-bespoke__inner { grid-template-columns: 1fr 1fr; }
+}
+.section-bespoke__image { height: 600px; overflow: hidden; }
+@media (min-width: 1024px) { .section-bespoke__image { height: 800px; } }
+.section-bespoke .chart-border {
+  border-top: 1px solid #333; padding-top: 2rem; margin-top: 2.5rem;
+}
+.section-bespoke .chart-heading {
+  font-size: .875rem; font-style: italic; color: #999; margin-bottom: 1.5rem;
+}
+
+/* ── SPLIT VARIANTS ─────────────────────────────────────── */
+/* Text-only greige background (e.g. Men's Bespoke) */
+.section-split--text-bg-greige .section-split__text { background: var(--greige); }
+
+/* 7/5 grid ratio (e.g. Kingdom Heirs) */
+@media (min-width: 768px) {
+  .section-split--ratio-7-5 { grid-template-columns: 7fr 5fr; }
+  .section-split--ratio-5-7 { grid-template-columns: 5fr 7fr; }
+}
+/* Editorial split with max-width container */
+.section-split--editorial .section-split__grid {
+  max-width: 1920px; margin: 0 auto;
+}
+
 /* ── PHOTOGRAPHY ────────────────────────────────────────── */
 .section-photography {
   padding: 6rem 1.5rem; text-align: center; overflow: hidden;
 }
 .section-photography__content {
-  max-width: 42rem; margin: 0 auto;
+  max-width: 48rem; margin: 0 auto;
 }
 .section-photography__description {
   max-width: 30rem; margin-left: auto; margin-right: auto;
@@ -579,11 +652,12 @@ body::after {
 
 /* ── FOOTER ─────────────────────────────────────────────── */
 .site-footer { background: #0f0f0f; color: #fff; padding: 6rem 2rem 3rem; }
+@media (min-width: 768px) { .site-footer { padding-left: 4rem; padding-right: 4rem; } }
 .footer-inner { max-width: 1920px; margin: 0 auto; }
 
 .footer-foundation {
   display: grid; grid-template-columns: 1fr; gap: 4rem;
-  padding-bottom: 4rem; border-bottom: 1px solid #222; margin-bottom: 3rem;
+  padding-bottom: 4rem; border-bottom: 1px solid #222; margin-bottom: 4rem;
 }
 @media (min-width: 768px) { .footer-foundation { grid-template-columns: 1fr 1fr; align-items: center; } }
 
@@ -785,8 +859,8 @@ body::after {
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 767px) {
-  .section-split__text  { padding: 2.5rem 1.5rem; }
-  .section-gallery      { padding: 5rem 1rem; }
+  .section-split__text  { padding: 2.5rem; }
+  .section-gallery      { padding: 5rem 1.5rem; }
   .section-cards        { padding: 7rem 1.5rem; }
   .section-retreats     { padding: 7rem 1.5rem; }
   .body-copy            { max-width: 100%; }

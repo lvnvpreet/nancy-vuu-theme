@@ -1,4 +1,4 @@
-{% comment %} sections/split-content.liquid — reusable for Women's, Men's, Bespoke, Kingdom Heirs {% endcomment %}
+{% comment %} sections/split-content.liquid — reusable for Men's, Kingdom Heirs {% endcomment %}
 {%- liquid
   assign bg = section.settings.bg_color
   assign is_dark = false
@@ -6,10 +6,12 @@
     assign is_dark = true
   endif
   assign height = section.settings.section_height | default: 'full'
+  assign ratio = section.settings.grid_ratio | default: 'equal'
+  assign text_bg = section.settings.text_bg | default: 'none'
 -%}
 <section
   id="{{ section.settings.section_id | default: 'split' }}"
-  class="section-split{% if height == 'editorial' %} section-split--editorial{% elsif height == 'auto' %} section-split--auto{% endif %}{% if bg == 'greige' %} bg-greige{% elsif bg == 'dark' %} bg-dark text-white{% endif %}"
+  class="section-split{% if height == 'editorial' %} section-split--editorial{% elsif height == 'auto' %} section-split--auto{% endif %}{% if bg == 'greige' %} bg-greige{% elsif bg == 'dark' %} bg-dark text-white{% endif %}{% if text_bg == 'greige' %} section-split--text-bg-greige{% endif %}{% if ratio == '7-5' %} section-split--ratio-7-5{% elsif ratio == '5-7' %} section-split--ratio-5-7{% endif %}"
   {% if is_dark %}data-dark{% endif %}>
 
   <div class="section-split__image{% if section.settings.image_position == 'right' %} order-md-2{% else %} order-md-1{% endif %}">
@@ -49,13 +51,30 @@
       "default": "full"
     },
     {
-      "type": "select", "id": "bg_color", "label": "Background",
+      "type": "select", "id": "bg_color", "label": "Section background",
       "options": [
         { "value": "white",  "label": "White" },
         { "value": "greige", "label": "Greige (warm grey)" },
         { "value": "dark",   "label": "Dark / Black" }
       ],
       "default": "white"
+    },
+    {
+      "type": "select", "id": "text_bg", "label": "Text panel background",
+      "options": [
+        { "value": "none",   "label": "None (inherit section)" },
+        { "value": "greige", "label": "Greige" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select", "id": "grid_ratio", "label": "Grid proportions",
+      "options": [
+        { "value": "equal", "label": "Equal (50/50)" },
+        { "value": "7-5",   "label": "Image wider (7/5)" },
+        { "value": "5-7",   "label": "Text wider (5/7)" }
+      ],
+      "default": "equal"
     },
     {
       "type": "select", "id": "image_position", "label": "Image side",
@@ -74,20 +93,12 @@
   ],
   "presets": [
     {
-      "name": "Split Content — Women's Couture",
-      "settings": { "section_id": "womens-couture", "section_height": "full", "eyebrow": "Collection", "title": "Women's Couture", "bg_color": "white", "image_position": "right", "cta_label": "Explore Collection" }
-    },
-    {
       "name": "Split Content — Men's Bespoke",
-      "settings": { "section_id": "mens-suits", "section_height": "full", "eyebrow": "Tailored for Him", "title": "Men's Bespoke", "bg_color": "greige", "image_position": "right", "cta_label": "Book Fitting" }
-    },
-    {
-      "name": "Split Content — Bespoke Bridal",
-      "settings": { "section_id": "bridal-bespoke", "section_height": "auto", "eyebrow": "Custom Design", "title": "Bespoke Bridal", "bg_color": "dark", "image_position": "right", "cta_label": "Begin Your Journey" }
+      "settings": { "section_id": "mens-suits", "section_height": "full", "eyebrow": "Tailored for Him", "title": "Men's Bespoke", "bg_color": "white", "text_bg": "greige", "grid_ratio": "equal", "image_position": "right", "cta_label": "Book Fitting" }
     },
     {
       "name": "Split Content — Kingdom Heirs",
-      "settings": { "section_id": "kingdom", "section_height": "editorial", "eyebrow": "Ready to Wear", "title": "Kingdom Heirs", "bg_color": "greige", "image_position": "left", "cta_label": "Shop The Drop" }
+      "settings": { "section_id": "kingdom", "section_height": "editorial", "eyebrow": "Ready to Wear", "title": "Kingdom Heirs", "bg_color": "greige", "text_bg": "none", "grid_ratio": "7-5", "image_position": "left", "cta_label": "Shop The Drop" }
     }
   ]
 }

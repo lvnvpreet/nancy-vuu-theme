@@ -1,0 +1,103 @@
+{% comment %} sections/bespoke-bridal.liquid — Dark section with max-w-6xl container + chart {% endcomment %}
+<section
+  id="{{ section.settings.section_id | default: 'bridal-bespoke' }}"
+  class="section-bespoke"
+  data-dark>
+
+  <div class="section-bespoke__inner">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#666;">{{ section.settings.eyebrow | default: 'Custom Design' }}</span>
+      <h2 class="serif-font section-title" style="color:#fff;">{{ section.settings.title | default: 'Bespoke Bridal' }}</h2>
+      <div class="divider" style="background:#fff;"></div>
+      <p class="body-copy" style="color:#aaa; max-width:28rem;">
+        {{ section.settings.description | default: '"You Dream It. We Create It." A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.' }}
+      </p>
+
+      {%- if section.settings.show_chart -%}
+        <div class="chart-border">
+          <h4 class="serif-font chart-heading">{{ section.settings.chart_title | default: 'The Journey — From Dream to Reality' }}</h4>
+          <div class="chart-container">
+            <canvas id="bespokeChart"></canvas>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="section-bespoke__image reveal delay-100">
+      {%- render 'image',
+          image: section.settings.image,
+          sizes: '(max-width:768px) 100vw, 50vw',
+          dark_placeholder: true,
+          placeholder_text: 'Bespoke Process / Sketch'
+      -%}
+    </div>
+  </div>
+</section>
+
+{%- if section.settings.show_chart -%}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('bespokeChart');
+    if (!ctx || !window.Chart) return;
+    new Chart(ctx.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: ['Concept','Design','Toile','Fitting 1','Fitting 2','Final'],
+        datasets: [{
+          label: 'Craft Intensity',
+          data: [15, 28, 50, 70, 88, 100],
+          borderColor: 'rgba(255,255,255,0.9)',
+          backgroundColor: 'rgba(255,255,255,0.05)',
+          borderWidth: 1.5,
+          pointBackgroundColor: '#0f0f0f',
+          pointBorderColor: 'rgba(255,255,255,0.8)',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          fill: true,
+          tension: 0.45
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#fff', titleColor: '#111', bodyColor: '#555',
+            borderColor: '#eee', borderWidth: 1, padding: 10,
+            titleFont: { family: 'Manrope', size: 11, weight: '600' },
+            bodyFont: { family: 'Manrope', size: 10 }
+          }
+        },
+        scales: {
+          y: { display: false, min: 0, max: 110 },
+          x: {
+            ticks: { color: '#555', font: { family: 'Manrope', size: 10, weight: '300' }, maxRotation: 0 },
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            border: { color: '#333' }
+          }
+        }
+      }
+    });
+  });
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Bespoke Bridal",
+  "settings": [
+    { "type": "text",         "id": "section_id",   "label": "Section anchor ID",  "default": "bridal-bespoke" },
+    { "type": "text",         "id": "eyebrow",      "label": "Eyebrow text",       "default": "Custom Design" },
+    { "type": "text",         "id": "title",        "label": "Title",              "default": "Bespoke Bridal" },
+    { "type": "textarea",     "id": "description",  "label": "Description",        "default": "\"You Dream It. We Create It.\" A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited." },
+    { "type": "image_picker", "id": "image",        "label": "Image" },
+    { "type": "text",         "id": "cta_label",    "label": "Button text",        "default": "Begin Your Journey" },
+    { "type": "url",          "id": "cta_link",     "label": "Button link" },
+    { "type": "header",       "content": "Chart" },
+    { "type": "checkbox",     "id": "show_chart",   "label": "Show bespoke process chart", "default": true },
+    { "type": "text",         "id": "chart_title",  "label": "Chart heading",      "default": "The Journey — From Dream to Reality" }
+  ],
+  "presets": [{ "name": "Bespoke Bridal" }]
+}
+{% endschema %}

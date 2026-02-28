@@ -1,0 +1,41 @@
+{% comment %} sections/womens-couture.liquid — Full-screen BG image with floating white card {% endcomment %}
+<section
+  id="{{ section.settings.section_id | default: 'womens-couture' }}"
+  class="section-couture-overlay">
+
+  <div class="section-couture-overlay__bg group">
+    {%- render 'image',
+        image: section.settings.bg_image,
+        sizes: '100vw',
+        class: 'section-couture-overlay__bg-img img-zoom',
+        placeholder_text: 'Visual: High Fashion Women\'s Editorial'
+    -%}
+  </div>
+
+  <div class="section-couture-overlay__dim"></div>
+
+
+  <div class="section-couture-overlay__card reveal">
+    <span class="eyebrow" style="margin-bottom:.5rem;">{{ section.settings.eyebrow | default: 'Collection' }}</span>
+    <h2 class="serif-font" style="font-size:2.25rem; margin-bottom:.5rem;">{{ section.settings.title | default: "Women's Couture" }}</h2>
+    <div class="divider"></div>
+    <p class="section-couture-overlay__tagline">{{ section.settings.tagline | default: 'Elegance · Power · Grace' }}</p>
+    <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial">{{ section.settings.cta_label | default: 'Explore Collection' }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Women's Couture",
+  "settings": [
+    { "type": "text",         "id": "section_id", "label": "Section anchor ID", "default": "womens-couture" },
+    { "type": "image_picker", "id": "bg_image",   "label": "Background image" },
+    { "type": "text",         "id": "eyebrow",    "label": "Eyebrow text",     "default": "Collection" },
+    { "type": "text",         "id": "title",      "label": "Title",            "default": "Women's Couture" },
+    { "type": "text",         "id": "tagline",    "label": "Tagline",          "default": "Elegance · Power · Grace" },
+    { "type": "text",         "id": "cta_label",  "label": "Button text",      "default": "Explore Collection" },
+    { "type": "url",          "id": "cta_link",   "label": "Button link" }
+  ],
+  "presets": [{ "name": "Women's Couture" }]
+}
+{% endschema %}

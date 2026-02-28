@@ -1,18 +1,20 @@
 {% comment %} sections/bridal-collection.liquid {% endcomment %}
 <section id="bridal-collection" class="section-gallery">
-  <div class="section-gallery__header reveal">
-    <span class="eyebrow">{{ section.settings.eyebrow | default: 'The Collection · 2026' }}</span>
-    <h2 class="serif-font section-title-xl">{{ section.settings.title | default: 'Bridal' }}</h2>
-  </div>
-  <div class="gallery-grid">
-    <div class="gallery-grid__feature group reveal">
-      {%- render 'image', image: section.settings.image_feature, sizes: '(max-width:768px) 100vw, 66vw', class: 'gallery-grid__img img-zoom', placeholder_text: 'Feature Gown Visual' -%}
-      <div class="gallery-grid__cta">
-        <a href="{{ section.settings.cta_link | default: '/collections/bridal' }}" class="btn-editorial" style="background:white;border-color:white;color:#111;">{{ section.settings.cta_label | default: 'Shop Collection' }}</a>
-      </div>
+  <div class="section-gallery__container">
+    <div class="section-gallery__header reveal">
+      <span class="eyebrow">{{ section.settings.eyebrow | default: 'The Collection · 2026' }}</span>
+      <h2 class="serif-font section-title-xl">{{ section.settings.title | default: 'Bridal' }}</h2>
     </div>
-    <div class="gallery-grid__side group reveal delay-100">
-      {%- render 'image', image: section.settings.image_side, sizes: '(max-width:768px) 100vw, 33vw', class: 'gallery-grid__img img-zoom', placeholder_text: 'Lookbook Detail' -%}
+    <div class="gallery-grid">
+      <div class="gallery-grid__feature group reveal">
+        {%- render 'image', image: section.settings.image_feature, sizes: '(max-width:768px) 100vw, 66vw', class: 'gallery-grid__img img-zoom', placeholder_text: 'Feature Gown Visual' -%}
+        <div class="gallery-grid__cta">
+          <a href="{{ section.settings.cta_link | default: '/collections/bridal' }}" class="btn-editorial" style="background:white;border-color:white;color:#111;">{{ section.settings.cta_label | default: 'Shop Collection' }}</a>
+        </div>
+      </div>
+      <div class="gallery-grid__side group reveal delay-100">
+        {%- render 'image', image: section.settings.image_side, sizes: '(max-width:768px) 100vw, 33vw', class: 'gallery-grid__img img-zoom', placeholder_text: 'Lookbook Detail' -%}
+      </div>
     </div>
   </div>
 </section>
