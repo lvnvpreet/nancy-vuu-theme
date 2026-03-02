@@ -1,0 +1,52 @@
+{%- comment -%} Cross-Sell — dark bg section with CTA to another collection {%- endcomment -%}
+<section class="cross-sell reveal">
+  <div class="cross-sell__inner">
+    <div class="cross-sell__media">
+      {% if section.settings.image %}
+        <img
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          loading="lazy"
+          class="cross-sell__img"
+        >
+      {% else %}
+        <div class="img-placeholder dark" style="height:100%;">Accessory Image</div>
+      {% endif %}
+      {% if section.settings.cta_label != blank %}
+        <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark cross-sell__img-cta">{{ section.settings.cta_label }}</a>
+      {% endif %}
+    </div>
+    <div class="cross-sell__text">
+      <h3 class="cross-sell__title serif-font">{{ section.settings.title | default: "The Crowning Moment" }}</h3>
+      {% if section.settings.description != blank %}
+        <p class="cross-sell__desc body-copy">{{ section.settings.description }}</p>
+      {% endif %}
+      <div class="cross-sell__actions">
+        {% if section.settings.primary_label != blank %}
+          <a href="{{ section.settings.primary_link }}" class="btn-editorial">{{ section.settings.primary_label }}</a>
+        {% endif %}
+        {% if section.settings.secondary_label != blank %}
+          <a href="{{ section.settings.secondary_link }}" class="btn-editorial" style="border-color:#ddd;color:#aaa;">{{ section.settings.secondary_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cross-Sell",
+  "tag": "div",
+  "settings": [
+    { "type": "image_picker", "id": "image",           "label": "Image" },
+    { "type": "text",         "id": "title",           "label": "Title",           "default": "The Crowning Moment" },
+    { "type": "textarea",     "id": "description",     "label": "Description",     "default": "Complete your bridal vision with hand-crafted crowns, veils, and jewelry pieces." },
+    { "type": "text",         "id": "cta_label",       "label": "Image CTA Label", "default": "Explore Accessories" },
+    { "type": "url",          "id": "cta_link",        "label": "Image CTA Link" },
+    { "type": "text",         "id": "primary_label",   "label": "Primary CTA",     "default": "Begin Bespoke Journey" },
+    { "type": "url",          "id": "primary_link",    "label": "Primary Link" },
+    { "type": "text",         "id": "secondary_label", "label": "Secondary CTA" },
+    { "type": "url",          "id": "secondary_link",  "label": "Secondary Link" }
+  ]
+}
+{% endschema %}

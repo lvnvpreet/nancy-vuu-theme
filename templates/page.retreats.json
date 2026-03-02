@@ -1,0 +1,122 @@
+{
+  "name": "Retreats",
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "overlay_opacity": 40,
+        "title_line_1": "dream",
+        "title_line_2": "again.",
+        "subtitle": "By Private Invitation Only"
+      }
+    },
+    "dimensions": {
+      "type": "retreat-dimensions",
+      "settings": {
+        "eyebrow": "The Experience",
+        "heading": "Beyond the Physical.",
+        "subtext": "The Holistic Realignment of Global Visionaries."
+      },
+      "blocks": {
+        "d1": { "type": "dimension", "settings": { "number": "01", "heading": "Restored Body", "subtitle": "Somatic Release & Luxury Stillness", "text": "Recalibrate the nervous system through curated silence and organic, high-performance nourishment. We transition you from fatigue to a state of poised readiness." } },
+        "d2": { "type": "dimension", "settings": { "number": "02", "heading": "Elevated Mind", "subtitle": "Strategic Silence & Cognitive Clarity", "text": "Detach from the noise to reconstruct your mental architecture. We facilitate the high-frequency thinking necessary to architect a lasting legacy." } },
+        "d3": { "type": "dimension", "settings": { "number": "03", "heading": "Restored Soul", "subtitle": "Sovereign Identity & Worth", "text": "The cornerstone of our work: Reclaiming unshakeable intrinsic worth. Move beyond performance-based metrics to lead from a foundation of sovereign internal authority." } },
+        "d4": { "type": "dimension", "settings": { "number": "04", "heading": "Activated Spirit", "subtitle": "Divine Blueprint & Mandate", "text": "Secure vertical alignment with your ultimate purpose. A sacred space for spiritual encounter that clarifies your divine mandate and future vision." } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4"]
+    },
+    "destinations": {
+      "type": "retreat-destinations",
+      "settings": {
+        "anchor_id": "destinations",
+        "heading": "The Sanctuaries.",
+        "subtitle": "Strictly Twelve Invitations Per Season",
+        "badge_text": "Private Invitations Only"
+      },
+      "blocks": {
+        "dest_napa": {
+          "type": "destination",
+          "settings": {
+            "quota": "4 Invitations Remaining",
+            "location": "Napa Valley, CA",
+            "title": "Dream Again",
+            "description": "A majestic landscape for the total reset of vision. Our most sought-after intensive for global leaders seeking spiritual recalibration.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        },
+        "dest_hawaii": {
+          "type": "destination",
+          "settings": {
+            "quota": "3 Invitations Remaining",
+            "location": "Kaneohe, HI",
+            "title": "Dreams Fulfilled",
+            "description": "A seaside sanctuary focused on actualization and peace. Extended for those ready to move from vision to implementation.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        },
+        "dest_couples": {
+          "type": "destination",
+          "settings": {
+            "quota": "Exclusive Booking",
+            "location": "Boutique Haven",
+            "title": "The Covenant",
+            "description": "An extremely limited restoration experience for high-influence couples. Shared healing within a rustic, high-fashion setting.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        }
+      },
+      "block_order": ["dest_napa", "dest_hawaii", "dest_couples"]
+    },
+    "academy_cta": {
+      "type": "cross-sell",
+      "settings": {
+        "heading": "Creative Academy.",
+        "subtext": "A curated sanctuary for the world's most discerning creators. Admission is restricted to a selected cohort of artisans and visionaries each cycle.",
+        "cta_primary_text": "Explore Academy",
+        "eyebrow": "Prestigious Mastery"
+      }
+    },
+    "final_cta": {
+      "type": "cta-closer",
+      "settings": {
+        "heading": "return to majesty.",
+        "subtext": "Napa Valley • Hawaii • European Residency",
+        "cta_label": "Apply for Selection"
+      }
+    },
+    "modal": {
+      "type": "audience-modal",
+      "settings": {
+        "heading": "Request an Audience.",
+        "sidebar_heading": "A Restricted Covenant.",
+        "sidebar_body": "Invitations are meticulously curated to ensure the synergy of the group and the sanctity of the restoration process. Only twelve seats are released per season."
+      },
+      "blocks": {
+        "dd1": {
+          "type": "dropdown_option",
+          "settings": { "value": "Sanctuary Retreat" }
+        },
+        "dd2": {
+          "type": "dropdown_option",
+          "settings": { "value": "Creative Academy Admission" }
+        },
+        "dd3": {
+          "type": "dropdown_option",
+          "settings": { "value": "Covenant Couples" }
+        }
+      },
+      "block_order": ["dd1", "dd2", "dd3"]
+    }
+  },
+  "order": [
+    "hero",
+    "dimensions",
+    "destinations",
+    "academy_cta",
+    "final_cta",
+    "modal"
+  ]
+}

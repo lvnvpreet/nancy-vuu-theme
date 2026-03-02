@@ -1,0 +1,14 @@
+{%- comment -%} Scarcity Ticker Bar — scrolling limited-availability notice {%- endcomment -%}
+<div class="scarcity-bar">
+  <span class="scarcity-bar__text">{{ section.settings.text | default: "Limited Availability" }}</span>
+</div>
+
+{% schema %}
+{
+  "name": "Scarcity Ticker",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Ticker Text", "default": "Limited Availability: Currently accepting 4 Bespoke Commissions for Q3 2026" }
+  ]
+}
+{% endschema %}

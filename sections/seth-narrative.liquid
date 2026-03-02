@@ -1,0 +1,129 @@
+<section class="seth-narrative" data-section-id="{{ section.id }}">
+  <div class="seth-narrative__inner">
+    <div class="seth-narrative__grid">
+      <div class="seth-narrative__col reveal">
+        {%- if section.settings.eyebrow_left != blank -%}
+          <span class="eyebrow" style="color: var(--seth-gold);">{{ section.settings.eyebrow_left }}</span>
+        {%- endif -%}
+        <h3 class="seth-narrative__heading serif">{{ section.settings.heading_left }}</h3>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'left_paragraph' -%}
+            <p class="seth-narrative__text" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="seth-narrative__col reveal" style="margin-top: 6rem;">
+        {%- if section.settings.eyebrow_right != blank -%}
+          <span class="eyebrow" style="color: var(--seth-gold);">{{ section.settings.eyebrow_right }}</span>
+        {%- endif -%}
+        <h4 class="seth-narrative__subheading serif">{{ section.settings.heading_right }}</h4>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'right_paragraph' -%}
+            <p class="seth-narrative__text" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if section.settings.closing_quote != blank -%}
+      <div class="seth-narrative__quote reveal">
+        <div class="divider-gold"></div>
+        <h3 class="seth-narrative__quote-text serif"><em>{{ section.settings.closing_quote }}</em></h3>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Narrative",
+  "class": "seth-section-narrative",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow_left",
+      "label": "Left eyebrow",
+      "default": "Origin Story"
+    },
+    {
+      "type": "text",
+      "id": "heading_left",
+      "label": "Left heading",
+      "default": "The Convergence of Visions."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_right",
+      "label": "Right eyebrow",
+      "default": "The Appointed Names"
+    },
+    {
+      "type": "text",
+      "id": "heading_right",
+      "label": "Right heading",
+      "default": "Dionne Husted: The Rest & The Appointment"
+    },
+    {
+      "type": "textarea",
+      "id": "closing_quote",
+      "label": "Closing quote",
+      "default": "\"We do not just create garments; we clothe the calling of a generation.\""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "left_paragraph",
+      "name": "Left paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "right_paragraph",
+      "name": "Right paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Narrative",
+      "blocks": [
+        {
+          "type": "left_paragraph",
+          "settings": {
+            "text": "<p>Nancy Vuu's journey began in the world of bridal couture—crafting gowns that didn't merely adorn, but <strong>spoke to the identity</strong> of the woman wearing them. Each creation was an act of prophetic design, a garment that declared purpose before the wearer ever spoke a word.</p>"
+          }
+        },
+        {
+          "type": "left_paragraph",
+          "settings": {
+            "text": "<p>In Dionne Husted, Nancy found not just a collaborator, but a <strong>kindred vision</strong>—a designer whose understanding of the male form possessed the same spiritual precision Nancy brought to the feminine silhouette.</p>"
+          }
+        },
+        {
+          "type": "right_paragraph",
+          "settings": {
+            "text": "<p>In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: <em><strong>\"Her name is Eden. I will find my rest in her.\"</strong></em> Then came the vision of a boy, Seth—a name meaning <em><strong>\"The Appointed One.\"</strong></em></p>"
+          }
+        },
+        {
+          "type": "right_paragraph",
+          "settings": {
+            "text": "<p>When these two visions converged, Seth Eden was born. It is a house built on the intersection of <strong>Restoration and Authority</strong>. Every garment is crafted to reflect the \"True Royalty\" Nancy was called to champion, and the \"Appointment\" Dionne was shown.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

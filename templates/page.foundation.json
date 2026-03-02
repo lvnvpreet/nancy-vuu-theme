@@ -1,0 +1,116 @@
+{
+  "name": "Foundation",
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "overlay_opacity": 40,
+        "title_line_1": "House of Vuu Foundation",
+        "subtitle": "The Philanthropic House"
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "eyebrow": "The Heart of the House",
+        "quote": "\"We believe that everyone is fashioned for Love & Greatness.\"",
+        "body": "Our foundation architects the infrastructure of restoration, meeting individuals at their point of need to honor their inherent dignity and unlock their boundless potential for greatness."
+      }
+    },
+    "phases": {
+      "type": "foundation-phases",
+      "settings": {
+        "heading": "The Access to Excellence Framework",
+        "description": "Excellence is a byproduct of security and restoration. Our framework provides a scalable model for human flourishing across three vital phases.",
+        "bg_tint": true
+      },
+      "blocks": {
+        "p1": { "type": "phase", "settings": { "phase": "Phase I", "title": "Investment", "description": "Foundation: Basic Needs & Security." } },
+        "p2": { "type": "phase", "settings": { "phase": "Phase II", "title": "Freedom", "description": "Restoration: Identity & Anti-Exploitation." } },
+        "p3": { "type": "phase", "settings": { "phase": "Phase III", "title": "Pathways", "description": "Future: Education & Industry Exposure." } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    },
+    "investment": {
+      "type": "academy-pillar",
+      "settings": {
+        "anchor_id": "investment",
+        "layout": "text-left",
+        "border_top": false,
+        "eyebrow": "Phase I: Meeting the Moment",
+        "heading": "Investment & Basic Needs",
+        "body": "Security of basic needs is the prerequisite for vision. We invest in sustainable community support, ensuring vulnerable populations have the food, water, and safety required to begin the journey toward restoration.",
+        "lead": "Global Reach — Direct humanitarian relief across borders."
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "freedom": {
+      "type": "academy-pillar",
+      "settings": {
+        "anchor_id": "freedom",
+        "layout": "text-right",
+        "border_top": true,
+        "eyebrow": "Phase II: Ending Exploitation",
+        "heading": "Architects of Freedom",
+        "body": "Partnering with elite global organizations to dismantle human trafficking and restore sovereignty to the individual through restorative identity work and high-level leadership training."
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "quote": {
+      "type": "manifesto",
+      "settings": {
+        "quote": "\"When passion, purpose, and excellence come together, we become an unstoppable force.\"",
+        "attribution": "Nancy Vuu"
+      }
+    },
+    "pathways": {
+      "type": "academy-pillar",
+      "settings": {
+        "anchor_id": "pathways",
+        "layout": "centered",
+        "border_top": false,
+        "eyebrow": "Phase III: Exposure & Excellence",
+        "heading": "Pathways to Purpose",
+        "body": "Bridging the gap between hidden potential and global influence through education, grants, and industry placement."
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "partners": {
+      "type": "foundation-partners",
+      "settings": {
+        "partners_eyebrow": "Collaborative Alliances",
+        "partners_heading": "Partners in Purpose",
+        "partners_body": "Aligning with non-profit leaders to optimize collective impact and scale our restoration model globally.",
+        "guardians_eyebrow": "CSR & Philanthropy",
+        "guardians_heading": "Corporate Guardians",
+        "guardians_body": "Acknowledging the private sector entities that fuel community restoration and global excellence.",
+        "contact_text": "Corporate Engagement"
+      },
+      "blocks": {
+        "partner_1": { "type": "partner", "settings": { "name": "Sparks Worldwide", "role": "Educational Infrastructure" } },
+        "partner_2": { "type": "partner", "settings": { "name": "Make-A-Wish", "role": "Critical Hope Initiative" } },
+        "partner_3": { "type": "partner", "settings": { "name": "Brave & Beautiful", "role": "Leadership Curriculum" } },
+        "guard_1": { "type": "guardian", "settings": { "name": "Costco", "role": "Stewardship Partner" } },
+        "guard_2": { "type": "guardian", "settings": { "name": "Domino's", "role": "Regional Supporter" } },
+        "guard_3": { "type": "guardian", "settings": { "name": "Eyes on Lake Stevens", "role": "Community Patron" } },
+        "guard_4": { "type": "guardian", "settings": { "name": "Postal Annex", "role": "Logistics Patron" } },
+        "guard_5": { "type": "guardian", "settings": { "name": "Hawaii Prayer Breakfast", "role": "Faith-Inspired Alliance" } },
+        "guard_6": { "type": "guardian", "settings": { "name": "Transform Our World", "role": "Global Restoration" } }
+      },
+      "block_order": ["partner_1", "partner_2", "partner_3", "guard_1", "guard_2", "guard_3", "guard_4", "guard_5", "guard_6"]
+    }
+  },
+  "order": [
+    "hero",
+    "manifesto",
+    "phases",
+    "investment",
+    "freedom",
+    "quote",
+    "pathways",
+    "partners"
+  ]
+}

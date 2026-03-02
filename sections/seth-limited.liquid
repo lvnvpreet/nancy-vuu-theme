@@ -1,0 +1,145 @@
+<section class="seth-limited" data-section-id="{{ section.id }}">
+  <div class="seth-limited__inner">
+    <div class="seth-limited__header reveal">
+      <div class="seth-limited__header-main">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow" style="color: var(--seth-gold);">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h3 class="seth-limited__title serif"><em>{{ section.settings.heading }}</em></h3>
+        {%- if section.settings.description != blank -%}
+          <p class="seth-limited__desc">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.badge_text != blank -%}
+        <p class="seth-limited__badge">{{ section.settings.badge_text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="seth-limited__grid">
+      {%- for block in section.blocks -%}
+        <div class="seth-limited__card group reveal" style="transition-delay: {{ forloop.index0 | times: 200 }}ms;" {{ block.shopify_attributes }}>
+          <div class="seth-limited__card-img-wrap">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                srcset="{{ block.settings.image | image_url: width: 400 }} 400w, {{ block.settings.image | image_url: width: 600 }} 600w, {{ block.settings.image | image_url: width: 800 }} 800w"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                loading="lazy"
+                class="seth-limited__card-img">
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'seth-limited__card-img placeholder' }}
+            {%- endif -%}
+            <div class="seth-limited__card-overlay"></div>
+            <div class="seth-limited__card-reveal">
+              <span>View Inspiration</span>
+            </div>
+          </div>
+          {%- if block.settings.number != blank -%}
+            <span class="seth-limited__card-number">{{ block.settings.number }}</span>
+          {%- endif -%}
+          <h5 class="seth-limited__card-title serif"><em>{{ block.settings.title }}</em></h5>
+          {%- if block.settings.subtitle != blank -%}
+            <p class="seth-limited__card-subtitle">{{ block.settings.subtitle }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Limited Designs",
+  "class": "seth-section-limited",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Invitations to the Journey"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Limited Designs"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "A curation of \"Seth Eden\" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey."
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Available In-Atelier Only"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "design",
+      "name": "Design",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number label",
+          "default": "Inspiration 01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The Appointed Double-Breast"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Architectural Framing in Charcoal Wool"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Limited Designs",
+      "blocks": [
+        {
+          "type": "design",
+          "settings": {
+            "number": "Inspiration 01",
+            "title": "The Appointed Double-Breast",
+            "subtitle": "Architectural Framing in Charcoal Wool"
+          }
+        },
+        {
+          "type": "design",
+          "settings": {
+            "number": "Inspiration 02",
+            "title": "The Eden Fluid Blazer",
+            "subtitle": "Soft Structuralism in Ivory Silk-Blend"
+          }
+        },
+        {
+          "type": "design",
+          "settings": {
+            "number": "Inspiration 03",
+            "title": "The Mandate Overcoat",
+            "subtitle": "Structural Command in Navy Cashmere"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

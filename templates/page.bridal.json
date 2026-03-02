@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "scarcity": {
+      "type": "scarcity-ticker",
+      "settings": {
+        "text": "Limited Availability: Currently accepting 4 Bespoke Commissions for Q3 2026"
+      }
+    },
+    "hero": {
+      "type": "bridal-hero",
+      "settings": {
+        "eyebrow": "The Sacred Architecture",
+        "title": "Bridal Bespoke",
+        "cta_label": "Begin the Commission",
+        "text_color": "#111111"
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "quote": "A Nancy Vuu gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
+      }
+    },
+    "ritual": {
+      "type": "ritual-phases",
+      "blocks": {
+        "phase_1": { "type": "phase", "settings": { "heading": "Sanctuary Arrival", "description": "Step into a private sanctuary where the world falls away, beginning with a ceremonial tea and vision alignment." } },
+        "phase_2": { "type": "phase", "settings": { "heading": "Architectural Sketching", "description": "Nancy captures the geometry of your spirit on paper, creating an original blueprint exclusive to your legacy." } },
+        "phase_3": { "type": "phase", "settings": { "heading": "The Crowning Fitting", "description": "A final coronation in our San Jose atelier, where master tailors ensure the gown becomes a second skin." } }
+      },
+      "block_order": ["phase_1", "phase_2", "phase_3"],
+      "settings": {
+        "eyebrow": "The Private Experience",
+        "title": "The Atelier Ritual"
+      }
+    },
+    "lead-times": {
+      "type": "lead-times",
+      "blocks": {
+        "standard": { "type": "timeline", "settings": { "badge": "The Standard Path", "duration": "4–6 Months", "description": "Immersion in the slow-craft artisan journey." } },
+        "expedited": { "type": "timeline", "settings": { "badge": "The Expedited Path", "duration": "4–6 Weeks", "description": "Mastery Sprints for urgent mandates. (Availability Limited)", "highlight": true } }
+      },
+      "block_order": ["standard", "expedited"],
+      "settings": {}
+    },
+    "workflow": {
+      "type": "bridal-workflow",
+      "blocks": {
+        "phase_1": { "type": "phase", "settings": { "phase_label": "Phase I: San Jose", "heading": "Architect of Vision", "description": "We capture your dream through precise sketches and initial measurements in our private sanctuary." } },
+        "phase_2": { "type": "phase", "settings": { "phase_label": "Phase II: Homeland", "heading": "The Master Build", "description": "Your design is sent to our Vietnam Atelier where master artisans hand-build your legacy over hundreds of hours." } },
+        "phase_3": { "type": "phase", "settings": { "phase_label": "Phase III: Return", "heading": "The Final Coronation", "description": "The dress returns for final fittings and refinements by our San Jose master tailors." } }
+      },
+      "block_order": ["phase_1", "phase_2", "phase_3"],
+      "settings": {}
+    },
+    "heritage": {
+      "type": "heritage-narrative",
+      "blocks": {
+        "p1": { "type": "paragraph", "settings": { "text": "My journey began as a refugee, leaving the shores of Vietnam with nothing but a dream. Today, I return not as a stranger, but as a restorer." } },
+        "p2": { "type": "paragraph", "settings": { "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our gowns in our Vietnam Atelier, we aren't just making a dress; we are empowering a community and honoring a lineage." } },
+        "q1": { "type": "quote", "settings": { "text": "\"From the first sketch in San Jose to the final stitch in the homeland, your gown is a physical anthem of a dream realized.\"" } }
+      },
+      "block_order": ["p1", "p2", "q1"],
+      "settings": {
+        "eyebrow": "A Heritage Reclaimed",
+        "title": "The Sovereign Return"
+      }
+    },
+    "investment": {
+      "type": "investment-tiers",
+      "blocks": {
+        "t1": { "type": "tier", "settings": { "name": "Atelier Signature", "tagline": "A Heritage Beginning", "price": "From $1,800", "cta_label": "Inquire" } },
+        "t2": { "type": "tier", "settings": { "name": "Made-to-Measure", "tagline": "Personalized Grace", "price": "From $2,800", "cta_label": "Inquire" } },
+        "t3": { "type": "tier", "settings": { "name": "Custom Bespoke", "tagline": "The Masterpiece Heirloom", "price": "From $8,500", "cta_label": "Request Commission", "badge": "Most Coveted", "featured": true } }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "title": "Your Pathway to Sovereignty",
+        "subtitle": "Defining the architectural depth of your commission",
+        "footnote": "*The Artisan Toile is a dedicated mock-up fitting exclusive to Bespoke commissions."
+      }
+    },
+    "closer": {
+      "type": "cta-closer",
+      "settings": {
+        "eyebrow": "The Final Amen",
+        "heading": "Your Legacy Awaits Its Form.",
+        "cta_label": "Request Private Audience",
+        "overlay_opacity": 20,
+        "text_color": "#111111"
+      }
+    },
+    "modal": {
+      "type": "audience-modal",
+      "blocks": {
+        "opt_1": { "type": "dropdown_option", "settings": { "label": "Custom Bespoke (Waitlist)", "value": "bespoke" } },
+        "opt_2": { "type": "dropdown_option", "settings": { "label": "Made-to-Measure", "value": "mtm" } },
+        "opt_3": { "type": "dropdown_option", "settings": { "label": "Seth Eden", "value": "seth" } }
+      },
+      "block_order": ["opt_1", "opt_2", "opt_3"],
+      "settings": {
+        "title": "The Private Registry",
+        "form_tag": "bridal-inquiry",
+        "show_dropdown": true,
+        "dropdown_label": "Category of Interest",
+        "show_date": true,
+        "date_label": "The Date of Your Covenant",
+        "show_textarea": true,
+        "textarea_label": "Your Vision",
+        "textarea_placeholder": "YOUR VISION...",
+        "submit_label": "Submit Inquiry",
+        "success_title": "Received",
+        "success_message": "The Atelier will contact you shortly regarding your covenant date."
+      }
+    }
+  },
+  "order": ["scarcity", "hero", "manifesto", "ritual", "lead-times", "workflow", "heritage", "investment", "closer", "modal"]
+}

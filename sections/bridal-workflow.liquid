@@ -1,0 +1,45 @@
+{%- comment -%} Bridal Workflow — 3-phase geographic journey {%- endcomment -%}
+<section class="bridal-workflow reveal">
+  <div class="bridal-workflow__inner">
+    <div class="bridal-workflow__grid">
+      {% for block in section.blocks %}
+        <div class="bridal-workflow__phase" {{ block.shopify_attributes }}>
+          {% if block.settings.phase_label != blank %}
+            <span class="bridal-workflow__label">{{ block.settings.phase_label }}</span>
+          {% endif %}
+          <h4 class="bridal-workflow__heading serif-font">{{ block.settings.heading }}</h4>
+          <p class="bridal-workflow__desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bridal Workflow",
+  "tag": "div",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "phase",
+      "name": "Phase",
+      "settings": [
+        { "type": "text",     "id": "phase_label", "label": "Phase Label",    "default": "Phase I: San Jose" },
+        { "type": "text",     "id": "heading",     "label": "Heading",        "default": "Architect of Vision" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal Workflow",
+      "blocks": [
+        { "type": "phase", "settings": { "phase_label": "Phase I: San Jose", "heading": "Architect of Vision", "description": "We capture your dream through precise sketches and initial measurements in our private sanctuary." } },
+        { "type": "phase", "settings": { "phase_label": "Phase II: Homeland", "heading": "The Master Build", "description": "Your design is sent to our Vietnam Atelier where master artisans hand-build your legacy over hundreds of hours." } },
+        { "type": "phase", "settings": { "phase_label": "Phase III: Return", "heading": "The Final Coronation", "description": "The dress returns for final fittings and refinements by our San Jose master tailors." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

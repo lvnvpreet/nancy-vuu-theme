@@ -1,0 +1,178 @@
+{%- comment -%}
+  Partners + Corporate Guardians combined section for Foundation page.
+{%- endcomment -%}
+
+<section class="foundation-partners" data-section-id="{{ section.id }}">
+  <div class="foundation-partners__inner">
+
+    {%- comment -%} PARTNERS SECTION {%- endcomment -%}
+    {%- assign partner_blocks = section.blocks | where: "type", "partner" -%}
+    {%- if partner_blocks.size > 0 -%}
+      <div class="foundation-partners__row reveal">
+        <div class="foundation-partners__heading-wrap">
+          {%- if section.settings.partners_eyebrow != blank -%}
+            <span class="eyebrow" style="color: #a1a1aa;">{{ section.settings.partners_eyebrow }}</span>
+          {%- endif -%}
+          <h2 class="foundation-partners__title serif"><em>{{ section.settings.partners_heading }}</em></h2>
+          {%- if section.settings.partners_body != blank -%}
+            <p class="foundation-partners__body">{{ section.settings.partners_body }}</p>
+          {%- endif -%}
+        </div>
+        <div class="foundation-partners__grid">
+          {%- for block in partner_blocks -%}
+            <div class="foundation-partner" {{ block.shopify_attributes }}>
+              <p class="foundation-partner__name serif">{{ block.settings.name }}</p>
+              <p class="foundation-partner__role">{{ block.settings.role }}</p>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} GUARDIANS SECTION {%- endcomment -%}
+    {%- assign guardian_blocks = section.blocks | where: "type", "guardian" -%}
+    {%- if guardian_blocks.size > 0 -%}
+      <div class="foundation-guardians reveal">
+        <div class="foundation-guardians__header">
+          {%- if section.settings.guardians_eyebrow != blank -%}
+            <span class="eyebrow" style="color: var(--gold, #c5a059);">{{ section.settings.guardians_eyebrow }}</span>
+          {%- endif -%}
+          <h2 class="academy-pillar__editorial-title serif">{{ section.settings.guardians_heading }}</h2>
+          {%- if section.settings.guardians_body != blank -%}
+            <p class="foundation-guardians__body">{{ section.settings.guardians_body }}</p>
+          {%- endif -%}
+        </div>
+        <div class="foundation-guardians__grid">
+          {%- for block in guardian_blocks -%}
+            <div class="foundation-guardian" {{ block.shopify_attributes }}>
+              <p class="foundation-guardian__name serif">{{ block.settings.name }}</p>
+              <p class="foundation-guardian__role">{{ block.settings.role }}</p>
+            </div>
+          {%- endfor -%}
+        </div>
+        {%- if section.settings.contact_text != blank -%}
+          <div class="foundation-guardians__cta">
+            <a href="{{ section.settings.contact_link | default: '#' }}" class="btn-luxury">{{ section.settings.contact_text }}</a>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Foundation Partners",
+  "class": "foundation-section-partners",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Partners Section"
+    },
+    {
+      "type": "text",
+      "id": "partners_eyebrow",
+      "label": "Partners eyebrow",
+      "default": "Collaborative Alliances"
+    },
+    {
+      "type": "text",
+      "id": "partners_heading",
+      "label": "Partners heading",
+      "default": "Partners in Purpose"
+    },
+    {
+      "type": "textarea",
+      "id": "partners_body",
+      "label": "Partners body"
+    },
+    {
+      "type": "header",
+      "content": "Guardians Section"
+    },
+    {
+      "type": "text",
+      "id": "guardians_eyebrow",
+      "label": "Guardians eyebrow",
+      "default": "CSR & Philanthropy"
+    },
+    {
+      "type": "text",
+      "id": "guardians_heading",
+      "label": "Guardians heading",
+      "default": "Corporate Guardians"
+    },
+    {
+      "type": "textarea",
+      "id": "guardians_body",
+      "label": "Guardians body"
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "label": "Contact CTA text",
+      "default": "Corporate Engagement"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "partner",
+      "name": "Partner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Sparks Worldwide"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Educational Infrastructure"
+        }
+      ]
+    },
+    {
+      "type": "guardian",
+      "name": "Guardian",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Costco"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Stewardship Partner"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Foundation Partners",
+      "blocks": [
+        { "type": "partner", "settings": { "name": "Sparks Worldwide", "role": "Educational Infrastructure" } },
+        { "type": "partner", "settings": { "name": "Make-A-Wish", "role": "Critical Hope Initiative" } },
+        { "type": "partner", "settings": { "name": "Brave & Beautiful", "role": "Leadership Curriculum" } },
+        { "type": "guardian", "settings": { "name": "Costco", "role": "Stewardship Partner" } },
+        { "type": "guardian", "settings": { "name": "Domino's", "role": "Regional Supporter" } },
+        { "type": "guardian", "settings": { "name": "Eyes on Lake Stevens", "role": "Community Patron" } },
+        { "type": "guardian", "settings": { "name": "Postal Annex", "role": "Logistics Patron" } },
+        { "type": "guardian", "settings": { "name": "Hawaii Prayer Breakfast", "role": "Faith-Inspired Alliance" } },
+        { "type": "guardian", "settings": { "name": "Transform Our World", "role": "Global Restoration" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+{%- comment -%} Reusable manifesto / centered quote section {%- endcomment -%}
+<section class="manifesto {{ section.settings.extra_class }}" style="background:{{ section.settings.bg_color }};color:{{ section.settings.text_color }};">
+  <div class="manifesto__inner reveal">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow" style="color:{{ section.settings.text_color }};">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    {% if section.settings.quote != blank %}
+      <blockquote class="manifesto__quote serif-font">{{ section.settings.quote }}</blockquote>
+    {% endif %}
+    {% if section.settings.attribution != blank %}
+      <cite class="manifesto__cite">— {{ section.settings.attribution }}</cite>
+    {% endif %}
+    {% if section.settings.body != blank %}
+      <div class="manifesto__body body-copy" style="color:{{ section.settings.text_color }};">{{ section.settings.body }}</div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Manifesto Quote",
+  "tag": "div",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",      "label": "Eyebrow" },
+    { "type": "textarea", "id": "quote",         "label": "Quote Text",     "default": "Every gown is a covenant between the designer and the divine." },
+    { "type": "text",     "id": "attribution",   "label": "Attribution" },
+    { "type": "richtext", "id": "body",          "label": "Body Text" },
+    { "type": "color",    "id": "bg_color",      "label": "Background",     "default": "#ffffff" },
+    { "type": "color",    "id": "text_color",    "label": "Text Color",     "default": "#111111" },
+    { "type": "text",     "id": "extra_class",   "label": "Extra CSS Class" }
+  ]
+}
+{% endschema %}

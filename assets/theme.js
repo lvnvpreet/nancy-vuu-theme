@@ -185,4 +185,59 @@ document.addEventListener('DOMContentLoaded', function () {
     revealObserver.observe(el);
   });
 
+  // ── PILLAR NAV SMOOTH SCROLL ──────────────────────────────
+  document.querySelectorAll('.academy-pillar-nav__link[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      var nav = document.querySelector('.academy-pillar-nav');
+      var offset = nav ? nav.offsetHeight + 20 : 80;
+      window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // ── SETH EDEN SPLIT HERO INTERACTION ──────────────────────
+  var splitPanels = document.querySelectorAll('.seth-split-hero__panel');
+  if (splitPanels.length === 2) {
+    splitPanels.forEach(function(panel) {
+      panel.addEventListener('mouseenter', function() {
+        splitPanels.forEach(function(p) {
+          p.style.flex = p === panel ? '1.3' : '0.7';
+          var img = p.querySelector('.seth-split-hero__img');
+          if (img) img.style.filter = p === panel ? 'grayscale(0%)' : 'grayscale(100%)';
+        });
+      });
+      panel.addEventListener('mouseleave', function() {
+        splitPanels.forEach(function(p) {
+          p.style.flex = '1';
+          var img = p.querySelector('.seth-split-hero__img');
+          if (img) img.style.filter = '';
+        });
+      });
+    });
+  }
+
+  // ── AUDIENCE MODAL ────────────────────────────────────────
+  window.openAudienceModal = function(retreatType) {
+    var modal = document.getElementById('audience-modal');
+    if (!modal) return;
+    if (retreatType) {
+      var select = modal.querySelector('select');
+      if (select) select.value = retreatType;
+    }
+    modal.style.display = 'flex';
+    document.body.classList.add('menu-open');
+  };
+
+  window.closeAudienceModal = function() {
+    var modal = document.getElementById('audience-modal');
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.classList.remove('menu-open');
+  };
+
 });

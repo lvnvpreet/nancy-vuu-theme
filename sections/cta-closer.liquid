@@ -1,0 +1,38 @@
+{%- comment -%} Reusable CTA Closer — fullscreen bg with heading + button {%- endcomment -%}
+<section
+  class="cta-closer"
+  {% if section.settings.image %}style="background-image:url({{ section.settings.image | image_url: width: 2000 }});"{% endif %}
+>
+  <div class="cta-closer__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  <div class="cta-closer__content reveal">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow" style="color:{{ section.settings.text_color }};">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    <h2 class="cta-closer__title serif-font" style="color:{{ section.settings.text_color }};">{{ section.settings.heading }}</h2>
+    {% if section.settings.subtext != blank %}
+      <p class="cta-closer__sub body-copy" style="color:{{ section.settings.text_color }};">{{ section.settings.subtext }}</p>
+    {% endif %}
+    {% if section.settings.cta_label != blank %}
+      <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
+        {{ section.settings.cta_label }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Closer",
+  "tag": "div",
+  "settings": [
+    { "type": "image_picker", "id": "image",            "label": "Background Image" },
+    { "type": "range",        "id": "overlay_opacity",   "label": "Overlay Opacity", "min": 0, "max": 100, "step": 5, "default": 50 },
+    { "type": "text",         "id": "eyebrow",          "label": "Eyebrow" },
+    { "type": "text",         "id": "heading",          "label": "Heading",         "default": "Begin Your Journey" },
+    { "type": "textarea",     "id": "subtext",          "label": "Subtext" },
+    { "type": "text",         "id": "cta_label",        "label": "CTA Label",       "default": "Book Consultation" },
+    { "type": "url",          "id": "cta_link",         "label": "CTA Link" },
+    { "type": "color",        "id": "text_color",       "label": "Text Color",      "default": "#ffffff" }
+  ]
+}
+{% endschema %}

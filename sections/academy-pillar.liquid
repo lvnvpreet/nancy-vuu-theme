@@ -1,0 +1,230 @@
+{%- comment -%}
+  Flexible pillar section for Dream Academy.
+  Supports layouts: text-left (5/7), text-right (7/5), centered.
+  Optionally shows pathway cards as blocks.
+{%- endcomment -%}
+
+{%- assign layout = section.settings.layout -%}
+{%- assign anchor = section.settings.anchor_id -%}
+
+<section id="{{ anchor }}" class="academy-pillar academy-pillar--{{ layout }}{% if section.settings.border_top %} academy-pillar--bordered{% endif %}" data-section-id="{{ section.id }}">
+  <div class="academy-pillar__inner reveal">
+
+    {%- if layout == 'centered' -%}
+      <!-- CENTERED LAYOUT -->
+      <div class="academy-pillar__center">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow" style="color: var(--gold, #c5a059);">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2 class="academy-pillar__editorial-title serif">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="academy-pillar__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.image != blank -%}
+        <div class="academy-pillar__media academy-pillar__media--centered">
+          <img
+            src="{{ section.settings.image | image_url: width: 1200 }}"
+            alt="{{ section.settings.image.alt | default: section.settings.heading }}"
+            loading="lazy"
+            class="academy-pillar__img">
+          {%- if section.settings.show_play_button -%}
+            <div class="academy-pillar__play">
+              <div class="academy-pillar__play-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><polygon points="3,0 16,8 3,16"/></svg>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="academy-pillar__body-centered">
+          <p>{{ section.settings.body }}</p>
+          {%- if section.settings.cta_text != blank -%}
+            <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+    {%- else -%}
+      <!-- SPLIT LAYOUT (text-left or text-right) -->
+      <div class="academy-pillar__grid academy-pillar__grid--{{ layout }}">
+        <div class="academy-pillar__text">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="eyebrow" style="color: var(--gold, #c5a059);">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          <h2 class="academy-pillar__editorial-title serif">{{ section.settings.heading }}</h2>
+          {%- if section.settings.lead != blank -%}
+            <p class="academy-pillar__lead">{{ section.settings.lead }}</p>
+          {%- endif -%}
+          {%- if section.settings.body != blank -%}
+            <p class="academy-pillar__body">{{ section.settings.body }}</p>
+          {%- endif -%}
+          {%- if section.settings.cta_text != blank -%}
+            <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+          {%- endif -%}
+        </div>
+        <div class="academy-pillar__media">
+          {%- if section.settings.image != blank -%}
+            <img
+              src="{{ section.settings.image | image_url: width: 1000 }}"
+              alt="{{ section.settings.image.alt | default: section.settings.heading }}"
+              loading="lazy"
+              class="academy-pillar__img">
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'academy-pillar__img placeholder' }}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Pathway Cards {%- endcomment -%}
+    {%- assign pathway_blocks = section.blocks | where: "type", "pathway" -%}
+    {%- if pathway_blocks.size > 0 -%}
+      <div class="academy-pathways">
+        {%- for block in pathway_blocks -%}
+          <div class="academy-pathway-card" {{ block.shopify_attributes }}>
+            <p class="academy-pathway-card__number">{{ block.settings.number }}</p>
+            <h4 class="academy-pathway-card__title serif"><em>{{ block.settings.title }}</em></h4>
+            <p class="academy-pathway-card__desc">{{ block.settings.description }}</p>
+            {%- if block.settings.features != blank -%}
+              <ul class="academy-pathway-card__features">
+                {%- assign features = block.settings.features | split: '|' -%}
+                {%- for f in features -%}
+                  <li>• {{ f | strip }}</li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Academy Pillar",
+  "class": "academy-section-pillar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "academy",
+      "info": "Used for pillar-nav smooth scroll"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "text-left", "label": "Text left / Image right" },
+        { "value": "text-right", "label": "Image left / Text right" },
+        { "value": "centered", "label": "Centered" }
+      ],
+      "default": "text-left"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Show top border",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Foundation One"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Creative Academy"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle (centered layout)",
+      "default": ""
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead paragraph",
+      "default": "Excellence is not an industry; it is an identity."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Explore Enrollment"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_play_button",
+      "label": "Show play button overlay",
+      "default": false,
+      "info": "For centered video placeholder"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pathway",
+      "name": "Pathway Card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "Pathway 01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Identity & Vision Mastery"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "features",
+          "label": "Features (pipe-separated)",
+          "info": "Separate with |",
+          "default": "Sovereign Leadership Coaching|Excellence as a Mandate|Strategic Vision Boarding"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Academy Pillar",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

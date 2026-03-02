@@ -1,0 +1,46 @@
+{%- comment -%} Reusable fullscreen page hero — bridal, academy, expo, foundation, retreats {%- endcomment -%}
+<section
+  class="page-hero"
+  id="{{ section.settings.section_id }}"
+  {% if section.settings.image %}style="background-image:url({{ section.settings.image | image_url: width: 2000 }});"{% endif %}
+>
+  <div class="page-hero__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  <div class="page-hero__content">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow" style="color:{{ section.settings.text_color }};">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    <h1 class="page-hero__title serif-font" style="color:{{ section.settings.text_color }};">
+      {% if section.settings.title_line_1 != blank %}<span>{{ section.settings.title_line_1 }}</span><br>{% endif %}
+      {% if section.settings.title_line_2 != blank %}<em>{{ section.settings.title_line_2 }}</em><br>{% endif %}
+      {% if section.settings.title_line_3 != blank %}<span>{{ section.settings.title_line_3 }}</span>{% endif %}
+    </h1>
+    {% if section.settings.subtitle != blank %}
+      <p class="page-hero__subtitle" style="color:{{ section.settings.text_color }};">{{ section.settings.subtitle }}</p>
+    {% endif %}
+    {% if section.settings.cta_label != blank %}
+      <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
+        {{ section.settings.cta_label }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page Hero",
+  "tag": "div",
+  "settings": [
+    { "type": "text",       "id": "section_id",      "label": "Section ID",       "default": "page-hero" },
+    { "type": "image_picker","id": "image",           "label": "Background Image" },
+    { "type": "range",      "id": "overlay_opacity",  "label": "Overlay Opacity",  "min": 0, "max": 100, "step": 5, "default": 40 },
+    { "type": "text",       "id": "eyebrow",         "label": "Eyebrow" },
+    { "type": "text",       "id": "title_line_1",    "label": "Title — Line 1",   "default": "Title" },
+    { "type": "text",       "id": "title_line_2",    "label": "Title — Line 2 (italic)" },
+    { "type": "text",       "id": "title_line_3",    "label": "Title — Line 3" },
+    { "type": "textarea",   "id": "subtitle",        "label": "Subtitle" },
+    { "type": "text",       "id": "cta_label",       "label": "CTA Label" },
+    { "type": "url",        "id": "cta_link",        "label": "CTA Link" },
+    { "type": "color",      "id": "text_color",      "label": "Text Color",       "default": "#ffffff" }
+  ]
+}
+{% endschema %}

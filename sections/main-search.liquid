@@ -1,0 +1,47 @@
+<section class="search-results">
+  <div class="search-results__inner">
+    <h1 class="search-results__title serif"><em>Search</em></h1>
+
+    <form action="{{ routes.search_url }}" method="get" class="search-results__form">
+      <input type="text" name="q" value="{{ search.terms | escape }}" placeholder="Search the House..." class="customer-auth__input" style="max-width: 36rem;">
+      <button type="submit" class="btn-editorial" style="margin-top: 1.5rem;">Search</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results_count > 0 -%}
+        <p class="search-results__count">{{ search.results_count }} result{{ search.results_count | pluralize: '', 's' }} for "{{ search.terms }}"</p>
+        <div class="search-results__grid">
+          {%- for item in search.results -%}
+            <a href="{{ item.url }}" class="search-result-card">
+              {%- if item.featured_image -%}
+                <div class="search-result-card__img-wrap">
+                  <img src="{{ item.featured_image | image_url: width: 400 }}" alt="{{ item.featured_image.alt | default: item.title }}" loading="lazy">
+                </div>
+              {%- endif -%}
+              <div class="search-result-card__text">
+                <h3 class="search-result-card__title">{{ item.title }}</h3>
+                <p class="search-result-card__excerpt">{{ item.content | strip_html | truncatewords: 20 }}</p>
+                {%- if item.price -%}
+                  <p class="search-result-card__price">{{ item.price | money }}</p>
+                {%- endif -%}
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- else -%}
+        <p class="search-results__empty">No results found for "{{ search.terms }}". Please try a different search.</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search Results",
+  "tag": "section",
+  "class": "section-search"
+}
+{% endschema %}

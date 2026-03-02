@@ -1,0 +1,256 @@
+{
+  "name": "Seth Eden",
+  "layout": "seth-eden",
+  "sections": {
+    "seth_hero": {
+      "type": "seth-split-hero",
+      "blocks": {
+        "panel_seth": {
+          "type": "panel",
+          "settings": {
+            "eyebrow": "The Appointed Man",
+            "heading": "Seth",
+            "subtext": "Architectural Authority"
+          }
+        },
+        "panel_eden": {
+          "type": "panel",
+          "settings": {
+            "eyebrow": "The Appointed Presence",
+            "heading": "Eden",
+            "subtext": "Restorative Peace"
+          }
+        }
+      },
+      "block_order": ["panel_seth", "panel_eden"]
+    },
+    "narrative": {
+      "type": "seth-narrative",
+      "settings": {
+        "eyebrow_left": "Origin Story",
+        "heading_left": "The Convergence of Visions.",
+        "eyebrow_right": "The Appointed Names",
+        "heading_right": "Dionne Husted: The Rest & The Appointment",
+        "closing_quote": "\"We do not just create garments; we clothe the calling of a generation.\""
+      },
+      "blocks": {
+        "left_1": {
+          "type": "left_paragraph",
+          "settings": {
+            "text": "<p>Nancy Vuu's journey began in the world of bridal couture—crafting gowns that didn't merely adorn, but <strong>spoke to the identity<\/strong> of the woman wearing them. Each creation was an act of prophetic design, a garment that declared purpose before the wearer ever spoke a word.<\/p>"
+          }
+        },
+        "left_2": {
+          "type": "left_paragraph",
+          "settings": {
+            "text": "<p>In Dionne Husted, Nancy found not just a collaborator, but a <strong>kindred vision<\/strong>—a designer whose understanding of the male form possessed the same spiritual precision Nancy brought to the feminine silhouette.<\/p>"
+          }
+        },
+        "right_1": {
+          "type": "right_paragraph",
+          "settings": {
+            "text": "<p>In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: <em><strong>\"Her name is Eden. I will find my rest in her.\"<\/strong><\/em> Then came the vision of a boy, Seth—a name meaning <em><strong>\"The Appointed One.\"<\/strong><\/em><\/p>"
+          }
+        },
+        "right_2": {
+          "type": "right_paragraph",
+          "settings": {
+            "text": "<p>When these two visions converged, Seth Eden was born. It is a house built on the intersection of <strong>Restoration and Authority<\/strong>. Every garment is crafted to reflect the \"True Royalty\" Nancy was called to champion, and the \"Appointment\" Dionne was shown.<\/p>"
+          }
+        }
+      },
+      "block_order": ["left_1", "left_2", "right_1", "right_2"]
+    },
+    "gallery_seth": {
+      "type": "seth-gallery",
+      "settings": {
+        "background": "#000000",
+        "text_color": "#ffffff",
+        "eyebrow": "The Appointed Man",
+        "heading": "Seth: The Mandate",
+        "description": "Vested in authority. Designed for those who lead with the heart of a steward.",
+        "swap_layout": false
+      },
+      "blocks": {
+        "img_1": {
+          "type": "image",
+          "settings": { "label": "The Mandated Frame", "wide": true }
+        },
+        "img_2": {
+          "type": "image",
+          "settings": { "label": "Identity Restored", "wide": false }
+        }
+      },
+      "block_order": ["img_1", "img_2"]
+    },
+    "gallery_eden": {
+      "type": "seth-gallery",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#000000",
+        "eyebrow": "The Appointed Presence",
+        "heading": "Eden: The Sanctuary",
+        "description": "Silhouettes that release the peace of the Garden into the atmospheres of influence.",
+        "swap_layout": true
+      },
+      "blocks": {
+        "img_3": {
+          "type": "image",
+          "settings": { "label": "Garden of Grace", "wide": false }
+        },
+        "img_4": {
+          "type": "image",
+          "settings": { "label": "Regal Identity", "wide": false }
+        }
+      },
+      "block_order": ["img_3", "img_4"]
+    },
+    "tailoring": {
+      "type": "seth-tailoring",
+      "settings": {
+        "eyebrow": "The Tailoring Journey",
+        "heading": "Recognition & Covenant.",
+        "description": "At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity."
+      },
+      "blocks": {
+        "tier_mtm": {
+          "type": "tier",
+          "settings": {
+            "level": "Level I",
+            "heading": "Made-to-Measure",
+            "description": "The \"Recognition\" experience. Utilizing our signature architectural patterns as a foundation, we adjust to your specific dimensions. This journey involves two fittings and ensures the Seth Eden silhouette is flawlessly aligned with your frame.",
+            "features": "Signature Pattern Base|40+ Premium Fabric Choices|4-Week Delivery",
+            "cta_text": "Inquire MTM",
+            "dark": false
+          }
+        },
+        "tier_bespoke": {
+          "type": "tier",
+          "settings": {
+            "level": "Level II",
+            "heading": "Full Bespoke",
+            "description": "The \"Covenant\" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of the Husted & Vuu house—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.",
+            "features": "Hand-Drafted Individual Pattern|Exclusive Rare Textiles|10-Week Master Craft",
+            "cta_text": "Begin Bespoke",
+            "dark": true
+          }
+        }
+      },
+      "block_order": ["tier_mtm", "tier_bespoke"]
+    },
+    "limited": {
+      "type": "seth-limited",
+      "settings": {
+        "eyebrow": "Invitations to the Journey",
+        "heading": "Limited Designs",
+        "description": "A curation of \"Seth Eden\" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey.",
+        "badge_text": "Available In-Atelier Only"
+      },
+      "blocks": {
+        "design_1": {
+          "type": "design",
+          "settings": {
+            "number": "Inspiration 01",
+            "title": "The Appointed Double-Breast",
+            "subtitle": "Architectural Framing in Charcoal Wool"
+          }
+        },
+        "design_2": {
+          "type": "design",
+          "settings": {
+            "number": "Inspiration 02",
+            "title": "The Eden Fluid Blazer",
+            "subtitle": "Soft Structuralism in Ivory Silk-Blend"
+          }
+        },
+        "design_3": {
+          "type": "design",
+          "settings": {
+            "number": "Inspiration 03",
+            "title": "The Mandate Overcoat",
+            "subtitle": "Structural Command in Navy Cashmere"
+          }
+        }
+      },
+      "block_order": ["design_1", "design_2", "design_3"]
+    },
+    "journey": {
+      "type": "seth-journey",
+      "settings": {
+        "eyebrow": "The Journey",
+        "heading": "From Vision to Vesting.",
+        "cta_text": "Begin Your Appointment"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "01.",
+            "heading": "The Reveal",
+            "text": "Explore our atelier inspirations in Napa or San Jose—the visual foundations of your identity."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "02.",
+            "heading": "The Consultation",
+            "text": "Collaborate with our designers to customize your mandated silhouette, choosing textures that reflect your unique calling."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "03.",
+            "heading": "The Appointing",
+            "text": "Your final fitting—the moment where your garment and your identity are unified in a bespoke appointment."
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3"]
+    },
+    "seth_footer": {
+      "type": "seth-footer",
+      "settings": {
+        "brand_name": "Seth Eden",
+        "brand_subtitle": "House of Husted & Vuu",
+        "copyright_text": "Seth Eden • Husted & Vuu",
+        "social_1": "Instagram",
+        "social_2": "Vogue"
+      },
+      "blocks": {
+        "links_atelier": {
+          "type": "link_group",
+          "settings": {
+            "heading": "Atelier",
+            "link_1_text": "The Journey",
+            "link_2_text": "Bespoke Process",
+            "link_3_text": "Appointments"
+          }
+        },
+        "links_nav": {
+          "type": "link_group",
+          "settings": {
+            "heading": "Navigation",
+            "link_1_text": "Home",
+            "link_2_text": "Bridal",
+            "link_3_text": "Retreats",
+            "link_4_text": "Academy",
+            "link_5_text": "Foundation"
+          }
+        }
+      },
+      "block_order": ["links_atelier", "links_nav"]
+    }
+  },
+  "order": [
+    "seth_hero",
+    "narrative",
+    "gallery_seth",
+    "gallery_eden",
+    "tailoring",
+    "limited",
+    "journey",
+    "seth_footer"
+  ]
+}

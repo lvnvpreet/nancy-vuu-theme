@@ -1,0 +1,22 @@
+{%- comment -%} Exclusivity Notice — centered text block {%- endcomment -%}
+<section class="exclusivity-notice reveal">
+  <div class="exclusivity-notice__inner">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    {% if section.settings.body != blank %}
+      <p class="exclusivity-notice__body">{{ section.settings.body }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Exclusivity Notice",
+  "tag": "div",
+  "settings": [
+    { "type": "text",     "id": "eyebrow", "label": "Eyebrow",  "default": "Exclusivity Notice" },
+    { "type": "textarea", "id": "body",    "label": "Body Text", "default": "Our Couture pieces are unique masterpieces available for purchase exclusively at the Atelier. For all other commissions, the collection serves as a curated invitation for your Made-to-Measure or Bespoke order." }
+  ]
+}
+{% endschema %}

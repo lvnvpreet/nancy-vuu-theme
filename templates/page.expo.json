@@ -1,0 +1,89 @@
+{
+  "name": "Dream Expo",
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "overlay_opacity": 60,
+        "title_line_1": "Dream Expo",
+        "subtitle": "Friday, April 24, 2026 • Honolulu, Hawaiʻi"
+      }
+    },
+    "mission": {
+      "type": "manifesto",
+      "settings": {
+        "eyebrow": "Launching Dreams Into Motion",
+        "quote": "More than an event — it's a movement.",
+        "attribution": "",
+        "body": "The DREAM Expo is a springboard for the people of Hawaiʻi, a community initiative designed to awaken dreams, elevate purpose, and empower individuals across Hawaiʻi to live with passion and impact."
+      }
+    },
+    "details": {
+      "type": "expo-details",
+      "settings": {
+        "heading": "Key Event Details",
+        "bg_tint": true
+      },
+      "blocks": {
+        "d1": { "type": "detail", "settings": { "number": "01", "heading": "Date", "text": "Friday, April 24, 2026\nStarting at 12 PM" } },
+        "d2": { "type": "detail", "settings": { "number": "02", "heading": "Location", "text": "South Pacific Ballroom\nHilton Hawaiian Village\nHonolulu, Hawaiʻi" } },
+        "d3": { "type": "detail", "settings": { "number": "03", "heading": "Audience", "text": "Open to public — nonprofits, students, business leaders, creatives & media professionals" } },
+        "d4": { "type": "detail", "settings": { "number": "04", "heading": "Goal", "text": "Ignite dreams, foster connections & provide resources for transformative growth" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4"]
+    },
+    "highlights": {
+      "type": "expo-highlights",
+      "settings": {
+        "eyebrow": "The Experience",
+        "heading": "Connect. Dream. Build Together.",
+        "body": "Utilizing the DREAM Academy blueprint — our signature structure — to build with integrity, grow revenue through sustainable practices and creative innovation.",
+        "cta_text": "View Schedule"
+      },
+      "blocks": {
+        "h1": { "type": "highlight", "settings": { "number": "01", "title": "Keynote & Panel Sessions", "description": "Industry leaders share actionable blueprints for vision-to-reality journeys." } },
+        "h2": { "type": "highlight", "settings": { "number": "02", "title": "Live Exhibitions", "description": "Discover local & global brands, creative showcases, and curated experiences." } },
+        "h3": { "type": "highlight", "settings": { "number": "03", "title": "Networking & Mentorship", "description": "Connect with changemakers from every sphere of influence across Hawaiʻi." } }
+      },
+      "block_order": ["h1", "h2", "h3"]
+    },
+    "exhibitor": {
+      "type": "expo-exhibitor",
+      "settings": {
+        "eyebrow": "Exhibitor of the Year",
+        "heading": "Red Thread Collective",
+        "subtitle": "Founded in Hawaiʻi • Stitched with Aloha",
+        "logo_text": "RTC",
+        "logo_tagline": "Creativity • Craftsmanship • Connection",
+        "body_1": "Born from the unlikely yet inspired friendship between a pizza guy and a couture designer, Red Thread Collective is more than a fashion label — it's a movement of creativity, craftsmanship, and connection.",
+        "body_2": "We are proud to honor Red Thread Collective as our Exhibitor of the Year — a brand that beautifully embodies the spirit of dreams realized and collaboration in action.",
+        "cta_text": "Get in Touch"
+      }
+    },
+    "connection": {
+      "type": "manifesto",
+      "settings": {
+        "eyebrow": "Powered by the Academy Blueprint",
+        "quote": "Where Academy Meets Opportunity",
+        "body": "The Dream Expo is the culmination of the Dream Academy journey — where graduates showcase their mastery, connect with industry agents, and step onto the global stage."
+      }
+    },
+    "cta": {
+      "type": "cta-closer",
+      "settings": {
+        "heading": "Be Part of the Movement",
+        "subtext": "Where dreamers and doers are celebrated, gather, connect and build together.",
+        "cta_label": "Get Free Tickets"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "mission",
+    "details",
+    "highlights",
+    "exhibitor",
+    "connection",
+    "cta"
+  ]
+}

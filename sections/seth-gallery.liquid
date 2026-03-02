@@ -1,0 +1,133 @@
+{%- assign bg = section.settings.background | default: '#000000' -%}
+{%- assign text_color = section.settings.text_color | default: '#ffffff' -%}
+{%- assign swap_layout = section.settings.swap_layout -%}
+
+<section
+  class="seth-gallery{% if swap_layout %} seth-gallery--swapped{% endif %}"
+  style="background: {{ bg }}; color: {{ text_color }};"
+  data-section-id="{{ section.id }}">
+  <div class="seth-gallery__inner">
+    <!-- Header row -->
+    <div class="seth-gallery__header reveal">
+      <div class="seth-gallery__header-main{% if swap_layout %} seth-gallery__header-main--right{% endif %}">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow" style="color: var(--seth-gold);">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h3 class="seth-gallery__title serif">{{ section.settings.heading }}</h3>
+      </div>
+      {%- if section.settings.description != blank -%}
+        <p class="seth-gallery__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <!-- Image grid -->
+    <div class="seth-gallery__grid">
+      {%- for block in section.blocks -%}
+        <div
+          class="seth-gallery__item{% if block.settings.wide %} seth-gallery__item--wide{% endif %}"
+          {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <img
+              src="{{ block.settings.image | image_url: width: 1000 }}"
+              srcset="{{ block.settings.image | image_url: width: 500 }} 500w, {{ block.settings.image | image_url: width: 800 }} 800w, {{ block.settings.image | image_url: width: 1000 }} 1000w"
+              sizes="(min-width: 768px) {% if block.settings.wide %}66vw{% else %}33vw{% endif %}, 100vw"
+              alt="{{ block.settings.image.alt | default: block.settings.label }}"
+              loading="lazy"
+              class="seth-gallery__img">
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'seth-gallery__img placeholder' }}
+          {%- endif -%}
+          {%- if block.settings.label != blank -%}
+            <span class="seth-gallery__label">{{ block.settings.label }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Gallery",
+  "class": "seth-section-gallery",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Appointed Man"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Seth: The Mandate"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Vested in authority. Designed for those who lead with the heart of a steward."
+    },
+    {
+      "type": "checkbox",
+      "id": "swap_layout",
+      "label": "Swap header alignment",
+      "default": false,
+      "info": "Moves heading to right, description to left (for Eden gallery)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Gallery Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "The Mandated Frame"
+        },
+        {
+          "type": "checkbox",
+          "id": "wide",
+          "label": "Wide (2/3 width)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Gallery",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": { "label": "The Mandated Frame", "wide": true }
+        },
+        {
+          "type": "image",
+          "settings": { "label": "Identity Restored", "wide": false }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

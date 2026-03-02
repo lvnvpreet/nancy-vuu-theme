@@ -1,0 +1,68 @@
+{%- comment -%} Lookbook Grid — 3×2 editorial cards with overlay text {%- endcomment -%}
+<section class="lookbook-grid-section">
+  <div class="lookbook-grid-section__inner">
+    <div class="lookbook-grid">
+      {% for block in section.blocks %}
+        <div class="lookbook-card group reveal" style="transition-delay:{{ forloop.index0 | times: 100 }}ms" {{ block.shopify_attributes }}>
+          <div class="lookbook-card__image">
+            {% if block.settings.image %}
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                loading="lazy"
+                class="lookbook-card__img img-zoom"
+              >
+            {% else %}
+              <div class="img-placeholder dark" style="height:100%;">
+                <span>{{ block.settings.title | default: "Look" }}</span>
+              </div>
+            {% endif %}
+            <div class="lookbook-card__overlay"></div>
+            {% if block.settings.badge != blank %}
+              <span class="lookbook-card__badge">{{ block.settings.badge }}</span>
+            {% endif %}
+          </div>
+          <h3 class="lookbook-card__title serif-font">{{ block.settings.title }}</h3>
+          {% if block.settings.link_text != blank %}
+            <a href="{{ block.settings.link | default: '#' }}" class="lookbook-card__link">{{ block.settings.link_text }}</a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lookbook Grid",
+  "tag": "div",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "look",
+      "name": "Look",
+      "settings": [
+        { "type": "image_picker", "id": "image",     "label": "Image" },
+        { "type": "text",         "id": "title",     "label": "Title",       "default": "The Look" },
+        { "type": "text",         "id": "subtitle",  "label": "Subtitle" },
+        { "type": "text",         "id": "badge",     "label": "Badge",       "default": "Atelier Acquisition Only" },
+        { "type": "text",         "id": "link_text", "label": "Link Text",   "default": "Request Private Consultation →" },
+        { "type": "url",          "id": "link",      "label": "Link URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lookbook Grid",
+      "blocks": [
+        { "type": "look", "settings": { "title": "Look 1" } },
+        { "type": "look", "settings": { "title": "Look 2" } },
+        { "type": "look", "settings": { "title": "Look 3" } },
+        { "type": "look", "settings": { "title": "Look 4" } },
+        { "type": "look", "settings": { "title": "Look 5" } },
+        { "type": "look", "settings": { "title": "Look 6" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

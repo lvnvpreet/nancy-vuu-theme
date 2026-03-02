@@ -1,0 +1,146 @@
+<section class="seth-tailoring" data-section-id="{{ section.id }}">
+  <div class="seth-tailoring__inner">
+    <div class="seth-tailoring__header reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow" style="color: var(--seth-gold);">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h3 class="seth-tailoring__title serif">{{ section.settings.heading }}</h3>
+      {%- if section.settings.description != blank -%}
+        <p class="seth-tailoring__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="seth-tailoring__grid">
+      {%- for block in section.blocks -%}
+        <div class="seth-tier-card{% if block.settings.dark %} seth-tier-card--dark{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.level != blank -%}
+            <span class="seth-tier-card__level">{{ block.settings.level }}</span>
+          {%- endif -%}
+          <h4 class="seth-tier-card__heading serif"><em>{{ block.settings.heading }}</em></h4>
+          {%- if block.settings.description != blank -%}
+            <p class="seth-tier-card__desc">{{ block.settings.description }}</p>
+          {%- endif -%}
+          {%- if block.settings.features != blank -%}
+            <ul class="seth-tier-card__features">
+              {%- assign features = block.settings.features | split: '|' -%}
+              {%- for feature in features -%}
+                <li>&bull; {{ feature | strip }}</li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+          {%- if block.settings.cta_text != blank -%}
+            <a href="{{ block.settings.cta_link | default: '#' }}" class="btn-bespoke{% unless block.settings.dark %} btn-bespoke--light{% endunless %}">
+              {{ block.settings.cta_text }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Tailoring",
+  "class": "seth-section-tailoring",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Tailoring Journey"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recognition & Covenant."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Tier",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "level",
+          "label": "Level label",
+          "default": "Level I"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Made-to-Measure"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "features",
+          "label": "Features (pipe-separated)",
+          "info": "Separate each feature with | character",
+          "default": "Signature Pattern Base|40+ Premium Fabric Choices|4-Week Delivery"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button text",
+          "default": "Inquire MTM"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "dark",
+          "label": "Dark style (black background)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Tailoring",
+      "blocks": [
+        {
+          "type": "tier",
+          "settings": {
+            "level": "Level I",
+            "heading": "Made-to-Measure",
+            "description": "The \"Recognition\" experience. Utilizing our signature architectural patterns as a foundation, we adjust to your specific dimensions. This journey involves two fittings and ensures the Seth Eden silhouette is flawlessly aligned with your frame.",
+            "features": "Signature Pattern Base|40+ Premium Fabric Choices|4-Week Delivery",
+            "cta_text": "Inquire MTM",
+            "dark": false
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "level": "Level II",
+            "heading": "Full Bespoke",
+            "description": "The \"Covenant\" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of the Husted & Vuu house—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.",
+            "features": "Hand-Drafted Individual Pattern|Exclusive Rare Textiles|10-Week Master Craft",
+            "cta_text": "Begin Bespoke",
+            "dark": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

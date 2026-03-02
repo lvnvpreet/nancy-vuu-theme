@@ -1,0 +1,183 @@
+<footer class="seth-footer">
+  <div class="seth-footer__inner">
+    <div class="seth-footer__grid">
+      <div class="seth-footer__brand">
+        <h2 class="seth-footer__logo serif">{{ section.settings.brand_name }}</h2>
+        {%- if section.settings.brand_subtitle != blank -%}
+          <p class="seth-footer__subtitle">{{ section.settings.brand_subtitle }}</p>
+        {%- endif -%}
+      </div>
+      <div class="seth-footer__links">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'link_group' -%}
+            <div class="seth-footer__link-group" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <h6 class="seth-footer__link-heading">{{ block.settings.heading }}</h6>
+              {%- endif -%}
+              <ul class="seth-footer__link-list">
+                {%- if block.settings.link_1_text != blank -%}
+                  <li><a href="{{ block.settings.link_1_url | default: '#' }}">{{ block.settings.link_1_text }}</a></li>
+                {%- endif -%}
+                {%- if block.settings.link_2_text != blank -%}
+                  <li><a href="{{ block.settings.link_2_url | default: '#' }}">{{ block.settings.link_2_text }}</a></li>
+                {%- endif -%}
+                {%- if block.settings.link_3_text != blank -%}
+                  <li><a href="{{ block.settings.link_3_url | default: '#' }}">{{ block.settings.link_3_text }}</a></li>
+                {%- endif -%}
+                {%- if block.settings.link_4_text != blank -%}
+                  <li><a href="{{ block.settings.link_4_url | default: '#' }}">{{ block.settings.link_4_text }}</a></li>
+                {%- endif -%}
+                {%- if block.settings.link_5_text != blank -%}
+                  <li><a href="{{ block.settings.link_5_url | default: '#' }}">{{ block.settings.link_5_text }}</a></li>
+                {%- endif -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="seth-footer__bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text }}</p>
+      <div class="seth-footer__social">
+        {%- if section.settings.social_1 != blank -%}
+          <span>{{ section.settings.social_1 }}</span>
+        {%- endif -%}
+        {%- if section.settings.social_2 != blank -%}
+          <span>{{ section.settings.social_2 }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Seth Footer",
+  "class": "seth-section-footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Seth Eden"
+    },
+    {
+      "type": "text",
+      "id": "brand_subtitle",
+      "label": "Brand subtitle",
+      "default": "House of Husted & Vuu"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "Seth Eden • Husted & Vuu"
+    },
+    {
+      "type": "text",
+      "id": "social_1",
+      "label": "Social link 1 text",
+      "default": "Instagram"
+    },
+    {
+      "type": "text",
+      "id": "social_2",
+      "label": "Social link 2 text",
+      "default": "Vogue"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_group",
+      "name": "Link Group",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Group heading",
+          "default": "Atelier"
+        },
+        {
+          "type": "text",
+          "id": "link_1_text",
+          "label": "Link 1 text"
+        },
+        {
+          "type": "url",
+          "id": "link_1_url",
+          "label": "Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_2_text",
+          "label": "Link 2 text"
+        },
+        {
+          "type": "url",
+          "id": "link_2_url",
+          "label": "Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_3_text",
+          "label": "Link 3 text"
+        },
+        {
+          "type": "url",
+          "id": "link_3_url",
+          "label": "Link 3 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_4_text",
+          "label": "Link 4 text"
+        },
+        {
+          "type": "url",
+          "id": "link_4_url",
+          "label": "Link 4 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_5_text",
+          "label": "Link 5 text"
+        },
+        {
+          "type": "url",
+          "id": "link_5_url",
+          "label": "Link 5 URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Footer",
+      "blocks": [
+        {
+          "type": "link_group",
+          "settings": {
+            "heading": "Atelier",
+            "link_1_text": "The Journey",
+            "link_2_text": "Bespoke Process",
+            "link_3_text": "Appointments"
+          }
+        },
+        {
+          "type": "link_group",
+          "settings": {
+            "heading": "Navigation",
+            "link_1_text": "Home",
+            "link_2_text": "Bridal",
+            "link_3_text": "Retreats",
+            "link_4_text": "Academy",
+            "link_5_text": "Foundation"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

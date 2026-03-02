@@ -1,0 +1,101 @@
+{%- comment -%}
+  4-column experience/dimension nodes for Retreats page.
+{%- endcomment -%}
+
+<section class="retreat-dimensions" data-section-id="{{ section.id }}">
+  <div class="retreat-dimensions__inner">
+    <div class="retreat-dimensions__header reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow" style="color: var(--gold, #c5a059);">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h3 class="retreat-dimensions__title serif">{{ section.settings.heading }}</h3>
+      {%- if section.settings.subtext != blank -%}
+        <p class="retreat-dimensions__sub">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+    <div class="retreat-dimensions__grid">
+      {%- for block in section.blocks -%}
+        <div class="retreat-node reveal" style="transition-delay: {{ forloop.index0 | times: 150 }}ms;" {{ block.shopify_attributes }}>
+          <span class="retreat-node__num serif"><em>{{ block.settings.number }}</em></span>
+          <h4 class="retreat-node__heading">{{ block.settings.heading }}</h4>
+          {%- if block.settings.subtitle != blank -%}
+            <p class="retreat-node__subtitle"><em>{{ block.settings.subtitle }}</em></p>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="retreat-node__text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Retreat Dimensions",
+  "class": "retreat-section-dimensions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Experience"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Beyond the Physical."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "The Holistic Realignment of Global Visionaries."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "dimension",
+      "name": "Dimension",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Restored Body"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Somatic Release & Luxury Stillness"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Retreat Dimensions",
+      "blocks": [
+        { "type": "dimension", "settings": { "number": "01", "heading": "Restored Body", "subtitle": "Somatic Release & Luxury Stillness", "text": "Recalibrate the nervous system through curated silence and organic, high-performance nourishment." } },
+        { "type": "dimension", "settings": { "number": "02", "heading": "Elevated Mind", "subtitle": "Strategic Silence & Cognitive Clarity", "text": "Detach from the noise to reconstruct your mental architecture." } },
+        { "type": "dimension", "settings": { "number": "03", "heading": "Restored Soul", "subtitle": "Sovereign Identity & Worth", "text": "Reclaiming unshakeable intrinsic worth. Move beyond performance-based metrics." } },
+        { "type": "dimension", "settings": { "number": "04", "heading": "Activated Spirit", "subtitle": "Divine Blueprint & Mandate", "text": "Secure vertical alignment with your ultimate purpose." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

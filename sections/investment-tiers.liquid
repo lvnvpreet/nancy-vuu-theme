@@ -1,0 +1,79 @@
+{%- comment -%} Investment Tiers — 3 pricing cards (Heritage, MTM, Bespoke) {%- endcomment -%}
+<section class="investment-tiers reveal">
+  <div class="investment-tiers__inner">
+    <div class="investment-tiers__header">
+      <h3 class="investment-tiers__title serif-font">{{ section.settings.title | default: "Your Pathway to Sovereignty" }}</h3>
+      {% if section.settings.subtitle != blank %}
+        <p class="investment-tiers__sub">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <div class="investment-tiers__grid">
+      {% for block in section.blocks %}
+        <div class="tier-card {% if block.settings.featured %}tier-card--featured{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.badge != blank %}
+            <span class="tier-card__badge">{{ block.settings.badge }}</span>
+          {% endif %}
+          <div class="tier-card__top">
+            <h4 class="tier-card__name serif-font">{{ block.settings.name }}</h4>
+            {% if block.settings.tagline != blank %}
+              <span class="tier-card__tagline">{{ block.settings.tagline }}</span>
+            {% endif %}
+            {% if block.settings.features != blank %}
+              <div class="tier-card__features">
+                {{ block.settings.features }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="tier-card__bottom">
+            <p class="tier-card__price serif-font">{{ block.settings.price }}</p>
+            <button class="btn-luxury {% if block.settings.featured %}btn-luxury--inverted{% endif %}" data-audience-open>
+              {{ block.settings.cta_label | default: "Inquire" }}
+            </button>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.footnote != blank %}
+      <p class="investment-tiers__footnote">{{ section.settings.footnote }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Investment Tiers",
+  "tag": "div",
+  "settings": [
+    { "type": "text",     "id": "title",     "label": "Title",     "default": "Your Pathway to Sovereignty" },
+    { "type": "text",     "id": "subtitle",  "label": "Subtitle",  "default": "Defining the architectural depth of your commission" },
+    { "type": "textarea", "id": "footnote",  "label": "Footnote" }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Tier",
+      "settings": [
+        { "type": "text",     "id": "name",      "label": "Tier Name",     "default": "Atelier Signature" },
+        { "type": "text",     "id": "tagline",   "label": "Tagline",       "default": "A Heritage Beginning" },
+        { "type": "richtext", "id": "features",  "label": "Features List" },
+        { "type": "text",     "id": "price",     "label": "Price",         "default": "From $1,800" },
+        { "type": "text",     "id": "cta_label", "label": "CTA Label",     "default": "Inquire" },
+        { "type": "text",     "id": "badge",     "label": "Badge (optional)" },
+        { "type": "checkbox", "id": "featured",  "label": "Featured (dark style)", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Investment Tiers",
+      "blocks": [
+        { "type": "tier", "settings": { "name": "Atelier Signature", "tagline": "A Heritage Beginning", "price": "From $1,800", "cta_label": "Inquire" } },
+        { "type": "tier", "settings": { "name": "Made-to-Measure", "tagline": "Personalized Grace", "price": "From $2,800", "cta_label": "Inquire" } },
+        { "type": "tier", "settings": { "name": "Custom Bespoke", "tagline": "The Masterpiece Heirloom", "price": "From $8,500", "cta_label": "Request Commission", "badge": "Most Coveted", "featured": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

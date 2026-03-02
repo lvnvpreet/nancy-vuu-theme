@@ -1,0 +1,147 @@
+{%- comment -%}
+  Retreat destination cards grid.
+  Each card has image, quota badge, location, title, description, CTA.
+{%- endcomment -%}
+
+<section id="{{ section.settings.anchor_id }}" class="retreat-destinations" data-section-id="{{ section.id }}">
+  <div class="retreat-destinations__inner">
+    <div class="retreat-destinations__header reveal">
+      <div>
+        <h2 class="retreat-destinations__title serif">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="retreat-destinations__subtitle" style="color: var(--gold, #c5a059);">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.badge_text != blank -%}
+        <p class="retreat-destinations__badge">{{ section.settings.badge_text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="retreat-destinations__grid">
+      {%- for block in section.blocks -%}
+        <div class="retreat-card reveal" style="transition-delay: {{ forloop.index0 | times: 200 }}ms;" {{ block.shopify_attributes }}>
+          <div class="retreat-card__img-wrap">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                loading="lazy"
+                class="retreat-card__img">
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'retreat-card__img placeholder' }}
+            {%- endif -%}
+            {%- if block.settings.quota != blank -%}
+              <span class="retreat-card__quota">{{ block.settings.quota }}</span>
+            {%- endif -%}
+          </div>
+          <div class="retreat-card__body">
+            {%- if block.settings.location != blank -%}
+              <span class="retreat-card__location">{{ block.settings.location }}</span>
+            {%- endif -%}
+            <h4 class="retreat-card__title serif"><em>{{ block.settings.title }}</em></h4>
+            {%- if block.settings.description != blank -%}
+              <p class="retreat-card__desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+            {%- if block.settings.cta_text != blank -%}
+              <button class="retreat-card__cta" onclick="{% if block.settings.modal_trigger %}document.querySelector('[data-section-type=audience-modal] .audience-modal')?.click();{% endif %}">
+                {{ block.settings.cta_text }}
+              </button>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Retreat Destinations",
+  "class": "retreat-section-destinations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "destinations"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Sanctuaries."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Strictly Twelve Invitations Per Season"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Private Invitations Only"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "destination",
+      "name": "Destination",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "quota",
+          "label": "Quota badge text",
+          "default": "4 Invitations Remaining"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Napa Valley, CA"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Dream Again"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA text",
+          "default": "Request Audience"
+        },
+        {
+          "type": "checkbox",
+          "id": "modal_trigger",
+          "label": "Trigger audience modal on click",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Retreat Destinations",
+      "blocks": [
+        { "type": "destination", "settings": { "quota": "4 Invitations Remaining", "location": "Napa Valley, CA", "title": "Dream Again", "description": "A majestic landscape for the total reset of vision. Our most sought-after intensive for global leaders seeking spiritual recalibration." } },
+        { "type": "destination", "settings": { "quota": "3 Invitations Remaining", "location": "Kaneohe, HI", "title": "Dreams Fulfilled", "description": "A seaside sanctuary focused on actualization and peace. Extended for those ready to move from vision to implementation." } },
+        { "type": "destination", "settings": { "quota": "Exclusive Booking", "location": "Boutique Haven", "title": "The Covenant", "description": "An extremely limited restoration experience for high-influence couples. Shared healing within a rustic, high-fashion setting." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

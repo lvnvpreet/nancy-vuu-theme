@@ -1,0 +1,59 @@
+{%- comment -%}
+  Sticky sub-navigation for the Dream Academy page.
+  Each block is a nav link that smooth-scrolls to a section anchor.
+{%- endcomment -%}
+
+<nav class="academy-pillar-nav" data-section-id="{{ section.id }}">
+  <div class="academy-pillar-nav__inner">
+    <a href="{{ routes.root_url }}" class="academy-pillar-nav__logo serif">NV</a>
+    <div class="academy-pillar-nav__links no-scrollbar">
+      {%- for block in section.blocks -%}
+        <a href="#{{ block.settings.anchor }}" class="academy-pillar-nav__link" {{ block.shopify_attributes }}>
+          {{ block.settings.label }}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Academy Pillar Nav",
+  "class": "academy-section-nav",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Nav Link",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "I. Academy"
+        },
+        {
+          "type": "text",
+          "id": "anchor",
+          "label": "Anchor ID",
+          "default": "academy",
+          "info": "Must match the section's anchor ID (without #)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Academy Pillar Nav",
+      "blocks": [
+        { "type": "link", "settings": { "label": "I. Academy", "anchor": "academy" } },
+        { "type": "link", "settings": { "label": "II. Expo", "anchor": "expo" } },
+        { "type": "link", "settings": { "label": "III. Publishing", "anchor": "publishing" } },
+        { "type": "link", "settings": { "label": "IV. Women CEO", "anchor": "ceo" } },
+        { "type": "link", "settings": { "label": "V. Collective", "anchor": "ambassador" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

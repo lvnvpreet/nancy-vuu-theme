@@ -1,0 +1,118 @@
+{%- comment -%}
+  Dark background exhibitor/sponsor spotlight section.
+{%- endcomment -%}
+
+<section class="expo-exhibitor" data-section-id="{{ section.id }}">
+  <div class="expo-exhibitor__inner reveal">
+    <div class="expo-exhibitor__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow" style="color: var(--gold, #c5a059);">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="expo-exhibitor__title serif"><em>{{ section.settings.heading }}</em></h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="expo-exhibitor__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+    <div class="expo-exhibitor__grid">
+      <div class="expo-exhibitor__logo-wrap">
+        {%- if section.settings.image != blank -%}
+          <img
+            src="{{ section.settings.image | image_url: width: 600 }}"
+            alt="{{ section.settings.heading }}"
+            loading="lazy"
+            class="expo-exhibitor__logo-img">
+        {%- else -%}
+          <div class="expo-exhibitor__logo-placeholder">
+            <p class="serif" style="font-style: italic; font-size: 3.75rem; color: var(--gold, #c5a059); margin-bottom: 1.5rem;">{{ section.settings.logo_text }}</p>
+            {%- if section.settings.logo_tagline != blank -%}
+              <p class="expo-exhibitor__logo-tagline">{{ section.settings.logo_tagline }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="expo-exhibitor__text">
+        {%- if section.settings.body_1 != blank -%}
+          <p class="expo-exhibitor__body">{{ section.settings.body_1 }}</p>
+        {%- endif -%}
+        {%- if section.settings.body_2 != blank -%}
+          <p class="expo-exhibitor__body">{{ section.settings.body_2 }}</p>
+        {%- endif -%}
+        {%- if section.settings.cta_text != blank -%}
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury" style="color: #fff; border-color: #fff;">{{ section.settings.cta_text }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Expo Exhibitor",
+  "class": "expo-section-exhibitor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Exhibitor of the Year"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Red Thread Collective"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Founded in Hawaiʻi • Stitched with Aloha"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text (if no image)",
+      "default": "RTC"
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline",
+      "label": "Logo tagline",
+      "default": "Creativity • Craftsmanship • Connection"
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "Body paragraph 1",
+      "default": "Born from the unlikely yet inspired friendship between a pizza guy and a couture designer, Red Thread Collective is more than a fashion label — it's a movement of creativity, craftsmanship, and connection."
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Body paragraph 2",
+      "default": "We are proud to honor Red Thread Collective as our Exhibitor of the Year — a brand that beautifully embodies the spirit of dreams realized and collaboration in action."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Get in Touch"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Expo Exhibitor"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+{%- comment -%}
+  Customer login page.
+{%- endcomment -%}
+
+<section class="customer-auth">
+  <div class="customer-auth__inner">
+    <h1 class="customer-auth__title serif"><em>Sign In</em></h1>
+    <p class="customer-auth__subtitle">Access your account to review orders, manage addresses, and more.</p>
+
+    {%- form 'customer_login' -%}
+      {%- if form.errors -%}
+        <div class="customer-auth__errors">
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      <div class="customer-auth__field">
+        <label for="customer-email" class="customer-auth__label">Email</label>
+        <input type="email" id="customer-email" name="customer[email]" autocomplete="email" required class="customer-auth__input">
+      </div>
+
+      <div class="customer-auth__field">
+        <label for="customer-password" class="customer-auth__label">Password</label>
+        <input type="password" id="customer-password" name="customer[password]" autocomplete="current-password" required class="customer-auth__input">
+      </div>
+
+      <button type="submit" class="btn-gold" style="width: 100%; margin-top: 1rem;">Sign In</button>
+
+      <div class="customer-auth__links">
+        <a href="{{ routes.account_recover_url }}">Forgot password?</a>
+        <a href="{{ routes.account_register_url }}">Create account</a>
+      </div>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Login",
+  "tag": "section",
+  "class": "section-customer-login"
+}
+{% endschema %}

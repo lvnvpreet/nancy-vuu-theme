@@ -1,0 +1,45 @@
+{%- comment -%} Lead Times — standard vs expedited cards {%- endcomment -%}
+<section class="lead-times reveal">
+  <div class="lead-times__inner">
+    <div class="lead-times__grid">
+      {% for block in section.blocks %}
+        <div class="lead-times__card {% if block.settings.highlight %}lead-times__card--highlight{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.badge != blank %}
+            <span class="timeline-badge">{{ block.settings.badge }}</span>
+          {% endif %}
+          <h4 class="lead-times__duration serif-font">{{ block.settings.duration }}</h4>
+          <p class="lead-times__desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lead Times",
+  "tag": "div",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "timeline",
+      "name": "Timeline Card",
+      "settings": [
+        { "type": "text",     "id": "badge",       "label": "Badge Text",    "default": "The Standard Path" },
+        { "type": "text",     "id": "duration",    "label": "Duration",      "default": "4–6 Months" },
+        { "type": "textarea", "id": "description", "label": "Description",   "default": "Immersion in the slow-craft artisan journey." },
+        { "type": "checkbox", "id": "highlight",   "label": "Highlight Card","default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lead Times",
+      "blocks": [
+        { "type": "timeline", "settings": { "badge": "The Standard Path", "duration": "4–6 Months", "description": "Immersion in the slow-craft artisan journey." } },
+        { "type": "timeline", "settings": { "badge": "The Expedited Path", "duration": "4–6 Weeks", "description": "Mastery Sprints for urgent mandates. (Availability Limited)", "highlight": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,39 @@
+{%- comment -%} Bridal Hero — 65vh window with overlay + centered text {%- endcomment -%}
+<section class="bridal-hero">
+  <div class="bridal-hero__media">
+    {% if section.settings.image %}
+      <img
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="eager"
+        class="bridal-hero__img"
+      >
+    {% else %}
+      <div class="img-placeholder dark">Cinematic Bridal Masterpiece</div>
+    {% endif %}
+  </div>
+  <div class="bridal-hero__overlay"></div>
+  <div class="bridal-hero__content">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow" style="color:{{ section.settings.text_color }};">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    <h1 class="bridal-hero__title serif-font" style="color:{{ section.settings.text_color }};">{{ section.settings.title | default: "Bridal Bespoke" }}</h1>
+    {% if section.settings.cta_label != blank %}
+      <button class="btn-luxury" data-audience-open>{{ section.settings.cta_label }}</button>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bridal Hero",
+  "tag": "div",
+  "settings": [
+    { "type": "image_picker", "id": "image",       "label": "Background Image" },
+    { "type": "text",         "id": "eyebrow",     "label": "Eyebrow",        "default": "The Sacred Architecture" },
+    { "type": "text",         "id": "title",        "label": "Title",          "default": "Bridal Bespoke" },
+    { "type": "text",         "id": "cta_label",    "label": "CTA Label",      "default": "Begin the Commission" },
+    { "type": "color",        "id": "text_color",   "label": "Text Color",     "default": "#111111" }
+  ]
+}
+{% endschema %}

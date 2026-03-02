@@ -13,7 +13,19 @@
       "previous": "Previous",
       "next": "Next"
     },
-    "password_page": { "coming_soon": "Something beautiful is coming." }
+    "password_page": { "coming_soon": "Something beautiful is coming." },
+    "search": {
+      "title": "Search",
+      "placeholder": "Search the House...",
+      "no_results": "No results found for",
+      "results_count": "{{ count }} results for"
+    },
+    "404": {
+      "title": "404",
+      "subtext": "Page Not Found",
+      "body": "The page you are looking for has moved or no longer exists.",
+      "cta": "Return Home"
+    }
   },
   "products": {
     "product": {
@@ -37,5 +49,63 @@
     "taxes_note": "Taxes and shipping calculated at checkout.",
     "view_cart": "View Full Cart",
     "shop_now": "Shop Now"
+  },
+  "customer": {
+    "account": {
+      "title": "My Account",
+      "order_history": "Order History",
+      "default_address": "Default Address",
+      "manage_addresses": "Manage Addresses",
+      "no_orders": "No orders placed yet.",
+      "no_address": "No addresses on file."
+    },
+    "login": {
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgot_password": "Forgot password?",
+      "create_account": "Create account"
+    },
+    "register": {
+      "title": "Create Account",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create Account",
+      "have_account": "Already have an account? Sign in"
+    }
+  },
+  "sections": {
+    "page_hero": {
+      "name": "Page Hero"
+    },
+    "manifesto": {
+      "name": "Manifesto"
+    },
+    "cta_closer": {
+      "name": "CTA Closer"
+    },
+    "audience_modal": {
+      "name": "Audience Modal"
+    },
+    "bridal": {
+      "scarcity": "Limited Availability",
+      "by_appointment": "By Appointment Only",
+      "request_audience": "Request an Audience"
+    },
+    "retreats": {
+      "private_invitations": "Private Invitations Only",
+      "request_audience": "Request Audience",
+      "apply": "Apply for Selection"
+    },
+    "expo": {
+      "get_tickets": "Get Free Tickets",
+      "exhibitor": "Become an Exhibitor"
+    },
+    "foundation": {
+      "corporate_engagement": "Corporate Engagement"
+    }
   }
 }

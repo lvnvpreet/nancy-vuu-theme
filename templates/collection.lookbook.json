@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "hero": {
+      "type": "collection-hero-editorial",
+      "settings": {
+        "eyebrow": "The Evidence of a Promise",
+        "overlay_opacity": 65
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "quote": "A custom gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
+      }
+    },
+    "exclusivity": {
+      "type": "exclusivity-notice",
+      "settings": {
+        "eyebrow": "Exclusivity Notice",
+        "body": "Our Couture pieces are unique masterpieces available for purchase exclusively at the Atelier. For all other commissions, the collection serves as a curated invitation for your Made-to-Measure or Bespoke order."
+      }
+    },
+    "lookbook": {
+      "type": "lookbook-grid",
+      "blocks": {
+        "look_1": { "type": "look", "settings": { "title": "The Heirloom Silhouette", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_2": { "type": "look", "settings": { "title": "The Sovereign Drape", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_3": { "type": "look", "settings": { "title": "The Grace Column", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_4": { "type": "look", "settings": { "title": "The Covenant Train", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_5": { "type": "look", "settings": { "title": "The Ethereal Mist", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_6": { "type": "look", "settings": { "title": "The Majesty Ensemble", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } }
+      },
+      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "settings": {}
+    },
+    "cross-sell": {
+      "type": "cross-sell",
+      "settings": {
+        "title": "The Crowning Moment",
+        "description": "Complete your bridal vision with hand-crafted crowns, veils, and jewelry pieces. Each accessory is designed to harmonize with your gown, creating a singular vision of majesty on your covenant day.",
+        "cta_label": "Explore Accessories",
+        "cta_link": "/collections/crowns-jewelry",
+        "primary_label": "Begin Bespoke Journey",
+        "primary_link": "/pages/bespoke-bridal",
+        "secondary_label": "Virtual Consultation"
+      }
+    }
+  },
+  "order": ["hero", "manifesto", "exclusivity", "lookbook", "cross-sell"]
+}

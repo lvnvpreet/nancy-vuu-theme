@@ -1,0 +1,53 @@
+{%- comment -%}
+  Customer registration page.
+{%- endcomment -%}
+
+<section class="customer-auth">
+  <div class="customer-auth__inner">
+    <h1 class="customer-auth__title serif"><em>Create Account</em></h1>
+    <p class="customer-auth__subtitle">Join the House of Nancy Vuu to track orders and receive exclusive invitations.</p>
+
+    {%- form 'create_customer' -%}
+      {%- if form.errors -%}
+        <div class="customer-auth__errors">
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      <div class="customer-auth__row">
+        <div class="customer-auth__field">
+          <label for="first-name" class="customer-auth__label">First Name</label>
+          <input type="text" id="first-name" name="customer[first_name]" autocomplete="given-name" required class="customer-auth__input">
+        </div>
+        <div class="customer-auth__field">
+          <label for="last-name" class="customer-auth__label">Last Name</label>
+          <input type="text" id="last-name" name="customer[last_name]" autocomplete="family-name" required class="customer-auth__input">
+        </div>
+      </div>
+
+      <div class="customer-auth__field">
+        <label for="reg-email" class="customer-auth__label">Email</label>
+        <input type="email" id="reg-email" name="customer[email]" autocomplete="email" required class="customer-auth__input">
+      </div>
+
+      <div class="customer-auth__field">
+        <label for="reg-password" class="customer-auth__label">Password</label>
+        <input type="password" id="reg-password" name="customer[password]" autocomplete="new-password" required class="customer-auth__input">
+      </div>
+
+      <button type="submit" class="btn-gold" style="width: 100%; margin-top: 1rem;">Create Account</button>
+
+      <div class="customer-auth__links">
+        <a href="{{ routes.account_login_url }}">Already have an account? Sign in</a>
+      </div>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Register",
+  "tag": "section",
+  "class": "section-customer-register"
+}
+{% endschema %}

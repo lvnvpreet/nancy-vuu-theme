@@ -1,0 +1,60 @@
+{%- comment -%}
+  Customer account page.
+{%- endcomment -%}
+
+<section class="customer-account">
+  <div class="customer-account__inner">
+    <h1 class="customer-account__title serif"><em>{{ customer.name }}</em></h1>
+    <p class="customer-account__email">{{ customer.email }}</p>
+
+    <div class="customer-account__grid">
+      {%- comment -%} ORDER HISTORY {%- endcomment -%}
+      <div class="customer-account__orders">
+        <h2 class="customer-account__heading">Order History</h2>
+        {%- if customer.orders.size > 0 -%}
+          <table class="customer-account__table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for order in customer.orders -%}
+                <tr>
+                  <td><a href="{{ order.customer_url }}">{{ order.name }}</a></td>
+                  <td>{{ order.created_at | date: "%B %d, %Y" }}</td>
+                  <td>{{ order.financial_status_label }}</td>
+                  <td>{{ order.total_price | money }}</td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        {%- else -%}
+          <p class="customer-account__empty">No orders placed yet.</p>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} DEFAULT ADDRESS {%- endcomment -%}
+      <div class="customer-account__address">
+        <h2 class="customer-account__heading">Default Address</h2>
+        {%- if customer.default_address -%}
+          <p>{{ customer.default_address | format_address }}</p>
+        {%- else -%}
+          <p class="customer-account__empty">No addresses on file.</p>
+        {%- endif -%}
+        <a href="{{ routes.account_addresses_url }}" class="btn-luxury" style="margin-top: 2rem;">Manage Addresses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Account",
+  "tag": "section",
+  "class": "section-customer-account"
+}
+{% endschema %}

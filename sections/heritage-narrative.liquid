@@ -1,0 +1,55 @@
+{%- comment -%} Heritage Narrative — "A Heritage Reclaimed" storytelling section {%- endcomment -%}
+<section class="heritage-section reveal">
+  <div class="heritage-section__inner">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    <h3 class="heritage-section__title serif-font">{{ section.settings.title | default: "The Sovereign Return" }}</h3>
+    <div class="heritage-section__body">
+      {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+          <p class="heritage-section__paragraph" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+        {% elsif block.type == 'quote' %}
+          <p class="heritage-section__quote serif-font" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Heritage Narrative",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow",  "default": "A Heritage Reclaimed" },
+    { "type": "text", "id": "title",   "label": "Title",    "default": "The Sovereign Return" }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Quote Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heritage Narrative",
+      "blocks": [
+        { "type": "paragraph", "settings": { "text": "My journey began as a refugee, leaving the shores of Vietnam with nothing but a dream. Today, I return not as a stranger, but as a restorer." } },
+        { "type": "paragraph", "settings": { "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our gowns in our Vietnam Atelier, we aren't just making a dress; we are empowering a community and honoring a lineage." } },
+        { "type": "quote", "settings": { "text": "\"From the first sketch in San Jose to the final stitch in the homeland, your gown is a physical anthem of a dream realized.\"" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

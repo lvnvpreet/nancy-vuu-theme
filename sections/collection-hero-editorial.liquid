@@ -1,0 +1,34 @@
+{%- comment -%} Collection Hero Editorial — 50vh hero with bg image + centered title {%- endcomment -%}
+<header class="collection-hero-editorial" style="margin-top: 80px;">
+  {% if section.settings.image %}
+    <div class="collection-hero-editorial__bg">
+      <img
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="eager"
+        class="collection-hero-editorial__img"
+      >
+    </div>
+  {% endif %}
+  <div class="collection-hero-editorial__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  <div class="collection-hero-editorial__content">
+    {% if section.settings.eyebrow != blank %}
+      <span class="eyebrow" style="color:#fff;">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+    <h1 class="collection-hero-editorial__title serif-font">{{ section.settings.title | default: collection.title }}</h1>
+    <div class="collection-hero-editorial__divider"></div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Collection Hero (Editorial)",
+  "tag": "div",
+  "settings": [
+    { "type": "image_picker", "id": "image",            "label": "Background Image" },
+    { "type": "range",        "id": "overlay_opacity",   "label": "Overlay Opacity", "min": 0, "max": 100, "step": 5, "default": 65 },
+    { "type": "text",         "id": "eyebrow",          "label": "Eyebrow",         "default": "The Evidence of a Promise" },
+    { "type": "text",         "id": "title",            "label": "Title" }
+  ]
+}
+{% endschema %}

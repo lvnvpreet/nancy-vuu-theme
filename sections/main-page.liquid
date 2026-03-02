@@ -1,0 +1,18 @@
+<div class="page-content">
+  <div class="page-content__inner">
+    {% if page.title != blank %}
+      <h1 class="page-content__title serif-font">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.content != blank %}
+      <div class="page-content__body body-copy">{{ page.content }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page Content",
+  "tag": "section",
+  "class": "section-page"
+}
+{% endschema %}

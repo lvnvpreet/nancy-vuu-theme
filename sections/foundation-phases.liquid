@@ -1,0 +1,89 @@
+{%- comment -%}
+  3-phase framework overview for Foundation page.
+{%- endcomment -%}
+
+<section class="foundation-phases{% if section.settings.bg_tint %} foundation-phases--tinted{% endif %}" data-section-id="{{ section.id }}">
+  <div class="foundation-phases__inner reveal">
+    {%- if section.settings.heading != blank -%}
+      <div class="foundation-phases__header">
+        <h2 class="foundation-phases__title serif"><em>{{ section.settings.heading }}</em></h2>
+        {%- if section.settings.description != blank -%}
+          <p class="foundation-phases__desc">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="foundation-phases__grid">
+      {%- for block in section.blocks -%}
+        <div class="foundation-phase-card" {{ block.shopify_attributes }}>
+          <span class="foundation-phase-card__num serif"><em>{{ block.settings.phase }}</em></span>
+          <h3 class="foundation-phase-card__title serif"><em>{{ block.settings.title }}</em></h3>
+          <p class="foundation-phase-card__desc">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Foundation Phases",
+  "class": "foundation-section-phases",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Access to Excellence Framework"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_tint",
+      "label": "Light background tint",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "phase",
+      "name": "Phase",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "phase",
+          "label": "Phase label",
+          "default": "Phase I"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Investment"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Foundation: Basic Needs & Security."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Foundation Phases",
+      "blocks": [
+        { "type": "phase", "settings": { "phase": "Phase I", "title": "Investment", "description": "Foundation: Basic Needs & Security." } },
+        { "type": "phase", "settings": { "phase": "Phase II", "title": "Freedom", "description": "Restoration: Identity & Anti-Exploitation." } },
+        { "type": "phase", "settings": { "phase": "Phase III", "title": "Pathways", "description": "Future: Education & Industry Exposure." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
