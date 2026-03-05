@@ -1,67 +1,482 @@
 {% comment %} sections/footer.liquid {% endcomment %}
-<footer id="foundation" class="site-footer" data-dark>
-  <div class="footer-inner">
-    <div class="footer-foundation">
-      <div class="footer-foundation__text reveal">
-        <span class="eyebrow" style="color:#555;">{{ section.settings.eyebrow | default: 'Give Back' }}</span>
-        <h2 class="serif-font footer-title">{{ section.settings.title | default: 'House of Vuu Foundation' }}</h2>
-        <div class="divider" style="background:#333;"></div>
-        <p class="body-copy" style="color:#aaa;">{{ section.settings.description | default: 'We exist to empower humanity. Our foundation supports global initiatives for the marginalized and the voiceless — one stitch, one life at a time.' }}</p>
-        <a href="{{ section.settings.donate_link | default: '#' }}" class="btn-editorial on-dark">{{ section.settings.donate_label | default: 'Donate / Get Involved' }}</a>
-      </div>
-      <div class="footer-chart reveal delay-100">
-        <div class="chart-container" style="max-width:280px;height:280px;">
-          <canvas id="impactChart"></canvas>
-        </div>
-        <div class="chart-legend">
-          <div class="legend-item"><span class="legend-dot" style="background:#fff;"></span><span class="eyebrow" style="color:#555;margin:0;">Outreach {{ section.settings.pct_outreach | default: 45 }}%</span></div>
-          <div class="legend-item"><span class="legend-dot" style="background:#666;"></span><span class="eyebrow" style="color:#555;margin:0;">Education {{ section.settings.pct_education | default: 30 }}%</span></div>
-          <div class="legend-item"><span class="legend-dot" style="background:#2e2e2e;border:1px solid #555;"></span><span class="eyebrow" style="color:#555;margin:0;">Aid {{ section.settings.pct_aid | default: 25 }}%</span></div>
-        </div>
-      </div>
+<style>
+  /* =========================================
+     SITE FOOTER (NOIR)
+     ========================================= */
+  .site-footer { background-color: #0c0c0c; color: #ffffff; padding: 100px 5% 40px; }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.5fr 1.5fr 2fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 80px;
+  }
+
+  .footer-brand h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    letter-spacing: 8px;
+    margin: 0 0 20px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .footer-motto {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .footer-locations { list-style: none; padding: 0; margin: 0; }
+  .footer-locations li {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888888;
+    margin-bottom: 15px;
+  }
+
+  .footer-col-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888888;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  .footer-nav { list-style: none; padding: 0; margin: 0; }
+  .footer-nav li { margin-bottom: 18px; }
+  .footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  .footer-nav a:hover { color: #888888; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .legal-links { display: flex; gap: 30px; flex-wrap: wrap; }
+  .legal-links a,
+  .footer-copyright {
+    color: #888888;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .legal-links a:hover { color: #ffffff; }
+
+  /* =========================================
+     CONCIERGE MODAL OVERLAYS
+     ========================================= */
+  .nv-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+    opacity: 0; visibility: hidden; transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+  }
+  .nv-modal-overlay.active { opacity: 1; visibility: visible; }
+
+  .nv-modal-content {
+    background: #ffffff; color: #0c0c0c;
+    width: 90%; max-width: 650px;
+    max-height: 85vh; overflow-y: auto;
+    padding: 70px 60px; position: relative;
+    transform: translateY(30px); transition: 0.4s ease;
+    border-radius: 1px;
+  }
+  .nv-modal-overlay.active .nv-modal-content { transform: translateY(0); }
+
+  .nv-modal-close {
+    position: absolute; top: 30px; right: 30px;
+    background: none; border: none;
+    font-size: 2.5rem; font-weight: 200;
+    cursor: pointer; color: #888888; line-height: 1; transition: 0.3s;
+  }
+  .nv-modal-close:hover { color: #0c0c0c; transform: rotate(90deg); }
+
+  .nv-modal-eyebrow {
+    font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+    color: #777; margin-bottom: 20px; display: block;
+    font-weight: 700; font-family: 'Manrope', sans-serif;
+  }
+  .nv-modal-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3.5rem; margin-top: 0; margin-bottom: 30px;
+    text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.1;
+  }
+  .nv-modal-body { font-size: 1.15rem; line-height: 1.8; color: #333; font-weight: 300; font-family: 'Manrope', sans-serif; }
+  .nv-modal-body p { margin-bottom: 25px; }
+  .nv-modal-body h4 {
+    font-family: 'Manrope', sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; margin-top: 40px; margin-bottom: 15px;
+    font-weight: 800; color: #0c0c0c; border-bottom: 1px solid #eee; padding-bottom: 10px;
+  }
+
+  .nv-modal-form { margin-top: 40px; }
+  .nv-modal-form input,
+  .nv-modal-form select,
+  .nv-modal-form textarea {
+    width: 100%; padding: 18px 0; border: none; border-bottom: 1px solid #ccc;
+    background: transparent; font-family: 'Manrope', sans-serif; font-size: 14px;
+    margin-bottom: 30px; outline: none; box-sizing: border-box; color: #0c0c0c;
+  }
+  .nv-modal-form input:focus,
+  .nv-modal-form select:focus,
+  .nv-modal-form textarea:focus { border-bottom-color: #0c0c0c; }
+
+  .nv-btn-submit {
+    background: #0c0c0c; color: #ffffff; padding: 22px 0; width: 100%;
+    border: 1px solid #0c0c0c; font-family: 'Manrope', sans-serif;
+    font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+    font-weight: 700; cursor: pointer; transition: 0.4s; margin-top: 10px;
+  }
+  .nv-btn-submit:hover { background: transparent; color: #0c0c0c; }
+
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+    .footer-brand { grid-column: span 2; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: span 1; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .nv-modal-content { padding: 50px 30px; width: 95%; }
+    .nv-modal-title { font-size: 2.5rem; }
+  }
+</style>
+
+<!-- =========================================
+     SITE FOOTER
+     ========================================= -->
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <h2>Nancy Vuu</h2>
+      <div class="footer-motto">Fashioned for Heaven.<br>Tailored for Earth.</div>
+      <ul class="footer-locations">
+        <li>Napa Valley</li>
+        <li>San Jose</li>
+        <li>Hawaii</li>
+        <li>Saigon</li>
+      </ul>
     </div>
-    <div class="footer-bar">
-      <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved.</p>
-      <div class="footer-social">
-        {%- if section.settings.social_instagram != blank -%}<a href="{{ section.settings.social_instagram }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">Instagram</a>{%- endif -%}
-        {%- if section.settings.social_linkedin  != blank -%}<a href="{{ section.settings.social_linkedin  }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">LinkedIn</a>{%- endif -%}
-        {%- if section.settings.social_pinterest != blank -%}<a href="{{ section.settings.social_pinterest }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">Pinterest</a>{%- endif -%}
-        <a href="/pages/contact" class="footer-link footer-copy">Contact</a>
-      </div>
+
+    <div>
+      <div class="footer-col-title">Collections</div>
+      <ul class="footer-nav">
+        <li><a href="/collections/bridal">Bridal</a></li>
+        <li><a href="/pages/seth-eden">Seth Eden</a></li>
+        <li><a href="/collections/womens-couture">Women's Couture</a></li>
+        <li><a href="/collections/the-crowning">The Crowning</a></li>
+      </ul>
     </div>
+
+    <div>
+      <div class="footer-col-title">The House</div>
+      <ul class="footer-nav">
+        <li><a href="/pages/our-story">Our Story</a></li>
+        <li><a href="/pages/ateliers">The Ateliers</a></li>
+        <li><a onclick="nvOpenModal('modal-sustainability')">Sustainability</a></li>
+        <li><a onclick="nvOpenModal('modal-journal')">The Journal</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Concierge</div>
+      <ul class="footer-nav">
+        <li><a onclick="nvOpenModal('modal-viewing')">Private Viewing</a></li>
+        <li><a onclick="nvOpenModal('modal-bespoke')">Bespoke Inquiry</a></li>
+        <li><a onclick="nvOpenModal('modal-retreats')">Private Retreats</a></li>
+        <li><a onclick="nvOpenModal('modal-care')">Care &amp; Repair</a></li>
+        <li><a onclick="nvOpenModal('modal-shipping')">Shipping &amp; Delivery</a></li>
+        <li><a onclick="nvOpenModal('modal-returns')">Returns</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Institutional</div>
+      <ul class="footer-nav">
+        <li><a href="#foundation">House of Vuu Foundation</a></li>
+        <li><a onclick="nvOpenModal('modal-gateway')">Private Prospectus &#8599;</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="legal-links">
+      <a onclick="nvOpenModal('modal-privacy')">Privacy Policy</a>
+      <a onclick="nvOpenModal('modal-terms')">Terms of Service</a>
+    </div>
+    <div class="footer-copyright">&copy; {{ 'now' | date: '%Y' }} THE HOUSE OF NANCY VUU. ALL RIGHTS RESERVED.</div>
   </div>
 </footer>
+
+<!-- =========================================
+     CONCIERGE MODALS
+     ========================================= -->
+
+<!-- PRIVATE PROSPECTUS -->
+<div class="nv-modal-overlay" id="modal-gateway">
+  <div class="nv-modal-content" style="background:#0c0c0c;color:#ffffff;">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-gateway')" style="color:#ffffff;">&#215;</button>
+    <span class="nv-modal-eyebrow" style="color:#666;">Strategic Partnership Gateway</span>
+    <h2 class="nv-modal-title" style="color:#ffffff;">The Private <br>Prospectus.</h2>
+    <div class="nv-modal-body" style="color:#cccccc;">
+      <p>The House of Nancy Vuu invites visionary leaders and institutions to explore a legacy beyond luxury. This Private Prospectus is a blueprint for <b>Global Restoration</b>—detailing our innovative models for combatting human trafficking and scaling the vocational architecture of the <i>Dream Academy</i>.</p>
+      <h4>A Blueprint for Impact</h4>
+      <p>We are seeking strategic custodians to partner with the House of Vuu Foundation in architecting a sustainable, measurable future for marginalized communities. This document outlines our five-year expansion plan, humanitarian impact reports, and institutional investment opportunities.</p>
+      <form class="nv-modal-form" onsubmit="return false;">
+        <input type="text" placeholder="FULL NAME" style="color:#ffffff;border-bottom-color:#444;" required>
+        <input type="text" placeholder="INSTITUTION / FIRM NAME" style="color:#ffffff;border-bottom-color:#444;" required>
+        <input type="text" placeholder="ROLE / TITLE WITHIN ORGANIZATION" style="color:#ffffff;border-bottom-color:#444;" required>
+        <input type="email" placeholder="CORPORATE EMAIL ADDRESS" style="color:#ffffff;border-bottom-color:#444;" required>
+        <select style="color:#888;border-bottom:1px solid #444;background:transparent;width:100%;padding:18px 0;margin-bottom:30px;font-family:'Manrope',sans-serif;outline:none;" required>
+          <option value="" disabled selected>NATURE OF INTEREST</option>
+          <option value="philanthropic">Philanthropic Partnership</option>
+          <option value="institutional">Institutional Investment</option>
+          <option value="legacy">Legacy Endowment</option>
+        </select>
+        <button type="button" class="nv-btn-submit" style="background:#ffffff;color:#000000;border-color:#ffffff;" onclick="nvCloseModal('modal-gateway')">Request Institutional Access</button>
+      </form>
+      <p style="font-size:0.8rem;color:#555;text-align:center;letter-spacing:2px;text-transform:uppercase;margin-top:20px;">Strict Discretion Assured. Secure Archival Link Provided via Executive Review.</p>
+    </div>
+  </div>
+</div>
+
+<!-- THE JOURNAL -->
+<div class="nv-modal-overlay" id="modal-journal">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-journal')">&#215;</button>
+    <span class="nv-modal-eyebrow">Sartorial Reflections</span>
+    <h2 class="nv-modal-title">The <br>Journal.</h2>
+    <div class="nv-modal-body">
+      <p>A quiet space for the visionary. We invite you to receive occasional correspondence from the desk of Nancy Vuu—unfiltered thoughts on identity architecture, sacred insights from the ateliers, and a first look at our upcoming global immersions.</p>
+      <form class="nv-modal-form" onsubmit="return false;">
+        <input type="text" placeholder="FULL NAME" required>
+        <input type="email" placeholder="EMAIL ADDRESS" required>
+        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-journal')">Join The Vanguard</button>
+      </form>
+      <p style="font-size:0.85rem;color:#888;margin-top:20px;text-align:center;letter-spacing:1px;text-transform:uppercase;">A sanctuary for privacy. Your data remains strictly archived.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVATE RETREATS -->
+<div class="nv-modal-overlay" id="modal-retreats">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-retreats')">&#215;</button>
+    <span class="nv-modal-eyebrow">CURATED EXPERIENCES</span>
+    <h2 class="nv-modal-title">PRIVATE <br>RETREATS.</h2>
+    <div class="nv-modal-body">
+      <p>The House of Nancy Vuu Retreats are immersive, high-altitude experiences designed for visionary leaders and couples. Set in the world's most breathtaking locales—from the rolling vineyards of <b>Napa Valley</b> to the volcanic shores of <b>Hawaii</b> and the ancestral landscapes of <b>Vietnam</b>.</p>
+      <h4>IDENTITY &amp; RESTORATION</h4>
+      <p>Each retreat is meticulously curated to help participants shed the "garments of survival" and step into their sovereign identity. It is a profound fusion of sartorial excellence, spiritual architecture, and ultimate restoration of soul and silhouette.</p>
+      <form class="nv-modal-form" onsubmit="return false;">
+        <input type="text" placeholder="FULL NAME(S)" required>
+        <input type="email" placeholder="CONTACT EMAIL" required>
+        <select required>
+          <option value="" disabled selected>INTERESTED LOCALE</option>
+          <option value="napa">Napa Valley (Heritage Retreat)</option>
+          <option value="hawaii">Hawaii (Island Restoration)</option>
+          <option value="vietnam">Vietnam (Ancestral Awakening)</option>
+          <option value="intl">Other International Inquiries</option>
+        </select>
+        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-retreats')">Inquire for Private Invitation</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS OF SERVICE -->
+<div class="nv-modal-overlay" id="modal-terms">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-terms')">&#215;</button>
+    <span class="nv-modal-eyebrow">LEGAL</span>
+    <h2 class="nv-modal-title">TERMS OF <br>SERVICE.</h2>
+    <div class="nv-modal-body">
+      <p>By accessing the digital properties or physical ateliers of Nancy Vuu, you agree to the following conditions of engagement.</p>
+      <h4>BESPOKE &amp; COUTURE COMMISSIONS</h4>
+      <p>All bespoke garments are architected to the exact specifications of the client. Due to the intensely personalized nature of this art, all deposits and payments for custom commissions are strictly non-refundable and final sale once the curation and architecture process begins.</p>
+      <h4>RUNWAY &amp; ARCHIVAL SAMPLES</h4>
+      <p>Pieces acquired from our Runway Collections, Boutique Samples, or Archival Exhibitions are unique historical assets. As such, all sales for these items are strictly non-refundable and non-exchangeable.</p>
+      <h4>SALES &amp; RETURNS</h4>
+      <p>Eligible ready-to-wear pieces may be returned within 14 days of delivery, provided the garment is unworn, unaltered, in pristine condition, and retains all original archival tags.</p>
+      <h4>INTELLECTUAL PROPERTY</h4>
+      <p>All designs, imagery, photography, and text on this website are the exclusive intellectual property of The House of Nancy Vuu. Unauthorized reproduction, distribution, or commercial exploitation is strictly prohibited and protected under international law.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RETURN POLICY -->
+<div class="nv-modal-overlay" id="modal-returns">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-returns')">&#215;</button>
+    <span class="nv-modal-eyebrow">THE CONCIERGE</span>
+    <h2 class="nv-modal-title">RETURN <br>POLICY.</h2>
+    <div class="nv-modal-body">
+      <p>Should an eligible ready-to-wear piece not perfectly align with your vision, we accept returns initiated <b>within 14 days of delivery</b>, provided the garment is unworn, unaltered, in pristine condition, and retains all original archival tags.</p>
+      <h4>FINAL SALE EXCLUSIONS</h4>
+      <p>Due to their exclusive nature, all Custom, Bespoke, and Made-to-Measure (MTM) commissions, as well as <b>runway samples and boutique exhibition pieces</b>, are strictly final sale and non-refundable.</p>
+      <p style="margin-top:40px;font-family:'Manrope',sans-serif;font-size:0.95rem;color:#111;line-height:2;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
+        Email: <a href="mailto:info@nancyvuu.com" style="color:inherit;text-decoration:none;border-bottom:1px solid #ccc;">info@nancyvuu.com</a><br>
+        Phone: 408.800.2079
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SHIPPING & DELIVERY -->
+<div class="nv-modal-overlay" id="modal-shipping">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-shipping')">&#215;</button>
+    <span class="nv-modal-eyebrow">THE CONCIERGE</span>
+    <h2 class="nv-modal-title">SECURE <br>DELIVERY.</h2>
+    <div class="nv-modal-body">
+      <p>The House of Nancy Vuu facilitates the seamless transport of your commissions worldwide. Every piece undergoes a multi-point master inspection before being archived in our signature protective packaging for transit.</p>
+      <h4>INSURED TRANSIT</h4>
+      <p>To protect your investment, all shipments are dispatched via elite courier services with full archival insurance. A signature from the authorized recipient is required upon arrival.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CARE & REPAIR -->
+<div class="nv-modal-overlay" id="modal-care">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-care')">&#215;</button>
+    <span class="nv-modal-eyebrow">THE CONCIERGE</span>
+    <h2 class="nv-modal-title">ARCHIVAL <br>PRESERVATION.</h2>
+    <div class="nv-modal-body">
+      <p>A Nancy Vuu garment is a generational asset. To ensure your couture remains pristine, we offer exclusive preservation services, including structural tailoring, intricate bead restoration, and specialized fabric care.</p>
+      <form class="nv-modal-form" onsubmit="return false;">
+        <input type="text" placeholder="FULL NAME" required>
+        <textarea placeholder="DESCRIBE THE CARE NEEDED FOR YOUR GARMENT..." style="height:100px;"></textarea>
+        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-care')">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SUSTAINABILITY -->
+<div class="nv-modal-overlay" id="modal-sustainability">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-sustainability')">&#215;</button>
+    <span class="nv-modal-eyebrow">THE HOUSE PHILOSOPHY</span>
+    <h2 class="nv-modal-title">ETHOS OF <br>CREATION.</h2>
+    <div class="nv-modal-body">
+      <p>True luxury is inextricably linked to human dignity and ecological stewardship. We vehemently reject the destructive cycles of fast fashion, choosing instead to architect garments that transcend generations.</p>
+      <h4>Ethical Sourcing &amp; Labor</h4>
+      <p>Every textile is sourced with profound intentionality. Our ateliers operate under the highest standards of fair labor, ensuring that the hands which craft our couture are honored and protected.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVATE VIEWING -->
+<div class="nv-modal-overlay" id="modal-viewing">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-viewing')">&#215;</button>
+    <span class="nv-modal-eyebrow">THE ATELIER EXPERIENCE</span>
+    <h2 class="nv-modal-title">REQUEST A <br>PRIVATE VIEWING.</h2>
+    <div class="nv-modal-body">
+      <p>Step behind the velvet ropes. We invite discerning clients to request a private fitting at one of our global ateliers in Napa Valley, San Jose, Hawaii, or Saigon.</p>
+      <form class="nv-modal-form" onsubmit="return false;">
+        <input type="text" placeholder="FULL NAME" required>
+        <select required>
+          <option value="" disabled selected>SELECT LOCATION</option>
+          <option value="sanjose">San Jose Flagship</option>
+          <option value="napa">Napa Valley Estate</option>
+          <option value="hawaii">Hawaii Residence</option>
+          <option value="saigon">Saigon Atelier</option>
+        </select>
+        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-viewing')">Request Access</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- BESPOKE INQUIRY -->
+<div class="nv-modal-overlay" id="modal-bespoke">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-bespoke')">&#215;</button>
+    <span class="nv-modal-eyebrow">COUTURE COMMISSION</span>
+    <h2 class="nv-modal-title">COMMISSION <br>AN HEIRLOOM.</h2>
+    <div class="nv-modal-body">
+      <p>The bespoke journey is the pinnacle of luxury. Nancy Vuu and her master tailors work intimately with you to architect a one-of-a-kind garment that perfectly embodies your ultimate identity.</p>
+      <form class="nv-modal-form" onsubmit="return false;">
+        <input type="text" placeholder="NAME" required>
+        <select required>
+          <option value="" disabled selected>TYPE OF COMMISSION</option>
+          <option value="bridal">Bespoke Bridal</option>
+          <option value="couture">Evening Couture</option>
+          <option value="mens">Seth Eden Tailoring</option>
+        </select>
+        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-bespoke')">Initiate Commission</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="nv-modal-overlay" id="modal-privacy">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="nvCloseModal('modal-privacy')">&#215;</button>
+    <span class="nv-modal-eyebrow">LEGAL</span>
+    <h2 class="nv-modal-title">PRIVACY <br>POLICY.</h2>
+    <div class="nv-modal-body">
+      <p>The House of Nancy Vuu protects client data with absolute discretion. We do not sell or trade personal information. Data is used solely for facilitating secure commissions.</p>
+    </div>
+  </div>
+</div>
+
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var ctx = document.getElementById('impactChart');
-    if (!ctx || !window.Chart) return;
-    new Chart(ctx.getContext('2d'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Outreach','Education','Aid'],
-        datasets: [{ data: [{{ section.settings.pct_outreach | default: 45 }},{{ section.settings.pct_education | default: 30 }},{{ section.settings.pct_aid | default: 25 }}], backgroundColor: ['#ffffff','#666666','#2e2e2e'], borderWidth: 0, hoverOffset: 6 }]
-      },
-      options: { responsive: true, maintainAspectRatio: false, cutout: '82%', plugins: { legend: { display: false }, tooltip: { backgroundColor: '#fff', titleColor: '#111', bodyColor: '#555', borderColor: '#333', borderWidth: 1, padding: 10, titleFont: { family: 'Manrope', size: 11, weight: '600' }, bodyFont: { family: 'Manrope', size: 10 } } } }
-    });
+  function nvOpenModal(modalId) {
+    document.getElementById(modalId).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function nvCloseModal(modalId) {
+    document.getElementById(modalId).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('nv-modal-overlay')) {
+      e.target.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   });
 </script>
+
 {% schema %}
 {
-  "name": "Footer",
-  "settings": [
-    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",              "default": "Give Back" },
-    { "type": "text",     "id": "title",             "label": "Foundation title",     "default": "House of Vuu Foundation" },
-    { "type": "textarea", "id": "description",       "label": "Description" },
-    { "type": "text",     "id": "donate_label",      "label": "Donate button text",   "default": "Donate / Get Involved" },
-    { "type": "url",      "id": "donate_link",       "label": "Donate link" },
-    { "type": "header",   "content": "Impact Chart" },
-    { "type": "range",    "id": "pct_outreach",      "label": "Outreach %",   "min": 0, "max": 100, "step": 1, "default": 45 },
-    { "type": "range",    "id": "pct_education",     "label": "Education %",  "min": 0, "max": 100, "step": 1, "default": 30 },
-    { "type": "range",    "id": "pct_aid",           "label": "Aid %",        "min": 0, "max": 100, "step": 1, "default": 25 },
-    { "type": "header",   "content": "Social Links" },
-    { "type": "url",      "id": "social_instagram",  "label": "Instagram URL" },
-    { "type": "url",      "id": "social_linkedin",   "label": "LinkedIn URL" },
-    { "type": "url",      "id": "social_pinterest",  "label": "Pinterest URL" }
-  ]
+  "name": "Footer"
 }
 {% endschema %}
