@@ -181,38 +181,42 @@
   <div class="footer-grid">
 
     <div class="footer-brand">
-      <h2>Nancy Vuu</h2>
-      <div class="footer-motto">Fashioned for Heaven.<br>Tailored for Earth.</div>
+      <h2>{{ section.settings.brand_name | default: 'Nancy Vuu' }}</h2>
+      <div class="footer-motto">{{ section.settings.brand_tagline | default: 'Fashioned for Heaven.<br>Tailored for Earth.' }}</div>
       <ul class="footer-locations">
-        <li>Napa Valley</li>
-        <li>San Jose</li>
-        <li>Hawaii</li>
-        <li>Saigon</li>
+        {%- if section.settings.location_1 != blank -%}<li>{{ section.settings.location_1 }}</li>{%- endif -%}
+        {%- if section.settings.location_2 != blank -%}<li>{{ section.settings.location_2 }}</li>{%- endif -%}
+        {%- if section.settings.location_3 != blank -%}<li>{{ section.settings.location_3 }}</li>{%- endif -%}
+        {%- if section.settings.location_4 != blank -%}<li>{{ section.settings.location_4 }}</li>{%- endif -%}
       </ul>
     </div>
 
     <div>
-      <div class="footer-col-title">Collections</div>
+      <div class="footer-col-title">{{ section.settings.col1_title | default: 'Collections' }}</div>
       <ul class="footer-nav">
-        <li><a href="/collections/bridal">Bridal</a></li>
-        <li><a href="/pages/seth-eden">Seth Eden</a></li>
-        <li><a href="/collections/womens-couture">Women's Couture</a></li>
-        <li><a href="/collections/the-crowning">The Crowning</a></li>
+        {%- if section.settings.col1_menu != blank -%}
+          {%- for link in linklists[section.settings.col1_menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        {%- endif -%}
       </ul>
     </div>
 
     <div>
-      <div class="footer-col-title">The House</div>
+      <div class="footer-col-title">{{ section.settings.col2_title | default: 'The House' }}</div>
       <ul class="footer-nav">
-        <li><a href="/pages/our-story">Our Story</a></li>
-        <li><a href="/pages/ateliers">The Ateliers</a></li>
+        {%- if section.settings.col2_menu != blank -%}
+          {%- for link in linklists[section.settings.col2_menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        {%- endif -%}
         <li><a onclick="nvOpenModal('modal-sustainability')">Sustainability</a></li>
         <li><a onclick="nvOpenModal('modal-journal')">The Journal</a></li>
       </ul>
     </div>
 
     <div>
-      <div class="footer-col-title">Concierge</div>
+      <div class="footer-col-title">{{ section.settings.col3_title | default: 'Concierge' }}</div>
       <ul class="footer-nav">
         <li><a onclick="nvOpenModal('modal-viewing')">Private Viewing</a></li>
         <li><a onclick="nvOpenModal('modal-bespoke')">Bespoke Inquiry</a></li>
@@ -224,9 +228,13 @@
     </div>
 
     <div>
-      <div class="footer-col-title">Institutional</div>
+      <div class="footer-col-title">{{ section.settings.col4_title | default: 'Institutional' }}</div>
       <ul class="footer-nav">
-        <li><a href="#foundation">House of Vuu Foundation</a></li>
+        {%- if section.settings.col4_menu != blank -%}
+          {%- for link in linklists[section.settings.col4_menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        {%- endif -%}
         <li><a onclick="nvOpenModal('modal-gateway')">Private Prospectus &#8599;</a></li>
       </ul>
     </div>
@@ -238,7 +246,7 @@
       <a onclick="nvOpenModal('modal-privacy')">Privacy Policy</a>
       <a onclick="nvOpenModal('modal-terms')">Terms of Service</a>
     </div>
-    <div class="footer-copyright">&copy; {{ 'now' | date: '%Y' }} THE HOUSE OF NANCY VUU. ALL RIGHTS RESERVED.</div>
+    <div class="footer-copyright">&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_name | default: 'THE HOUSE OF NANCY VUU' }}. ALL RIGHTS RESERVED.</div>
   </div>
 </footer>
 
@@ -477,6 +485,28 @@
 
 {% schema %}
 {
-  "name": "Footer"
+  "name": "Footer",
+  "settings": [
+    { "type": "header",   "content": "Brand" },
+    { "type": "text",     "id": "brand_name",     "label": "Brand name",    "default": "Nancy Vuu" },
+    { "type": "text",     "id": "brand_tagline",  "label": "Tagline",       "default": "Fashioned for Heaven. Tailored for Earth." },
+    { "type": "text",     "id": "copyright_name", "label": "Copyright name","default": "THE HOUSE OF NANCY VUU" },
+    { "type": "header",   "content": "Locations" },
+    { "type": "text",     "id": "location_1",     "label": "Location 1",    "default": "Napa Valley" },
+    { "type": "text",     "id": "location_2",     "label": "Location 2",    "default": "San Jose" },
+    { "type": "text",     "id": "location_3",     "label": "Location 3",    "default": "Hawaii" },
+    { "type": "text",     "id": "location_4",     "label": "Location 4",    "default": "Saigon" },
+    { "type": "header",   "content": "Column 1 — Collections" },
+    { "type": "text",     "id": "col1_title",     "label": "Column title",  "default": "Collections" },
+    { "type": "link_list","id": "col1_menu",      "label": "Menu",          "info": "Select a menu from Online Store › Navigation" },
+    { "type": "header",   "content": "Column 2 — The House" },
+    { "type": "text",     "id": "col2_title",     "label": "Column title",  "default": "The House" },
+    { "type": "link_list","id": "col2_menu",      "label": "Menu",          "info": "Sustainability & Journal links are always shown below the menu" },
+    { "type": "header",   "content": "Column 3 — Concierge" },
+    { "type": "text",     "id": "col3_title",     "label": "Column title",  "default": "Concierge" },
+    { "type": "header",   "content": "Column 4 — Institutional" },
+    { "type": "text",     "id": "col4_title",     "label": "Column title",  "default": "Institutional" },
+    { "type": "link_list","id": "col4_menu",      "label": "Menu",          "info": "Private Prospectus link is always shown below the menu" }
+  ]
 }
 {% endschema %}
