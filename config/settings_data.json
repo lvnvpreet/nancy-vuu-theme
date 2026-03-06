@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_ink": "#0f0f0f",
@@ -23,17 +32,20 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "eyebrow": "Give Back",
-          "title": "House of Vuu Foundation",
-          "description": "We exist to empower humanity. Our foundation supports global initiatives for the marginalized and the voiceless — one stitch, one life at a time.",
-          "donate_label": "Donate / Get Involved",
-          "donate_link": "",
-          "pct_outreach": 45,
-          "pct_education": 30,
-          "pct_aid": 25,
-          "social_instagram": "",
-          "social_linkedin": "",
-          "social_pinterest": ""
+          "brand_name": "Nancy Vuu",
+          "brand_tagline": "Fashioned for Heaven. Tailored for Earth.",
+          "copyright_name": "THE HOUSE OF NANCY VUU",
+          "location_1": "Napa Valley",
+          "location_2": "San Jose",
+          "location_3": "Hawaii",
+          "location_4": "Saigon",
+          "col1_title": "Collections",
+          "col1_menu": "collection-links",
+          "col2_title": "The House",
+          "col2_menu": "",
+          "col3_title": "Concierge",
+          "col4_title": "Institutional",
+          "col4_menu": ""
         }
       }
     },
