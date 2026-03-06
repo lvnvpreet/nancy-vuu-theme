@@ -98,40 +98,12 @@
     color: #555 !important;
     margin: 0 !important;
   }
-  .foundation-section .footer-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .foundation-section .footer-copy {
-    font-family: 'Manrope', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #444;
-    margin: 0;
-  }
-  .foundation-section .footer-social { display: flex; gap: 24px; flex-wrap: wrap; }
-  .foundation-section .footer-link {
-    font-family: 'Manrope', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #444;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .foundation-section .footer-link:hover { color: #ffffff; }
-
   @media (max-width: 768px) {
     .foundation-section .footer-foundation { grid-template-columns: 1fr; gap: 60px; }
   }
 </style>
 
-<footer id="foundation" class="foundation-section" data-dark>
+<section id="foundation" class="foundation-section" data-dark>
   <div class="footer-inner">
     <div class="footer-foundation">
       <div class="footer-foundation__text reveal">
@@ -152,17 +124,8 @@
         </div>
       </div>
     </div>
-    <div class="footer-bar">
-      <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved.</p>
-      <div class="footer-social">
-        {%- if section.settings.social_instagram != blank -%}<a href="{{ section.settings.social_instagram }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">Instagram</a>{%- endif -%}
-        {%- if section.settings.social_linkedin  != blank -%}<a href="{{ section.settings.social_linkedin  }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">LinkedIn</a>{%- endif -%}
-        {%- if section.settings.social_pinterest != blank -%}<a href="{{ section.settings.social_pinterest }}" class="footer-link footer-copy" target="_blank" rel="noopener noreferrer">Pinterest</a>{%- endif -%}
-        <a href="/pages/contact" class="footer-link footer-copy">Contact</a>
-      </div>
-    </div>
   </div>
-</footer>
+</section>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('impactChart');
