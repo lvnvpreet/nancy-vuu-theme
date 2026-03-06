@@ -1,6 +1,5 @@
 {
   "name": "Seth Eden",
-  "layout": "seth-eden",
   "sections": {
     "seth_hero": {
       "type": "seth-split-hero",
