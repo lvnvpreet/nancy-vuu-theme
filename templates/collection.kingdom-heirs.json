@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "hero": {
+      "type": "collection-hero-editorial",
+      "settings": {
+        "eyebrow": "The Next Generation of Purpose",
+        "overlay_opacity": 70
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "quote": "The crown is not merely an accessory; it is the physical proof of an invisible calling. Kingdom Heirs is our limited-edition lifestyle collection designed for the appointed youth—those whose presence announces a future that has already been written. We clothe them not for fashion, but for destiny.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
+      }
+    },
+    "exclusivity": {
+      "type": "exclusivity-notice",
+      "settings": {
+        "eyebrow": "Limited Availability",
+        "body": "Kingdom Heirs is a limited-availability lifestyle line. Select pieces are available for direct acquisition in the Atelier, with worldwide delivery for accessories. Each drop is intentionally small — designed for exclusivity."
+      }
+    },
+    "lookbook": {
+      "type": "lookbook-grid",
+      "blocks": {
+        "look_1": { "type": "look", "settings": { "title": "The Heir's Streetwear", "subtitle": "Luxe Hoodie in Organic Cotton with Crown Embroidery", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
+        "look_2": { "type": "look", "settings": { "title": "The Mandate Tee", "subtitle": "Heavyweight Cotton Statement Piece", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
+        "look_3": { "type": "look", "settings": { "title": "The Garden Bomber", "subtitle": "Silk-Blend Youth Bomber Jacket", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
+        "look_4": { "type": "look", "settings": { "title": "The Destiny Cap", "subtitle": "Structured Cap with Embossed Crown Logo", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
+        "look_5": { "type": "look", "settings": { "title": "The Covenant Joggers", "subtitle": "Premium Jogger Set with Heritage Detailing", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
+        "look_6": { "type": "look", "settings": { "title": "The Little King", "subtitle": "Leather Backpack with Crown Hardware", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } }
+      },
+      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "settings": {}
+    },
+    "cross-sell": {
+      "type": "cross-sell",
+      "settings": {
+        "title": "The Crowning Accessory",
+        "description": "Kingdom Heirs accessories and jewelry are curated for direct acquisition and worldwide delivery. Every piece is prepared for secure shipment—a tangible mark of inherited greatness.",
+        "cta_label": "Procure Online",
+        "cta_link": "/collections/crowns-jewelry",
+        "primary_label": "Book Atelier Visit",
+        "primary_link": "/pages/bridal",
+        "secondary_label": "Virtual Consultation"
+      }
+    }
+  },
+  "order": ["hero", "manifesto", "exclusivity", "lookbook", "cross-sell"]
+}

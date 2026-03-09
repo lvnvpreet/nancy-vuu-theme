@@ -1,0 +1,55 @@
+{%- comment -%} Photography — Press strip: publication names {%- endcomment -%}
+<section class="photo-press" data-section-id="{{ section.id }}">
+  <div class="photo-press__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow photo-press__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    <div class="photo-press__logos">
+      {%- for block in section.blocks -%}
+        <span class="photo-press__name" {{ block.shopify_attributes }}>{{ block.settings.name }}</span>
+        {%- unless forloop.last -%}<span class="photo-press__divider" aria-hidden="true">|</span>{%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Photo Press Strip",
+  "class": "photo-section-press",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Aesthetic Recognized By"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "publication",
+      "name": "Publication",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Publication Name",
+          "default": "VOGUE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Press Strip",
+      "blocks": [
+        { "type": "publication", "settings": { "name": "VOGUE" } },
+        { "type": "publication", "settings": { "name": "ELLE" } },
+        { "type": "publication", "settings": { "name": "HARPER'S BAZAAR" } },
+        { "type": "publication", "settings": { "name": "THE COSMOPOLITAN" } },
+        { "type": "publication", "settings": { "name": "BRIDES" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

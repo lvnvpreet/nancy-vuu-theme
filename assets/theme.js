@@ -4,45 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ── CUSTOM CURSOR ─────────────────────────────────────────
-  var cursor     = document.getElementById('cursor');
-  var cursorRing = document.getElementById('cursor-ring');
-
-  if (cursor && cursorRing) {
-    var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-    document.addEventListener('mousemove', function(e) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top  = mouseY + 'px';
-
-      var el = document.elementFromPoint(mouseX, mouseY);
-      var isDark = el && el.closest('[data-dark]');
-      cursor.classList.toggle('on-dark', !!isDark);
-      cursorRing.classList.toggle('on-dark', !!isDark);
-    });
-
-    (function animateCursor() {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
-      cursorRing.style.left = ringX + 'px';
-      cursorRing.style.top  = ringY + 'px';
-      requestAnimationFrame(animateCursor);
-    })();
-
-    document.querySelectorAll('a, button').forEach(function(el) {
-      el.addEventListener('mouseenter', function() {
-        cursor.classList.add('is-hovering');
-        cursorRing.classList.add('is-hovering');
-      });
-      el.addEventListener('mouseleave', function() {
-        cursor.classList.remove('is-hovering');
-        cursorRing.classList.remove('is-hovering');
-      });
-    });
-  }
-
   // ── SCROLL PROGRESS ───────────────────────────────────────
   var progressBar = document.getElementById('scroll-progress');
   if (progressBar) {

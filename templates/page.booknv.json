@@ -1,0 +1,108 @@
+{
+  "name": "BookNV — Fashioned for Heaven",
+  "sections": {
+    "booknv_hero": {
+      "type": "booknv-hero",
+      "settings": {
+        "eyebrow": "Creative Director | Fashion Designer | Philanthropist",
+        "title_pre_italic": "Fashioned",
+        "title_italic": "for",
+        "title_post_italic": "Heaven.",
+        "description": "From a refugee journey to styling NBA/NFL icons and Royalty. Nancy Vuu deconstructs survival to build legacies of significance through the power of identity.",
+        "cta_label": "Inquire for Your Stage",
+        "cta_link": "#inquiry"
+      }
+    },
+    "booknv_press": {
+      "type": "booknv-press",
+      "settings": {
+        "eyebrow": "As Seen In & Recognized By"
+      },
+      "blocks": {
+        "press_1": { "type": "logo", "settings": { "name": "VOGUE"            } },
+        "press_2": { "type": "logo", "settings": { "name": "ELLE"             } },
+        "press_3": { "type": "logo", "settings": { "name": "HARPER'S BAZAAR"  } },
+        "press_4": { "type": "logo", "settings": { "name": "BRIDES"           } },
+        "press_5": { "type": "logo", "settings": { "name": "HUFFPOST"         } },
+        "press_6": { "type": "logo", "settings": { "name": "EVENING STANDARD" } }
+      },
+      "block_order": ["press_1", "press_2", "press_3", "press_4", "press_5", "press_6"]
+    },
+    "booknv_book": {
+      "type": "booknv-book",
+      "settings": {
+        "eyebrow": "The Published Authority",
+        "title_line_1": "Let There Be",
+        "title_line_2": "Fashion.",
+        "subtitle": "A Story of Style, Spirit, and a Life Transformed.",
+        "body": "Fashion designer and faith-builder Nancy Vuu invites you behind the runway into the deeper layers of her life. This isn't just a book\u2014it's a revelation of a woman who dared to leap into purpose and merge fashion with faith.",
+        "cta_label": "Order the Revelation",
+        "cta_link": "https://www.nancyvuu.com/bookshelf/p/harvest-moon-cup-5fc72-2y79w-64lsr",
+        "cta_new_tab": true
+      },
+      "blocks": {
+        "feat_1": { "type": "feature", "settings": { "text": "The spiritual stirrings that shaped a global fashion mission"    } },
+        "feat_2": { "type": "feature", "settings": { "text": "Unfiltered moments of surrender, struggle, and bold belief"      } },
+        "feat_3": { "type": "feature", "settings": { "text": "How a single \"yes\" opened doors around the world"              } },
+        "feat_4": { "type": "feature", "settings": { "text": "Why fashion is more than fabric\u2014it's a force of purpose"    } }
+      },
+      "block_order": ["feat_1", "feat_2", "feat_3", "feat_4"]
+    },
+    "booknv_story": {
+      "type": "booknv-story",
+      "settings": {
+        "eyebrow": "The Origin Story",
+        "title_line_1": "Survival to",
+        "title_line_2": "Significance.",
+        "body_1": "Nancy Vuu\u2019s journey from a childhood refugee journey to dressing the elite of the NBA, NFL, and Global Royalty is a masterclass in Identity Architecture.",
+        "body_2": "She is an Advisor and Mentor who catalyzes a shift in how audiences view their own design. By weaving high-fashion and humanitarian advocacy, Nancy provides the blueprint for excellence and the courage to realize the unseen.",
+        "cta_label": "Book Nancy Vuu",
+        "cta_link": "#inquiry"
+      }
+    },
+    "booknv_topics": {
+      "type": "booknv-topics",
+      "settings": {
+        "eyebrow": "Signature Topics",
+        "heading_line_1": "The Frameworks",
+        "heading_line_2": "of Impact"
+      },
+      "blocks": {
+        "topic_1": { "type": "topic", "settings": { "number": "I.",   "title_line_1": "The Identity",  "title_line_2": "Architect\u2122",          "body": "<p>A masterclass on deconstructing the \"garments of survival.\" Nancy teaches leaders how to redesign their internal landscape to match their heavenly purpose.</p>" } },
+        "topic_2": { "type": "topic", "settings": { "number": "II.",  "title_line_1": "The Influence", "title_line_2": "Blueprint",              "body": "<p>Lessons from styling NBA/NFL elite and Royalty. How to command a presence that communicates authority and excellence before a word is spoken.</p>" } },
+        "topic_3": { "type": "topic", "settings": { "number": "III.", "title_line_1": "Philanthropy",  "title_line_2": "by Design",              "body": "<p>Utilizing global platforms to solve humanitarian crises. Featuring insights from the House of Vuu Foundation's work in anti-trafficking and education.</p>" } },
+        "topic_4": { "type": "topic", "settings": { "number": "IV.",  "title_line_1": "Let There",     "title_line_2": "Be Fashion",             "body": "<p>An exploration of the spiritual intersection between faith, identity, and the global language of beauty as a tool for cultural transformation.</p>" } },
+        "topic_5": { "type": "topic", "settings": { "number": "V.",   "title_line_1": "The Dream",     "title_line_2": "Realized Framework\u2122", "body": "<p><strong>Discover. Believe. Realize.</strong> Nancy provides the practical, three-step blueprint to uncovering your inherent dream and architecting the pathway to its physical realization.</p>" } }
+      },
+      "block_order": ["topic_1", "topic_2", "topic_3", "topic_4", "topic_5"]
+    },
+    "booknv_inquiry": {
+      "type": "booknv-inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "heading": "Inquire for your stage.",
+        "subtext": "Connect with Nancy Vuu's executive team for 2026 engagements.",
+        "label_name": "FULL NAME / ORGANIZATION",
+        "label_email": "CONTACT EMAIL",
+        "label_type": "TYPE OF ENGAGEMENT",
+        "label_message": "WHICH SIGNATURE TOPIC ARE YOU INTERESTED IN?",
+        "submit_label": "Request Availability"
+      },
+      "blocks": {
+        "eng_1": { "type": "engagement_type", "settings": { "label": "Keynote Speaking",       "value": "keynote"    } },
+        "eng_2": { "type": "engagement_type", "settings": { "label": "Executive Mentorship",   "value": "mentorship" } },
+        "eng_3": { "type": "engagement_type", "settings": { "label": "Foundation Partnership", "value": "foundation" } },
+        "eng_4": { "type": "engagement_type", "settings": { "label": "Elite Image Advisory",   "value": "advisory"   } }
+      },
+      "block_order": ["eng_1", "eng_2", "eng_3", "eng_4"]
+    }
+  },
+  "order": [
+    "booknv_hero",
+    "booknv_press",
+    "booknv_book",
+    "booknv_story",
+    "booknv_topics",
+    "booknv_inquiry"
+  ]
+}

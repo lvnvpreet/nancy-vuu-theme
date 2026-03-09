@@ -1,0 +1,114 @@
+{%- comment -%} Crowning Pathways — black bg, 2 cards (Shop + Book) with crown name pill tags as blocks {%- endcomment -%}
+<section class="crowning-pathways" id="{{ section.settings.section_id | default: 'pathways' }}" data-section-id="{{ section.id }}">
+  <div class="crowning-pathways__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow crowning-pathways__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    <h2 class="crowning-pathways__heading serif-font">
+      {{ section.settings.heading_line_1 }}
+      {%- if section.settings.heading_line_2 != blank -%}<br>{{ section.settings.heading_line_2 }}{%- endif -%}
+    </h2>
+  </div>
+
+  <div class="crowning-pathways__grid">
+
+    <!-- Card 1: Shop The Collection -->
+    <div class="path-card" id="{{ section.settings.card1_anchor | default: 'shop' }}">
+      {%- if section.settings.card1_eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.card1_eyebrow }}</span>
+      {%- endif -%}
+      <h3 class="serif-font">{{ section.settings.card1_title }}</h3>
+      {%- if section.settings.card1_body != blank -%}
+        <p>{{ section.settings.card1_body }}</p>
+      {%- endif -%}
+
+      {%- assign crown_names = section.blocks | where: 'type', 'crown_name' -%}
+      {%- if crown_names.size > 0 -%}
+        <div class="crown-names">
+          {%- for block in crown_names -%}
+            <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.card1_body_2 != blank -%}
+        <p style="font-size: 0.95rem; margin-bottom: 40px;">{{ section.settings.card1_body_2 }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.card1_cta_label != blank -%}
+        <a href="{{ section.settings.card1_cta_link | default: '#' }}" class="btn-nv path-card__cta--white">{{ section.settings.card1_cta_label }}</a>
+      {%- endif -%}
+    </div>
+
+    <!-- Card 2: Book The Experience -->
+    <div class="path-card" id="{{ section.settings.card2_anchor | default: 'book' }}">
+      {%- if section.settings.card2_eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.card2_eyebrow }}</span>
+      {%- endif -%}
+      <h3 class="serif-font">{{ section.settings.card2_title }}</h3>
+      {%- if section.settings.card2_body != blank -%}
+        <p>{{ section.settings.card2_body }}</p>
+      {%- endif -%}
+      {%- if section.settings.card2_body_2 != blank -%}
+        <p style="font-size: 0.95rem; margin-top: 30px; margin-bottom: 40px;">{{ section.settings.card2_body_2 }}</p>
+      {%- endif -%}
+      {%- if section.settings.card2_cta_label != blank -%}
+        <a href="{{ section.settings.card2_cta_link | default: '#partnerships' }}" class="btn-nv path-card__cta--outline">{{ section.settings.card2_cta_label }}</a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crowning Pathways",
+  "class": "crowning-section-pathways",
+  "settings": [
+    { "type": "text",     "id": "section_id",      "label": "Section anchor ID",        "default": "pathways"      },
+    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",                  "default": "Two Paths of Elevation" },
+    { "type": "text",     "id": "heading_line_1",   "label": "Heading — Line 1",         "default": "Receive Your"  },
+    { "type": "text",     "id": "heading_line_2",   "label": "Heading — Line 2",         "default": "Inheritance."  },
+    { "type": "header",   "content": "Card 1 — Shop The Collection" },
+    { "type": "text",     "id": "card1_anchor",     "label": "Card 1 anchor ID",         "default": "shop"          },
+    { "type": "text",     "id": "card1_eyebrow",    "label": "Card 1 Eyebrow",           "default": "Personal Elevation" },
+    { "type": "text",     "id": "card1_title",      "label": "Card 1 Title",             "default": "Shop The Collection" },
+    { "type": "textarea", "id": "card1_body",       "label": "Card 1 Body",              "default": "Acquire a physical manifestation of your calling. Whether worn upon the head or pinned near the heart, each piece is an architectural masterpiece of intention." },
+    { "type": "textarea", "id": "card1_body_2",     "label": "Card 1 Body 2 (smaller)",  "default": "When you purchase from The Collection, you are securing a daily reminder of your absolute worth and undeniable purpose." },
+    { "type": "text",     "id": "card1_cta_label",  "label": "Card 1 CTA Label",         "default": "Enter The Boutique" },
+    { "type": "url",      "id": "card1_cta_link",   "label": "Card 1 CTA Link"           },
+    { "type": "header",   "content": "Card 2 — Book The Experience" },
+    { "type": "text",     "id": "card2_anchor",     "label": "Card 2 anchor ID",         "default": "book"          },
+    { "type": "text",     "id": "card2_eyebrow",    "label": "Card 2 Eyebrow",           "default": "Corporate & Live Events" },
+    { "type": "text",     "id": "card2_title",      "label": "Card 2 Title",             "default": "Book The Experience" },
+    { "type": "textarea", "id": "card2_body",       "label": "Card 2 Body",              "default": "A transformative live installation. Book Nancy Vuu and her executive team to facilitate a sacred, literal act of crowning for your organization, retreat, or VIP audience." },
+    { "type": "textarea", "id": "card2_body_2",     "label": "Card 2 Body 2 (smaller)",  "default": "As we crown individuals, we speak a word of profound truth, declaring destiny over them. Every crown presented bears a name that empowers, uplifts, and permanently restores identity." },
+    { "type": "text",     "id": "card2_cta_label",  "label": "Card 2 CTA Label",         "default": "Inquire for Your Event" },
+    { "type": "url",      "id": "card2_cta_link",   "label": "Card 2 CTA Link"           }
+  ],
+  "blocks": [
+    {
+      "type": "crown_name",
+      "name": "Crown Name Tag",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Crown Name", "default": "Crown of Dreams" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crowning Pathways",
+      "settings": {
+        "eyebrow": "Two Paths of Elevation",
+        "heading_line_1": "Receive Your",
+        "heading_line_2": "Inheritance."
+      },
+      "blocks": [
+        { "type": "crown_name", "settings": { "text": "Crown of Dreams"   } },
+        { "type": "crown_name", "settings": { "text": "Crown of Victory"  } },
+        { "type": "crown_name", "settings": { "text": "Crown of Royalty"  } }
+      ]
+    }
+  ]
+}
+{% endschema %}

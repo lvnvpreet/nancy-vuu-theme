@@ -1,0 +1,100 @@
+{%- comment -%} BookNV Book — split grid: book cover image (drop-shadow) left, text + feature list right {%- endcomment -%}
+<section class="booknv-book" data-section-id="{{ section.id }}">
+  <div class="booknv-book__inner">
+
+    <div class="booknv-book__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          srcset="{{ section.settings.image | image_url: width: 450 }} 450w, {{ section.settings.image | image_url: width: 900 }} 900w"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.title_line_1 }}"
+          class="booknv-book__img"
+          loading="lazy">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'booknv-book__img placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="booknv-book__text reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      <h2 class="booknv-book__title serif-font">
+        {{ section.settings.title_line_1 }}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="booknv-book__subtitle"><em>{{ section.settings.subtitle }}</em></p>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <p class="booknv-book__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="booknv-book__features">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'feature' -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-nv"
+          {%- if section.settings.cta_new_tab %} target="_blank" rel="noopener"{% endif %}>
+          {{ section.settings.cta_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BookNV Book Showcase",
+  "class": "booknv-section-book",
+  "settings": [
+    { "type": "image_picker", "id": "image",        "label": "Book Cover Image"                                              },
+    { "type": "text",         "id": "eyebrow",      "label": "Eyebrow",          "default": "The Published Authority"       },
+    { "type": "text",         "id": "title_line_1", "label": "Title — Line 1",   "default": "Let There Be"                  },
+    { "type": "text",         "id": "title_line_2", "label": "Title — Line 2",   "default": "Fashion."                     },
+    { "type": "text",         "id": "subtitle",     "label": "Italic Subtitle",  "default": "A Story of Style, Spirit, and a Life Transformed." },
+    { "type": "textarea",     "id": "body",         "label": "Body Text",        "default": "Fashion designer and faith-builder Nancy Vuu invites you behind the runway into the deeper layers of her life. This isn't just a book—it's a revelation of a woman who dared to leap into purpose and merge fashion with faith." },
+    { "type": "header",       "content": "CTA"      },
+    { "type": "text",         "id": "cta_label",    "label": "CTA Label",        "default": "Order the Revelation"          },
+    { "type": "url",          "id": "cta_link",     "label": "CTA Link"          },
+    { "type": "checkbox",     "id": "cta_new_tab",  "label": "Open link in new tab", "default": true                       }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature List Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Feature Text", "default": "A key feature of the book." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BookNV Book Showcase",
+      "settings": {
+        "eyebrow": "The Published Authority",
+        "title_line_1": "Let There Be",
+        "title_line_2": "Fashion."
+      },
+      "blocks": [
+        { "type": "feature", "settings": { "text": "The spiritual stirrings that shaped a global fashion mission"    } },
+        { "type": "feature", "settings": { "text": "Unfiltered moments of surrender, struggle, and bold belief"      } },
+        { "type": "feature", "settings": { "text": "How a single \"yes\" opened doors around the world"              } },
+        { "type": "feature", "settings": { "text": "Why fashion is more than fabric\u2014it's a force of purpose"    } }
+      ]
+    }
+  ]
+}
+{% endschema %}

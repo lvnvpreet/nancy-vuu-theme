@@ -1,0 +1,164 @@
+{%- comment -%} Book synopsis — description left, discovery list panel right {%- endcomment -%}
+<section class="book-synopsis" data-section-id="{{ section.id }}">
+  <div class="book-synopsis__inner">
+    <div class="book-synopsis__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="book-synopsis__title serif-font">
+        {%- if section.settings.heading_1 != blank -%}{{ section.settings.heading_1 }}{%- endif -%}
+        {%- if section.settings.heading_2 != blank -%}<br>{{ section.settings.heading_2 }}{%- endif -%}
+      </h2>
+      {%- if section.settings.body_1 != blank -%}
+        <p class="book-synopsis__body">{{ section.settings.body_1 }}</p>
+      {%- endif -%}
+      {%- if section.settings.body_2 != blank -%}
+        <p class="book-synopsis__body">{{ section.settings.body_2 }}</p>
+      {%- endif -%}
+      {%- if section.settings.body_3 != blank -%}
+        <p class="book-synopsis__body">{{ section.settings.body_3 }}</p>
+      {%- endif -%}
+    </div>
+    <div class="book-synopsis__panel">
+      {%- if section.settings.panel_heading != blank -%}
+        <h3 class="book-synopsis__panel-heading serif-font">{{ section.settings.panel_heading }}</h3>
+      {%- endif -%}
+      <ol class="book-synopsis__list">
+        {%- for block in section.blocks -%}
+          <li class="book-synopsis__list-item" {{ block.shopify_attributes }}>
+            <span class="book-synopsis__list-text">
+              {%- if block.settings.item_title != blank -%}
+                <strong>{{ block.settings.item_title }}:</strong>
+              {%- endif -%}
+              {{ block.settings.item_text }}
+            </span>
+          </li>
+        {%- endfor -%}
+      </ol>
+      {%- if section.settings.panel_cta_label != blank -%}
+        <a href="{{ section.settings.panel_cta_link | default: '#' }}" class="book-synopsis__panel-cta">{{ section.settings.panel_cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Book Synopsis",
+  "class": "book-section-synopsis",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Blueprint"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading — Line 1",
+      "default": "Design Your"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading — Line 2",
+      "default": "Destiny."
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "Body Paragraph 1",
+      "default": "For those who refuse to be defined by their past and are ready to architect a legacy of absolute significance—this is your blueprint."
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Body Paragraph 2",
+      "default": "From the harrowing journey of a childhood refugee to commanding the global stages of Cannes and high-fashion runways, Nancy Vuu deconstructs the barriers between survival and significance."
+    },
+    {
+      "type": "textarea",
+      "id": "body_3",
+      "label": "Body Paragraph 3 (italic styling)",
+      "default": "Let There Be Fashion is an unfiltered masterclass in transcendent architecture, proving that a single courageous \"yes\" can open doors across the world."
+    },
+    {
+      "type": "header",
+      "content": "Discovery Panel"
+    },
+    {
+      "type": "text",
+      "id": "panel_heading",
+      "label": "Panel Heading",
+      "default": "Inside the Pages, You Will Discover:"
+    },
+    {
+      "type": "text",
+      "id": "panel_cta_label",
+      "label": "Panel CTA Label",
+      "default": "Add to Your Library — $45.00"
+    },
+    {
+      "type": "url",
+      "id": "panel_cta_link",
+      "label": "Panel CTA Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "discovery_item",
+      "name": "Discovery Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Bold Title",
+          "default": "The Architecture of Identity"
+        },
+        {
+          "type": "textarea",
+          "id": "item_text",
+          "label": "Item Text",
+          "default": "How to shed the \"garments of survival\" and step into your authentic, sovereign design."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Book Synopsis",
+      "blocks": [
+        {
+          "type": "discovery_item",
+          "settings": {
+            "item_title": "The Architecture of Identity",
+            "item_text": "How to shed the \"garments of survival\" and step into your authentic, sovereign design."
+          }
+        },
+        {
+          "type": "discovery_item",
+          "settings": {
+            "item_title": "The Anatomy of a Breakthrough",
+            "item_text": "Unfiltered moments of surrender, struggle, and the bold belief required to shatter industry ceilings."
+          }
+        },
+        {
+          "type": "discovery_item",
+          "settings": {
+            "item_title": "Purpose-Driven Creation",
+            "item_text": "Why your creative calling is not an accident, and how to use it as a force for global impact."
+          }
+        },
+        {
+          "type": "discovery_item",
+          "settings": {
+            "item_title": "The Courage to Leap",
+            "item_text": "Timeless, transcendent wisdom for turning profound adversity into your greatest creative engine."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

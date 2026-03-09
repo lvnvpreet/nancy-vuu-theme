@@ -1,0 +1,118 @@
+{%- comment -%} Book hero — cover image left, title + description + CTA right {%- endcomment -%}
+<section class="book-hero" data-section-id="{{ section.id }}">
+  <div class="book-hero__inner">
+    <div class="book-hero__cover-col">
+      {%- if section.settings.cover_image != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="book-hero__cover-link">
+          <img
+            src="{{ section.settings.cover_image | image_url: width: 900 }}"
+            srcset="{{ section.settings.cover_image | image_url: width: 450 }} 450w,
+                    {{ section.settings.cover_image | image_url: width: 700 }} 700w,
+                    {{ section.settings.cover_image | image_url: width: 900 }} 900w"
+            sizes="(max-width: 900px) 80vw, 40vw"
+            alt="{{ section.settings.cover_image.alt | default: section.settings.title_line_1 }}"
+            class="book-hero__cover-img"
+            loading="eager">
+        </a>
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'book-hero__cover-img placeholder' }}
+      {%- endif -%}
+    </div>
+    <div class="book-hero__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h1 class="book-hero__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br><em>{{ section.settings.title_line_2 }}</em>{%- endif -%}
+      </h1>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="book-hero__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <p class="book-hero__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+      {%- if section.settings.availability != blank -%}
+        <p class="book-hero__availability">{{ section.settings.availability }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="book-hero__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Book Hero",
+  "class": "book-section-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "Book Cover Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Debut Release"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "Let There Be"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2 (italic)",
+      "default": "Fashion."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle (all caps)",
+      "default": "A Story of Style, Spirit, and a Life Transformed."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "This is not just a book about garments. It is a revelation of the human spirit. Nancy Vuu invites you behind the velvet ropes of the runway and into the deepest, most vulnerable layers of her life—proving that true luxury is forged in the fires of resilience."
+    },
+    {
+      "type": "text",
+      "id": "availability",
+      "label": "Availability Text",
+      "default": "Available Now in Hardcover."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "Secure Your Copy"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Book Hero",
+      "settings": {
+        "eyebrow": "The Debut Release",
+        "title_line_1": "Let There Be",
+        "title_line_2": "Fashion.",
+        "subtitle": "A Story of Style, Spirit, and a Life Transformed.",
+        "description": "This is not just a book about garments. It is a revelation of the human spirit. Nancy Vuu invites you behind the velvet ropes of the runway and into the deepest, most vulnerable layers of her life—proving that true luxury is forged in the fires of resilience.",
+        "availability": "Available Now in Hardcover.",
+        "cta_label": "Secure Your Copy"
+      }
+    }
+  ]
+}
+{% endschema %}

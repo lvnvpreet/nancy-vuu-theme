@@ -10,7 +10,7 @@
     "manifesto": {
       "type": "manifesto",
       "settings": {
-        "quote": "A custom gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty.",
+        "quote": "A custom gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty. We create a masterpiece that anchors your presence and captures the brilliance of who you are becoming.",
         "bg_color": "#ffffff",
         "text_color": "#111111"
       }
@@ -19,7 +19,7 @@
       "type": "exclusivity-notice",
       "settings": {
         "eyebrow": "Exclusivity Notice",
-        "body": "Our Couture pieces are unique masterpieces available for purchase exclusively at the Atelier. For all other commissions, the collection serves as a curated invitation for your Made-to-Measure or Bespoke order."
+        "body": "Our Bridal Couture pieces are unique masterpieces available for purchase exclusively at the Atelier. For all other commissions, the collection serves as a curated invitation for your Made-to-Measure or Bespoke order."
       }
     },
     "lookbook": {
@@ -43,7 +43,7 @@
         "cta_label": "Explore Accessories",
         "cta_link": "/collections/crowns-jewelry",
         "primary_label": "Begin Bespoke Journey",
-        "primary_link": "/pages/bespoke-bridal",
+        "primary_link": "/pages/bridal",
         "secondary_label": "Virtual Consultation"
       }
     }

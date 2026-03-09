@@ -1,0 +1,24 @@
+{%- comment -%} Crowning Declaration — light stone sacred text block. Use <em> for serif italic phrases. {%- endcomment -%}
+<section class="crowning-declaration" data-section-id="{{ section.id }}">
+  {%- if section.settings.text != blank -%}
+    <div class="crowning-declaration__text">{{ section.settings.text }}</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Crowning Declaration",
+  "class": "crowning-section-declaration",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Declaration Text",
+      "default": "<p>\"The House of Nancy Vuu is honored to stand with you as you step into your ultimate destiny. Our crown collection is the external manifestation of an <em>internal awakening</em>—your elevation into True Identity. As each piece is presented, it is our deepest intention that you receive an undeniable clarity of purpose, igniting your power and illuminating your most visionary dreams. We impart this Crowning as a profound blessing: <em>to live, create, and reign in absolute abundance, now and always.</em>\"</p>"
+    }
+  ],
+  "presets": [
+    { "name": "Crowning Declaration" }
+  ]
+}
+{% endschema %}

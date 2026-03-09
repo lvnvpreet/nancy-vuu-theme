@@ -1,0 +1,119 @@
+{
+  "name": "Atelier",
+  "sections": {
+    "atelier_hero": {
+      "type": "atelier-hero",
+      "settings": {
+        "overlay_opacity": 50,
+        "eyebrow": "The Nancy Vuu Master Atelier",
+        "title_line_1": "Preservation &",
+        "title_line_2": "Architecture.",
+        "subtitle": "A sanctuary for sartorial excellence. We do not merely construct garments; we preserve history and educate the next generation of master artisans.",
+        "cta_1_label": "Explore The Atelier",
+        "cta_1_link": "#services",
+        "cta_2_label": "Request a Consultation",
+        "cta_2_link": "#inquiry",
+        "text_color": "#ffffff"
+      }
+    },
+    "philosophy": {
+      "type": "atelier-philosophy",
+      "settings": {
+        "eyebrow": "The Vision",
+        "content": "<p>\"In an era defined by disposable fashion, The House of Nancy Vuu took acquisition of a humble neighborhood cleaner with a profound vision: to transform it into <strong>The Nancy Vuu Atelier</strong>\u2014a world-class <em>Conservatory of Craft.</em> Today, this physical space serves as the beating heart of our enterprise. It is where bespoke bridal heirlooms are architected, where vintage archives are meticulously preserved, and ultimately, where <em>The Dream Academy</em> will teach the lost, sacred art of sewing to a new generation.\"</p>"
+      }
+    },
+    "service_tailoring": {
+      "type": "atelier-service",
+      "settings": {
+        "section_id": "services",
+        "image_position": "left",
+        "service_number": "I.",
+        "eyebrow": "Precision & Form",
+        "title_line_1": "Master Tailoring &",
+        "title_line_2": "Fit Architecture.",
+        "body_1": "True luxury rests in the silhouette. A garment only achieves its ultimate power when it perfectly mirrors the identity and architecture of the wearer.",
+        "body_2": "Our master artisans apply couture-level precision to every commission. Whether executing structural adjustments to a beloved vintage piece, tailoring a formal suit, or finalizing the intricate fit of a bespoke bridal gown, our atelier ensures flawless execution.",
+        "cta_label": "Book a Private Fitting",
+        "cta_link": "#inquiry"
+      }
+    },
+    "service_preservation": {
+      "type": "atelier-service",
+      "settings": {
+        "section_id": "preservation",
+        "image_position": "right",
+        "service_number": "II.",
+        "eyebrow": "Garment Care",
+        "title_line_1": "Fine Fabric Care &",
+        "title_line_2": "Archival Preservation.",
+        "body_1": "A Nancy Vuu client understands that their wardrobe is an investment meant to transcend seasons and generations. We treat the maintenance of your garments with the reverence of a museum conservator.",
+        "body_2": "Utilizing elite, eco-conscious solvents and meticulous hand-finishing techniques, our Atelier offers world-class fabric care. We specialize in the purification, steaming, and structural preservation of delicate silks, intricate beadwork, bridal heirlooms, and luxury textiles.",
+        "cta_label": "Request Preservation Services",
+        "cta_link": "#inquiry"
+      }
+    },
+    "academy_banner": {
+      "type": "atelier-academy",
+      "settings": {
+        "eyebrow": "The Future of Craft",
+        "title_line_1": "The Dream Academy",
+        "title_line_2": "Conservatory.",
+        "body": "The Master Atelier is designed to be more than a house of commerce; it is an incubator for human potential. As part of our humanitarian mandate, this physical space serves as the future training ground for The Dream Academy\u2014teaching marginalized communities the lost, highly-valued trade of garment construction, empowering them to weave their own destinies.",
+        "cta_label": "Inquire about The Academy",
+        "cta_link": "mailto:academy@nancyvuu.com"
+      }
+    },
+    "inquiry": {
+      "type": "atelier-inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "The Atelier Concierge",
+        "title_line_1": "Request a",
+        "title_line_2": "Consultation.",
+        "subtext": "Connect with our master artisans to discuss your bespoke tailoring needs, request archival fabric care, or schedule a private fitting.",
+        "address_eyebrow": "The San Jose Flagship",
+        "address_line_1": "1520 Southwest Expwy #10",
+        "address_line_2": "San Jose, CA 95126",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "TYPE OF ATELIER SERVICE REQUESTED",
+        "label_message": "PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED...",
+        "submit_label": "Submit Request to the Atelier"
+      },
+      "blocks": {
+        "opt_tailoring": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        "opt_preservation": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
+        },
+        "opt_bespoke": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        }
+      },
+      "block_order": ["opt_tailoring", "opt_preservation", "opt_bespoke"]
+    }
+  },
+  "order": [
+    "atelier_hero",
+    "philosophy",
+    "service_tailoring",
+    "service_preservation",
+    "academy_banner",
+    "inquiry"
+  ]
+}

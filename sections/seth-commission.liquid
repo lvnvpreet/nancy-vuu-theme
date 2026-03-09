@@ -1,0 +1,112 @@
+{%- comment -%} Seth Commission — inquiry form with 2-col grid inputs {%- endcomment -%}
+<section class="seth-commission" id="{{ section.settings.section_id | default: 'inquiry' }}" data-section-id="{{ section.id }}">
+  <div class="seth-commission__inner">
+    <h2 class="seth-commission__title serif-font">
+      {{ section.settings.title_line_1 }}<br>{{ section.settings.title_line_2 }}
+    </h2>
+
+    {%- form 'contact', id: 'seth-commission-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="seth-commission__success">
+          <p>Your inquiry has been received. Our atelier will be in touch shortly.</p>
+        </div>
+      {%- else -%}
+        <div class="seth-commission__form">
+          {%- if form.errors -%}
+            <div class="seth-commission__errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="seth-commission__form-grid">
+            <div class="seth-commission__field">
+              <input type="text" name="contact[name]" value="{{ form.name }}"
+                placeholder="{{ section.settings.label_name | default: 'FULL NAME' }}" required>
+            </div>
+            <div class="seth-commission__field">
+              <input type="email" name="contact[email]" value="{{ form.email }}"
+                placeholder="{{ section.settings.label_email | default: 'EMAIL ADDRESS' }}" required>
+            </div>
+            <div class="seth-commission__field">
+              <select name="contact[gender]" required>
+                <option value="" disabled selected>{{ section.settings.label_gender | default: 'GENDER CATEGORY' }}</option>
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'gender_option' -%}
+                    <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+            </div>
+            <div class="seth-commission__field">
+              <select name="contact[commission]" required>
+                <option value="" disabled selected>{{ section.settings.label_commission | default: 'TYPE OF COMMISSION' }}</option>
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'commission_option' -%}
+                    <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+            </div>
+          </div>
+          <div class="seth-commission__field seth-commission__field--full">
+            <textarea name="contact[body]"
+              placeholder="{{ section.settings.label_message | default: 'DESCRIBE YOUR STYLE ARCHITECTURE...' }}"
+              rows="6"></textarea>
+          </div>
+          <button type="submit" class="btn-nv seth-commission__submit">
+            {{ section.settings.submit_label | default: 'Submit Private Inquiry' }}
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Commission Form",
+  "class": "seth-section-commission",
+  "settings": [
+    { "type": "text",     "id": "section_id",       "label": "Section anchor ID",      "default": "inquiry" },
+    { "type": "text",     "id": "title_line_1",      "label": "Title — Line 1",         "default": "Secure Your" },
+    { "type": "text",     "id": "title_line_2",      "label": "Title — Line 2",         "default": "Commission." },
+    { "type": "header",   "content": "Form Labels"  },
+    { "type": "text",     "id": "label_name",        "label": "Name Placeholder",       "default": "FULL NAME" },
+    { "type": "text",     "id": "label_email",       "label": "Email Placeholder",      "default": "EMAIL ADDRESS" },
+    { "type": "text",     "id": "label_gender",      "label": "Gender Placeholder",     "default": "GENDER CATEGORY" },
+    { "type": "text",     "id": "label_commission",  "label": "Commission Placeholder", "default": "TYPE OF COMMISSION" },
+    { "type": "text",     "id": "label_message",     "label": "Message Placeholder",    "default": "DESCRIBE YOUR STYLE ARCHITECTURE..." },
+    { "type": "text",     "id": "submit_label",      "label": "Submit Button Label",    "default": "Submit Private Inquiry" }
+  ],
+  "blocks": [
+    {
+      "type": "gender_option",
+      "name": "Gender Option",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Option Label", "default": "Masculine Tailoring" },
+        { "type": "text", "id": "value", "label": "Option Value", "default": "masculine" }
+      ]
+    },
+    {
+      "type": "commission_option",
+      "name": "Commission Option",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Option Label", "default": "Sovereign Bespoke" },
+        { "type": "text", "id": "value", "label": "Option Value", "default": "bespoke" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Commission Form",
+      "settings": {
+        "title_line_1": "Secure Your",
+        "title_line_2": "Commission."
+      },
+      "blocks": [
+        { "type": "gender_option",     "settings": { "label": "Masculine Tailoring", "value": "masculine" }},
+        { "type": "gender_option",     "settings": { "label": "Feminine Tailoring",  "value": "feminine"  }},
+        { "type": "commission_option", "settings": { "label": "Sovereign Bespoke",   "value": "bespoke"   }},
+        { "type": "commission_option", "settings": { "label": "Custom MTM Blueprint","value": "mtm"       }}
+      ]
+    }
+  ]
+}
+{% endschema %}

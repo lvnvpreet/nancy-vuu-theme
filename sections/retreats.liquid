@@ -22,6 +22,11 @@
       </div>
     {%- endfor -%}
   </div>
+  {%- if section.settings.explore_label != blank -%}
+    <div class="section-retreats__footer reveal" style="text-align:center;margin-top:3rem;">
+      <a href="{{ section.settings.explore_link | default: '#' }}" class="btn-editorial">{{ section.settings.explore_label }}</a>
+    </div>
+  {%- endif -%}
 </section>
 {% schema %}
 {
@@ -31,7 +36,9 @@
     { "type": "text", "id": "eyebrow",         "label": "Eyebrow",        "default": "Restoration for the Soul" },
     { "type": "text", "id": "title",            "label": "Title",          "default": "Dream Retreats" },
     { "type": "text", "id": "calendar_label",   "label": "Calendar text",  "default": "View Calendar" },
-    { "type": "url",  "id": "calendar_link",    "label": "Calendar link" }
+    { "type": "url",  "id": "calendar_link",    "label": "Calendar link" },
+    { "type": "text", "id": "explore_label",    "label": "Explore all text", "default": "Explore All Retreats" },
+    { "type": "url",  "id": "explore_link",     "label": "Explore all link" }
   ],
   "blocks": [
     {

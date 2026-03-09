@@ -25,6 +25,21 @@
       </div>
     </div>
 
+    {%- if section.settings.foundation_heading != blank -%}
+      <div class="seth-narrative__foundation reveal">
+        {%- if section.settings.foundation_eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.foundation_eyebrow }}</span>
+        {%- endif -%}
+        <h3 class="seth-narrative__foundation-heading serif">{{ section.settings.foundation_heading }}</h3>
+        {%- if section.settings.foundation_body_1 != blank -%}
+          <p class="seth-narrative__foundation-body">{{ section.settings.foundation_body_1 }}</p>
+        {%- endif -%}
+        {%- if section.settings.foundation_body_2 != blank -%}
+          <p class="seth-narrative__foundation-body">{{ section.settings.foundation_body_2 }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
     {%- if section.settings.closing_quote != blank -%}
       <div class="seth-narrative__quote reveal">
         <div class="divider-gold"></div>
@@ -68,7 +83,12 @@
       "id": "closing_quote",
       "label": "Closing quote",
       "default": "\"We do not just create garments; we clothe the calling of a generation.\""
-    }
+    },
+    { "type": "header",   "content": "Foundation Box (optional)" },
+    { "type": "text",     "id": "foundation_eyebrow",  "label": "Foundation eyebrow" },
+    { "type": "text",     "id": "foundation_heading",  "label": "Foundation heading" },
+    { "type": "textarea","id": "foundation_body_1",   "label": "Foundation paragraph 1" },
+    { "type": "textarea","id": "foundation_body_2",   "label": "Foundation paragraph 2" }
   ],
   "blocks": [
     {

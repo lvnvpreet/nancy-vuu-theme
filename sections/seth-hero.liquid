@@ -1,0 +1,82 @@
+{%- comment -%} Seth Eden — Cinematic Fullscreen Hero with video or image {%- endcomment -%}
+<section class="seth-cinematic-hero" data-section-id="{{ section.id }}">
+  {%- if section.settings.video_url != blank -%}
+    <video
+      class="seth-cinematic-hero__video"
+      autoplay loop muted playsinline
+      {% if section.settings.image %}poster="{{ section.settings.image | image_url: width: 1920 }}"{% endif %}>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {%- elsif section.settings.image -%}
+    <div class="seth-cinematic-hero__image" style="background-image: url('{{ section.settings.image | image_url: width: 2000 }}');"></div>
+  {%- endif -%}
+  <div class="seth-cinematic-hero__overlay"></div>
+  <div class="seth-cinematic-hero__content">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="seth-cinematic-hero__eyebrow eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    <h1 class="seth-cinematic-hero__heading serif">{{ section.settings.heading }}</h1>
+    {%- if section.settings.subtext != blank -%}
+      <p class="seth-cinematic-hero__subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+    {%- if section.settings.brand_sub != blank -%}
+      <span class="seth-cinematic-hero__brand-sub">{{ section.settings.brand_sub }}</span>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Cinematic Hero",
+  "class": "seth-section-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (.mp4)",
+      "info": "Upload your brand video to Shopify Files and paste the URL here."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image / Video Poster",
+      "info": "Used as background when no video is provided, or as the video poster frame."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The House of Nancy Vuu Presents"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Seth Eden."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Custom Bespoke Masterpieces for Men & Women."
+    },
+    {
+      "type": "text",
+      "id": "brand_sub",
+      "label": "Brand Subtitle",
+      "default": "By Nancy Vuu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Cinematic Hero",
+      "settings": {
+        "eyebrow": "The House of Nancy Vuu Presents",
+        "heading": "Seth Eden.",
+        "subtext": "Custom Bespoke Masterpieces for Men & Women.",
+        "brand_sub": "By Nancy Vuu"
+      }
+    }
+  ]
+}
+{% endschema %}

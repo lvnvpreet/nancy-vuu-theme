@@ -1,0 +1,80 @@
+{%- comment -%} Book final CTA — light stone bg, centered purchase bar {%- endcomment -%}
+<section class="book-cta" id="{{ section.settings.section_id | default: 'checkout' }}" data-section-id="{{ section.id }}">
+  <div class="book-cta__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    <h2 class="book-cta__title serif-font">
+      {%- if section.settings.heading_1 != blank -%}{{ section.settings.heading_1 }}{%- endif -%}
+      {%- if section.settings.heading_2 != blank -%}<br>{{ section.settings.heading_2 }}{%- endif -%}
+    </h2>
+    {%- if section.settings.subtext != blank -%}
+      <p class="book-cta__subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+    {%- if section.settings.cta_label != blank -%}
+      <a href="{{ section.settings.cta_link | default: '#' }}" class="book-cta__btn">{{ section.settings.cta_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Book CTA",
+  "class": "book-section-cta",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section anchor ID",
+      "default": "checkout"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Collection of Thought"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading — Line 1",
+      "default": "Begin Your"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading — Line 2",
+      "default": "Transformation."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Join thousands of readers who have redesigned their internal landscape and stepped into their ultimate calling."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "Purchase the Hardcover"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link (Shopify product or checkout)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Book CTA",
+      "settings": {
+        "eyebrow": "The Collection of Thought",
+        "heading_1": "Begin Your",
+        "heading_2": "Transformation.",
+        "subtext": "Join thousands of readers who have redesigned their internal landscape and stepped into their ultimate calling.",
+        "cta_label": "Purchase the Hardcover"
+      }
+    }
+  ]
+}
+{% endschema %}

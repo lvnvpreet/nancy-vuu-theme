@@ -1,0 +1,102 @@
+{%- comment -%} Crowning Partnerships — gray bg, centered header, contact form with partnership type select blocks {%- endcomment -%}
+<section class="crowning-partnerships" id="{{ section.settings.section_id | default: 'partnerships' }}" data-section-id="{{ section.id }}">
+  <div class="crowning-partnerships__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    <h2 class="crowning-partnerships__heading serif-font">
+      {{ section.settings.heading_line_1 }}
+      {%- if section.settings.heading_line_2 != blank -%}<br>{{ section.settings.heading_line_2 }}{%- endif -%}
+    </h2>
+    {%- if section.settings.body != blank -%}
+      <p class="crowning-partnerships__body">{{ section.settings.body }}</p>
+    {%- endif -%}
+
+    {%- form 'contact', id: 'crowning-partnerships-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="crowning-partnerships__success">
+          <p>Thank you for your inquiry. We will be in touch shortly.</p>
+        </div>
+      {%- else -%}
+        <div class="crowning-partnerships__form">
+          {%- if form.errors -%}
+            <div class="crowning-partnerships__errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+
+          <div class="crowning-partnerships__field">
+            <input type="text" name="contact[name]" value="{{ form.name }}"
+              placeholder="{{ section.settings.label_name | default: 'ORGANIZATION OR BOUTIQUE NAME' }}" required>
+          </div>
+          <div class="crowning-partnerships__field">
+            <input type="email" name="contact[email]" value="{{ form.email }}"
+              placeholder="{{ section.settings.label_email | default: 'DIRECT CONTACT EMAIL' }}" required>
+          </div>
+          <div class="crowning-partnerships__field">
+            <select name="contact[partnership_type]" required>
+              <option value="" disabled selected>{{ section.settings.label_type | default: 'TYPE OF PARTNERSHIP INQUIRY' }}</option>
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'partnership_type' -%}
+                  <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+          </div>
+          <div class="crowning-partnerships__field">
+            <textarea name="contact[body]"
+              placeholder="{{ section.settings.label_message | default: 'TELL US ABOUT YOUR VISION FOR THIS PARTNERSHIP...' }}"
+              rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn-nv crowning-partnerships__submit">
+            {{ section.settings.submit_label | default: 'Submit Inquiry' }}
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crowning Partnerships",
+  "class": "crowning-section-partnerships",
+  "settings": [
+    { "type": "text",     "id": "section_id",      "label": "Section anchor ID",        "default": "partnerships" },
+    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",                  "default": "Become a Custodian of the Crown" },
+    { "type": "text",     "id": "heading_line_1",   "label": "Heading — Line 1",         "default": "Boutique & Humanitarian" },
+    { "type": "text",     "id": "heading_line_2",   "label": "Heading — Line 2",         "default": "Partnerships." },
+    { "type": "textarea", "id": "body",             "label": "Body Text",                "default": "We are actively seeking visionary retail boutiques, wholesale partners, and humanitarian organizations to carry The Crowning designs. Join us in the movement to elevate humanity, one crown at a time." },
+    { "type": "header",   "content": "Form Labels"  },
+    { "type": "text",     "id": "label_name",       "label": "Name Placeholder",         "default": "ORGANIZATION OR BOUTIQUE NAME" },
+    { "type": "text",     "id": "label_email",      "label": "Email Placeholder",        "default": "DIRECT CONTACT EMAIL" },
+    { "type": "text",     "id": "label_type",       "label": "Type Placeholder",         "default": "TYPE OF PARTNERSHIP INQUIRY" },
+    { "type": "text",     "id": "label_message",    "label": "Message Placeholder",      "default": "TELL US ABOUT YOUR VISION FOR THIS PARTNERSHIP..." },
+    { "type": "text",     "id": "submit_label",     "label": "Submit Button Label",      "default": "Submit Inquiry" }
+  ],
+  "blocks": [
+    {
+      "type": "partnership_type",
+      "name": "Partnership Type",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Option Label", "default": "Retail / Wholesale Boutique Partner" },
+        { "type": "text", "id": "value", "label": "Option Value", "default": "wholesale" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crowning Partnerships",
+      "settings": {
+        "eyebrow": "Become a Custodian of the Crown",
+        "heading_line_1": "Boutique & Humanitarian",
+        "heading_line_2": "Partnerships."
+      },
+      "blocks": [
+        { "type": "partnership_type", "settings": { "label": "Retail / Wholesale Boutique Partner",      "value": "wholesale"    } },
+        { "type": "partnership_type", "settings": { "label": "Humanitarian / Non-Profit Organization",   "value": "humanitarian" } },
+        { "type": "partnership_type", "settings": { "label": "Host \"The Crowning\" Live Experience",     "value": "live-event"   } }
+      ]
+    }
+  ]
+}
+{% endschema %}

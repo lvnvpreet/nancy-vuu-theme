@@ -1,0 +1,74 @@
+{%- comment -%} BookNV Topics — soft gray bg, centered header, auto-fit grid of topic cards with hover-invert effect {%- endcomment -%}
+<section class="booknv-topics" data-section-id="{{ section.id }}">
+  <div class="booknv-topics__inner">
+    <div class="booknv-topics__header reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="booknv-topics__heading serif-font">
+        {{ section.settings.heading_line_1 }}
+        {%- if section.settings.heading_line_2 != blank -%}<br>{{ section.settings.heading_line_2 }}{%- endif -%}
+      </h2>
+    </div>
+
+    <div class="booknv-topics__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'topic' -%}
+          <div class="booknv-topic-card" {{ block.shopify_attributes }}>
+            {%- if block.settings.number != blank -%}
+              <span class="booknv-topic-num serif-font">{{ block.settings.number }}</span>
+            {%- endif -%}
+            <h3 class="booknv-topic-card__title serif-font">
+              {{ block.settings.title_line_1 }}
+              {%- if block.settings.title_line_2 != blank -%}<br>{{ block.settings.title_line_2 }}{%- endif -%}
+            </h3>
+            {%- if block.settings.body != blank -%}
+              <div class="booknv-topic-card__body">{{ block.settings.body }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BookNV Signature Topics",
+  "class": "booknv-section-topics",
+  "settings": [
+    { "type": "text", "id": "eyebrow",       "label": "Eyebrow",           "default": "Signature Topics"          },
+    { "type": "text", "id": "heading_line_1","label": "Heading — Line 1",  "default": "The Frameworks"            },
+    { "type": "text", "id": "heading_line_2","label": "Heading — Line 2",  "default": "of Impact"                 }
+  ],
+  "blocks": [
+    {
+      "type": "topic",
+      "name": "Topic Card",
+      "settings": [
+        { "type": "text",     "id": "number",      "label": "Roman Numeral",    "default": "I."       },
+        { "type": "text",     "id": "title_line_1","label": "Title — Line 1",   "default": "Topic"    },
+        { "type": "text",     "id": "title_line_2","label": "Title — Line 2"                          },
+        { "type": "richtext", "id": "body",        "label": "Description"                             }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BookNV Signature Topics",
+      "settings": {
+        "eyebrow": "Signature Topics",
+        "heading_line_1": "The Frameworks",
+        "heading_line_2": "of Impact"
+      },
+      "blocks": [
+        { "type": "topic", "settings": { "number": "I.",   "title_line_1": "The Identity",   "title_line_2": "Architect\u2122",          "body": "<p>A masterclass on deconstructing the \"garments of survival.\" Nancy teaches leaders how to redesign their internal landscape to match their heavenly purpose.</p>" } },
+        { "type": "topic", "settings": { "number": "II.",  "title_line_1": "The Influence",  "title_line_2": "Blueprint",              "body": "<p>Lessons from styling NBA/NFL elite and Royalty. How to command a presence that communicates authority and excellence before a word is spoken.</p>" } },
+        { "type": "topic", "settings": { "number": "III.", "title_line_1": "Philanthropy",   "title_line_2": "by Design",              "body": "<p>Utilizing global platforms to solve humanitarian crises. Featuring insights from the House of Vuu Foundation's work in anti-trafficking and education.</p>" } },
+        { "type": "topic", "settings": { "number": "IV.",  "title_line_1": "Let There",      "title_line_2": "Be Fashion",             "body": "<p>An exploration of the spiritual intersection between faith, identity, and the global language of beauty as a tool for cultural transformation.</p>" } },
+        { "type": "topic", "settings": { "number": "V.",   "title_line_1": "The Dream",      "title_line_2": "Realized Framework\u2122", "body": "<p><strong>Discover. Believe. Realize.</strong> Nancy provides the practical, three-step blueprint to uncovering your inherent dream and architecting the pathway to its physical realization.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

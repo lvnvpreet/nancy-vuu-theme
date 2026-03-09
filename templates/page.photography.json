@@ -1,0 +1,189 @@
+{
+  "name": "Photography",
+  "sections": {
+    "photo_hero": {
+      "type": "atelier-hero",
+      "settings": {
+        "overlay_opacity": 40,
+        "eyebrow": "The Editorial Lens of Nancy Vuu",
+        "title_line_1": "Immortalize Your",
+        "title_line_2": "Narrative.",
+        "subtitle": "A photograph is not merely captured; it is architected. Step onto the set led by global creative director Nancy Vuu and her elite photography team.",
+        "cta_1_label": "Request a Private Consultation",
+        "cta_1_link": "#inquiry",
+        "text_color": "#ffffff"
+      }
+    },
+    "press_strip": {
+      "type": "photography-press",
+      "settings": {
+        "eyebrow": "The Aesthetic Recognized By"
+      },
+      "blocks": {
+        "pub_1": { "type": "publication", "settings": { "name": "VOGUE" } },
+        "pub_2": { "type": "publication", "settings": { "name": "ELLE" } },
+        "pub_3": { "type": "publication", "settings": { "name": "HARPER'S BAZAAR" } },
+        "pub_4": { "type": "publication", "settings": { "name": "THE COSMOPOLITAN" } },
+        "pub_5": { "type": "publication", "settings": { "name": "BRIDES" } }
+      },
+      "block_order": ["pub_1", "pub_2", "pub_3", "pub_4", "pub_5"]
+    },
+    "philosophy": {
+      "type": "manifesto",
+      "settings": {
+        "eyebrow": "The Philosophy",
+        "quote": "Photography, at its absolute highest level, is the documentation of your ultimate identity. We do not just take your picture; we craft a breathtaking visual legacy. Recognized by the elite gatekeepers of global fashion, the creative direction of Nancy Vuu and her master team extracts the profound beauty, absolute power, and undeniable purpose resting within you, transforming a fleeting moment into an heirloom of eternal significance.",
+        "bg_color": "#f8f7f5",
+        "text_color": "#111111"
+      }
+    },
+    "experience": {
+      "type": "photography-experience",
+      "settings": {
+        "section_id": "experience",
+        "eyebrow": "The Vogue Treatment",
+        "title_line_1": "The Couture",
+        "title_line_2": "Commission.",
+        "description": "A House of Nancy Vuu photography commission is a holistic, fully-produced editorial experience. You are not just stepping in front of a camera; you are stepping into the meticulous world of a high-fashion atelier.",
+        "description_2": "Nancy Vuu personally oversees every detail as the Creative Director, leading a master team of photographers, lighting experts, and stylists to ensure your final portfolio rivals the pages of the world's most prestigious magazines."
+      },
+      "blocks": {
+        "li_1": {
+          "type": "list_item",
+          "settings": { "text": "Exclusive access to the Nancy Vuu Couture Wardrobe Archive" }
+        },
+        "li_2": {
+          "type": "list_item",
+          "settings": { "text": "World-Class Editorial Styling & Creative Direction" }
+        },
+        "li_3": {
+          "type": "list_item",
+          "settings": { "text": "Professional, High-Fashion Hair and Makeup Artistry" }
+        },
+        "li_4": {
+          "type": "list_item",
+          "settings": { "text": "Bespoke Concept Architecture & Set Design" }
+        }
+      },
+      "block_order": ["li_1", "li_2", "li_3", "li_4"]
+    },
+    "portfolio": {
+      "type": "photography-portfolio",
+      "settings": {
+        "eyebrow": "Tiers of Commission",
+        "title_line_1": "The Curated",
+        "title_line_2": "Portfolios."
+      },
+      "blocks": {
+        "item_1": {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Authority Series",
+            "title": "The Private Portfolio",
+            "description": "For CEOs, Founders, and Elite Talent demanding a commanding, magnetic brand presence.",
+            "size": "large"
+          }
+        },
+        "item_2": {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Heirloom Series",
+            "title": "Bridal & Wedding",
+            "description": "Capturing the sacred elegance and divine romance of your most profound milestone.",
+            "size": "tall"
+          }
+        },
+        "item_3": {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Atelier Series",
+            "title": "Fashion Editorial",
+            "description": "High-concept, avant-garde storytelling for adults and children, crafted for publication.",
+            "size": "square"
+          }
+        },
+        "item_4": {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Agency Series",
+            "title": "Commercial Campaigns",
+            "description": "Architecting immersive visual narratives to elevate luxury brands and product launches.",
+            "size": "wide"
+          }
+        },
+        "item_5": {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Legacy Series",
+            "title": "Lifestyle & Storytelling",
+            "description": "Cinematic, soul-stirring documentation of a life well-lived, capturing authentic beauty in its purest form.",
+            "size": "full"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4", "item_5"]
+    },
+    "inquiry": {
+      "type": "photography-inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "Secure Your Commission",
+        "title_line_1": "Request a Private",
+        "title_line_2": "Consultation.",
+        "subtext": "Because of the bespoke nature of the Nancy Vuu editorial experience, we accept a highly limited number of commissions per season. Submit your vision below to begin the curation process.",
+        "label_name": "FULL NAME / BRAND OR TALENT NAME",
+        "label_email": "DIRECT CONTACT EMAIL",
+        "label_location": "DESIRED SHOOT LOCATION (CITY / COUNTRY)",
+        "label_commission": "TYPE OF EDITORIAL COMMISSION",
+        "label_message": "DESCRIBE YOUR VISION FOR THIS EXPERIENCE...",
+        "submit_label": "Submit Inquiry"
+      },
+      "blocks": {
+        "opt_1": {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "The Private Portfolio (CEO / Entrepreneur / Model)",
+            "option_value": "The Private Portfolio"
+          }
+        },
+        "opt_2": {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Fashion Editorial (Adult or Child)",
+            "option_value": "Fashion Editorial"
+          }
+        },
+        "opt_3": {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Bridal & Heirloom",
+            "option_value": "Bridal & Heirloom"
+          }
+        },
+        "opt_4": {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Commercial / Brand Campaign",
+            "option_value": "Commercial — Brand Campaign"
+          }
+        },
+        "opt_5": {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Lifestyle & Storytelling",
+            "option_value": "Lifestyle & Storytelling"
+          }
+        }
+      },
+      "block_order": ["opt_1", "opt_2", "opt_3", "opt_4", "opt_5"]
+    }
+  },
+  "order": [
+    "photo_hero",
+    "press_strip",
+    "philosophy",
+    "experience",
+    "portfolio",
+    "inquiry"
+  ]
+}

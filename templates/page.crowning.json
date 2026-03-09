@@ -1,0 +1,117 @@
+{
+  "name": "The Crowning",
+  "sections": {
+    "crowning_hero": {
+      "type": "crowning-hero",
+      "settings": {
+        "eyebrow": "A Sacred Moment of Elevation",
+        "title": "The Crowning.",
+        "description": "An external recognition of an internal commitment. Step into your ultimate identity and awaken your destiny.",
+        "btn1_label": "Shop The Collection",
+        "btn1_link": "/collections/crowning",
+        "btn2_label": "Book The Experience",
+        "btn2_link": "#book"
+      }
+    },
+    "crowning_declaration": {
+      "type": "crowning-declaration",
+      "settings": {
+        "text": "<p>\"The House of Nancy Vuu is honored to stand with you as you step into your ultimate destiny. Our crown collection is the external manifestation of an <em>internal awakening</em>\u2014your elevation into True Identity. As each piece is presented, it is our deepest intention that you receive an undeniable clarity of purpose, igniting your power and illuminating your most visionary dreams. We impart this Crowning as a profound blessing: <em>to live, create, and reign in absolute abundance, now and always.</em>\"</p>"
+      }
+    },
+    "crowning_origin": {
+      "type": "crowning-origin",
+      "settings": {
+        "eyebrow": "The Revelation",
+        "title_line_1": "The Commission",
+        "title_line_2": "of Humanity.",
+        "show_quotes": true,
+        "attribution": "\u2014 Nancy Vuu"
+      },
+      "blocks": {
+        "para_1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>It began not in a studio, but in a profound midnight awakening. I was met with a celestial vision\u2014a vivid encounter where a messenger presented a scroll of ancient truth.</p>"
+          }
+        },
+        "para_2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Before I could decipher the script, I heard the voice of the Creator. It sounded like rushing waters and mighty winds, commanding a single, resonant directive: <strong>\"Tell humanity to arise.\"</strong> My entire being shook in the power and presence of the Divine.</p>"
+          }
+        },
+        "para_3": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>I was instructed to absorb this truth entirely into my being. Upon waking, the mandate became blindingly clear: <em>\"Nancy, so many walk this earth blind to their royal nature, not understanding what it means to live as an heir. Will you remind them of their rightful inheritance? Will you crown them in their fullness?\"</em></p>"
+          }
+        },
+        "para_4": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>In my mind's eye, I was shown a towering collection of beautifully ornate crowns, waiting completely unclaimed. In that exact moment, our work transcended fashion. I knew my spirit had been commissioned to the elevation of humanity.</p>"
+          }
+        }
+      },
+      "block_order": ["para_1", "para_2", "para_3", "para_4"]
+    },
+    "crowning_pathways": {
+      "type": "crowning-pathways",
+      "settings": {
+        "section_id": "pathways",
+        "eyebrow": "Two Paths of Elevation",
+        "heading_line_1": "Receive Your",
+        "heading_line_2": "Inheritance.",
+        "card1_anchor": "shop",
+        "card1_eyebrow": "Personal Elevation",
+        "card1_title": "Shop The Collection",
+        "card1_body": "Acquire a physical manifestation of your calling. Whether worn upon the head or pinned near the heart, each piece is an architectural masterpiece of intention.",
+        "card1_body_2": "When you purchase from The Collection, you are securing a daily reminder of your absolute worth and undeniable purpose.",
+        "card1_cta_label": "Enter The Boutique",
+        "card1_cta_link": "/collections/crowning",
+        "card2_anchor": "book",
+        "card2_eyebrow": "Corporate & Live Events",
+        "card2_title": "Book The Experience",
+        "card2_body": "A transformative live installation. Book Nancy Vuu and her executive team to facilitate a sacred, literal act of crowning for your organization, retreat, or VIP audience.",
+        "card2_body_2": "As we crown individuals, we speak a word of profound truth, declaring destiny over them. Every crown presented bears a name that empowers, uplifts, and permanently restores identity.",
+        "card2_cta_label": "Inquire for Your Event",
+        "card2_cta_link": "#partnerships"
+      },
+      "blocks": {
+        "crown_1": { "type": "crown_name", "settings": { "text": "Crown of Dreams"   } },
+        "crown_2": { "type": "crown_name", "settings": { "text": "Crown of Victory"  } },
+        "crown_3": { "type": "crown_name", "settings": { "text": "Crown of Royalty"  } }
+      },
+      "block_order": ["crown_1", "crown_2", "crown_3"]
+    },
+    "crowning_partnerships": {
+      "type": "crowning-partnerships",
+      "settings": {
+        "section_id": "partnerships",
+        "eyebrow": "Become a Custodian of the Crown",
+        "heading_line_1": "Boutique & Humanitarian",
+        "heading_line_2": "Partnerships.",
+        "body": "We are actively seeking visionary retail boutiques, wholesale partners, and humanitarian organizations to carry The Crowning designs. Join us in the movement to elevate humanity, one crown at a time.",
+        "label_name": "ORGANIZATION OR BOUTIQUE NAME",
+        "label_email": "DIRECT CONTACT EMAIL",
+        "label_type": "TYPE OF PARTNERSHIP INQUIRY",
+        "label_message": "TELL US ABOUT YOUR VISION FOR THIS PARTNERSHIP...",
+        "submit_label": "Submit Inquiry"
+      },
+      "blocks": {
+        "type_1": { "type": "partnership_type", "settings": { "label": "Retail / Wholesale Boutique Partner",      "value": "wholesale"    } },
+        "type_2": { "type": "partnership_type", "settings": { "label": "Humanitarian / Non-Profit Organization",   "value": "humanitarian" } },
+        "type_3": { "type": "partnership_type", "settings": { "label": "Host \"The Crowning\" Live Experience",     "value": "live-event"   } }
+      },
+      "block_order": ["type_1", "type_2", "type_3"]
+    }
+  },
+  "order": [
+    "crowning_hero",
+    "crowning_declaration",
+    "crowning_origin",
+    "crowning_pathways",
+    "crowning_partnerships"
+  ]
+}

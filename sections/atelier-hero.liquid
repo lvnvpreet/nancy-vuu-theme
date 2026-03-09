@@ -1,0 +1,125 @@
+{%- comment -%} Atelier — Cinematic hero with video/image and dual CTAs {%- endcomment -%}
+<section class="atelier-hero" data-section-id="{{ section.id }}">
+  {%- if section.settings.video_url != blank -%}
+    <video
+      class="atelier-hero__video"
+      autoplay loop muted playsinline
+      {% if section.settings.image %}poster="{{ section.settings.image | image_url: width: 1920 }}"{% endif %}>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {%- elsif section.settings.image -%}
+    <div class="atelier-hero__bg" style="background-image:url('{{ section.settings.image | image_url: width: 2000 }}');"></div>
+  {%- endif -%}
+  <div class="atelier-hero__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  <div class="atelier-hero__content">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow" style="color:{{ section.settings.text_color }};">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    <h1 class="atelier-hero__heading serif-font" style="color:{{ section.settings.text_color }};">
+      {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+      {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+    </h1>
+    {%- if section.settings.subtitle != blank -%}
+      <p class="atelier-hero__subtitle" style="color:{{ section.settings.text_color }};">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+    <div class="atelier-hero__ctas">
+      {%- if section.settings.cta_1_label != blank -%}
+        <a href="{{ section.settings.cta_1_link | default: '#services' }}" class="atelier-hero__cta atelier-hero__cta--outline">{{ section.settings.cta_1_label }}</a>
+      {%- endif -%}
+      {%- if section.settings.cta_2_label != blank -%}
+        <a href="{{ section.settings.cta_2_link | default: '#inquiry' }}" class="atelier-hero__cta atelier-hero__cta--ghost">{{ section.settings.cta_2_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Atelier Hero",
+  "class": "atelier-section-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (.mp4)",
+      "info": "Upload to Shopify Files and paste the URL here."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image / Video Poster"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Dark Overlay",
+      "min": 0, "max": 90, "step": 5, "default": 50, "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Nancy Vuu Master Atelier"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "Preservation &"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2",
+      "default": "Architecture."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "A sanctuary for sartorial excellence. We do not merely construct garments; we preserve history and educate the next generation of master artisans."
+    },
+    {
+      "type": "text",
+      "id": "cta_1_label",
+      "label": "Primary CTA Label",
+      "default": "Explore The Atelier"
+    },
+    {
+      "type": "url",
+      "id": "cta_1_link",
+      "label": "Primary CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_2_label",
+      "label": "Secondary CTA Label",
+      "default": "Request a Consultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_2_link",
+      "label": "Secondary CTA Link"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Atelier Hero",
+      "settings": {
+        "eyebrow": "The Nancy Vuu Master Atelier",
+        "title_line_1": "Preservation &",
+        "title_line_2": "Architecture.",
+        "subtitle": "A sanctuary for sartorial excellence. We do not merely construct garments; we preserve history and educate the next generation of master artisans.",
+        "cta_1_label": "Explore The Atelier",
+        "cta_2_label": "Request a Consultation"
+      }
+    }
+  ]
+}
+{% endschema %}

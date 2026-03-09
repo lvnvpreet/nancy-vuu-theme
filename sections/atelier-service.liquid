@@ -1,0 +1,128 @@
+{%- comment -%} Atelier service row — image + number + text, grayscale-to-color hover effect {%- endcomment -%}
+<section class="atelier-service" id="{{ section.settings.section_id }}" data-section-id="{{ section.id }}">
+  <div class="atelier-service__inner{% if section.settings.image_position == 'right' %} atelier-service__inner--img-right{% endif %}">
+    <div class="atelier-service__img-wrapper">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 1000 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w,
+                  {{ section.settings.image | image_url: width: 800 }} 800w,
+                  {{ section.settings.image | image_url: width: 1000 }} 1000w"
+          sizes="(max-width: 900px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.title_line_1 }}"
+          class="atelier-service__img"
+          loading="lazy">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'atelier-service__img placeholder' }}
+      {%- endif -%}
+    </div>
+    <div class="atelier-service__text">
+      {%- if section.settings.service_number != blank -%}
+        <span class="atelier-service__number serif-font">{{ section.settings.service_number }}</span>
+      {%- endif -%}
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="atelier-service__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+      {%- if section.settings.body_1 != blank -%}
+        <p class="atelier-service__body">{{ section.settings.body_1 }}</p>
+      {%- endif -%}
+      {%- if section.settings.body_2 != blank -%}
+        <p class="atelier-service__body">{{ section.settings.body_2 }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#inquiry' }}" class="atelier-service__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Atelier Service Row",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section anchor ID",
+      "default": "services"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Side",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Service Image"
+    },
+    {
+      "type": "text",
+      "id": "service_number",
+      "label": "Service Number (e.g. I.)",
+      "default": "I."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Precision & Form"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "Master Tailoring &"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2",
+      "default": "Fit Architecture."
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "Body Paragraph 1",
+      "default": "True luxury rests in the silhouette. A garment only achieves its ultimate power when it perfectly mirrors the identity and architecture of the wearer."
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Body Paragraph 2"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "Book a Private Fitting"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Atelier Service Row",
+      "settings": {
+        "service_number": "I.",
+        "eyebrow": "Precision & Form",
+        "title_line_1": "Master Tailoring &",
+        "title_line_2": "Fit Architecture.",
+        "cta_label": "Book a Private Fitting"
+      }
+    }
+  ]
+}
+{% endschema %}

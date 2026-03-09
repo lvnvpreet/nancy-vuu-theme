@@ -1,0 +1,230 @@
+{%- comment -%} Atelier — Contact inquiry vault with address details and service selector {%- endcomment -%}
+<section class="atelier-inquiry" id="{{ section.settings.section_id | default: 'inquiry' }}" data-section-id="{{ section.id }}">
+  <div class="atelier-inquiry__inner">
+    <div class="atelier-inquiry__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="atelier-inquiry__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+      {%- if section.settings.subtext != blank -%}
+        <p class="atelier-inquiry__subtext">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.address_eyebrow != blank or section.settings.address_line_1 != blank -%}
+      <div class="atelier-inquiry__address">
+        {%- if section.settings.address_eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.address_eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.address_line_1 != blank -%}
+          <p class="atelier-inquiry__address-text">
+            {{ section.settings.address_line_1 }}
+            {%- if section.settings.address_line_2 != blank -%}<br>{{ section.settings.address_line_2 }}{%- endif -%}
+          </p>
+        {%- endif -%}
+        {%- if section.settings.phone != blank -%}
+          <p class="atelier-inquiry__phone">{{ section.settings.phone }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- form 'contact', id: 'atelier-contact-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="atelier-inquiry__success">
+          <p>Thank you — your request has been received. Our atelier concierge will be in touch shortly.</p>
+        </div>
+      {%- else -%}
+        <div class="atelier-inquiry__form">
+          {%- if form.errors -%}
+            <div class="atelier-inquiry__errors">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <div class="atelier-inquiry__field">
+            <input type="text" name="contact[name]" id="atelier-name"
+              placeholder="{{ section.settings.label_name | default: 'FULL NAME' }}"
+              value="{{ form.name }}" required>
+          </div>
+
+          <div class="atelier-inquiry__field">
+            <input type="email" name="contact[email]" id="atelier-email"
+              placeholder="{{ section.settings.label_email | default: 'CONTACT EMAIL ADDRESS' }}"
+              value="{{ form.email }}" required>
+          </div>
+
+          <div class="atelier-inquiry__field">
+            <select name="contact[body]" id="atelier-service" required>
+              <option value="" disabled selected>{{ section.settings.label_service | default: 'TYPE OF ATELIER SERVICE REQUESTED' }}</option>
+              {%- for block in section.blocks -%}
+                <option value="{{ block.settings.option_value }}">{{ block.settings.option_label }}</option>
+              {%- endfor -%}
+            </select>
+          </div>
+
+          <div class="atelier-inquiry__field">
+            <textarea name="contact[body_details]" id="atelier-message"
+              placeholder="{{ section.settings.label_message | default: 'PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED...' }}"
+              rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn-nv atelier-inquiry__submit">
+            {{ section.settings.submit_label | default: 'Submit Request to the Atelier' }}
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Atelier Inquiry",
+  "class": "atelier-section-inquiry",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section anchor ID",
+      "default": "inquiry"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Atelier Concierge"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "Request a"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2",
+      "default": "Consultation."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Connect with our master artisans to discuss your bespoke tailoring needs, request archival fabric care, or schedule a private fitting."
+    },
+    {
+      "type": "header",
+      "content": "Location Details"
+    },
+    {
+      "type": "text",
+      "id": "address_eyebrow",
+      "label": "Address Eyebrow",
+      "default": "The San Jose Flagship"
+    },
+    {
+      "type": "text",
+      "id": "address_line_1",
+      "label": "Address Line 1",
+      "default": "1520 Southwest Expwy #10"
+    },
+    {
+      "type": "text",
+      "id": "address_line_2",
+      "label": "Address Line 2",
+      "default": "San Jose, CA 95126"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "800.200.2079"
+    },
+    {
+      "type": "header",
+      "content": "Form Labels"
+    },
+    {
+      "type": "text",
+      "id": "label_name",
+      "label": "Name Placeholder",
+      "default": "FULL NAME"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email Placeholder",
+      "default": "CONTACT EMAIL ADDRESS"
+    },
+    {
+      "type": "text",
+      "id": "label_service",
+      "label": "Service Dropdown Placeholder",
+      "default": "TYPE OF ATELIER SERVICE REQUESTED"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message Placeholder",
+      "default": "PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED..."
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit Button Label",
+      "default": "Submit Request to the Atelier"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service_option",
+      "name": "Service Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "option_label",
+          "label": "Option Label",
+          "default": "Master Tailoring & Fit Architecture (Alterations)"
+        },
+        {
+          "type": "text",
+          "id": "option_value",
+          "label": "Option Value",
+          "default": "tailoring"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Atelier Inquiry",
+      "blocks": [
+        {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
+        },
+        {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

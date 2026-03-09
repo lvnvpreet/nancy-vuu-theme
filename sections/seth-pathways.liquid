@@ -1,0 +1,118 @@
+{%- comment -%} Seth Pathways — two-column pathway cards (light + dark) {%- endcomment -%}
+<section class="seth-pathways" data-section-id="{{ section.id }}">
+  <div class="seth-pathways__inner">
+    <div class="seth-pathways__header reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="seth-pathways__heading serif-font">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="seth-pathways__grid">
+
+      <!-- Card 1: Light -->
+      <div class="seth-pathways__card seth-pathways__card--light reveal">
+        {%- if section.settings.card1_eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.card1_eyebrow }}</span>
+        {%- endif -%}
+        <h3 class="seth-pathways__card-title serif-font">
+          {{ section.settings.card1_title_line_1 }}
+          {%- if section.settings.card1_title_line_2 != blank -%}<br>{{ section.settings.card1_title_line_2 }}{%- endif -%}
+        </h3>
+        <ul class="seth-pathways__list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.side == 'light' -%}
+              <li class="seth-pathways__list-item" {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        {%- if section.settings.card1_cta_label != blank -%}
+          <a href="{{ section.settings.card1_cta_link | default: '#inquiry' }}" class="btn-nv seth-pathways__cta">{{ section.settings.card1_cta_label }}</a>
+        {%- endif -%}
+      </div>
+
+      <!-- Card 2: Dark -->
+      <div class="seth-pathways__card seth-pathways__card--dark reveal" style="transition-delay:150ms;">
+        {%- if section.settings.card2_eyebrow != blank -%}
+          <span class="eyebrow seth-pathways__dark-eyebrow">{{ section.settings.card2_eyebrow }}</span>
+        {%- endif -%}
+        <h3 class="seth-pathways__card-title seth-pathways__card-title--white serif-font">
+          {{ section.settings.card2_title_line_1 }}
+          {%- if section.settings.card2_title_line_2 != blank -%}<br>{{ section.settings.card2_title_line_2 }}{%- endif -%}
+        </h3>
+        <ul class="seth-pathways__list seth-pathways__list--dark">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.side == 'dark' -%}
+              <li class="seth-pathways__list-item seth-pathways__list-item--dark" {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        {%- if section.settings.card2_cta_label != blank -%}
+          <a href="{{ section.settings.card2_cta_link | default: '#inquiry' }}" class="btn-nv seth-pathways__cta seth-pathways__cta--white">{{ section.settings.card2_cta_label }}</a>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Pathways",
+  "class": "seth-section-pathways",
+  "settings": [
+    { "type": "text",   "id": "eyebrow",            "label": "Eyebrow",                       "default": "The Journey of Choice" },
+    { "type": "text",   "id": "heading",             "label": "Heading",                       "default": "Pathways to Sovereignty." },
+    { "type": "header", "content": "Card 1 — Light"  },
+    { "type": "text",   "id": "card1_eyebrow",       "label": "Card 1 Eyebrow",                "default": "The Modern Professional" },
+    { "type": "text",   "id": "card1_title_line_1",  "label": "Card 1 Title — Line 1",         "default": "The Custom" },
+    { "type": "text",   "id": "card1_title_line_2",  "label": "Card 1 Title — Line 2",         "default": "Blueprint (MTM)." },
+    { "type": "text",   "id": "card1_cta_label",     "label": "Card 1 CTA Label",              "default": "Inquire for Custom MTM" },
+    { "type": "url",    "id": "card1_cta_link",      "label": "Card 1 CTA Link"                },
+    { "type": "header", "content": "Card 2 — Dark"   },
+    { "type": "text",   "id": "card2_eyebrow",       "label": "Card 2 Eyebrow",                "default": "The Archival Masterpiece" },
+    { "type": "text",   "id": "card2_title_line_1",  "label": "Card 2 Title — Line 1",         "default": "The Sovereign" },
+    { "type": "text",   "id": "card2_title_line_2",  "label": "Card 2 Title — Line 2",         "default": "Bespoke." },
+    { "type": "text",   "id": "card2_cta_label",     "label": "Card 2 CTA Label",              "default": "Request Bespoke Commission" },
+    { "type": "url",    "id": "card2_cta_link",      "label": "Card 2 CTA Link"                }
+  ],
+  "blocks": [
+    {
+      "type": "pathway_item",
+      "name": "Pathway List Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "side",
+          "label": "Assign to card",
+          "options": [
+            { "value": "light", "label": "Card 1 (Light)" },
+            { "value": "dark",  "label": "Card 2 (Dark)" }
+          ],
+          "default": "light"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item Text",
+          "default": "List item text here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Pathways",
+      "settings": {
+        "eyebrow": "The Journey of Choice",
+        "heading": "Pathways to Sovereignty.",
+        "card1_eyebrow": "The Modern Professional",
+        "card1_title_line_1": "The Custom",
+        "card1_title_line_2": "Blueprint (MTM).",
+        "card2_eyebrow": "The Archival Masterpiece",
+        "card2_title_line_1": "The Sovereign",
+        "card2_title_line_2": "Bespoke."
+      }
+    }
+  ]
+}
+{% endschema %}

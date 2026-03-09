@@ -1,0 +1,95 @@
+{%- comment -%} Crowning Origin — 2-col (image left, text right) with opening/closing quote marks and richtext paragraph blocks {%- endcomment -%}
+<section class="crowning-origin" data-section-id="{{ section.id }}">
+  <div class="crowning-origin__inner">
+
+    <div class="crowning-origin__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 800 }} 800w"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.eyebrow }}"
+          class="crowning-origin__img"
+          loading="lazy">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'crowning-origin__img placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="crowning-origin__text reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      <h2 class="crowning-origin__title serif-font">
+        {{ section.settings.title_line_1 }}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+
+      {%- if section.settings.show_quotes -%}
+        <span class="crowning-origin__quote-mark">&ldquo;</span>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'paragraph' -%}
+          <div class="crowning-origin__body" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if section.settings.show_quotes -%}
+        <span class="crowning-origin__quote-mark">&rdquo;</span>
+      {%- endif -%}
+
+      {%- if section.settings.attribution != blank -%}
+        <p class="crowning-origin__attribution serif-font">{{ section.settings.attribution }}</p>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crowning Origin",
+  "class": "crowning-section-origin",
+  "settings": [
+    { "type": "image_picker", "id": "image",        "label": "Image"                                              },
+    { "type": "text",         "id": "eyebrow",      "label": "Eyebrow",        "default": "The Revelation"       },
+    { "type": "text",         "id": "title_line_1", "label": "Title — Line 1", "default": "The Commission"       },
+    { "type": "text",         "id": "title_line_2", "label": "Title — Line 2", "default": "of Humanity."         },
+    { "type": "checkbox",     "id": "show_quotes",  "label": "Show decorative quote marks", "default": true      },
+    { "type": "text",         "id": "attribution",  "label": "Attribution",    "default": "\u2014 Nancy Vuu"     }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Paragraph Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crowning Origin",
+      "settings": {
+        "eyebrow": "The Revelation",
+        "title_line_1": "The Commission",
+        "title_line_2": "of Humanity.",
+        "show_quotes": true,
+        "attribution": "\u2014 Nancy Vuu"
+      },
+      "blocks": [
+        { "type": "paragraph", "settings": { "text": "<p>It began not in a studio, but in a profound midnight awakening. I was met with a celestial vision\u2014a vivid encounter where a messenger presented a scroll of ancient truth.</p>" } },
+        { "type": "paragraph", "settings": { "text": "<p>Before I could decipher the script, I heard the voice of the Creator. It sounded like rushing waters and mighty winds, commanding a single, resonant directive: <strong>\"Tell humanity to arise.\"</strong> My entire being shook in the power and presence of the Divine.</p>" } },
+        { "type": "paragraph", "settings": { "text": "<p>I was instructed to absorb this truth entirely into my being. Upon waking, the mandate became blindingly clear: <em>\"Nancy, so many walk this earth blind to their royal nature, not understanding what it means to live as an heir. Will you remind them of their rightful inheritance? Will you crown them in their fullness?\"</em></p>" } },
+        { "type": "paragraph", "settings": { "text": "<p>In my mind's eye, I was shown a towering collection of beautifully ornate crowns, waiting completely unclaimed. In that exact moment, our work transcended fashion. I knew my spirit had been commissioned to the elevation of humanity.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

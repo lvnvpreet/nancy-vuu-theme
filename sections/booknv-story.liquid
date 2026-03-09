@@ -1,0 +1,62 @@
+{%- comment -%} BookNV Story — origin story split grid: grayscale image left (+deco square), bold text right {%- endcomment -%}
+<section class="booknv-story" data-section-id="{{ section.id }}">
+  <div class="booknv-story__inner">
+
+    <div class="booknv-story__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 1000 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 1000 }} 1000w"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.eyebrow }}"
+          class="booknv-story__img"
+          loading="lazy">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'booknv-story__img placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="booknv-story__text reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      <h2 class="booknv-story__title serif-font">
+        {{ section.settings.title_line_1 }}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+
+      {%- if section.settings.body_1 != blank -%}
+        <p class="booknv-story__body booknv-story__body--large">{{ section.settings.body_1 }}</p>
+      {%- endif -%}
+      {%- if section.settings.body_2 != blank -%}
+        <p class="booknv-story__body">{{ section.settings.body_2 }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#inquiry' }}" class="btn-nv booknv-story__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BookNV Origin Story",
+  "class": "booknv-section-story",
+  "settings": [
+    { "type": "image_picker", "id": "image",        "label": "Image"                                                        },
+    { "type": "text",         "id": "eyebrow",      "label": "Eyebrow",          "default": "The Origin Story"             },
+    { "type": "text",         "id": "title_line_1", "label": "Title — Line 1",   "default": "Survival to"                  },
+    { "type": "text",         "id": "title_line_2", "label": "Title — Line 2",   "default": "Significance."                },
+    { "type": "textarea",     "id": "body_1",       "label": "Body 1 (larger)",  "default": "Nancy Vuu's journey from a childhood refugee journey to dressing the elite of the NBA, NFL, and Global Royalty is a masterclass in Identity Architecture." },
+    { "type": "textarea",     "id": "body_2",       "label": "Body 2",           "default": "She is an Advisor and Mentor who catalyzes a shift in how audiences view their own design. By weaving high-fashion and humanitarian advocacy, Nancy provides the blueprint for excellence and the courage to realize the unseen." },
+    { "type": "text",         "id": "cta_label",    "label": "CTA Label",        "default": "Book Nancy Vuu"               },
+    { "type": "url",          "id": "cta_link",     "label": "CTA Link"          }
+  ],
+  "presets": [
+    { "name": "BookNV Origin Story" }
+  ]
+}
+{% endschema %}

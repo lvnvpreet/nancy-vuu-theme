@@ -26,7 +26,7 @@
       "settings": {
         "eyebrow": "The Collection · 2026",
         "title": "Bridal",
-        "cta_label": "Shop Collection",
+        "cta_label": "Explore Bridal",
         "cta_link": "/collections/bridal"
       }
     },
@@ -38,7 +38,9 @@
         "title": "Bespoke Bridal",
         "description": "\"You Dream It. We Create It.\" A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.",
         "show_chart": true,
-        "chart_title": "The Journey — From Dream to Reality"
+        "chart_title": "The Journey — From Dream to Reality",
+        "cta_label": "Begin Commission",
+        "cta_link": "/pages/bridal"
       }
     },
     "womens-couture": {
@@ -62,10 +64,10 @@
         "grid_ratio": "equal",
         "image_position": "right",
         "eyebrow": "Tailored for Him",
-        "title": "Men's Bespoke",
-        "description": "Precision tailoring for the modern kingdom heir. Italian wools, sharp silhouettes, and an uncompromising fit that speaks before you say a word.",
-        "cta_label": "Book Fitting",
-        "cta_link": "/pages/book-fitting"
+        "title": "Seth Eden",
+        "description": "Precision tailoring for the modern kingdom heir. Architectural authority meets restorative peace. Men's and Women's bespoke suiting.",
+        "cta_label": "Explore Seth Eden",
+        "cta_link": "/pages/seth-eden"
       }
     },
     "legacy-collections": {
@@ -77,11 +79,11 @@
       "blocks": {
         "children": {
           "type": "collection_card",
-          "settings": { "title": "Children's Couture", "cta": "Shop Kids", "link": "/collections/childrens" }
+          "settings": { "title": "Children's Couture", "cta": "Shop Kids", "link": "/collections/childrens-couture" }
         },
         "mommy": {
           "type": "collection_card",
-          "settings": { "title": "Mommy & Me", "cta": "Shop Matching Sets", "link": "/collections/mommy-and-me" }
+          "settings": { "title": "Mommy & Me", "cta": "Shop Matching Sets", "link": "/collections/mommy-me" }
         }
       },
       "block_order": ["children", "mommy"]
@@ -108,7 +110,8 @@
         "section_id": "crowns",
         "eyebrow": "Jewelry & Headpieces",
         "title": "The Crowning",
-        "cta_label": "Adorn Yourself"
+        "cta_label": "Adorn Yourself",
+        "cta_link": "/collections/crowns-jewelry"
       }
     },
     "retreats": {
@@ -116,7 +119,10 @@
       "settings": {
         "eyebrow": "Restoration for the Soul",
         "title": "Dream Retreats",
-        "calendar_label": "View Calendar"
+        "calendar_label": "View Calendar",
+        "calendar_link": "/pages/retreats",
+        "explore_label": "Explore All Retreats",
+        "explore_link": "/pages/retreats"
       },
       "blocks": {
         "napa":   { "type": "retreat", "settings": { "name": "Napa Valley", "subtitle": "Wine Country Retreat" } },
@@ -132,6 +138,7 @@
         "title": "Nancy Vuu Photography",
         "description": "Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary.",
         "cta_label": "View Portfolio",
+        "cta_link": "/pages/photography",
         "show_marquee": true
       },
       "blocks": {
@@ -148,7 +155,7 @@
         "title": "House of Vuu Foundation",
         "description": "We exist to empower humanity. Our foundation supports global initiatives for the marginalized and the voiceless — one stitch, one life at a time.",
         "donate_label": "Donate / Get Involved",
-        "donate_link": "",
+        "donate_link": "/pages/foundation",
         "pct_outreach": 45,
         "pct_education": 30,
         "pct_aid": 25,
@@ -166,15 +173,16 @@
         "academy_eyebrow": "Education",
         "academy_title": "Dream Academy",
         "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
-        "academy_cta": "Join The Academy"
+        "academy_cta": "Join The Academy",
+        "academy_link": "/pages/dream-academy"
       },
       "blocks": {
         "t1": { "type": "title_line", "settings": { "text": "Speaker.", "italic": false } },
         "t2": { "type": "title_line", "settings": { "text": "Mentor.",  "italic": true } },
         "t3": { "type": "title_line", "settings": { "text": "Author.",  "italic": false } },
-        "l1": { "type": "link", "settings": { "label": "Book for Speaking" } },
-        "l2": { "type": "link", "settings": { "label": "Mentorship Program" } },
-        "l3": { "type": "link", "settings": { "label": "Buy The Book" } }
+        "l1": { "type": "link", "settings": { "label": "Book for Speaking",  "url": "/pages/book" } },
+        "l2": { "type": "link", "settings": { "label": "Mentorship Program", "url": "/pages/book" } },
+        "l3": { "type": "link", "settings": { "label": "Buy The Book",        "url": "/pages/book" } }
       },
       "block_order": ["t1", "t2", "t3", "l1", "l2", "l3"]
     }

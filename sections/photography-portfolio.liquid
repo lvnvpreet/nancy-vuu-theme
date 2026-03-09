@@ -1,0 +1,168 @@
+{%- comment -%} Photography — Editorial portfolio grid with configurable item sizes {%- endcomment -%}
+<section class="photo-portfolio" data-section-id="{{ section.id }}">
+  <div class="photo-portfolio__inner">
+    <div class="photo-portfolio__header reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="photo-portfolio__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+    </div>
+    <div class="photo-portfolio__grid">
+      {%- for block in section.blocks -%}
+        {%- assign size_class = 'photo-item--' | append: block.settings.size | default: 'photo-item--wide' -%}
+        <div class="photo-portfolio__item {{ size_class }} reveal" style="transition-delay:{{ forloop.index0 | times: 100 }}ms;" {{ block.shopify_attributes }}>
+          <div class="photo-portfolio__img-wrap">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 1200 }}"
+                srcset="{{ block.settings.image | image_url: width: 600 }} 600w,
+                        {{ block.settings.image | image_url: width: 900 }} 900w,
+                        {{ block.settings.image | image_url: width: 1200 }} 1200w"
+                sizes="(max-width: 768px) 100vw, {{ block.settings.size == 'full' or block.settings.size == 'large' ? '75vw' : '50vw' }}"
+                alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                loading="lazy"
+                class="photo-portfolio__img">
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'photo-portfolio__img placeholder' }}
+            {%- endif -%}
+          </div>
+          <div class="photo-portfolio__text">
+            {%- if block.settings.series != blank -%}
+              <p class="photo-portfolio__series">{{ block.settings.series }}</p>
+            {%- endif -%}
+            <h3 class="photo-portfolio__name serif-font">{{ block.settings.title }}</h3>
+            {%- if block.settings.description != blank -%}
+              <span class="photo-portfolio__desc">{{ block.settings.description }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Photo Portfolio Grid",
+  "class": "photo-section-portfolio",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Tiers of Commission"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "The Curated"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2",
+      "default": "Portfolios."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "portfolio_item",
+      "name": "Portfolio Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "series",
+          "label": "Series Label",
+          "default": "The Authority Series"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Portfolio Title",
+          "default": "The Private Portfolio"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Short Description",
+          "default": "For CEOs, Founders, and Elite Talent demanding a commanding, magnetic brand presence."
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Grid Size",
+          "options": [
+            { "value": "large", "label": "Large (8 cols, tall)" },
+            { "value": "tall",  "label": "Tall (4 cols, tall)" },
+            { "value": "wide",  "label": "Wide (6 cols)" },
+            { "value": "square","label": "Square (6 cols)" },
+            { "value": "full",  "label": "Full Width (12 cols)" }
+          ],
+          "default": "wide"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Portfolio Grid",
+      "blocks": [
+        {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Authority Series",
+            "title": "The Private Portfolio",
+            "description": "For CEOs, Founders, and Elite Talent demanding a commanding, magnetic brand presence.",
+            "size": "large"
+          }
+        },
+        {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Heirloom Series",
+            "title": "Bridal & Wedding",
+            "description": "Capturing the sacred elegance and divine romance of your most profound milestone.",
+            "size": "tall"
+          }
+        },
+        {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Atelier Series",
+            "title": "Fashion Editorial",
+            "description": "High-concept, avant-garde storytelling for adults and children, crafted for publication.",
+            "size": "square"
+          }
+        },
+        {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Agency Series",
+            "title": "Commercial Campaigns",
+            "description": "Architecting immersive visual narratives to elevate luxury brands and product launches.",
+            "size": "wide"
+          }
+        },
+        {
+          "type": "portfolio_item",
+          "settings": {
+            "series": "The Legacy Series",
+            "title": "Lifestyle & Storytelling",
+            "description": "Cinematic, soul-stirring documentation of a life well-lived, capturing authentic beauty in its purest form.",
+            "size": "full"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+{%- comment -%} Photography — Couture experience: dark split with text+feature list left, image right {%- endcomment -%}
+<section class="photo-experience" id="{{ section.settings.section_id | default: 'experience' }}" data-section-id="{{ section.id }}">
+  <div class="photo-experience__inner">
+    <div class="photo-experience__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow" style="color: var(--seth-gold, #c5a059);">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="photo-experience__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+      {%- if section.settings.description != blank -%}
+        <p class="photo-experience__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+      {%- if section.settings.description_2 != blank -%}
+        <p class="photo-experience__desc">{{ section.settings.description_2 }}</p>
+      {%- endif -%}
+      {%- assign list_blocks = section.blocks | where: "type", "list_item" -%}
+      {%- if list_blocks.size > 0 -%}
+        <ul class="photo-experience__list">
+          {%- for block in list_blocks -%}
+            <li class="photo-experience__list-item" {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+    <div class="photo-experience__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          srcset="{{ section.settings.image | image_url: width: 500 }} 500w,
+                  {{ section.settings.image | image_url: width: 700 }} 700w,
+                  {{ section.settings.image | image_url: width: 900 }} 900w"
+          sizes="(max-width: 900px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.title_line_1 }}"
+          loading="lazy"
+          class="photo-experience__img">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'photo-experience__img placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Photo Experience",
+  "class": "photo-section-experience",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section anchor ID",
+      "default": "experience"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Vogue Treatment"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "The Couture"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2",
+      "default": "Commission."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Body Paragraph 1",
+      "default": "A House of Nancy Vuu photography commission is a holistic, fully-produced editorial experience. You are not just stepping in front of a camera; you are stepping into the meticulous world of a high-fashion atelier."
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Body Paragraph 2",
+      "default": "Nancy Vuu personally oversees every detail as the Creative Director, leading a master team of photographers, lighting experts, and stylists to ensure your final portfolio rivals the pages of the world's most prestigious magazines."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right-side Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "Feature List Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item Text",
+          "default": "Exclusive access to the Nancy Vuu Couture Wardrobe Archive"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Experience",
+      "blocks": [
+        { "type": "list_item", "settings": { "text": "Exclusive access to the Nancy Vuu Couture Wardrobe Archive" } },
+        { "type": "list_item", "settings": { "text": "World-Class Editorial Styling & Creative Direction" } },
+        { "type": "list_item", "settings": { "text": "Professional, High-Fashion Hair and Makeup Artistry" } },
+        { "type": "list_item", "settings": { "text": "Bespoke Concept Architecture & Set Design" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

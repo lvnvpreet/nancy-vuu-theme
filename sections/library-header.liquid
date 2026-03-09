@@ -1,0 +1,38 @@
+{%- comment -%} Library entrance header — white bg, centered, border-bottom {%- endcomment -%}
+<header class="library-header" data-section-id="{{ section.id }}">
+  {%- if section.settings.title != blank -%}
+    <h1 class="library-header__title serif-font">{{ section.settings.title }}</h1>
+  {%- endif -%}
+  {%- if section.settings.subtitle != blank -%}
+    <p class="library-header__sub">{{ section.settings.subtitle }}</p>
+  {%- endif -%}
+</header>
+
+{% schema %}
+{
+  "name": "Library Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Library."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "The Official Collection of Thought"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Library Header",
+      "settings": {
+        "title": "The Library.",
+        "subtitle": "The Official Collection of Thought"
+      }
+    }
+  ]
+}
+{% endschema %}

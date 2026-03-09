@@ -1,0 +1,59 @@
+{%- comment -%} Crowning Hero — 95vh fullscreen hero with dark overlay + two outline-white CTAs {%- endcomment -%}
+<section
+  class="crowning-hero"
+  {% if section.settings.image != blank %}
+  style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('{{ section.settings.image | image_url: width: 1920 }}');"
+  {% endif %}
+  data-section-id="{{ section.id }}">
+  <div class="crowning-hero__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow crowning-hero__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+
+    <h1 class="crowning-hero__title serif-font">{{ section.settings.title }}</h1>
+
+    {%- if section.settings.description != blank -%}
+      <p class="crowning-hero__desc">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    <div class="crowning-hero__btns">
+      {%- if section.settings.btn1_label != blank -%}
+        <a href="{{ section.settings.btn1_link | default: '#shop' }}" class="btn-nv crowning-hero__btn--outline">{{ section.settings.btn1_label }}</a>
+      {%- endif -%}
+      {%- if section.settings.btn2_label != blank -%}
+        <a href="{{ section.settings.btn2_link | default: '#book' }}" class="btn-nv crowning-hero__btn--outline">{{ section.settings.btn2_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crowning Hero",
+  "class": "crowning-section-hero",
+  "settings": [
+    { "type": "image_picker", "id": "image",       "label": "Background Image"                                              },
+    { "type": "text",        "id": "eyebrow",      "label": "Eyebrow",        "default": "A Sacred Moment of Elevation"    },
+    { "type": "text",        "id": "title",        "label": "Heading",        "default": "The Crowning."                   },
+    { "type": "textarea",    "id": "description",  "label": "Description",    "default": "An external recognition of an internal commitment. Step into your ultimate identity and awaken your destiny." },
+    { "type": "header",      "content": "Button 1"             },
+    { "type": "text",        "id": "btn1_label",   "label": "Button 1 Label", "default": "Shop The Collection"             },
+    { "type": "url",         "id": "btn1_link",    "label": "Button 1 Link"                                                 },
+    { "type": "header",      "content": "Button 2"             },
+    { "type": "text",        "id": "btn2_label",   "label": "Button 2 Label", "default": "Book The Experience"             },
+    { "type": "url",         "id": "btn2_link",    "label": "Button 2 Link"                                                 }
+  ],
+  "presets": [
+    {
+      "name": "Crowning Hero",
+      "settings": {
+        "eyebrow": "A Sacred Moment of Elevation",
+        "title": "The Crowning.",
+        "description": "An external recognition of an internal commitment. Step into your ultimate identity and awaken your destiny.",
+        "btn1_label": "Shop The Collection",
+        "btn2_label": "Book The Experience"
+      }
+    }
+  ]
+}
+{% endschema %}

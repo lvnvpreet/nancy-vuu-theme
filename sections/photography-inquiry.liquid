@@ -1,0 +1,204 @@
+{%- comment -%} Photography — Inquiry vault with location field and commission type dropdown {%- endcomment -%}
+<section class="photo-inquiry" id="{{ section.settings.section_id | default: 'inquiry' }}" data-section-id="{{ section.id }}">
+  <div class="photo-inquiry__inner">
+    <div class="photo-inquiry__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="photo-inquiry__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+      {%- if section.settings.subtext != blank -%}
+        <p class="photo-inquiry__subtext">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- form 'contact', id: 'photo-contact-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="photo-inquiry__success">
+          <p>Your vision has been received. Our editorial team will be in touch within 48 hours to begin the curation process.</p>
+        </div>
+      {%- else -%}
+        <div class="photo-inquiry__form">
+          {%- if form.errors -%}
+            <div class="photo-inquiry__errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+
+          <div class="photo-inquiry__field">
+            <input type="text" name="contact[name]"
+              placeholder="{{ section.settings.label_name | default: 'FULL NAME / BRAND OR TALENT NAME' }}"
+              value="{{ form.name }}" required>
+          </div>
+
+          <div class="photo-inquiry__field">
+            <input type="email" name="contact[email]"
+              placeholder="{{ section.settings.label_email | default: 'DIRECT CONTACT EMAIL' }}"
+              value="{{ form.email }}" required>
+          </div>
+
+          <div class="photo-inquiry__field">
+            <input type="text" name="contact[location]"
+              placeholder="{{ section.settings.label_location | default: 'DESIRED SHOOT LOCATION (CITY / COUNTRY)' }}" required>
+          </div>
+
+          <div class="photo-inquiry__field">
+            <select name="contact[commission_type]" required>
+              <option value="" disabled selected>{{ section.settings.label_commission | default: 'TYPE OF EDITORIAL COMMISSION' }}</option>
+              {%- for block in section.blocks -%}
+                <option value="{{ block.settings.option_value }}">{{ block.settings.option_label }}</option>
+              {%- endfor -%}
+            </select>
+          </div>
+
+          <div class="photo-inquiry__field">
+            <textarea name="contact[body]"
+              placeholder="{{ section.settings.label_message | default: 'DESCRIBE YOUR VISION FOR THIS EXPERIENCE...' }}"
+              rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="photo-inquiry__submit">
+            {{ section.settings.submit_label | default: 'Submit Inquiry' }}
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Photo Inquiry",
+  "class": "photo-section-inquiry",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section anchor ID",
+      "default": "inquiry"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Secure Your Commission"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "Request a Private"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2",
+      "default": "Consultation."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Because of the bespoke nature of the Nancy Vuu editorial experience, we accept a highly limited number of commissions per season. Submit your vision below to begin the curation process."
+    },
+    {
+      "type": "text",
+      "id": "label_name",
+      "label": "Name Field Placeholder",
+      "default": "FULL NAME / BRAND OR TALENT NAME"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email Field Placeholder",
+      "default": "DIRECT CONTACT EMAIL"
+    },
+    {
+      "type": "text",
+      "id": "label_location",
+      "label": "Location Field Placeholder",
+      "default": "DESIRED SHOOT LOCATION (CITY / COUNTRY)"
+    },
+    {
+      "type": "text",
+      "id": "label_commission",
+      "label": "Commission Dropdown Placeholder",
+      "default": "TYPE OF EDITORIAL COMMISSION"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message Placeholder",
+      "default": "DESCRIBE YOUR VISION FOR THIS EXPERIENCE..."
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit Button Label",
+      "default": "Submit Inquiry"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "commission_option",
+      "name": "Commission Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "option_label",
+          "label": "Option Label",
+          "default": "The Private Portfolio (CEO / Entrepreneur / Model)"
+        },
+        {
+          "type": "text",
+          "id": "option_value",
+          "label": "Option Value",
+          "default": "private-portfolio"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Inquiry",
+      "blocks": [
+        {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "The Private Portfolio (CEO / Entrepreneur / Model)",
+            "option_value": "The Private Portfolio"
+          }
+        },
+        {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Fashion Editorial (Adult or Child)",
+            "option_value": "Fashion Editorial"
+          }
+        },
+        {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Bridal & Heirloom",
+            "option_value": "Bridal & Heirloom"
+          }
+        },
+        {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Commercial / Brand Campaign",
+            "option_value": "Commercial — Brand Campaign"
+          }
+        },
+        {
+          "type": "commission_option",
+          "settings": {
+            "option_label": "Lifestyle & Storytelling",
+            "option_value": "Lifestyle & Storytelling"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

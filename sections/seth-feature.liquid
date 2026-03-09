@@ -1,0 +1,177 @@
+{%- comment -%} Seth Feature — reusable dark/light split section w/ optional badge + bullet list {%- endcomment -%}
+{%- assign is_dark = false -%}
+{%- if section.settings.theme == 'dark' -%}{%- assign is_dark = true -%}{%- endif -%}
+<section
+  class="seth-feature{% if is_dark %} seth-feature--dark{% endif %}"
+  id="{{ section.settings.section_id }}"
+  data-section-id="{{ section.id }}">
+  <div class="seth-feature__inner{% if section.settings.image_position == 'right' %} seth-feature__inner--img-right{% endif %}">
+    <div class="seth-feature__media" style="height:{{ section.settings.image_height | default: 700 }}px;">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 1000 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w,
+                  {{ section.settings.image | image_url: width: 800 }} 800w,
+                  {{ section.settings.image | image_url: width: 1000 }} 1000w"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.eyebrow }}"
+          class="seth-feature__img"
+          loading="lazy">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'seth-feature__img placeholder' }}
+      {%- endif -%}
+    </div>
+    <div class="seth-feature__text">
+      {%- if section.settings.badge_text != blank -%}
+        <div class="seth-feature__badge">{{ section.settings.badge_text }}</div>
+      {%- endif -%}
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow seth-feature__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="seth-feature__title serif-font">
+        {{ section.settings.title_line_1 }}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+      {%- if section.settings.body_1 != blank -%}
+        <p class="seth-feature__body">{{ section.settings.body_1 }}</p>
+      {%- endif -%}
+      {%- if section.settings.body_2 != blank -%}
+        <p class="seth-feature__body">{{ section.settings.body_2 }}</p>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="seth-feature__list">
+          {%- for block in section.blocks -%}
+            <li class="seth-feature__list-item" {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#' }}"
+           class="seth-feature__cta {% if section.settings.cta_style == 'underline' %}seth-feature__cta--underline{% elsif is_dark %}seth-feature__cta--white{% else %}seth-feature__cta--solid{% endif %}">
+          {{ section.settings.cta_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Feature",
+  "class": "seth-section-feature",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section anchor ID"
+    },
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Background Theme",
+      "options": [
+        { "value": "light", "label": "Light (White)" },
+        { "value": "dark",  "label": "Dark (Black)" }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Side",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Image Height (px)",
+      "min": 400, "max": 1000, "step": 50, "default": 700
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text (optional — e.g. 'The Vitality Threshold')"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title — Line 1",
+      "default": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title — Line 2"
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "Body Paragraph 1"
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Body Paragraph 2"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "select",
+      "id": "cta_style",
+      "label": "CTA Style (light theme only)",
+      "options": [
+        { "value": "solid",     "label": "Solid Black Button" },
+        { "value": "underline", "label": "Underline / Text Link" }
+      ],
+      "default": "solid"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Bullet List Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item Text",
+          "default": "Bullet point text here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Feature — Dark",
+      "settings": {
+        "theme": "dark",
+        "image_position": "left",
+        "image_height": 800,
+        "title_line_1": "Section Title"
+      }
+    }
+  ]
+}
+{% endschema %}

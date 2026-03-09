@@ -1,0 +1,37 @@
+{%- comment -%} Atelier philosophy / origin story — light stone bg, large richtext paragraph {%- endcomment -%}
+<section class="atelier-philosophy" data-section-id="{{ section.id }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <span class="eyebrow atelier-philosophy__eyebrow">{{ section.settings.eyebrow }}</span>
+  {%- endif -%}
+  {%- if section.settings.content != blank -%}
+    <div class="atelier-philosophy__text">{{ section.settings.content }}</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Atelier Philosophy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Vision"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Philosophy Text",
+      "default": "<p>\"In an era defined by disposable fashion, The House of Nancy Vuu took acquisition of a humble neighborhood cleaner with a profound vision: to transform it into <strong>The Nancy Vuu Atelier</strong>—a world-class <em>Conservatory of Craft.</em> Today, this physical space serves as the beating heart of our enterprise. It is where bespoke bridal heirlooms are architected, where vintage archives are meticulously preserved, and ultimately, where <em>The Dream Academy</em> will teach the lost, sacred art of sewing to a new generation.\"</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Atelier Philosophy",
+      "settings": {
+        "eyebrow": "The Vision"
+      }
+    }
+  ]
+}
+{% endschema %}

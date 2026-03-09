@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "hero": {
+      "type": "collection-hero-editorial",
+      "settings": {
+        "eyebrow": "The Architecture of Presence",
+        "overlay_opacity": 65
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "quote": "She does not enter a room—she redefines it. Our Women's Couture is sculpted for the visionary who understands that true elegance is not worn; it is wielded. Every silhouette is engineered to anchor your presence and amplify the gravity of your purpose.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
+      }
+    },
+    "exclusivity": {
+      "type": "exclusivity-notice",
+      "settings": {
+        "eyebrow": "Exclusivity Notice",
+        "body": "Our Couture Runway pieces are unique masterpieces available for purchase exclusively at the Atelier. The collection serves as a curated invitation for your Made-to-Measure or Bespoke order."
+      }
+    },
+    "lookbook": {
+      "type": "lookbook-grid",
+      "blocks": {
+        "look_1": { "type": "look", "settings": { "title": "The Sovereign Coat", "subtitle": "Structured Overcoat in Italian Cashmere", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_2": { "type": "look", "settings": { "title": "The Architect Blazer", "subtitle": "Razor-Sharp Silhouette in Midnight Wool", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_3": { "type": "look", "settings": { "title": "The Presence Gown", "subtitle": "Flowing Silk Column with Sculptured Shoulders", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_4": { "type": "look", "settings": { "title": "The Authority Dress", "subtitle": "Architectural Draping in Ivory Crêpe de Chine", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_5": { "type": "look", "settings": { "title": "The Mandate Set", "subtitle": "Tailored Trouser Suite with Hand-Finished Details", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_6": { "type": "look", "settings": { "title": "The Legacy Cape", "subtitle": "Dramatic Full-Length Cape in Charcoal Duchess Satin", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } }
+      },
+      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "settings": {}
+    },
+    "cross-sell": {
+      "type": "cross-sell",
+      "settings": {
+        "title": "The Crowning Accessory",
+        "description": "While our garments are architected to order, our Crowns and Jewelry are curated for immediate attainment. Every physical masterpiece is prepared for secure shipment to serve as a constant reminder of your unshakeable presence.",
+        "cta_label": "Procure Online",
+        "cta_link": "/collections/crowns-jewelry",
+        "primary_label": "Book Atelier Visit",
+        "primary_link": "/pages/bridal",
+        "secondary_label": "Virtual Consultation"
+      }
+    }
+  },
+  "order": ["hero", "manifesto", "exclusivity", "lookbook", "cross-sell"]
+}

@@ -1,0 +1,47 @@
+{%- comment -%} BookNV Press — "As Seen In" featured logos strip. Each logo is an editable block. {%- endcomment -%}
+<section class="booknv-press" data-section-id="{{ section.id }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <span class="eyebrow booknv-press__eyebrow">{{ section.settings.eyebrow }}</span>
+  {%- endif -%}
+  <div class="booknv-press__logos">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'logo' -%}
+        {%- unless forloop.first -%}<span class="booknv-press__sep"> | </span>{%- endunless -%}
+        <span class="booknv-press__name" {{ block.shopify_attributes }}>{{ block.settings.name }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BookNV Press Strip",
+  "class": "booknv-section-press",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "As Seen In & Recognized By" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Press Logo",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Publication Name", "default": "VOGUE" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BookNV Press Strip",
+      "settings": { "eyebrow": "As Seen In & Recognized By" },
+      "blocks": [
+        { "type": "logo", "settings": { "name": "VOGUE"            } },
+        { "type": "logo", "settings": { "name": "ELLE"             } },
+        { "type": "logo", "settings": { "name": "HARPER'S BAZAAR"  } },
+        { "type": "logo", "settings": { "name": "BRIDES"           } },
+        { "type": "logo", "settings": { "name": "HUFFPOST"         } },
+        { "type": "logo", "settings": { "name": "EVENING STANDARD" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

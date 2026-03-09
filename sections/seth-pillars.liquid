@@ -1,0 +1,115 @@
+{%- comment -%} Seth Eden — Pillars of Craft: service pillar rows {%- endcomment -%}
+<section class="seth-pillars" data-section-id="{{ section.id }}">
+  <div class="seth-pillars__inner">
+    {%- for block in section.blocks -%}
+      <div class="seth-pillars__row reveal" {{ block.shopify_attributes }}>
+        <div class="seth-pillars__row-label">
+          {%- if block.settings.category != blank -%}
+            <p class="seth-pillars__category">{{ block.settings.category }}</p>
+          {%- endif -%}
+        </div>
+        <div class="seth-pillars__row-spacer"></div>
+        <div class="seth-pillars__row-content">
+          {%- if block.settings.eyebrow != blank -%}
+            <span class="eyebrow" style="color: var(--seth-gold);">{{ block.settings.eyebrow }}</span>
+          {%- endif -%}
+          <h2 class="seth-pillars__title serif">{{ block.settings.title }}</h2>
+          {%- if block.settings.body != blank -%}
+            <p class="seth-pillars__body">{{ block.settings.body }}</p>
+          {%- endif -%}
+          {%- if block.settings.cta_label != blank -%}
+            <a href="{{ block.settings.cta_link | default: '#' }}" class="btn-editorial">{{ block.settings.cta_label }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seth Pillars",
+  "class": "seth-section-pillars",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Category / Side Label",
+          "default": "Bespoke Tailoring"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "The Commission"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Master Bespoke for All."
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body Text",
+          "default": "Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture."
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA Label",
+          "default": "Secure Your Commission"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seth Pillars",
+      "blocks": [
+        {
+          "type": "pillar",
+          "settings": {
+            "category": "Bespoke Tailoring",
+            "eyebrow": "The Commission",
+            "title": "Master Bespoke for All.",
+            "body": "Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture.",
+            "cta_label": "Secure Your Commission"
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "category": "Power Suits & Gala Couture",
+            "eyebrow": "High Visibility",
+            "title": "Power Suits & Gala Couture.",
+            "body": "From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments.",
+            "cta_label": "Inquire for Event"
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "category": "Bespoke Wedding Party",
+            "eyebrow": "Legacy Beginnings",
+            "title": "The Heirloom Occasion.",
+            "body": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture.",
+            "cta_label": "Book Occasion Consultation"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+{%- comment -%} BookNV Hero — light stone bg, 90vh, centered with italic word in heading and CTA {%- endcomment -%}
+<section class="booknv-hero" data-section-id="{{ section.id }}">
+  <div class="booknv-hero__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow booknv-hero__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+
+    <h1 class="booknv-hero__title serif-font">
+      {{ section.settings.title_pre_italic }}
+      {%- if section.settings.title_italic != blank -%}
+        <br><em>{{ section.settings.title_italic }}</em>
+      {%- endif -%}
+      {%- if section.settings.title_post_italic != blank -%}
+        {{ section.settings.title_post_italic }}
+      {%- endif -%}
+    </h1>
+
+    {%- if section.settings.description != blank -%}
+      <p class="booknv-hero__desc">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank -%}
+      <a href="{{ section.settings.cta_link | default: '#inquiry' }}" class="btn-nv">{{ section.settings.cta_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BookNV Hero",
+  "class": "booknv-section-hero",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",              "default": "Creative Director | Fashion Designer | Philanthropist" },
+    { "type": "text",     "id": "title_pre_italic",  "label": "Heading — Before Italic", "default": "Fashioned" },
+    { "type": "text",     "id": "title_italic",      "label": "Heading — Italic word",   "default": "for" },
+    { "type": "text",     "id": "title_post_italic", "label": "Heading — After Italic",  "default": "Heaven." },
+    { "type": "textarea", "id": "description",       "label": "Description",          "default": "From a refugee journey to styling NBA/NFL icons and Royalty. Nancy Vuu deconstructs survival to build legacies of significance through the power of identity." },
+    { "type": "text",     "id": "cta_label",         "label": "CTA Label",            "default": "Inquire for Your Stage" },
+    { "type": "url",      "id": "cta_link",          "label": "CTA Link"              }
+  ],
+  "presets": [
+    { "name": "BookNV Hero" }
+  ]
+}
+{% endschema %}

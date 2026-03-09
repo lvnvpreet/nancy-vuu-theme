@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "hero": {
+      "type": "collection-hero-editorial",
+      "settings": {
+        "eyebrow": "Little Crowns, Great Purpose",
+        "overlay_opacity": 65
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "quote": "Every child is designed with a purpose that precedes their first breath. Our Children's Couture is not merely clothing—it is a declaration over their identity. We drape the youngest royals in the same standard of excellence as those who lead, because greatness does not wait for adulthood.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
+      }
+    },
+    "exclusivity": {
+      "type": "exclusivity-notice",
+      "settings": {
+        "eyebrow": "Exclusivity Notice",
+        "body": "Our Children's Couture is crafted with the same precision as our adult collections. Each piece is tailored to order and available exclusively through Atelier consultation."
+      }
+    },
+    "lookbook": {
+      "type": "lookbook-grid",
+      "blocks": {
+        "look_1": { "type": "look", "settings": { "title": "The Little Prince", "subtitle": "Miniature Structured Suit in Soft Italian Wool", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_2": { "type": "look", "settings": { "title": "The Garden Princess", "subtitle": "Flowing Tulle Dress with Hand-Sewn Florals", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_3": { "type": "look", "settings": { "title": "The Heir's Coat", "subtitle": "Tailored Overcoat with Velvet Collar", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_4": { "type": "look", "settings": { "title": "The Blessing Gown", "subtitle": "Christening Silk with Heritage Embroidery", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_5": { "type": "look", "settings": { "title": "The Appointed Set", "subtitle": "Structured Kids' Separates in Soft Cotton", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
+        "look_6": { "type": "look", "settings": { "title": "The Crown Bearer", "subtitle": "Formal Ensemble for Special Occasions", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } }
+      },
+      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "settings": {}
+    },
+    "cross-sell": {
+      "type": "cross-sell",
+      "settings": {
+        "title": "The Crowning Accessory",
+        "description": "Every little royal deserves their crown. Our children's accessories are hand-crafted with the same devotion as our adult line, scaled to celebrate the promise within every child.",
+        "cta_label": "Procure Online",
+        "cta_link": "/collections/crowns-jewelry",
+        "primary_label": "Book Atelier Visit",
+        "primary_link": "/pages/bridal",
+        "secondary_label": "Virtual Consultation"
+      }
+    }
+  },
+  "order": ["hero", "manifesto", "exclusivity", "lookbook", "cross-sell"]
+}

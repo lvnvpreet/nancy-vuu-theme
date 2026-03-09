@@ -1,0 +1,94 @@
+{%- comment -%} BookNV Inquiry — black bg, centered heading, dark-theme contact form with engagement type blocks {%- endcomment -%}
+<section class="booknv-inquiry" id="{{ section.settings.section_id | default: 'inquiry' }}" data-section-id="{{ section.id }}">
+  <div class="booknv-inquiry__inner">
+    <h2 class="booknv-inquiry__heading serif-font">{{ section.settings.heading }}</h2>
+    {%- if section.settings.subtext != blank -%}
+      <p class="booknv-inquiry__subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+
+    {%- form 'contact', id: 'booknv-inquiry-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="booknv-inquiry__success">
+          <p>Your inquiry has been received. Nancy Vuu's executive team will be in touch shortly.</p>
+        </div>
+      {%- else -%}
+        <div class="booknv-inquiry__form">
+          {%- if form.errors -%}
+            <div class="booknv-inquiry__errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+
+          <div class="booknv-inquiry__field">
+            <input type="text" name="contact[name]" value="{{ form.name }}"
+              placeholder="{{ section.settings.label_name | default: 'FULL NAME / ORGANIZATION' }}" required>
+          </div>
+          <div class="booknv-inquiry__field">
+            <input type="email" name="contact[email]" value="{{ form.email }}"
+              placeholder="{{ section.settings.label_email | default: 'CONTACT EMAIL' }}" required>
+          </div>
+          <div class="booknv-inquiry__field">
+            <select name="contact[engagement_type]" required>
+              <option value="" disabled selected>{{ section.settings.label_type | default: 'TYPE OF ENGAGEMENT' }}</option>
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'engagement_type' -%}
+                  <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+          </div>
+          <div class="booknv-inquiry__field">
+            <textarea name="contact[body]"
+              placeholder="{{ section.settings.label_message | default: 'WHICH SIGNATURE TOPIC ARE YOU INTERESTED IN?' }}"
+              rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn-nv booknv-inquiry__submit">
+            {{ section.settings.submit_label | default: 'Request Availability' }}
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BookNV Inquiry Form",
+  "class": "booknv-section-inquiry",
+  "settings": [
+    { "type": "text",     "id": "section_id",    "label": "Section anchor ID",        "default": "inquiry"                             },
+    { "type": "text",     "id": "heading",       "label": "Heading",                  "default": "Inquire for your stage."             },
+    { "type": "textarea", "id": "subtext",       "label": "Subtext",                  "default": "Connect with Nancy Vuu's executive team for 2026 engagements." },
+    { "type": "header",   "content": "Form Labels" },
+    { "type": "text",     "id": "label_name",    "label": "Name Placeholder",         "default": "FULL NAME / ORGANIZATION"            },
+    { "type": "text",     "id": "label_email",   "label": "Email Placeholder",        "default": "CONTACT EMAIL"                       },
+    { "type": "text",     "id": "label_type",    "label": "Type Placeholder",         "default": "TYPE OF ENGAGEMENT"                  },
+    { "type": "text",     "id": "label_message", "label": "Message Placeholder",      "default": "WHICH SIGNATURE TOPIC ARE YOU INTERESTED IN?" },
+    { "type": "text",     "id": "submit_label",  "label": "Submit Button Label",      "default": "Request Availability"                }
+  ],
+  "blocks": [
+    {
+      "type": "engagement_type",
+      "name": "Engagement Type",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Option Label", "default": "Keynote Speaking"  },
+        { "type": "text", "id": "value", "label": "Option Value", "default": "keynote"           }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BookNV Inquiry Form",
+      "settings": {
+        "heading": "Inquire for your stage.",
+        "subtext": "Connect with Nancy Vuu's executive team for 2026 engagements."
+      },
+      "blocks": [
+        { "type": "engagement_type", "settings": { "label": "Keynote Speaking",        "value": "keynote"     } },
+        { "type": "engagement_type", "settings": { "label": "Executive Mentorship",    "value": "mentorship"  } },
+        { "type": "engagement_type", "settings": { "label": "Foundation Partnership",  "value": "foundation"  } },
+        { "type": "engagement_type", "settings": { "label": "Elite Image Advisory",    "value": "advisory"    } }
+      ]
+    }
+  ]
+}
+{% endschema %}
