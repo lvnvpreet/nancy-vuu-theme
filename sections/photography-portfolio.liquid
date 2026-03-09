@@ -21,7 +21,7 @@
                 srcset="{{ block.settings.image | image_url: width: 600 }} 600w,
                         {{ block.settings.image | image_url: width: 900 }} 900w,
                         {{ block.settings.image | image_url: width: 1200 }} 1200w"
-                sizes="(max-width: 768px) 100vw, {{ block.settings.size == 'full' or block.settings.size == 'large' ? '75vw' : '50vw' }}"
+                sizes="(max-width: 768px) 100vw, {% if block.settings.size == 'full' or block.settings.size == 'large' %}75vw{% else %}50vw{% endif %}"
                 alt="{{ block.settings.image.alt | default: block.settings.title }}"
                 loading="lazy"
                 class="photo-portfolio__img">
