@@ -35,6 +35,12 @@
       "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
       "settings": {}
     },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 24
+      }
+    },
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
@@ -48,5 +54,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "cross-sell"]
+  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
 }
