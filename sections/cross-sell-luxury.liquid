@@ -1,0 +1,84 @@
+{%- comment -%}
+  Cross-Sell Luxury — Aspirational dual-card section.
+  Suggests completing the look with crowns/jewelry + booking a retreat.
+{%- endcomment -%}
+<section class="cross-sell-luxury reveal">
+  <div class="cross-sell-luxury__inner">
+
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.link | default: '#' }}" class="cross-sell-luxury__card{% unless block.settings.image %} cross-sell-luxury__card--placeholder{% endunless %}" {{ block.shopify_attributes }}>
+        <div class="cross-sell-luxury__card-media">
+          {%- if block.settings.image -%}
+            <img
+              src="{{ block.settings.image | image_url: width: 1400 }}"
+              alt="{{ block.settings.title | escape }}"
+              loading="lazy"
+              class="cross-sell-luxury__card-img">
+          {%- endif -%}
+        </div>
+        <div class="cross-sell-luxury__card-overlay"></div>
+        <div class="cross-sell-luxury__card-content">
+          {%- if block.settings.eyebrow != blank -%}
+            <span class="cross-sell-luxury__card-eyebrow">{{ block.settings.eyebrow }}</span>
+          {%- endif -%}
+          <h3 class="cross-sell-luxury__card-title">{{ block.settings.title }}</h3>
+          {%- if block.settings.description != blank -%}
+            <p class="cross-sell-luxury__card-desc">{{ block.settings.description }}</p>
+          {%- endif -%}
+          {%- if block.settings.cta_label != blank -%}
+            <span class="cross-sell-luxury__card-cta">{{ block.settings.cta_label }}</span>
+          {%- endif -%}
+        </div>
+      </a>
+    {%- endfor -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cross-Sell Luxury",
+  "tag": "div",
+  "max_blocks": 2,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Cross-Sell Card",
+      "settings": [
+        { "type": "image_picker", "id": "image",       "label": "Background Image" },
+        { "type": "text",         "id": "eyebrow",     "label": "Eyebrow Text" },
+        { "type": "text",         "id": "title",       "label": "Title",            "default": "Complete the Vision" },
+        { "type": "textarea",     "id": "description", "label": "Description" },
+        { "type": "text",         "id": "cta_label",   "label": "Button Label",     "default": "Discover" },
+        { "type": "url",          "id": "link",        "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cross-Sell Luxury",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Crowning Moment",
+            "title": "Finish the Look",
+            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
+            "cta_label": "Explore Crowns & Jewelry"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Retreats",
+            "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
+            "cta_label": "Discover Retreats"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

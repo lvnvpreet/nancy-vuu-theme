@@ -106,6 +106,15 @@
         }
       },
       "block_order": ["opt_tailoring", "opt_preservation", "opt_bespoke"]
+    },
+    "cross-sell-luxury": {
+      "type": "cross-sell-luxury",
+      "blocks": {
+        "card_crowns": { "type": "card", "settings": { "eyebrow": "The Crowning Moment", "title": "Finish the Look", "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.", "cta_label": "Explore Crowns & Jewelry", "link": "/collections/crowns-jewelry" } },
+        "card_retreats": { "type": "card", "settings": { "eyebrow": "The Nancy Vuu Experience", "title": "Dream Retreats", "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.", "cta_label": "Discover Retreats", "link": "/pages/retreats" } }
+      },
+      "block_order": ["card_crowns", "card_retreats"],
+      "settings": {}
     }
   },
   "order": [
@@ -114,6 +123,7 @@
     "service_tailoring",
     "service_preservation",
     "academy_banner",
-    "inquiry"
+    "inquiry",
+    "cross-sell-luxury"
   ]
 }

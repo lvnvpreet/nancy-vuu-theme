@@ -32,7 +32,7 @@
     <!-- Right: CTA + Cart -->
     <div class="nav-right">
       <a href="{{ section.settings.cta_link | default: '#' }}" class="nav-cta nav-cta--desktop">
-        {{- section.settings.cta_label | default: 'Book Appt' -}}
+        {{- section.settings.cta_label | default: 'Request Consultation' -}}
       </a>
       <button
         id="cart-toggle-btn"
@@ -78,6 +78,11 @@
             <span>{{ link.title }}</span>
           </a>
         {%- endfor -%}
+        {%- if section.settings.show_library_link -%}
+          <a href="{{ section.settings.library_link | default: '/pages/library' }}" onclick="toggleMenu()" data-text="The Library">
+            <span>The Library</span>
+          </a>
+        {%- endif -%}
       </nav>
     </div>
   </div>
@@ -109,13 +114,13 @@
     {
       "type": "text",
       "id": "cta_label",
-      "label": "Book Appt button text",
-      "default": "Book Appt"
+      "label": "CTA button text",
+      "default": "Request Consultation"
     },
     {
       "type": "url",
       "id": "cta_link",
-      "label": "Book Appt button link"
+      "label": "CTA button link"
     },
     {
       "type": "text",
@@ -145,6 +150,17 @@
       "id": "menu_location",
       "label": "Menu footer — location text",
       "default": "San Jose, CA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_library_link",
+      "label": "Show 'The Library' in Lifestyle menu",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "library_link",
+      "label": "The Library page link"
     }
   ]
 }

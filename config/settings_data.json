@@ -20,13 +20,14 @@
         "settings": {
           "logo": "shopify://shop_images/nancy-vuu-logo.jpg",
           "menu_label": "Menu",
-          "cta_label": "Book Appt",
+          "cta_label": "Request Consultation",
           "cta_link": "",
           "col1_heading": "Fashion House",
           "col2_heading": "Lifestyle & Legacy",
           "menu_fashion": "fashion-menu",
           "menu_lifestyle": "lifestyle-menu",
-          "menu_location": "San Jose, CA"
+          "menu_location": "San Jose, CA",
+          "show_library_link": true
         }
       },
       "footer": {

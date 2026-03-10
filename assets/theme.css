@@ -4201,3 +4201,272 @@ body::after {
   .booknv-topic-card { padding: 40px 25px; }
   .booknv-inquiry { padding: 80px 6%; }
 }
+
+/* ═══════════════════════════════════════════════════
+   LUXURY UI ENHANCEMENTS — v2.1
+   Typography, Hero, Cross-sell, Menu, Polish
+   ═══════════════════════════════════════════════════ */
+
+/* ── EDITORIAL ITALIC HIGHLIGHT ─────────────────────────── */
+/* Use within Manrope body text for key emotional phrases */
+.editorial-highlight {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── ENHANCED HERO — CINEMATIC FULL-BLEED ───────────────── */
+/* Video background support for hero */
+.hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+  pointer-events: none;
+}
+.hero__bg video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* Cinematic letterbox vignette for editorial depth */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 5;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.15) 0%, transparent 20%),
+    linear-gradient(to top, rgba(0,0,0,.2) 0%, transparent 25%);
+  pointer-events: none;
+}
+
+/* Bridal hero — upgrade to full viewport cinematic */
+.bridal-hero {
+  height: 100vh;
+  margin-top: -80px;
+}
+.bridal-hero__overlay {
+  opacity: .65;
+  background: linear-gradient(
+    180deg,
+    rgba(247,247,247,.4) 0%,
+    rgba(247,247,247,.85) 50%,
+    rgba(247,247,247,.4) 100%
+  );
+}
+.bridal-hero__title {
+  font-size: clamp(3rem, 9vw, 6rem);
+  letter-spacing: -.02em;
+}
+
+/* Page hero — cinematic depth */
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 5;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.12) 0%, transparent 18%),
+    linear-gradient(to top, rgba(0,0,0,.18) 0%, transparent 22%);
+  pointer-events: none;
+}
+
+/* ── MANIFESTO — READABILITY UPGRADE ────────────────────── */
+.manifesto__quote {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-style: normal;
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  line-height: 2;
+  letter-spacing: .02em;
+  color: #444;
+}
+.manifesto__quote .editorial-highlight,
+.manifesto__quote em,
+.manifesto__quote i {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+}
+.manifesto {
+  padding: 8rem 2rem 6rem;
+}
+.manifesto__inner {
+  max-width: 780px;
+}
+
+/* ── LUXURY CROSS-SELL — ASPIRATIONAL DUAL CTA ─────────── */
+.cross-sell-luxury {
+  padding: 0;
+  background: #fff;
+}
+.cross-sell-luxury__inner {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .cross-sell-luxury__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cross-sell-luxury__card {
+  position: relative;
+  min-height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.cross-sell-luxury__card-media {
+  position: absolute; inset: 0;
+}
+.cross-sell-luxury__card-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(.25,.46,.45,.94), filter .8s ease;
+}
+.cross-sell-luxury__card:hover .cross-sell-luxury__card-img {
+  transform: scale(1.04);
+  filter: brightness(.85);
+}
+.cross-sell-luxury__card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.7) 0%,
+    rgba(0,0,0,.2) 40%,
+    rgba(0,0,0,.05) 100%
+  );
+  transition: background .6s ease;
+}
+.cross-sell-luxury__card:hover .cross-sell-luxury__card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.8) 0%,
+    rgba(0,0,0,.3) 40%,
+    rgba(0,0,0,.1) 100%
+  );
+}
+.cross-sell-luxury__card-content {
+  position: relative; z-index: 10;
+  padding: 3rem;
+  color: #fff;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .cross-sell-luxury__card-content {
+    padding: 4rem;
+  }
+}
+.cross-sell-luxury__card-eyebrow {
+  font-family: var(--font-sans);
+  font-size: .6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .4em;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 1rem;
+  display: block;
+}
+.cross-sell-luxury__card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.cross-sell-luxury__card-desc {
+  font-family: var(--font-sans);
+  font-size: .85rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,.7);
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+.cross-sell-luxury__card-cta {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: .65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.4);
+  padding: 14px 36px;
+  background: transparent;
+  transition: background .4s ease, border-color .4s ease;
+}
+.cross-sell-luxury__card-cta:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Placeholder state for cross-sell */
+.cross-sell-luxury__card--placeholder .cross-sell-luxury__card-media {
+  background: #1a1a1a;
+}
+.cross-sell-luxury__card--placeholder .cross-sell-luxury__card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.4) 100%);
+}
+
+/* ── FULLSCREEN MENU — LUXURY HOVER REFINEMENT ──────────── */
+.menu-column a {
+  transition: color .45s cubic-bezier(.25,.46,.45,.94);
+}
+.menu-column a span {
+  transition: transform .45s cubic-bezier(.25,.46,.45,.94),
+              opacity .45s cubic-bezier(.25,.46,.45,.94),
+              color .45s cubic-bezier(.25,.46,.45,.94);
+}
+.menu-column a::after {
+  transition: transform .45s cubic-bezier(.25,.46,.45,.94),
+              opacity .45s cubic-bezier(.25,.46,.45,.94);
+}
+
+/* Sibling fade: when one item is hovered, dim siblings */
+.menu-column:hover a span {
+  color: #b5b0a8;
+}
+.menu-column a:hover span {
+  color: var(--ink) !important;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.menu-column:hover a::after {
+  color: #b5b0a8;
+}
+.menu-column a:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--ink);
+}
+
+/* ── REFINED SPACING & HIERARCHY ────────────────────────── */
+/* Larger breathing room for major section transitions */
+.heritage-section {
+  padding: 14rem 2rem;
+}
+.investment-tiers {
+  padding: 10rem 1.5rem;
+}
+.ritual-section {
+  padding: 7rem 2rem;
+}
+
+/* Smoother page transitions between sections */
+section + section,
+div + section {
+  transition: margin .3s ease;
+}
+
+/* ── RESPONSIVE LUXURY ENHANCEMENTS ─────────────────────── */
+@media (max-width: 767px) {
+  .cross-sell-luxury__card { min-height: 55vh; }
+  .cross-sell-luxury__card-content { padding: 2.5rem 1.5rem; }
+  .cross-sell-luxury__card-title { font-size: clamp(1.6rem, 6vw, 2.25rem); }
+  .bridal-hero { height: 85vh; }
+  .manifesto { padding: 5rem 1.5rem 4rem; }
+  .heritage-section { padding: 8rem 1.5rem; }
+}

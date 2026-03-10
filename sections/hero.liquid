@@ -1,16 +1,25 @@
-{% comment %} sections/hero.liquid {% endcomment %}
+{% comment %} sections/hero.liquid — Cinematic full-bleed hero with image or video {% endcomment %}
 
 <header class="hero" id="hero">
   <div class="hero__bg">
-    {%- render 'image',
-        image: section.settings.bg_image,
-        alt: shop.name,
-        sizes: '100vw',
-        loading: 'eager',
-        fetchpriority: 'high',
-        class: 'hero__img',
-        placeholder_text: 'Upload hero background in Theme Editor'
-    -%}
+    {%- if section.settings.bg_video != blank -%}
+      <video
+        class="hero__video"
+        autoplay muted loop playsinline
+        poster="{%- if section.settings.bg_image -%}{{ section.settings.bg_image | image_url: width: 1920 }}{%- endif -%}">
+        <source src="{{ section.settings.bg_video }}" type="video/mp4">
+      </video>
+    {%- else -%}
+      {%- render 'image',
+          image: section.settings.bg_image,
+          alt: shop.name,
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'hero__img',
+          placeholder_text: 'Upload hero background in Theme Editor'
+      -%}
+    {%- endif -%}
   </div>
 
   {%- if section.settings.overlay_opacity > 0 -%}
@@ -40,6 +49,12 @@
       "type": "image_picker",
       "id": "bg_image",
       "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "bg_video",
+      "label": "Background video URL (MP4)",
+      "info": "Paste a direct .mp4 URL for cinematic video hero. Leave blank for image-only."
     },
     {
       "type": "range",

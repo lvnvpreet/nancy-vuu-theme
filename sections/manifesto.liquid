@@ -1,11 +1,11 @@
-{%- comment -%} Reusable manifesto / centered quote section {%- endcomment -%}
+{%- comment -%} Reusable manifesto / centered quote section — Manrope body + Bodoni italic highlights {%- endcomment -%}
 <section class="manifesto {{ section.settings.extra_class }}" style="background:{{ section.settings.bg_color }};color:{{ section.settings.text_color }};">
   <div class="manifesto__inner reveal">
     {% if section.settings.eyebrow != blank %}
       <span class="eyebrow" style="color:{{ section.settings.text_color }};">{{ section.settings.eyebrow }}</span>
     {% endif %}
     {% if section.settings.quote != blank %}
-      <blockquote class="manifesto__quote serif-font">{{ section.settings.quote }}</blockquote>
+      <blockquote class="manifesto__quote">{{ section.settings.quote }}</blockquote>
     {% endif %}
     {% if section.settings.attribution != blank %}
       <cite class="manifesto__cite">— {{ section.settings.attribution }}</cite>
