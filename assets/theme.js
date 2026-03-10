@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var menu = document.getElementById('menu-overlay');
       if (menu && !menu.classList.contains('menu-overlay--closed')) window.toggleMenu();
       closeCart();
+      window.closeAudienceModal();
     }
   });
 
@@ -190,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var select = modal.querySelector('select');
       if (select) select.value = retreatType;
     }
+    modal.setAttribute('aria-hidden', 'false');
     modal.style.display = 'flex';
     document.body.classList.add('menu-open');
   };
@@ -197,8 +199,23 @@ document.addEventListener('DOMContentLoaded', function () {
   window.closeAudienceModal = function() {
     var modal = document.getElementById('audience-modal');
     if (!modal) return;
+    modal.setAttribute('aria-hidden', 'true');
     modal.style.display = 'none';
     document.body.classList.remove('menu-open');
   };
+
+  // Delegate [data-audience-open] clicks
+  document.addEventListener('click', function(e) {
+    var openBtn = e.target.closest('[data-audience-open]');
+    if (openBtn) {
+      e.preventDefault();
+      window.openAudienceModal();
+    }
+    var closeBtn = e.target.closest('[data-audience-close]');
+    if (closeBtn) {
+      e.preventDefault();
+      window.closeAudienceModal();
+    }
+  });
 
 });

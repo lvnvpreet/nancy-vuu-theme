@@ -26,24 +26,28 @@
         <input type="email" id="audience-email" name="contact[email]" placeholder="Email Address" required>
       </div>
 
-      {% if section.settings.show_dropdown %}
-        <div class="audience-modal__field">
-          <label for="audience-category">{{ section.settings.dropdown_label | default: 'Category' }}</label>
-          <select id="audience-category" name="contact[category]">
-            <option value="">Select…</option>
-            {% for block in section.blocks %}
-              {% if block.type == 'dropdown_option' %}
-                <option value="{{ block.settings.value }}">{{ block.settings.label }}</option>
-              {% endif %}
-            {% endfor %}
-          </select>
-        </div>
-      {% endif %}
+      {% if section.settings.show_dropdown or section.settings.show_date %}
+        <div class="audience-modal__row">
+          {% if section.settings.show_dropdown %}
+            <div class="audience-modal__field">
+              <label for="audience-category">{{ section.settings.dropdown_label | default: 'Category' }}</label>
+              <select id="audience-category" name="contact[category]">
+                <option value="">Select…</option>
+                {% for block in section.blocks %}
+                  {% if block.type == 'dropdown_option' %}
+                    <option value="{{ block.settings.value }}">{{ block.settings.label }}</option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          {% endif %}
 
-      {% if section.settings.show_date %}
-        <div class="audience-modal__field">
-          <label for="audience-date">{{ section.settings.date_label | default: 'Preferred Date' }}</label>
-          <input type="text" id="audience-date" name="contact[date]" placeholder="e.g. Spring 2026">
+          {% if section.settings.show_date %}
+            <div class="audience-modal__field">
+              <label for="audience-date">{{ section.settings.date_label | default: 'Preferred Date' }}</label>
+              <input type="text" id="audience-date" name="contact[date]" placeholder="MM / DD / YYYY">
+            </div>
+          {% endif %}
         </div>
       {% endif %}
 
@@ -54,7 +58,7 @@
         </div>
       {% endif %}
 
-      <button type="submit" class="btn-editorial btn-editorial--full">{{ section.settings.submit_label | default: 'Submit' }}</button>
+      <button type="submit" class="btn-luxury">{{ section.settings.submit_label | default: 'Submit' }}</button>
     {%- endform -%}
 
     <div class="audience-modal__success" style="display:none;">

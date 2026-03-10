@@ -13,9 +13,15 @@
       <p class="cta-closer__sub body-copy" style="color:{{ section.settings.text_color }};">{{ section.settings.subtext }}</p>
     {% endif %}
     {% if section.settings.cta_label != blank %}
-      <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
-        {{ section.settings.cta_label }}
-      </a>
+      {% if section.settings.cta_link != blank %}
+        <a href="{{ section.settings.cta_link }}" class="btn-luxury" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
+          {{ section.settings.cta_label }}
+        </a>
+      {% else %}
+        <button class="btn-luxury" data-audience-open style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
+          {{ section.settings.cta_label }}
+        </button>
+      {% endif %}
     {% endif %}
   </div>
 </section>

@@ -1026,6 +1026,10 @@ body::after {
 .audience-modal__field textarea:focus { border-color: var(--ink); }
 .audience-modal__field select { appearance: none; }
 .audience-modal__field textarea { resize: none; }
+.audience-modal__row {
+  display: grid; grid-template-columns: 1fr; gap: 2rem;
+}
+@media (min-width: 768px) { .audience-modal__row { grid-template-columns: 1fr 1fr; } }
 .audience-modal__success { padding: 3rem 0; }
 .audience-modal__success h3 { font-size: 2.25rem; font-style: italic; margin-bottom: 1rem; }
 

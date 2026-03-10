@@ -71,9 +71,9 @@
     "investment": {
       "type": "investment-tiers",
       "blocks": {
-        "t1": { "type": "tier", "settings": { "name": "Atelier Signature", "tagline": "A Heritage Beginning", "price": "From $1,800", "cta_label": "Inquire" } },
-        "t2": { "type": "tier", "settings": { "name": "Made-to-Measure", "tagline": "Personalized Grace", "price": "From $2,800", "cta_label": "Inquire" } },
-        "t3": { "type": "tier", "settings": { "name": "Custom Bespoke", "tagline": "The Masterpiece Heirloom", "price": "From $8,500", "cta_label": "Request Commission", "badge": "Most Coveted", "featured": true } }
+        "t1": { "type": "tier", "settings": { "name": "Atelier Signature", "tagline": "A Heritage Beginning", "features": "<p>\u2022 Signature Design Selections<br>\u2022 Standard Measurements<br>\u2022 Vietnam Artisan Build<br>\u2022 San Jose Final Coronation</p>", "price": "From $1,800", "cta_label": "Inquire" } },
+        "t2": { "type": "tier", "settings": { "name": "Made-to-Measure", "tagline": "Personalized Grace", "features": "<p>\u2022 Modified Silhouette Engineering<br>\u2022 Advanced Body Mapping<br>\u2022 Premium Fabric Access<br>\u2022 San Jose Master Tailoring</p>", "price": "From $2,800", "cta_label": "Inquire" } },
+        "t3": { "type": "tier", "settings": { "name": "Custom Bespoke", "tagline": "The Masterpiece Heirloom", "features": "<p>\u2022 Original Vision Sketching<br>\u2022 <strong>THE ARTISAN TOILE EXPERIENCE</strong><br>\u2022 Master Draper Immersion<br>\u2022 Legacy Record Retention</p>", "price": "From $8,500", "cta_label": "Request Commission", "badge": "Most Coveted", "featured": true } }
       },
       "block_order": ["t1", "t2", "t3"],
       "settings": {
@@ -86,7 +86,7 @@
       "type": "cta-closer",
       "settings": {
         "eyebrow": "The Final Amen",
-        "heading": "Your Legacy Awaits Its Form.",
+        "heading": "Your Legacy<br>Awaits Its Form.",
         "cta_label": "Request Private Audience",
         "overlay_opacity": 20,
         "text_color": "#111111"
