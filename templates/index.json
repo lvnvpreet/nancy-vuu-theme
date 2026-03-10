@@ -12,7 +12,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_video": "https://www.pexels.com/download/video/7866422/",
+        "bg_video": "",
         "overlay_opacity": 0,
         "headline_italic": "for",
         "headline_end": "HEAVEN",
