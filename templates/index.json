@@ -305,6 +305,7 @@
         "card_crowns": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/kids-photographer-in-los-angeles.jpg",
             "eyebrow": "The Crowning Moment",
             "title": "Finish the Look",
             "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
@@ -315,6 +316,7 @@
         "card_retreats": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/nancy-vuu-speaking-engagements.jpg",
             "eyebrow": "The Nancy Vuu Experience",
             "title": "Dream Retreats",
             "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
