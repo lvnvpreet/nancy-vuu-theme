@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Seth Eden",
   "sections": {
     "seth_cinematic_hero": {
       "type": "seth-hero",
@@ -14,10 +22,10 @@
       "type": "manifesto",
       "settings": {
         "eyebrow": "The Mandate",
-        "extra_class": "seth-eden-manifesto",
         "quote": "Seth Eden is a premier custom clothier dedicated to the architecture of identity. We provide custom bespoke and master-fit tailoring that bridges the gap between heritage artisanal craftsmanship and modern visionary design. Every commission is a declaration of purpose—fashioned to elevate your external excellence and internal authority.",
         "bg_color": "#f4f4f4",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "seth-eden-manifesto"
       }
     },
     "seth_hero": {
@@ -40,7 +48,11 @@
           }
         }
       },
-      "block_order": ["panel_seth", "panel_eden"]
+      "block_order": [
+        "panel_seth",
+        "panel_eden"
+      ],
+      "settings": {}
     },
     "vitality": {
       "type": "seth-feature",
@@ -61,9 +73,6 @@
     },
     "standards": {
       "type": "seth-standards",
-      "settings": {
-        "heading": "Our Signature Seth Eden Suits"
-      },
       "blocks": {
         "standard_1": {
           "type": "standard",
@@ -90,10 +99,42 @@
           }
         }
       },
-      "block_order": ["standard_1", "standard_2", "standard_3"]
+      "block_order": [
+        "standard_1",
+        "standard_2",
+        "standard_3"
+      ],
+      "settings": {
+        "heading": "Our Signature Seth Eden Suits"
+      }
     },
     "masculine": {
       "type": "seth-feature",
+      "blocks": {
+        "mas_bullet_1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Postural analysis for a personalized structural draft."
+          }
+        },
+        "mas_bullet_2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Proprietary internal build for breathable, high-performance wear."
+          }
+        },
+        "mas_bullet_3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Bespoke detailing that honors the modern gentleman's spirit."
+          }
+        }
+      },
+      "block_order": [
+        "mas_bullet_1",
+        "mas_bullet_2",
+        "mas_bullet_3"
+      ],
       "settings": {
         "section_id": "masculine-sovereignty",
         "theme": "dark",
@@ -106,16 +147,35 @@
         "body_2": "Our masculine blueprint moves beyond rigid industrial blocks to create a silhouette of effortless command.",
         "cta_label": "Secure Your Masculine Commission",
         "cta_link": "/pages/contact"
-      },
-      "blocks": {
-        "mas_bullet_1": { "type": "bullet", "settings": { "text": "Postural analysis for a personalized structural draft." } },
-        "mas_bullet_2": { "type": "bullet", "settings": { "text": "Proprietary internal build for breathable, high-performance wear." } },
-        "mas_bullet_3": { "type": "bullet", "settings": { "text": "Bespoke detailing that honors the modern gentleman's spirit." } }
-      },
-      "block_order": ["mas_bullet_1", "mas_bullet_2", "mas_bullet_3"]
+      }
     },
     "feminine": {
       "type": "seth-feature",
+      "blocks": {
+        "fem_bullet_1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Anatomical precision for length, width, and shoulder architecture."
+          }
+        },
+        "fem_bullet_2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Artisanal structure that frames and elevates without restriction."
+          }
+        },
+        "fem_bullet_3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Silk linings and elevated finishes that honor the feminine form."
+          }
+        }
+      },
+      "block_order": [
+        "fem_bullet_1",
+        "fem_bullet_2",
+        "fem_bullet_3"
+      ],
       "settings": {
         "section_id": "feminine-sovereignty",
         "theme": "dark",
@@ -128,13 +188,7 @@
         "body_2": "We honor, celebrate, and enhance the unique power and grace of the woman's silhouette.",
         "cta_label": "Secure Your Feminine Commission",
         "cta_link": "/pages/contact"
-      },
-      "blocks": {
-        "fem_bullet_1": { "type": "bullet", "settings": { "text": "Anatomical precision for length, width, and shoulder architecture." } },
-        "fem_bullet_2": { "type": "bullet", "settings": { "text": "Artisanal structure that frames and elevates without restriction." } },
-        "fem_bullet_3": { "type": "bullet", "settings": { "text": "Silk linings and elevated finishes that honor the feminine form." } }
-      },
-      "block_order": ["fem_bullet_1", "fem_bullet_2", "fem_bullet_3"]
+      }
     },
     "visibility": {
       "type": "seth-feature",
@@ -189,15 +243,15 @@
           }
         }
       },
-      "block_order": ["pillar_1", "pillar_2", "pillar_3"]
+      "block_order": [
+        "pillar_1",
+        "pillar_2",
+        "pillar_3"
+      ],
+      "settings": {}
     },
     "journey": {
       "type": "seth-journey",
-      "settings": {
-        "eyebrow": "The Journey",
-        "heading": "From Vision to Vesting.",
-        "cta_text": "Begin Your Appointment"
-      },
       "blocks": {
         "step_1": {
           "type": "step",
@@ -224,15 +278,19 @@
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3"]
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "eyebrow": "The Journey",
+        "heading": "From Vision to Vesting.",
+        "cta_text": "Begin Your Appointment"
+      }
     },
     "tailoring": {
       "type": "seth-tailoring",
-      "settings": {
-        "eyebrow": "The Tailoring Journey",
-        "heading": "Recognition & Covenant.",
-        "description": "At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity."
-      },
       "blocks": {
         "tier_mtm": {
           "type": "tier",
@@ -257,10 +315,86 @@
           }
         }
       },
-      "block_order": ["tier_mtm", "tier_bespoke"]
+      "block_order": [
+        "tier_mtm",
+        "tier_bespoke"
+      ],
+      "settings": {
+        "eyebrow": "The Tailoring Journey",
+        "heading": "Recognition & Covenant.",
+        "description": "At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity."
+      }
     },
     "pathways": {
       "type": "seth-pathways",
+      "blocks": {
+        "pw1_1": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "light",
+            "text": "Optimized from House patterns to your specific posture."
+          }
+        },
+        "pw1_2": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "light",
+            "text": "Selection from 5,000+ Vitality Mandate fabrics."
+          }
+        },
+        "pw1_3": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "light",
+            "text": "Hand-finished detailing and personalized monogramming."
+          }
+        },
+        "pw1_4": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "light",
+            "text": "Two fitting stages for precision alignment."
+          }
+        },
+        "pw2_1": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "dark",
+            "text": "A unique paper pattern drafted from scratch for your identity."
+          }
+        },
+        "pw2_2": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "dark",
+            "text": "Absolute structural freedom and complex architecture."
+          }
+        },
+        "pw2_3": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "dark",
+            "text": "Master-level hand-canvasing — 60+ hours of craft."
+          }
+        },
+        "pw2_4": {
+          "type": "pathway_item",
+          "settings": {
+            "side": "dark",
+            "text": "3-5 intricate fittings for a second-skin result."
+          }
+        }
+      },
+      "block_order": [
+        "pw1_1",
+        "pw1_2",
+        "pw1_3",
+        "pw1_4",
+        "pw2_1",
+        "pw2_2",
+        "pw2_3",
+        "pw2_4"
+      ],
       "settings": {
         "eyebrow": "The Journey of Choice",
         "heading": "Pathways to Sovereignty.",
@@ -274,27 +408,10 @@
         "card2_title_line_2": "Bespoke.",
         "card2_cta_label": "Request Bespoke Commission",
         "card2_cta_link": "#inquiry"
-      },
-      "blocks": {
-        "pw1_1": { "type": "pathway_item", "settings": { "side": "light", "text": "Optimized from House patterns to your specific posture." } },
-        "pw1_2": { "type": "pathway_item", "settings": { "side": "light", "text": "Selection from 5,000+ Vitality Mandate fabrics." } },
-        "pw1_3": { "type": "pathway_item", "settings": { "side": "light", "text": "Hand-finished detailing and personalized monogramming." } },
-        "pw1_4": { "type": "pathway_item", "settings": { "side": "light", "text": "Two fitting stages for precision alignment." } },
-        "pw2_1": { "type": "pathway_item", "settings": { "side": "dark", "text": "A unique paper pattern drafted from scratch for your identity." } },
-        "pw2_2": { "type": "pathway_item", "settings": { "side": "dark", "text": "Absolute structural freedom and complex architecture." } },
-        "pw2_3": { "type": "pathway_item", "settings": { "side": "dark", "text": "Master-level hand-canvasing — 60+ hours of craft." } },
-        "pw2_4": { "type": "pathway_item", "settings": { "side": "dark", "text": "3-5 intricate fittings for a second-skin result." } }
-      },
-      "block_order": ["pw1_1", "pw1_2", "pw1_3", "pw1_4", "pw2_1", "pw2_2", "pw2_3", "pw2_4"]
+      }
     },
     "limited": {
       "type": "seth-limited",
-      "settings": {
-        "eyebrow": "Invitations to the Journey",
-        "heading": "Limited Designs",
-        "description": "A curation of \"Seth Eden\" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey.",
-        "badge_text": "Available In-Atelier Only"
-      },
       "blocks": {
         "design_1": {
           "type": "design",
@@ -321,10 +438,48 @@
           }
         }
       },
-      "block_order": ["design_1", "design_2", "design_3"]
+      "block_order": [
+        "design_1",
+        "design_2",
+        "design_3"
+      ],
+      "settings": {
+        "eyebrow": "Invitations to the Journey",
+        "heading": "Limited Designs",
+        "description": "A curation of \"Seth Eden\" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey.",
+        "badge_text": "Available In-Atelier Only"
+      }
     },
     "gallery_mens": {
       "type": "seth-gallery",
+      "blocks": {
+        "img_1": {
+          "type": "image",
+          "settings": {
+            "label": "The Sovereign Tuxedo",
+            "wide": false
+          }
+        },
+        "img_2": {
+          "type": "image",
+          "settings": {
+            "label": "The Executive Blazer",
+            "wide": false
+          }
+        },
+        "img_3": {
+          "type": "image",
+          "settings": {
+            "label": "Archival Overcoat",
+            "wide": false
+          }
+        }
+      },
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3"
+      ],
       "settings": {
         "background": "#ffffff",
         "text_color": "#000000",
@@ -332,25 +487,38 @@
         "heading": "The Men's Showroom.",
         "description": "A curated selection of Seth Eden's sartorial inspirations for the modern gentleman.",
         "swap_layout": false
-      },
-      "blocks": {
-        "img_1": {
-          "type": "image",
-          "settings": { "label": "The Sovereign Tuxedo", "wide": false }
-        },
-        "img_2": {
-          "type": "image",
-          "settings": { "label": "The Executive Blazer", "wide": false }
-        },
-        "img_3": {
-          "type": "image",
-          "settings": { "label": "Archival Overcoat", "wide": false }
-        }
-      },
-      "block_order": ["img_1", "img_2", "img_3"]
+      }
     },
     "gallery_womens": {
       "type": "seth-gallery",
+      "blocks": {
+        "img_4": {
+          "type": "image",
+          "settings": {
+            "label": "The Empowered Shoulder",
+            "wide": false
+          }
+        },
+        "img_5": {
+          "type": "image",
+          "settings": {
+            "label": "The Dignitary Vestment",
+            "wide": false
+          }
+        },
+        "img_6": {
+          "type": "image",
+          "settings": {
+            "label": "Formal Evening Tailoring",
+            "wide": false
+          }
+        }
+      },
+      "block_order": [
+        "img_4",
+        "img_5",
+        "img_6"
+      ],
       "settings": {
         "background": "#f4f4f4",
         "text_color": "#000000",
@@ -358,25 +526,42 @@
         "heading": "The Women's Showroom.",
         "description": "Seth Eden's feminine blueprint — where master craftsmanship meets the architecture of grace.",
         "swap_layout": true
-      },
-      "blocks": {
-        "img_4": {
-          "type": "image",
-          "settings": { "label": "The Empowered Shoulder", "wide": false }
-        },
-        "img_5": {
-          "type": "image",
-          "settings": { "label": "The Dignitary Vestment", "wide": false }
-        },
-        "img_6": {
-          "type": "image",
-          "settings": { "label": "Formal Evening Tailoring", "wide": false }
-        }
-      },
-      "block_order": ["img_4", "img_5", "img_6"]
+      }
     },
     "narrative": {
       "type": "seth-narrative",
+      "blocks": {
+        "left_1": {
+          "type": "left_paragraph",
+          "settings": {
+            "text": "<p>Nancy's journey began with a spiritual encounter that changed the course of her life. She saw children across the nations, lacking food and covering. In that moment, a voice spoke: <strong>\"Start designing. Reach out to these children and let them know they are loved—that they are true royalty.\"</strong></p>"
+          }
+        },
+        "left_2": {
+          "type": "left_paragraph",
+          "settings": {
+            "text": "<p>Later, her eyes were opened to a vision of a breathtaking garden. The instruction was clear: <strong>\"I will have you build the garden of the Lord all around the world.\"</strong> For Nancy, fashion became the vehicle—a platform to restore identity and elevate humanity to its original regal design.</p>"
+          }
+        },
+        "right_1": {
+          "type": "right_paragraph",
+          "settings": {
+            "text": "<p>In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: <em><strong>\"Her name is Eden. I will find my rest in her.\"</strong></em> Then came the vision of a boy, Seth—a name meaning <em><strong>\"The Appointed One.\"</strong></em></p>"
+          }
+        },
+        "right_2": {
+          "type": "right_paragraph",
+          "settings": {
+            "text": "<p>When these two visions converged, Seth Eden was born. It is a house built on the intersection of <strong>Restoration and Authority</strong>. Every garment is crafted to reflect the \"True Royalty\" Nancy was called to champion, and the \"Appointment\" Dionne was shown.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "left_1",
+        "left_2",
+        "right_1",
+        "right_2"
+      ],
       "settings": {
         "eyebrow_left": "The Global Mandate",
         "heading_left": "Nancy Vuu: Building the Garden.",
@@ -387,37 +572,46 @@
         "foundation_heading": "Elevating Humanity.",
         "foundation_body_1": "Seth Eden exists for more than just aesthetics. We are a house of Restorative Commerce. A portion of every commission directly funds initiatives that restore dignity, provide covering, and uplift communities across the nations.",
         "foundation_body_2": "Your investment in a custom garment extends far beyond your wardrobe—it becomes a seed in the garden of humanity's restoration. This is the original mandate that called Nancy Vuu into design, and it remains the heartbeat of everything we create."
-      },
-      "blocks": {
-        "left_1": {
-          "type": "left_paragraph",
-          "settings": {
-            "text": "<p>Nancy's journey began with a spiritual encounter that changed the course of her life. She saw children across the nations, lacking food and covering. In that moment, a voice spoke: <strong>\"Start designing. Reach out to these children and let them know they are loved—that they are true royalty.\"<\/strong><\/p>"
-          }
-        },
-        "left_2": {
-          "type": "left_paragraph",
-          "settings": {
-            "text": "<p>Later, her eyes were opened to a vision of a breathtaking garden. The instruction was clear: <strong>\"I will have you build the garden of the Lord all around the world.\"<\/strong> For Nancy, fashion became the vehicle—a platform to restore identity and elevate humanity to its original regal design.<\/p>"
-          }
-        },
-        "right_1": {
-          "type": "right_paragraph",
-          "settings": {
-            "text": "<p>In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: <em><strong>\"Her name is Eden. I will find my rest in her.\"<\/strong><\/em> Then came the vision of a boy, Seth—a name meaning <em><strong>\"The Appointed One.\"<\/strong><\/em><\/p>"
-          }
-        },
-        "right_2": {
-          "type": "right_paragraph",
-          "settings": {
-            "text": "<p>When these two visions converged, Seth Eden was born. It is a house built on the intersection of <strong>Restoration and Authority<\/strong>. Every garment is crafted to reflect the \"True Royalty\" Nancy was called to champion, and the \"Appointment\" Dionne was shown.<\/p>"
-          }
-        }
-      },
-      "block_order": ["left_1", "left_2", "right_1", "right_2"]
+      }
     },
     "commission": {
       "type": "seth-commission",
+      "blocks": {
+        "gen_1": {
+          "type": "gender_option",
+          "settings": {
+            "label": "Masculine Tailoring",
+            "value": "masculine"
+          }
+        },
+        "gen_2": {
+          "type": "gender_option",
+          "settings": {
+            "label": "Feminine Tailoring",
+            "value": "feminine"
+          }
+        },
+        "comm_1": {
+          "type": "commission_option",
+          "settings": {
+            "label": "Sovereign Bespoke",
+            "value": "bespoke"
+          }
+        },
+        "comm_2": {
+          "type": "commission_option",
+          "settings": {
+            "label": "Custom MTM Blueprint",
+            "value": "mtm"
+          }
+        }
+      },
+      "block_order": [
+        "gen_1",
+        "gen_2",
+        "comm_1",
+        "comm_2"
+      ],
       "settings": {
         "section_id": "inquiry",
         "title_line_1": "Secure Your",
@@ -428,24 +622,10 @@
         "label_commission": "TYPE OF COMMISSION",
         "label_message": "DESCRIBE YOUR STYLE ARCHITECTURE...",
         "submit_label": "Submit Private Inquiry"
-      },
-      "blocks": {
-        "gen_1":  { "type": "gender_option",     "settings": { "label": "Masculine Tailoring",  "value": "masculine" } },
-        "gen_2":  { "type": "gender_option",     "settings": { "label": "Feminine Tailoring",   "value": "feminine"  } },
-        "comm_1": { "type": "commission_option", "settings": { "label": "Sovereign Bespoke",    "value": "bespoke"   } },
-        "comm_2": { "type": "commission_option", "settings": { "label": "Custom MTM Blueprint", "value": "mtm"       } }
-      },
-      "block_order": ["gen_1", "gen_2", "comm_1", "comm_2"]
+      }
     },
     "seth_footer": {
       "type": "seth-footer",
-      "settings": {
-        "brand_name": "Seth Eden",
-        "brand_subtitle": "House of Husted & Vuu",
-        "copyright_text": "Seth Eden • Husted & Vuu",
-        "social_1": "Instagram",
-        "social_2": "Vogue"
-      },
       "blocks": {
         "links_atelier": {
           "type": "link_group",
@@ -468,15 +648,46 @@
           }
         }
       },
-      "block_order": ["links_atelier", "links_nav"]
+      "block_order": [
+        "links_atelier",
+        "links_nav"
+      ],
+      "settings": {
+        "brand_name": "Seth Eden",
+        "brand_subtitle": "House of Husted & Vuu",
+        "copyright_text": "Seth Eden • Husted & Vuu",
+        "social_1": "Instagram",
+        "social_2": "Vogue"
+      }
     },
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "blocks": {
-        "card_crowns": { "type": "card", "settings": { "eyebrow": "The Crowning Moment", "title": "Finish the Look", "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.", "cta_label": "Explore Crowns & Jewelry", "link": "/collections/crowns-jewelry" } },
-        "card_retreats": { "type": "card", "settings": { "eyebrow": "The Nancy Vuu Experience", "title": "Dream Retreats", "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.", "cta_label": "Discover Retreats", "link": "/pages/retreats" } }
+        "card_crowns": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Crowning Moment",
+            "title": "Finish the Look",
+            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
+            "cta_label": "Explore Crowns & Jewelry",
+            "link": "/collections/crowns-jewelry"
+          }
+        },
+        "card_retreats": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Retreats",
+            "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
+            "cta_label": "Discover Retreats",
+            "link": "/pages/retreats"
+          }
+        }
       },
-      "block_order": ["card_crowns", "card_retreats"],
+      "block_order": [
+        "card_crowns",
+        "card_retreats"
+      ],
       "settings": {}
     }
   },

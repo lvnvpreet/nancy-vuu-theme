@@ -1,12 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "bg_video": "https://www.pexels.com/download/video/7866422/",
+        "overlay_opacity": 0,
         "headline_italic": "for",
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
-        "overlay_opacity": 0,
         "text_color": "#111111"
       }
     },
@@ -37,10 +47,10 @@
         "eyebrow": "Custom Design",
         "title": "Bespoke Bridal",
         "description": "\"You Dream It. We Create It.\" A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.",
-        "show_chart": true,
-        "chart_title": "The Journey — From Dream to Reality",
         "cta_label": "Begin Commission",
-        "cta_link": "/pages/bridal"
+        "cta_link": "/pages/bridal",
+        "show_chart": true,
+        "chart_title": "The Journey — From Dream to Reality"
       }
     },
     "womens-couture": {
@@ -72,21 +82,32 @@
     },
     "legacy-collections": {
       "type": "legacy-collections",
-      "settings": {
-        "eyebrow": "For the Little Ones",
-        "title": "The Legacy Collections"
-      },
       "blocks": {
         "children": {
           "type": "collection_card",
-          "settings": { "title": "Children's Couture", "cta": "Shop Kids", "link": "/collections/childrens-couture" }
+          "settings": {
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens-couture"
+          }
         },
         "mommy": {
           "type": "collection_card",
-          "settings": { "title": "Mommy & Me", "cta": "Shop Matching Sets", "link": "/collections/mommy-me" }
+          "settings": {
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-me"
+          }
         }
       },
-      "block_order": ["children", "mommy"]
+      "block_order": [
+        "children",
+        "mommy"
+      ],
+      "settings": {
+        "eyebrow": "For the Little Ones",
+        "title": "The Legacy Collections"
+      }
     },
     "kingdom": {
       "type": "split-content",
@@ -116,6 +137,28 @@
     },
     "retreats": {
       "type": "retreats",
+      "blocks": {
+        "napa": {
+          "type": "retreat",
+          "settings": {
+            "name": "Napa Valley",
+            "subtitle": "Wine Country Retreat",
+            "link": ""
+          }
+        },
+        "hawaii": {
+          "type": "retreat",
+          "settings": {
+            "name": "Hawaii",
+            "subtitle": "Island Immersion",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "napa",
+        "hawaii"
+      ],
       "settings": {
         "eyebrow": "Restoration for the Soul",
         "title": "Dream Retreats",
@@ -123,15 +166,35 @@
         "calendar_link": "/pages/retreats",
         "explore_label": "Explore All Retreats",
         "explore_link": "/pages/retreats"
-      },
-      "blocks": {
-        "napa":   { "type": "retreat", "settings": { "name": "Napa Valley", "subtitle": "Wine Country Retreat" } },
-        "hawaii": { "type": "retreat", "settings": { "name": "Hawaii",      "subtitle": "Island Immersion" } }
-      },
-      "block_order": ["napa", "hawaii"]
+      }
     },
     "photography": {
       "type": "photography",
+      "blocks": {
+        "w1": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
+          }
+        },
+        "w2": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CREATE"
+          }
+        },
+        "w3": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "MEMORIALIZE"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "w2",
+        "w3"
+      ],
       "settings": {
         "section_id": "photography",
         "eyebrow": "Services",
@@ -140,13 +203,73 @@
         "cta_label": "View Portfolio",
         "cta_link": "/pages/photography",
         "show_marquee": true
-      },
+      }
+    },
+    "speaker-academy": {
+      "type": "speaker-academy",
       "blocks": {
-        "w1": { "type": "marquee_word", "settings": { "word": "CAPTURE" } },
-        "w2": { "type": "marquee_word", "settings": { "word": "CREATE" } },
-        "w3": { "type": "marquee_word", "settings": { "word": "MEMORIALIZE" } }
+        "t1": {
+          "type": "title_line",
+          "settings": {
+            "text": "Speaker.",
+            "italic": false
+          }
+        },
+        "t2": {
+          "type": "title_line",
+          "settings": {
+            "text": "Mentor.",
+            "italic": true
+          }
+        },
+        "t3": {
+          "type": "title_line",
+          "settings": {
+            "text": "Author.",
+            "italic": false
+          }
+        },
+        "l1": {
+          "type": "link",
+          "settings": {
+            "label": "Book for Speaking",
+            "url": "/pages/book"
+          }
+        },
+        "l2": {
+          "type": "link",
+          "settings": {
+            "label": "Mentorship Program",
+            "url": "/pages/book"
+          }
+        },
+        "l3": {
+          "type": "link",
+          "settings": {
+            "label": "Buy The Book",
+            "url": "/pages/book"
+          }
+        }
       },
-      "block_order": ["w1", "w2", "w3"]
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "section_id": "speaker",
+        "eyebrow": "The Founder",
+        "bio": "",
+        "academy_id": "academy",
+        "academy_eyebrow": "Education",
+        "academy_title": "Dream Academy",
+        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
+        "academy_cta": "Join The Academy",
+        "academy_link": "/pages/dream-academy"
+      }
     },
     "vuu-foundation": {
       "type": "vuu-foundation",
@@ -188,30 +311,11 @@
           }
         }
       },
-      "block_order": ["card_crowns", "card_retreats"],
+      "block_order": [
+        "card_crowns",
+        "card_retreats"
+      ],
       "settings": {}
-    },
-    "speaker-academy": {
-      "type": "speaker-academy",
-      "settings": {
-        "section_id": "speaker",
-        "eyebrow": "The Founder",
-        "academy_id": "academy",
-        "academy_eyebrow": "Education",
-        "academy_title": "Dream Academy",
-        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
-        "academy_cta": "Join The Academy",
-        "academy_link": "/pages/dream-academy"
-      },
-      "blocks": {
-        "t1": { "type": "title_line", "settings": { "text": "Speaker.", "italic": false } },
-        "t2": { "type": "title_line", "settings": { "text": "Mentor.",  "italic": true } },
-        "t3": { "type": "title_line", "settings": { "text": "Author.",  "italic": false } },
-        "l1": { "type": "link", "settings": { "label": "Book for Speaking",  "url": "/pages/book" } },
-        "l2": { "type": "link", "settings": { "label": "Mentorship Program", "url": "/pages/book" } },
-        "l3": { "type": "link", "settings": { "label": "Buy The Book",        "url": "/pages/book" } }
-      },
-      "block_order": ["t1", "t2", "t3", "l1", "l2", "l3"]
     }
   },
   "order": [

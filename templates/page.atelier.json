@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Atelier",
   "sections": {
     "atelier_hero": {
       "type": "atelier-hero",
@@ -20,7 +28,7 @@
       "type": "atelier-philosophy",
       "settings": {
         "eyebrow": "The Vision",
-        "content": "<p>\"In an era defined by disposable fashion, The House of Nancy Vuu took acquisition of a humble neighborhood cleaner with a profound vision: to transform it into <strong>The Nancy Vuu Atelier</strong>\u2014a world-class <em>Conservatory of Craft.</em> Today, this physical space serves as the beating heart of our enterprise. It is where bespoke bridal heirlooms are architected, where vintage archives are meticulously preserved, and ultimately, where <em>The Dream Academy</em> will teach the lost, sacred art of sewing to a new generation.\"</p>"
+        "content": "<p>\"In an era defined by disposable fashion, The House of Nancy Vuu took acquisition of a humble neighborhood cleaner with a profound vision: to transform it into <strong>The Nancy Vuu Atelier</strong>—a world-class <em>Conservatory of Craft.</em> Today, this physical space serves as the beating heart of our enterprise. It is where bespoke bridal heirlooms are architected, where vintage archives are meticulously preserved, and ultimately, where <em>The Dream Academy</em> will teach the lost, sacred art of sewing to a new generation.\"</p>"
       }
     },
     "service_tailoring": {
@@ -59,7 +67,7 @@
         "eyebrow": "The Future of Craft",
         "title_line_1": "The Dream Academy",
         "title_line_2": "Conservatory.",
-        "body": "The Master Atelier is designed to be more than a house of commerce; it is an incubator for human potential. As part of our humanitarian mandate, this physical space serves as the future training ground for The Dream Academy\u2014teaching marginalized communities the lost, highly-valued trade of garment construction, empowering them to weave their own destinies.",
+        "body": "The Master Atelier is designed to be more than a house of commerce; it is an incubator for human potential. As part of our humanitarian mandate, this physical space serves as the future training ground for The Dream Academy—teaching marginalized communities the lost, highly-valued trade of garment construction, empowering them to weave their own destinies.",
         "cta_label": "Inquire about The Academy",
         "cta_link": "mailto:academy@nancyvuu.com"
       }
@@ -105,15 +113,40 @@
           }
         }
       },
-      "block_order": ["opt_tailoring", "opt_preservation", "opt_bespoke"]
+      "block_order": [
+        "opt_tailoring",
+        "opt_preservation",
+        "opt_bespoke"
+      ]
     },
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "blocks": {
-        "card_crowns": { "type": "card", "settings": { "eyebrow": "The Crowning Moment", "title": "Finish the Look", "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.", "cta_label": "Explore Crowns & Jewelry", "link": "/collections/crowns-jewelry" } },
-        "card_retreats": { "type": "card", "settings": { "eyebrow": "The Nancy Vuu Experience", "title": "Dream Retreats", "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.", "cta_label": "Discover Retreats", "link": "/pages/retreats" } }
+        "card_crowns": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Crowning Moment",
+            "title": "Finish the Look",
+            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
+            "cta_label": "Explore Crowns & Jewelry",
+            "link": "/collections/crowns-jewelry"
+          }
+        },
+        "card_retreats": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Retreats",
+            "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
+            "cta_label": "Discover Retreats",
+            "link": "/pages/retreats"
+          }
+        }
       },
-      "block_order": ["card_crowns", "card_retreats"],
+      "block_order": [
+        "card_crowns",
+        "card_retreats"
+      ],
       "settings": {}
     }
   },
