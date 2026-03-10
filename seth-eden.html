@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seth Eden | Custom Bespoke Tailoring for Men & Women</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@200..800&family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── CSS VARIABLES ── */
+    :root {
+      --nv-black: #0c0c0c;
+      --nv-white: #ffffff;
+      --nv-stone: #f4f4f4;
+      --nv-gray: #888888;
+      --font-serif: 'Bodoni Moda', serif;
+      --font-sans: 'Manrope', sans-serif;
+      --midnight: #080808;
+      --gold: #c5a059;
+      --ivory: #faf9f6;
+      --zinc-900: #111111;
+    }
+
+    body { margin: 0; font-family: var(--font-sans); background: var(--nv-white); color: var(--nv-black); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--midnight); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* ── UTILITIES ── */
+    .section-padding { padding: 140px 10%; max-width: 1400px; margin: 0 auto; }
+    .eyebrow { font-family: var(--font-sans); font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--nv-gray); font-weight: 800; display: block; margin-bottom: 25px; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; text-transform: uppercase; letter-spacing: -0.01em; margin: 0; }
+    p { font-size: 1.1rem; line-height: 1.8; font-weight: 300; color: #333; }
+    .text-center { text-align: center; }
+    .serif { font-family: 'Bodoni Moda', serif; }
+    .tracking-editorial { letter-spacing: 0.6em; }
+    .tracking-ultra { letter-spacing: 0.8em; }
+
+    /* ══════════════════════════════════════════════
+       SECTIONS FROM SETH-EDEN1
+       ══════════════════════════════════════════════ */
+
+    /* ── HERO: CINEMATIC FILM HEADER ── */
+    .hero-seth {
+      height: 100vh; background: var(--nv-black); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; color: var(--nv-white);
+    }
+    .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: grayscale(100%) contrast(1.1); }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85)); }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 1000px; padding: 0 5%; }
+    .hero-content h1 { font-size: clamp(3.5rem, 8vw, 7rem); margin-bottom: 20px; line-height: 0.9; }
+    .hero-content p { color: #ccc; font-size: 1.4rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
+    .hero-brand-sub { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.6; margin-top: 25px; display: block; }
+
+    /* ── MANIFESTO ── */
+    .manifesto { text-align: center; background: var(--nv-stone); border-bottom: 1px solid #ddd; }
+    .manifesto p { font-size: 1.6rem; max-width: 1100px; margin: 0 auto; line-height: 1.6; color: var(--nv-black); }
+
+    /* ── VITALITY THRESHOLD ── */
+    .resonance-section { background: var(--nv-white); border-bottom: 1px solid #eee; }
+    .resonance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .resonance-text h2 { font-size: 3.5rem; margin-bottom: 30px; line-height: 1.1; }
+    .frequency-badge { display: inline-block; padding: 15px 25px; border: 1px solid var(--nv-black); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; margin-bottom: 30px; }
+    .vitality-img-holder { height: 700px; background: #f9f9f9; overflow: hidden; }
+    .vitality-img-holder img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
+
+    /* ── SARTORIAL STANDARDS ── */
+    .sartorial-standards { background: #f9f9f9; border-bottom: 1px solid #eee; }
+    .standard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+    .standard-card { background: white; padding: 0 0 50px 0; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+    .standard-visual { height: 400px; background: #f4f4f4; margin-bottom: 40px; overflow: hidden; }
+    .standard-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .standard-card h4 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 25px; text-transform: none; }
+    .standard-card p { font-size: 0.85rem; padding: 0 40px; color: #555; line-height: 1.6; margin-bottom: 30px; }
+    .standard-card .card-footer { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; color: #111; }
+
+    /* ── SIGNATURE BLAZER ── */
+    .blazer-section { background: var(--nv-white); border-bottom: 1px solid #eee; }
+    .blazer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .blazer-visual { position: relative; height: 700px; background: #f4f4f4; overflow: hidden; }
+    .blazer-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .blazer-visual-label { position: absolute; top: 20px; left: 20px; font-size: 0.95rem; color: #111; font-weight: 400; }
+    .blazer-text .eyebrow { margin-bottom: 20px; }
+    .blazer-text h2 { font-size: clamp(2.8rem, 4.5vw, 4rem); line-height: 1.05; margin-bottom: 40px; text-transform: uppercase; }
+    .blazer-text p { font-size: 1.1rem; color: #333; line-height: 1.8; margin-bottom: 25px; }
+    .blazer-features { list-style: none; padding: 0; margin: 35px 0 50px; border-top: 1px solid #eee; padding-top: 35px; }
+    .blazer-features li { margin-bottom: 15px; font-size: 1rem; position: relative; padding-left: 25px; color: #333; font-weight: 400; }
+    .blazer-features li::before { content: "\2014"; position: absolute; left: 0; color: #ccc; }
+    .blazer-investment { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); font-style: italic; color: var(--nv-black); margin-bottom: 35px; text-transform: none; letter-spacing: -0.01em; }
+
+    /* ── SPLIT CRAFT PILLARS ── */
+    .pillar-row { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; padding: 120px 0; border-bottom: 1px solid #eee; }
+    .pillar-label { font-size: 0.95rem; color: #111; padding-top: 10px; font-weight: 400; }
+    .pillar-content-wrapper { padding-top: 10px; }
+    .pillar-eyebrow { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: #888; font-weight: 800; margin-bottom: 25px; display: block; }
+    .pillar-title { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.05; margin-bottom: 40px; text-transform: uppercase; background: linear-gradient(90deg, #c62828, #e65100, #f9a825, #2e7d32, #1565c0, #6a1b9a, #c62828); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 100%; }
+    .pillar-body { font-size: 1.05rem; color: #333; line-height: 1.8; margin-bottom: 40px; max-width: 600px; }
+    .pillar-body p { margin-bottom: 20px; }
+
+    /* ── MASCULINE BLUEPRINT ── */
+    .masculine-blueprint { background: var(--nv-black); color: var(--nv-white); border-bottom: 1px solid #222; }
+    .masculine-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .masculine-text h2 { color: white; font-size: 3.5rem; margin-bottom: 30px; }
+    .masculine-text p { color: #888; margin-bottom: 30px; }
+    .masculine-visual { height: 800px; background: #1a1a1a; overflow: hidden; }
+    .masculine-visual img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.9); }
+
+    /* ── FEMININE BLUEPRINT ── */
+    .feminine-blueprint { background: var(--nv-black); color: var(--nv-white); }
+    .feminine-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .feminine-text h2 { color: white; font-size: 3.5rem; margin-bottom: 30px; }
+    .feminine-text p { color: #888; margin-bottom: 30px; }
+    .feminine-visual { height: 800px; background: #1a1a1a; overflow: hidden; }
+    .feminine-visual img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.8); }
+
+    /* ── HIGH VISIBILITY ── */
+    .visibility-section { background: var(--nv-white); border-bottom: 1px solid #eee; }
+    .visibility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .visibility-img { height: 750px; background: #f4f4f4; overflow: hidden; }
+    .visibility-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
+
+    /* ── PATHWAYS TO SOVEREIGNTY ── */
+    .pathways-section { background: var(--nv-stone); }
+    .pathway-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+    .pathway-card { background: white; border: 1px solid #ddd; padding: 80px 50px; text-align: center; }
+    .pathway-card.dark { background: var(--nv-black); color: white; border-color: var(--nv-black); }
+    .pathway-card h3 { font-size: 2.5rem; margin-bottom: 10px; }
+    .pathway-list { list-style: none; padding: 0; margin: 40px 0; text-align: left; border-top: 1px solid #eee; padding-top: 40px; }
+    .pathway-list li { margin-bottom: 15px; font-size: 0.95rem; position: relative; padding-left: 25px; }
+    .pathway-list li::before { content: "—"; position: absolute; left: 0; color: #ccc; }
+
+    /* ── JOURNEY NOIR ── */
+    .journey-noir { background: #0c0c0c; color: white; padding: 140px 5%; text-align: center; }
+    .journey-noir .eyebrow { color: #555; margin-bottom: 30px; }
+    .journey-noir h2 { font-size: clamp(3rem, 7vw, 6rem); color: white; margin-bottom: 100px; line-height: 1; }
+    .journey-noir-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto 80px; }
+    .journey-step-card { background: #111; padding: 80px 40px; text-align: left; border: 1px solid #1a1a1a; }
+    .journey-step-card .num { font-family: var(--font-serif); font-size: 3rem; font-style: italic; color: white; display: block; margin-bottom: 40px; }
+    .journey-step-card h3 { font-size: 10px; letter-spacing: 3px; font-weight: 800; color: white; margin-bottom: 25px; }
+    .journey-step-card p { color: #666; font-size: 0.95rem; line-height: 1.8; margin: 0; }
+
+    /* ── SHOWROOM ── */
+    .showroom-section { background: var(--nv-white); }
+    .showroom-header { margin-bottom: 80px; }
+    .showroom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .showroom-item { position: relative; overflow: hidden; height: 600px; border: 1px solid #eee; }
+    .showroom-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.6s ease; }
+    .showroom-item:hover img { filter: grayscale(0%); transform: scale(1.02); }
+    .showroom-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; opacity: 0; transition: 0.4s; }
+    .showroom-item:hover .showroom-info { opacity: 1; }
+    .showroom-info h3 { color: white; font-size: 1.4rem; margin-bottom: 5px; }
+
+    /* ── GENESIS BLUEPRINT ── */
+    .genesis-blueprint { background: #fff; padding: 140px 10%; text-align: center; }
+    .genesis-blueprint .eyebrow { color: #999; margin-bottom: 20px; }
+    .genesis-blueprint h2 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 15px; }
+    .genesis-blueprint .sub-mission { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 100px; display: block; }
+    .genesis-blueprint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; text-align: left; max-width: 1400px; margin: 0 auto; }
+    .genesis-col h3 { font-size: 2.2rem; margin-bottom: 30px; line-height: 1.2; font-style: italic; }
+    .genesis-col p { font-size: 1.15rem; color: #333; margin-bottom: 30px; }
+    .genesis-col p b { font-weight: 700; color: #000; }
+
+    /* ── BUTTONS (File 1) ── */
+    .btn-nv { display: inline-block; padding: 22px 60px; background: var(--nv-black); color: var(--nv-white); text-transform: uppercase; font-size: 11px; letter-spacing: 4px; font-weight: 700; text-decoration: none; border: 1px solid var(--nv-black); transition: 0.4s; cursor: pointer; text-align: center; }
+    .btn-nv:hover { background: transparent; color: var(--nv-black); }
+    .btn-white { background: white; color: black; border-color: white; }
+    .btn-white:hover { background: transparent; color: white; }
+    .btn-outline { background: transparent; color: white; border: 1px solid #333; }
+    .btn-outline:hover { border-color: white; background: white; color: black; }
+
+
+    /* ══════════════════════════════════════════════
+       SECTIONS FROM SETH-EDEN2
+       ══════════════════════════════════════════════ */
+
+    /* ── SPLIT HERO ── */
+    .split-hero {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .split-side {
+      position: relative;
+      height: 100%;
+      flex: 1;
+      transition: all 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .split-side:hover { flex: 1.5; }
+    .split-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(1) brightness(0.3);
+      transition: transform 3s cubic-bezier(0.19, 1, 0.22, 1), filter 1.5s ease;
+    }
+    .split-side:hover .split-bg {
+      transform: scale(1.1);
+      filter: grayscale(0.3) brightness(0.4);
+    }
+    .split-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      opacity: 0.7;
+      transition: opacity 1s ease;
+    }
+    .split-side:hover .split-content { opacity: 1; }
+    .line-accent {
+      width: 0px;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem auto;
+      transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .split-side:hover .line-accent { width: 100px; }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── TIER CARDS ── */
+    .tier-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: all 0.6s ease;
+    }
+    .tier-card:hover {
+      border-color: var(--gold);
+      background: #161616;
+      transform: translateY(-5px);
+    }
+
+    /* ── BUTTONS (File 2) ── */
+    .btn-bespoke {
+      padding: 1.2rem 3.5rem;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: white;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
+    .btn-bespoke:hover {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    /* ── TEXT COLOR OVERRIDE for File2 ivory sections ── */
+    .text-gold { color: var(--gold); }
+
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .standard-grid, .pathway-grid, .showroom-grid, .masculine-layout, .feminine-layout, .visibility-grid, .journey-noir-grid, .genesis-blueprint-grid { grid-template-columns: 1fr; }
+      .pillar-row { grid-template-columns: 1fr; gap: 20px; padding: 80px 0; }
+      .resonance-grid { grid-template-columns: 1fr; }
+      .split-hero { flex-direction: column; }
+      .split-side { height: 50vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════
+       HERO: CINEMATIC FILM HEADER
+       ════════════════════════════════════════════ -->
+  <section class="hero-seth">
+    <video class="hero-video" autoplay loop muted playsinline poster="https://via.placeholder.com/1920x1080?text=Hero+Cinematic+Visual">
+      <source src="SETH-EDEN-BRAND-FILM.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow" style="color: var(--nv-white); opacity: 0.8;">The House of Nancy Vuu Presents</span>
+      <h1>Seth Eden.</h1>
+      <p>Custom Bespoke Masterpieces for Men & Women.</p>
+      <span class="hero-brand-sub">By Nancy Vuu</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       MANIFESTO
+       ════════════════════════════════════════════ -->
+  <section class="section-padding manifesto">
+    <span class="eyebrow">The Mandate</span>
+    <p>"Seth Eden is a premier custom clothier dedicated to the architecture of identity. We provide custom bespoke and master-fit tailoring that bridges the gap between heritage artisanal craftsmanship and modern visionary design. Every commission is a declaration of purpose—fashioned to elevate your external excellence and internal authority."</p>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SPLIT HERO: SETH & EDEN (from file 2)
+       ════════════════════════════════════════════ -->
+  <section class="split-hero" id="split-identity">
+    <div class="split-side group" onclick="document.getElementById('masculine-section').scrollIntoView({behavior: 'smooth'})">
+      <div class="split-bg" style="background-image: url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80');"></div>
+      <div class="split-content">
+        <span class="text-[0.5rem] uppercase tracking-[0.8em] text-zinc-500 mb-6 block">The Mandate</span>
+        <h2 class="serif text-7xl md:text-9xl italic lowercase" style="color: white;">seth</h2>
+        <div class="line-accent"></div>
+        <p class="text-[0.55rem] uppercase tracking-[0.5em] text-zinc-400">Architectural Authority</p>
+      </div>
+    </div>
+    <div class="split-side group" onclick="document.getElementById('feminine-section').scrollIntoView({behavior: 'smooth'})">
+      <div class="split-bg" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0610947c7?auto=format&fit=crop&q=80');"></div>
+      <div class="split-content">
+        <span class="text-[0.5rem] uppercase tracking-[0.8em] text-zinc-500 mb-6 block">The Sanctuary</span>
+        <h2 class="serif text-7xl md:text-9xl italic lowercase" style="color: white;">eden</h2>
+        <div class="line-accent"></div>
+        <p class="text-[0.55rem] uppercase tracking-[0.5em] text-zinc-400">Restorative Peace</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       VITALITY THRESHOLD
+       ════════════════════════════════════════════ -->
+  <section class="section-padding resonance-section">
+    <div class="resonance-grid">
+      <div class="resonance-text">
+        <div class="frequency-badge">The Vitality Threshold</div>
+        <h2>High-Frequency Textiles. <br>Healthy Sovereignty.</h2>
+        <p>A garment is a biological interface. At Seth Eden, we believe true luxury must be as healthy as it is beautiful. To maintain this standard, we adhere to a strict biological requirement: <b>The Vitality Threshold.</b></p>
+        <p>Every textile we offer must contain between <b>50% and 100% "Live Fabric"</b> content. We exclusively curate noble, natural fibers: <b>Wool, Silk, Cotton, and Linen.</b> These materials possess a natural resonance that aligns with the human body, providing superior breathability and clarity.</p>
+        <button class="btn-nv" style="margin-top: 30px; background: transparent; color: black; padding-left: 0; border: none; border-bottom: 1px solid black; padding-bottom: 10px;">Learn More About Fabric Frequencies</button>
+      </div>
+      <div class="resonance-media">
+        <div class="vitality-img-holder">
+          <img src="https://via.placeholder.com/800x1000?text=Vitality+Threshold+Textile" alt="Archival Fiber Visual">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SARTORIAL STANDARDS: SIGNATURE SETH EDEN SUITS
+       ════════════════════════════════════════════ -->
+  <section class="section-padding sartorial-standards">
+    <div class="text-center">
+      <h2>Our Signature Seth Eden Suits</h2>
+    </div>
+    <div class="standard-grid">
+      <div class="standard-card">
+        <div class="standard-visual"><img src="https://via.placeholder.com/600x400?text=Hand+Stitched+Construction" alt="Full Canvas"></div>
+        <h4>Hand Stitched Construction</h4>
+        <p>All Seth Eden Custom Suits are made with a hand stitched full-canvas construction and hand-stitched "Milanese" buttonholes.</p>
+        <span class="card-footer">Our Craftsmanship</span>
+      </div>
+      <div class="standard-card">
+        <div class="standard-visual"><img src="https://via.placeholder.com/600x400?text=Luxury+Designer+Fabrics" alt="Elite Fabrics"></div>
+        <h4>Luxury Designer Fabrics</h4>
+        <p>Select from Silicon Valley's largest trove of Designer Fabric Swatches including Ermenegildo Zegna, Loro Piana, Lanificio Cerruti, and Reda.</p>
+        <span class="card-footer">Our Mills</span>
+      </div>
+      <div class="standard-card">
+        <div class="standard-visual"><img src="https://via.placeholder.com/600x400?text=Designed+for+You" alt="Custom Tailoring"></div>
+        <h4>Designed for You</h4>
+        <p>Select every last detail of your suit—from the lining to the stitching—and have your personal name custom embroidered inside.</p>
+        <span class="card-footer">Our Tailoring</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SIGNATURE SOVEREIGN BLAZER
+       ════════════════════════════════════════════ -->
+  <section class="section-padding blazer-section">
+    <div class="blazer-grid">
+      <div class="blazer-visual">
+        <span class="blazer-visual-label">Seth Eden Signature Blazer</span>
+        <img src="https://via.placeholder.com/700x900?text=Signature+Sovereign+Blazer" alt="Seth Eden Signature Sovereign Blazer">
+      </div>
+      <div class="blazer-text">
+        <span class="eyebrow">The Entry to the House</span>
+        <h2>The Signature <br>Sovereign Blazer.</h2>
+        <p>A masterpiece of individual architecture. The Signature Sovereign Blazer is the definitive entry point into the House of Seth Eden. It is designed for those who require the impeccable build of a bespoke suit in a versatile, standalone vestment.</p>
+        <p>Fashioned from our mandated &ldquo;Live Fabrics,&rdquo; this blazer features our signature hand-sewn Milanese buttonhole and a silhouette engineered for effortless command across all environments&mdash;from the Napa estates to the Silicon Valley boardroom.</p>
+        <ul class="blazer-features">
+          <li>Full hand-canvased construction for breathable longevity.</li>
+          <li>Available in exclusive Navy, Noir, and Stone frequency-wool.</li>
+          <li>Master-fit appointment included for precision alignment.</li>
+        </ul>
+        <h3 class="blazer-investment">Investment from $1,800</h3>
+        <a href="#inquiry" class="btn-nv">Initiate Signature Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       MASCULINE SOVEREIGNTY
+       ════════════════════════════════════════════ -->
+  <section id="masculine-section" class="section-padding masculine-blueprint">
+    <div class="masculine-layout">
+      <div class="masculine-visual">
+        <img src="https://via.placeholder.com/800x1200?text=Masculine+Power+Architecture" alt="Men's Custom Suit">
+      </div>
+      <div class="masculine-text">
+        <span class="eyebrow" style="color: #444;">Masculine Sovereignty</span>
+        <h2>The Architecture of <br>Command.</h2>
+        <p>Most suiting brands prioritize the "uniform," but Seth Eden prioritizes the "individual." We recognize that for the man of influence, a suit is not just clothing—it is an anchor of authority. Our masculine blueprint moves beyond rigid industrial blocks to create a silhouette of effortless command.</p>
+        <p>We celebrate and enhance the strength and presence of the masculine form through hand-canvased architecture that supports movement and projects legacy. This is tailoring that respects the weight of your appointment.</p>
+        <ul class="pathway-list" style="border-top-color: #333; margin-top: 40px;">
+          <li style="color: #ccc;">Postural analysis for a personalized structural draft.</li>
+          <li style="color: #ccc;">Proprietary internal build for breathable, high-performance wear.</li>
+          <li style="color: #ccc;">Bespoke detailing that honors the modern gentleman's spirit.</li>
+        </ul>
+        <a href="#inquiry" class="btn-nv btn-white" style="margin-top: 20px;">Secure Your Masculine Commission</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FEMININE SOVEREIGNTY
+       ════════════════════════════════════════════ -->
+  <section id="feminine-section" class="section-padding feminine-blueprint">
+    <div class="feminine-layout">
+      <div class="feminine-text">
+        <span class="eyebrow" style="color: #444;">Feminine Sovereignty</span>
+        <h2>Beyond the Shrunken <br>Silhouette.</h2>
+        <p>Most clothiers approach women's suiting as a secondary thought—simply shrinking a masculine block. At Seth Eden, we recognize that the female visionary requires an entirely different architecture. We honor, celebrate, and enhance the unique power and grace of the woman's silhouette.</p>
+        <p>Our feminine blueprint provides the <b>same incredible craftsmanship</b> of a master-tailored men's suit, but with a <b>fashion flare</b> and technical drape that celebrates the female form and spirit.</p>
+        <ul class="pathway-list" style="border-top-color: #333; margin-top: 40px;">
+          <li style="color: #ccc;">Anatomical precision designed for feminine movement.</li>
+          <li style="color: #ccc;">Artisanal internal structure without industrial padding.</li>
+          <li style="color: #ccc;">Access to exclusive silk linings and bespoke fashion details.</li>
+        </ul>
+        <a href="#inquiry" class="btn-nv btn-white" style="margin-top: 20px;">Secure Your Feminine Commission</a>
+      </div>
+      <div class="feminine-visual">
+        <img src="https://via.placeholder.com/800x1200?text=Feminine+Power+Architecture" alt="Women's Custom Suit">
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       HIGH VISIBILITY / CEO SUIT
+       ════════════════════════════════════════════ -->
+  <section class="section-padding visibility-section">
+    <div class="visibility-grid">
+      <div class="visibility-img">
+        <img src="https://via.placeholder.com/800x1200?text=Boardroom+to+Cannes" alt="High Visibility Custom Suiting">
+      </div>
+      <div class="visibility-text">
+        <span class="eyebrow">Luxury Lifestyle</span>
+        <h2>From Cannes to <br>Silicon Valley.</h2>
+        <p>A Seth Eden commission is architected for high-visibility moments. From the red carpets of <b>Cannes</b> to the boardrooms of <b>Silicon Valley</b>, our garments provide the definitive silhouette for the modern dignitary and executive.</p>
+        <p>The <b>CEO Suit</b> is our signature of authority—a garment that commands the room before you utter a word. We specialize in evening gala attire and executive formalwear that balances technical mastery with a visionary aesthetic flare.</p>
+        <a href="#inquiry" class="btn-nv" style="margin-top: 20px;">Request Executive Styling</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       THE PILLARS OF CRAFT
+       ════════════════════════════════════════════ -->
+  <section class="section-padding">
+
+    <!-- PILLAR 1: BESPOKE -->
+    <div class="pillar-row">
+      <div class="pillar-label">Bespoke Tailoring</div>
+      <div class="pillar-content-wrapper">
+        <span class="pillar-eyebrow">The Commission</span>
+        <h2 class="pillar-title">Master Bespoke <br>for All.</h2>
+        <div class="pillar-body">
+          <p>Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture. Whether crafting a sharp masculine silhouette or an empowered feminine frame, our process remains rooted in 60+ hours of hand-craftsmanship.</p>
+          <p>We utilize the world's most prestigious mills—Loro Piana, Dormeuil, and Scabal—to ensure your garment is an archival asset that transcends gender and season.</p>
+        </div>
+        <a href="#inquiry" class="btn-nv">Secure Your Commission</a>
+      </div>
+    </div>
+
+    <!-- PILLAR 2: POWER SUITS -->
+    <div class="pillar-row">
+      <div class="pillar-label">Power Suits & Gala Couture</div>
+      <div class="pillar-content-wrapper">
+        <span class="pillar-eyebrow">High Visibility</span>
+        <h2 class="pillar-title">Power Suits & <br>Gala Couture.</h2>
+        <div class="pillar-body">
+          <p>From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments. We specialize in evening attire and "Power Suit" architecture for the modern dignitary and executive.</p>
+          <p>Unique silk jacquards, custom velvet tailoring, and architectural formalwear designed for those who command the room without uttering a word.</p>
+        </div>
+        <a href="#inquiry" class="btn-nv">Inquire for Event</a>
+      </div>
+    </div>
+
+    <!-- PILLAR 3: HEIRLOOM -->
+    <div class="pillar-row">
+      <div class="pillar-label">Bespoke Wedding Party</div>
+      <div class="pillar-content-wrapper">
+        <span class="pillar-eyebrow">Legacy Beginnings</span>
+        <h2 class="pillar-title">The Heirloom <br>Occasion.</h2>
+        <div class="pillar-body">
+          <p>Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples.</p>
+          <p>We provide full-service styling for the groom, the modern bride in a suit, and their inner circle, ensuring the entire party reflects the pinnacle of sartorial standards.</p>
+        </div>
+        <a href="#inquiry" class="btn-nv">Book Occasion Consultation</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FROM VISION TO VESTING: JOURNEY NOIR
+       ════════════════════════════════════════════ -->
+  <section class="journey-noir">
+    <span class="eyebrow">The Journey</span>
+    <h2>From Vision <br>to Vesting.</h2>
+    <div class="journey-noir-grid">
+      <div class="journey-step-card">
+        <span class="num">01.</span>
+        <h3>THE REVEAL</h3>
+        <p>Explore our atelier inspirations in Napa or San Jose—the visual foundations of your identity.</p>
+      </div>
+      <div class="journey-step-card">
+        <span class="num">02.</span>
+        <h3>THE CONSULTATION</h3>
+        <p>Collaborate with our designers to customize your mandated silhouette, choosing textures that reflect your unique calling.</p>
+      </div>
+      <div class="journey-step-card">
+        <span class="num">03.</span>
+        <h3>THE APPOINTING</h3>
+        <p>Your final fitting—the moment where your garment and your identity are unified in a bespoke appointment.</p>
+      </div>
+    </div>
+    <a href="#inquiry" class="btn-nv btn-outline">Begin Your Appointment</a>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       THE EXPERIENCE: MTM vs BESPOKE TIERS (from file 2)
+       ════════════════════════════════════════════ -->
+  <section id="experience" class="py-40 bg-[#faf9f6] text-black">
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="text-center mb-32 reveal">
+        <span class="text-gold text-[0.65rem] uppercase tracking-ultra block mb-8">The Tailoring Journey</span>
+        <h3 class="serif text-5xl md:text-7xl italic leading-tight mb-10" style="color: black;">Recognition & Covenant.</h3>
+        <p class="max-w-2xl mx-auto text-zinc-500 font-light leading-relaxed">
+          At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- MTM -->
+        <div class="tier-card p-16 reveal bg-white !text-black border-zinc-100">
+          <span class="text-[0.55rem] uppercase tracking-editorial text-gold block mb-10">Level I</span>
+          <h4 class="serif text-4xl mb-8 italic" style="color: black;">Made-to-Measure</h4>
+          <p class="text-sm font-light leading-loose text-zinc-500 mb-12">
+            The "Recognition" experience. Utilizing our signature architectural patterns as a foundation, we adjust to your specific dimensions. This journey involves two fittings and ensures the Seth Eden silhouette is flawlessly aligned with your frame.
+          </p>
+          <ul class="space-y-4 mb-16 text-[0.6rem] uppercase tracking-widest text-zinc-400">
+            <li>• Signature Pattern Base</li>
+            <li>• 40+ Premium Fabric Choices</li>
+            <li>• 4-Week Delivery</li>
+          </ul>
+          <button class="btn-bespoke !border-black !text-black hover:!bg-black hover:!text-white">Inquire MTM</button>
+        </div>
+
+        <!-- Bespoke -->
+        <div class="tier-card p-16 reveal !bg-black !text-white">
+          <span class="text-[0.55rem] uppercase tracking-editorial text-gold block mb-10">Level II</span>
+          <h4 class="serif text-4xl mb-8 italic" style="color: white;">Full Bespoke</h4>
+          <p class="text-sm font-light leading-loose text-zinc-400 mb-12">
+            The "Covenant" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of the Husted & Vuu house—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.
+          </p>
+          <ul class="space-y-4 mb-16 text-[0.6rem] uppercase tracking-widest text-zinc-500">
+            <li>• Hand-Drafted Individual Pattern</li>
+            <li>• Exclusive Rare Textiles</li>
+            <li>• 10-Week Master Craft</li>
+          </ul>
+          <button class="btn-bespoke">Begin Bespoke</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       PATHWAYS TO SOVEREIGNTY
+       ════════════════════════════════════════════ -->
+  <section class="section-padding pathways-section">
+    <div class="text-center">
+      <span class="eyebrow">The Journey of Choice</span>
+      <h2>Pathways to Sovereignty.</h2>
+    </div>
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <span class="eyebrow">The Modern Professional</span>
+        <h3>The Custom <br>Blueprint (MTM).</h3>
+        <span class="price-indicator">Investment Tiers: High Elevation</span>
+        <ul class="pathway-list">
+          <li>Optimized from House patterns to your specific posture.</li>
+          <li>Selection from 5,000+ "Vitality Mandate" fabrics.</li>
+          <li>Hand-finished detailing and personalized monogramming.</li>
+          <li>Two fitting stages for precision alignment.</li>
+        </ul>
+        <a href="#inquiry" class="btn-nv" style="width: 100%;">Inquire for Custom MTM</a>
+      </div>
+      <div class="pathway-card dark">
+        <span class="eyebrow" style="color: #666;">The Archival Masterpiece</span>
+        <h3 style="color: white;">The Sovereign <br>Bespoke.</h3>
+        <span class="price-indicator" style="color: #666;">Investment Tiers: Heritage Level</span>
+        <ul class="pathway-list" style="border-top-color: #222;">
+          <li style="color: #ccc;">A unique paper pattern drafted from scratch for your identity.</li>
+          <li style="color: #ccc;">Absolute structural freedom & complex architecture.</li>
+          <li style="color: #ccc;">Master-level hand-canvasing (60+ Hours of Craft).</li>
+          <li style="color: #ccc;">3-5 intricate fittings for a second-skin result.</li>
+        </ul>
+        <a href="#inquiry" class="btn-nv btn-white" style="width: 100%;">Request Bespoke Commission</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       LIMITED DESIGNS / INSPIRATIONS (from file 2)
+       ════════════════════════════════════════════ -->
+  <section id="limited" class="py-40 bg-white text-black border-t border-zinc-100">
+    <div class="max-w-[1800px] mx-auto px-10">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+        <div class="max-w-3xl">
+          <span class="text-gold text-[0.65rem] uppercase tracking-ultra block mb-8">Invitations to the Journey</span>
+          <h3 class="serif text-5xl md:text-8xl italic leading-none mb-10" style="color: black;">Limited Designs</h3>
+          <p class="text-zinc-500 font-light leading-relaxed max-w-xl">
+            A curation of "Seth Eden" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey.
+          </p>
+        </div>
+        <div class="hidden md:block">
+          <p class="text-[0.55rem] uppercase tracking-editorial text-zinc-300">Available In-Atelier Only</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="group reveal">
+          <div class="aspect-[3/4] overflow-hidden bg-zinc-50 mb-8 relative">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt="Limited Inspiration 01">
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
+            <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
+              <span class="text-[0.5rem] uppercase tracking-ultra text-white bg-black px-4 py-2">View Inspiration</span>
+            </div>
+          </div>
+          <span class="text-[0.6rem] uppercase tracking-[0.4em] text-gold block mb-2">Inspiration 01</span>
+          <h5 class="serif text-xl italic mb-4" style="color: black;">The Appointed Double-Breast</h5>
+          <p class="text-[0.55rem] uppercase tracking-widest text-zinc-400">Architectural Framing in Charcoal Wool</p>
+        </div>
+
+        <div class="group reveal" style="transition-delay: 200ms;">
+          <div class="aspect-[3/4] overflow-hidden bg-zinc-50 mb-8 relative">
+            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt="Limited Inspiration 02">
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
+            <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
+              <span class="text-[0.5rem] uppercase tracking-ultra text-white bg-black px-4 py-2">View Inspiration</span>
+            </div>
+          </div>
+          <span class="text-[0.6rem] uppercase tracking-[0.4em] text-gold block mb-2">Inspiration 02</span>
+          <h5 class="serif text-xl italic mb-4" style="color: black;">The Eden Fluid Blazer</h5>
+          <p class="text-[0.55rem] uppercase tracking-widest text-zinc-400">Soft Structuralism in Ivory Silk-Blend</p>
+        </div>
+
+        <div class="group reveal" style="transition-delay: 400ms;">
+          <div class="aspect-[3/4] overflow-hidden bg-zinc-50 mb-8 relative">
+            <img src="https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt="Limited Inspiration 03">
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
+            <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
+              <span class="text-[0.5rem] uppercase tracking-ultra text-white bg-black px-4 py-2">View Inspiration</span>
+            </div>
+          </div>
+          <span class="text-[0.6rem] uppercase tracking-[0.4em] text-gold block mb-2">Inspiration 03</span>
+          <h5 class="serif text-xl italic mb-4" style="color: black;">The Mandate Overcoat</h5>
+          <p class="text-[0.55rem] uppercase tracking-widest text-zinc-400">Structural Command in Navy Cashmere</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       MEN'S SHOWROOM
+       ════════════════════════════════════════════ -->
+  <section class="section-padding showroom-section">
+    <div class="showroom-header text-center">
+      <span class="eyebrow">Masculine Inspiration</span>
+      <h2>The Men's Showroom.</h2>
+    </div>
+    <div class="showroom-grid">
+      <div class="showroom-item"><img src="https://via.placeholder.com/600x900?text=Men's+Sample+01"><div class="showroom-info"><h3>The Sovereign Tuxedo</h3></div></div>
+      <div class="showroom-item"><img src="https://via.placeholder.com/600x900?text=Men's+Sample+02"><div class="showroom-info"><h3>The Executive Blazer</h3></div></div>
+      <div class="showroom-item"><img src="https://via.placeholder.com/600x900?text=Men's+Sample+03"><div class="showroom-info"><h3>Archival Overcoat</h3></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       WOMEN'S SHOWROOM
+       ════════════════════════════════════════════ -->
+  <section class="section-padding showroom-section" style="background: #fafafa; border-top: 1px solid #eee;">
+    <div class="showroom-header text-center">
+      <span class="eyebrow">Feminine Inspiration</span>
+      <h2>The Women's Showroom.</h2>
+    </div>
+    <div class="showroom-grid">
+      <div class="showroom-item"><img src="https://via.placeholder.com/600x900?text=Women's+Sample+01"><div class="showroom-info"><h3>The Empowered Shoulder</h3></div></div>
+      <div class="showroom-item"><img src="https://via.placeholder.com/600x900?text=Women's+Sample+02"><div class="showroom-info"><h3>The Dignitary Vestment</h3></div></div>
+      <div class="showroom-item"><img src="https://via.placeholder.com/600x900?text=Women's+Sample+03"><div class="showroom-info"><h3>Formal Evening Tailoring</h3></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       THE GENESIS: A BLUEPRINT OF IDENTITY
+       ════════════════════════════════════════════ -->
+  <section class="genesis-blueprint">
+    <span class="eyebrow">The Genesis</span>
+    <h2>A Blueprint of Identity</h2>
+    <span class="sub-mission">The Restorative Mission of Husted & Vuu</span>
+
+    <div class="genesis-blueprint-grid">
+      <div class="genesis-col">
+        <span class="eyebrow" style="color: #000; margin-bottom: 40px;">The Global Mandate</span>
+        <h3>Nancy Vuu: <br>Building the Garden</h3>
+        <p>Nancy's journey began with a spiritual encounter that changed the course of her life. She saw children across the nations, lacking food and covering. In that moment, a voice spoke: <b>"Start designing. Reach out to these children and let them know they are loved—that they are true royalty."</b></p>
+        <p>Later, her eyes were opened to a vision of a breathtaking garden. The instruction was clear: <b>"I will have you build the garden of the Lord all around the world."</b> For Nancy, fashion became the vehicle—a platform to restore identity and elevate humanity to its original regal design.</p>
+      </div>
+      <div class="genesis-col">
+        <span class="eyebrow" style="color: #000; margin-bottom: 40px;">The Appointed Names</span>
+        <h3>Dionne Husted: <br>The Rest & The Appointment</h3>
+        <p>In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: <b>"Her name is Eden. I will find my rest in her."</b> Then came the vision of a boy, Seth—a name meaning <b>"The Appointed One."</b></p>
+        <p>When these two visions converged, Seth Eden was born. It is a house built on the intersection of <b>Restoration and Authority</b>. Every garment is crafted to reflect the "True Royalty" Nancy was called to champion, and the "Appointment" Dionne was shown.</p>
+      </div>
+    </div>
+
+    <div class="foundation-box" style="margin-top: 100px; text-align: left; background: #f9f9f9; padding: 60px; border: 1px solid #eee; max-width: 1400px; margin-left: auto; margin-right: auto;">
+      <span class="eyebrow" style="color: var(--nv-black);">Restorative Commerce</span>
+      <h3>Elevating Humanity.</h3>
+      <p>Seth Eden exists for more than just aesthetics. We are a house of purpose. <b>A portion of the proceeds from every Seth Eden commission directly supports the House of Vuu Foundation.</b></p>
+      <p>Your investment in a custom garment fuels our mission to combat human trafficking and empower marginalized communities through the <i>Dream Academy</i>.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       INQUIRY VAULT
+       ════════════════════════════════════════════ -->
+  <section id="inquiry" class="section-padding inquiry-section text-center">
+    <h2 style="font-size: 3.5rem;">Secure Your <br>Commission.</h2>
+    <div class="form-box" style="max-width: 800px; margin: 60px auto 0;">
+      <form action="#">
+        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+          <input type="text" placeholder="FULL NAME" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid #ccc; padding: 20px 0; font-family: var(--font-sans); outline: none;">
+          <input type="email" placeholder="EMAIL ADDRESS" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid #ccc; padding: 20px 0; font-family: var(--font-sans); outline: none;">
+          <select required style="color: #666; width: 100%; background: transparent; border: none; border-bottom: 1px solid #ccc; padding: 20px 0; font-family: var(--font-sans); outline: none;">
+            <option value="" disabled selected>GENDER CATEGORY</option>
+            <option value="masculine">Masculine Tailoring</option>
+            <option value="feminine">Feminine Tailoring</option>
+          </select>
+          <select required style="color: #666; width: 100%; background: transparent; border: none; border-bottom: 1px solid #ccc; padding: 20px 0; font-family: var(--font-sans); outline: none;">
+            <option value="" disabled selected>TYPE OF COMMISSION</option>
+            <option value="bespoke">Sovereign Bespoke</option>
+            <option value="mtm">Custom MTM Blueprint</option>
+          </select>
+        </div>
+        <textarea placeholder="DESCRIBE YOUR STYLE ARCHITECTURE..." style="height: 150px; width: 100%; background: transparent; border: none; border-bottom: 1px solid #ccc; padding: 20px 0; font-family: var(--font-sans); margin-bottom: 40px; outline: none;"></textarea>
+        <button type="submit" class="btn-nv" style="width: 100%;">Submit Private Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SCRIPTS
+       ════════════════════════════════════════════ -->
+  <script>
+    // Reveal Observer (from file 2)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
