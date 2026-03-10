@@ -78,6 +78,7 @@
         "text_bg": "greige",
         "grid_ratio": "equal",
         "image_position": "right",
+        "image": "shopify://shop_images/sethimage.jpg",
         "eyebrow": "Tailored for Him",
         "title": "Seth Eden",
         "description": "Precision tailoring for the modern kingdom heir. Architectural authority meets restorative peace. Men's and Women's bespoke suiting.",
@@ -91,6 +92,7 @@
         "children": {
           "type": "collection_card",
           "settings": {
+            "image": "shopify://shop_images/DSC9102B_1.webp",
             "title": "Children's Couture",
             "cta": "Shop Kids",
             "link": "/collections/childrens-couture"
@@ -99,6 +101,7 @@
         "mommy": {
           "type": "collection_card",
           "settings": {
+            "image": "shopify://shop_images/0CF9F33E-0984-4332-8324-AFB352D9BDDC.webp",
             "title": "Mommy & Me",
             "cta": "Shop Matching Sets",
             "link": "/collections/mommy-me"
