@@ -61,6 +61,7 @@
       "type": "womens-couture",
       "settings": {
         "section_id": "womens-couture",
+        "bg_image": "shopify://shop_images/IMG_0593.jpg",
         "eyebrow": "Collection",
         "title": "Women's Couture",
         "tagline": "Elegance · Power · Grace",
