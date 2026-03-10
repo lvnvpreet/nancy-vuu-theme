@@ -150,6 +150,7 @@
         "napa": {
           "type": "retreat",
           "settings": {
+            "image": "shopify://shop_images/a108c2_f4274b7aa6c443d4b3766c89c891b403_mv2_d_2338_3151_s_2.jpg",
             "name": "Napa Valley",
             "subtitle": "Wine Country Retreat",
             "link": ""
@@ -158,6 +159,7 @@
         "hawaii": {
           "type": "retreat",
           "settings": {
+            "image": "shopify://shop_images/a108c2_98bcbc42bcad4813ad1591ab2160221f.jpg",
             "name": "Hawaii",
             "subtitle": "Island Immersion",
             "link": ""
