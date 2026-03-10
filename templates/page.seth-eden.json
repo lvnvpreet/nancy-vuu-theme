@@ -12,6 +12,7 @@
     "seth_cinematic_hero": {
       "type": "seth-hero",
       "settings": {
+        "video_url": "",
         "eyebrow": "The House of Nancy Vuu Presents",
         "heading": "Seth Eden.",
         "subtext": "Custom Bespoke Masterpieces for Men & Women.",
@@ -23,6 +24,8 @@
       "settings": {
         "eyebrow": "The Mandate",
         "quote": "Seth Eden is a premier custom clothier dedicated to the architecture of identity. We provide custom bespoke and master-fit tailoring that bridges the gap between heritage artisanal craftsmanship and modern visionary design. Every commission is a declaration of purpose—fashioned to elevate your external excellence and internal authority.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#f4f4f4",
         "text_color": "#111111",
         "extra_class": "seth-eden-manifesto"
@@ -36,7 +39,8 @@
           "settings": {
             "eyebrow": "The Mandate",
             "heading": "Seth",
-            "subtext": "Architectural Authority"
+            "subtext": "Architectural Authority",
+            "link": ""
           }
         },
         "panel_eden": {
@@ -44,7 +48,8 @@
           "settings": {
             "eyebrow": "The Sanctuary",
             "heading": "Eden",
-            "subtext": "Restorative Peace"
+            "subtext": "Restorative Peace",
+            "link": ""
           }
         }
       },
@@ -68,6 +73,7 @@
         "body_1": "A garment is a biological interface. At Seth Eden, we believe true luxury must be as healthy as it is beautiful. We adhere to a strict biological requirement: every textile must contain between 50% and 100% \"Live Fabric\" content.",
         "body_2": "We exclusively curate noble, natural fibers: Wool, Silk, Cotton, and Linen.",
         "cta_label": "Learn More About Fabric Frequencies",
+        "cta_link": "",
         "cta_style": "underline"
       }
     },
@@ -140,13 +146,15 @@
         "theme": "dark",
         "image_position": "left",
         "image_height": 800,
+        "badge_text": "",
         "eyebrow": "Masculine Sovereignty",
         "title_line_1": "The Architecture of",
         "title_line_2": "Command.",
         "body_1": "Most suiting brands prioritize the \"uniform,\" but Seth Eden prioritizes the \"individual.\" We recognize that for the man of influence, a suit is not just clothing—it is an anchor of authority.",
         "body_2": "Our masculine blueprint moves beyond rigid industrial blocks to create a silhouette of effortless command.",
         "cta_label": "Secure Your Masculine Commission",
-        "cta_link": "/pages/contact"
+        "cta_link": "/pages/contact",
+        "cta_style": "solid"
       }
     },
     "feminine": {
@@ -181,13 +189,15 @@
         "theme": "dark",
         "image_position": "right",
         "image_height": 800,
+        "badge_text": "",
         "eyebrow": "Feminine Sovereignty",
         "title_line_1": "Beyond the",
         "title_line_2": "Shrunken Silhouette.",
         "body_1": "Most clothiers approach women's suiting as a secondary thought—simply shrinking a masculine block. At Seth Eden, we recognize that the female visionary requires an entirely different architecture.",
         "body_2": "We honor, celebrate, and enhance the unique power and grace of the woman's silhouette.",
         "cta_label": "Secure Your Feminine Commission",
-        "cta_link": "/pages/contact"
+        "cta_link": "/pages/contact",
+        "cta_style": "solid"
       }
     },
     "visibility": {
@@ -197,10 +207,12 @@
         "theme": "light",
         "image_position": "left",
         "image_height": 750,
+        "badge_text": "",
         "eyebrow": "Luxury Lifestyle",
         "title_line_1": "From Cannes to",
         "title_line_2": "Silicon Valley.",
         "body_1": "A Seth Eden commission is architected for high-visibility moments. From the red carpets of Cannes to the boardrooms of Silicon Valley, our garments provide the definitive silhouette for the modern dignitary and executive.",
+        "body_2": "",
         "cta_label": "Request Executive Styling",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
@@ -286,7 +298,8 @@
       "settings": {
         "eyebrow": "The Journey",
         "heading": "From Vision to Vesting.",
-        "cta_text": "Begin Your Appointment"
+        "cta_text": "Begin Your Appointment",
+        "cta_link": ""
       }
     },
     "tailoring": {
@@ -300,6 +313,7 @@
             "description": "The \"Recognition\" experience. Utilizing our signature architectural patterns as a foundation, we adjust to your specific dimensions. This journey involves two fittings and ensures the Seth Eden silhouette is flawlessly aligned with your frame.",
             "features": "Signature Pattern Base|40+ Premium Fabric Choices|4-Week Delivery",
             "cta_text": "Inquire MTM",
+            "cta_link": "",
             "dark": false
           }
         },
@@ -311,6 +325,7 @@
             "description": "The \"Covenant\" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of the Husted & Vuu house—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.",
             "features": "Hand-Drafted Individual Pattern|Exclusive Rare Textiles|10-Week Master Craft",
             "cta_text": "Begin Bespoke",
+            "cta_link": "",
             "dark": true
           }
         }
@@ -624,42 +639,6 @@
         "submit_label": "Submit Private Inquiry"
       }
     },
-    "seth_footer": {
-      "type": "seth-footer",
-      "blocks": {
-        "links_atelier": {
-          "type": "link_group",
-          "settings": {
-            "heading": "Atelier",
-            "link_1_text": "The Journey",
-            "link_2_text": "Bespoke Process",
-            "link_3_text": "Appointments"
-          }
-        },
-        "links_nav": {
-          "type": "link_group",
-          "settings": {
-            "heading": "Navigation",
-            "link_1_text": "Home",
-            "link_2_text": "Bridal",
-            "link_3_text": "Retreats",
-            "link_4_text": "Academy",
-            "link_5_text": "Foundation"
-          }
-        }
-      },
-      "block_order": [
-        "links_atelier",
-        "links_nav"
-      ],
-      "settings": {
-        "brand_name": "Seth Eden",
-        "brand_subtitle": "House of Husted & Vuu",
-        "copyright_text": "Seth Eden • Husted & Vuu",
-        "social_1": "Instagram",
-        "social_2": "Vogue"
-      }
-    },
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "blocks": {
@@ -709,7 +688,6 @@
     "gallery_womens",
     "narrative",
     "commission",
-    "cross-sell-luxury",
-    "seth_footer"
+    "cross-sell-luxury"
   ]
 }
