@@ -212,7 +212,7 @@
         "title": "Nancy Vuu Photography",
         "description": "Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary.",
         "cta_label": "View Portfolio",
-        "cta_link": "/pages/photography",
+        "cta_link": "shopify://pages/photography-nancy-vuu",
         "show_marquee": true
       }
     },
