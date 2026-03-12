@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Press — The Architecture of Worth",
   "sections": {
     "press_hero": {
       "type": "press-hero",
@@ -14,26 +22,90 @@
     "press_strip": {
       "type": "press-editorial-strip",
       "blocks": {
-        "strip_1":  { "type": "item", "settings": { "name": "The Oscars" } },
-        "strip_2":  { "type": "item", "settings": { "name": "The Grammys" } },
-        "strip_3":  { "type": "item", "settings": { "name": "Nickelodeon" } },
-        "strip_4":  { "type": "item", "settings": { "name": "Cannes Film Festival" } },
-        "strip_5":  { "type": "item", "settings": { "name": "American Music Awards" } },
-        "strip_6":  { "type": "item", "settings": { "name": "Vogue" } },
-        "strip_7":  { "type": "item", "settings": { "name": "Harper's Bazaar" } },
-        "strip_8":  { "type": "item", "settings": { "name": "Elle" } },
-        "strip_9":  { "type": "item", "settings": { "name": "Huffington Post" } },
-        "strip_10": { "type": "item", "settings": { "name": "Cosmopolitan" } },
-        "strip_11": { "type": "item", "settings": { "name": "Brides" } }
+        "strip_1": {
+          "type": "item",
+          "settings": {
+            "name": "The Oscars"
+          }
+        },
+        "strip_2": {
+          "type": "item",
+          "settings": {
+            "name": "The Grammys"
+          }
+        },
+        "strip_3": {
+          "type": "item",
+          "settings": {
+            "name": "Nickelodeon"
+          }
+        },
+        "strip_4": {
+          "type": "item",
+          "settings": {
+            "name": "Cannes Film Festival"
+          }
+        },
+        "strip_5": {
+          "type": "item",
+          "settings": {
+            "name": "American Music Awards"
+          }
+        },
+        "strip_6": {
+          "type": "item",
+          "settings": {
+            "name": "Vogue"
+          }
+        },
+        "strip_7": {
+          "type": "item",
+          "settings": {
+            "name": "Harper's Bazaar"
+          }
+        },
+        "strip_8": {
+          "type": "item",
+          "settings": {
+            "name": "Elle"
+          }
+        },
+        "strip_9": {
+          "type": "item",
+          "settings": {
+            "name": "Huffington Post"
+          }
+        },
+        "strip_10": {
+          "type": "item",
+          "settings": {
+            "name": "Cosmopolitan"
+          }
+        },
+        "strip_11": {
+          "type": "item",
+          "settings": {
+            "name": "Brides"
+          }
+        }
       },
-      "block_order": ["strip_1","strip_2","strip_3","strip_4","strip_5","strip_6","strip_7","strip_8","strip_9","strip_10","strip_11"]
+      "block_order": [
+        "strip_1",
+        "strip_2",
+        "strip_3",
+        "strip_4",
+        "strip_5",
+        "strip_6",
+        "strip_7",
+        "strip_8",
+        "strip_9",
+        "strip_10",
+        "strip_11"
+      ],
+      "settings": {}
     },
     "press_accolades": {
       "type": "press-accolades",
-      "settings": {
-        "eyebrow": "Distinction & Impact",
-        "heading": "Global Accolades"
-      },
       "blocks": {
         "acc_1": {
           "type": "card",
@@ -48,7 +120,7 @@
           "settings": {
             "label": "Leadership Recognition",
             "title": "People on the Move",
-            "body": "<p>Recognized by the <strong>Silicon Valley Business Journal</strong> as \u201cPeople on the Move\u201d and the <strong>San Francisco Business Times</strong> as \u201cWomen on the Move.\u201d</p>"
+            "body": "<p>Recognized by the <strong>Silicon Valley Business Journal</strong> as “People on the Move” and the <strong>San Francisco Business Times</strong> as “Women on the Move.”</p>"
           }
         },
         "acc_3": {
@@ -64,7 +136,7 @@
           "settings": {
             "label": "Humanitarian",
             "title": "The Courage Award",
-            "body": "<p>First recipient of World Relief Seattle\u2019s honor, recognized for pioneering creative advocacy and systemic restoration in global communities.</p>"
+            "body": "<p>First recipient of World Relief Seattle’s honor, recognized for pioneering creative advocacy and systemic restoration in global communities.</p>"
           }
         },
         "acc_5": {
@@ -80,11 +152,22 @@
           "settings": {
             "label": "Global Presence",
             "title": "Industry Reach",
-            "body": "<p>Fashions and styling featured on the world\u2019s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
+            "body": "<p>Fashions and styling featured on the world’s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
           }
         }
       },
-      "block_order": ["acc_1","acc_2","acc_3","acc_4","acc_5","acc_6"]
+      "block_order": [
+        "acc_1",
+        "acc_2",
+        "acc_3",
+        "acc_4",
+        "acc_5",
+        "acc_6"
+      ],
+      "settings": {
+        "eyebrow": "Distinction & Impact",
+        "heading": "Global Accolades"
+      }
     },
     "press_literary": {
       "type": "press-literary",
@@ -93,7 +176,7 @@
         "title_line_1": "Let There",
         "title_italic": "Be Fashion.",
         "quote": "A Story of Style, Spirit, and a Life Transformed.",
-        "body_1": "<p>This isn\u2019t just a book\u2014it\u2019s a <strong>revelation</strong>. Creative visionary Nancy Vuu invites you behind the runway into the deeper layers of her life. Woven through intimate stories of transformation, it unveils the narrative of a woman who dared to leap into purpose.</p>",
+        "body_1": "<p>This isn’t just a book—it’s a <strong>revelation</strong>. Creative visionary Nancy Vuu invites you behind the runway into the deeper layers of her life. Woven through intimate stories of transformation, it unveils the narrative of a woman who dared to leap into purpose.</p>",
         "body_2": "<p>From dark closets of self-doubt to the bright runways of purpose, this book speaks to everyone seeking to rediscover identity and spiritual clarity through the lens of fashion.</p>",
         "cta_1_label": "Request Speaking / Book Tour",
         "cta_2_label": "Purchase Volume"
@@ -108,6 +191,34 @@
     },
     "press_media": {
       "type": "press-media-inquiries",
+      "blocks": {
+        "type_1": {
+          "type": "inquiry_type",
+          "settings": {
+            "label": "Interview Request",
+            "value": "interview"
+          }
+        },
+        "type_2": {
+          "type": "inquiry_type",
+          "settings": {
+            "label": "Speaking Engagement",
+            "value": "speaking"
+          }
+        },
+        "type_3": {
+          "type": "inquiry_type",
+          "settings": {
+            "label": "Collaborative Feature",
+            "value": "collaborative"
+          }
+        }
+      },
+      "block_order": [
+        "type_1",
+        "type_2",
+        "type_3"
+      ],
       "settings": {
         "eyebrow": "Voice of Authority",
         "title_line_1": "Elevate Your Story",
@@ -118,13 +229,7 @@
         "form_eyebrow": "Media Inquiries",
         "label_name": "Full Name / Publication",
         "submit_label": "Submit Inquiry"
-      },
-      "blocks": {
-        "type_1": { "type": "inquiry_type", "settings": { "label": "Interview Request",    "value": "interview"    } },
-        "type_2": { "type": "inquiry_type", "settings": { "label": "Speaking Engagement",  "value": "speaking"     } },
-        "type_3": { "type": "inquiry_type", "settings": { "label": "Collaborative Feature","value": "collaborative" } }
-      },
-      "block_order": ["type_1","type_2","type_3"]
+      }
     },
     "press_engage": {
       "type": "press-engage",
@@ -132,7 +237,7 @@
         "eyebrow": "Global Engagements",
         "title_line_1": "Engage the",
         "title_italic": "Visionary.",
-        "body": "<p>Currently accepting select inquiries for <strong>2025\u20132026</strong> Keynote addresses, brand creative direction, and media appearances.</p>",
+        "body": "<p>Currently accepting select inquiries for <strong>2025–2026</strong> Keynote addresses, brand creative direction, and media appearances.</p>",
         "email": "studio@nancyvuu.com",
         "label_name": "Full Name",
         "label_email": "Email Address",
