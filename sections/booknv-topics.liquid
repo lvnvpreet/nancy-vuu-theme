@@ -1,72 +1,71 @@
-{%- comment -%} BookNV Topics — soft gray bg, centered header, auto-fit grid of topic cards with hover-invert effect {%- endcomment -%}
-<section class="booknv-topics" data-section-id="{{ section.id }}">
-  <div class="booknv-topics__inner">
-    <div class="booknv-topics__header reveal">
-      {%- if section.settings.eyebrow != blank -%}
-        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+{%- comment -%} BookNV Keynote Pillars — 3-col grid of 6 pillars, white bg, strategic perspectives {%- endcomment -%}
+<section id="keynotes" class="booknv-pillars" data-section-id="{{ section.id }}">
+  <div class="booknv-pillars__inner">
+
+    <div class="booknv-pillars__header reveal">
+      <div class="booknv-pillars__header-left">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow booknv-pillars__eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2 class="booknv-pillars__heading serif-font">
+          {{ section.settings.heading_pre_italic }} <em>{{ section.settings.heading_italic }}</em>
+        </h2>
+      </div>
+      {%- if section.settings.heading_sub != blank -%}
+        <span class="booknv-pillars__sub">{{ section.settings.heading_sub }}</span>
       {%- endif -%}
-      <h2 class="booknv-topics__heading serif-font">
-        {{ section.settings.heading_line_1 }}
-        {%- if section.settings.heading_line_2 != blank -%}<br>{{ section.settings.heading_line_2 }}{%- endif -%}
-      </h2>
     </div>
 
-    <div class="booknv-topics__grid">
+    <div class="booknv-pillars__grid">
       {%- for block in section.blocks -%}
-        {%- if block.type == 'topic' -%}
-          <div class="booknv-topic-card" {{ block.shopify_attributes }}>
+        {%- if block.type == 'pillar' -%}
+          <div class="booknv-pillar reveal" {{ block.shopify_attributes }}>
             {%- if block.settings.number != blank -%}
-              <span class="booknv-topic-num serif-font">{{ block.settings.number }}</span>
+              <span class="booknv-pillar__num">{{ block.settings.number }}</span>
             {%- endif -%}
-            <h3 class="booknv-topic-card__title serif-font">
-              {{ block.settings.title_line_1 }}
-              {%- if block.settings.title_line_2 != blank -%}<br>{{ block.settings.title_line_2 }}{%- endif -%}
-            </h3>
+            <h3 class="booknv-pillar__title serif-font">{{ block.settings.title }}</h3>
             {%- if block.settings.body != blank -%}
-              <div class="booknv-topic-card__body">{{ block.settings.body }}</div>
+              <p class="booknv-pillar__body">{{ block.settings.body }}</p>
             {%- endif -%}
           </div>
         {%- endif -%}
       {%- endfor -%}
     </div>
+
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "BookNV Signature Topics",
-  "class": "booknv-section-topics",
+  "name": "BookNV Keynote Pillars",
+  "class": "booknv-section-pillars",
   "settings": [
-    { "type": "text", "id": "eyebrow",       "label": "Eyebrow",           "default": "Signature Topics"          },
-    { "type": "text", "id": "heading_line_1","label": "Heading — Line 1",  "default": "The Frameworks"            },
-    { "type": "text", "id": "heading_line_2","label": "Heading — Line 2",  "default": "of Impact"                 }
+    { "type": "text", "id": "eyebrow",           "label": "Eyebrow",                  "default": "Core Framework" },
+    { "type": "text", "id": "heading_pre_italic", "label": "Heading — Before Italic",  "default": "Strategic" },
+    { "type": "text", "id": "heading_italic",     "label": "Heading — Italic Word",    "default": "Perspectives." },
+    { "type": "text", "id": "heading_sub",        "label": "Right Sub-label",          "default": "Six Pillars of Excellence" }
   ],
   "blocks": [
     {
-      "type": "topic",
-      "name": "Topic Card",
+      "type": "pillar",
+      "name": "Pillar",
       "settings": [
-        { "type": "text",     "id": "number",      "label": "Roman Numeral",    "default": "I."       },
-        { "type": "text",     "id": "title_line_1","label": "Title — Line 1",   "default": "Topic"    },
-        { "type": "text",     "id": "title_line_2","label": "Title — Line 2"                          },
-        { "type": "richtext", "id": "body",        "label": "Description"                             }
+        { "type": "text",     "id": "number", "label": "Number Label", "default": "01 — BUSINESS" },
+        { "type": "text",     "id": "title",  "label": "Title",        "default": "Corporate Leadership" },
+        { "type": "textarea", "id": "body",   "label": "Description",  "default": "Integrating high-aesthetic standards and creative integrity into corporate ecosystems to drive brand value and leadership purpose." }
       ]
     }
   ],
   "presets": [
     {
-      "name": "BookNV Signature Topics",
-      "settings": {
-        "eyebrow": "Signature Topics",
-        "heading_line_1": "The Frameworks",
-        "heading_line_2": "of Impact"
-      },
+      "name": "BookNV Keynote Pillars",
       "blocks": [
-        { "type": "topic", "settings": { "number": "I.",   "title_line_1": "The Identity",   "title_line_2": "Architect\u2122",          "body": "<p>A masterclass on deconstructing the \"garments of survival.\" Nancy teaches leaders how to redesign their internal landscape to match their heavenly purpose.</p>" } },
-        { "type": "topic", "settings": { "number": "II.",  "title_line_1": "The Influence",  "title_line_2": "Blueprint",              "body": "<p>Lessons from styling NBA/NFL elite and Royalty. How to command a presence that communicates authority and excellence before a word is spoken.</p>" } },
-        { "type": "topic", "settings": { "number": "III.", "title_line_1": "Philanthropy",   "title_line_2": "by Design",              "body": "<p>Utilizing global platforms to solve humanitarian crises. Featuring insights from the House of Vuu Foundation's work in anti-trafficking and education.</p>" } },
-        { "type": "topic", "settings": { "number": "IV.",  "title_line_1": "Let There",      "title_line_2": "Be Fashion",             "body": "<p>An exploration of the spiritual intersection between faith, identity, and the global language of beauty as a tool for cultural transformation.</p>" } },
-        { "type": "topic", "settings": { "number": "V.",   "title_line_1": "The Dream",      "title_line_2": "Realized Framework\u2122", "body": "<p><strong>Discover. Believe. Realize.</strong> Nancy provides the practical, three-step blueprint to uncovering your inherent dream and architecting the pathway to its physical realization.</p>" } }
+        { "type": "pillar", "settings": { "number": "01 — BUSINESS",     "title": "Corporate Leadership", "body": "Integrating high-aesthetic standards and creative integrity into corporate ecosystems to drive brand value and leadership purpose." } },
+        { "type": "pillar", "settings": { "number": "02 — CREATIVITY",   "title": "The Creative Ethos",   "body": "Moving from designing content to fulfilling purpose. A masterclass in high-authority storytelling and visionary execution." } },
+        { "type": "pillar", "settings": { "number": "03 — PHILANTHROPY", "title": "Social Innovation",    "body": "Utilizing industry platforms to transform human conditions through collaborative mission-driven creative work." } },
+        { "type": "pillar", "settings": { "number": "04 — CULTURE",      "title": "Cultural Restoration", "body": "Exploring the divine intersection of beauty, honor, and restoration in modern industry environments." } },
+        { "type": "pillar", "settings": { "number": "05 — EMPOWERMENT",  "title": "Visionary Women",      "body": "Empowering women to leverage their unique visionary voice to lead with uncompromising passion for the global good." } },
+        { "type": "pillar", "settings": { "number": "06 — EXCELLENCE",   "title": "Architecting Honor",   "body": "The discipline of elite standards and how high-level creative direction transforms internal team culture." } }
       ]
     }
   ]

@@ -1,92 +1,123 @@
-{%- comment -%} BookNV Inquiry — black bg, centered heading, dark-theme contact form with engagement type blocks {%- endcomment -%}
-<section class="booknv-inquiry" id="{{ section.settings.section_id | default: 'inquiry' }}" data-section-id="{{ section.id }}">
-  <div class="booknv-inquiry__inner">
-    <h2 class="booknv-inquiry__heading serif-font">{{ section.settings.heading }}</h2>
-    {%- if section.settings.subtext != blank -%}
-      <p class="booknv-inquiry__subtext">{{ section.settings.subtext }}</p>
-    {%- endif -%}
+{%- comment -%} BookNV Booking — two-column light theme, left contact info, right form, global engagements {%- endcomment -%}
+<section id="{{ section.settings.section_id | default: 'booking' }}" class="booknv-booking" data-section-id="{{ section.id }}">
+  <div class="booknv-booking__inner">
 
-    {%- form 'contact', id: 'booknv-inquiry-form' -%}
-      {%- if form.posted_successfully? -%}
-        <div class="booknv-inquiry__success">
-          <p>Your inquiry has been received. Nancy Vuu's executive team will be in touch shortly.</p>
-        </div>
-      {%- else -%}
-        <div class="booknv-inquiry__form">
-          {%- if form.errors -%}
-            <div class="booknv-inquiry__errors">{{ form.errors | default_errors }}</div>
-          {%- endif -%}
-
-          <div class="booknv-inquiry__field">
-            <input type="text" name="contact[name]" value="{{ form.name }}"
-              placeholder="{{ section.settings.label_name | default: 'FULL NAME / ORGANIZATION' }}" required>
-          </div>
-          <div class="booknv-inquiry__field">
-            <input type="email" name="contact[email]" value="{{ form.email }}"
-              placeholder="{{ section.settings.label_email | default: 'CONTACT EMAIL' }}" required>
-          </div>
-          <div class="booknv-inquiry__field">
-            <select name="contact[engagement_type]" required>
-              <option value="" disabled selected>{{ section.settings.label_type | default: 'TYPE OF ENGAGEMENT' }}</option>
-              {%- for block in section.blocks -%}
-                {%- if block.type == 'engagement_type' -%}
-                  <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
-                {%- endif -%}
-              {%- endfor -%}
-            </select>
-          </div>
-          <div class="booknv-inquiry__field">
-            <textarea name="contact[body]"
-              placeholder="{{ section.settings.label_message | default: 'WHICH SIGNATURE TOPIC ARE YOU INTERESTED IN?' }}"
-              rows="5"></textarea>
-          </div>
-
-          <button type="submit" class="btn-nv booknv-inquiry__submit">
-            {{ section.settings.submit_label | default: 'Request Availability' }}
-          </button>
-        </div>
+    <!-- Left: Contact Info -->
+    <div class="booknv-booking__info reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow booknv-booking__eyebrow">{{ section.settings.eyebrow }}</span>
       {%- endif -%}
-    {%- endform -%}
+      <h2 class="booknv-booking__heading serif-font">
+        {{ section.settings.heading_line_1 }}<br>
+        <em class="booknv-booking__heading-italic">{{ section.settings.heading_italic }}</em>
+      </h2>
+      <div class="booknv-booking__details">
+        {%- if section.settings.subtext != blank -%}
+          <p class="booknv-booking__subtext">{{ section.settings.subtext }}</p>
+        {%- endif -%}
+        {%- if section.settings.email != blank -%}
+          <div class="booknv-booking__email-wrap">
+            <a href="mailto:{{ section.settings.email }}" class="booknv-booking__email serif-font">{{ section.settings.email }}</a>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.offices != blank -%}
+          <div class="booknv-booking__offices">
+            <span class="eyebrow" style="margin-bottom: 6px; display: block; color: #a8a29e;">Offices</span>
+            <p class="serif-font booknv-booking__offices-text">{{ section.settings.offices }}</p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="booknv-booking__form-wrap reveal">
+      {%- form 'contact', id: 'booknv-booking-form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="booknv-booking__success">
+            <p>Your inquiry has been received. Nancy Vuu's executive team will be in touch shortly.</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="booknv-booking__errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="booknv-booking__form">
+            <div class="booknv-booking__field">
+              <input type="text" name="contact[name]" value="{{ form.name }}"
+                placeholder="{{ section.settings.label_name | default: 'Full Name' }}" required>
+            </div>
+            <div class="booknv-booking__field">
+              <input type="text" name="contact[company]"
+                placeholder="{{ section.settings.label_company | default: 'Company / Organization' }}" required>
+            </div>
+            <div class="booknv-booking__field">
+              <input type="email" name="contact[email]" value="{{ form.email }}"
+                placeholder="{{ section.settings.label_email | default: 'Professional Email Address' }}" required>
+            </div>
+            <div class="booknv-booking__field">
+              <input type="text" name="contact[inquiry_type]"
+                placeholder="{{ section.settings.label_inquiry | default: 'Nature of Inquiry (Keynote, Mentorship, etc.)' }}">
+            </div>
+            <div class="booknv-booking__field">
+              <select name="contact[investment_tier]">
+                <option value="" disabled selected>{{ section.settings.label_investment | default: 'Projected Investment Tier (USD)' }}</option>
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'tier' -%}
+                    <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+            </div>
+            <div class="booknv-booking__submit-wrap">
+              <button type="submit" class="booknv-booking__submit">
+                {{ section.settings.submit_label | default: 'Initiate Request' }}
+              </button>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "BookNV Inquiry Form",
-  "class": "booknv-section-inquiry",
+  "name": "BookNV Booking",
+  "class": "booknv-section-booking",
   "settings": [
-    { "type": "text",     "id": "section_id",    "label": "Section anchor ID",        "default": "inquiry"                             },
-    { "type": "text",     "id": "heading",       "label": "Heading",                  "default": "Inquire for your stage."             },
-    { "type": "textarea", "id": "subtext",       "label": "Subtext",                  "default": "Connect with Nancy Vuu's executive team for 2026 engagements." },
+    { "type": "text",     "id": "section_id",      "label": "Section Anchor ID",        "default": "booking" },
+    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",                  "default": "Global Engagements" },
+    { "type": "text",     "id": "heading_line_1",   "label": "Heading \u2014 Line 1",        "default": "Engage the" },
+    { "type": "text",     "id": "heading_italic",   "label": "Heading \u2014 Italic",         "default": "Visionary." },
+    { "type": "textarea", "id": "subtext",          "label": "Subtext",                  "default": "Currently accepting select inquiries for 2026\u20132027 Keynote addresses, brand creative direction, and elite mentorship." },
+    { "type": "text",     "id": "email",            "label": "Contact Email",             "default": "press@nancyvuu.com" },
+    { "type": "text",     "id": "offices",          "label": "Office Locations",          "default": "San Jose \u2014 Napa, CA" },
     { "type": "header",   "content": "Form Labels" },
-    { "type": "text",     "id": "label_name",    "label": "Name Placeholder",         "default": "FULL NAME / ORGANIZATION"            },
-    { "type": "text",     "id": "label_email",   "label": "Email Placeholder",        "default": "CONTACT EMAIL"                       },
-    { "type": "text",     "id": "label_type",    "label": "Type Placeholder",         "default": "TYPE OF ENGAGEMENT"                  },
-    { "type": "text",     "id": "label_message", "label": "Message Placeholder",      "default": "WHICH SIGNATURE TOPIC ARE YOU INTERESTED IN?" },
-    { "type": "text",     "id": "submit_label",  "label": "Submit Button Label",      "default": "Request Availability"                }
+    { "type": "text",     "id": "label_name",       "label": "Name Placeholder",          "default": "Full Name" },
+    { "type": "text",     "id": "label_company",    "label": "Company Placeholder",       "default": "Company / Organization" },
+    { "type": "text",     "id": "label_email",      "label": "Email Placeholder",         "default": "Professional Email Address" },
+    { "type": "text",     "id": "label_inquiry",    "label": "Inquiry Placeholder",       "default": "Nature of Inquiry (Keynote, Mentorship, etc.)" },
+    { "type": "text",     "id": "label_investment", "label": "Investment Placeholder",    "default": "Projected Investment Tier (USD)" },
+    { "type": "text",     "id": "submit_label",     "label": "Submit Button Label",       "default": "Initiate Request" }
   ],
   "blocks": [
     {
-      "type": "engagement_type",
-      "name": "Engagement Type",
+      "type": "tier",
+      "name": "Investment Tier",
       "settings": [
-        { "type": "text", "id": "label", "label": "Option Label", "default": "Keynote Speaking"  },
-        { "type": "text", "id": "value", "label": "Option Value", "default": "keynote"           }
+        { "type": "text", "id": "label", "label": "Label", "default": "$10,000 \u2014 $25,000" },
+        { "type": "text", "id": "value", "label": "Value", "default": "10-25" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "BookNV Inquiry Form",
-      "settings": {
-        "heading": "Inquire for your stage.",
-        "subtext": "Connect with Nancy Vuu's executive team for 2026 engagements."
-      },
+      "name": "BookNV Booking",
       "blocks": [
-        { "type": "engagement_type", "settings": { "label": "Keynote Speaking",        "value": "keynote"     } },
-        { "type": "engagement_type", "settings": { "label": "Executive Mentorship",    "value": "mentorship"  } },
-        { "type": "engagement_type", "settings": { "label": "Foundation Partnership",  "value": "foundation"  } },
-        { "type": "engagement_type", "settings": { "label": "Elite Image Advisory",    "value": "advisory"    } }
+        { "type": "tier", "settings": { "label": "$10,000 \u2014 $25,000",                "value": "10-25"         } },
+        { "type": "tier", "settings": { "label": "$25,000 \u2014 $50,000",                "value": "25-50"         } },
+        { "type": "tier", "settings": { "label": "$50,000 +",                            "value": "50plus"        } },
+        { "type": "tier", "settings": { "label": "Philanthropic / Partner Engagement",   "value": "philanthropic" } }
       ]
     }
   ]

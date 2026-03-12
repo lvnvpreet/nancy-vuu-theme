@@ -1,27 +1,46 @@
-{%- comment -%} BookNV Hero — light stone bg, 90vh, centered with italic word in heading and CTA {%- endcomment -%}
+{%- comment -%} BookNV Hero — two-column, image right, stone-100 bg, Awakening The Dreamer {%- endcomment -%}
 <section class="booknv-hero" data-section-id="{{ section.id }}">
   <div class="booknv-hero__inner">
-    {%- if section.settings.eyebrow != blank -%}
-      <span class="eyebrow booknv-hero__eyebrow">{{ section.settings.eyebrow }}</span>
-    {%- endif -%}
 
-    <h1 class="booknv-hero__title serif-font">
-      {{ section.settings.title_pre_italic }}
-      {%- if section.settings.title_italic != blank -%}
-        <br><em>{{ section.settings.title_italic }}</em>
+    <div class="booknv-hero__content reveal">
+      <div class="booknv-hero__eyebrow-wrap">
+        <span class="booknv-hero__line"></span>
+        <span class="eyebrow booknv-hero__eyebrow">{{ section.settings.eyebrow }}</span>
+      </div>
+
+      <h1 class="booknv-hero__title serif-font">
+        {{ section.settings.title_line_1 }}<br>
+        <em class="booknv-hero__title-italic">{{ section.settings.title_italic }}</em>
+      </h1>
+
+      {%- if section.settings.description != blank -%}
+        <p class="booknv-hero__desc">{{ section.settings.description }}</p>
       {%- endif -%}
-      {%- if section.settings.title_post_italic != blank -%}
-        {{ section.settings.title_post_italic }}
+
+      <div class="booknv-hero__ctas">
+        {%- if section.settings.cta_primary_label != blank -%}
+          <a href="{{ section.settings.cta_primary_link | default: '#booking' }}" class="booknv-hero__cta-primary">{{ section.settings.cta_primary_label }}</a>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_label != blank -%}
+          <a href="{{ section.settings.cta_secondary_link | default: '#mentorship' }}" class="booknv-hero__cta-secondary">{{ section.settings.cta_secondary_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="booknv-hero__media reveal delay-300">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 900 }} 900w"
+          sizes="(max-width: 1024px) 100vw, 40vw"
+          alt="{{ section.settings.image.alt | default: 'Nancy Vuu' }}"
+          class="booknv-hero__img"
+          loading="eager">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'booknv-hero__img placeholder' }}
       {%- endif -%}
-    </h1>
+    </div>
 
-    {%- if section.settings.description != blank -%}
-      <p class="booknv-hero__desc">{{ section.settings.description }}</p>
-    {%- endif -%}
-
-    {%- if section.settings.cta_label != blank -%}
-      <a href="{{ section.settings.cta_link | default: '#inquiry' }}" class="btn-nv">{{ section.settings.cta_label }}</a>
-    {%- endif -%}
   </div>
 </section>
 
@@ -30,13 +49,15 @@
   "name": "BookNV Hero",
   "class": "booknv-section-hero",
   "settings": [
-    { "type": "text",     "id": "eyebrow",          "label": "Eyebrow",              "default": "Creative Director | Fashion Designer | Philanthropist" },
-    { "type": "text",     "id": "title_pre_italic",  "label": "Heading — Before Italic", "default": "Fashioned" },
-    { "type": "text",     "id": "title_italic",      "label": "Heading — Italic word",   "default": "for" },
-    { "type": "text",     "id": "title_post_italic", "label": "Heading — After Italic",  "default": "Heaven." },
-    { "type": "textarea", "id": "description",       "label": "Description",          "default": "From a refugee journey to styling NBA/NFL icons and Royalty. Nancy Vuu deconstructs survival to build legacies of significance through the power of identity." },
-    { "type": "text",     "id": "cta_label",         "label": "CTA Label",            "default": "Inquire for Your Stage" },
-    { "type": "url",      "id": "cta_link",          "label": "CTA Link"              }
+    { "type": "text",         "id": "eyebrow",             "label": "Eyebrow",                 "default": "Distinction Through Purpose" },
+    { "type": "text",         "id": "title_line_1",         "label": "Heading — Line 1",        "default": "Awakening" },
+    { "type": "text",         "id": "title_italic",         "label": "Heading — Italic Line 2", "default": "The Dreamer." },
+    { "type": "textarea",     "id": "description",          "label": "Description",             "default": "Global Keynote Speaker and Award-Winning Creative Director Nancy Vuu shares a vision of excellence that bridges high-fashion artistry with humanitarian impact." },
+    { "type": "text",         "id": "cta_primary_label",    "label": "Primary CTA Label",       "default": "Secure Booking" },
+    { "type": "url",          "id": "cta_primary_link",     "label": "Primary CTA Link" },
+    { "type": "text",         "id": "cta_secondary_label",  "label": "Secondary CTA Label",     "default": "Elite Mentorship" },
+    { "type": "url",          "id": "cta_secondary_link",   "label": "Secondary CTA Link" },
+    { "type": "image_picker", "id": "image",                "label": "Portrait Image" }
   ],
   "presets": [
     { "name": "BookNV Hero" }

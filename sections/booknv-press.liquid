@@ -1,45 +1,46 @@
-{%- comment -%} BookNV Press — "As Seen In" featured logos strip. Each logo is an editable block. {%- endcomment -%}
-<section class="booknv-press" data-section-id="{{ section.id }}">
-  {%- if section.settings.eyebrow != blank -%}
-    <span class="eyebrow booknv-press__eyebrow">{{ section.settings.eyebrow }}</span>
-  {%- endif -%}
-  <div class="booknv-press__logos">
-    {%- for block in section.blocks -%}
-      {%- if block.type == 'logo' -%}
-        {%- unless forloop.first -%}<span class="booknv-press__sep"> | </span>{%- endunless -%}
-        <span class="booknv-press__name" {{ block.shopify_attributes }}>{{ block.settings.name }}</span>
-      {%- endif -%}
-    {%- endfor -%}
+{%- comment -%} BookNV Accolades Marquee — infinite scrolling ticker with press/accolade names {%- endcomment -%}
+<div class="booknv-marquee" data-section-id="{{ section.id }}">
+  <div class="booknv-marquee__track">
+    <div class="booknv-marquee__inner">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'item' -%}
+          <span class="booknv-marquee__item serif-font" {{ block.shopify_attributes }}>{{ block.settings.name }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="booknv-marquee__inner" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'item' -%}
+          <span class="booknv-marquee__item serif-font">{{ block.settings.name }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
-  "name": "BookNV Press Strip",
+  "name": "BookNV Accolades Marquee",
   "class": "booknv-section-press",
-  "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "As Seen In & Recognized By" }
-  ],
   "blocks": [
     {
-      "type": "logo",
-      "name": "Press Logo",
+      "type": "item",
+      "name": "Accolade",
       "settings": [
-        { "type": "text", "id": "name", "label": "Publication Name", "default": "VOGUE" }
+        { "type": "text", "id": "name", "label": "Name", "default": "Vogue Italia" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "BookNV Press Strip",
-      "settings": { "eyebrow": "As Seen In & Recognized By" },
+      "name": "BookNV Accolades Marquee",
       "blocks": [
-        { "type": "logo", "settings": { "name": "VOGUE"            } },
-        { "type": "logo", "settings": { "name": "ELLE"             } },
-        { "type": "logo", "settings": { "name": "HARPER'S BAZAAR"  } },
-        { "type": "logo", "settings": { "name": "BRIDES"           } },
-        { "type": "logo", "settings": { "name": "HUFFPOST"         } },
-        { "type": "logo", "settings": { "name": "EVENING STANDARD" } }
+        { "type": "item", "settings": { "name": "Vogue Italia" } },
+        { "type": "item", "settings": { "name": "NYFW" } },
+        { "type": "item", "settings": { "name": "Elle Magazine" } },
+        { "type": "item", "settings": { "name": "Cannes Film Festival" } },
+        { "type": "item", "settings": { "name": "Big Ben Award" } },
+        { "type": "item", "settings": { "name": "Harper's Bazaar" } }
       ]
     }
   ]

@@ -3838,350 +3838,518 @@ body::after {
 }
 
 /* ═══════════════════════════════════════════════════
-   BOOKNV PAGE (SPEAKING / BOOK)
+   BOOKNV PAGE — Redesign v2 (Awakening The Dreamer)
    ═══════════════════════════════════════════════════ */
 
 /* ── BookNV Hero ─────────────────────────── */
 .booknv-hero {
-  height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #f8f7f5;
-  padding: 0 10%;
+  background: #f5f5f4;
+  overflow: hidden;
+  padding-top: 5rem;
 }
-.booknv-hero__inner { max-width: 1000px; }
-.booknv-hero__eyebrow {
-  color: #1a1a1a !important;
-  font-size: 10px;
-  letter-spacing: 5px;
-}
-.booknv-hero__title {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: 1.1;
-  margin-bottom: 30px;
-}
-.booknv-hero__title em {
-  font-style: italic;
-}
-.booknv-hero__desc {
-  font-size: 1.3rem;
-  margin-bottom: 40px;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333;
-  font-weight: 300;
-  line-height: 1.7;
-}
-
-/* ── BookNV Press Strip ──────────────────── */
-.booknv-press {
-  padding: 50px 5%;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  text-align: center;
-  background: #fff;
-}
-.booknv-press__eyebrow {
-  font-size: 9px !important;
-  margin-bottom: 25px;
-  color: #1a1a1a;
-}
-.booknv-press__logos {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  align-items: center;
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  opacity: 0.8;
-  letter-spacing: 2px;
-}
-.booknv-press__name { color: #1a1a1a; }
-.booknv-press__sep { color: #ccc; }
-
-/* ── BookNV Book Showcase ────────────────── */
-.booknv-book {
-  background: #fff;
-  border-top: 1px solid #eee;
-}
-.booknv-book__inner {
-  padding: 120px 10%;
+.booknv-hero__inner {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
+  padding: 5rem 6%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 7fr 5fr;
+  gap: 5rem;
   align-items: center;
 }
-.booknv-book__img {
-  width: 100%;
-  max-width: 450px;
-  display: block;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
-}
-.booknv-book__img.placeholder { height: 600px; object-fit: cover; }
-.booknv-book__title {
-  font-size: clamp(2.2rem, 3vw, 3rem);
-  line-height: 1.1;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.booknv-book__subtitle {
-  font-size: 1.1rem;
-  margin: 25px 0;
-  color: #333;
-  font-style: italic;
-  font-weight: 300;
-}
-.booknv-book__body {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-  font-weight: 300;
-}
-.booknv-book__features {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0;
-}
-.booknv-book__features li {
-  margin-bottom: 15px;
-  font-weight: 300;
-  font-size: 0.95rem;
-  line-height: 1.6;
+.booknv-hero__eyebrow-wrap {
   display: flex;
-  align-items: flex-start;
-  color: #333;
-  font-family: var(--font-sans);
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
-.booknv-book__features li::before {
-  content: "\2014";
-  margin-right: 15px;
-  color: #888;
+.booknv-hero__line {
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: #d6d3d1;
   flex-shrink: 0;
 }
-
-/* ── BookNV Origin Story ─────────────────── */
-.booknv-story {
-  background: #fff;
+.booknv-hero__eyebrow {
+  color: #a8a29e !important;
+  font-size: 9px !important;
+  letter-spacing: 0.5em;
 }
-.booknv-story__inner {
-  padding: 120px 10%;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+.booknv-hero__title {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 3rem;
+}
+.booknv-hero__title-italic {
+  display: block;
+  font-style: italic;
+  color: #a8a29e;
+}
+.booknv-hero__desc {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #737373;
+  line-height: 1.8;
+  max-width: 34rem;
+  margin-bottom: 3.5rem;
+}
+.booknv-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   align-items: center;
 }
-.booknv-story__media {
-  position: relative;
+.booknv-hero__cta-primary {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  padding: 1.4rem 3rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.booknv-story__media::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: #eee;
-  width: 100px;
-  height: 100px;
-  z-index: -1;
+.booknv-hero__cta-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+.booknv-hero__cta-secondary {
+  display: inline-block;
+  border: 1px solid #e7e5e4;
+  padding: 1.4rem 3rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
-.booknv-story__img {
+.booknv-hero__cta-secondary:hover { background: #fff; }
+.booknv-hero__media { width: 100%; }
+.booknv-hero__img {
   width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
   display: block;
-  filter: grayscale(100%) contrast(1.1);
+  filter: grayscale(100%);
+  opacity: 0.9;
+  border: 1px solid #e7e5e4;
 }
-.booknv-story__img.placeholder { height: 700px; object-fit: cover; }
-.booknv-story__title {
-  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
-  line-height: 1.1;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.booknv-story__body {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-  font-weight: 300;
-  margin: 30px 0;
-  font-family: var(--font-sans);
-}
-.booknv-story__body--large {
-  font-size: 1.2rem;
-}
-.booknv-story__cta {
-  background: transparent !important;
-  color: #1a1a1a !important;
-  border-color: #1a1a1a !important;
-  margin-top: 20px;
-}
-.booknv-story__cta:hover {
-  background: #1a1a1a !important;
-  color: #fff !important;
-}
+.booknv-hero__img.placeholder { aspect-ratio: 3/4; height: auto; }
 
-/* ── BookNV Signature Topics ─────────────── */
-.booknv-topics {
-  background: #fcfcfc;
-}
-.booknv-topics__inner {
-  padding: 120px 10%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.booknv-topics__header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-.booknv-topics__heading {
-  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
-  line-height: 1.1;
-  margin-top: 10px;
-}
-.booknv-topics__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1px;
-  background: #eee;
-  border: 1px solid #eee;
-}
-.booknv-topic-card {
+/* ── BookNV Accolades Marquee ────────────── */
+.booknv-marquee {
   background: #fff;
-  padding: 60px 40px;
-  transition: background 0.4s ease, color 0.4s ease;
-  text-align: left;
-  cursor: default;
+  padding: 4rem 0;
+  border-top: 1px solid #f5f5f4;
+  border-bottom: 1px solid #f5f5f4;
+  overflow: hidden;
 }
-.booknv-topic-card:hover {
-  background: #1a1a1a;
-  color: #fff;
+.booknv-marquee__track {
+  display: flex;
+  width: -webkit-fit-content;
+  width: fit-content;
+  animation: booknv-marquee 80s linear infinite;
 }
-.booknv-topic-num {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: #999;
-  margin-bottom: 20px;
-  display: block;
-  transition: color 0.4s ease;
+@keyframes booknv-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-.booknv-topic-card:hover .booknv-topic-num {
-  color: #fff;
-}
-.booknv-topic-card__title {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  min-height: 3.5rem;
+.booknv-marquee__inner {
   display: flex;
   align-items: center;
-  transition: color 0.4s ease;
+  gap: 7rem;
+  padding: 0 3.5rem;
+  white-space: nowrap;
 }
-.booknv-topic-card:hover .booknv-topic-card__title {
-  color: #fff;
-}
-.booknv-topic-card__body {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #555;
-  font-family: var(--font-sans);
-  font-weight: 300;
-  transition: color 0.4s ease;
-}
-.booknv-topic-card__body p { font-size: 0.95rem; line-height: 1.7; color: inherit; font-weight: 300; margin: 0; }
-.booknv-topic-card:hover .booknv-topic-card__body,
-.booknv-topic-card:hover .booknv-topic-card__body p {
-  color: #aaa;
+.booknv-marquee__item {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #111;
+  opacity: 0.2;
+  letter-spacing: 0.05em;
 }
 
-/* ── BookNV Inquiry Form ─────────────────── */
-.booknv-inquiry {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 120px 10%;
-  text-align: center;
+/* ── BookNV Vision ───────────────────────── */
+.booknv-vision {
+  background: #fbfbfb;
+  padding: 10rem 0;
 }
-.booknv-inquiry__inner {
+.booknv-vision__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.booknv-vision__eyebrow {
+  display: block;
+  color: #a8a29e !important;
+  margin-bottom: 2rem;
+}
+.booknv-vision__title {
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  line-height: 1.1;
+  margin: 0 0 2.5rem;
+}
+.booknv-vision__title em {
+  font-style: italic;
+  color: #d6d3d1;
+}
+.booknv-vision__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #a8a29e;
+  line-height: 1.5;
+  margin: 0 0 2rem;
+  padding: 0;
+  border: none;
+}
+.booknv-vision__body {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #737373;
+  line-height: 1.8;
+  max-width: 32rem;
+  margin: 0;
+}
+.booknv-vision__img-wrap {
+  background: #fff;
+  border: 1px solid #f5f5f4;
+  padding: 2rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booknv-vision__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+}
+.booknv-vision__img.placeholder { height: 100%; }
+
+/* ── BookNV Keynote Pillars ──────────────── */
+.booknv-pillars {
+  background: #fff;
+  border-top: 1px solid #f5f5f4;
+  border-bottom: 1px solid #f5f5f4;
+  padding: 10rem 0;
+}
+.booknv-pillars__inner {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 6%;
 }
-.booknv-inquiry__heading {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  color: #fff;
-  text-align: center;
-  margin-bottom: 10px;
+.booknv-pillars__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-.booknv-inquiry__subtext {
-  text-align: center;
-  opacity: 0.7;
-  margin-bottom: 60px;
-  font-size: 1.2rem;
-  font-weight: 200;
-  color: #fff;
+.booknv-pillars__header-left { flex: 1; }
+.booknv-pillars__eyebrow {
+  display: block;
+  color: #a8a29e !important;
+  margin-bottom: 1rem;
 }
-.booknv-inquiry__form {
-  max-width: 750px;
+.booknv-pillars__heading {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.booknv-pillars__heading em {
+  font-style: italic;
+  color: #d6d3d1;
+}
+.booknv-pillars__sub {
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #d6d3d1;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+  align-self: flex-end;
+}
+.booknv-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3rem;
+  row-gap: 6rem;
+}
+.booknv-pillar { padding-top: 1.5rem; }
+.booknv-pillar__num {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d6d3d1;
+  margin-bottom: 1rem;
+}
+.booknv-pillar__title {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+.booknv-pillar__body {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #737373;
+  line-height: 1.8;
+  max-width: 22rem;
+  margin: 0;
+}
+
+/* ── BookNV Mentorship ───────────────────── */
+.booknv-mentorship {
+  background: #f5f5f4;
+  padding: 10rem 0;
+  overflow: hidden;
+}
+.booknv-mentorship__inner {
+  max-width: 1400px;
   margin: 0 auto;
-  text-align: left;
+  padding: 0 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
-.booknv-inquiry__field input,
-.booknv-inquiry__field select,
-.booknv-inquiry__field textarea {
+.booknv-mentorship__media {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+.booknv-mentorship__img-wrap {
+  border: 1px solid #e7e5e4;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+.booknv-mentorship__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+}
+.booknv-mentorship__img.placeholder { height: 100%; }
+.booknv-mentorship__float-quote {
+  position: absolute;
+  bottom: -2.5rem;
+  right: -2.5rem;
+  background: #fff;
+  padding: 2.5rem;
+  border: 1px solid #f5f5f4;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  max-width: 320px;
+}
+.booknv-mentorship__float-quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #C5A059;
+  line-height: 1.5;
+  margin: 0;
+}
+.booknv-mentorship__text { padding-left: 3rem; }
+.booknv-mentorship__eyebrow {
+  color: #C5A059 !important;
+  margin-bottom: 2rem;
+  display: block;
+}
+.booknv-mentorship__title {
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  line-height: 1.1;
+  margin: 0 0 2.5rem;
+}
+.booknv-mentorship__title-italic {
+  display: block;
+  font-style: italic;
+  color: #d6d3d1;
+}
+.booknv-mentorship__body {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #525252;
+  line-height: 1.8;
+  margin: 0 0 2.5rem;
+}
+.booknv-mentorship__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.booknv-mentorship__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.booknv-mentorship__check {
+  color: #C5A059;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+.booknv-mentorship__cta {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  padding: 1.4rem 3rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.booknv-mentorship__cta:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ── BookNV Booking ──────────────────────── */
+.booknv-booking {
+  background: #fff;
+  padding: 10rem 0;
+}
+.booknv-booking__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.booknv-booking__eyebrow {
+  color: #C5A059 !important;
+  display: block;
+  margin-bottom: 2rem;
+}
+.booknv-booking__heading {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.1;
+  margin: 0 0 3rem;
+}
+.booknv-booking__heading-italic {
+  display: block;
+  font-style: italic;
+  color: #d6d3d1;
+}
+.booknv-booking__details {
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.booknv-booking__subtext {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #737373;
+  line-height: 1.8;
+  margin: 0;
+}
+.booknv-booking__email-wrap {
+  padding-top: 2rem;
+  border-top: 1px solid #f5f5f4;
+}
+.booknv-booking__email {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #111;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.booknv-booking__email:hover { color: #a8a29e; }
+.booknv-booking__offices-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0;
+}
+.booknv-booking__form-wrap {
+  background: #fbfbfb;
+  padding: 4rem 5rem;
+}
+.booknv-booking__form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.booknv-booking__field input,
+.booknv-booking__field select {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #333;
-  padding: 15px 0;
-  color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 1.25rem 0;
+  color: #111;
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 0.9rem;
   outline: none;
-  margin-bottom: 30px;
   box-sizing: border-box;
   -webkit-appearance: none;
   appearance: none;
   display: block;
-  transition: border-bottom-color 0.25s;
+  transition: border-bottom-color 0.25s, padding-left 0.25s;
+  border-radius: 0;
 }
-.booknv-inquiry__field input:focus,
-.booknv-inquiry__field select:focus,
-.booknv-inquiry__field textarea:focus {
-  border-bottom-color: #fff;
+.booknv-booking__field input:focus,
+.booknv-booking__field select:focus {
+  border-bottom-color: #111;
+  padding-left: 8px;
 }
-.booknv-inquiry__field input::placeholder,
-.booknv-inquiry__field textarea::placeholder {
-  color: #555;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-}
-.booknv-inquiry__field select { color: #666; cursor: pointer; }
-.booknv-inquiry__field select option { color: #111; background: #fff; }
-.booknv-inquiry__submit {
+.booknv-booking__field input::placeholder { color: #a8a29e; font-size: 0.9rem; }
+.booknv-booking__field select { color: #a8a29e; cursor: pointer; }
+.booknv-booking__field select option { color: #111; background: #fff; }
+.booknv-booking__submit-wrap { padding-top: 1.5rem; }
+.booknv-booking__submit {
   width: 100%;
   cursor: pointer;
-  border-color: #fff !important;
-  background: transparent !important;
-  color: #fff !important;
-}
-.booknv-inquiry__submit:hover {
-  background: #fff !important;
-  color: #1a1a1a !important;
-}
-.booknv-inquiry__success {
-  padding: 3rem;
   background: #111;
-  border: 1px solid #333;
   color: #fff;
+  border: 1px solid #111;
+  padding: 1.5rem;
   font-family: var(--font-sans);
-  max-width: 750px;
-  margin: 0 auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
 }
-.booknv-inquiry__errors {
-  color: #f88;
+.booknv-booking__submit:hover { opacity: 0.9; }
+.booknv-booking__success {
+  padding: 3rem;
+  background: #f5f5f4;
+  border: 1px solid #e7e5e4;
+  color: #111;
+  font-family: var(--font-sans);
+}
+.booknv-booking__errors {
+  color: #dc2626;
   margin-bottom: 1.5rem;
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -4189,18 +4357,38 @@ body::after {
 
 /* ── BookNV Responsive ───────────────────── */
 @media (max-width: 900px) {
-  .booknv-hero__title { font-size: 2.8rem; }
-  .booknv-book__inner,
-  .booknv-story__inner {
+  .booknv-hero__inner {
     grid-template-columns: 1fr;
-    gap: 50px;
-    padding: 80px 6%;
+    gap: 3rem;
+    padding: 3rem 6%;
   }
-  .booknv-story__media::after { display: none; }
-  .booknv-topics__inner { padding: 80px 6%; }
-  .booknv-topic-card { padding: 40px 25px; }
-  .booknv-inquiry { padding: 80px 6%; }
+  .booknv-hero__media { display: none; }
+  .booknv-vision__inner,
+  .booknv-mentorship__inner,
+  .booknv-booking__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 6%;
+  }
+  .booknv-vision { padding: 6rem 0; }
+  .booknv-pillars { padding: 6rem 0; }
+  .booknv-pillars__grid { grid-template-columns: 1fr 1fr; row-gap: 3rem; }
+  .booknv-pillars__header { flex-direction: column; align-items: flex-start; }
+  .booknv-mentorship { padding: 6rem 0; }
+  .booknv-mentorship__text { padding-left: 0; }
+  .booknv-mentorship__float-quote { display: none; }
+  .booknv-mentorship__media { padding-bottom: 0; }
+  .booknv-booking { padding: 6rem 0; }
+  .booknv-booking__form-wrap { padding: 3rem 2rem; }
 }
+@media (max-width: 640px) {
+  .booknv-pillars__grid { grid-template-columns: 1fr; }
+  .booknv-hero__ctas { flex-direction: column; align-items: flex-start; }
+  .booknv-hero__cta-primary,
+  .booknv-hero__cta-secondary { text-align: center; }
+}
+
+/* ── BookNV Responsive handled above ─────── */
 
 /* ═══════════════════════════════════════════════════
    LUXURY UI ENHANCEMENTS — v2.1
