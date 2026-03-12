@@ -251,7 +251,7 @@
           "type": "link",
           "settings": {
             "label": "Mentorship Program",
-            "url": "/pages/book"
+            "url": "shopify://pages/dream-expo-event"
           }
         },
         "l3": {
