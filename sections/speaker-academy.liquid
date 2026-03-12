@@ -39,13 +39,13 @@
       </div>
     </div>
 
-    {%- comment -%} Right: Dream Academy {%- endcomment -%}
-    <div id="{{ section.settings.academy_id | default: 'academy' }}" class="section-speaker__academy bg-greige reveal delay-100">
-      <span class="eyebrow" style="color:#888;">{{ section.settings.academy_eyebrow | default: 'Education' }}</span>
-      <h3 class="serif-font section-speaker__academy-title">{{ section.settings.academy_title | default: 'Dream Academy' }}</h3>
+    {%- comment -%} Right: Press {%- endcomment -%}
+    <div id="{{ section.settings.press_id | default: 'press' }}" class="section-speaker__academy bg-greige reveal delay-100">
+      <span class="eyebrow" style="color:#888;">{{ section.settings.press_eyebrow | default: 'Press & Media' }}</span>
+      <h3 class="serif-font section-speaker__academy-title">{{ section.settings.press_title | default: 'As Seen In' }}</h3>
       <div class="divider"></div>
-      <p class="body-copy" style="max-width:100%;">{{ section.settings.academy_description | default: 'Vuu Publishing. Women&rsquo;s CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.' }}</p>
-      <a href="{{ section.settings.academy_link | default: '#' }}" class="btn-editorial">{{ section.settings.academy_cta | default: 'Join The Academy' }}</a>
+      <p class="body-copy" style="max-width:100%;">{{ section.settings.press_description | default: 'Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide.' }}</p>
+      <a href="{{ section.settings.press_link | default: '#' }}" class="btn-editorial">{{ section.settings.press_cta | default: 'View Press' }}</a>
     </div>
 
   </div>
@@ -53,20 +53,20 @@
 
 {% schema %}
 {
-  "name": "Speaker & Academy",
+  "name": "Speaker & Press",
   "max_blocks": 10,
   "settings": [
     { "type": "text",         "id": "section_id",          "label": "Section anchor ID",      "default": "speaker" },
     { "type": "image_picker", "id": "portrait",            "label": "Portrait image" },
     { "type": "text",         "id": "eyebrow",             "label": "Eyebrow text",           "default": "The Founder" },
     { "type": "richtext",     "id": "bio",                 "label": "Bio paragraph" },
-    { "type": "header",       "content": "Dream Academy" },
-    { "type": "text",         "id": "academy_id",          "label": "Academy anchor ID",      "default": "academy" },
-    { "type": "text",         "id": "academy_eyebrow",     "label": "Academy eyebrow",        "default": "Education" },
-    { "type": "text",         "id": "academy_title",       "label": "Academy title",          "default": "Dream Academy" },
-    { "type": "textarea",     "id": "academy_description", "label": "Academy description",    "default": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity." },
-    { "type": "text",         "id": "academy_cta",         "label": "Academy button text",    "default": "Join The Academy" },
-    { "type": "url",          "id": "academy_link",        "label": "Academy button link" }
+    { "type": "header",       "content": "Press" },
+    { "type": "text",         "id": "press_id",          "label": "Press anchor ID",      "default": "press" },
+    { "type": "text",         "id": "press_eyebrow",     "label": "Press eyebrow",        "default": "Press & Media" },
+    { "type": "text",         "id": "press_title",       "label": "Press title",          "default": "As Seen In" },
+    { "type": "textarea",     "id": "press_description", "label": "Press description",    "default": "Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide." },
+    { "type": "text",         "id": "press_cta",         "label": "Press button text",    "default": "View Press" },
+    { "type": "url",          "id": "press_link",        "label": "Press button link" }
   ],
   "blocks": [
     {
@@ -88,7 +88,7 @@
   ],
   "presets": [
     {
-      "name": "Speaker & Academy",
+      "name": "Speaker & Press",
       "blocks": [
         { "type": "title_line", "settings": { "text": "Speaker.", "italic": false } },
         { "type": "title_line", "settings": { "text": "Mentor.",  "italic": true } },

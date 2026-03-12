@@ -275,12 +275,23 @@
         "portrait": "shopify://shop_images/untitled-5279.jpg",
         "eyebrow": "The Founder",
         "bio": "",
-        "academy_id": "academy",
-        "academy_eyebrow": "Education",
-        "academy_title": "Dream Academy",
-        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
-        "academy_cta": "Join The Academy",
-        "academy_link": "/pages/dream-academy"
+        "press_id": "press",
+        "press_eyebrow": "Press & Media",
+        "press_title": "As Seen In",
+        "press_description": "Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide.",
+        "press_cta": "View Press",
+        "press_link": "/pages/press"
+      }
+    },
+    "dream-academy": {
+      "type": "atelier-academy",
+      "settings": {
+        "eyebrow": "Education",
+        "title_line_1": "Dream Academy",
+        "title_line_2": "",
+        "body": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
+        "cta_label": "Join The Academy",
+        "cta_link": "/pages/dream-academy"
       }
     },
     "vuu-foundation": {
@@ -345,6 +356,7 @@
     "retreats",
     "photography",
     "speaker-academy",
+    "dream-academy",
     "vuu-foundation",
     "cross-sell-luxury"
   ]
