@@ -286,7 +286,7 @@
     "dream-academy": {
       "type": "atelier-academy",
       "settings": {
-        "image": "",
+        "image": "shopify://shop_images/DREAM_ACADEMY_IMAGE.webp",
         "eyebrow": "Education",
         "title_line_1": "Dream Academy",
         "title_line_2": "",
