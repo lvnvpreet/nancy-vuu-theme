@@ -2594,36 +2594,54 @@ body::after {
 }
 .atelier-service__cta:hover { opacity: 0.5; }
 
-/* ── Atelier Academy Banner ──────────────── */
+/* ── Dream Academy — two-column split ───── */
 .atelier-academy {
-  background: #111; color: #fff; padding: 120px 10%; text-align: center;
+  background: #f5f0ea; color: #111; padding: 0;
+  overflow: hidden;
 }
-.atelier-academy__inner { max-width: 900px; margin: 0 auto; }
-.atelier-academy__eyebrow { color: rgba(255,255,255,0.7); }
+.atelier-academy__inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+}
+.atelier-academy__text {
+  padding: 80px 8%; display: flex; flex-direction: column;
+  justify-content: center; gap: 1.5rem;
+}
+.atelier-academy__eyebrow { color: #888; }
 .atelier-academy__title {
-  font-size: 3.5rem; line-height: 1.1; letter-spacing: -0.02em;
-  color: #fff; margin-bottom: 25px;
+  font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;
+  color: #111; margin: 0;
 }
 .atelier-academy__body {
-  font-size: 1.2rem; font-weight: 300; color: #ccc; line-height: 1.7;
-  max-width: 800px; margin: 0 auto 40px; font-family: var(--font-sans);
+  font-size: 1.05rem; font-weight: 300; color: #444; line-height: 1.75;
+  margin: 0; font-family: var(--font-sans); max-width: 520px;
 }
 .atelier-academy__cta {
   display: inline-block; background: transparent;
-  border: 1px solid #fff; color: #fff;
-  padding: 22px 50px; font-size: 12px; font-weight: 700;
+  border: 1px solid #111; color: #111;
+  padding: 18px 44px; font-size: 11px; font-weight: 700;
   letter-spacing: 3px; text-transform: uppercase; text-decoration: none;
   transition: background 0.4s ease, color 0.4s ease; font-family: var(--font-sans);
+  align-self: flex-start;
 }
-.atelier-academy__cta:hover { background: #fff; color: #111; }
+.atelier-academy__cta:hover { background: #111; color: #f5f0ea; }
+.atelier-academy__media { overflow: hidden; }
+.atelier-academy__media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.atelier-academy__img-placeholder {
+  width: 100%; height: 100%; min-height: 480px; background: #e8e2da;
+}
 
 @media (max-width: 900px) {
   .atelier-philosophy { padding: 80px 5%; }
   .atelier-service__inner { grid-template-columns: 1fr; gap: 50px; padding: 80px 10%; }
   .atelier-service__inner--img-right .atelier-service__text { order: 0; }
   .atelier-service__img-wrapper { height: 400px; }
-  .atelier-academy { padding: 80px 5%; }
-  .atelier-academy__title { font-size: 3rem; }
+  .atelier-academy__inner { grid-template-columns: 1fr; }
+  .atelier-academy__text { padding: 60px 6%; }
+  .atelier-academy__media { min-height: 380px; }
+  .atelier-academy__title { font-size: 2.5rem; }
 }
 
 /* ── Atelier Hero ────────────────────────── */

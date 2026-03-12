@@ -286,6 +286,7 @@
     "dream-academy": {
       "type": "atelier-academy",
       "settings": {
+        "image": "",
         "eyebrow": "Education",
         "title_line_1": "Dream Academy",
         "title_line_2": "",

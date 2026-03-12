@@ -1,19 +1,36 @@
-{%- comment -%} Atelier Dream Academy banner — solid black bg, centered, white outline CTA {%- endcomment -%}
+{%- comment -%} Dream Academy — two-column split: left text + CTA, right image, light background {%- endcomment -%}
 <section class="atelier-academy" data-section-id="{{ section.id }}">
   <div class="atelier-academy__inner">
-    {%- if section.settings.eyebrow != blank -%}
-      <span class="eyebrow atelier-academy__eyebrow">{{ section.settings.eyebrow }}</span>
-    {%- endif -%}
-    <h2 class="atelier-academy__title serif-font">
-      {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
-      {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
-    </h2>
-    {%- if section.settings.body != blank -%}
-      <p class="atelier-academy__body">{{ section.settings.body }}</p>
-    {%- endif -%}
-    {%- if section.settings.cta_label != blank -%}
-      <a href="{{ section.settings.cta_link | default: '#' }}" class="atelier-academy__cta">{{ section.settings.cta_label }}</a>
-    {%- endif -%}
+
+    <div class="atelier-academy__text reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow atelier-academy__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="atelier-academy__title serif-font">
+        {%- if section.settings.title_line_1 != blank -%}{{ section.settings.title_line_1 }}{%- endif -%}
+        {%- if section.settings.title_line_2 != blank -%}<br>{{ section.settings.title_line_2 }}{%- endif -%}
+      </h2>
+      <div class="divider"></div>
+      {%- if section.settings.body != blank -%}
+        <p class="atelier-academy__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="atelier-academy__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+
+    <div class="atelier-academy__media reveal delay-100">
+      {%- if section.settings.image != blank -%}
+        {%- render 'image',
+            image: section.settings.image,
+            sizes: '(max-width:768px) 100vw, 50vw',
+            placeholder_text: 'Dream Academy'
+        -%}
+      {%- else -%}
+        <div class="atelier-academy__img-placeholder"></div>
+      {%- endif -%}
+    </div>
+
   </div>
 </section>
 
@@ -21,6 +38,11 @@
 {
   "name": "Atelier Academy Banner",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right column image"
+    },
     {
       "type": "text",
       "id": "eyebrow",
