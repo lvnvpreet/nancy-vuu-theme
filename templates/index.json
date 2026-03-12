@@ -333,7 +333,7 @@
             "title": "Dream Retreats",
             "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
             "cta_label": "Discover Retreats",
-            "link": "/pages/retreats"
+            "link": "shopify://pages/retreats"
           }
         }
       },
