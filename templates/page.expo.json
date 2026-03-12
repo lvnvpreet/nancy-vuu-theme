@@ -1,18 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Dream Expo",
   "sections": {
     "hero": {
       "type": "page-hero",
       "settings": {
+        "section_id": "page-hero",
+        "image": "shopify://shop_images/photo-1507525428034-b723cf961d3e.avif",
         "overlay_opacity": 60,
         "eyebrow": "Friday, April 24, 2026 • Honolulu, Hawaiʻi",
+        "title_line_1": "Title",
         "title_line_2": "Dream Expo",
+        "title_line_3": "",
         "subtitle": "IGNITE!",
-        "subtitle_serif": true,
-        "tagline": "Believe. Live Realized.",
+        "subtitle_serif": false,
+        "tagline": "",
         "cta_label": "Get Free Tickets",
         "cta_link": "https://dreamexpohawaii2026.eventbrite.com/",
-        "cta_style": "fill",
+        "cta_style": "outline",
         "text_color": "#ffffff"
       }
     },
@@ -23,43 +35,107 @@
         "quote": "More than an event — it's a movement.",
         "attribution": "",
         "body": "<p>The DREAM Expo is a springboard for the people of Hawaiʻi, a community initiative designed to awaken dreams, elevate purpose, and empower individuals across Hawaiʻi to live with passion and impact. This annual gathering brings together leaders, learners, and visionaries from every sphere of influence.</p>",
-        "col1_heading": "Mission",
-        "col1_body": "The Dream Expo provides insights, tools and access to resources positioning participants to believe, then live \"Dreams Realized.\"",
-        "col2_heading": "Vision",
-        "col2_body": "The Dream Expo is a springboard for the people of Hawaiʻi to Dream Again — with courage, clarity, and community.",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "details": {
       "type": "expo-details",
+      "blocks": {
+        "d1": {
+          "type": "detail",
+          "settings": {
+            "number": "01",
+            "heading": "Date",
+            "text": "Friday, April 24, 2026\nStarting at 12 PM"
+          }
+        },
+        "d2": {
+          "type": "detail",
+          "settings": {
+            "number": "02",
+            "heading": "Location",
+            "text": "South Pacific Ballroom\nHilton Hawaiian Village\nHonolulu, Hawaiʻi"
+          }
+        },
+        "d3": {
+          "type": "detail",
+          "settings": {
+            "number": "03",
+            "heading": "Audience",
+            "text": "Open to public — nonprofits, students, business leaders, creatives & media professionals"
+          }
+        },
+        "d4": {
+          "type": "detail",
+          "settings": {
+            "number": "04",
+            "heading": "Goal",
+            "text": "Ignite dreams, foster connections & provide resources for transformative growth"
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4"
+      ],
       "settings": {
         "heading": "Key Event Details",
         "bg_tint": true
-      },
-      "blocks": {
-        "d1": { "type": "detail", "settings": { "number": "01", "heading": "Date", "text": "Friday, April 24, 2026\nStarting at 12 PM" } },
-        "d2": { "type": "detail", "settings": { "number": "02", "heading": "Location", "text": "South Pacific Ballroom\nHilton Hawaiian Village\nHonolulu, Hawaiʻi" } },
-        "d3": { "type": "detail", "settings": { "number": "03", "heading": "Audience", "text": "Open to public — nonprofits, students, business leaders, creatives & media professionals" } },
-        "d4": { "type": "detail", "settings": { "number": "04", "heading": "Goal", "text": "Ignite dreams, foster connections & provide resources for transformative growth" } }
-      },
-      "block_order": ["d1", "d2", "d3", "d4"]
+      }
     },
     "highlights": {
       "type": "expo-highlights",
+      "blocks": {
+        "h1": {
+          "type": "highlight",
+          "settings": {
+            "number": "01",
+            "title": "Keynote & Panel Sessions",
+            "description": "Industry leaders share actionable blueprints for vision-to-reality journeys."
+          }
+        },
+        "h2": {
+          "type": "highlight",
+          "settings": {
+            "number": "02",
+            "title": "Live Exhibitions",
+            "description": "Discover local & global brands, creative showcases, and curated experiences."
+          }
+        },
+        "h3": {
+          "type": "highlight",
+          "settings": {
+            "number": "03",
+            "title": "Networking & Mentorship",
+            "description": "Connect with changemakers from every sphere of influence across Hawaiʻi."
+          }
+        }
+      },
+      "block_order": [
+        "h1",
+        "h2",
+        "h3"
+      ],
       "settings": {
         "eyebrow": "The Experience",
         "heading": "Connect. Dream. Build Together.",
         "body": "Utilizing the DREAM Academy blueprint — our signature structure — to build with integrity, grow revenue through sustainable practices and creative innovation.",
         "cta_text": "View Schedule",
-        "cta_link": "https://dreamexpohawaii.com/speakers"
-      },
-      "blocks": {
-        "h1": { "type": "highlight", "settings": { "number": "01", "title": "Keynote & Panel Sessions", "description": "Industry leaders share actionable blueprints for vision-to-reality journeys." } },
-        "h2": { "type": "highlight", "settings": { "number": "02", "title": "Live Exhibitions", "description": "Discover local & global brands, creative showcases, and curated experiences." } },
-        "h3": { "type": "highlight", "settings": { "number": "03", "title": "Networking & Mentorship", "description": "Connect with changemakers from every sphere of influence across Hawaiʻi." } }
-      },
-      "block_order": ["h1", "h2", "h3"]
+        "cta_link": "https://dreamexpohawaii.com/speakers",
+        "fallback_image_url": ""
+      }
     },
     "exhibitor": {
       "type": "expo-exhibitor",
@@ -80,29 +156,36 @@
       "settings": {
         "eyebrow": "Powered by the Academy Blueprint",
         "quote": "Where Academy Meets Opportunity",
+        "attribution": "",
         "body": "<p>The Dream Expo is the culmination of the Dream Academy journey — where graduates showcase their mastery, connect with industry agents, and step onto the global stage. Every exhibitor, speaker, and attendee is part of a larger ecosystem of excellence.</p>",
-        "cta1_label": "Explore the Academy",
-        "cta1_link": "/pages/dream-academy",
-        "cta2_label": "House of Vuu Foundation",
-        "cta2_link": "/pages/foundation",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "cta": {
       "type": "cta-closer",
       "settings": {
+        "overlay_opacity": 50,
         "eyebrow": "Hawaiʻi's First-Ever Dream Expo",
         "heading": "Be Part of the Movement",
         "subtext": "Where dreamers and doers are celebrated, gather, connect and build together.",
         "cta_label": "Get Free Tickets",
         "cta_link": "https://dreamexpohawaii2026.eventbrite.com/",
-        "cta_style": "fill",
-        "cta2_label": "Become an Exhibitor",
-        "cta2_link": "https://dreamexpohawaii.com/exhibitor-application",
+        "cta_style": "outline",
+        "cta2_label": "",
+        "cta2_link": "",
         "text_color": "#111111",
-        "bg_light": true,
-        "compact": true
+        "bg_light": false,
+        "compact": false
       }
     }
   },
