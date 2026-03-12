@@ -258,7 +258,7 @@
           "type": "link",
           "settings": {
             "label": "Buy The Book",
-            "url": "/pages/book"
+            "url": "shopify://pages/the-library"
           }
         }
       },
