@@ -184,8 +184,8 @@
         "cta2_label": "Become an Exhibitor",
         "cta2_link": "https://dreamexpohawaii.com/exhibitor-application",
         "text_color": "#111111",
-        "bg_light": true,
-        "compact": true
+        "bg_light": false,
+        "compact": false
       }
     }
   },
