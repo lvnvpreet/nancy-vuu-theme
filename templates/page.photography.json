@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Photography",
   "sections": {
     "photo_hero": {
       "type": "atelier-hero",
@@ -20,13 +28,44 @@
         "eyebrow": "The Aesthetic Recognized By"
       },
       "blocks": {
-        "pub_1": { "type": "publication", "settings": { "name": "VOGUE" } },
-        "pub_2": { "type": "publication", "settings": { "name": "ELLE" } },
-        "pub_3": { "type": "publication", "settings": { "name": "HARPER'S BAZAAR" } },
-        "pub_4": { "type": "publication", "settings": { "name": "THE COSMOPOLITAN" } },
-        "pub_5": { "type": "publication", "settings": { "name": "BRIDES" } }
+        "pub_1": {
+          "type": "publication",
+          "settings": {
+            "name": "VOGUE"
+          }
+        },
+        "pub_2": {
+          "type": "publication",
+          "settings": {
+            "name": "ELLE"
+          }
+        },
+        "pub_3": {
+          "type": "publication",
+          "settings": {
+            "name": "HARPER'S BAZAAR"
+          }
+        },
+        "pub_4": {
+          "type": "publication",
+          "settings": {
+            "name": "THE COSMOPOLITAN"
+          }
+        },
+        "pub_5": {
+          "type": "publication",
+          "settings": {
+            "name": "BRIDES"
+          }
+        }
       },
-      "block_order": ["pub_1", "pub_2", "pub_3", "pub_4", "pub_5"]
+      "block_order": [
+        "pub_1",
+        "pub_2",
+        "pub_3",
+        "pub_4",
+        "pub_5"
+      ]
     },
     "philosophy": {
       "type": "manifesto",
@@ -50,22 +89,35 @@
       "blocks": {
         "li_1": {
           "type": "list_item",
-          "settings": { "text": "Exclusive access to the Nancy Vuu Couture Wardrobe Archive" }
+          "settings": {
+            "text": "Exclusive access to the Nancy Vuu Couture Wardrobe Archive"
+          }
         },
         "li_2": {
           "type": "list_item",
-          "settings": { "text": "World-Class Editorial Styling & Creative Direction" }
+          "settings": {
+            "text": "World-Class Editorial Styling & Creative Direction"
+          }
         },
         "li_3": {
           "type": "list_item",
-          "settings": { "text": "Professional, High-Fashion Hair and Makeup Artistry" }
+          "settings": {
+            "text": "Professional, High-Fashion Hair and Makeup Artistry"
+          }
         },
         "li_4": {
           "type": "list_item",
-          "settings": { "text": "Bespoke Concept Architecture & Set Design" }
+          "settings": {
+            "text": "Bespoke Concept Architecture & Set Design"
+          }
         }
       },
-      "block_order": ["li_1", "li_2", "li_3", "li_4"]
+      "block_order": [
+        "li_1",
+        "li_2",
+        "li_3",
+        "li_4"
+      ]
     },
     "portfolio": {
       "type": "photography-portfolio",
@@ -121,7 +173,13 @@
           }
         }
       },
-      "block_order": ["item_1", "item_2", "item_3", "item_4", "item_5"]
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ]
     },
     "inquiry": {
       "type": "photography-inquiry",
@@ -175,15 +233,42 @@
           }
         }
       },
-      "block_order": ["opt_1", "opt_2", "opt_3", "opt_4", "opt_5"]
+      "block_order": [
+        "opt_1",
+        "opt_2",
+        "opt_3",
+        "opt_4",
+        "opt_5"
+      ]
     },
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "blocks": {
-        "card_crowns": { "type": "card", "settings": { "eyebrow": "The Crowning Moment", "title": "Finish the Look", "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.", "cta_label": "Explore Crowns & Jewelry", "link": "/collections/crowns-jewelry" } },
-        "card_retreats": { "type": "card", "settings": { "eyebrow": "The Nancy Vuu Experience", "title": "Dream Retreats", "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.", "cta_label": "Discover Retreats", "link": "/pages/retreats" } }
+        "card_crowns": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Crowning Moment",
+            "title": "Finish the Look",
+            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
+            "cta_label": "Explore Crowns & Jewelry",
+            "link": "/collections/crowns-jewelry"
+          }
+        },
+        "card_retreats": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Retreats",
+            "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
+            "cta_label": "Discover Retreats",
+            "link": "/pages/retreats"
+          }
+        }
       },
-      "block_order": ["card_crowns", "card_retreats"],
+      "block_order": [
+        "card_crowns",
+        "card_retreats"
+      ],
       "settings": {}
     }
   },

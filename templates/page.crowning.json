@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "The Crowning",
   "sections": {
     "crowning_hero": {
       "type": "crowning-hero",
@@ -16,7 +24,7 @@
     "crowning_declaration": {
       "type": "crowning-declaration",
       "settings": {
-        "text": "<p>\"The House of Nancy Vuu is honored to stand with you as you step into your ultimate destiny. Our crown collection is the external manifestation of an <em>internal awakening</em>\u2014your elevation into True Identity. As each piece is presented, it is our deepest intention that you receive an undeniable clarity of purpose, igniting your power and illuminating your most visionary dreams. We impart this Crowning as a profound blessing: <em>to live, create, and reign in absolute abundance, now and always.</em>\"</p>"
+        "text": "<p>\"The House of Nancy Vuu is honored to stand with you as you step into your ultimate destiny. Our crown collection is the external manifestation of an <em>internal awakening</em>—your elevation into True Identity. As each piece is presented, it is our deepest intention that you receive an undeniable clarity of purpose, igniting your power and illuminating your most visionary dreams. We impart this Crowning as a profound blessing: <em>to live, create, and reign in absolute abundance, now and always.</em>\"</p>"
       }
     },
     "crowning_origin": {
@@ -26,13 +34,13 @@
         "title_line_1": "The Commission",
         "title_line_2": "of Humanity.",
         "show_quotes": true,
-        "attribution": "\u2014 Nancy Vuu"
+        "attribution": "— Nancy Vuu"
       },
       "blocks": {
         "para_1": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>It began not in a studio, but in a profound midnight awakening. I was met with a celestial vision\u2014a vivid encounter where a messenger presented a scroll of ancient truth.</p>"
+            "text": "<p>It began not in a studio, but in a profound midnight awakening. I was met with a celestial vision—a vivid encounter where a messenger presented a scroll of ancient truth.</p>"
           }
         },
         "para_2": {
@@ -54,7 +62,12 @@
           }
         }
       },
-      "block_order": ["para_1", "para_2", "para_3", "para_4"]
+      "block_order": [
+        "para_1",
+        "para_2",
+        "para_3",
+        "para_4"
+      ]
     },
     "crowning_pathways": {
       "type": "crowning-pathways",
@@ -79,11 +92,30 @@
         "card2_cta_link": "#partnerships"
       },
       "blocks": {
-        "crown_1": { "type": "crown_name", "settings": { "text": "Crown of Dreams"   } },
-        "crown_2": { "type": "crown_name", "settings": { "text": "Crown of Victory"  } },
-        "crown_3": { "type": "crown_name", "settings": { "text": "Crown of Royalty"  } }
+        "crown_1": {
+          "type": "crown_name",
+          "settings": {
+            "text": "Crown of Dreams"
+          }
+        },
+        "crown_2": {
+          "type": "crown_name",
+          "settings": {
+            "text": "Crown of Victory"
+          }
+        },
+        "crown_3": {
+          "type": "crown_name",
+          "settings": {
+            "text": "Crown of Royalty"
+          }
+        }
       },
-      "block_order": ["crown_1", "crown_2", "crown_3"]
+      "block_order": [
+        "crown_1",
+        "crown_2",
+        "crown_3"
+      ]
     },
     "crowning_partnerships": {
       "type": "crowning-partnerships",
@@ -100,19 +132,62 @@
         "submit_label": "Submit Inquiry"
       },
       "blocks": {
-        "type_1": { "type": "partnership_type", "settings": { "label": "Retail / Wholesale Boutique Partner",      "value": "wholesale"    } },
-        "type_2": { "type": "partnership_type", "settings": { "label": "Humanitarian / Non-Profit Organization",   "value": "humanitarian" } },
-        "type_3": { "type": "partnership_type", "settings": { "label": "Host \"The Crowning\" Live Experience",     "value": "live-event"   } }
+        "type_1": {
+          "type": "partnership_type",
+          "settings": {
+            "label": "Retail / Wholesale Boutique Partner",
+            "value": "wholesale"
+          }
+        },
+        "type_2": {
+          "type": "partnership_type",
+          "settings": {
+            "label": "Humanitarian / Non-Profit Organization",
+            "value": "humanitarian"
+          }
+        },
+        "type_3": {
+          "type": "partnership_type",
+          "settings": {
+            "label": "Host \"The Crowning\" Live Experience",
+            "value": "live-event"
+          }
+        }
       },
-      "block_order": ["type_1", "type_2", "type_3"]
+      "block_order": [
+        "type_1",
+        "type_2",
+        "type_3"
+      ]
     },
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "blocks": {
-        "card_crowns": { "type": "card", "settings": { "eyebrow": "The Crowning Moment", "title": "Finish the Look", "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.", "cta_label": "Explore Crowns & Jewelry", "link": "/collections/crowns-jewelry" } },
-        "card_retreats": { "type": "card", "settings": { "eyebrow": "The Nancy Vuu Experience", "title": "Dream Retreats", "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.", "cta_label": "Discover Retreats", "link": "/pages/retreats" } }
+        "card_crowns": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Crowning Moment",
+            "title": "Finish the Look",
+            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
+            "cta_label": "Explore Crowns & Jewelry",
+            "link": "/collections/crowns-jewelry"
+          }
+        },
+        "card_retreats": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Retreats",
+            "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
+            "cta_label": "Discover Retreats",
+            "link": "/pages/retreats"
+          }
+        }
       },
-      "block_order": ["card_crowns", "card_retreats"],
+      "block_order": [
+        "card_crowns",
+        "card_retreats"
+      ],
       "settings": {}
     }
   },

@@ -1,12 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "bg_video": "https://www.pexels.com/download/video/3753702/",
+        "overlay_opacity": 0,
         "headline_italic": "for",
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
-        "overlay_opacity": 0,
         "text_color": "#111111"
       }
     },
@@ -14,6 +24,7 @@
       "type": "atelier",
       "settings": {
         "section_id": "atelier",
+        "image": "shopify://shop_images/Atelier.png",
         "eyebrow": "San Jose, CA · 1520 Southwest Expy #10",
         "title": "The Atelier",
         "description": "A sanctuary of restoration and creation. Formerly a humble alteration shop, now the birthplace of bespoke dreams — where every stitch carries intention.",
@@ -26,6 +37,8 @@
       "settings": {
         "eyebrow": "The Collection · 2026",
         "title": "Bridal",
+        "image_feature": "shopify://shop_images/Sept2023LacyMariePhotographyWeddingAaronandSophie-394_1.webp",
+        "image_side": "shopify://shop_images/Sept2023LacyMariePhotographyWeddingAaronandSophie-889.webp",
         "cta_label": "Explore Bridal",
         "cta_link": "/collections/bridal"
       }
@@ -37,16 +50,18 @@
         "eyebrow": "Custom Design",
         "title": "Bespoke Bridal",
         "description": "\"You Dream It. We Create It.\" A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.",
-        "show_chart": true,
-        "chart_title": "The Journey — From Dream to Reality",
+        "image": "shopify://shop_images/Sept2023LacyMariePhotographyWeddingAaronandSophie-394.webp",
         "cta_label": "Begin Commission",
-        "cta_link": "/pages/bridal"
+        "cta_link": "/pages/bridal",
+        "show_chart": true,
+        "chart_title": "The Journey — From Dream to Reality"
       }
     },
     "womens-couture": {
       "type": "womens-couture",
       "settings": {
         "section_id": "womens-couture",
+        "bg_image": "shopify://shop_images/IMG_0593.jpg",
         "eyebrow": "Collection",
         "title": "Women's Couture",
         "tagline": "Elegance · Power · Grace",
@@ -63,6 +78,7 @@
         "text_bg": "greige",
         "grid_ratio": "equal",
         "image_position": "right",
+        "image": "shopify://shop_images/sethimage.jpg",
         "eyebrow": "Tailored for Him",
         "title": "Seth Eden",
         "description": "Precision tailoring for the modern kingdom heir. Architectural authority meets restorative peace. Men's and Women's bespoke suiting.",
@@ -72,21 +88,34 @@
     },
     "legacy-collections": {
       "type": "legacy-collections",
-      "settings": {
-        "eyebrow": "For the Little Ones",
-        "title": "The Legacy Collections"
-      },
       "blocks": {
         "children": {
           "type": "collection_card",
-          "settings": { "title": "Children's Couture", "cta": "Shop Kids", "link": "/collections/childrens-couture" }
+          "settings": {
+            "image": "shopify://shop_images/DSC9102B_1.webp",
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens-couture"
+          }
         },
         "mommy": {
           "type": "collection_card",
-          "settings": { "title": "Mommy & Me", "cta": "Shop Matching Sets", "link": "/collections/mommy-me" }
+          "settings": {
+            "image": "shopify://shop_images/0CF9F33E-0984-4332-8324-AFB352D9BDDC.webp",
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-me"
+          }
         }
       },
-      "block_order": ["children", "mommy"]
+      "block_order": [
+        "children",
+        "mommy"
+      ],
+      "settings": {
+        "eyebrow": "For the Little Ones",
+        "title": "The Legacy Collections"
+      }
     },
     "kingdom": {
       "type": "split-content",
@@ -97,6 +126,7 @@
         "text_bg": "none",
         "grid_ratio": "7-5",
         "image_position": "left",
+        "image": "shopify://shop_images/untitled--6.webp",
         "eyebrow": "Ready to Wear",
         "title": "Kingdom Heirs",
         "description": "Everyday luxury that speaks your identity. T-shirts, hoodies, and essentials tailored for the culture — worn by those who carry purpose.",
@@ -116,6 +146,30 @@
     },
     "retreats": {
       "type": "retreats",
+      "blocks": {
+        "napa": {
+          "type": "retreat",
+          "settings": {
+            "image": "shopify://shop_images/a108c2_f4274b7aa6c443d4b3766c89c891b403_mv2_d_2338_3151_s_2.jpg",
+            "name": "Napa Valley",
+            "subtitle": "Wine Country Retreat",
+            "link": ""
+          }
+        },
+        "hawaii": {
+          "type": "retreat",
+          "settings": {
+            "image": "shopify://shop_images/a108c2_98bcbc42bcad4813ad1591ab2160221f.jpg",
+            "name": "Hawaii",
+            "subtitle": "Island Immersion",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "napa",
+        "hawaii"
+      ],
       "settings": {
         "eyebrow": "Restoration for the Soul",
         "title": "Dream Retreats",
@@ -123,30 +177,111 @@
         "calendar_link": "/pages/retreats",
         "explore_label": "Explore All Retreats",
         "explore_link": "/pages/retreats"
-      },
-      "blocks": {
-        "napa":   { "type": "retreat", "settings": { "name": "Napa Valley", "subtitle": "Wine Country Retreat" } },
-        "hawaii": { "type": "retreat", "settings": { "name": "Hawaii",      "subtitle": "Island Immersion" } }
-      },
-      "block_order": ["napa", "hawaii"]
+      }
     },
     "photography": {
       "type": "photography",
+      "blocks": {
+        "w1": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
+          }
+        },
+        "w2": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CREATE"
+          }
+        },
+        "w3": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "MEMORIALIZE"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "w2",
+        "w3"
+      ],
       "settings": {
         "section_id": "photography",
         "eyebrow": "Services",
         "title": "Nancy Vuu Photography",
         "description": "Capturing the essence of your transformation. Available for editorial, bridal, and portrait sessions that transcend the ordinary.",
         "cta_label": "View Portfolio",
-        "cta_link": "/pages/photography",
+        "cta_link": "shopify://pages/photography-nancy-vuu",
         "show_marquee": true
-      },
+      }
+    },
+    "speaker-academy": {
+      "type": "speaker-academy",
       "blocks": {
-        "w1": { "type": "marquee_word", "settings": { "word": "CAPTURE" } },
-        "w2": { "type": "marquee_word", "settings": { "word": "CREATE" } },
-        "w3": { "type": "marquee_word", "settings": { "word": "MEMORIALIZE" } }
+        "t1": {
+          "type": "title_line",
+          "settings": {
+            "text": "Speaker.",
+            "italic": false
+          }
+        },
+        "t2": {
+          "type": "title_line",
+          "settings": {
+            "text": "Mentor.",
+            "italic": true
+          }
+        },
+        "t3": {
+          "type": "title_line",
+          "settings": {
+            "text": "Author.",
+            "italic": false
+          }
+        },
+        "l1": {
+          "type": "link",
+          "settings": {
+            "label": "Book for Speaking",
+            "url": "/pages/book"
+          }
+        },
+        "l2": {
+          "type": "link",
+          "settings": {
+            "label": "Mentorship Program",
+            "url": "/pages/book"
+          }
+        },
+        "l3": {
+          "type": "link",
+          "settings": {
+            "label": "Buy The Book",
+            "url": "/pages/book"
+          }
+        }
       },
-      "block_order": ["w1", "w2", "w3"]
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "section_id": "speaker",
+        "portrait": "shopify://shop_images/untitled-5279.jpg",
+        "eyebrow": "The Founder",
+        "bio": "",
+        "academy_id": "academy",
+        "academy_eyebrow": "Education",
+        "academy_title": "Dream Academy",
+        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
+        "academy_cta": "Join The Academy",
+        "academy_link": "/pages/dream-academy"
+      }
     },
     "vuu-foundation": {
       "type": "vuu-foundation",
@@ -170,6 +305,7 @@
         "card_crowns": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/kids-photographer-in-los-angeles.jpg",
             "eyebrow": "The Crowning Moment",
             "title": "Finish the Look",
             "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
@@ -180,6 +316,7 @@
         "card_retreats": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/nancy-vuu-speaking-engagements.jpg",
             "eyebrow": "The Nancy Vuu Experience",
             "title": "Dream Retreats",
             "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
@@ -188,30 +325,11 @@
           }
         }
       },
-      "block_order": ["card_crowns", "card_retreats"],
+      "block_order": [
+        "card_crowns",
+        "card_retreats"
+      ],
       "settings": {}
-    },
-    "speaker-academy": {
-      "type": "speaker-academy",
-      "settings": {
-        "section_id": "speaker",
-        "eyebrow": "The Founder",
-        "academy_id": "academy",
-        "academy_eyebrow": "Education",
-        "academy_title": "Dream Academy",
-        "academy_description": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
-        "academy_cta": "Join The Academy",
-        "academy_link": "/pages/dream-academy"
-      },
-      "blocks": {
-        "t1": { "type": "title_line", "settings": { "text": "Speaker.", "italic": false } },
-        "t2": { "type": "title_line", "settings": { "text": "Mentor.",  "italic": true } },
-        "t3": { "type": "title_line", "settings": { "text": "Author.",  "italic": false } },
-        "l1": { "type": "link", "settings": { "label": "Book for Speaking",  "url": "/pages/book" } },
-        "l2": { "type": "link", "settings": { "label": "Mentorship Program", "url": "/pages/book" } },
-        "l3": { "type": "link", "settings": { "label": "Buy The Book",        "url": "/pages/book" } }
-      },
-      "block_order": ["t1", "t2", "t3", "l1", "l2", "l3"]
     }
   },
   "order": [
