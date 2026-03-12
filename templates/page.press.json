@@ -1,0 +1,153 @@
+{
+  "name": "Press — The Architecture of Worth",
+  "sections": {
+    "press_hero": {
+      "type": "press-hero",
+      "settings": {
+        "eyebrow": "Voice of Authority",
+        "title_line_1": "The Architecture",
+        "title_italic": "of",
+        "title_line_2": "Worth",
+        "subtitle": "Redefining the individual through high-fashion, cinematic truth, and human advocacy."
+      }
+    },
+    "press_strip": {
+      "type": "press-editorial-strip",
+      "blocks": {
+        "strip_1":  { "type": "item", "settings": { "name": "The Oscars" } },
+        "strip_2":  { "type": "item", "settings": { "name": "The Grammys" } },
+        "strip_3":  { "type": "item", "settings": { "name": "Nickelodeon" } },
+        "strip_4":  { "type": "item", "settings": { "name": "Cannes Film Festival" } },
+        "strip_5":  { "type": "item", "settings": { "name": "American Music Awards" } },
+        "strip_6":  { "type": "item", "settings": { "name": "Vogue" } },
+        "strip_7":  { "type": "item", "settings": { "name": "Harper's Bazaar" } },
+        "strip_8":  { "type": "item", "settings": { "name": "Elle" } },
+        "strip_9":  { "type": "item", "settings": { "name": "Huffington Post" } },
+        "strip_10": { "type": "item", "settings": { "name": "Cosmopolitan" } },
+        "strip_11": { "type": "item", "settings": { "name": "Brides" } }
+      },
+      "block_order": ["strip_1","strip_2","strip_3","strip_4","strip_5","strip_6","strip_7","strip_8","strip_9","strip_10","strip_11"]
+    },
+    "press_accolades": {
+      "type": "press-accolades",
+      "settings": {
+        "eyebrow": "Distinction & Impact",
+        "heading": "Global Accolades"
+      },
+      "blocks": {
+        "acc_1": {
+          "type": "card",
+          "settings": {
+            "label": "Cinematic Excellence",
+            "title": "\"Unto Me\" Film Honors",
+            "body": "<p>Recipient of 4 prestigious film awards, highlighted by <strong>Best Short Fashion Film</strong> at the Global Short Film Awards in Cannes, alongside three domestic honors for creative excellence.</p>"
+          }
+        },
+        "acc_2": {
+          "type": "card",
+          "settings": {
+            "label": "Leadership Recognition",
+            "title": "People on the Move",
+            "body": "<p>Recognized by the <strong>Silicon Valley Business Journal</strong> as \u201cPeople on the Move\u201d and the <strong>San Francisco Business Times</strong> as \u201cWomen on the Move.\u201d</p>"
+          }
+        },
+        "acc_3": {
+          "type": "card",
+          "settings": {
+            "label": "Women Network",
+            "title": "The Inspirique Award",
+            "body": "<p>Awarded for empowering women locally and globally, breaking barriers as a leader who paves the way for living boldly and embracing creativity.</p>"
+          }
+        },
+        "acc_4": {
+          "type": "card",
+          "settings": {
+            "label": "Humanitarian",
+            "title": "The Courage Award",
+            "body": "<p>First recipient of World Relief Seattle\u2019s honor, recognized for pioneering creative advocacy and systemic restoration in global communities.</p>"
+          }
+        },
+        "acc_5": {
+          "type": "card",
+          "settings": {
+            "label": "Diplomatic",
+            "title": "Big Ben Award",
+            "body": "<p>Honored by the British Chinese Youth Federation for international excellence and cultural leadership on a global diplomatic scale.</p>"
+          }
+        },
+        "acc_6": {
+          "type": "card",
+          "settings": {
+            "label": "Global Presence",
+            "title": "Industry Reach",
+            "body": "<p>Fashions and styling featured on the world\u2019s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
+          }
+        }
+      },
+      "block_order": ["acc_1","acc_2","acc_3","acc_4","acc_5","acc_6"]
+    },
+    "press_literary": {
+      "type": "press-literary",
+      "settings": {
+        "eyebrow": "The Literary Movement",
+        "title_line_1": "Let There",
+        "title_italic": "Be Fashion.",
+        "quote": "A Story of Style, Spirit, and a Life Transformed.",
+        "body_1": "<p>This isn\u2019t just a book\u2014it\u2019s a <strong>revelation</strong>. Creative visionary Nancy Vuu invites you behind the runway into the deeper layers of her life. Woven through intimate stories of transformation, it unveils the narrative of a woman who dared to leap into purpose.</p>",
+        "body_2": "<p>From dark closets of self-doubt to the bright runways of purpose, this book speaks to everyone seeking to rediscover identity and spiritual clarity through the lens of fashion.</p>",
+        "cta_1_label": "Request Speaking / Book Tour",
+        "cta_2_label": "Purchase Volume"
+      }
+    },
+    "press_museum": {
+      "type": "press-museum",
+      "settings": {
+        "eyebrow": "The Archive",
+        "heading": "Museum of Editorials"
+      }
+    },
+    "press_media": {
+      "type": "press-media-inquiries",
+      "settings": {
+        "eyebrow": "Voice of Authority",
+        "title_line_1": "Elevate Your Story",
+        "title_line_2_pre": "With",
+        "title_line_2_name": "Nancy Vuu.",
+        "body": "<p>Nancy is available for expert commentary on the intersections of <strong>Social Impact Cinema</strong>, <strong>Luxury Diplomacy</strong>, and <strong>Refugee Empowerment</strong>.</p>",
+        "email": "press@nancyvuu.com",
+        "form_eyebrow": "Media Inquiries",
+        "label_name": "Full Name / Publication",
+        "submit_label": "Submit Inquiry"
+      },
+      "blocks": {
+        "type_1": { "type": "inquiry_type", "settings": { "label": "Interview Request",    "value": "interview"    } },
+        "type_2": { "type": "inquiry_type", "settings": { "label": "Speaking Engagement",  "value": "speaking"     } },
+        "type_3": { "type": "inquiry_type", "settings": { "label": "Collaborative Feature","value": "collaborative" } }
+      },
+      "block_order": ["type_1","type_2","type_3"]
+    },
+    "press_engage": {
+      "type": "press-engage",
+      "settings": {
+        "eyebrow": "Global Engagements",
+        "title_line_1": "Engage the",
+        "title_italic": "Visionary.",
+        "body": "<p>Currently accepting select inquiries for <strong>2025\u20132026</strong> Keynote addresses, brand creative direction, and media appearances.</p>",
+        "email": "studio@nancyvuu.com",
+        "label_name": "Full Name",
+        "label_email": "Email Address",
+        "label_message": "Nature of Inquiry",
+        "submit_label": "Initiate Request"
+      }
+    }
+  },
+  "order": [
+    "press_hero",
+    "press_strip",
+    "press_accolades",
+    "press_literary",
+    "press_museum",
+    "press_media",
+    "press_engage"
+  ]
+}

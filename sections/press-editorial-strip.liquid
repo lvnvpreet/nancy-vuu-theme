@@ -1,0 +1,44 @@
+{%- comment -%} Press Page — Editorial Strip: dark bar with event/publication names {%- endcomment -%}
+<section class="press-strip" data-section-id="{{ section.id }}">
+  <div class="press-strip__inner">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'item' -%}
+        <span class="press-strip__item serif-font" {{ block.shopify_attributes }}>{{ block.settings.name }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press — Editorial Strip",
+  "class": "press-section-strip",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Name",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Label", "default": "Vogue" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press — Editorial Strip",
+      "blocks": [
+        { "type": "item", "settings": { "name": "The Oscars" } },
+        { "type": "item", "settings": { "name": "The Grammys" } },
+        { "type": "item", "settings": { "name": "Nickelodeon" } },
+        { "type": "item", "settings": { "name": "Cannes Film Festival" } },
+        { "type": "item", "settings": { "name": "American Music Awards" } },
+        { "type": "item", "settings": { "name": "Vogue" } },
+        { "type": "item", "settings": { "name": "Harper's Bazaar" } },
+        { "type": "item", "settings": { "name": "Elle" } },
+        { "type": "item", "settings": { "name": "Huffington Post" } },
+        { "type": "item", "settings": { "name": "Cosmopolitan" } },
+        { "type": "item", "settings": { "name": "Brides" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,82 @@
+{%- comment -%} Press Page — Literary: two-column book section with image hover effect {%- endcomment -%}
+<section id="literary" class="press-literary" data-section-id="{{ section.id }}">
+  <div class="press-literary__inner">
+
+    <!-- Left: Content -->
+    <div class="press-literary__content reveal">
+      <span class="press-gold-label press-literary__eyebrow">{{ section.settings.eyebrow | default: 'The Literary Movement' }}</span>
+
+      <h2 class="press-literary__title serif-font">
+        "{{ section.settings.title_line_1 | default: 'Let There' }}"<br>
+        <em class="press-literary__title-italic">{{ section.settings.title_italic | default: 'Be Fashion.' }}</em>
+      </h2>
+
+      <div class="press-literary__quote">
+        <p class="press-literary__quote-text">{{ section.settings.quote | default: 'A Story of Style, Spirit, and a Life Transformed.' }}</p>
+      </div>
+
+      <div class="press-literary__body">
+        {%- if section.settings.body_1 != blank -%}
+          <p>{{ section.settings.body_1 }}</p>
+        {%- endif -%}
+        {%- if section.settings.body_2 != blank -%}
+          <p>{{ section.settings.body_2 }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="press-literary__ctas">
+        {%- if section.settings.cta_1_label != blank -%}
+          <a href="{{ section.settings.cta_1_link | default: '#' }}" class="press-btn-black">{{ section.settings.cta_1_label }}</a>
+        {%- endif -%}
+        {%- if section.settings.cta_2_label != blank -%}
+          <a href="{{ section.settings.cta_2_link | default: '#' }}" class="press-btn-outline">{{ section.settings.cta_2_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Right: Book Image -->
+    <div class="press-literary__media reveal">
+      <div class="press-literary__media-wrap">
+        {%- if section.settings.book_image != blank -%}
+          <img
+            src="{{ section.settings.book_image | image_url: width: 1000 }}"
+            srcset="{{ section.settings.book_image | image_url: width: 600 }} 600w, {{ section.settings.book_image | image_url: width: 1000 }} 1000w"
+            sizes="(max-width: 768px) 100vw, 40vw"
+            alt="{{ section.settings.book_image.alt | default: 'Let There Be Fashion Book' }}"
+            class="press-literary__img"
+            loading="lazy">
+        {%- else -%}
+          <img
+            src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1000"
+            alt="Let There Be Fashion Book"
+            class="press-literary__img"
+            loading="lazy">
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press — Literary",
+  "class": "press-section-literary",
+  "settings": [
+    { "type": "image_picker", "id": "book_image",  "label": "Book Image" },
+    { "type": "text",         "id": "eyebrow",     "label": "Eyebrow",            "default": "The Literary Movement" },
+    { "type": "text",         "id": "title_line_1","label": "Title — Quote Open",  "default": "Let There" },
+    { "type": "text",         "id": "title_italic","label": "Title — Italic Line", "default": "Be Fashion." },
+    { "type": "text",         "id": "quote",       "label": "Sub-Quote",           "default": "A Story of Style, Spirit, and a Life Transformed." },
+    { "type": "richtext",     "id": "body_1",      "label": "Body Paragraph 1",    "default": "<p>This isn\u2019t just a book\u2014it\u2019s a <strong>revelation</strong>. Creative visionary Nancy Vuu invites you behind the runway into the deeper layers of her life. Woven through intimate stories of transformation, it unveils the narrative of a woman who dared to leap into purpose.</p>" },
+    { "type": "richtext",     "id": "body_2",      "label": "Body Paragraph 2",    "default": "<p>From dark closets of self-doubt to the bright runways of purpose, this book speaks to everyone seeking to rediscover identity and spiritual clarity through the lens of fashion.</p>" },
+    { "type": "text",         "id": "cta_1_label", "label": "CTA 1 Label",         "default": "Request Speaking / Book Tour" },
+    { "type": "url",          "id": "cta_1_link",  "label": "CTA 1 Link" },
+    { "type": "text",         "id": "cta_2_label", "label": "CTA 2 Label",         "default": "Purchase Volume" },
+    { "type": "url",          "id": "cta_2_link",  "label": "CTA 2 Link" }
+  ],
+  "presets": [
+    { "name": "Press — Literary" }
+  ]
+}
+{% endschema %}

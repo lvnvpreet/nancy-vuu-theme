@@ -1,0 +1,100 @@
+{%- comment -%} Press Page — Accolades: 3-column grid of border-left award cards {%- endcomment -%}
+<section id="accolades" class="press-accolades" data-section-id="{{ section.id }}">
+  <div class="press-accolades__inner">
+
+    <div class="press-accolades__header reveal">
+      <span class="press-gold-label">{{ section.settings.eyebrow | default: 'Distinction & Impact' }}</span>
+      <h2 class="press-accolades__title serif-font">{{ section.settings.heading | default: 'Global Accolades' }}</h2>
+    </div>
+
+    <div class="press-accolades__grid reveal">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card' -%}
+          <div class="press-accolade-card" {{ block.shopify_attributes }}>
+            <span class="press-gold-label press-accolade-card__label">{{ block.settings.label }}</span>
+            <h3 class="press-accolade-card__title serif-font">{{ block.settings.title }}</h3>
+            <p class="press-accolade-card__body">{{ block.settings.body }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press — Accolades",
+  "class": "press-section-accolades",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow",  "default": "Distinction & Impact" },
+    { "type": "text", "id": "heading", "label": "Heading",  "default": "Global Accolades" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Accolade Card",
+      "settings": [
+        { "type": "text",     "id": "label", "label": "Gold Label",  "default": "Cinematic Excellence" },
+        { "type": "text",     "id": "title", "label": "Card Title",  "default": "\"Unto Me\" Film Honors" },
+        { "type": "richtext", "id": "body",  "label": "Description", "default": "<p>Recipient of 4 prestigious film awards, highlighted by <strong>Best Short Fashion Film</strong> at the Global Short Film Awards in Cannes, alongside three domestic honors for creative excellence.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press — Accolades",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "label": "Cinematic Excellence",
+            "title": "\"Unto Me\" Film Honors",
+            "body": "<p>Recipient of 4 prestigious film awards, highlighted by <strong>Best Short Fashion Film</strong> at the Global Short Film Awards in Cannes, alongside three domestic honors for creative excellence.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "label": "Leadership Recognition",
+            "title": "People on the Move",
+            "body": "<p>Recognized by the <strong>Silicon Valley Business Journal</strong> as \u201cPeople on the Move\u201d and the <strong>San Francisco Business Times</strong> as \u201cWomen on the Move.\u201d</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "label": "Women Network",
+            "title": "The Inspirique Award",
+            "body": "<p>Awarded for empowering women locally and globally, breaking barriers as a leader who paves the way for living boldly and embracing creativity.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "label": "Humanitarian",
+            "title": "The Courage Award",
+            "body": "<p>First recipient of World Relief Seattle\u2019s honor, recognized for pioneering creative advocacy and systemic restoration in global communities.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "label": "Diplomatic",
+            "title": "Big Ben Award",
+            "body": "<p>Honored by the British Chinese Youth Federation for international excellence and cultural leadership on a global diplomatic scale.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "label": "Global Presence",
+            "title": "Industry Reach",
+            "body": "<p>Fashions and styling featured on the world\u2019s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

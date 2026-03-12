@@ -1,0 +1,97 @@
+{%- comment -%} Press Page — Media Inquiries: left contact info + right form with select {%- endcomment -%}
+<section class="press-media" data-section-id="{{ section.id }}">
+  <div class="press-media__inner">
+
+    <!-- Left: Info -->
+    <div class="press-media__content reveal">
+      <span class="press-gold-label">{{ section.settings.eyebrow | default: 'Voice of Authority' }}</span>
+      <h2 class="press-media__title serif-font">
+        {{ section.settings.title_line_1 | default: 'Elevate Your Story' }}<br>
+        {{ section.settings.title_line_2_pre | default: 'With' }}
+        <span class="press-media__title-muted">{{ section.settings.title_line_2_name | default: 'Nancy Vuu.' }}</span>
+      </h2>
+      <p class="press-media__body">
+        {{ section.settings.body | default: 'Nancy is available for expert commentary on the intersections of <strong>Social Impact Cinema</strong>, <strong>Luxury Diplomacy</strong>, and <strong>Refugee Empowerment</strong>.' }}
+      </p>
+      <a href="mailto:{{ section.settings.email | default: 'press@nancyvuu.com' }}" class="press-media__email serif-font">
+        {{ section.settings.email | default: 'press@nancyvuu.com' }}
+      </a>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="press-media__form-wrap reveal">
+      <span class="press-gold-label" style="margin-bottom:3rem;">{{ section.settings.form_eyebrow | default: 'Media Inquiries' }}</span>
+      {%- form 'contact', id: 'press-media-form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="press-form-success">
+            <p>Your inquiry has been received. Our team will be in touch shortly.</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="press-form-errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="press-media__form">
+            <div>
+              <input type="text" name="contact[name]" value="{{ form.name }}"
+                placeholder="{{ section.settings.label_name | default: 'Full Name / Publication' }}"
+                class="press-input" required>
+            </div>
+            <div class="press-media__select-wrap">
+              <select name="contact[inquiry_type]" class="press-input">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'inquiry_type' -%}
+                    <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+              <svg class="press-media__select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <input type="hidden" name="contact[email]" value="{{ form.email | default: 'inquiry@press.com' }}">
+            <button type="submit" class="press-btn-black press-btn-full">
+              {{ section.settings.submit_label | default: 'Submit Inquiry' }}
+            </button>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press — Media Inquiries",
+  "class": "press-section-media",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",          "label": "Left Eyebrow",         "default": "Voice of Authority" },
+    { "type": "text",     "id": "title_line_1",      "label": "Title Line 1",         "default": "Elevate Your Story" },
+    { "type": "text",     "id": "title_line_2_pre",  "label": "Title Line 2 Prefix",  "default": "With" },
+    { "type": "text",     "id": "title_line_2_name", "label": "Title Line 2 Name",    "default": "Nancy Vuu." },
+    { "type": "richtext", "id": "body",              "label": "Body Text",            "default": "<p>Nancy is available for expert commentary on the intersections of <strong>Social Impact Cinema</strong>, <strong>Luxury Diplomacy</strong>, and <strong>Refugee Empowerment</strong>.</p>" },
+    { "type": "text",     "id": "email",             "label": "Press Email",          "default": "press@nancyvuu.com" },
+    { "type": "text",     "id": "form_eyebrow",      "label": "Form Eyebrow",         "default": "Media Inquiries" },
+    { "type": "text",     "id": "label_name",        "label": "Name Field Placeholder","default": "Full Name / Publication" },
+    { "type": "text",     "id": "submit_label",      "label": "Submit Button Label",  "default": "Submit Inquiry" }
+  ],
+  "blocks": [
+    {
+      "type": "inquiry_type",
+      "name": "Inquiry Type",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Option Label", "default": "Interview Request" },
+        { "type": "text", "id": "value", "label": "Option Value", "default": "interview" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press — Media Inquiries",
+      "blocks": [
+        { "type": "inquiry_type", "settings": { "label": "Interview Request",    "value": "interview"    } },
+        { "type": "inquiry_type", "settings": { "label": "Speaking Engagement",  "value": "speaking"     } },
+        { "type": "inquiry_type", "settings": { "label": "Collaborative Feature","value": "collaborative" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

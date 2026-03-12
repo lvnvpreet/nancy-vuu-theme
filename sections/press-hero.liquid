@@ -1,0 +1,49 @@
+{%- comment -%} Press Page — Hero: full-viewport, centred text, faint background image {%- endcomment -%}
+<section class="press-hero" data-section-id="{{ section.id }}">
+  <div class="press-hero__bg">
+    {%- if section.settings.bg_image != blank -%}
+      <img
+        src="{{ section.settings.bg_image | image_url: width: 2000 }}"
+        srcset="{{ section.settings.bg_image | image_url: width: 1000 }} 1000w, {{ section.settings.bg_image | image_url: width: 2000 }} 2000w"
+        sizes="100vw"
+        alt=""
+        class="press-hero__bg-img"
+        loading="eager">
+    {%- else -%}
+      <img
+        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=2000"
+        alt=""
+        class="press-hero__bg-img"
+        loading="eager">
+    {%- endif -%}
+  </div>
+
+  <div class="press-hero__content reveal">
+    <span class="press-gold-label press-hero__eyebrow">{{ section.settings.eyebrow | default: 'Voice of Authority' }}</span>
+    <h1 class="press-hero__title serif-font">
+      {{ section.settings.title_line_1 | default: 'The Architecture' }}<br>
+      <em>{{ section.settings.title_italic | default: 'of' }}</em> {{ section.settings.title_line_2 | default: 'Worth' }}
+    </h1>
+    <p class="press-hero__sub">
+      {{ section.settings.subtitle | default: 'Redefining the individual through high-fashion, cinematic truth, and human advocacy.' }}
+    </p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press — Hero",
+  "class": "press-section-hero",
+  "settings": [
+    { "type": "image_picker", "id": "bg_image",    "label": "Background Image (faint)" },
+    { "type": "text",         "id": "eyebrow",     "label": "Eyebrow Label",    "default": "Voice of Authority" },
+    { "type": "text",         "id": "title_line_1","label": "Title — Line 1",   "default": "The Architecture" },
+    { "type": "text",         "id": "title_italic","label": "Title — Italic Word","default": "of" },
+    { "type": "text",         "id": "title_line_2","label": "Title — Line 3",   "default": "Worth" },
+    { "type": "textarea",     "id": "subtitle",    "label": "Subtitle",         "default": "Redefining the individual through high-fashion, cinematic truth, and human advocacy." }
+  ],
+  "presets": [
+    { "name": "Press — Hero" }
+  ]
+}
+{% endschema %}

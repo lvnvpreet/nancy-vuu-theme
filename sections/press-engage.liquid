@@ -1,0 +1,78 @@
+{%- comment -%} Press Page — Engage: two-column contact form for 2025-2026 engagements {%- endcomment -%}
+<section id="engage" class="press-engage" data-section-id="{{ section.id }}">
+  <div class="press-engage__inner">
+
+    <!-- Left: Info -->
+    <div class="press-engage__content reveal">
+      <span class="press-gold-label">{{ section.settings.eyebrow | default: 'Global Engagements' }}</span>
+      <h2 class="press-engage__title serif-font">
+        {{ section.settings.title_line_1 | default: 'Engage the' }}<br>
+        <em class="press-engage__title-italic">{{ section.settings.title_italic | default: 'Visionary.' }}</em>
+      </h2>
+      <p class="press-engage__body">
+        {{ section.settings.body | default: 'Currently accepting select inquiries for <strong>2025–2026</strong> Keynote addresses, brand creative direction, and media appearances.' }}
+      </p>
+      <a href="mailto:{{ section.settings.email | default: 'studio@nancyvuu.com' }}" class="press-engage__email serif-font">
+        {{ section.settings.email | default: 'studio@nancyvuu.com' }}
+      </a>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="press-engage__form-wrap reveal">
+      {%- form 'contact', id: 'press-engage-form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="press-form-success">
+            <p>Your inquiry has been received. Nancy Vuu's executive team will be in touch shortly.</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="press-form-errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="press-engage__form">
+            <div>
+              <input type="text" name="contact[name]" value="{{ form.name }}"
+                placeholder="{{ section.settings.label_name | default: 'Full Name' }}"
+                class="press-input" required>
+            </div>
+            <div>
+              <input type="email" name="contact[email]" value="{{ form.email }}"
+                placeholder="{{ section.settings.label_email | default: 'Email Address' }}"
+                class="press-input" required>
+            </div>
+            <div>
+              <textarea name="contact[body]"
+                placeholder="{{ section.settings.label_message | default: 'Nature of Inquiry' }}"
+                rows="1"
+                class="press-input press-input--textarea"></textarea>
+            </div>
+            <button type="submit" class="press-btn-black press-btn-full">
+              {{ section.settings.submit_label | default: 'Initiate Request' }}
+            </button>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press — Engage",
+  "class": "press-section-engage",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",       "label": "Eyebrow",                  "default": "Global Engagements" },
+    { "type": "text",     "id": "title_line_1",  "label": "Title Line 1",             "default": "Engage the" },
+    { "type": "text",     "id": "title_italic",  "label": "Title — Italic",           "default": "Visionary." },
+    { "type": "richtext", "id": "body",          "label": "Body Text",                "default": "<p>Currently accepting select inquiries for <strong>2025\u20132026</strong> Keynote addresses, brand creative direction, and media appearances.</p>" },
+    { "type": "text",     "id": "email",         "label": "Studio Email",             "default": "studio@nancyvuu.com" },
+    { "type": "text",     "id": "label_name",    "label": "Name Placeholder",         "default": "Full Name" },
+    { "type": "text",     "id": "label_email",   "label": "Email Placeholder",        "default": "Email Address" },
+    { "type": "text",     "id": "label_message", "label": "Message Placeholder",      "default": "Nature of Inquiry" },
+    { "type": "text",     "id": "submit_label",  "label": "Submit Button Label",      "default": "Initiate Request" }
+  ],
+  "presets": [
+    { "name": "Press — Engage" }
+  ]
+}
+{% endschema %}

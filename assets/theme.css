@@ -4658,3 +4658,444 @@ div + section {
   .manifesto { padding: 5rem 1.5rem 4rem; }
   .heritage-section { padding: 8rem 1.5rem; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PRESS PAGE — The Architecture of Worth
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Shared Press Utilities ─────────────────────────────── */
+.press-gold-label {
+  color: #B59461;
+  letter-spacing: 0.3em;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.press-btn-black {
+  display: inline-block;
+  background: #1A1A1A;
+  color: #FDFCFB;
+  padding: 1.25rem 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.press-btn-black:hover { opacity: 0.8; }
+
+.press-btn-outline {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #E5E7EB;
+  color: #1A1A1A;
+  padding: 1.25rem 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+.press-btn-outline:hover { border-color: #9CA3AF; }
+
+.press-btn-full { width: 100%; text-align: center; }
+
+.press-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #E5E7EB;
+  width: 100%;
+  padding: 0.75rem 0;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: #1A1A1A;
+  transition: border-color 0.3s;
+  display: block;
+}
+.press-input:focus { border-color: #1A1A1A; }
+.press-input::placeholder { color: #9CA3AF; }
+.press-input--textarea { resize: none; }
+
+.press-form-success {
+  padding: 1.5rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+}
+.press-form-errors {
+  padding: 1rem;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  margin-bottom: 1rem;
+}
+
+/* ── Press Hero ──────────────────────────────────────────── */
+.press-hero {
+  position: relative;
+  height: 100vh;
+  margin-top: -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #FDFCFB;
+}
+.press-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.press-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+}
+.press-hero__content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+.press-hero__eyebrow { margin-bottom: 1.5rem; }
+.press-hero__title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #1A1A1A;
+}
+.press-hero__sub {
+  color: #78716C;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 2;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+/* ── Press Editorial Strip ───────────────────────────────── */
+.press-strip {
+  background: #131313;
+  padding: 3rem 0;
+}
+.press-strip__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 4rem;
+  opacity: 0.7;
+}
+.press-strip__item {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── Press Accolades ─────────────────────────────────────── */
+.press-accolades {
+  padding: 8rem 1.5rem;
+  background: #FDFCFB;
+}
+.press-accolades__inner { max-width: 1280px; margin: 0 auto; }
+.press-accolades__header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.press-accolades__title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #1A1A1A;
+  margin-top: 1rem;
+}
+.press-accolades__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+@media (max-width: 1024px) { .press-accolades__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .press-accolades__grid { grid-template-columns: 1fr; } }
+
+.press-accolade-card {
+  border-left: 1px solid #e7e5e4;
+  padding: 1rem 0 1rem 2rem;
+}
+.press-accolade-card__label { margin-bottom: 1rem; }
+.press-accolade-card__title {
+  font-size: 1.5rem;
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.press-accolade-card__body {
+  color: #78716C;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  font-weight: 300;
+  font-family: var(--font-sans);
+}
+.press-accolade-card__body strong { color: #292524; font-weight: 500; }
+.press-accolade-card__body p { margin: 0; }
+
+/* ── Press Literary ──────────────────────────────────────── */
+.press-literary {
+  padding: 8rem 1.5rem;
+  background: #fff;
+  border-top: 1px solid #F5F5F4;
+  overflow: hidden;
+}
+.press-literary__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .press-literary__inner { flex-direction: row; gap: 6rem; }
+  .press-literary__content { flex: 3; }
+  .press-literary__media   { flex: 2; }
+}
+.press-literary__eyebrow { margin-bottom: 2rem; }
+.press-literary__title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+  color: #1A1A1A;
+}
+.press-literary__title-italic { color: #A8A29E; }
+.press-literary__quote {
+  padding-left: 1.5rem;
+  border-left: 1px solid #F5F5F4;
+  margin-bottom: 2.5rem;
+}
+.press-literary__quote-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #292524;
+  line-height: 1.6;
+}
+.press-literary__body {
+  max-width: 36rem;
+  color: #78716C;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+}
+.press-literary__body p + p { margin-top: 1.5rem; }
+.press-literary__body p { margin: 0; }
+.press-literary__body strong { color: #1A1A1A; font-weight: 500; }
+.press-literary__ctas {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) { .press-literary__ctas { flex-direction: row; } }
+.press-literary__media { width: 100%; }
+.press-literary__media-wrap { position: relative; }
+.press-literary__img {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  filter: grayscale(100%);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+  transition: filter 0.7s ease;
+  display: block;
+}
+.press-literary__img:hover { filter: grayscale(0%); }
+
+/* ── Press Museum ────────────────────────────────────────── */
+.press-museum {
+  padding: 8rem 1.5rem;
+  background: #F9F8F6;
+}
+.press-museum__inner { max-width: 1280px; margin: 0 auto; }
+.press-museum__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  gap: 1rem;
+}
+.press-museum__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-top: 1rem;
+  color: #1A1A1A;
+}
+.press-museum__link {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border-bottom: 1px solid #e7e5e4;
+  padding-bottom: 0.25rem;
+  color: #1A1A1A;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+.press-museum__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 768px) { .press-museum__grid { grid-template-columns: 1fr; } }
+.press-museum__item {
+  aspect-ratio: 3 / 4;
+  background: #D6D3D1;
+  overflow: hidden;
+}
+.press-museum__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 1s ease, filter 1s ease;
+  display: block;
+}
+.press-museum__item:hover .press-museum__img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+/* ── Press Media Inquiries ───────────────────────────────── */
+.press-media {
+  padding: 8rem 1.5rem;
+  background: #fff;
+}
+.press-media__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .press-media__inner { flex-direction: row; gap: 8rem; }
+  .press-media__content  { flex: 1; }
+  .press-media__form-wrap { flex: 1; }
+}
+.press-media__title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #1A1A1A;
+}
+.press-media__title-muted { color: #D6D3D1; }
+.press-media__body {
+  color: #78716C;
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 28rem;
+  margin-bottom: 3rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+.press-media__body p { margin: 0; }
+.press-media__body strong { color: #1A1A1A; font-weight: 500; font-style: italic; }
+.press-media__email {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-style: italic;
+  color: #1A1A1A;
+  text-decoration: none;
+  display: block;
+}
+.press-media__form-wrap {
+  background: #F9F9F9;
+  padding: 3rem;
+  width: 100%;
+}
+@media (min-width: 768px) { .press-media__form-wrap { padding: 5rem; } }
+.press-media__form { display: flex; flex-direction: column; gap: 3rem; }
+.press-media__select-wrap { position: relative; }
+.press-media__select-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #A8A29E;
+  pointer-events: none;
+}
+.press-media__form-wrap .press-input { appearance: none; -webkit-appearance: none; }
+
+/* ── Press Engage ────────────────────────────────────────── */
+.press-engage {
+  padding: 8rem 1.5rem;
+  background: #FDFCFB;
+}
+.press-engage__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .press-engage__inner { flex-direction: row; gap: 8rem; }
+  .press-engage__content  { flex: 1; }
+  .press-engage__form-wrap { flex: 1; }
+}
+.press-engage__title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #1A1A1A;
+}
+.press-engage__title-italic { color: #D6D3D1; font-style: italic; }
+.press-engage__body {
+  color: #78716C;
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 28rem;
+  margin-bottom: 3rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+.press-engage__body p { margin: 0; }
+.press-engage__body strong { color: #1A1A1A; font-weight: 500; }
+.press-engage__email {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-style: italic;
+  color: #1A1A1A;
+  text-decoration: none;
+  display: block;
+}
+.press-engage__form-wrap {
+  background: #F9F9F9;
+  padding: 3rem;
+  width: 100%;
+}
+@media (min-width: 768px) { .press-engage__form-wrap { padding: 5rem; } }
+.press-engage__form { display: flex; flex-direction: column; gap: 3rem; }
