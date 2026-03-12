@@ -244,7 +244,7 @@
           "type": "link",
           "settings": {
             "label": "Book for Speaking",
-            "url": "/pages/book"
+            "url": "shopify://pages/the-library"
           }
         },
         "l2": {
