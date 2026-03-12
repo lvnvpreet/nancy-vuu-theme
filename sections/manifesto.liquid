@@ -13,6 +13,32 @@
     {% if section.settings.body != blank %}
       <div class="manifesto__body body-copy" style="color:{{ section.settings.text_color }};">{{ section.settings.body }}</div>
     {% endif %}
+    {% if section.settings.col1_heading != blank or section.settings.col2_heading != blank %}
+      <div class="manifesto__cols">
+        {% if section.settings.col1_heading != blank %}
+          <div class="manifesto__col">
+            <h3 class="manifesto__col-heading">{{ section.settings.col1_heading }}</h3>
+            <p class="manifesto__col-body">{{ section.settings.col1_body }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.col2_heading != blank %}
+          <div class="manifesto__col">
+            <h3 class="manifesto__col-heading">{{ section.settings.col2_heading }}</h3>
+            <p class="manifesto__col-body">{{ section.settings.col2_body }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.cta1_label != blank or section.settings.cta2_label != blank %}
+      <div class="manifesto__ctas">
+        {% if section.settings.cta1_label != blank %}
+          <a href="{{ section.settings.cta1_link | default: '#' }}" class="btn-luxury" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">{{ section.settings.cta1_label }}</a>
+        {% endif %}
+        {% if section.settings.cta2_label != blank %}
+          <a href="{{ section.settings.cta2_link | default: '#' }}" class="btn-luxury" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">{{ section.settings.cta2_label }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -27,7 +53,15 @@
     { "type": "richtext", "id": "body",          "label": "Body Text" },
     { "type": "color",    "id": "bg_color",      "label": "Background",     "default": "#ffffff" },
     { "type": "color",    "id": "text_color",    "label": "Text Color",     "default": "#111111" },
-    { "type": "text",     "id": "extra_class",   "label": "Extra CSS Class" }
+    { "type": "text",     "id": "extra_class",   "label": "Extra CSS Class" },
+    { "type": "text",     "id": "col1_heading",  "label": "Column 1 Heading" },
+    { "type": "textarea", "id": "col1_body",     "label": "Column 1 Body text" },
+    { "type": "text",     "id": "col2_heading",  "label": "Column 2 Heading" },
+    { "type": "textarea", "id": "col2_body",     "label": "Column 2 Body text" },
+    { "type": "text",     "id": "cta1_label",    "label": "CTA 1 Label" },
+    { "type": "url",      "id": "cta1_link",     "label": "CTA 1 Link" },
+    { "type": "text",     "id": "cta2_label",    "label": "CTA 2 Label" },
+    { "type": "url",      "id": "cta2_link",     "label": "CTA 2 Link" }
   ]
 }
 {% endschema %}

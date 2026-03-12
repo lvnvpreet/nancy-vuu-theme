@@ -947,6 +947,19 @@ body::after {
   letter-spacing: .3em; text-transform: uppercase;
   margin-bottom: 2rem; opacity: .8;
 }
+.page-hero__subtitle--serif {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-style: italic; letter-spacing: .05em;
+  text-transform: none; opacity: .9;
+  margin-bottom: 1rem;
+}
+.page-hero__tagline {
+  font-family: var(--font-sans);
+  font-size: .65rem; text-transform: uppercase;
+  letter-spacing: .5em; opacity: .6;
+  margin-bottom: 4rem; display: block;
+}
 
 /* ── MANIFESTO (reusable) ───────────────────────────────── */
 .manifesto {
@@ -964,6 +977,34 @@ body::after {
 }
 .manifesto__body { max-width: 600px; margin: 1.5rem auto 0; }
 
+/* Manifesto two-column Mission/Vision layout */
+.manifesto__cols {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; text-align: left;
+  max-width: 48rem; margin: 3rem auto 0;
+}
+.manifesto__col {
+  border-left: 1px solid rgba(197,160,89,.3);
+  padding-left: 2rem;
+}
+.manifesto__col-heading {
+  font-family: var(--font-sans);
+  font-size: .6rem; text-transform: uppercase;
+  letter-spacing: .5em; font-weight: 700;
+  color: var(--gold, #c5a059); margin-bottom: 1rem;
+}
+.manifesto__col-body {
+  font-size: .875rem; color: #71717a;
+  font-weight: 300; line-height: 1.7;
+}
+.manifesto__ctas {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  justify-content: center; margin-top: 3.5rem;
+}
+@media (max-width: 640px) {
+  .manifesto__cols { grid-template-columns: 1fr; gap: 2rem; }
+}
+
 /* ── CTA CLOSER (reusable) ─────────────────────────────── */
 .cta-closer {
   min-height: 90vh; width: 100%; position: relative;
@@ -980,6 +1021,24 @@ body::after {
   font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.1; margin-bottom: 1.5rem;
 }
 .cta-closer__sub { max-width: 500px; margin: 0 auto 2.5rem; }
+.cta-closer__btns {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  justify-content: center; align-items: center;
+}
+
+/* Light / compact variants */
+.cta-closer--light {
+  background: #fafafa;
+  min-height: auto;
+  padding: 10rem 2.5rem;
+}
+.cta-closer--light .cta-closer__overlay { display: none; }
+.cta-closer--light .cta-closer__title,
+.cta-closer--light .cta-closer__sub { color: var(--ink) !important; }
+.cta-closer--compact {
+  min-height: auto;
+  padding: 10rem 2.5rem;
+}
 
 /* ── AUDIENCE MODAL ─────────────────────────────────────── */
 .audience-modal {
@@ -1227,10 +1286,10 @@ body::after {
   display: inline-block; padding: 1rem 3rem;
   font-family: var(--font-sans); font-size: .7rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: .3em;
-  background: var(--gold); color: var(--ink); border: none;
+  background: var(--gold); color: #fff; border: none;
   cursor: pointer; transition: all .4s ease;
 }
-.btn-fill:hover { background: #b08d40; }
+.btn-fill:hover { background: #b08d40; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(197,160,89,.3); }
 
 /* ── CONCIERGE BADGE ────────────────────────────────────── */
 .concierge-badge {

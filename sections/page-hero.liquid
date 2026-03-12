@@ -15,12 +15,23 @@
       {% if section.settings.title_line_3 != blank %}<span>{{ section.settings.title_line_3 }}</span>{% endif %}
     </h1>
     {% if section.settings.subtitle != blank %}
-      <p class="page-hero__subtitle" style="color:{{ section.settings.text_color }};">{{ section.settings.subtitle }}</p>
+      {% if section.settings.subtitle_serif %}
+        <p class="page-hero__subtitle page-hero__subtitle--serif serif-font" style="color:{{ section.settings.text_color }};"><em>{{ section.settings.subtitle }}</em></p>
+      {% else %}
+        <p class="page-hero__subtitle" style="color:{{ section.settings.text_color }};">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    {% endif %}
+    {% if section.settings.tagline != blank %}
+      <p class="page-hero__tagline" style="color:{{ section.settings.text_color }};">{{ section.settings.tagline }}</p>
     {% endif %}
     {% if section.settings.cta_label != blank %}
-      <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
-        {{ section.settings.cta_label }}
-      </a>
+      {% if section.settings.cta_style == 'fill' %}
+        <a href="{{ section.settings.cta_link }}" class="btn-fill">{{ section.settings.cta_label }}</a>
+      {% else %}
+        <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
+          {{ section.settings.cta_label }}
+        </a>
+      {% endif %}
     {% endif %}
   </div>
 </section>
@@ -38,8 +49,20 @@
     { "type": "text",       "id": "title_line_2",    "label": "Title — Line 2 (italic)" },
     { "type": "text",       "id": "title_line_3",    "label": "Title — Line 3" },
     { "type": "textarea",   "id": "subtitle",        "label": "Subtitle" },
+    { "type": "checkbox",   "id": "subtitle_serif",  "label": "Subtitle as large serif italic", "default": false },
+    { "type": "text",       "id": "tagline",         "label": "Tagline (small text below subtitle)" },
     { "type": "text",       "id": "cta_label",       "label": "CTA Label" },
     { "type": "url",        "id": "cta_link",        "label": "CTA Link" },
+    {
+      "type": "select",
+      "id": "cta_style",
+      "label": "CTA Style",
+      "default": "outline",
+      "options": [
+        { "value": "outline", "label": "Outline" },
+        { "value": "fill",    "label": "Filled Gold (btn-fill)" }
+      ]
+    },
     { "type": "color",      "id": "text_color",      "label": "Text Color",       "default": "#ffffff" }
   ]
 }

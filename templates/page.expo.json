@@ -5,8 +5,15 @@
       "type": "page-hero",
       "settings": {
         "overlay_opacity": 60,
-        "title_line_1": "Dream Expo",
-        "subtitle": "Friday, April 24, 2026 • Honolulu, Hawaiʻi"
+        "eyebrow": "Friday, April 24, 2026 • Honolulu, Hawaiʻi",
+        "title_line_2": "Dream Expo",
+        "subtitle": "IGNITE!",
+        "subtitle_serif": true,
+        "tagline": "Believe. Live Realized.",
+        "cta_label": "Get Free Tickets",
+        "cta_link": "https://dreamexpohawaii2026.eventbrite.com/",
+        "cta_style": "fill",
+        "text_color": "#ffffff"
       }
     },
     "mission": {
@@ -15,7 +22,13 @@
         "eyebrow": "Launching Dreams Into Motion",
         "quote": "More than an event — it's a movement.",
         "attribution": "",
-        "body": "<p>The DREAM Expo is a springboard for the people of Hawaiʻi, a community initiative designed to awaken dreams, elevate purpose, and empower individuals across Hawaiʻi to live with passion and impact.</p>"
+        "body": "<p>The DREAM Expo is a springboard for the people of Hawaiʻi, a community initiative designed to awaken dreams, elevate purpose, and empower individuals across Hawaiʻi to live with passion and impact. This annual gathering brings together leaders, learners, and visionaries from every sphere of influence.</p>",
+        "col1_heading": "Mission",
+        "col1_body": "The Dream Expo provides insights, tools and access to resources positioning participants to believe, then live \"Dreams Realized.\"",
+        "col2_heading": "Vision",
+        "col2_body": "The Dream Expo is a springboard for the people of Hawaiʻi to Dream Again — with courage, clarity, and community.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
       }
     },
     "details": {
@@ -38,7 +51,8 @@
         "eyebrow": "The Experience",
         "heading": "Connect. Dream. Build Together.",
         "body": "Utilizing the DREAM Academy blueprint — our signature structure — to build with integrity, grow revenue through sustainable practices and creative innovation.",
-        "cta_text": "View Schedule"
+        "cta_text": "View Schedule",
+        "cta_link": "https://dreamexpohawaii.com/speakers"
       },
       "blocks": {
         "h1": { "type": "highlight", "settings": { "number": "01", "title": "Keynote & Panel Sessions", "description": "Industry leaders share actionable blueprints for vision-to-reality journeys." } },
@@ -57,7 +71,8 @@
         "logo_tagline": "Creativity • Craftsmanship • Connection",
         "body_1": "Born from the unlikely yet inspired friendship between a pizza guy and a couture designer, Red Thread Collective is more than a fashion label — it's a movement of creativity, craftsmanship, and connection.",
         "body_2": "We are proud to honor Red Thread Collective as our Exhibitor of the Year — a brand that beautifully embodies the spirit of dreams realized and collaboration in action.",
-        "cta_text": "Get in Touch"
+        "cta_text": "Get in Touch",
+        "cta_link": "https://dreamexpohawaii.com/contact"
       }
     },
     "connection": {
@@ -65,15 +80,29 @@
       "settings": {
         "eyebrow": "Powered by the Academy Blueprint",
         "quote": "Where Academy Meets Opportunity",
-        "body": "<p>The Dream Expo is the culmination of the Dream Academy journey — where graduates showcase their mastery, connect with industry agents, and step onto the global stage.</p>"
+        "body": "<p>The Dream Expo is the culmination of the Dream Academy journey — where graduates showcase their mastery, connect with industry agents, and step onto the global stage. Every exhibitor, speaker, and attendee is part of a larger ecosystem of excellence.</p>",
+        "cta1_label": "Explore the Academy",
+        "cta1_link": "/pages/dream-academy",
+        "cta2_label": "House of Vuu Foundation",
+        "cta2_link": "/pages/foundation",
+        "bg_color": "#ffffff",
+        "text_color": "#111111"
       }
     },
     "cta": {
       "type": "cta-closer",
       "settings": {
+        "eyebrow": "Hawaiʻi's First-Ever Dream Expo",
         "heading": "Be Part of the Movement",
         "subtext": "Where dreamers and doers are celebrated, gather, connect and build together.",
-        "cta_label": "Get Free Tickets"
+        "cta_label": "Get Free Tickets",
+        "cta_link": "https://dreamexpohawaii2026.eventbrite.com/",
+        "cta_style": "fill",
+        "cta2_label": "Become an Exhibitor",
+        "cta2_link": "https://dreamexpohawaii.com/exhibitor-application",
+        "text_color": "#111111",
+        "bg_light": true,
+        "compact": true
       }
     }
   },

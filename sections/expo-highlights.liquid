@@ -38,7 +38,11 @@
             loading="lazy"
             class="expo-highlights__img">
         {%- else -%}
-          {{ 'lifestyle-1' | placeholder_svg_tag: 'expo-highlights__img placeholder' }}
+          <img
+            src="{{ section.settings.fallback_image_url | default: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80' }}"
+            alt="{{ section.settings.heading }}"
+            loading="lazy"
+            class="expo-highlights__img">
         {%- endif -%}
       </div>
     </div>
@@ -82,6 +86,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "fallback_image_url",
+      "label": "Fallback image URL (if no image uploaded)"
     }
   ],
   "blocks": [
