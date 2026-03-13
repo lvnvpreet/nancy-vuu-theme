@@ -1,18 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
+        "overlay_opacity": 70,
         "eyebrow": "The Physical Proof of Royalty",
-        "overlay_opacity": 70
+        "title": ""
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
+        "eyebrow": "",
         "quote": "A crown is not an ornament—it is an anointing made visible. Our hand-crafted crowns and jewelry are not accessories; they are declarations of authority. Each piece is forged with the same devotion and precision as our couture garments, designed to rest upon those who carry the weight of purpose with grace.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "exclusivity": {
@@ -25,20 +47,85 @@
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
-        "look_1": { "type": "look", "settings": { "title": "The Sovereign Crown", "subtitle": "Hand-Forged Gold-Plated Crown with Crystal Inlay", "badge": "Available for Shipment", "link_text": "Procure Online →" } },
-        "look_2": { "type": "look", "settings": { "title": "The Eden Tiara", "subtitle": "Delicate Floral Tiara with Freshwater Pearls", "badge": "Available for Shipment", "link_text": "Procure Online →" } },
-        "look_3": { "type": "look", "settings": { "title": "The Mandate Ring", "subtitle": "Architectural Signet in Sterling Silver with Onyx", "badge": "Available for Shipment", "link_text": "Procure Online →" } },
-        "look_4": { "type": "look", "settings": { "title": "The Covenant Necklace", "subtitle": "Gold Chain with Hand-Set Swarovski Pendant", "badge": "Available for Shipment", "link_text": "Procure Online →" } },
-        "look_5": { "type": "look", "settings": { "title": "The Heritage Cuff", "subtitle": "Hammered Gold Cuff Bracelet with Engraving", "badge": "Available for Shipment", "link_text": "Procure Online →" } },
-        "look_6": { "type": "look", "settings": { "title": "The Kingdom Earrings", "subtitle": "Statement Drop Earrings in Gold with Crystals", "badge": "Available for Shipment", "link_text": "Procure Online →" } }
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "title": "The Sovereign Crown",
+            "subtitle": "Hand-Forged Gold-Plated Crown with Crystal Inlay",
+            "badge": "Available for Shipment",
+            "link_text": "Procure Online →",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "title": "The Eden Tiara",
+            "subtitle": "Delicate Floral Tiara with Freshwater Pearls",
+            "badge": "Available for Shipment",
+            "link_text": "Procure Online →",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "title": "The Mandate Ring",
+            "subtitle": "Architectural Signet in Sterling Silver with Onyx",
+            "badge": "Available for Shipment",
+            "link_text": "Procure Online →",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "title": "The Covenant Necklace",
+            "subtitle": "Gold Chain with Hand-Set Swarovski Pendant",
+            "badge": "Available for Shipment",
+            "link_text": "Procure Online →",
+            "link": ""
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "title": "The Heritage Cuff",
+            "subtitle": "Hammered Gold Cuff Bracelet with Engraving",
+            "badge": "Available for Shipment",
+            "link_text": "Procure Online →",
+            "link": ""
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "title": "The Kingdom Earrings",
+            "subtitle": "Statement Drop Earrings in Gold with Crystals",
+            "badge": "Available for Shipment",
+            "link_text": "Procure Online →",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6"
+      ],
       "settings": {}
     },
     "main": {
       "type": "main-collection",
+      "custom_css": [
+        ".collection-page .collection-header-text {display: none}"
+      ],
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "columns": "3"
       }
     },
     "cross-sell": {
@@ -47,10 +134,20 @@
         "title": "Direct Acquisition",
         "description": "Unlike our garments which are architected to order, our Crowns and Jewelry are curated for immediate attainment. Every physical masterpiece is prepared for secure shipment to serve as a constant reminder of your unshakeable presence. Global delivery available.",
         "cta_label": "View Shipping & Returns",
+        "cta_link": "",
         "primary_label": "Place an Order",
-        "secondary_label": "Book Atelier Visit"
+        "primary_link": "",
+        "secondary_label": "Book Atelier Visit",
+        "secondary_link": ""
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
+  "order": [
+    "hero",
+    "manifesto",
+    "exclusivity",
+    "lookbook",
+    "main",
+    "cross-sell"
+  ]
 }
