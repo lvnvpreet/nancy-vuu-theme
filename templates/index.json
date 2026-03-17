@@ -182,6 +182,12 @@
     "photography": {
       "type": "photography",
       "blocks": {
+        "marquee_word_bRjmKX": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
+          }
+        },
         "w1": {
           "type": "marquee_word",
           "settings": {
@@ -197,14 +203,22 @@
         "w3": {
           "type": "marquee_word",
           "settings": {
-            "word": "MEMORIALIZE"
+            "word": "ELEVATE"
+          }
+        },
+        "marquee_word_JXmziC": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
           }
         }
       },
       "block_order": [
+        "marquee_word_bRjmKX",
         "w1",
         "w2",
-        "w3"
+        "w3",
+        "marquee_word_JXmziC"
       ],
       "settings": {
         "section_id": "photography",
