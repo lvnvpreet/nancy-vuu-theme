@@ -138,6 +138,7 @@
       "type": "crowns-jewelry",
       "settings": {
         "section_id": "crowns",
+        "bg_image": "shopify://shop_images/Untitled_design_5.jpg",
         "eyebrow": "Jewelry & Headpieces",
         "title": "The Crowning",
         "cta_label": "Adorn Yourself",
