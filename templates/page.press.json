@@ -12,6 +12,7 @@
     "press_hero": {
       "type": "press-hero",
       "settings": {
+        "bg_image": "shopify://shop_images/nancy-vuu-public-speaking.jpg",
         "eyebrow": "Voice of Authority",
         "title_line_1": "The Architecture",
         "title_italic": "of",
