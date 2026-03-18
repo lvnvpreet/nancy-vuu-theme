@@ -98,6 +98,7 @@
         "dest_hawaii": {
           "type": "destination",
           "settings": {
+            "image": "shopify://shop_images/18.jpg",
             "quota": "3 Invitations Remaining",
             "location": "Kaneohe, HI",
             "title": "Dreams Fulfilled",
