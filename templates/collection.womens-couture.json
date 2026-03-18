@@ -117,6 +117,7 @@
         "look_5",
         "look_6"
       ],
+      "disabled": true,
       "settings": {}
     },
     "main": {
