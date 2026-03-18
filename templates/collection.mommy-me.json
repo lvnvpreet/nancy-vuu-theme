@@ -1,18 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
+        "image": "shopify://shop_images/untitled--3_1.jpg",
+        "overlay_opacity": 0,
         "eyebrow": "A Shared Legacy of Grace",
-        "overlay_opacity": 65
+        "title": ""
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
+        "eyebrow": "",
         "quote": "The most powerful inheritance is not wealth—it is identity. Our Mommy & Me collection is a living testament to the bond between mother and child, a shared declaration that royalty is not inherited by blood alone, but passed down through presence, love, and intentional design.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "exclusivity": {
@@ -25,20 +48,82 @@
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
-        "look_1": { "type": "look", "settings": { "title": "The Garden Duo", "subtitle": "Flowing Floral Print in Coordinated Silk", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_2": { "type": "look", "settings": { "title": "The Covenant Pair", "subtitle": "Clean Ivory Ensembles with Lace Detailing", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_3": { "type": "look", "settings": { "title": "The Sunday Best", "subtitle": "Structured Pastel Dresses with Pearl Buttons", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_4": { "type": "look", "settings": { "title": "The Heritage Walk", "subtitle": "Cashmere Twin Sets for Autumn", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_5": { "type": "look", "settings": { "title": "The Celebration Duo", "subtitle": "Embroidered Occasion Wear", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_6": { "type": "look", "settings": { "title": "The Crown & Tiara", "subtitle": "Formal Matching Gowns with Mini Crown Set", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } }
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "title": "The Garden Duo",
+            "subtitle": "Flowing Floral Print in Coordinated Silk",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "title": "The Covenant Pair",
+            "subtitle": "Clean Ivory Ensembles with Lace Detailing",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "title": "The Sunday Best",
+            "subtitle": "Structured Pastel Dresses with Pearl Buttons",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "title": "The Heritage Walk",
+            "subtitle": "Cashmere Twin Sets for Autumn",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "title": "The Celebration Duo",
+            "subtitle": "Embroidered Occasion Wear",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "title": "The Crown & Tiara",
+            "subtitle": "Formal Matching Gowns with Mini Crown Set",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6"
+      ],
       "settings": {}
     },
     "main": {
       "type": "main-collection",
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "columns": "3"
       }
     },
     "cross-sell": {
@@ -50,9 +135,17 @@
         "cta_link": "/collections/crowns-jewelry",
         "primary_label": "Book Atelier Visit",
         "primary_link": "/pages/bridal",
-        "secondary_label": "Virtual Consultation"
+        "secondary_label": "Virtual Consultation",
+        "secondary_link": ""
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
+  "order": [
+    "hero",
+    "manifesto",
+    "exclusivity",
+    "lookbook",
+    "main",
+    "cross-sell"
+  ]
 }
