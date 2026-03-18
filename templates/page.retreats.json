@@ -86,7 +86,7 @@
         "dest_napa": {
           "type": "destination",
           "settings": {
-            "image": "shopify://shop_images/10.jpg",
+            "image": "shopify://shop_images/5.jpg",
             "quota": "4 Invitations Remaining",
             "location": "Napa Valley, CA",
             "title": "Dream Again",
@@ -102,7 +102,7 @@
             "quota": "3 Invitations Remaining",
             "location": "Kaneohe, HI & Napa Valley, Ca",
             "title": "Dreams Fulfilled",
-            "description": "A seaside sanctuary focused on actualization and peace. Extended for those ready to move from vision to implementation.",
+            "description": "The Dreams Fulfilled Retreat is the definitive next step for the visionary ready to build. While DREAM Again restores the dreamer, Dreams Fulfilled equips the builder. This high-level immersion focuses on the \"How\"—transforming your internal overflow into a lived reality.\n\nThrough strategic consultation, bespoke blueprints, and identified pathways for both your personal life and business legacy, Nancy Vuu provides the structural guidance needed to manifest your vision. This is a workspace of quiet serenity where strategic conversations meet divine inspiration. You will leave not just with a dream, but with a roadmap to fulfillment.",
             "cta_text": "Request Audience",
             "modal_trigger": true
           }
