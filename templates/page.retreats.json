@@ -110,6 +110,7 @@
         "dest_couples": {
           "type": "destination",
           "settings": {
+            "image": "shopify://shop_images/7.jpg",
             "quota": "Exclusive Booking",
             "location": "Boutique Haven",
             "title": "The Covenant",
