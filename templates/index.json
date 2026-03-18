@@ -57,18 +57,6 @@
         "chart_title": "The Journey — From Dream to Reality"
       }
     },
-    "womens-couture": {
-      "type": "womens-couture",
-      "settings": {
-        "section_id": "womens-couture",
-        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
-        "eyebrow": "Collection",
-        "title": "Women's Couture",
-        "tagline": "Elegance · Power · Grace",
-        "cta_label": "Explore Collection",
-        "cta_link": "/collections/womens-couture"
-      }
-    },
     "mens-suits": {
       "type": "split-content",
       "settings": {
@@ -84,6 +72,64 @@
         "description": "Seth Eden Bespoke is where traditional sartorial heritage meets a modern, visionary soul.  Artistry in every thread. Our Signature Seth Eden suits represent the pinnacle of custom tailoring. Blending old-world craftsmanship with a contemporary edge, we create garments for the modern individual who demands perfection in every line.\n\nExperience a silhouette that doesn't just fit—it commands.",
         "cta_label": "Explore Seth Eden",
         "cta_link": "/pages/seth-eden"
+      }
+    },
+    "retreats": {
+      "type": "retreats",
+      "blocks": {
+        "napa": {
+          "type": "retreat",
+          "settings": {
+            "image": "shopify://shop_images/a108c2_f4274b7aa6c443d4b3766c89c891b403_mv2_d_2338_3151_s_2.jpg",
+            "name": "Napa Valley",
+            "subtitle": "Wine Country Retreat",
+            "link": ""
+          }
+        },
+        "hawaii": {
+          "type": "retreat",
+          "settings": {
+            "image": "shopify://shop_images/a108c2_98bcbc42bcad4813ad1591ab2160221f.jpg",
+            "name": "Hawaii",
+            "subtitle": "Island Immersion",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "napa",
+        "hawaii"
+      ],
+      "settings": {
+        "eyebrow": "Restoration for the Soul",
+        "title": "Dream Retreats",
+        "calendar_label": "View Calendar",
+        "calendar_link": "/pages/retreats",
+        "explore_label": "Explore All Retreats",
+        "explore_link": "/pages/retreats"
+      }
+    },
+    "crowns-jewelry": {
+      "type": "crowns-jewelry",
+      "settings": {
+        "section_id": "crowns",
+        "bg_image": "shopify://shop_images/Untitled_design_5.jpg",
+        "eyebrow": "Jewelry & Headpieces",
+        "title": "The Crowning",
+        "cta_label": "Adorn Yourself",
+        "cta_link": "/collections/crowns-jewelry"
+      }
+    },
+    "womens-couture": {
+      "type": "womens-couture",
+      "settings": {
+        "section_id": "womens-couture",
+        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
+        "eyebrow": "Collection",
+        "title": "Women's Couture",
+        "tagline": "Elegance · Power · Grace",
+        "cta_label": "Explore Collection",
+        "cta_link": "/collections/womens-couture"
       }
     },
     "legacy-collections": {
@@ -132,52 +178,6 @@
         "description": "Everyday luxury that speaks your identity. T-shirts, hoodies, and essentials tailored for the culture — worn by those who carry purpose.",
         "cta_label": "Shop The Drop",
         "cta_link": "/collections/kingdom-heirs"
-      }
-    },
-    "crowns-jewelry": {
-      "type": "crowns-jewelry",
-      "settings": {
-        "section_id": "crowns",
-        "bg_image": "shopify://shop_images/Untitled_design_5.jpg",
-        "eyebrow": "Jewelry & Headpieces",
-        "title": "The Crowning",
-        "cta_label": "Adorn Yourself",
-        "cta_link": "/collections/crowns-jewelry"
-      }
-    },
-    "retreats": {
-      "type": "retreats",
-      "blocks": {
-        "napa": {
-          "type": "retreat",
-          "settings": {
-            "image": "shopify://shop_images/a108c2_f4274b7aa6c443d4b3766c89c891b403_mv2_d_2338_3151_s_2.jpg",
-            "name": "Napa Valley",
-            "subtitle": "Wine Country Retreat",
-            "link": ""
-          }
-        },
-        "hawaii": {
-          "type": "retreat",
-          "settings": {
-            "image": "shopify://shop_images/a108c2_98bcbc42bcad4813ad1591ab2160221f.jpg",
-            "name": "Hawaii",
-            "subtitle": "Island Immersion",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "napa",
-        "hawaii"
-      ],
-      "settings": {
-        "eyebrow": "Restoration for the Soul",
-        "title": "Dream Retreats",
-        "calendar_label": "View Calendar",
-        "calendar_link": "/pages/retreats",
-        "explore_label": "Explore All Retreats",
-        "explore_link": "/pages/retreats"
       }
     },
     "photography": {
@@ -364,10 +364,10 @@
     "atelier",
     "bridal-collection",
     "bridal-bespoke",
-    "womens-couture",
     "mens-suits",
     "retreats",
     "crowns-jewelry",
+    "womens-couture",
     "legacy-collections",
     "kingdom",
     "photography",
