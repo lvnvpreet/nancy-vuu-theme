@@ -172,6 +172,7 @@
     "press_literary": {
       "type": "press-literary",
       "settings": {
+        "book_image": "shopify://shop_images/Untitled_5_x_5_in.jpg",
         "eyebrow": "The Literary Movement",
         "title_line_1": "Let There",
         "title_italic": "Be Fashion.",
