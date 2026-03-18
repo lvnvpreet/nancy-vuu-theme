@@ -12,16 +12,30 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
+        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg",
+        "overlay_opacity": 0,
         "eyebrow": "The Architecture of Presence",
-        "overlay_opacity": 65
+        "title": ""
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
+        "eyebrow": "",
         "quote": "She does not enter a room—she redefines it. Our Women's Couture is sculpted for the visionary who understands that true elegance is not worn; it is wielded. Every silhouette is engineered to anchor your presence and amplify the gravity of your purpose.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "exclusivity": {
@@ -34,20 +48,82 @@
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
-        "look_1": { "type": "look", "settings": { "title": "The Sovereign Coat", "subtitle": "Structured Overcoat in Italian Cashmere", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_2": { "type": "look", "settings": { "title": "The Architect Blazer", "subtitle": "Razor-Sharp Silhouette in Midnight Wool", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_3": { "type": "look", "settings": { "title": "The Presence Gown", "subtitle": "Flowing Silk Column with Sculptured Shoulders", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_4": { "type": "look", "settings": { "title": "The Authority Dress", "subtitle": "Architectural Draping in Ivory Crêpe de Chine", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_5": { "type": "look", "settings": { "title": "The Mandate Set", "subtitle": "Tailored Trouser Suite with Hand-Finished Details", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_6": { "type": "look", "settings": { "title": "The Legacy Cape", "subtitle": "Dramatic Full-Length Cape in Charcoal Duchess Satin", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } }
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "title": "The Sovereign Coat",
+            "subtitle": "Structured Overcoat in Italian Cashmere",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "title": "The Architect Blazer",
+            "subtitle": "Razor-Sharp Silhouette in Midnight Wool",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "title": "The Presence Gown",
+            "subtitle": "Flowing Silk Column with Sculptured Shoulders",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "title": "The Authority Dress",
+            "subtitle": "Architectural Draping in Ivory Crêpe de Chine",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "title": "The Mandate Set",
+            "subtitle": "Tailored Trouser Suite with Hand-Finished Details",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "title": "The Legacy Cape",
+            "subtitle": "Dramatic Full-Length Cape in Charcoal Duchess Satin",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6"
+      ],
       "settings": {}
     },
     "main": {
       "type": "main-collection",
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "columns": "3"
       }
     },
     "cross-sell": {
@@ -64,5 +140,12 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
+  "order": [
+    "hero",
+    "manifesto",
+    "exclusivity",
+    "lookbook",
+    "main",
+    "cross-sell"
+  ]
 }
