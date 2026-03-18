@@ -13,7 +13,7 @@
       "type": "page-hero",
       "settings": {
         "section_id": "page-hero",
-        "image": "shopify://shop_images/6.jpg",
+        "image": "shopify://shop_images/Untitled_45_x_50_in_7.jpg",
         "overlay_opacity": 40,
         "eyebrow": "",
         "title_line_1": "dream",
@@ -98,7 +98,7 @@
         "dest_hawaii": {
           "type": "destination",
           "settings": {
-            "image": "shopify://shop_images/18.jpg",
+            "image": "shopify://shop_images/10.jpg",
             "quota": "3 Invitations Remaining",
             "location": "Kaneohe, HI & Napa Valley, Ca",
             "title": "Dreams Fulfilled",
