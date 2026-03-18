@@ -12,12 +12,12 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_video": "https://youtu.be/N3HyRcRCa34",
+        "bg_video": "https://cdn.shopify.com/videos/c/o/v/e22283c6df2b44b3b602cd447c5401c2.mp4",
         "overlay_opacity": 0,
         "headline_italic": "for",
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
-        "text_color": "#111111"
+        "text_color": "#ffffff"
       }
     },
     "atelier": {
