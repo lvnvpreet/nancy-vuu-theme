@@ -105,7 +105,7 @@
           "type": "standard",
           "settings": {
             "image": "shopify://shop_images/iStock-1145913008.jpg",
-            "title": "The Unrivaled Textile Archive:  A Curation of Storied Looms and Rare Fibers",
+            "title": "The Unrivaled Textile Archive",
             "description": "True distinction requires a limitless palette. Architect your mantle from an unrivaled archive of the world’s most prestigious textiles. While we feature the rare fibers of Scabal, Loro Piana, Vitale Barberis Canonico, and Holland & Sherry, these represent only the beginning of our expansive library of global excellence—hand-selected to fulfill your unique blueprint.",
             "footer_text": "Our Mills"
           }
@@ -114,7 +114,7 @@
           "type": "standard",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_9.58.37_PM.png",
-            "title": "Designed for You",
+            "title": "Exclusively Commissioned",
             "description": "\"From custom linings to silk stitching, every Seth Eden suit is built for you. Complete the architecture of your garment with personalized embroidery: a signature of your own name, or a commemorative seal of your union featuring both names and your special date.\"",
             "footer_text": "Our Tailoring"
           }
