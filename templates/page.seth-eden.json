@@ -240,7 +240,7 @@
       "type": "seth-feature",
       "settings": {
         "section_id": "high-visibility",
-        "theme": "light",
+        "theme": "dark",
         "image_position": "right",
         "image_height": 750,
         "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.50.28_AM.png",
@@ -320,7 +320,7 @@
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.31.29_PM.png",
             "number": "Inspiration 01",
-            "title": "The Appointed Double-Breast",
+            "title": "The Floral Jacquard",
             "subtitle": "Architectural Framing in Charcoal Wool"
           }
         },
@@ -329,7 +329,7 @@
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.37.12_AM.png",
             "number": "Inspiration 02",
-            "title": "The Eden Fluid Blazer",
+            "title": "For Him & Her",
             "subtitle": "Soft Structuralism in Ivory Silk-Blend"
           }
         },
