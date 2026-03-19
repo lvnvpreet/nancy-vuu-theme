@@ -13,8 +13,9 @@
       "type": "seth-hero",
       "settings": {
         "video_url": "",
+        "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_8.40.47_PM.png",
         "eyebrow": "The House of Nancy Vuu Presents",
-        "heading": "Seth Eden.",
+        "heading": "Seth Eden",
         "subtext": "Custom Bespoke Masterpieces for Men & Women.",
         "brand_sub": "By Nancy Vuu"
       }
@@ -28,7 +29,15 @@
         "body": "",
         "bg_color": "#f4f4f4",
         "text_color": "#111111",
-        "extra_class": "seth-eden-manifesto"
+        "extra_class": "seth-eden-manifesto",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "seth_hero": {
@@ -66,6 +75,7 @@
         "theme": "light",
         "image_position": "right",
         "image_height": 700,
+        "image": "shopify://shop_images/iStock-1496844999.jpg",
         "badge_text": "The Vitality Threshold",
         "eyebrow": "The Vitality Threshold",
         "title_line_1": "High-Frequency Textiles.",
