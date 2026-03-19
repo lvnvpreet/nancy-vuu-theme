@@ -161,13 +161,14 @@
         "theme": "dark",
         "image_position": "left",
         "image_height": 800,
+        "image": "shopify://shop_images/sethimage.jpg",
         "badge_text": "",
-        "eyebrow": "Masculine Sovereignty",
+        "eyebrow": "Unrivaled Stature",
         "title_line_1": "The Architecture of",
         "title_line_2": "Command.",
         "body_1": "Most suiting brands prioritize the \"uniform,\" but Seth Eden prioritizes the \"individual.\" We recognize that for the man of influence, a suit is not just clothing—it is an anchor of authority.",
         "body_2": "The Seth Eden blueprint moves beyond rigid industrial blocks to create a silhouette of effortless command.",
-        "cta_label": "Secure Your Masculine Commission",
+        "cta_label": "Secure Your Commission",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
       }
@@ -204,13 +205,14 @@
         "theme": "dark",
         "image_position": "right",
         "image_height": 800,
+        "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "badge_text": "",
-        "eyebrow": "Feminine Sovereignty",
+        "eyebrow": "A Mantle of Distinction",
         "title_line_1": "Beyond the",
         "title_line_2": "Shrunken Silhouette.",
         "body_1": "Most clothiers approach women's suiting as a secondary thought—simply shrinking a masculine block. At Seth Eden, we recognize that the female visionary requires an entirely different architecture.",
         "body_2": "We honor, celebrate, and enhance the unique power and grace of the woman's silhouette.",
-        "cta_label": "Secure Your Feminine Commission",
+        "cta_label": "Secure Your Commission",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
       }
