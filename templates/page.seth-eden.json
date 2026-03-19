@@ -46,6 +46,7 @@
         "panel_seth": {
           "type": "panel",
           "settings": {
+            "image": "shopify://shop_images/iStock-1300966679_1.jpg",
             "eyebrow": "The Mandate",
             "heading": "Seth",
             "subtext": "Architectural Authority",
@@ -55,6 +56,7 @@
         "panel_eden": {
           "type": "panel",
           "settings": {
+            "image": "shopify://shop_images/8456c15a-40f4-4fda-afc4-07d5d0bcaa3d.png",
             "eyebrow": "The Sanctuary",
             "heading": "Eden",
             "subtext": "Restorative Peace",
@@ -93,6 +95,7 @@
         "standard_1": {
           "type": "standard",
           "settings": {
+            "image": "shopify://shop_images/iStock-477257775.jpg",
             "title": "Hand Stitched Construction",
             "description": "All Seth Eden Custom Suits are made with a hand stitched full-canvas construction and hand-stitched \"Milanese\" buttonholes.",
             "footer_text": "Our Craftsmanship"
