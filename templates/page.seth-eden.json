@@ -161,7 +161,7 @@
         "theme": "dark",
         "image_position": "left",
         "image_height": 800,
-        "image": "shopify://shop_images/sethimage.jpg",
+        "image": "shopify://shop_images/iStock-657336212.jpg",
         "badge_text": "",
         "eyebrow": "Unrivaled Stature",
         "title_line_1": "The Architecture of",
@@ -224,6 +224,7 @@
         "theme": "light",
         "image_position": "left",
         "image_height": 750,
+        "image": "shopify://shop_images/iStock-2161713126.jpg",
         "badge_text": "",
         "eyebrow": "Luxury Lifestyle",
         "title_line_1": "From Cannes to",
@@ -357,91 +358,6 @@
         "description": "At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity."
       }
     },
-    "pathways": {
-      "type": "seth-pathways",
-      "blocks": {
-        "pw1_1": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Optimized from House patterns to your specific posture."
-          }
-        },
-        "pw1_2": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Selection from 5,000+ Vitality Mandate fabrics."
-          }
-        },
-        "pw1_3": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Hand-finished detailing and personalized monogramming."
-          }
-        },
-        "pw1_4": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Two fitting stages for precision alignment."
-          }
-        },
-        "pw2_1": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "A unique paper pattern drafted from scratch for your identity."
-          }
-        },
-        "pw2_2": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "Absolute structural freedom and complex architecture."
-          }
-        },
-        "pw2_3": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "Master-level hand-canvasing — 60+ hours of craft."
-          }
-        },
-        "pw2_4": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "3-5 intricate fittings for a second-skin result."
-          }
-        }
-      },
-      "block_order": [
-        "pw1_1",
-        "pw1_2",
-        "pw1_3",
-        "pw1_4",
-        "pw2_1",
-        "pw2_2",
-        "pw2_3",
-        "pw2_4"
-      ],
-      "settings": {
-        "eyebrow": "The Journey of Choice",
-        "heading": "Pathways to Sovereignty.",
-        "card1_eyebrow": "The Modern Professional",
-        "card1_title_line_1": "The Custom",
-        "card1_title_line_2": "Blueprint (MTM).",
-        "card1_cta_label": "Inquire for Custom MTM",
-        "card1_cta_link": "#inquiry",
-        "card2_eyebrow": "The Archival Masterpiece",
-        "card2_title_line_1": "The Sovereign",
-        "card2_title_line_2": "Bespoke.",
-        "card2_cta_label": "Request Bespoke Commission",
-        "card2_cta_link": "#inquiry"
-      }
-    },
     "limited": {
       "type": "seth-limited",
       "blocks": {
@@ -527,6 +443,7 @@
         "img_4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
             "label": "The Empowered Shoulder",
             "wide": false
           }
@@ -699,7 +616,6 @@
     "pillars",
     "journey",
     "tailoring",
-    "pathways",
     "limited",
     "gallery_mens",
     "gallery_womens",
