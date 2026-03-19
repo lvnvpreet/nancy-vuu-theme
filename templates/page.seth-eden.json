@@ -364,6 +364,7 @@
         "design_1": {
           "type": "design",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.31.29_PM.png",
             "number": "Inspiration 01",
             "title": "The Appointed Double-Breast",
             "subtitle": "Architectural Framing in Charcoal Wool"
@@ -372,6 +373,7 @@
         "design_2": {
           "type": "design",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.37.12_AM.png",
             "number": "Inspiration 02",
             "title": "The Eden Fluid Blazer",
             "subtitle": "Soft Structuralism in Ivory Silk-Blend"
@@ -380,6 +382,7 @@
         "design_3": {
           "type": "design",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.40.36_AM.png",
             "number": "Inspiration 03",
             "title": "The Mandate Overcoat",
             "subtitle": "Structural Command in Navy Cashmere"
