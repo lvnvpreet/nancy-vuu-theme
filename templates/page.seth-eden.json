@@ -451,6 +451,7 @@
         "img_5": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
             "label": "The Dignitary Vestment",
             "wide": false
           }
@@ -458,6 +459,7 @@
         "img_6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.39.53_PM.png",
             "label": "Formal Evening Tailoring",
             "wide": false
           }
