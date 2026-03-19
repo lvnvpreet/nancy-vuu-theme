@@ -113,6 +113,7 @@
         "standard_3": {
           "type": "standard",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_9.53.47_PM.png",
             "title": "Designed for You",
             "description": "Select every last detail of your suit—from the lining to the stitching—and have your personal name custom embroidered inside.",
             "footer_text": "Our Tailoring"
