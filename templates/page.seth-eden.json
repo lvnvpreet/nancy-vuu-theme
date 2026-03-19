@@ -405,14 +405,14 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.46.02_PM.png",
-            "label": "The Sovereign Tuxedo",
+            "label": "The Architect that demands",
             "wide": false
           }
         },
         "img_2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.48.51_PM.png",
+            "image": "shopify://shop_images/iStock-2011819012.jpg",
             "label": "The Executive Blazer",
             "wide": false
           }
@@ -421,7 +421,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/iStock-839014260.jpg",
-            "label": "Archival Overcoat",
+            "label": "The Tuxedo",
             "wide": false
           }
         }
