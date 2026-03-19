@@ -227,8 +227,8 @@
         "image": "shopify://shop_images/iStock-2161713126.jpg",
         "badge_text": "",
         "eyebrow": "Luxury Lifestyle",
-        "title_line_1": "From Cannes to",
-        "title_line_2": "Silicon Valley.",
+        "title_line_1": "Power Suits &",
+        "title_line_2": "Gala Couture",
         "body_1": "From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments. We specialize in evening attire and Power Suit architecture for the modern dignitary and executive. Unique silk jacquards, custom velvet tailoring, and architectural formal wear designed for those who command the room without uttering a word.",
         "body_2": "",
         "cta_label": "Request Executive Styling",
@@ -262,61 +262,17 @@
         "theme": "light",
         "image_position": "left",
         "image_height": 750,
-        "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.50.28_AM.png",
+        "image": "shopify://shop_images/iStock-1184401712.jpg",
         "badge_text": "",
-        "eyebrow": "High Visibility",
-        "title_line_1": "Power Suits &",
-        "title_line_2": "Gala Couture",
-        "body_1": "From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments. We specialize in evening attire and Power Suit architecture for the modern dignitary and executive. Unique silk jacquards, custom velvet tailoring, and architectural formal wear designed for those who command the room without uttering a word.",
+        "eyebrow": "Legacy Beginnings",
+        "title_line_1": "The Heirloom",
+        "title_line_2": "Occasion",
+        "body_1": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples. We provide full-service styling for the groom, the modern bride in a suit, and their inner circle, ensuring the entire party reflects the pinnacle of sartorial standards.",
         "body_2": "",
         "cta_label": "Request Executive Styling",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
       }
-    },
-    "pillars": {
-      "type": "seth-pillars",
-      "blocks": {
-        "pillar_1": {
-          "type": "pillar",
-          "settings": {
-            "category": "Bespoke Tailoring",
-            "eyebrow": "The Commission",
-            "title": "Master Bespoke for All.",
-            "body": "Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture. Whether crafting a sharp masculine silhouette or an empowered feminine frame, our process is rooted in 60+ hours of hand-craftsmanship. We utilize the world's most prestigious mills—Loro Piana, Dormeuil, and Scabal—to ensure your garment is an archival asset that transcends gender and season.",
-            "cta_label": "Secure Your Commission",
-            "cta_link": "/pages/contact"
-          }
-        },
-        "pillar_2": {
-          "type": "pillar",
-          "settings": {
-            "category": "Power Suits & Gala Couture",
-            "eyebrow": "High Visibility",
-            "title": "Power Suits & Gala Couture.",
-            "body": "From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments. We specialize in evening attire and Power Suit architecture for the modern dignitary and executive. Unique silk jacquards, custom velvet tailoring, and architectural formalwear designed for those who command the room without uttering a word.",
-            "cta_label": "Inquire for Event",
-            "cta_link": "/pages/contact"
-          }
-        },
-        "pillar_3": {
-          "type": "pillar",
-          "settings": {
-            "category": "Bespoke Wedding Party",
-            "eyebrow": "Legacy Beginnings",
-            "title": "The Heirloom Occasion.",
-            "body": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples. We provide full-service styling for the groom, the modern bride in a suit, and their inner circle, ensuring the entire party reflects the pinnacle of sartorial standards.",
-            "cta_label": "Book Occasion Consultation",
-            "cta_link": "/pages/contact"
-          }
-        }
-      },
-      "block_order": [
-        "pillar_1",
-        "pillar_2",
-        "pillar_3"
-      ],
-      "settings": {}
     },
     "tailoring": {
       "type": "seth-tailoring",
@@ -621,7 +577,6 @@
     "visibility",
     "seth_feature_3Xq87H",
     "seth_feature_iQN7tW",
-    "pillars",
     "tailoring",
     "limited",
     "gallery_mens",
