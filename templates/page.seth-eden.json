@@ -280,46 +280,6 @@
       ],
       "settings": {}
     },
-    "journey": {
-      "type": "seth-journey",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "number": "01.",
-            "heading": "The Reveal",
-            "text": "Explore our atelier inspirations in Napa or San Jose—the visual foundations of your identity."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "number": "02.",
-            "heading": "The Consultation",
-            "text": "Collaborate with our designers to customize your mandated silhouette, choosing textures that reflect your unique calling."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "number": "03.",
-            "heading": "The Appointing",
-            "text": "Your final fitting—the moment where your garment and your identity are unified in a bespoke appointment."
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
-      "settings": {
-        "eyebrow": "The Journey",
-        "heading": "From Vision to Vesting.",
-        "cta_text": "Begin Your Appointment",
-        "cta_link": ""
-      }
-    },
     "tailoring": {
       "type": "seth-tailoring",
       "blocks": {
@@ -622,7 +582,6 @@
     "feminine",
     "visibility",
     "pillars",
-    "journey",
     "tailoring",
     "limited",
     "gallery_mens",
