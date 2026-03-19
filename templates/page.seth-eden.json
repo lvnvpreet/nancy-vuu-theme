@@ -439,6 +439,25 @@
         "swap_layout": true
       }
     },
+    "seth_feature_hgJRkp": {
+      "type": "seth-feature",
+      "settings": {
+        "section_id": "high-visibility",
+        "theme": "light",
+        "image_position": "left",
+        "image_height": 750,
+        "image": "shopify://shop_images/iStock-1184401712.jpg",
+        "badge_text": "",
+        "eyebrow": "aligned visions",
+        "title_line_1": "The Story",
+        "title_line_2": "",
+        "body_1": "Nancy's journey began with a spiritual encounter that changed the course of her life. She saw children across the nations, lacking food and covering. In that moment, a voice spoke: \"Start designing. Reach out to these children and let them know they are loved—that they are true royalty.\"\n\nLater, her eyes were opened to a vision of a breathtaking garden. The instruction was clear: \"I will have you build the garden of the Lord all around the world.\" For Nancy, fashion became the vehicle—a platform to restore identity and elevate humanity to its original regal design.",
+        "body_2": "In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: \"Her name is Eden. I will find my rest in her.\" Then came the vision of a boy, Seth—a name meaning \"The Appointed One.\"\n\nWhen these two visions converged, Seth Eden was born. It is a house built on the intersection of Restoration and Authority. Every garment is crafted to reflect the \"True Royalty\" Nancy was called to champion, and the \"Appointment\" Dionne was shown.",
+        "cta_label": "Request Executive Styling",
+        "cta_link": "/pages/contact",
+        "cta_style": "solid"
+      }
+    },
     "narrative": {
       "type": "seth-narrative",
       "blocks": {
@@ -581,6 +600,7 @@
     "limited",
     "gallery_mens",
     "gallery_womens",
+    "seth_feature_hgJRkp",
     "narrative",
     "commission",
     "cross-sell-luxury"
