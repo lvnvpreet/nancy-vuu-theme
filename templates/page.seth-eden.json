@@ -404,6 +404,7 @@
         "img_1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.46.02_PM.png",
             "label": "The Sovereign Tuxedo",
             "wide": false
           }
@@ -411,6 +412,7 @@
         "img_2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.48.51_PM.png",
             "label": "The Executive Blazer",
             "wide": false
           }
@@ -418,6 +420,7 @@
         "img_3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/iStock-839014260.jpg",
             "label": "Archival Overcoat",
             "wide": false
           }
@@ -444,7 +447,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
-            "label": "The Empowered Shoulder",
+            "label": "The Empowered Designs",
             "wide": false
           }
         },
@@ -452,7 +455,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
-            "label": "The Dignitary Vestment",
+            "label": "The Chic & Classy",
             "wide": false
           }
         },
