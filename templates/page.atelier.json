@@ -68,6 +68,7 @@
     "academy_banner": {
       "type": "atelier-academy",
       "settings": {
+        "image": "shopify://shop_images/iStock-1343420861.jpg",
         "eyebrow": "The Future of Craft",
         "title_line_1": "The Dream Academy",
         "title_line_2": "Conservatory.",
