@@ -104,6 +104,7 @@
         "standard_2": {
           "type": "standard",
           "settings": {
+            "image": "shopify://shop_images/iStock-1145913008.jpg",
             "title": "Luxury Designer Fabrics",
             "description": "Select from Silicon Valley's largest trove of Designer Fabric Swatches including Ermenegildo Zegna, Loro Piana, Lanificio Cerruti, and Reda.",
             "footer_text": "Our Mills"
