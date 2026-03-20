@@ -13,8 +13,8 @@
       "type": "page-hero",
       "settings": {
         "section_id": "page-hero",
-        "image": "shopify://shop_images/IMG_8930.webp",
-        "overlay_opacity": 25,
+        "image": "shopify://shop_images/IMG_7932.webp",
+        "overlay_opacity": 35,
         "eyebrow": "",
         "title_line_1": "The Dream Academy",
         "title_line_2": "",
@@ -160,7 +160,8 @@
         "body": "The world is your runway. Dream Expo is the platform where our students and partners showcase their talent to the world.",
         "cta_text": "Enter the Expo",
         "cta_link": "",
-        "show_play_button": true
+        "image": "shopify://shop_images/iStock-1161922208.jpg",
+        "show_play_button": false
       }
     },
     "pillar_publishing": {
@@ -176,6 +177,7 @@
         "body": "Helping visionaries architect their message into world-class publications. Turn your story and expertise into a professional publication that leaves a lasting legacy.",
         "cta_text": "Publish Your Story",
         "cta_link": "",
+        "image": "shopify://shop_images/iStock-1372102179.jpg",
         "show_play_button": false
       }
     },
@@ -192,6 +194,7 @@
         "body": "An elite network for high-level female executives and founders. We facilitate connections that transcend standard networking, focused on spiritual leadership and global impact.",
         "cta_text": "Apply for Access",
         "cta_link": "",
+        "image": "shopify://shop_images/untitled-5330_3.webp",
         "show_play_button": false
       }
     },
@@ -227,6 +230,7 @@
         "body": "Our Brand Ambassadors are more than representatives—they are partners in prosperity. Through a curated commission-based model, you champion the Vuu standard while creating your own financial legacy.",
         "cta_text": "Inquire for Partnership",
         "cta_link": "",
+        "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "floating_eyebrow": "Shared Growth",
         "floating_quote": "\"Your success is woven into the fabric of our house.\""
       }
