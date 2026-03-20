@@ -13,6 +13,14 @@
         {{ section.settings.description | default: '"You Dream It. We Create It." A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.' }}
       </p>
 
+      {%- if section.settings.cta_label != blank -%}
+        <div style="margin-top:2rem;">
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial on-dark" style="color:#fff; border-color:#fff;">
+            {{ section.settings.cta_label | default: 'Begin Your Journey' }}
+          </a>
+        </div>
+      {%- endif -%}
+
       {%- if section.settings.show_chart -%}
         <div class="chart-border">
           <h4 class="serif-font chart-heading">{{ section.settings.chart_title | default: 'The Journey — From Dream to Reality' }}</h4>

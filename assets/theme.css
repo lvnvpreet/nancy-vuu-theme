@@ -465,10 +465,6 @@ body::after {
 .section-crowns__bg-img {
   width: 100%; height: 100%; object-fit: cover;
 }
-.section-crowns__overlay {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.7);
-}
 .section-crowns__content {
   position: relative; z-index: 10;
 }
@@ -558,9 +554,12 @@ body::after {
 .section-photography {
   padding: 6rem 0; text-align: center; overflow: hidden;
   background: #f9fafb;
+  --py: 0px;
 }
 .section-photography__content {
   max-width: 48rem; margin: 0 auto;
+  transform: translateY(var(--py));
+  will-change: transform;
 }
 .section-photography__description {
   margin-left: auto; margin-right: auto;

@@ -204,6 +204,28 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.remove('menu-open');
   };
 
+  // ── PHOTOGRAPHY PARALLAX ───────────────────────────────
+  var parallaxSections = document.querySelectorAll('[data-parallax]');
+  if (parallaxSections.length) {
+    var ticking = false;
+    function updateParallax() {
+      parallaxSections.forEach(function(section) {
+        var factor = parseFloat(section.dataset.parallax) || 0.3;
+        var rect = section.getBoundingClientRect();
+        var offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * factor;
+        section.style.setProperty('--py', offset.toFixed(2) + 'px');
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateParallax();
+  }
+
   // Delegate [data-audience-open] clicks
   document.addEventListener('click', function(e) {
     var openBtn = e.target.closest('[data-audience-open]');
