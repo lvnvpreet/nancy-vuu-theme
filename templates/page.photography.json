@@ -169,6 +169,7 @@
         "item_4": {
           "type": "portfolio_item",
           "settings": {
+            "image": "shopify://shop_images/a3fcb2b1-96d5-415e-a3c7-1975a7f97849.png",
             "series": "The Agency Series",
             "title": "Commercial Campaigns",
             "description": "Architecting immersive visual narratives to elevate luxury brands and product launches.",
