@@ -181,6 +181,7 @@
         "item_5": {
           "type": "portfolio_item",
           "settings": {
+            "image": "shopify://shop_images/untitled-4896.webp",
             "series": "The Legacy Series",
             "title": "Lifestyle & Storytelling",
             "description": "Cinematic, soul-stirring documentation of a life well-lived, capturing authentic beauty in its purest form.",
