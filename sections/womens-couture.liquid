@@ -12,12 +12,9 @@
     -%}
   </div>
 
-  <div class="section-couture-overlay__dim"></div>
-
-
   <div class="section-couture-overlay__card reveal">
-    <span class="eyebrow" style="margin-bottom:.5rem;">{{ section.settings.eyebrow | default: 'Collection' }}</span>
-    <h2 class="serif-font" style="font-size:2.25rem; margin-bottom:.5rem;">{{ section.settings.title | default: "Women's Couture" }}</h2>
+    <span class="eyebrow" style="margin-bottom:.5rem; color:#fff;">{{ section.settings.eyebrow | default: 'Collection' }}</span>
+    <h2 class="serif-font" style="font-size:2.25rem; margin-bottom:.5rem; color:#fff;">{{ section.settings.title | default: "Women's Couture" }}</h2>
     <div class="divider"></div>
     <p class="section-couture-overlay__tagline">{{ section.settings.tagline | default: 'Elegance · Power · Grace' }}</p>
     <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial">{{ section.settings.cta_label | default: 'Explore Collection' }}</a>
