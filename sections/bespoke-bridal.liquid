@@ -14,8 +14,8 @@
       </p>
 
       {%- if section.settings.cta_label != blank -%}
-        <div style="margin-top:2rem;">
-          <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial on-dark" style="color:#fff; border-color:#fff;">
+        <div style="margin-top:2rem; color:#fff;">
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial on-dark">
             {{ section.settings.cta_label | default: 'Begin Your Journey' }}
           </a>
         </div>

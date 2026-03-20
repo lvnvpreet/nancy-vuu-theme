@@ -454,10 +454,10 @@ body::after {
 
 /* ── CROWNS & JEWELRY ───────────────────────────────────── */
 .section-crowns {
-  position: relative; height: 60vh;
+  position: relative; min-height: 80vh;
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
-  text-align: center; padding: 0 1rem; overflow: hidden;
+  text-align: center; padding: 8rem 1rem; overflow: hidden;
 }
 .section-crowns__bg {
   position: absolute; inset: 0;
@@ -631,7 +631,7 @@ body::after {
 .marquee-inner { display: flex; animation: marquee-scroll 22s linear infinite; }
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-20%); }
 }
 
 /* ── FOOTER ─────────────────────────────────────────────── */
