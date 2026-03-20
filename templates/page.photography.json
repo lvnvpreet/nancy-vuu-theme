@@ -150,6 +150,7 @@
         "item_2": {
           "type": "portfolio_item",
           "settings": {
+            "image": "shopify://shop_images/untitled-315_1.jpg",
             "series": "The Heirloom Series",
             "title": "Bridal & Wedding",
             "description": "Capturing the sacred elegance and divine romance of your most profound milestone.",
