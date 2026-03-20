@@ -329,17 +329,6 @@
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "blocks": {
-        "card_crowns": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/kids-photographer-in-los-angeles.jpg",
-            "eyebrow": "The Crowning Moment",
-            "title": "Finish the Look",
-            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
-            "cta_label": "Explore Crowns & Jewelry",
-            "link": "/collections/crowns-jewelry"
-          }
-        },
         "card_retreats": {
           "type": "card",
           "settings": {
@@ -353,7 +342,6 @@
         }
       },
       "block_order": [
-        "card_crowns",
         "card_retreats"
       ],
       "settings": {}
