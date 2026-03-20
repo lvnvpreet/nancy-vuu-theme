@@ -12,7 +12,8 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "overlay_opacity": 70,
+        "image": "shopify://shop_images/image10_1.jpg",
+        "overlay_opacity": 0,
         "eyebrow": "The Physical Proof of Royalty",
         "title": ""
       }
@@ -41,87 +42,13 @@
       "type": "exclusivity-notice",
       "settings": {
         "eyebrow": "Direct Acquisition",
-        "body": "Our Crowns and Jewelry are curated for immediate acquisition and worldwide delivery. Each masterpiece is prepared for secure global shipment. Select pieces are also available for viewing at the Atelier by appointment."
+        "body": "Our Crowns and Jewelry are curated for immediate acquisition and delivery. Select pieces are also available for viewing at the Atelier by appointment."
       }
-    },
-    "lookbook": {
-      "type": "lookbook-grid",
-      "blocks": {
-        "look_1": {
-          "type": "look",
-          "settings": {
-            "title": "The Sovereign Crown",
-            "subtitle": "Hand-Forged Gold-Plated Crown with Crystal Inlay",
-            "badge": "Available for Shipment",
-            "link_text": "Procure Online →",
-            "link": ""
-          }
-        },
-        "look_2": {
-          "type": "look",
-          "settings": {
-            "title": "The Eden Tiara",
-            "subtitle": "Delicate Floral Tiara with Freshwater Pearls",
-            "badge": "Available for Shipment",
-            "link_text": "Procure Online →",
-            "link": ""
-          }
-        },
-        "look_3": {
-          "type": "look",
-          "settings": {
-            "title": "The Mandate Ring",
-            "subtitle": "Architectural Signet in Sterling Silver with Onyx",
-            "badge": "Available for Shipment",
-            "link_text": "Procure Online →",
-            "link": ""
-          }
-        },
-        "look_4": {
-          "type": "look",
-          "settings": {
-            "title": "The Covenant Necklace",
-            "subtitle": "Gold Chain with Hand-Set Swarovski Pendant",
-            "badge": "Available for Shipment",
-            "link_text": "Procure Online →",
-            "link": ""
-          }
-        },
-        "look_5": {
-          "type": "look",
-          "settings": {
-            "title": "The Heritage Cuff",
-            "subtitle": "Hammered Gold Cuff Bracelet with Engraving",
-            "badge": "Available for Shipment",
-            "link_text": "Procure Online →",
-            "link": ""
-          }
-        },
-        "look_6": {
-          "type": "look",
-          "settings": {
-            "title": "The Kingdom Earrings",
-            "subtitle": "Statement Drop Earrings in Gold with Crystals",
-            "badge": "Available for Shipment",
-            "link_text": "Procure Online →",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "look_1",
-        "look_2",
-        "look_3",
-        "look_4",
-        "look_5",
-        "look_6"
-      ],
-      "settings": {}
     },
     "main": {
       "type": "main-collection",
       "custom_css": [
-        ".collection-page .collection-header-text {display: none}"
+        ".collection-page .collection-header-text {display: none;}"
       ],
       "settings": {
         "products_per_page": 24,
@@ -146,7 +73,6 @@
     "hero",
     "manifesto",
     "exclusivity",
-    "lookbook",
     "main",
     "cross-sell"
   ]
