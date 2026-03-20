@@ -65,7 +65,7 @@ h1, h2, h3, h4, .serif-font {
 .eyebrow {
   font-family: var(--font-sans);
   font-size: .75rem;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .4em;
   color: var(--mid);
@@ -76,18 +76,18 @@ h1, h2, h3, h4, .serif-font {
 /* Body copy — Manrope Light */
 .body-copy {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.625;
-  color: #6b6b6b;
+  color: #555555;
   margin-bottom: 2rem;
 }
 .body-copy p {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.625;
-  color: #6b6b6b;
+  color: #555555;
   margin-bottom: 0;
 }
 
@@ -994,8 +994,8 @@ body::after {
   color: var(--gold, #c5a059); margin-bottom: 1rem;
 }
 .manifesto__col-body {
-  font-size: .875rem; color: #71717a;
-  font-weight: 300; line-height: 1.7;
+  font-size: .875rem; color: #555555;
+  font-weight: 500; line-height: 1.7;
 }
 .manifesto__ctas {
   display: flex; flex-wrap: wrap; gap: 1.5rem;
@@ -1417,7 +1417,7 @@ body::after {
   margin-bottom: 2rem;
 }
 .seth-narrative__text {
-  color: #666; font-weight: 300; line-height: 2;
+  color: #555555; font-weight: 500; line-height: 2;
   font-size: .875rem; margin-bottom: 1.5rem;
 }
 .seth-narrative__quote {
@@ -1490,7 +1490,7 @@ body::after {
 }
 .seth-tailoring__desc {
   max-width: 42rem; margin: 0 auto;
-  color: #71717a; font-weight: 300; line-height: 1.7;
+  color: #555555; font-weight: 500; line-height: 1.7;
 }
 .seth-tailoring__grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
@@ -1516,7 +1516,7 @@ body::after {
   font-size: 2.5rem; margin-bottom: 2rem;
 }
 .seth-tier-card__desc {
-  font-size: .875rem; font-weight: 300; line-height: 2;
+  font-size: .875rem; font-weight: 500; line-height: 2;
   margin-bottom: 3rem;
 }
 .seth-tier-card--dark .seth-tier-card__desc { color: #a1a1aa; }
@@ -1566,7 +1566,7 @@ body::after {
   margin-bottom: 2.5rem;
 }
 .seth-limited__desc {
-  color: #71717a; font-weight: 300; line-height: 1.7;
+  color: #555555; font-weight: 500; line-height: 1.7;
   max-width: 32rem;
 }
 .seth-limited__badge {
@@ -1654,7 +1654,7 @@ body::after {
 }
 .seth-journey__step-text {
   font-size: .75rem; color: #9ca3af; line-height: 1.7;
-  font-weight: 300;
+  font-weight: 500;
 }
 .seth-journey__cta { margin-top: 5rem; }
 
@@ -1757,7 +1757,7 @@ body::after {
 }
 .seth-cinematic-hero__subtext {
   font-size: clamp(.9rem, 2vw, 1.15rem); letter-spacing: .15em; text-transform: uppercase;
-  font-family: var(--font-sans); font-weight: 300; color: rgba(255,255,255,.85);
+  font-family: var(--font-sans); font-weight: 500; color: rgba(255,255,255,.85);
 }
 .seth-cinematic-hero__brand-sub {
   font-size: .65rem; letter-spacing: .4em; text-transform: uppercase; color: var(--seth-gold, #c5a059);
@@ -1935,7 +1935,7 @@ body::after {
   margin-bottom: 14px;
   font-size: 0.95rem;
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
   color: #ccc;
   line-height: 1.6;
 }
@@ -2237,7 +2237,7 @@ body::after {
   font-size: 1.6rem;
   line-height: 1.9;
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
   color: #222;
   max-width: 1100px;
   margin-left: 0;
@@ -2298,7 +2298,7 @@ body::after {
   display: flex; flex-direction: column; gap: 1rem;
 }
 .photo-experience__list-item {
-  font-size: .95rem; font-weight: 300; font-family: var(--font-sans);
+  font-size: .95rem; font-weight: 500; font-family: var(--font-sans);
   color: #ccc; display: flex; align-items: flex-start; gap: 1rem; letter-spacing: .02em;
 }
 .photo-experience__list-item::before { content: "—"; color: #555; flex-shrink: 0; }
@@ -2360,7 +2360,7 @@ body::after {
   font-size: clamp(1.4rem, 2.5vw, 2.2rem); color: #111; margin: 0 0 .8rem;
 }
 .photo-portfolio__desc {
-  font-size: .9rem; font-family: var(--font-sans); color: #555; font-weight: 300;
+  font-size: .9rem; font-family: var(--font-sans); color: #555; font-weight: 500;
   display: block; max-width: 85%; margin: 0 auto; line-height: 1.6;
 }
 
@@ -2471,7 +2471,7 @@ body::after {
   font-family: var(--font-sans); font-size: 1.1rem; text-transform: uppercase;
   letter-spacing: 2px; color: #555; font-weight: 600; margin: 0;
 }
-.book-hero__desc { font-size: 1.15rem; font-weight: 300; line-height: 1.8; color: #333; margin: 0; }
+.book-hero__desc { font-size: 1.15rem; font-weight: 500; line-height: 1.8; color: #333; margin: 0; }
 .book-hero__availability {
   font-size: 1.2rem; font-weight: 600; color: #111;
   font-family: var(--font-sans); margin: 0;
@@ -2553,8 +2553,8 @@ body::after {
   font-family: var(--font-sans); margin: 0; line-height: 1.7;
 }
 .book-bio__body {
-  font-size: .95rem; line-height: 1.8; color: rgba(255,255,255,.75);
-  font-family: var(--font-sans); font-weight: 300; margin: 0;
+  font-size: .95rem; line-height: 1.8; color: rgba(255,255,255,.85);
+  font-family: var(--font-sans); font-weight: 500; margin: 0;
 }
 
 /* ── Book Final CTA ──────────────────────── */
@@ -2613,7 +2613,7 @@ body::after {
 }
 .atelier-philosophy__text {
   font-family: var(--font-sans); font-size: 1.35rem; line-height: 1.9;
-  max-width: 950px; margin: 0 auto; color: #222; font-weight: 300;
+  max-width: 950px; margin: 0 auto; color: #222; font-weight: 500;
 }
 .atelier-philosophy__text p { font-size: inherit; line-height: inherit; color: inherit; font-weight: inherit; margin: 0; }
 .atelier-philosophy__text i,
@@ -2647,7 +2647,7 @@ body::after {
   font-size: 3rem; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 25px;
 }
 .atelier-service__body {
-  font-weight: 300; font-size: 1.15rem; color: #333; line-height: 1.7; margin-bottom: 25px;
+  font-weight: 500; font-size: 1.15rem; color: #333; line-height: 1.7; margin-bottom: 25px;
 }
 .atelier-service__cta {
   display: inline-block; background: transparent; color: #111;
@@ -2677,7 +2677,7 @@ body::after {
   color: #111; margin: 0;
 }
 .atelier-academy__body {
-  font-size: 1.05rem; font-weight: 300; color: #444; line-height: 1.75;
+  font-size: 1.05rem; font-weight: 500; color: #444; line-height: 1.75;
   margin: 0; font-family: var(--font-sans); max-width: 520px;
 }
 .atelier-academy__cta {
@@ -2733,7 +2733,7 @@ body::after {
   font-size: clamp(3.5rem, 7vw, 6rem); line-height: 1; letter-spacing: -.02em;
 }
 .atelier-hero__subtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 300; line-height: 1.7;
+  font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 500; line-height: 1.7;
   max-width: 640px; font-family: var(--font-sans);
 }
 .atelier-hero__ctas {
@@ -2888,7 +2888,7 @@ body::after {
   line-height: 1.6; margin-bottom: 1.5rem;
 }
 .academy-pillar__body {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.8; margin-bottom: 2.5rem;
 }
 
@@ -2907,7 +2907,7 @@ body::after {
   max-width: 36rem; margin: 0 auto; text-align: center;
 }
 .academy-pillar__body-centered p {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.8; margin-bottom: 2.5rem;
 }
 .academy-pillar__play {
@@ -2945,7 +2945,7 @@ body::after {
 }
 .academy-pathway-card__title { font-size: 1.25rem; margin-bottom: 1.5rem; }
 .academy-pathway-card__desc {
-  font-size: .75rem; color: #71717a; font-weight: 300;
+  font-size: .75rem; color: #555555; font-weight: 500;
   line-height: 1.7; margin-bottom: 2rem;
 }
 .academy-pathway-card__features {
@@ -2967,11 +2967,11 @@ body::after {
   gap: 6rem; align-items: center;
 }
 .academy-ambassador__lead {
-  font-size: 1.125rem; font-weight: 300; line-height: 1.7;
+  font-size: 1.125rem; font-weight: 500; line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 .academy-ambassador__body {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.7; margin-bottom: 3rem;
 }
 .academy-ambassador__benefits {
@@ -3072,7 +3072,7 @@ body::after {
   letter-spacing: .35em; font-weight: 700; margin-bottom: .75rem;
 }
 .expo-detail-card__text {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.7; white-space: pre-line;
 }
 
@@ -3089,7 +3089,7 @@ body::after {
   margin-bottom: 2.5rem; line-height: 1.15;
 }
 .expo-highlights__body {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.85; margin-bottom: 2.5rem;
 }
 .expo-highlights__list {
@@ -3107,7 +3107,7 @@ body::after {
   font-size: .875rem; font-weight: 600; margin-bottom: .25rem;
 }
 .expo-highlights__item-desc {
-  font-size: .75rem; color: #a1a1aa; font-weight: 300;
+  font-size: .75rem; color: #666666; font-weight: 500;
   line-height: 1.6;
 }
 .expo-highlights__media {
@@ -3158,7 +3158,7 @@ body::after {
   width: 100%; height: 100%; object-fit: cover;
 }
 .expo-exhibitor__body {
-  font-size: .875rem; color: #a1a1aa; font-weight: 300;
+  font-size: .875rem; color: #bbbbbb; font-weight: 500;
   line-height: 1.85; margin-bottom: 2.5rem;
 }
 .expo-exhibitor__text .btn-luxury:hover {
@@ -3195,7 +3195,7 @@ body::after {
   margin-bottom: 2.5rem;
 }
 .foundation-phases__desc {
-  font-size: .875rem; color: #a1a1aa; font-weight: 300;
+  font-size: .875rem; color: #666666; font-weight: 500;
   max-width: 48rem; margin: 0 auto; line-height: 1.7;
   font-style: italic;
 }
@@ -3237,7 +3237,7 @@ body::after {
   margin-bottom: 3rem;
 }
 .foundation-partners__body {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.7; font-style: italic;
 }
 .foundation-partners__grid {
@@ -3265,7 +3265,7 @@ body::after {
   margin: 0 auto 6rem;
 }
 .foundation-guardians__body {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   font-style: italic;
 }
 .foundation-guardians__grid {
@@ -3352,7 +3352,7 @@ body::after {
   letter-spacing: .3em; font-weight: 700; margin-bottom: 1.5rem;
 }
 .retreat-node__subtitle {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.7; margin-bottom: 1.5rem;
 }
 .retreat-node__text {
@@ -3424,7 +3424,7 @@ body::after {
   margin-bottom: 1.5rem;
 }
 .retreat-card__desc {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.7; margin-bottom: 2.5rem;
 }
 .retreat-card__cta {
@@ -3538,7 +3538,7 @@ body::after {
   margin-bottom: .75rem; text-align: center;
 }
 .customer-auth__subtitle {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   text-align: center; margin-bottom: 3rem;
 }
 .customer-auth__errors {
@@ -3589,7 +3589,7 @@ body::after {
   color: #f4f4f5;
 }
 .page-404__body {
-  font-size: .875rem; color: #71717a; font-weight: 300;
+  font-size: .875rem; color: #555555; font-weight: 500;
   margin-bottom: 3rem;
 }
 
@@ -3628,7 +3628,7 @@ body::after {
   font-size: 1rem; margin-bottom: .5rem;
 }
 .search-result-card__excerpt {
-  font-size: .75rem; color: #71717a; font-weight: 300;
+  font-size: .75rem; color: #555555; font-weight: 500;
   line-height: 1.6;
 }
 .search-result-card__price {
@@ -3710,7 +3710,7 @@ body::after {
   max-width: 950px;
   margin: 0 auto;
   color: #222;
-  font-weight: 300;
+  font-weight: 500;
 }
 .crowning-declaration__text em,
 .crowning-declaration__text i {
@@ -3749,7 +3749,7 @@ body::after {
   color: #333;
   margin-bottom: 25px;
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
 }
 .crowning-origin__quote-mark {
   font-family: var(--font-serif);
@@ -3854,7 +3854,7 @@ body::after {
   font-size: 1.1rem;
   color: #555;
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
 }
 .crowning-partnerships__form {
   max-width: 700px;
@@ -3963,8 +3963,8 @@ body::after {
 }
 .booknv-hero__desc {
   font-size: 1.1rem;
-  font-weight: 300;
-  color: #737373;
+  font-weight: 500;
+  color: #555555;
   line-height: 1.8;
   max-width: 34rem;
   margin-bottom: 3.5rem;
@@ -4089,8 +4089,8 @@ body::after {
 }
 .booknv-vision__body {
   font-size: 1.05rem;
-  font-weight: 300;
-  color: #737373;
+  font-weight: 500;
+  color: #555555;
   line-height: 1.8;
   max-width: 32rem;
   margin: 0;
@@ -4183,8 +4183,8 @@ body::after {
 }
 .booknv-pillar__body {
   font-size: 0.9rem;
-  font-weight: 300;
-  color: #737373;
+  font-weight: 500;
+  color: #555555;
   line-height: 1.8;
   max-width: 22rem;
   margin: 0;
@@ -4258,8 +4258,8 @@ body::after {
 }
 .booknv-mentorship__body {
   font-size: 1.05rem;
-  font-weight: 300;
-  color: #525252;
+  font-weight: 500;
+  color: #333333;
   line-height: 1.8;
   margin: 0 0 2.5rem;
 }
@@ -4338,8 +4338,8 @@ body::after {
 }
 .booknv-booking__subtext {
   font-size: 1.05rem;
-  font-weight: 300;
-  color: #737373;
+  font-weight: 500;
+  color: #555555;
   line-height: 1.8;
   margin: 0;
 }
@@ -4530,7 +4530,7 @@ body::after {
 /* ── MANIFESTO — READABILITY UPGRADE ────────────────────── */
 .manifesto__quote {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   font-size: clamp(1.1rem, 2.2vw, 1.45rem);
   line-height: 2;
@@ -4638,9 +4638,9 @@ body::after {
 .cross-sell-luxury__card-desc {
   font-family: var(--font-sans);
   font-size: .85rem;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.7;
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.85);
   max-width: 380px;
   margin-bottom: 2rem;
 }
@@ -4922,10 +4922,10 @@ div + section {
   font-style: italic;
 }
 .press-accolade-card__body {
-  color: #78716C;
+  color: #555555;
   font-size: 0.875rem;
   line-height: 1.75;
-  font-weight: 300;
+  font-weight: 500;
   font-family: var(--font-sans);
 }
 .press-accolade-card__body strong { color: #292524; font-weight: 500; }
@@ -4972,8 +4972,8 @@ div + section {
 }
 .press-literary__body {
   max-width: 36rem;
-  color: #78716C;
-  font-weight: 300;
+  color: #555555;
+  font-weight: 500;
   line-height: 1.75;
   font-size: 1rem;
   font-family: var(--font-sans);
@@ -5082,8 +5082,8 @@ div + section {
 }
 .press-media__title-muted { color: #D6D3D1; }
 .press-media__body {
-  color: #78716C;
-  font-weight: 300;
+  color: #555555;
+  font-weight: 500;
   line-height: 1.75;
   max-width: 28rem;
   margin-bottom: 3rem;
@@ -5146,8 +5146,8 @@ div + section {
 }
 .press-engage__title-italic { color: #D6D3D1; font-style: italic; }
 .press-engage__body {
-  color: #78716C;
-  font-weight: 300;
+  color: #555555;
+  font-weight: 500;
   line-height: 1.75;
   max-width: 28rem;
   margin-bottom: 3rem;
