@@ -13,7 +13,7 @@
       "type": "page-hero",
       "settings": {
         "section_id": "page-hero",
-        "image": "shopify://shop_images/iStock-1373240838.jpg",
+        "image": "shopify://shop_images/IMG_7932.webp",
         "overlay_opacity": 35,
         "eyebrow": "",
         "title_line_1": "The Dream Academy",
@@ -161,7 +161,7 @@
         "cta_text": "Enter the Expo",
         "cta_link": "",
         "image": "shopify://shop_images/iStock-1161922208.jpg",
-        "show_play_button": true
+        "show_play_button": false
       }
     },
     "pillar_publishing": {
