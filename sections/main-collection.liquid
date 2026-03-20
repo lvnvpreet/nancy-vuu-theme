@@ -22,7 +22,7 @@
   </div>
 
   {%- paginate collection.products by section.settings.products_per_page -%}
-    <div class="product-grid">
+    <div class="product-grid" id="product-grid">
       {%- for product in collection.products -%}
         {%- render 'product-card', product: product, lazy_load: true -%}
       {%- else -%}

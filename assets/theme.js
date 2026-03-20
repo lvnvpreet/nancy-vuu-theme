@@ -207,7 +207,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── COLLECTION PAGINATION SCROLL TO TOP ───────────────────
   if (sessionStorage.getItem('paginationScrollTop') === '1') {
     sessionStorage.removeItem('paginationScrollTop');
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    var grid = document.getElementById('product-grid');
+    if (grid) {
+      grid.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
   }
   document.addEventListener('click', function(e) {
     var link = e.target.closest('.pagination__link');

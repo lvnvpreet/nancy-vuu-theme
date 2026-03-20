@@ -1,19 +1,33 @@
 {%- comment -%} Heritage Narrative — "A Heritage Reclaimed" storytelling section {%- endcomment -%}
 <section class="heritage-section reveal">
-  <div class="heritage-section__inner">
-    {% if section.settings.eyebrow != blank %}
-      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
-    {% endif %}
-    <h3 class="heritage-section__title serif-font">{{ section.settings.title | default: "The Sovereign Return" }}</h3>
-    <div class="heritage-section__body">
-      {% for block in section.blocks %}
-        {% if block.type == 'paragraph' %}
-          <p class="heritage-section__paragraph" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
-        {% elsif block.type == 'quote' %}
-          <p class="heritage-section__quote serif-font" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
-        {% endif %}
-      {% endfor %}
+  <div class="heritage-section__inner{% if section.settings.image %} heritage-section__inner--split{% endif %}">
+
+    <div class="heritage-section__content">
+      {% if section.settings.eyebrow != blank %}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      <h3 class="heritage-section__title serif-font">{{ section.settings.title | default: "The Sovereign Return" }}</h3>
+      <div class="heritage-section__body">
+        {% for block in section.blocks %}
+          {% if block.type == 'paragraph' %}
+            <p class="heritage-section__paragraph" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {% elsif block.type == 'quote' %}
+            <p class="heritage-section__quote serif-font" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
+
+    {%- if section.settings.image -%}
+      <div class="heritage-section__image">
+        {%- render 'image',
+            image: section.settings.image,
+            sizes: '(max-width:1023px) 100vw, 50vw',
+            alt: section.settings.title
+        -%}
+      </div>
+    {%- endif -%}
+
   </div>
 </section>
 
@@ -22,8 +36,9 @@
   "name": "Heritage Narrative",
   "tag": "div",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow",  "default": "A Heritage Reclaimed" },
-    { "type": "text", "id": "title",   "label": "Title",    "default": "The Sovereign Return" }
+    { "type": "text",         "id": "eyebrow", "label": "Eyebrow", "default": "A Heritage Reclaimed" },
+    { "type": "text",         "id": "title",   "label": "Title",   "default": "The Sovereign Return" },
+    { "type": "image_picker", "id": "image",   "label": "Image (right side)" }
   ],
   "blocks": [
     {

@@ -529,6 +529,28 @@ body::after {
 }
 .section-bespoke__image { height: 600px; overflow: hidden; }
 @media (min-width: 1024px) { .section-bespoke__image { height: 800px; } }
+/* ── HERITAGE NARRATIVE ─────────────────────────────────── */
+.heritage-section { padding: 6rem 1.5rem; }
+.heritage-section__inner {
+  max-width: 72rem; margin: 0 auto;
+}
+.heritage-section__inner--split {
+  display: grid; grid-template-columns: 1fr;
+  gap: 4rem; align-items: center;
+}
+@media (min-width: 1024px) {
+  .heritage-section__inner--split { grid-template-columns: 1fr 1fr; }
+}
+.heritage-section__image {
+  height: 600px; overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .heritage-section__image { height: 700px; }
+}
+.heritage-section__image img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
 .section-bespoke .chart-border {
   border-top: 1px solid #333; padding-top: 2rem; margin-top: 2.5rem;
 }
@@ -1251,21 +1273,36 @@ body::after {
 
 /* ── BTN-LUXURY ─────────────────────────────────────────── */
 .btn-luxury {
+  position: relative;
   display: inline-block;
-  border-bottom: 1px solid var(--ink);
-  padding: 10px 0;
-  font-family: var(--font-sans); font-size: .65rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: .45em;
-  color: inherit; text-decoration: none; background: transparent;
-  cursor: pointer; transition: all .4s ease;
+  padding: 14px 40px;
+  font-family: var(--font-sans); font-size: .65rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .35em;
+  color: var(--ink); text-decoration: none; background: transparent;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color .45s ease, border-color .45s ease;
 }
-.btn-luxury:hover {
-  color: var(--gold, #c5a059);
-  border-color: var(--gold, #c5a059);
-  padding-left: 10px;
+.btn-luxury::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: translateY(101%);
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+  z-index: -1;
 }
-.btn-luxury--inverted { border-bottom-color: #fff; color: #fff; }
-.btn-luxury--inverted:hover { color: var(--gold, #c5a059); border-color: var(--gold, #c5a059); }
+.btn-luxury:hover { color: #fff; }
+.btn-luxury:hover::after { transform: translateY(0); }
+
+.btn-luxury--inverted {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn-luxury--inverted::after { background: #fff; }
+.btn-luxury--inverted:hover { color: var(--ink); border-color: #fff; }
 
 /* ── BTN-BESPOKE (gold accent) ──────────────────────────── */
 .btn-bespoke {

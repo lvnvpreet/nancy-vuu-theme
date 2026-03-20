@@ -145,6 +145,11 @@
     },
     "heritage": {
       "type": "heritage-narrative",
+      "settings": {
+        "eyebrow": "A Heritage Reclaimed",
+        "title": "The Sovereign Return",
+        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg"
+      },
       "blocks": {
         "p1": {
           "type": "paragraph",
