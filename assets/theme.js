@@ -204,6 +204,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.remove('menu-open');
   };
 
+  // ── COLLECTION PAGINATION SCROLL TO TOP ───────────────────
+  if (sessionStorage.getItem('paginationScrollTop') === '1') {
+    sessionStorage.removeItem('paginationScrollTop');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('.pagination__link');
+    if (link && link.getAttribute('href') && link.getAttribute('href') !== '#') {
+      sessionStorage.setItem('paginationScrollTop', '1');
+    }
+  });
+
   // ── PHOTOGRAPHY PARALLAX ───────────────────────────────
   var parallaxSections = document.querySelectorAll('[data-parallax]');
   if (parallaxSections.length) {
