@@ -141,6 +141,7 @@
         "item_1": {
           "type": "portfolio_item",
           "settings": {
+            "image": "shopify://shop_images/untitled-5298_3.jpg",
             "series": "The Authority Series",
             "title": "The Private Portfolio",
             "description": "For CEOs, Founders, and Elite Talent demanding a commanding, magnetic brand presence.",
