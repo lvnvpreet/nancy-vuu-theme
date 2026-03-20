@@ -12,12 +12,12 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_video": "https://www.pexels.com/download/video/3753702/",
+        "bg_video": "https://cdn.shopify.com/videos/c/o/v/121a2343116046dba4784a5f91154140.mp4",
         "overlay_opacity": 0,
         "headline_italic": "for",
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
-        "text_color": "#111111"
+        "text_color": "#ffffff"
       }
     },
     "atelier": {
@@ -28,8 +28,8 @@
         "eyebrow": "San Jose, CA · 1520 Southwest Expy #10",
         "title": "The Atelier",
         "description": "A sanctuary of restoration and creation. Formerly a humble alteration shop, now the birthplace of bespoke dreams — where every stitch carries intention.",
-        "cta_label": "Book Consultation",
-        "cta_link": "/pages/book-consultation"
+        "cta_label": "Enter The Atelier",
+        "cta_link": "shopify://pages/book-nancy-vuu"
       }
     },
     "bridal-collection": {
@@ -37,8 +37,8 @@
       "settings": {
         "eyebrow": "The Collection · 2026",
         "title": "Bridal",
-        "image_feature": "shopify://shop_images/Sept2023LacyMariePhotographyWeddingAaronandSophie-394_1.webp",
-        "image_side": "shopify://shop_images/Sept2023LacyMariePhotographyWeddingAaronandSophie-889.webp",
+        "image_feature": "shopify://shop_images/L1041963_copy_1.jpg",
+        "image_side": "shopify://shop_images/Screen_Shot_2026-03-17_at_6.11.18_PM.png",
         "cta_label": "Explore Bridal",
         "cta_link": "/collections/bridal"
       }
@@ -49,24 +49,12 @@
         "section_id": "bridal-bespoke",
         "eyebrow": "Custom Design",
         "title": "Bespoke Bridal",
-        "description": "\"You Dream It. We Create It.\" A collaborative journey from sketch to silk. Your gown is not just worn — it is inhabited.",
-        "image": "shopify://shop_images/Sept2023LacyMariePhotographyWeddingAaronandSophie-394.webp",
+        "description": "At Nancy Vuu, the ethereal becomes tangible through two distinct paths of excellence. Whether you seek a Nancy Vuu Original—an exclusive masterpiece designed from Nancy’s visionary lens specifically for you—or you wish to see your own long-held dream gown brought to life, our atelier serves as the bridge between imagination and reality. This is an intimate partnership in co-creation; from the first sketch to the final hand-wrought stitch, we breathe life into the silhouette you’ve always imagined. You dream it; we architect it. Together, we manifest a gown that is a living testament to your heart and a singular crown for your love story.",
+        "image": "shopify://shop_images/Untitled_design_8.jpg",
         "cta_label": "Begin Commission",
         "cta_link": "/pages/bridal",
         "show_chart": true,
         "chart_title": "The Journey — From Dream to Reality"
-      }
-    },
-    "womens-couture": {
-      "type": "womens-couture",
-      "settings": {
-        "section_id": "womens-couture",
-        "bg_image": "shopify://shop_images/IMG_0593.jpg",
-        "eyebrow": "Collection",
-        "title": "Women's Couture",
-        "tagline": "Elegance · Power · Grace",
-        "cta_label": "Explore Collection",
-        "cta_link": "/collections/womens-couture"
       }
     },
     "mens-suits": {
@@ -78,70 +66,12 @@
         "text_bg": "greige",
         "grid_ratio": "equal",
         "image_position": "right",
-        "image": "shopify://shop_images/sethimage.jpg",
-        "eyebrow": "Tailored for Him",
+        "image": "shopify://shop_images/iStock-157687323.jpg",
+        "eyebrow": "Tailored for Him & Her",
         "title": "Seth Eden",
-        "description": "Precision tailoring for the modern kingdom heir. Architectural authority meets restorative peace. Men's and Women's bespoke suiting.",
+        "description": "Seth Eden Bespoke is where traditional sartorial heritage meets a modern, visionary soul.  Artistry in every thread. Our Signature Seth Eden suits represent the pinnacle of custom tailoring. Blending old-world craftsmanship with a contemporary edge, we create garments for the modern individual who demands perfection in every line.\n\nExperience a silhouette that doesn't just fit—it commands.",
         "cta_label": "Explore Seth Eden",
         "cta_link": "/pages/seth-eden"
-      }
-    },
-    "legacy-collections": {
-      "type": "legacy-collections",
-      "blocks": {
-        "children": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/DSC9102B_1.webp",
-            "title": "Children's Couture",
-            "cta": "Shop Kids",
-            "link": "/collections/childrens-couture"
-          }
-        },
-        "mommy": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/0CF9F33E-0984-4332-8324-AFB352D9BDDC.webp",
-            "title": "Mommy & Me",
-            "cta": "Shop Matching Sets",
-            "link": "/collections/mommy-me"
-          }
-        }
-      },
-      "block_order": [
-        "children",
-        "mommy"
-      ],
-      "settings": {
-        "eyebrow": "For the Little Ones",
-        "title": "The Legacy Collections"
-      }
-    },
-    "kingdom": {
-      "type": "split-content",
-      "settings": {
-        "section_id": "kingdom",
-        "section_height": "editorial",
-        "bg_color": "greige",
-        "text_bg": "none",
-        "grid_ratio": "7-5",
-        "image_position": "left",
-        "image": "shopify://shop_images/untitled--6.webp",
-        "eyebrow": "Ready to Wear",
-        "title": "Kingdom Heirs",
-        "description": "Everyday luxury that speaks your identity. T-shirts, hoodies, and essentials tailored for the culture — worn by those who carry purpose.",
-        "cta_label": "Shop The Drop",
-        "cta_link": "/collections/kingdom-heirs"
-      }
-    },
-    "crowns-jewelry": {
-      "type": "crowns-jewelry",
-      "settings": {
-        "section_id": "crowns",
-        "eyebrow": "Jewelry & Headpieces",
-        "title": "The Crowning",
-        "cta_label": "Adorn Yourself",
-        "cta_link": "/collections/crowns-jewelry"
       }
     },
     "retreats": {
@@ -150,18 +80,18 @@
         "napa": {
           "type": "retreat",
           "settings": {
-            "image": "shopify://shop_images/a108c2_f4274b7aa6c443d4b3766c89c891b403_mv2_d_2338_3151_s_2.jpg",
+            "image": "shopify://shop_images/Untitled_45_x_50_in_6.jpg",
             "name": "Napa Valley",
-            "subtitle": "Wine Country Retreat",
+            "subtitle": "rest.  reflect.  replenish.",
             "link": ""
           }
         },
         "hawaii": {
           "type": "retreat",
           "settings": {
-            "image": "shopify://shop_images/a108c2_98bcbc42bcad4813ad1591ab2160221f.jpg",
+            "image": "shopify://shop_images/Untitled_45_x_50_in_5.jpg",
             "name": "Hawaii",
-            "subtitle": "Island Immersion",
+            "subtitle": "awakening of soul | mind | body.",
             "link": ""
           }
         }
@@ -179,9 +109,86 @@
         "explore_link": "/pages/retreats"
       }
     },
+    "crowns-jewelry": {
+      "type": "crowns-jewelry",
+      "settings": {
+        "section_id": "crowns",
+        "bg_image": "shopify://shop_images/Untitled_design_5.jpg",
+        "eyebrow": "Jewelry & Headpieces",
+        "title": "The Crowning",
+        "cta_label": "Adorn Yourself",
+        "cta_link": "/collections/crowns-jewelry"
+      }
+    },
+    "womens-couture": {
+      "type": "womens-couture",
+      "settings": {
+        "section_id": "womens-couture",
+        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
+        "eyebrow": "Collection",
+        "title": "Women's Couture",
+        "tagline": "Elegance · Power · Grace",
+        "cta_label": "Explore Collection",
+        "cta_link": "/collections/womens-couture"
+      }
+    },
+    "legacy-collections": {
+      "type": "legacy-collections",
+      "blocks": {
+        "children": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/DSC9102B_1.webp",
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens-couture"
+          }
+        },
+        "mommy": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/I1A3307.jpg",
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-me"
+          }
+        }
+      },
+      "block_order": [
+        "children",
+        "mommy"
+      ],
+      "settings": {
+        "eyebrow": "For the Family",
+        "title": "The Legacy Collections"
+      }
+    },
+    "kingdom": {
+      "type": "split-content",
+      "settings": {
+        "section_id": "kingdom",
+        "section_height": "editorial",
+        "bg_color": "greige",
+        "text_bg": "none",
+        "grid_ratio": "7-5",
+        "image_position": "left",
+        "image": "shopify://shop_images/Untitled_45_x_50_in_4.jpg",
+        "eyebrow": "Ready to Wear",
+        "title": "Kingdom Heirs",
+        "description": "The intersection of mid-luxury ready-to-wear and purposeful design. A limited-edition collection crafted for those who live with purpose. Now available to shop exclusively at the Nancy Vuu Atelier in San Jose—where your wardrobe meets its highest calling.",
+        "cta_label": "Shop The Drop",
+        "cta_link": "/collections/kingdom-heirs"
+      }
+    },
     "photography": {
       "type": "photography",
       "blocks": {
+        "marquee_word_bRjmKX": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
+          }
+        },
         "w1": {
           "type": "marquee_word",
           "settings": {
@@ -197,14 +204,22 @@
         "w3": {
           "type": "marquee_word",
           "settings": {
-            "word": "MEMORIALIZE"
+            "word": "ELEVATE"
+          }
+        },
+        "marquee_word_JXmziC": {
+          "type": "marquee_word",
+          "settings": {
+            "word": "CAPTURE"
           }
         }
       },
       "block_order": [
+        "marquee_word_bRjmKX",
         "w1",
         "w2",
-        "w3"
+        "w3",
+        "marquee_word_JXmziC"
       ],
       "settings": {
         "section_id": "photography",
@@ -244,21 +259,21 @@
           "type": "link",
           "settings": {
             "label": "Book for Speaking",
-            "url": "/pages/book"
+            "url": "shopify://pages/book-nancy-vuu"
           }
         },
         "l2": {
           "type": "link",
           "settings": {
             "label": "Mentorship Program",
-            "url": "/pages/book"
+            "url": "shopify://pages/book-nancy-vuu"
           }
         },
         "l3": {
           "type": "link",
           "settings": {
             "label": "Buy The Book",
-            "url": "/pages/book"
+            "url": "shopify://pages/the-library"
           }
         }
       },
@@ -349,12 +364,12 @@
     "atelier",
     "bridal-collection",
     "bridal-bespoke",
-    "womens-couture",
     "mens-suits",
+    "retreats",
+    "crowns-jewelry",
+    "womens-couture",
     "legacy-collections",
     "kingdom",
-    "crowns-jewelry",
-    "retreats",
     "photography",
     "speaker-academy",
     "dream-academy",

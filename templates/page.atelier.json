@@ -12,7 +12,9 @@
     "atelier_hero": {
       "type": "atelier-hero",
       "settings": {
-        "overlay_opacity": 50,
+        "video_url": "",
+        "image": "shopify://shop_images/iStock-1322975669.jpg",
+        "overlay_opacity": 15,
         "eyebrow": "The Nancy Vuu Master Atelier",
         "title_line_1": "Preservation &",
         "title_line_2": "Architecture.",
@@ -36,6 +38,7 @@
       "settings": {
         "section_id": "services",
         "image_position": "left",
+        "image": "shopify://shop_images/iStock-1318603419.jpg",
         "service_number": "I.",
         "eyebrow": "Precision & Form",
         "title_line_1": "Master Tailoring &",
@@ -51,6 +54,7 @@
       "settings": {
         "section_id": "preservation",
         "image_position": "right",
+        "image": "shopify://shop_images/iStock-1124735519.jpg",
         "service_number": "II.",
         "eyebrow": "Garment Care",
         "title_line_1": "Fine Fabric Care &",
@@ -64,6 +68,7 @@
     "academy_banner": {
       "type": "atelier-academy",
       "settings": {
+        "image": "shopify://shop_images/iStock-953878760.jpg",
         "eyebrow": "The Future of Craft",
         "title_line_1": "The Dream Academy",
         "title_line_2": "Conservatory.",
@@ -74,22 +79,6 @@
     },
     "inquiry": {
       "type": "atelier-inquiry",
-      "settings": {
-        "section_id": "inquiry",
-        "eyebrow": "The Atelier Concierge",
-        "title_line_1": "Request a",
-        "title_line_2": "Consultation.",
-        "subtext": "Connect with our master artisans to discuss your bespoke tailoring needs, request archival fabric care, or schedule a private fitting.",
-        "address_eyebrow": "The San Jose Flagship",
-        "address_line_1": "1520 Southwest Expwy #10",
-        "address_line_2": "San Jose, CA 95126",
-        "phone": "800.200.2079",
-        "label_name": "FULL NAME",
-        "label_email": "CONTACT EMAIL ADDRESS",
-        "label_service": "TYPE OF ATELIER SERVICE REQUESTED",
-        "label_message": "PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED...",
-        "submit_label": "Submit Request to the Atelier"
-      },
       "blocks": {
         "opt_tailoring": {
           "type": "service_option",
@@ -117,7 +106,23 @@
         "opt_tailoring",
         "opt_preservation",
         "opt_bespoke"
-      ]
+      ],
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "The Atelier Concierge",
+        "title_line_1": "Request a",
+        "title_line_2": "Consultation.",
+        "subtext": "Connect with our master artisans to discuss your bespoke tailoring needs, request archival fabric care, or schedule a private fitting.",
+        "address_eyebrow": "The San Jose Flagship",
+        "address_line_1": "1520 Southwest Expwy #10",
+        "address_line_2": "San Jose, CA 95126",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "TYPE OF ATELIER SERVICE REQUESTED",
+        "label_message": "PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED...",
+        "submit_label": "Submit Request to the Atelier"
+      }
     },
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",

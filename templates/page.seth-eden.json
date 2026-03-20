@@ -13,8 +13,9 @@
       "type": "seth-hero",
       "settings": {
         "video_url": "",
+        "image": "shopify://shop_images/8468e35e-d38b-487d-83ae-58b1dbbed184.png",
         "eyebrow": "The House of Nancy Vuu Presents",
-        "heading": "Seth Eden.",
+        "heading": "Seth Eden",
         "subtext": "Custom Bespoke Masterpieces for Men & Women.",
         "brand_sub": "By Nancy Vuu"
       }
@@ -28,7 +29,15 @@
         "body": "",
         "bg_color": "#f4f4f4",
         "text_color": "#111111",
-        "extra_class": "seth-eden-manifesto"
+        "extra_class": "seth-eden-manifesto",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "seth_hero": {
@@ -37,6 +46,7 @@
         "panel_seth": {
           "type": "panel",
           "settings": {
+            "image": "shopify://shop_images/iStock-1300966679_1.jpg",
             "eyebrow": "The Mandate",
             "heading": "Seth",
             "subtext": "Architectural Authority",
@@ -46,9 +56,10 @@
         "panel_eden": {
           "type": "panel",
           "settings": {
+            "image": "shopify://shop_images/8456c15a-40f4-4fda-afc4-07d5d0bcaa3d.png",
             "eyebrow": "The Sanctuary",
             "heading": "Eden",
-            "subtext": "Restorative Peace",
+            "subtext": "Restorative Presence",
             "link": ""
           }
         }
@@ -66,6 +77,7 @@
         "theme": "light",
         "image_position": "right",
         "image_height": 700,
+        "image": "shopify://shop_images/iStock-1496844999.jpg",
         "badge_text": "The Vitality Threshold",
         "eyebrow": "The Vitality Threshold",
         "title_line_1": "High-Frequency Textiles.",
@@ -83,25 +95,28 @@
         "standard_1": {
           "type": "standard",
           "settings": {
-            "title": "Hand Stitched Construction",
-            "description": "All Seth Eden Custom Suits are made with a hand stitched full-canvas construction and hand-stitched \"Milanese\" buttonholes.",
-            "footer_text": "Our Craftsmanship"
+            "image": "shopify://shop_images/iStock-477257775.jpg",
+            "title": "Sartorial Hand-finishing",
+            "description": "\"Seth Eden: A legacy defined by the hand. Our artisans utilize centuries-old techniques—from hand-stitched full-canvas foundations to exquisite Milanese buttonholes—to create a garment that is not just worn, but commissioned for a lifetime of distinction.\"",
+            "footer_text": "Artisan Precision"
           }
         },
         "standard_2": {
           "type": "standard",
           "settings": {
-            "title": "Luxury Designer Fabrics",
-            "description": "Select from Silicon Valley's largest trove of Designer Fabric Swatches including Ermenegildo Zegna, Loro Piana, Lanificio Cerruti, and Reda.",
-            "footer_text": "Our Mills"
+            "image": "shopify://shop_images/iStock-1145913008.jpg",
+            "title": "The Unrivaled Textile Archive",
+            "description": "True distinction requires a limitless palette. Architect your mantle from an unrivaled archive of the world’s most prestigious textiles. While we feature the rare fibers of Scabal, Loro Piana, Vitale Barberis Canonico, and Holland & Sherry, these represent only the beginning of our expansive library of global excellence—hand-selected to fulfill your unique blueprint.",
+            "footer_text": "Storied Looms and Rare Fibers"
           }
         },
         "standard_3": {
           "type": "standard",
           "settings": {
-            "title": "Designed for You",
-            "description": "Select every last detail of your suit—from the lining to the stitching—and have your personal name custom embroidered inside.",
-            "footer_text": "Our Tailoring"
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_9.58.37_PM.png",
+            "title": "Exclusively Commissioned",
+            "description": "\"From custom linings to silk stitching, every Seth Eden suit is built for you. Complete the architecture of your garment with personalized embroidery: a signature of your own name, or a commemorative seal of your union featuring both names and your special date.\"",
+            "footer_text": "Crafted for Your Legacy"
           }
         }
       },
@@ -146,13 +161,14 @@
         "theme": "dark",
         "image_position": "left",
         "image_height": 800,
+        "image": "shopify://shop_images/iStock-657336212.jpg",
         "badge_text": "",
-        "eyebrow": "Masculine Sovereignty",
+        "eyebrow": "Unrivaled Stature",
         "title_line_1": "The Architecture of",
         "title_line_2": "Command.",
         "body_1": "Most suiting brands prioritize the \"uniform,\" but Seth Eden prioritizes the \"individual.\" We recognize that for the man of influence, a suit is not just clothing—it is an anchor of authority.",
-        "body_2": "Our masculine blueprint moves beyond rigid industrial blocks to create a silhouette of effortless command.",
-        "cta_label": "Secure Your Masculine Commission",
+        "body_2": "The Seth Eden blueprint moves beyond rigid industrial blocks to create a silhouette of effortless command.",
+        "cta_label": "Secure Your Commission",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
       }
@@ -189,13 +205,14 @@
         "theme": "dark",
         "image_position": "right",
         "image_height": 800,
+        "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "badge_text": "",
-        "eyebrow": "Feminine Sovereignty",
+        "eyebrow": "A Mantle of Distinction",
         "title_line_1": "Beyond the",
         "title_line_2": "Shrunken Silhouette.",
         "body_1": "Most clothiers approach women's suiting as a secondary thought—simply shrinking a masculine block. At Seth Eden, we recognize that the female visionary requires an entirely different architecture.",
         "body_2": "We honor, celebrate, and enhance the unique power and grace of the woman's silhouette.",
-        "cta_label": "Secure Your Feminine Commission",
+        "cta_label": "Secure Your Commission",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
       }
@@ -207,99 +224,54 @@
         "theme": "light",
         "image_position": "left",
         "image_height": 750,
+        "image": "shopify://shop_images/iStock-2161713126.jpg",
         "badge_text": "",
         "eyebrow": "Luxury Lifestyle",
-        "title_line_1": "From Cannes to",
-        "title_line_2": "Silicon Valley.",
-        "body_1": "A Seth Eden commission is architected for high-visibility moments. From the red carpets of Cannes to the boardrooms of Silicon Valley, our garments provide the definitive silhouette for the modern dignitary and executive.",
+        "title_line_1": "Power Suits &",
+        "title_line_2": "Gala Couture",
+        "body_1": "From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments. We specialize in evening attire and Power Suit architecture for the modern dignitary and executive. Unique silk jacquards, custom velvet tailoring, and architectural formal wear designed for those who command the room without uttering a word.",
         "body_2": "",
         "cta_label": "Request Executive Styling",
         "cta_link": "/pages/contact",
         "cta_style": "solid"
       }
     },
-    "pillars": {
-      "type": "seth-pillars",
-      "blocks": {
-        "pillar_1": {
-          "type": "pillar",
-          "settings": {
-            "category": "Bespoke Tailoring",
-            "eyebrow": "The Commission",
-            "title": "Master Bespoke for All.",
-            "body": "Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture. Whether crafting a sharp masculine silhouette or an empowered feminine frame, our process is rooted in 60+ hours of hand-craftsmanship. We utilize the world's most prestigious mills—Loro Piana, Dormeuil, and Scabal—to ensure your garment is an archival asset that transcends gender and season.",
-            "cta_label": "Secure Your Commission",
-            "cta_link": "/pages/contact"
-          }
-        },
-        "pillar_2": {
-          "type": "pillar",
-          "settings": {
-            "category": "Power Suits & Gala Couture",
-            "eyebrow": "High Visibility",
-            "title": "Power Suits & Gala Couture.",
-            "body": "From the red carpets of Cannes to the boardrooms of Silicon Valley, Seth Eden provides the definitive silhouette for high-visibility moments. We specialize in evening attire and Power Suit architecture for the modern dignitary and executive. Unique silk jacquards, custom velvet tailoring, and architectural formalwear designed for those who command the room without uttering a word.",
-            "cta_label": "Inquire for Event",
-            "cta_link": "/pages/contact"
-          }
-        },
-        "pillar_3": {
-          "type": "pillar",
-          "settings": {
-            "category": "Bespoke Wedding Party",
-            "eyebrow": "Legacy Beginnings",
-            "title": "The Heirloom Occasion.",
-            "body": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples. We provide full-service styling for the groom, the modern bride in a suit, and their inner circle, ensuring the entire party reflects the pinnacle of sartorial standards.",
-            "cta_label": "Book Occasion Consultation",
-            "cta_link": "/pages/contact"
-          }
-        }
-      },
-      "block_order": [
-        "pillar_1",
-        "pillar_2",
-        "pillar_3"
-      ],
-      "settings": {}
-    },
-    "journey": {
-      "type": "seth-journey",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "number": "01.",
-            "heading": "The Reveal",
-            "text": "Explore our atelier inspirations in Napa or San Jose—the visual foundations of your identity."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "number": "02.",
-            "heading": "The Consultation",
-            "text": "Collaborate with our designers to customize your mandated silhouette, choosing textures that reflect your unique calling."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "number": "03.",
-            "heading": "The Appointing",
-            "text": "Your final fitting—the moment where your garment and your identity are unified in a bespoke appointment."
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
+    "seth_feature_3Xq87H": {
+      "type": "seth-feature",
       "settings": {
-        "eyebrow": "The Journey",
-        "heading": "From Vision to Vesting.",
-        "cta_text": "Begin Your Appointment",
-        "cta_link": ""
+        "section_id": "high-visibility",
+        "theme": "dark",
+        "image_position": "right",
+        "image_height": 750,
+        "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.50.28_AM.png",
+        "badge_text": "",
+        "eyebrow": "The Commission",
+        "title_line_1": "Master Bespoke",
+        "title_line_2": "For All",
+        "body_1": "Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture. Whether crafting a sharp masculine silhouette or an empowered feminine frame, our process is rooted in 60+ hours of hand-craftsmanship. We utilize the world's most prestigious mills—Loro Piana, Dormeuil, and Scabal—to ensure your garment is an archival asset that transcends gender and season.",
+        "body_2": "",
+        "cta_label": "Request Executive Styling",
+        "cta_link": "/pages/contact",
+        "cta_style": "solid"
+      }
+    },
+    "seth_feature_iQN7tW": {
+      "type": "seth-feature",
+      "settings": {
+        "section_id": "high-visibility",
+        "theme": "light",
+        "image_position": "left",
+        "image_height": 750,
+        "image": "shopify://shop_images/iStock-1184401712.jpg",
+        "badge_text": "",
+        "eyebrow": "Legacy Beginnings",
+        "title_line_1": "The Heirloom",
+        "title_line_2": "Occasion",
+        "body_1": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples. We provide full-service styling for the groom, the modern bride in a suit, and their inner circle, ensuring the entire party reflects the pinnacle of sartorial standards.",
+        "body_2": "",
+        "cta_label": "Request Executive Styling",
+        "cta_link": "/pages/contact",
+        "cta_style": "solid"
       }
     },
     "tailoring": {
@@ -340,116 +312,34 @@
         "description": "At Seth Eden, your garment is more than a fit—it is a recognition of your mandate. We offer two levels of precision, each designed to frame your identity."
       }
     },
-    "pathways": {
-      "type": "seth-pathways",
-      "blocks": {
-        "pw1_1": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Optimized from House patterns to your specific posture."
-          }
-        },
-        "pw1_2": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Selection from 5,000+ Vitality Mandate fabrics."
-          }
-        },
-        "pw1_3": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Hand-finished detailing and personalized monogramming."
-          }
-        },
-        "pw1_4": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "light",
-            "text": "Two fitting stages for precision alignment."
-          }
-        },
-        "pw2_1": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "A unique paper pattern drafted from scratch for your identity."
-          }
-        },
-        "pw2_2": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "Absolute structural freedom and complex architecture."
-          }
-        },
-        "pw2_3": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "Master-level hand-canvasing — 60+ hours of craft."
-          }
-        },
-        "pw2_4": {
-          "type": "pathway_item",
-          "settings": {
-            "side": "dark",
-            "text": "3-5 intricate fittings for a second-skin result."
-          }
-        }
-      },
-      "block_order": [
-        "pw1_1",
-        "pw1_2",
-        "pw1_3",
-        "pw1_4",
-        "pw2_1",
-        "pw2_2",
-        "pw2_3",
-        "pw2_4"
-      ],
-      "settings": {
-        "eyebrow": "The Journey of Choice",
-        "heading": "Pathways to Sovereignty.",
-        "card1_eyebrow": "The Modern Professional",
-        "card1_title_line_1": "The Custom",
-        "card1_title_line_2": "Blueprint (MTM).",
-        "card1_cta_label": "Inquire for Custom MTM",
-        "card1_cta_link": "#inquiry",
-        "card2_eyebrow": "The Archival Masterpiece",
-        "card2_title_line_1": "The Sovereign",
-        "card2_title_line_2": "Bespoke.",
-        "card2_cta_label": "Request Bespoke Commission",
-        "card2_cta_link": "#inquiry"
-      }
-    },
     "limited": {
       "type": "seth-limited",
       "blocks": {
         "design_1": {
           "type": "design",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.31.29_PM.png",
             "number": "Inspiration 01",
-            "title": "The Appointed Double-Breast",
-            "subtitle": "Architectural Framing in Charcoal Wool"
+            "title": "The Floral Fashion",
+            "subtitle": "Architectural Framing in Silk Jacquard"
           }
         },
         "design_2": {
           "type": "design",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.37.12_AM.png",
             "number": "Inspiration 02",
-            "title": "The Eden Fluid Blazer",
-            "subtitle": "Soft Structuralism in Ivory Silk-Blend"
+            "title": "For Him & Her",
+            "subtitle": "Embracing Their Unique Silhouette"
           }
         },
         "design_3": {
           "type": "design",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.40.01_AM.png",
             "number": "Inspiration 03",
-            "title": "The Mandate Overcoat",
-            "subtitle": "Structural Command in Navy Cashmere"
+            "title": "The Exquisite 3 piece",
+            "subtitle": "Structural Command in Brown Wool"
           }
         }
       },
@@ -471,13 +361,15 @@
         "img_1": {
           "type": "image",
           "settings": {
-            "label": "The Sovereign Tuxedo",
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.46.02_PM.png",
+            "label": "The Architect that demands",
             "wide": false
           }
         },
         "img_2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/iStock-2011819012.jpg",
             "label": "The Executive Blazer",
             "wide": false
           }
@@ -485,7 +377,8 @@
         "img_3": {
           "type": "image",
           "settings": {
-            "label": "Archival Overcoat",
+            "image": "shopify://shop_images/iStock-839014260.jpg",
+            "label": "The Tuxedo",
             "wide": false
           }
         }
@@ -510,20 +403,23 @@
         "img_4": {
           "type": "image",
           "settings": {
-            "label": "The Empowered Shoulder",
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
+            "label": "The Empowered Designs",
             "wide": false
           }
         },
         "img_5": {
           "type": "image",
           "settings": {
-            "label": "The Dignitary Vestment",
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
+            "label": "The Chic & Classy",
             "wide": false
           }
         },
         "img_6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.39.53_PM.png",
             "label": "Formal Evening Tailoring",
             "wide": false
           }
@@ -541,6 +437,25 @@
         "heading": "The Women's Showroom.",
         "description": "Seth Eden's feminine blueprint — where master craftsmanship meets the architecture of grace.",
         "swap_layout": true
+      }
+    },
+    "seth_feature_hgJRkp": {
+      "type": "seth-feature",
+      "settings": {
+        "section_id": "high-visibility",
+        "theme": "light",
+        "image_position": "left",
+        "image_height": 750,
+        "image": "shopify://shop_images/iStock-1184401712.jpg",
+        "badge_text": "",
+        "eyebrow": "aligned visions",
+        "title_line_1": "The Story",
+        "title_line_2": "",
+        "body_1": "Nancy's journey began with a spiritual encounter that changed the course of her life. She saw children across the nations, lacking food and covering. In that moment, a voice spoke: \"Start designing. Reach out to these children and let them know they are loved—that they are true royalty.\"\n\nLater, her eyes were opened to a vision of a breathtaking garden. The instruction was clear: \"I will have you build the garden of the Lord all around the world.\" For Nancy, fashion became the vehicle—a platform to restore identity and elevate humanity to its original regal design.",
+        "body_2": "In perfect alignment, Dionne received a vision of a girl in a garden, hearing the declaration: \"Her name is Eden. I will find my rest in her.\" Then came the vision of a boy, Seth—a name meaning \"The Appointed One.\"\n\nWhen these two visions converged, Seth Eden was born. It is a house built on the intersection of Restoration and Authority. Every garment is crafted to reflect the \"True Royalty\" Nancy was called to champion, and the \"Appointment\" Dionne was shown.",
+        "cta_label": "Request Executive Styling",
+        "cta_link": "/pages/contact",
+        "cta_style": "solid"
       }
     },
     "narrative": {
@@ -679,13 +594,13 @@
     "masculine",
     "feminine",
     "visibility",
-    "pillars",
-    "journey",
+    "seth_feature_3Xq87H",
+    "seth_feature_iQN7tW",
     "tailoring",
-    "pathways",
     "limited",
     "gallery_mens",
     "gallery_womens",
+    "seth_feature_hgJRkp",
     "narrative",
     "commission",
     "cross-sell-luxury"

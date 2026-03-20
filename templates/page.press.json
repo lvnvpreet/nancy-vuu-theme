@@ -12,6 +12,7 @@
     "press_hero": {
       "type": "press-hero",
       "settings": {
+        "bg_image": "shopify://shop_images/nancy-vuu-public-speaking.jpg",
         "eyebrow": "Voice of Authority",
         "title_line_1": "The Architecture",
         "title_italic": "of",
@@ -172,6 +173,7 @@
     "press_literary": {
       "type": "press-literary",
       "settings": {
+        "book_image": "shopify://shop_images/Untitled_5_x_5_in.jpg",
         "eyebrow": "The Literary Movement",
         "title_line_1": "Let There",
         "title_italic": "Be Fashion.",
@@ -179,14 +181,20 @@
         "body_1": "<p>This isn’t just a book—it’s a <strong>revelation</strong>. Creative visionary Nancy Vuu invites you behind the runway into the deeper layers of her life. Woven through intimate stories of transformation, it unveils the narrative of a woman who dared to leap into purpose.</p>",
         "body_2": "<p>From dark closets of self-doubt to the bright runways of purpose, this book speaks to everyone seeking to rediscover identity and spiritual clarity through the lens of fashion.</p>",
         "cta_1_label": "Request Speaking / Book Tour",
-        "cta_2_label": "Purchase Volume"
+        "cta_1_link": "",
+        "cta_2_label": "Purchase Volume",
+        "cta_2_link": ""
       }
     },
     "press_museum": {
       "type": "press-museum",
       "settings": {
         "eyebrow": "The Archive",
-        "heading": "Museum of Editorials"
+        "heading": "Museum of Editorials",
+        "archive_link": "",
+        "image_1": "shopify://shop_images/Isabella_Vogue_-_Nancy_Vuu.webp",
+        "image_2": "shopify://shop_images/49.webp",
+        "image_3": "shopify://shop_images/mommy-me-photographer_9707ff60-017f-46af-a113-9d70f3c94c2a.jpg"
       }
     },
     "press_media": {
@@ -224,7 +232,7 @@
         "title_line_1": "Elevate Your Story",
         "title_line_2_pre": "With",
         "title_line_2_name": "Nancy Vuu.",
-        "body": "<p>Nancy is available for expert commentary on the intersections of <strong>Social Impact Cinema</strong>, <strong>Luxury Diplomacy</strong>, and <strong>Refugee Empowerment</strong>.</p>",
+        "body": "<p>Nancy is available for expert commentary on the intersections of <strong>Dreams Realized, Social Impact through Cinema & Storytelling</strong>, <strong>Fashion Diplomacy</strong>, and <strong>Refugee & Women Empowerment</strong>.</p>",
         "email": "press@nancyvuu.com",
         "form_eyebrow": "Media Inquiries",
         "label_name": "Full Name / Publication",

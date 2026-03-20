@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "The Library — Let There Be Fashion",
   "sections": {
     "library_header": {
       "type": "library-header",
@@ -11,12 +19,13 @@
     "book_hero": {
       "type": "book-hero",
       "settings": {
+        "cover_image": "shopify://shop_images/Untitled_5_x_5_in.jpg",
         "eyebrow": "The Debut Release",
         "title_line_1": "Let There Be",
         "title_line_2": "Fashion.",
         "subtitle": "A Story of Style, Spirit, and a Life Transformed.",
         "description": "This is not just a book about garments. It is a revelation of the human spirit. Nancy Vuu invites you behind the velvet ropes of the runway and into the deepest, most vulnerable layers of her life—proving that true luxury is forged in the fires of resilience.",
-        "availability": "Available Now in Hardcover.",
+        "availability": "Now Available",
         "cta_label": "Secure Your Copy",
         "cta_link": "#checkout"
       }
@@ -24,25 +33,25 @@
     "pull_quote": {
       "type": "manifesto",
       "settings": {
+        "eyebrow": "",
         "quote": "True power is not found in what you wear, but in the identity you architect from within. Your life is the ultimate canvas.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
         "text_color": "#111111",
-        "extra_class": "book-pull-quote"
+        "extra_class": "book-pull-quote",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "synopsis": {
       "type": "book-synopsis",
-      "settings": {
-        "eyebrow": "The Blueprint",
-        "heading_1": "Design Your",
-        "heading_2": "Destiny.",
-        "body_1": "For those who refuse to be defined by their past and are ready to architect a legacy of absolute significance—this is your blueprint.",
-        "body_2": "From the harrowing journey of a childhood refugee to commanding the global stages of Cannes and high-fashion runways, Nancy Vuu deconstructs the barriers between survival and significance.",
-        "body_3": "Let There Be Fashion is an unfiltered masterclass in transcendent architecture. It is a testament to what happens when you dare to merge profound spiritual conviction with unapologetic artistry. Through stirring narratives and hard-won wisdom, Nancy reveals how a single, courageous \"yes\" can open doors across the world.",
-        "panel_heading": "Inside the Pages, You Will Discover:",
-        "panel_cta_label": "Add to Your Library — $45.00",
-        "panel_cta_link": "#checkout"
-      },
       "blocks": {
         "disc_1": {
           "type": "discovery_item",
@@ -73,11 +82,28 @@
           }
         }
       },
-      "block_order": ["disc_1", "disc_2", "disc_3", "disc_4"]
+      "block_order": [
+        "disc_1",
+        "disc_2",
+        "disc_3",
+        "disc_4"
+      ],
+      "settings": {
+        "eyebrow": "The Blueprint",
+        "heading_1": "Design Your",
+        "heading_2": "Destiny.",
+        "body_1": "For those who refuse to be defined by their past and are ready to architect a legacy of absolute significance—this is your blueprint.",
+        "body_2": "From the harrowing journey of a childhood refugee to commanding the global stages of Cannes and high-fashion runways, Nancy Vuu deconstructs the barriers between survival and significance.",
+        "body_3": "Let There Be Fashion is an unfiltered masterclass in transcendent architecture. It is a testament to what happens when you dare to merge profound spiritual conviction with unapologetic artistry. Through stirring narratives and hard-won wisdom, Nancy reveals how a single, courageous \"yes\" can open doors across the world.",
+        "panel_heading": "Inside the Pages, You Will Discover:",
+        "panel_cta_label": "Add to Your Library — $25.00",
+        "panel_cta_link": "#checkout"
+      }
     },
     "author_bio": {
       "type": "book-bio",
       "settings": {
+        "image": "shopify://shop_images/untitled-5298_3.jpg",
         "eyebrow": "About the Author",
         "heading_1": "The Identity",
         "heading_2": "Architect.",
@@ -94,8 +120,9 @@
         "eyebrow": "The Collection of Thought",
         "heading_1": "Begin Your",
         "heading_2": "Transformation.",
-        "subtext": "Join thousands of readers who have redesigned their internal landscape and stepped into their ultimate calling.",
-        "cta_label": "Purchase the Hardcover"
+        "subtext": "Join the many readers who have redesigned their internal landscape and stepped into their ultimate calling.",
+        "cta_label": "Purchase the Softcover",
+        "cta_link": ""
       }
     }
   },
