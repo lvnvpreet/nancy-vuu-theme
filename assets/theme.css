@@ -202,7 +202,7 @@ body::after {
 
 .nav-menu-btn {
   font-family: var(--font-sans);
-  font-size: .65rem; font-weight: 400;
+  font-size: 1rem; font-weight: 400;
   text-transform: uppercase; letter-spacing: .25em;
   background: none; border: none; cursor: pointer; color: var(--ink);
   transition: color .2s ease;
@@ -215,7 +215,7 @@ body::after {
 
 .nav-cta {
   font-family: var(--font-sans);
-  font-size: .65rem; font-weight: 400;
+  font-size: 1rem; font-weight: 400;
   text-transform: uppercase; letter-spacing: .25em;
   cursor: pointer; color: var(--ink); transition: color .2s ease;
 }
