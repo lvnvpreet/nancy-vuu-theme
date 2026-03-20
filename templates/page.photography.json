@@ -279,6 +279,7 @@
         "card_retreats": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Untitled_45_x_50_in_7.jpg",
             "eyebrow": "The Nancy Vuu Experience",
             "title": "Dream Retreats",
             "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
