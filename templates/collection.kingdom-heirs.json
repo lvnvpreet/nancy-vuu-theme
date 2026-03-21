@@ -1,18 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "eyebrow": "The Next Generation of Purpose",
-        "overlay_opacity": 70
+        "image": "shopify://shop_images/IMG_1527.webp",
+        "overlay_opacity": 40,
+        "eyebrow": "ready-to-wear",
+        "title": ""
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
-        "quote": "The crown is not merely an accessory; it is the physical proof of an invisible calling. Kingdom Heirs is our limited-edition lifestyle collection designed for the appointed youth—those whose presence announces a future that has already been written. We clothe them not for fashion, but for destiny.",
+        "eyebrow": "",
+        "quote": "Kingdom Heirs is about finding your stride in the quiet moments of the everyday. We’ve paired the airy, lived-in comfort of 100% breathable linen with the subtle, light-catching confidence of a crown to create a ready-to-wear uniform for the modern life. This is mid-luxury designed to move with you—from morning coffee to sunset gatherings—offering a sense of ease that never feels overdone. It’s an invitation to wear your identity as naturally as you wear your favorite shirt, proving that true authority doesn’t need to be heavy; it just needs to be honest. Clothe yourself in comfort, lift your head, and walk through the world with the simple, breathable grace of an heir.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "exclusivity": {
@@ -25,34 +48,105 @@
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
-        "look_1": { "type": "look", "settings": { "title": "The Heir's Streetwear", "subtitle": "Luxe Hoodie in Organic Cotton with Crown Embroidery", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_2": { "type": "look", "settings": { "title": "The Mandate Tee", "subtitle": "Heavyweight Cotton Statement Piece", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_3": { "type": "look", "settings": { "title": "The Garden Bomber", "subtitle": "Silk-Blend Youth Bomber Jacket", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_4": { "type": "look", "settings": { "title": "The Destiny Cap", "subtitle": "Structured Cap with Embossed Crown Logo", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_5": { "type": "look", "settings": { "title": "The Covenant Joggers", "subtitle": "Premium Jogger Set with Heritage Detailing", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_6": { "type": "look", "settings": { "title": "The Little King", "subtitle": "Leather Backpack with Crown Hardware", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } }
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "title": "The Heir's Streetwear",
+            "subtitle": "Luxe Hoodie in Organic Cotton with Crown Embroidery",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "title": "The Mandate Tee",
+            "subtitle": "Heavyweight Cotton Statement Piece",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "title": "The Garden Bomber",
+            "subtitle": "Silk-Blend Youth Bomber Jacket",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "title": "The Destiny Cap",
+            "subtitle": "Structured Cap with Embossed Crown Logo",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "title": "The Covenant Joggers",
+            "subtitle": "Premium Jogger Set with Heritage Detailing",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "title": "The Little King",
+            "subtitle": "Leather Backpack with Crown Hardware",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6"
+      ],
       "settings": {}
     },
     "main": {
       "type": "main-collection",
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "columns": "3"
       }
     },
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
-        "title": "The Crowning Accessory",
-        "description": "Kingdom Heirs accessories and jewelry are curated for direct acquisition and worldwide delivery. Every piece is prepared for secure shipment—a tangible mark of inherited greatness.",
-        "cta_label": "Procure Online",
-        "cta_link": "/collections/crowns-jewelry",
-        "primary_label": "Book Atelier Visit",
-        "primary_link": "/pages/bridal",
-        "secondary_label": "Virtual Consultation"
+        "image": "shopify://shop_images/5.jpg",
+        "title": "Dream Retreat",
+        "description": "Our retreats are a curated space for those who move through the world with quiet intention. We’ve designed a weekend that honors the art of presence, trading the noise of the everyday for the clarity of shared ease and refined community. It is an invitation to inhabit our values fully, surrounded by the textures and conversations that define our modern lineage. Here, we gather not just to rest, but to recalibrate for the journey ahead.",
+        "cta_label": "",
+        "cta_link": "shopify://collections/crowns-jewelry",
+        "primary_label": "Procure Online",
+        "primary_link": "shopify://collections/crowns-jewelry",
+        "secondary_label": "",
+        "secondary_link": ""
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
+  "order": [
+    "hero",
+    "manifesto",
+    "exclusivity",
+    "lookbook",
+    "main",
+    "cross-sell"
+  ]
 }

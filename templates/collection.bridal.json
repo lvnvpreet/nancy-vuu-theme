@@ -131,11 +131,11 @@
         "image": "shopify://shop_images/untitled-0.jpg",
         "title": "The Crowning Moment",
         "description": "Complete your bridal vision with hand-crafted crowns, veils, and jewelry pieces. Each accessory is designed to harmonize with your gown, creating a singular vision of majesty on your covenant day.",
-        "cta_label": "Explore Accessories",
+        "cta_label": "",
         "cta_link": "/collections/crowns-jewelry",
         "primary_label": "Experience the Crowning",
         "primary_link": "shopify://collections/crowns-jewelry",
-        "secondary_label": "Virtual Consultation",
+        "secondary_label": "",
         "secondary_link": ""
       }
     }

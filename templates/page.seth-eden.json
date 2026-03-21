@@ -251,7 +251,7 @@
         "body_1": "Seth Eden bespoke is a second skin, drafted from a blank canvas to your exact physiological architecture. Whether crafting a sharp masculine silhouette or an empowered feminine frame, our process is rooted in 60+ hours of hand-craftsmanship. We utilize the world's most prestigious mills—Loro Piana, Dormeuil, and Scabal—to ensure your garment is an archival asset that transcends gender and season.",
         "body_2": "",
         "cta_label": "Request Executive Styling",
-        "cta_link": "/pages/contact",
+        "cta_link": "#inquiry",
         "cta_style": "solid"
       }
     },
@@ -285,7 +285,7 @@
             "description": "The \"Recognition\" experience. Utilizing our signature architectural patterns as a foundation, we adjust to your specific dimensions. This journey involves two fittings and ensures the Seth Eden silhouette is flawlessly aligned with your frame.",
             "features": "Signature Pattern Base|40+ Premium Fabric Choices|4-Week Delivery",
             "cta_text": "Inquire MTM",
-            "cta_link": "",
+            "cta_link": "#inquiry",
             "dark": false
           }
         },
@@ -297,7 +297,7 @@
             "description": "The \"Covenant\" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of the Husted & Vuu house—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.",
             "features": "Hand-Drafted Individual Pattern|Exclusive Rare Textiles|10-Week Master Craft",
             "cta_text": "Begin Bespoke",
-            "cta_link": "",
+            "cta_link": "#inquiry",
             "dark": true
           }
         }
@@ -542,6 +542,7 @@
         "card_crowns": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/image10_1.jpg",
             "eyebrow": "The Crowning Moment",
             "title": "Finish the Look",
             "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
@@ -552,6 +553,7 @@
         "card_retreats": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/10.jpg",
             "eyebrow": "The Nancy Vuu Experience",
             "title": "Dream Retreats",
             "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
