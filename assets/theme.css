@@ -2244,16 +2244,17 @@ body::after {
 /* Phone + country code combo */
 .seth-commission__field--phone {
   display: flex;
-  align-items: stretch;
+  align-items: flex-end;
   gap: 0;
 }
 .seth-commission__field--phone .seth-commission__country-code {
-  flex: 0 0 auto;
-  width: auto !important;
-  min-width: 120px !important;
+  flex: 0 0 120px !important;
+  width: 120px !important;
+  max-width: 120px !important;
+  min-width: 0 !important;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #e0e0e0;
-  padding: 22px 10px 22px 0;
+  padding: 22px 8px 22px 0;
   color: #111;
   cursor: pointer;
   -webkit-appearance: auto;
@@ -2263,7 +2264,9 @@ body::after {
   border-bottom-color: #111;
 }
 .seth-commission__field--phone .seth-commission__phone-input {
-  flex: 1 1 auto;
+  flex: 1 1 0% !important;
+  width: 0 !important;
+  min-width: 0 !important;
   padding-left: 14px;
 }
 
