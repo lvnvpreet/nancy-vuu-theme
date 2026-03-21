@@ -1,18 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
+        "overlay_opacity": 65,
         "eyebrow": "The Evidence of a Promise",
-        "overlay_opacity": 65
+        "title": ""
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
+        "eyebrow": "",
         "quote": "A custom gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty. We create a masterpiece that anchors your presence and captures the brilliance of who you are becoming.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "exclusivity": {
@@ -25,34 +47,105 @@
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
-        "look_1": { "type": "look", "settings": { "title": "The Heirloom Silhouette", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_2": { "type": "look", "settings": { "title": "The Sovereign Drape", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_3": { "type": "look", "settings": { "title": "The Grace Column", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_4": { "type": "look", "settings": { "title": "The Covenant Train", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_5": { "type": "look", "settings": { "title": "The Ethereal Mist", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } },
-        "look_6": { "type": "look", "settings": { "title": "The Majesty Ensemble", "badge": "Atelier Acquisition Only", "link_text": "Request Private Consultation →" } }
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "title": "The Heirloom Silhouette",
+            "subtitle": "",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "title": "The Sovereign Drape",
+            "subtitle": "",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "title": "The Grace Column",
+            "subtitle": "",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "title": "The Covenant Train",
+            "subtitle": "",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "title": "The Ethereal Mist",
+            "subtitle": "",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "title": "The Majesty Ensemble",
+            "subtitle": "",
+            "badge": "Atelier Acquisition Only",
+            "link_text": "Request Private Consultation →",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6"
+      ],
       "settings": {}
     },
     "main": {
       "type": "main-collection",
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "columns": "3"
       }
     },
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
+        "image": "shopify://shop_images/untitled-0.jpg",
         "title": "The Crowning Moment",
         "description": "Complete your bridal vision with hand-crafted crowns, veils, and jewelry pieces. Each accessory is designed to harmonize with your gown, creating a singular vision of majesty on your covenant day.",
         "cta_label": "Explore Accessories",
         "cta_link": "/collections/crowns-jewelry",
         "primary_label": "Begin Bespoke Journey",
         "primary_link": "/pages/bridal",
-        "secondary_label": "Virtual Consultation"
+        "secondary_label": "Virtual Consultation",
+        "secondary_link": ""
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
+  "order": [
+    "hero",
+    "manifesto",
+    "exclusivity",
+    "lookbook",
+    "main",
+    "cross-sell"
+  ]
 }

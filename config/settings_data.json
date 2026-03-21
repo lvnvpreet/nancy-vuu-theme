@@ -20,7 +20,7 @@
         "settings": {
           "logo": "shopify://shop_images/Untitled_design_12.png",
           "menu_label": "Menu",
-          "cta_label": "Request Consultation",
+          "cta_label": "Book Nancy Vuu",
           "cta_link": "shopify://pages/book-nancy-vuu",
           "col1_heading": "Fashion House",
           "col2_heading": "Lifestyle & Legacy",
@@ -44,7 +44,7 @@
           "col1_title": "Collections",
           "col1_menu": "collection-links",
           "col2_title": "The House",
-          "col2_menu": "",
+          "col2_menu": "footer",
           "col3_title": "Concierge",
           "col4_title": "Institutional",
           "col4_menu": ""

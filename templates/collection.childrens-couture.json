@@ -14,7 +14,7 @@
       "settings": {
         "image": "shopify://shop_images/nancy-vuu-kids-fashion-couture.jpg",
         "overlay_opacity": 0,
-        "eyebrow": "Little Crowns, Great Purpose",
+        "eyebrow": "Little Masterpieces for Their Grand Debut.",
         "title": ""
       }
     },
@@ -22,7 +22,7 @@
       "type": "manifesto",
       "settings": {
         "eyebrow": "",
-        "quote": "Every child is designed with a purpose that precedes their first breath. Our Children's Couture is not merely clothing—it is a declaration over their identity. We drape the youngest royals in the same standard of excellence as those who lead, because greatness does not wait for adulthood.",
+        "quote": "Childhood is a series of fleeting, sacred chapters. At Nancy Vuu, we believe excellence has no age requirement. Our Children’s Couture is crafted not merely as clothing, but as a tactile legacy—an heirloom designed to honor the innate wonder and unique purpose of your young visionary.\n\nWe apply the same meticulous \"Architecture of Distinction\" to our miniature collections as we do our world-class couture, ensuring every stitch is a testament to their future command. Dress them for the person they are destined to become, beginning with the exquisite magic of today.",
         "attribution": "",
         "body": "",
         "bg_color": "#ffffff",
@@ -42,7 +42,7 @@
       "type": "exclusivity-notice",
       "settings": {
         "eyebrow": "Exclusivity Notice",
-        "body": "Our Children's Couture is crafted with the same precision as our adult collections. Each piece is tailored to order and available exclusively through Atelier consultation."
+        "body": "Our Children’s Couture mirrors the exact precision and standard of excellence found in our adult collections, elevating the youngest visionaries. We invite you to experience this distinction through two exclusive avenues:                 \n\n      1. The Bespoke Journey\nSecure their legacy with a distinct, tailored-to-order masterpiece. Each garment is drafted to your child's unique blueprint, available exclusively through private Atelier consultation.\n\n2. The Atelier Curated Collection\nFor those seeking immediate distinction, we maintain a highly limited selection of already-made designs and exclusive runway samples. These miniature works of art are available for immediate acquisition within the sanctuary of the Nancy Vuu Atelier."
       }
     },
     "lookbook": {
@@ -129,14 +129,15 @@
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
+        "image": "shopify://shop_images/untitled-0.jpg",
         "title": "The Crowning Accessory",
         "description": "Every little royal deserves their crown. Our children's accessories are hand-crafted with the same devotion as our adult line, scaled to celebrate the promise within every child.",
         "cta_label": "Procure Online",
         "cta_link": "/collections/crowns-jewelry",
-        "primary_label": "Book Atelier Visit",
-        "primary_link": "/pages/bridal",
+        "primary_label": "Book the crowning",
+        "primary_link": "shopify://collections/crowns-jewelry",
         "secondary_label": "Virtual Consultation",
-        "secondary_link": ""
+        "secondary_link": "shopify://pages/contact-us"
       }
     }
   },

@@ -13,7 +13,7 @@
       "type": "collection-hero-editorial",
       "settings": {
         "image": "shopify://shop_images/nancy-vuu-about-bg.jpg",
-        "overlay_opacity": 0,
+        "overlay_opacity": 55,
         "eyebrow": "The Architecture of Presence",
         "title": ""
       }
