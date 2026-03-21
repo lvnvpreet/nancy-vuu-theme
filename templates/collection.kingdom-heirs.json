@@ -132,10 +132,10 @@
         "image": "shopify://shop_images/untitled-0.jpg",
         "title": "The Crowning Accessory",
         "description": "Kingdom Heirs accessories and jewelry are curated for direct acquisition and worldwide delivery. Every piece is prepared for secure shipment—a tangible mark of inherited greatness.",
-        "cta_label": "Procure Online",
+        "cta_label": "",
         "cta_link": "shopify://collections/crowns-jewelry",
-        "primary_label": "",
-        "primary_link": "/pages/bridal",
+        "primary_label": "Procure Online",
+        "primary_link": "shopify://collections/crowns-jewelry",
         "secondary_label": "",
         "secondary_link": ""
       }
