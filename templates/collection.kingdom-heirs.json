@@ -1,18 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
+        "image": "shopify://shop_images/Untitled_design_9.jpg",
+        "overlay_opacity": 40,
         "eyebrow": "The Next Generation of Purpose",
-        "overlay_opacity": 70
+        "title": ""
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
+        "eyebrow": "",
         "quote": "The crown is not merely an accessory; it is the physical proof of an invisible calling. Kingdom Heirs is our limited-edition lifestyle collection designed for the appointed youth—those whose presence announces a future that has already been written. We clothe them not for fashion, but for destiny.",
+        "attribution": "",
+        "body": "",
         "bg_color": "#ffffff",
-        "text_color": "#111111"
+        "text_color": "#111111",
+        "extra_class": "",
+        "col1_heading": "",
+        "col1_body": "",
+        "col2_heading": "",
+        "col2_body": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": ""
       }
     },
     "exclusivity": {
@@ -25,34 +48,105 @@
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
-        "look_1": { "type": "look", "settings": { "title": "The Heir's Streetwear", "subtitle": "Luxe Hoodie in Organic Cotton with Crown Embroidery", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_2": { "type": "look", "settings": { "title": "The Mandate Tee", "subtitle": "Heavyweight Cotton Statement Piece", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_3": { "type": "look", "settings": { "title": "The Garden Bomber", "subtitle": "Silk-Blend Youth Bomber Jacket", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_4": { "type": "look", "settings": { "title": "The Destiny Cap", "subtitle": "Structured Cap with Embossed Crown Logo", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_5": { "type": "look", "settings": { "title": "The Covenant Joggers", "subtitle": "Premium Jogger Set with Heritage Detailing", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } },
-        "look_6": { "type": "look", "settings": { "title": "The Little King", "subtitle": "Leather Backpack with Crown Hardware", "badge": "Limited Atelier Drop", "link_text": "Shop The Drop →" } }
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "title": "The Heir's Streetwear",
+            "subtitle": "Luxe Hoodie in Organic Cotton with Crown Embroidery",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "title": "The Mandate Tee",
+            "subtitle": "Heavyweight Cotton Statement Piece",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "title": "The Garden Bomber",
+            "subtitle": "Silk-Blend Youth Bomber Jacket",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "title": "The Destiny Cap",
+            "subtitle": "Structured Cap with Embossed Crown Logo",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "title": "The Covenant Joggers",
+            "subtitle": "Premium Jogger Set with Heritage Detailing",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "title": "The Little King",
+            "subtitle": "Leather Backpack with Crown Hardware",
+            "badge": "Limited Atelier Drop",
+            "link_text": "Shop The Drop →",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["look_1", "look_2", "look_3", "look_4", "look_5", "look_6"],
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6"
+      ],
       "settings": {}
     },
     "main": {
       "type": "main-collection",
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "columns": "3"
       }
     },
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
+        "image": "shopify://shop_images/untitled-0.jpg",
         "title": "The Crowning Accessory",
         "description": "Kingdom Heirs accessories and jewelry are curated for direct acquisition and worldwide delivery. Every piece is prepared for secure shipment—a tangible mark of inherited greatness.",
         "cta_label": "Procure Online",
         "cta_link": "/collections/crowns-jewelry",
         "primary_label": "Book Atelier Visit",
         "primary_link": "/pages/bridal",
-        "secondary_label": "Virtual Consultation"
+        "secondary_label": "Virtual Consultation",
+        "secondary_link": ""
       }
     }
   },
-  "order": ["hero", "manifesto", "exclusivity", "lookbook", "main", "cross-sell"]
+  "order": [
+    "hero",
+    "manifesto",
+    "exclusivity",
+    "lookbook",
+    "main",
+    "cross-sell"
+  ]
 }
