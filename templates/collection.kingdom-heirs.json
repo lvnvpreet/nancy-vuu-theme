@@ -129,9 +129,9 @@
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
-        "image": "shopify://shop_images/IMG_1527.webp",
-        "title": "The Crowning Accessory",
-        "description": "Kingdom Heirs accessories and jewelry are curated for direct acquisition and worldwide delivery. Every piece is prepared for secure shipment—a tangible mark of inherited greatness.",
+        "image": "shopify://shop_images/5.jpg",
+        "title": "Dream Retreat",
+        "description": "Our retreats are a curated space for those who move through the world with quiet intention. We’ve designed a weekend that honors the art of presence, trading the noise of the everyday for the clarity of shared ease and refined community. It is an invitation to inhabit our values fully, surrounded by the textures and conversations that define our modern lineage. Here, we gather not just to rest, but to recalibrate for the journey ahead.",
         "cta_label": "",
         "cta_link": "shopify://collections/crowns-jewelry",
         "primary_label": "Procure Online",
