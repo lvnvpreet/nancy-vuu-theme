@@ -134,10 +134,10 @@
         "description": "Every little royal deserves their crown. Our children's accessories are hand-crafted with the same devotion as our adult line, scaled to celebrate the promise within every child.",
         "cta_label": "Procure Online",
         "cta_link": "/collections/crowns-jewelry",
-        "primary_label": "Book Atelier Visit",
-        "primary_link": "/pages/bridal",
+        "primary_label": "Book the crowning",
+        "primary_link": "shopify://collections/crowns-jewelry",
         "secondary_label": "Virtual Consultation",
-        "secondary_link": ""
+        "secondary_link": "shopify://pages/contact-us"
       }
     }
   },
