@@ -58,10 +58,10 @@
         "image": "shopify://shop_images/untitled-0.jpg",
         "title": "The Crowning Accessory",
         "description": "Complete your matching moment with coordinated crowns and jewelry for mother and child. Each piece celebrates the unbreakable bond of legacy.",
-        "cta_label": "Procure Online",
+        "cta_label": "",
         "cta_link": "/collections/crowns-jewelry",
-        "primary_label": "Book Atelier Visit",
-        "primary_link": "#inquiry",
+        "primary_label": "Procure Online",
+        "primary_link": "shopify://collections/crowns-jewelry",
         "secondary_label": "",
         "secondary_link": "#inquiry"
       }
