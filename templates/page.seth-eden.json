@@ -529,6 +529,7 @@
         "title_line_2": "Commission.",
         "label_name": "FULL NAME",
         "label_email": "EMAIL ADDRESS",
+        "label_phone": "PHONE NUMBER",
         "label_gender": "GENDER CATEGORY",
         "label_commission": "TYPE OF COMMISSION",
         "label_message": "DESCRIBE YOUR STYLE ARCHITECTURE...",

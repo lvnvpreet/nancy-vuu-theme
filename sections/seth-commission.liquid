@@ -25,6 +25,10 @@
                 placeholder="{{ section.settings.label_email | default: 'EMAIL ADDRESS' }}" required>
             </div>
             <div class="seth-commission__field">
+              <input type="tel" name="contact[phone]" value="{{ form.phone }}"
+                placeholder="{{ section.settings.label_phone | default: 'PHONE NUMBER' }}">
+            </div>
+            <div class="seth-commission__field">
               <select name="contact[gender]" required>
                 <option value="" disabled selected>{{ section.settings.label_gender | default: 'GENDER CATEGORY' }}</option>
                 {%- for block in section.blocks -%}
@@ -70,6 +74,7 @@
     { "type": "header",   "content": "Form Labels"  },
     { "type": "text",     "id": "label_name",        "label": "Name Placeholder",       "default": "FULL NAME" },
     { "type": "text",     "id": "label_email",       "label": "Email Placeholder",      "default": "EMAIL ADDRESS" },
+    { "type": "text",     "id": "label_phone",       "label": "Phone Placeholder",      "default": "PHONE NUMBER" },
     { "type": "text",     "id": "label_gender",      "label": "Gender Placeholder",     "default": "GENDER CATEGORY" },
     { "type": "text",     "id": "label_commission",  "label": "Commission Placeholder", "default": "TYPE OF COMMISSION" },
     { "type": "text",     "id": "label_message",     "label": "Message Placeholder",    "default": "DESCRIBE YOUR STYLE ARCHITECTURE..." },
