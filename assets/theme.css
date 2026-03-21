@@ -2247,22 +2247,24 @@ body::after {
   align-items: stretch;
   gap: 0;
 }
-.seth-commission__country-code {
+.seth-commission__field--phone .seth-commission__country-code {
   flex: 0 0 auto;
-  width: auto;
-  min-width: 110px;
-  border-bottom: 1px solid #ccc !important;
-  border-right: 1px solid #e0e0e0 !important;
-  padding-right: 10px !important;
-  color: #111 !important;
+  width: auto !important;
+  min-width: 120px !important;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #e0e0e0;
+  padding: 22px 10px 22px 0;
+  color: #111;
   cursor: pointer;
+  -webkit-appearance: auto;
+  appearance: auto;
 }
-.seth-commission__country-code:focus {
-  border-bottom-color: #111 !important;
+.seth-commission__field--phone .seth-commission__country-code:focus {
+  border-bottom-color: #111;
 }
-.seth-commission__phone-input {
+.seth-commission__field--phone .seth-commission__phone-input {
   flex: 1 1 auto;
-  padding-left: 14px !important;
+  padding-left: 14px;
 }
 
 /* ── Seth Narrative Foundation Box ──────── */
