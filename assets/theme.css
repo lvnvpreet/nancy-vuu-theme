@@ -2241,6 +2241,30 @@ body::after {
   }
 }
 
+/* Phone + country code combo */
+.seth-commission__field--phone {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.seth-commission__country-code {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 110px;
+  border-bottom: 1px solid #ccc !important;
+  border-right: 1px solid #e0e0e0 !important;
+  padding-right: 10px !important;
+  color: #111 !important;
+  cursor: pointer;
+}
+.seth-commission__country-code:focus {
+  border-bottom-color: #111 !important;
+}
+.seth-commission__phone-input {
+  flex: 1 1 auto;
+  padding-left: 14px !important;
+}
+
 /* ── Seth Narrative Foundation Box ──────── */
 .seth-narrative__foundation {
   margin-top: 100px;
