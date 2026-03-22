@@ -2,7 +2,12 @@
 
 <section class="about-hero" data-section-id="{{ section.id }}">
   <div class="about-hero__bg">
-    {%- if section.settings.image != blank -%}
+    {%- assign hero_img_url = section.settings.image_url | strip -%}
+    {%- if hero_img_url != blank -%}
+      <div class="about-hero__img-wrap">
+        <img src="{{ hero_img_url }}" class="about-hero__img" loading="eager" fetchpriority="high" alt="Hero background">
+      </div>
+    {%- elsif section.settings.image != blank -%}
       <div class="about-hero__img-wrap">
         {{ section.settings.image | image_url: width: 2000 | image_tag: class: 'about-hero__img', loading: 'eager', fetchpriority: 'high' }}
       </div>
@@ -93,9 +98,15 @@
   "name": "About — Hero",
   "settings": [
     {
+      "type": "text",
+      "id": "image_url",
+      "label": "Background Image URL",
+      "info": "Paste a direct image URL (https://...). This takes priority over the image picker below."
+    },
+    {
       "type": "image_picker",
       "id": "image",
-      "label": "Background Image"
+      "label": "Background Image (Shopify Upload)"
     },
     {
       "type": "range",

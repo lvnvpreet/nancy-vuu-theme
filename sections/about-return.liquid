@@ -15,7 +15,10 @@
     </div>
 
     <div class="about-return__media fade-in">
-      {%- if section.settings.image != blank -%}
+      {%- assign return_img_url = section.settings.image_url | strip -%}
+      {%- if return_img_url != blank -%}
+        <img src="{{ return_img_url }}" class="about-return__img" loading="lazy" alt="{{ section.settings.heading }}">
+      {%- elsif section.settings.image != blank -%}
         {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'about-return__img', loading: 'lazy', alt: section.settings.heading }}
       {%- else -%}
         <div class="about-return__img-placeholder img-placeholder">
@@ -98,9 +101,15 @@
       "default": "I have returned to my homeland not as the baby who left, but as a woman with a mission to merge raw, ancestral strength with expansive freedom. I chose to establish our bridal atelier in Vietnam because we believe true luxury is found in the soul of the maker."
     },
     {
+      "type": "text",
+      "id": "image_url",
+      "label": "Portrait Image URL",
+      "info": "Paste a direct image URL (https://...). This takes priority over the image picker below."
+    },
+    {
       "type": "image_picker",
       "id": "image",
-      "label": "Portrait Image"
+      "label": "Portrait Image (Shopify Upload)"
     }
   ],
   "presets": [

@@ -3,7 +3,12 @@
 <section class="about-retreats" data-section-id="{{ section.id }}" style="background:#fff; padding: 8rem 1.5rem;">
   <div class="about-retreats__inner">
     <div class="about-retreats__media">
-      {%- if section.settings.image != blank -%}
+      {%- assign retreats_img_url = section.settings.image_url | strip -%}
+      {%- if retreats_img_url != blank -%}
+        <div class="about-retreats__img-frame">
+          <img src="{{ retreats_img_url }}" class="about-retreats__img" loading="lazy" alt="{{ section.settings.heading }}">
+        </div>
+      {%- elsif section.settings.image != blank -%}
         <div class="about-retreats__img-frame">
           {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'about-retreats__img', loading: 'lazy', alt: section.settings.heading }}
         </div>
@@ -112,9 +117,15 @@
   "name": "About — Retreats",
   "settings": [
     {
+      "type": "text",
+      "id": "image_url",
+      "label": "Retreat Image URL",
+      "info": "Paste a direct image URL (https://...). This takes priority over the image picker below."
+    },
+    {
       "type": "image_picker",
       "id": "image",
-      "label": "Retreat Image"
+      "label": "Retreat Image (Shopify Upload)"
     },
     {
       "type": "text",
