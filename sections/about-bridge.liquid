@@ -10,7 +10,7 @@
     {%- endif -%}
     <div class="about-bridge__card">
       {%- if section.settings.body != blank -%}
-        <p class="about-bridge__body">{{ section.settings.body }}</p>
+        <div class="about-bridge__body">{{ section.settings.body }}</div>
       {%- endif -%}
     </div>
   </div>
@@ -46,6 +46,19 @@
     line-height: 1.9;
     text-align: left;
   }
+  .about-bridge__body p {
+    margin-bottom: 1.25rem;
+  }
+  .about-bridge__body p:last-child {
+    margin-bottom: 0;
+  }
+  .about-bridge__body strong, .about-bridge__body b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .about-bridge__body em, .about-bridge__body i {
+    font-style: italic;
+  }
   @media (max-width: 768px) {
     .about-bridge__card { padding: 2.5rem 1.75rem; }
     .about-bridge__body { font-size: 1rem; }
@@ -69,10 +82,10 @@
       "default": "The Bridge"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "body",
       "label": "Body Text",
-      "default": "We are building a bridge—honoring the excellence of our people and showcasing the beautiful souls of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the weight of history and the lightness of hope."
+      "default": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>beautiful souls</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <em>weight of history</em> and the <em>lightness of hope</em>.</p>"
     }
   ],
   "presets": [
