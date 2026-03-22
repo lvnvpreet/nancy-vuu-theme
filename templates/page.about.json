@@ -82,7 +82,7 @@
       "type": "about-crowning",
       "settings": {
         "image_url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=2000",
-        "overlay_opacity": 55,
+        "overlay_opacity": 60,
         "eyebrow": "The Threshold",
         "heading": "The Crowning",
         "paragraph_1": "The Crowning is the moment the garment and the soul align. It is a sacred threshold where you stop seeing the fabric and start seeing your Appointment.",
