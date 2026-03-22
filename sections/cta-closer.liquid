@@ -16,11 +16,7 @@
       <div class="cta-closer__btns" style="color:{{ section.settings.text_color }};">
         {% if section.settings.cta_label != blank %}
           {% if section.settings.cta_style == 'fill' %}
-            {% if section.settings.cta_link != blank %}
-              <a href="{{ section.settings.cta_link }}" class="btn-gold">{{ section.settings.cta_label }}</a>
-            {% else %}
-              <button class="btn-gold" data-audience-open>{{ section.settings.cta_label }}</button>
-            {% endif %}
+            <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-fill">{{ section.settings.cta_label }}</a>
           {% elsif section.settings.cta_link != blank %}
             <a href="{{ section.settings.cta_link }}" class="btn-luxury">{{ section.settings.cta_label }}</a>
           {% else %}

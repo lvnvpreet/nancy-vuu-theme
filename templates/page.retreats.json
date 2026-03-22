@@ -22,8 +22,8 @@
         "subtitle": "By Private Invitation Only",
         "subtitle_serif": false,
         "tagline": "",
-        "cta_label": "Explore Destinations",
-        "cta_link": "#destinations",
+        "cta_label": "",
+        "cta_link": "",
         "cta_style": "outline",
         "text_color": "#ffffff"
       }
@@ -156,7 +156,7 @@
         "subtext": "Napa Valley • Hawaii",
         "cta_label": "Apply for Selection",
         "cta_link": "",
-        "cta_style": "fill",
+        "cta_style": "outline",
         "cta2_label": "",
         "cta2_link": "",
         "text_color": "#ffffff",
@@ -170,21 +170,21 @@
         "dd1": {
           "type": "dropdown_option",
           "settings": {
-            "label": "Dream Again — Sanctuary Retreat",
+            "label": "",
             "value": "Sanctuary Retreat"
           }
         },
         "dd2": {
           "type": "dropdown_option",
           "settings": {
-            "label": "Dreams Fulfilled — Creative Academy",
+            "label": "",
             "value": "Creative Academy Admission"
           }
         },
         "dd3": {
           "type": "dropdown_option",
           "settings": {
-            "label": "The Covenant — Couples Retreat",
+            "label": "",
             "value": "Covenant Couples"
           }
         }
@@ -196,18 +196,19 @@
       ],
       "settings": {
         "eyebrow": "",
-        "title": "Request an Audience.",
+        "title": "Begin Your Journey",
+        "description": "",
         "form_tag": "audience-inquiry",
         "show_dropdown": true,
-        "dropdown_label": "Select Retreat",
+        "dropdown_label": "Category",
         "show_date": true,
         "date_label": "Preferred Date",
         "show_textarea": true,
-        "textarea_label": "Vision Statement",
+        "textarea_label": "Your Vision",
         "textarea_placeholder": "Tell us about your vision…",
-        "submit_label": "Submit Application for Review",
-        "success_title": "Recognized.",
-        "success_message": "Your application has been received by the House of Nancy Vuu. Due to limited availability, we will review and contact you within 48 hours."
+        "submit_label": "Submit Inquiry",
+        "success_title": "Thank You",
+        "success_message": "We'll be in touch within 48 hours."
       }
     }
   },

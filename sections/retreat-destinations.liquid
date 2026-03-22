@@ -43,7 +43,7 @@
               <p class="retreat-card__desc">{{ block.settings.description }}</p>
             {%- endif -%}
             {%- if block.settings.cta_text != blank -%}
-              <button class="retreat-card__cta" {% if block.settings.modal_trigger %}onclick="openAudienceModal('{{ block.settings.title | escape }}')"{% endif %}>
+              <button class="retreat-card__cta" onclick="{% if block.settings.modal_trigger %}document.querySelector('[data-section-type=audience-modal] .audience-modal')?.click();{% endif %}">
                 {{ block.settings.cta_text }}
               </button>
             {%- endif -%}
