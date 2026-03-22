@@ -27,7 +27,7 @@
           "menu_fashion": "fashion-menu",
           "menu_lifestyle": "lifestyle-menu",
           "menu_location": "San Jose, CA",
-          "show_library_link": true,
+          "show_library_link": false,
           "library_link": ""
         }
       },
