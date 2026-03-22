@@ -10,7 +10,7 @@
     {%- endif -%}
     <div class="about-bridge__card">
       {%- if section.settings.body != blank -%}
-        <div class="about-bridge__body">{{ section.settings.body }}</div>
+        <div class="about-bridge__body" style="font-size:{{ section.settings.body_size }};text-align:{{ section.settings.body_align }};">{{ section.settings.body }}</div>
       {%- endif -%}
     </div>
   </div>
@@ -40,11 +40,9 @@
   }
   .about-bridge__body {
     font-family: var(--font-sans);
-    font-size: 1.2rem;
     font-weight: 300;
     color: #444;
     line-height: 1.9;
-    text-align: left;
   }
   .about-bridge__body p {
     margin-bottom: 1.25rem;
@@ -85,8 +83,32 @@
       "type": "richtext",
       "id": "body",
       "label": "Body Text",
-      "default": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>beautiful souls</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <em>weight of history</em> and the <em>lightness of hope</em>.</p>"
-    }
+      "default": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>beautiful souls</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <em>weight of history</em> and the <em>lightness of hope</em>.</p>"    },
+    {
+      "type": "select",
+      "id": "body_size",
+      "label": "Body Text Size",
+      "default": "1.2rem",
+      "options": [
+        { "value": "0.875rem", "label": "Small (14px)" },
+        { "value": "1rem",     "label": "Medium (16px)" },
+        { "value": "1.1rem",  "label": "Large (17px)" },
+        { "value": "1.2rem",  "label": "X-Large (19px)" },
+        { "value": "1.35rem", "label": "XX-Large (21px)" },
+        { "value": "1.5rem",  "label": "XXX-Large (24px)" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "body_align",
+      "label": "Text Alignment",
+      "default": "left",
+      "options": [
+        { "value": "left",    "label": "Left" },
+        { "value": "center",  "label": "Center" },
+        { "value": "right",   "label": "Right" },
+        { "value": "justify", "label": "Justify" }
+      ]    }
   ],
   "presets": [
     {
