@@ -38,6 +38,10 @@
           </div>
 
           <div class="photo-inquiry__field">
+            {%- render 'phone-field' -%}
+          </div>
+
+          <div class="photo-inquiry__field">
             <input type="text" name="contact[location]"
               placeholder="{{ section.settings.label_location | default: 'DESIRED SHOOT LOCATION (CITY / COUNTRY)' }}" required>
           </div>

@@ -269,6 +269,7 @@
         <input type="text" placeholder="INSTITUTION / FIRM NAME" style="color:#ffffff;border-bottom-color:#444;" required>
         <input type="text" placeholder="ROLE / TITLE WITHIN ORGANIZATION" style="color:#ffffff;border-bottom-color:#444;" required>
         <input type="email" placeholder="CORPORATE EMAIL ADDRESS" style="color:#ffffff;border-bottom-color:#444;" required>
+        {%- render 'phone-field' -%}
         <select style="color:#888;border-bottom:1px solid #444;background:transparent;width:100%;padding:18px 0;margin-bottom:30px;font-family:'Manrope',sans-serif;outline:none;" required>
           <option value="" disabled selected>NATURE OF INTEREST</option>
           <option value="philanthropic">Philanthropic Partnership</option>
@@ -313,6 +314,7 @@
       <form class="nv-modal-form" onsubmit="return false;">
         <input type="text" placeholder="FULL NAME(S)" required>
         <input type="email" placeholder="CONTACT EMAIL" required>
+        {%- render 'phone-field' -%}
         <select required>
           <option value="" disabled selected>INTERESTED LOCALE</option>
           <option value="napa">Napa Valley (Heritage Retreat)</option>
@@ -388,6 +390,7 @@
       <p>A Nancy Vuu garment is a generational asset. To ensure your couture remains pristine, we offer exclusive preservation services, including structural tailoring, intricate bead restoration, and specialized fabric care.</p>
       <form class="nv-modal-form" onsubmit="return false;">
         <input type="text" placeholder="FULL NAME" required>
+        {%- render 'phone-field' -%}
         <textarea placeholder="DESCRIBE THE CARE NEEDED FOR YOUR GARMENT..." style="height:100px;"></textarea>
         <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-care')">Submit Request</button>
       </form>
@@ -419,6 +422,7 @@
       <p>Step behind the velvet ropes. We invite discerning clients to request a private fitting at one of our global ateliers in Napa Valley, San Jose, Hawaii, or Saigon.</p>
       <form class="nv-modal-form" onsubmit="return false;">
         <input type="text" placeholder="FULL NAME" required>
+        {%- render 'phone-field' -%}
         <select required>
           <option value="" disabled selected>SELECT LOCATION</option>
           <option value="sanjose">San Jose Flagship</option>
@@ -442,6 +446,7 @@
       <p>The bespoke journey is the pinnacle of luxury. Nancy Vuu and her master tailors work intimately with you to architect a one-of-a-kind garment that perfectly embodies your ultimate identity.</p>
       <form class="nv-modal-form" onsubmit="return false;">
         <input type="text" placeholder="NAME" required>
+        {%- render 'phone-field' -%}
         <select required>
           <option value="" disabled selected>TYPE OF COMMISSION</option>
           <option value="bridal">Bespoke Bridal</option>

@@ -32,6 +32,9 @@
               placeholder="{{ section.settings.label_email | default: 'DIRECT CONTACT EMAIL' }}" required>
           </div>
           <div class="crowning-partnerships__field">
+            {%- render 'phone-field' -%}
+          </div>
+          <div class="crowning-partnerships__field">
             <select name="contact[partnership_type]" required>
               <option value="" disabled selected>{{ section.settings.label_type | default: 'TYPE OF PARTNERSHIP INQUIRY' }}</option>
               {%- for block in section.blocks -%}

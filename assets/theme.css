@@ -1442,6 +1442,42 @@ textarea.audience-modal__input { resize: none; }
 }
 .btn-gold:hover { background: #b08d40; }
 
+/* ── Phone + country-code field (reusable) ────────────────── */
+.nv-phone-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  width: 100%;
+}
+.nv-phone-wrap__code {
+  flex: 0 0 auto !important;
+  width: 110px !important;
+  max-width: 120px !important;
+  min-width: 0 !important;
+  border-bottom: 1px solid #ccc !important;
+  border-right: 1px solid #e0e0e0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  padding: 18px 8px 18px 0 !important;
+  margin-bottom: 0 !important;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: .65rem;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+.nv-phone-wrap__code:focus { border-bottom-color: #111 !important; outline: none; }
+.nv-phone-wrap__input {
+  flex: 1 1 0% !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding-left: 14px !important;
+  margin-bottom: 0 !important;
+}
+
 /* ── BTN-FILL ───────────────────────────────────────────── */
 .btn-fill {
   display: inline-block; padding: 1rem 3rem;

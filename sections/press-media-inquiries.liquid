@@ -36,6 +36,9 @@
                 placeholder="{{ section.settings.label_name | default: 'Full Name / Publication' }}"
                 class="press-input" required>
             </div>
+            <div>
+              {%- render 'phone-field', input_class: 'press-input' -%}
+            </div>
             <div class="press-media__select-wrap">
               <select name="contact[inquiry_type]" class="press-input">
                 {%- for block in section.blocks -%}

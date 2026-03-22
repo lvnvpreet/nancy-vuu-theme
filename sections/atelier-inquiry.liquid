@@ -57,6 +57,10 @@
           </div>
 
           <div class="atelier-inquiry__field">
+            {%- render 'phone-field' -%}
+          </div>
+
+          <div class="atelier-inquiry__field">
             <select name="contact[body]" id="atelier-service" required>
               <option value="" disabled selected>{{ section.settings.label_service | default: 'TYPE OF ATELIER SERVICE REQUESTED' }}</option>
               {%- for block in section.blocks -%}

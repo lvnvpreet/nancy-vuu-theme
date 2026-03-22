@@ -54,6 +54,9 @@
                 placeholder="{{ section.settings.label_email | default: 'Professional Email Address' }}" required>
             </div>
             <div class="booknv-booking__field">
+              {%- render 'phone-field' -%}
+            </div>
+            <div class="booknv-booking__field">
               <input type="text" name="contact[inquiry_type]"
                 placeholder="{{ section.settings.label_inquiry | default: 'Nature of Inquiry (Keynote, Mentorship, etc.)' }}">
             </div>

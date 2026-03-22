@@ -40,6 +40,9 @@
                 class="press-input" required>
             </div>
             <div>
+              {%- render 'phone-field', input_class: 'press-input' -%}
+            </div>
+            <div>
               <textarea name="contact[body]"
                 placeholder="{{ section.settings.label_message | default: 'Nature of Inquiry' }}"
                 rows="1"
