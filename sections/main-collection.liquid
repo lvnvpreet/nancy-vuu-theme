@@ -22,16 +22,71 @@
   </div>
 
   {%- paginate collection.products by section.settings.products_per_page -%}
-    <div class="product-grid" id="product-grid">
+
+    {%- if section.settings.group_by_type and collection.products.size > 0 -%}
+      {%- comment -%} Build a deduplicated list of product types {%- endcomment -%}
+      {%- assign all_types = '' -%}
       {%- for product in collection.products -%}
-        {%- render 'product-card', product: product, lazy_load: true -%}
-      {%- else -%}
-        <div class="collection-empty">
-          <p class="body-copy">{{ 'collection.empty' | t: default: 'No products found in this collection.' }}</p>
-          <a href="/collections/all" class="btn-editorial">{{ 'collection.shop_all' | t: default: 'Shop All' }}</a>
-        </div>
+        {%- if product.type != blank -%}
+          {%- assign all_types = all_types | append: product.type | append: '|' -%}
+        {%- endif -%}
       {%- endfor -%}
-    </div>
+      {%- assign types_array = all_types | split: '|' | uniq -%}
+
+      {%- comment -%} If no product has a type (all blank), fall back to flat grid {%- endcomment -%}
+      {%- if types_array.size > 0 -%}
+        {%- for type in types_array -%}
+          {%- if type != blank -%}
+            <div class="collection-group" id="group-{{ type | handle }}">
+              <h2 class="collection-group__heading serif-font">{{ type }}</h2>
+              <div class="product-grid">
+                {%- for product in collection.products -%}
+                  {%- if product.type == type -%}
+                    {%- render 'product-card', product: product, lazy_load: true -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- comment -%} Products with no type — show in a fallback group {%- endcomment -%}
+        {%- assign has_untyped = false -%}
+        {%- for product in collection.products -%}
+          {%- if product.type == blank -%}{%- assign has_untyped = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if has_untyped -%}
+          <div class="collection-group" id="group-other">
+            <h2 class="collection-group__heading serif-font">Other</h2>
+            <div class="product-grid">
+              {%- for product in collection.products -%}
+                {%- if product.type == blank -%}
+                  {%- render 'product-card', product: product, lazy_load: true -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        <div class="product-grid" id="product-grid">
+          {%- for product in collection.products -%}
+            {%- render 'product-card', product: product, lazy_load: true -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+    {%- else -%}
+      <div class="product-grid" id="product-grid">
+        {%- for product in collection.products -%}
+          {%- render 'product-card', product: product, lazy_load: true -%}
+        {%- else -%}
+          <div class="collection-empty">
+            <p class="body-copy">{{ 'collection.empty' | t: default: 'No products found in this collection.' }}</p>
+            <a href="/collections/all" class="btn-editorial">{{ 'collection.shop_all' | t: default: 'Shop All' }}</a>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
 
     {%- render 'pagination', paginate: paginate -%}
   {%- endpaginate -%}
@@ -57,6 +112,13 @@
         { "value": "4", "label": "4 columns" }
       ],
       "default": "3"
+    },
+    {
+      "type": "checkbox",
+      "id": "group_by_type",
+      "label": "Group products by collection name (Product Type)",
+      "info": "Groups products under headings based on their Product Type field set in Shopify Admin. Requires products to have a Product Type assigned.",
+      "default": false
     }
   ]
 }
