@@ -1,0 +1,112 @@
+{%- comment -%} About — The 44-Year Return (split image + text) {%- endcomment -%}
+
+<section class="about-return section-padding" data-section-id="{{ section.id }}" style="background:var(--greige);">
+  <div class="about-return__inner">
+    <div class="about-return__text fade-in">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow about-return__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="about-return__heading serif-font">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <p class="about-return__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="about-return__media fade-in">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'about-return__img', loading: 'lazy', alt: section.settings.heading }}
+      {%- else -%}
+        <div class="about-return__img-placeholder img-placeholder">
+          <span>Upload portrait image in Theme Editor</span>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-return {
+    padding: 8rem 1.5rem;
+  }
+  .about-return__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-return__eyebrow {
+    color: var(--gold);
+    font-size: .625rem;
+    letter-spacing: .6em;
+  }
+  .about-return__heading {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+  }
+  .about-return__body {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.85;
+  }
+  .about-return__img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+  }
+  .about-return__img-placeholder {
+    aspect-ratio: 4 / 5;
+  }
+  @media (max-width: 768px) {
+    .about-return__inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About — The Return",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "The Return"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The 44-Year Return"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body Text",
+      "default": "I have returned to my homeland not as the baby who left, but as a woman with a mission to merge raw, ancestral strength with expansive freedom. I chose to establish our bridal atelier in Vietnam because we believe true luxury is found in the soul of the maker."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Portrait Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — The Return"
+    }
+  ]
+}
+{% endschema %}

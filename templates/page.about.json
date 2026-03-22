@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "about_hero": {
+      "type": "about-hero",
+      "settings": {
+        "overlay_opacity": 15,
+        "eyebrow": "The Legacy",
+        "title_line_1": "The Architecture",
+        "title_line_2": "of Distinction"
+      }
+    },
+    "about_letter": {
+      "type": "about-letter",
+      "settings": {
+        "eyebrow": "Historical Context",
+        "heading": "A Letter from Nancy",
+        "paragraph_1": "In 1979, the story of Nancy Vuu did not begin in a studio; it began on the open sea. I was a one-year-old baby, carried into the unknown by parents who possessed the rarest kind of wealth: the courage to dream.",
+        "paragraph_2": "Leaving the shores of Vietnam as refugees, they sacrificed their lineage to secure my freedom. They traded the only world they knew for a promise they couldn't see—so that forty-four years later, I could return with a dream.",
+        "pullquote": "\"This is the foundation of our house.\""
+      }
+    },
+    "about_return": {
+      "type": "about-return",
+      "settings": {
+        "eyebrow": "The Return",
+        "heading": "The 44-Year Return",
+        "body": "I have returned to my homeland not as the baby who left, but as a woman with a mission to merge raw, ancestral strength with expansive freedom. I chose to establish our bridal atelier in Vietnam because we believe true luxury is found in the soul of the maker."
+      }
+    },
+    "about_mantle": {
+      "type": "about-mantle",
+      "block_order": ["bridal_card", "suiting_card"],
+      "blocks": {
+        "bridal_card": {
+          "type": "card",
+          "settings": {
+            "card_eyebrow": "Bespoke Bridal",
+            "card_title": "A Vessel of Light",
+            "card_body": "Our bridal couture is the physical manifestation of a promise. It is designed to mirror the sacredness of the moment and the authority of the woman who wears it. Every stitch is an act of devotion to your story."
+          }
+        },
+        "suiting_card": {
+          "type": "card",
+          "settings": {
+            "card_eyebrow": "Bespoke Suiting",
+            "card_title": "Structured Authority",
+            "card_body": "A Nancy Vuu suit is the architecture of distinction. It is the outer reflection of inner strength—crafted for the visionary who leads from a place of overflow rather than effort."
+          }
+        }
+      },
+      "settings": {
+        "eyebrow": "Couture & Suiting",
+        "heading": "Your Inner Overflow",
+        "intro": "We do not create masks to hide behind. We architect the Mantle that reflects the appointment you have already been given."
+      }
+    },
+    "about_bridge": {
+      "type": "about-bridge",
+      "settings": {
+        "eyebrow": "Artisanship",
+        "heading": "The Bridge",
+        "body": "We are building a bridge—honoring the excellence of our people and showcasing the beautiful souls of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the weight of history and the lightness of hope."
+      }
+    },
+    "about_crowning": {
+      "type": "about-crowning",
+      "settings": {
+        "overlay_opacity": 70,
+        "eyebrow": "The Threshold",
+        "heading": "The Crowning",
+        "paragraph_1": "The Crowning is the moment the garment and the soul align. It is a sacred threshold where you stop seeing the fabric and start seeing your Appointment.",
+        "paragraph_2": "As the final adjustment is made, there is a shift in the room. It is the moment you accept the mantle you were born to carry."
+      }
+    },
+    "about_retreats": {
+      "type": "about-retreats",
+      "settings": {
+        "eyebrow": "Restoration",
+        "heading": "The Dream Retreats",
+        "paragraph_1": "Because a visionary cannot lead from depletion, our Dream Retreats offer a sanctuary for the spirit.",
+        "paragraph_2": "We gather in places of profound beauty to silence the noise of the world and remember why we were called. These are curated spaces of quiet luxury, designed for visualization, restoration, and the architecting of your next decade.",
+        "cta_label": "View Upcoming Sanctuaries",
+        "cta_link": "/pages/retreats"
+      }
+    },
+    "about_signature": {
+      "type": "about-signature",
+      "settings": {
+        "tagline": "Clothe yourself in your calling.",
+        "cta_1_label": "Inquire for Couture",
+        "cta_1_link": "/pages/atelier",
+        "cta_2_label": "Join a Retreat",
+        "cta_2_link": "/pages/retreats",
+        "signature_name": "Nancy Vuu",
+        "signature_title": "Architect of Distinction"
+      }
+    }
+  },
+  "order": [
+    "about_hero",
+    "about_letter",
+    "about_return",
+    "about_mantle",
+    "about_bridge",
+    "about_crowning",
+    "about_retreats",
+    "about_signature"
+  ]
+}

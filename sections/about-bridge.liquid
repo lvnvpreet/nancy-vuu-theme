@@ -1,0 +1,84 @@
+{%- comment -%} About — The Bridge (artisanship statement) {%- endcomment -%}
+
+<section class="about-bridge" data-section-id="{{ section.id }}" style="background:#F9F8F6; padding: 8rem 1.5rem;">
+  <div class="about-bridge__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow about-bridge__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="about-bridge__heading serif-font">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="about-bridge__card">
+      {%- if section.settings.body != blank -%}
+        <p class="about-bridge__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-bridge__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-bridge__eyebrow {
+    color: var(--gold);
+    font-size: .625rem;
+    letter-spacing: .6em;
+  }
+  .about-bridge__heading {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+  .about-bridge__card {
+    background: #fff;
+    border: 1px solid #F0EBE6;
+    padding: 5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .about-bridge__body {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.9;
+    text-align: left;
+  }
+  @media (max-width: 768px) {
+    .about-bridge__card { padding: 2.5rem 1.75rem; }
+    .about-bridge__body { font-size: 1rem; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About — The Bridge",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "Artisanship"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Bridge"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body Text",
+      "default": "We are building a bridge—honoring the excellence of our people and showcasing the beautiful souls of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the weight of history and the lightness of hope."
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — The Bridge"
+    }
+  ]
+}
+{% endschema %}

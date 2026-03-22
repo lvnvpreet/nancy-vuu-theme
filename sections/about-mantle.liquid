@@ -1,0 +1,177 @@
+{%- comment -%} About — Your Inner Overflow (Mantle & Appointment) {%- endcomment -%}
+
+<section class="about-mantle" data-section-id="{{ section.id }}" style="background:#fff; padding: 8rem 1.5rem;">
+  <div class="about-mantle__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="eyebrow about-mantle__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="about-mantle__heading serif-font">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <p class="about-mantle__intro">{{ section.settings.intro }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="about-mantle__cards">
+    {% for block in section.blocks %}
+      <div class="about-mantle__card" {{ block.shopify_attributes }}>
+        {%- if block.settings.card_eyebrow != blank -%}
+          <span class="eyebrow about-mantle__card-eyebrow">{{ block.settings.card_eyebrow }}</span>
+        {%- endif -%}
+        {%- if block.settings.card_title != blank -%}
+          <h3 class="about-mantle__card-title serif-font">{{ block.settings.card_title }}</h3>
+        {%- endif -%}
+        {%- if block.settings.card_body != blank -%}
+          <p class="about-mantle__card-body">{{ block.settings.card_body }}</p>
+        {%- endif -%}
+        <div class="about-mantle__card-rule"></div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .about-mantle__header {
+    max-width: 800px;
+    margin: 0 auto 6rem;
+    text-align: center;
+  }
+  .about-mantle__eyebrow {
+    color: var(--gold);
+    font-size: .625rem;
+    letter-spacing: .6em;
+  }
+  .about-mantle__heading {
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .about-mantle__intro {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .about-mantle__cards {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+  .about-mantle__card {
+    background: #fff;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+    padding: 5rem;
+    transition: transform .5s ease;
+  }
+  .about-mantle__card:hover {
+    transform: translateY(-10px);
+  }
+  .about-mantle__card-eyebrow {
+    color: #aaa;
+    font-size: .625rem;
+    letter-spacing: .5em;
+  }
+  .about-mantle__card-title {
+    font-size: 1.75rem;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+  .about-mantle__card-body {
+    font-family: var(--font-sans);
+    font-size: .95rem;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.85;
+    margin-bottom: 2rem;
+  }
+  .about-mantle__card-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+  @media (max-width: 768px) {
+    .about-mantle__card { padding: 3rem 2rem; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About — Mantle",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "card_eyebrow",
+          "label": "Card Eyebrow",
+          "default": "Bespoke Bridal"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "A Vessel of Light"
+        },
+        {
+          "type": "textarea",
+          "id": "card_body",
+          "label": "Card Body",
+          "default": "Our bridal couture is the physical manifestation of a promise. It is designed to mirror the sacredness of the moment and the authority of the woman who wears it."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "Couture & Suiting"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Inner Overflow"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro Text",
+      "default": "We do not create masks to hide behind. We architect the Mantle that reflects the appointment you have already been given."
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — Mantle",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "card_eyebrow": "Bespoke Bridal",
+            "card_title": "A Vessel of Light",
+            "card_body": "Our bridal couture is the physical manifestation of a promise. It is designed to mirror the sacredness of the moment and the authority of the woman who wears it. Every stitch is an act of devotion to your story."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_eyebrow": "Bespoke Suiting",
+            "card_title": "Structured Authority",
+            "card_body": "A Nancy Vuu suit is the architecture of distinction. It is the outer reflection of inner strength—crafted for the visionary who leads from a place of overflow rather than effort."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

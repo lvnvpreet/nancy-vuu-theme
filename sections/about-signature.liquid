@@ -1,0 +1,154 @@
+{%- comment -%} About — Signature / Final CTA {%- endcomment -%}
+
+<section class="about-signature" data-section-id="{{ section.id }}" style="background:#fff; border-top: 1px solid #f0f0f0; padding: 8rem 1.5rem;">
+  <div class="about-signature__inner">
+    {%- if section.settings.tagline != blank -%}
+      <h2 class="about-signature__tagline serif-font">{{ section.settings.tagline }}</h2>
+    {%- endif -%}
+
+    <div class="about-signature__ctas">
+      {%- if section.settings.cta_1_label != blank -%}
+        <a href="{{ section.settings.cta_1_link | default: '#' }}" class="about-signature__btn about-signature__btn--solid">
+          {{ section.settings.cta_1_label }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.cta_2_label != blank -%}
+        <a href="{{ section.settings.cta_2_link | default: '#' }}" class="about-signature__btn about-signature__btn--outline">
+          {{ section.settings.cta_2_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="about-signature__identity">
+      {%- if section.settings.signature_name != blank -%}
+        <p class="about-signature__name serif-font">{{ section.settings.signature_name }}</p>
+      {%- endif -%}
+      {%- if section.settings.signature_title != blank -%}
+        <span class="eyebrow about-signature__title">{{ section.settings.signature_title }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-signature__inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-signature__tagline {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-style: italic;
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+  .about-signature__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 6rem;
+  }
+  .about-signature__btn {
+    font-family: var(--font-sans);
+    font-size: .625rem;
+    font-weight: 700;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    padding: 1.25rem 3rem;
+    display: inline-block;
+    transition: background .5s ease, color .5s ease, border-color .5s ease;
+    cursor: pointer;
+  }
+  .about-signature__btn--solid {
+    background: var(--ink);
+    color: #fff;
+    border: 1px solid var(--ink);
+  }
+  .about-signature__btn--solid:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .about-signature__btn--outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .about-signature__btn--outline:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+  .about-signature__identity {
+    margin-top: 2rem;
+  }
+  .about-signature__name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 3.5rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .about-signature__title {
+    color: var(--gold);
+    font-size: .625rem;
+    letter-spacing: .6em;
+  }
+  @media (max-width: 480px) {
+    .about-signature__btn { width: 100%; text-align: center; }
+    .about-signature__ctas { flex-direction: column; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About — Signature",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Clothe yourself in your calling."
+    },
+    {
+      "type": "text",
+      "id": "cta_1_label",
+      "label": "CTA 1 Label",
+      "default": "Inquire for Couture"
+    },
+    {
+      "type": "url",
+      "id": "cta_1_link",
+      "label": "CTA 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_2_label",
+      "label": "CTA 2 Label",
+      "default": "Join a Retreat"
+    },
+    {
+      "type": "url",
+      "id": "cta_2_link",
+      "label": "CTA 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "signature_name",
+      "label": "Signature Name",
+      "default": "Nancy Vuu"
+    },
+    {
+      "type": "text",
+      "id": "signature_title",
+      "label": "Signature Title",
+      "default": "Architect of Distinction"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — Signature"
+    }
+  ]
+}
+{% endschema %}
