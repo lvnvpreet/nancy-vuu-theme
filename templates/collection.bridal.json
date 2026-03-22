@@ -12,6 +12,7 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
+        "video_url": "",
         "overlay_opacity": 65,
         "eyebrow": "The Evidence of a Promise",
         "title": ""
@@ -44,85 +45,12 @@
         "body": "Our Bridal Couture pieces are unique masterpieces available for purchase exclusively at the Atelier. For all other commissions, the collection serves as a curated invitation for your Made-to-Measure or Bespoke order."
       }
     },
-    "lookbook": {
-      "type": "lookbook-grid",
-      "blocks": {
-        "look_1": {
-          "type": "look",
-          "settings": {
-            "title": "The Heirloom Silhouette",
-            "subtitle": "",
-            "badge": "Atelier Acquisition Only",
-            "link_text": "Request Private Consultation →",
-            "link": ""
-          }
-        },
-        "look_2": {
-          "type": "look",
-          "settings": {
-            "title": "The Sovereign Drape",
-            "subtitle": "",
-            "badge": "Atelier Acquisition Only",
-            "link_text": "Request Private Consultation →",
-            "link": ""
-          }
-        },
-        "look_3": {
-          "type": "look",
-          "settings": {
-            "title": "The Grace Column",
-            "subtitle": "",
-            "badge": "Atelier Acquisition Only",
-            "link_text": "Request Private Consultation →",
-            "link": ""
-          }
-        },
-        "look_4": {
-          "type": "look",
-          "settings": {
-            "title": "The Covenant Train",
-            "subtitle": "",
-            "badge": "Atelier Acquisition Only",
-            "link_text": "Request Private Consultation →",
-            "link": ""
-          }
-        },
-        "look_5": {
-          "type": "look",
-          "settings": {
-            "title": "The Ethereal Mist",
-            "subtitle": "",
-            "badge": "Atelier Acquisition Only",
-            "link_text": "Request Private Consultation →",
-            "link": ""
-          }
-        },
-        "look_6": {
-          "type": "look",
-          "settings": {
-            "title": "The Majesty Ensemble",
-            "subtitle": "",
-            "badge": "Atelier Acquisition Only",
-            "link_text": "Request Private Consultation →",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "look_1",
-        "look_2",
-        "look_3",
-        "look_4",
-        "look_5",
-        "look_6"
-      ],
-      "settings": {}
-    },
     "main": {
       "type": "main-collection",
       "settings": {
         "products_per_page": 24,
-        "columns": "3"
+        "columns": "3",
+        "group_by_type": true
       }
     },
     "cross-sell": {
@@ -144,7 +72,6 @@
     "hero",
     "manifesto",
     "exclusivity",
-    "lookbook",
     "main",
     "cross-sell"
   ]
