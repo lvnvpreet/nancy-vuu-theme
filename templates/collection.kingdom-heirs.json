@@ -12,8 +12,8 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "image": "shopify://shop_images/IMG_1527.webp",
-        "overlay_opacity": 40,
+        "image": "shopify://shop_images/Untitled_design_12.jpg",
+        "overlay_opacity": 35,
         "eyebrow": "ready-to-wear",
         "title": ""
       }
