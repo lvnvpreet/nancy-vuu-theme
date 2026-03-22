@@ -28,7 +28,14 @@
     </div>
 
     <div class="booknv-hero__media reveal delay-300">
-      {%- if section.settings.image != blank -%}
+      {%- if section.settings.video_url != blank -%}
+        <video
+          class="booknv-hero__img booknv-hero__video"
+          autoplay muted loop playsinline
+          {%- if section.settings.image %} poster="{{ section.settings.image | image_url: width: 900 }}"{% endif -%}>
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+        </video>
+      {%- elsif section.settings.image != blank -%}
         <img
           src="{{ section.settings.image | image_url: width: 900 }}"
           srcset="{{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 900 }} 900w"
@@ -57,7 +64,8 @@
     { "type": "url",          "id": "cta_primary_link",     "label": "Primary CTA Link" },
     { "type": "text",         "id": "cta_secondary_label",  "label": "Secondary CTA Label",     "default": "Elite Mentorship" },
     { "type": "url",          "id": "cta_secondary_link",   "label": "Secondary CTA Link" },
-    { "type": "image_picker", "id": "image",                "label": "Portrait Image" }
+    { "type": "image_picker", "id": "image",                "label": "Portrait Image / Video Poster" },
+    { "type": "text",         "id": "video_url",             "label": "Video URL (MP4)",               "info": "Direct .mp4 URL. Leave blank to use the portrait image." }
   ],
   "presets": [
     { "name": "BookNV Hero" }

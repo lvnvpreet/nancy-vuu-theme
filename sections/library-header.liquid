@@ -1,5 +1,20 @@
 {%- comment -%} Library entrance header — white bg, centered, border-bottom {%- endcomment -%}
-<header class="library-header" data-section-id="{{ section.id }}">
+<header
+  class="library-header{% if section.settings.video_url != blank or section.settings.bg_image != blank %} library-header--media{% endif %}"
+  data-section-id="{{ section.id }}"
+  {%- if section.settings.video_url == blank and section.settings.bg_image != blank -%}
+    style="background-image:url('{{ section.settings.bg_image | image_url: width: 1920 }}'); background-size:cover; background-position:center;"
+  {%- endif -%}
+>
+  {%- if section.settings.video_url != blank -%}
+    <video class="library-header__video" autoplay muted loop playsinline
+      {%- if section.settings.bg_image %} poster="{{ section.settings.bg_image | image_url: width: 1920 }}"{% endif -%}>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {%- endif -%}
+  {%- if section.settings.video_url != blank or section.settings.bg_image != blank -%}
+    <div class="library-header__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  {%- endif -%}
   {%- if section.settings.title != blank -%}
     <h1 class="library-header__title serif-font">{{ section.settings.title }}</h1>
   {%- endif -%}
@@ -12,18 +27,11 @@
 {
   "name": "Library Header",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "The Library."
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "The Official Collection of Thought"
-    }
+    { "type": "text",         "id": "title",           "label": "Title",           "default": "The Library." },
+    { "type": "text",         "id": "subtitle",        "label": "Subtitle",        "default": "The Official Collection of Thought" },
+    { "type": "image_picker", "id": "bg_image",        "label": "Background Image" },
+    { "type": "text",         "id": "video_url",       "label": "Video URL (MP4)",  "info": "Direct .mp4 URL for cinematic video. Leave blank to use image or plain style." },
+    { "type": "range",        "id": "overlay_opacity", "label": "Overlay Opacity",  "min": 0, "max": 80, "step": 5, "default": 40, "unit": "%" }
   ],
   "presets": [
     {

@@ -1,10 +1,16 @@
 {%- comment -%} Crowning Hero — 95vh fullscreen hero with dark overlay + two outline-white CTAs {%- endcomment -%}
 <section
   class="crowning-hero"
-  {% if section.settings.image != blank %}
+  {%- if section.settings.video_url == blank and section.settings.image != blank -%}
   style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('{{ section.settings.image | image_url: width: 1920 }}');"
-  {% endif %}
+  {%- endif -%}
   data-section-id="{{ section.id }}">
+  {%- if section.settings.video_url != blank -%}
+    <video class="crowning-hero__video" autoplay muted loop playsinline
+      {%- if section.settings.image %} poster="{{ section.settings.image | image_url: width: 1920 }}"{% endif -%}>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {%- endif -%}
   <div class="crowning-hero__inner">
     {%- if section.settings.eyebrow != blank -%}
       <span class="eyebrow crowning-hero__eyebrow">{{ section.settings.eyebrow }}</span>
@@ -33,6 +39,7 @@
   "class": "crowning-section-hero",
   "settings": [
     { "type": "image_picker", "id": "image",       "label": "Background Image"                                              },
+    { "type": "text",        "id": "video_url",    "label": "Video URL (MP4)",  "info": "Direct .mp4 URL for cinematic video. Leave blank to use the background image." },
     { "type": "text",        "id": "eyebrow",      "label": "Eyebrow",        "default": "A Sacred Moment of Elevation"    },
     { "type": "text",        "id": "title",        "label": "Heading",        "default": "The Crowning."                   },
     { "type": "textarea",    "id": "description",  "label": "Description",    "default": "An external recognition of an internal commitment. Step into your ultimate identity and awaken your destiny." },

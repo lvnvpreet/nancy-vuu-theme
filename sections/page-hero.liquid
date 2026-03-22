@@ -2,8 +2,14 @@
 <section
   class="page-hero"
   id="{{ section.settings.section_id }}"
-  {% if section.settings.image %}style="background-image:url({{ section.settings.image | image_url: width: 2000 }});"{% endif %}
+  {%- if section.settings.video_url == blank and section.settings.image -%}style="background-image:url({{ section.settings.image | image_url: width: 2000 }});"{%- endif -%}
 >
+  {%- if section.settings.video_url != blank -%}
+    <video class="page-hero__video" autoplay muted loop playsinline
+      {%- if section.settings.image %} poster="{{ section.settings.image | image_url: width: 1920 }}"{% endif -%}>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {%- endif -%}
   <div class="page-hero__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
   <div class="page-hero__content">
     {% if section.settings.eyebrow != blank %}
@@ -43,6 +49,7 @@
   "settings": [
     { "type": "text",       "id": "section_id",      "label": "Section ID",       "default": "page-hero" },
     { "type": "image_picker","id": "image",           "label": "Background Image" },
+    { "type": "text",       "id": "video_url",        "label": "Video URL (MP4)",  "info": "Direct .mp4 URL for a cinematic hero video. Leave blank to use the background image." },
     { "type": "range",      "id": "overlay_opacity",  "label": "Overlay Opacity",  "min": 0, "max": 100, "step": 5, "default": 40 },
     { "type": "text",       "id": "eyebrow",         "label": "Eyebrow" },
     { "type": "text",       "id": "title_line_1",    "label": "Title — Line 1",   "default": "Title" },
