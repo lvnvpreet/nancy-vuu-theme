@@ -73,7 +73,9 @@
       "settings": {
         "eyebrow": "Artisanship",
         "heading": "The Bridge",
-        "body": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>\"beautiful souls\"</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <strong>weight of history</strong> and the <strong>lightness of hope</strong>.</p>"
+        "body": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>\"beautiful souls\"</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <strong>weight of history</strong> and the <strong>lightness of hope</strong>.</p>",
+        "body_size": "1.5rem",
+        "body_align": "center"
       }
     },
     "about_crowning": {
