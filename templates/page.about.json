@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "about_hero": {
       "type": "about-hero",
       "settings": {
+        "image_url": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=2000",
         "overlay_opacity": 15,
         "eyebrow": "The Legacy",
         "title_line_1": "The Architecture",
@@ -24,12 +34,12 @@
       "settings": {
         "eyebrow": "The Return",
         "heading": "The 44-Year Return",
-        "body": "I have returned to my homeland not as the baby who left, but as a woman with a mission to merge raw, ancestral strength with expansive freedom. I chose to establish our bridal atelier in Vietnam because we believe true luxury is found in the soul of the maker."
+        "body": "I have returned to my homeland not as the baby who left, but as a woman with a mission to merge raw, ancestral strength with expansive freedom. I chose to establish our bridal atelier in Vietnam because we believe true luxury is found in the soul of the maker.",
+        "image_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1000"
       }
     },
     "about_mantle": {
       "type": "about-mantle",
-      "block_order": ["bridal_card", "suiting_card"],
       "blocks": {
         "bridal_card": {
           "type": "card",
@@ -48,6 +58,10 @@
           }
         }
       },
+      "block_order": [
+        "bridal_card",
+        "suiting_card"
+      ],
       "settings": {
         "eyebrow": "Couture & Suiting",
         "heading": "Your Inner Overflow",
@@ -65,7 +79,8 @@
     "about_crowning": {
       "type": "about-crowning",
       "settings": {
-        "overlay_opacity": 70,
+        "image_url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=2000",
+        "overlay_opacity": 55,
         "eyebrow": "The Threshold",
         "heading": "The Crowning",
         "paragraph_1": "The Crowning is the moment the garment and the soul align. It is a sacred threshold where you stop seeing the fabric and start seeing your Appointment.",
@@ -75,6 +90,8 @@
     "about_retreats": {
       "type": "about-retreats",
       "settings": {
+        "image_url": "",
+        "image": "shopify://shop_images/18.jpg",
         "eyebrow": "Restoration",
         "heading": "The Dream Retreats",
         "paragraph_1": "Because a visionary cannot lead from depletion, our Dream Retreats offer a sanctuary for the spirit.",
