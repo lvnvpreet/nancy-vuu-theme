@@ -1,69 +1,113 @@
-{%- comment -%} Audience Modal — Shopify contact form overlay for bridal / retreats {%- endcomment -%}
+{%- comment -%} Audience Modal — 2-column overlay (image + form) for retreats / bridal {%- endcomment -%}
 <div class="audience-modal" id="audience-modal" aria-hidden="true" aria-modal="true" role="dialog">
-  <div class="audience-modal__overlay" data-audience-close></div>
-  <div class="audience-modal__panel">
-    <button class="audience-modal__close" data-audience-close aria-label="Close">&times;</button>
-    <div class="audience-modal__header">
-      {% if section.settings.eyebrow != blank %}
-        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
-      {% endif %}
-      <h2 class="audience-modal__title serif-font">{{ section.settings.title | default: "Begin Your Journey" }}</h2>
-      {% if section.settings.description != blank %}
-        <p class="body-copy">{{ section.settings.description }}</p>
-      {% endif %}
-    </div>
+  <div class="audience-modal__inner">
+    <button class="audience-modal__close" data-audience-close aria-label="Close">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
 
-    {%- form 'contact', id: 'audience-form' -%}
-      <input type="hidden" name="contact[tags]" value="{{ section.settings.form_tag | default: 'audience-inquiry' }}">
+    <div class="audience-modal__grid">
 
-      <div class="audience-modal__field">
-        <label for="audience-name">{{ 'general.form.name' | t | default: 'Name' }}</label>
-        <input type="text" id="audience-name" name="contact[name]" placeholder="Full Name" required>
+      <!-- Left image panel (hidden on mobile) -->
+      <div class="audience-modal__left"
+        {%- if section.settings.left_image != blank -%}
+          style="background-image:url({{ section.settings.left_image | image_url: width: 1000 }});"
+        {%- endif -%}
+      >
+        <div class="audience-modal__covenant">
+          {%- if section.settings.left_eyebrow != blank -%}
+            <span class="audience-modal__covenant-eyebrow">{{ section.settings.left_eyebrow }}</span>
+          {%- endif -%}
+          {%- if section.settings.left_heading != blank -%}
+            <h3 class="audience-modal__covenant-title serif-font"><em>{{ section.settings.left_heading }}</em></h3>
+          {%- endif -%}
+          {%- if section.settings.left_text != blank -%}
+            <p class="audience-modal__covenant-text">{{ section.settings.left_text }}</p>
+          {%- endif -%}
+        </div>
       </div>
 
-      <div class="audience-modal__field">
-        <label for="audience-email">{{ 'general.form.email' | t | default: 'Email' }}</label>
-        <input type="email" id="audience-email" name="contact[email]" placeholder="Email Address" required>
+      <!-- Right form panel -->
+      <div class="audience-modal__right" id="audience-form-wrapper">
+        <div class="audience-modal__header">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="audience-modal__form-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          <h2 class="audience-modal__title serif-font">{{ section.settings.title | default: "Request an Audience." }}</h2>
+        </div>
+
+        {%- form 'contact', id: 'audience-form' -%}
+          <input type="hidden" name="contact[tags]" value="{{ section.settings.form_tag | default: 'audience-inquiry' }}">
+
+          {%- if form.errors -%}
+            <div class="audience-modal__errors">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+
+          <div class="audience-modal__field">
+            <label for="audience-name" class="audience-modal__label">Full Name</label>
+            <input type="text" id="audience-name" name="contact[name]" placeholder="Identity" required class="audience-modal__input">
+          </div>
+
+          <div class="audience-modal__field">
+            <label for="audience-email" class="audience-modal__label">Email Address</label>
+            <input type="email" id="audience-email" name="contact[email]" placeholder="Private Email" required class="audience-modal__input">
+          </div>
+
+          {%- if section.settings.show_dropdown or section.settings.show_date -%}
+            <div class="audience-modal__row">
+              {%- if section.settings.show_dropdown -%}
+                <div class="audience-modal__field">
+                  <label for="audience-category" class="audience-modal__label">{{ section.settings.dropdown_label | default: 'Category' }}</label>
+                  <select id="audience-category" name="contact[category]" class="audience-modal__input">
+                    <option value="">Select…</option>
+                    {%- for block in section.blocks -%}
+                      {%- if block.type == 'dropdown_option' -%}
+                        <option value="{{ block.settings.value }}">
+                          {{- block.settings.label | default: block.settings.value -}}
+                        </option>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </select>
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.show_date -%}
+                <div class="audience-modal__field">
+                  <label for="audience-date" class="audience-modal__label">{{ section.settings.date_label | default: 'Preferred Date' }}</label>
+                  <input type="text" id="audience-date" name="contact[date]" placeholder="MM / DD / YYYY" class="audience-modal__input">
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.show_textarea -%}
+            <div class="audience-modal__field">
+              <label for="audience-vision" class="audience-modal__label">{{ section.settings.textarea_label | default: 'Vision Statement' }}</label>
+              <textarea id="audience-vision" name="contact[body]" rows="4" placeholder="{{ section.settings.textarea_placeholder | default: 'Tell us about your vision…' }}" class="audience-modal__input"></textarea>
+            </div>
+          {%- endif -%}
+
+          <button type="submit" class="btn-gold audience-modal__submit" id="audience-submit-btn">
+            {{ section.settings.submit_label | default: 'Submit Application for Review' }}
+          </button>
+        {%- endform -%}
       </div>
 
-      {% if section.settings.show_dropdown or section.settings.show_date %}
-        <div class="audience-modal__row">
-          {% if section.settings.show_dropdown %}
-            <div class="audience-modal__field">
-              <label for="audience-category">{{ section.settings.dropdown_label | default: 'Category' }}</label>
-              <select id="audience-category" name="contact[category]">
-                <option value="">Select…</option>
-                {% for block in section.blocks %}
-                  {% if block.type == 'dropdown_option' %}
-                    <option value="{{ block.settings.value }}">{{ block.settings.label }}</option>
-                  {% endif %}
-                {% endfor %}
-              </select>
-            </div>
-          {% endif %}
-
-          {% if section.settings.show_date %}
-            <div class="audience-modal__field">
-              <label for="audience-date">{{ section.settings.date_label | default: 'Preferred Date' }}</label>
-              <input type="text" id="audience-date" name="contact[date]" placeholder="MM / DD / YYYY">
-            </div>
-          {% endif %}
+      <!-- Success state -->
+      <div class="audience-modal__success-col" id="audience-success-wrapper" style="display:none;">
+        <div class="audience-modal__success">
+          <div class="audience-modal__success-icon">
+            <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h2 class="audience-modal__success-title serif-font"><em>{{ section.settings.success_title | default: "Recognized." }}</em></h2>
+          <p class="audience-modal__success-message">{{ section.settings.success_message | default: "Your application has been received by the House of Nancy Vuu. Due to limited availability, we will review and contact you within 48 hours." }}</p>
+          <button data-audience-close class="audience-modal__return">Return to Sanctuary</button>
         </div>
-      {% endif %}
+      </div>
 
-      {% if section.settings.show_textarea %}
-        <div class="audience-modal__field">
-          <label for="audience-vision">{{ section.settings.textarea_label | default: 'Your Vision' }}</label>
-          <textarea id="audience-vision" name="contact[body]" rows="4" placeholder="{{ section.settings.textarea_placeholder | default: 'Tell us about your vision…' }}"></textarea>
-        </div>
-      {% endif %}
-
-      <button type="submit" class="btn-luxury">{{ section.settings.submit_label | default: 'Submit' }}</button>
-    {%- endform -%}
-
-    <div class="audience-modal__success" style="display:none;">
-      <h3 class="serif-font">{{ section.settings.success_title | default: "Thank You" }}</h3>
-      <p class="body-copy">{{ section.settings.success_message | default: "We'll be in touch within 48 hours." }}</p>
     </div>
   </div>
 </div>
@@ -73,20 +117,23 @@
   "name": "Audience Modal",
   "tag": "div",
   "settings": [
-    { "type": "text",     "id": "eyebrow",               "label": "Eyebrow" },
-    { "type": "text",     "id": "title",                  "label": "Modal Title",          "default": "Begin Your Journey" },
-    { "type": "textarea", "id": "description",            "label": "Description" },
-    { "type": "text",     "id": "form_tag",               "label": "Form Tag",             "default": "audience-inquiry" },
-    { "type": "checkbox", "id": "show_dropdown",          "label": "Show Dropdown Field",  "default": true },
-    { "type": "text",     "id": "dropdown_label",         "label": "Dropdown Label",       "default": "Category" },
-    { "type": "checkbox", "id": "show_date",              "label": "Show Date Field",      "default": true },
-    { "type": "text",     "id": "date_label",             "label": "Date Label",           "default": "Preferred Date" },
-    { "type": "checkbox", "id": "show_textarea",          "label": "Show Textarea",        "default": true },
-    { "type": "text",     "id": "textarea_label",         "label": "Textarea Label",       "default": "Your Vision" },
-    { "type": "text",     "id": "textarea_placeholder",   "label": "Textarea Placeholder", "default": "Tell us about your vision…" },
-    { "type": "text",     "id": "submit_label",           "label": "Submit Button Text",   "default": "Submit Inquiry" },
-    { "type": "text",     "id": "success_title",          "label": "Success Title",        "default": "Thank You" },
-    { "type": "text",     "id": "success_message",        "label": "Success Message",      "default": "We'll be in touch within 48 hours." }
+    { "type": "image_picker", "id": "left_image",          "label": "Left Panel Image" },
+    { "type": "text",         "id": "left_eyebrow",        "label": "Left Panel Eyebrow",    "default": "The Selection" },
+    { "type": "text",         "id": "left_heading",        "label": "Left Panel Heading",    "default": "A Restricted Covenant." },
+    { "type": "textarea",     "id": "left_text",           "label": "Left Panel Text",       "default": "Invitations are meticulously curated to ensure the synergy of the group and the sanctity of the restoration process. Only twelve seats are released per season." },
+    { "type": "text",         "id": "eyebrow",             "label": "Form Eyebrow" },
+    { "type": "text",         "id": "title",               "label": "Modal Title",           "default": "Request an Audience." },
+    { "type": "text",         "id": "form_tag",            "label": "Form Tag",              "default": "audience-inquiry" },
+    { "type": "checkbox",     "id": "show_dropdown",       "label": "Show Dropdown Field",   "default": true },
+    { "type": "text",         "id": "dropdown_label",      "label": "Dropdown Label",        "default": "Category" },
+    { "type": "checkbox",     "id": "show_date",           "label": "Show Date Field",       "default": true },
+    { "type": "text",         "id": "date_label",          "label": "Date Label",            "default": "Preferred Date" },
+    { "type": "checkbox",     "id": "show_textarea",       "label": "Show Textarea",         "default": true },
+    { "type": "text",         "id": "textarea_label",      "label": "Textarea Label",        "default": "Vision Statement" },
+    { "type": "text",         "id": "textarea_placeholder","label": "Textarea Placeholder",  "default": "Tell us about your vision…" },
+    { "type": "text",         "id": "submit_label",        "label": "Submit Button Text",    "default": "Submit Application for Review" },
+    { "type": "text",         "id": "success_title",       "label": "Success Title",         "default": "Recognized." },
+    { "type": "text",         "id": "success_message",     "label": "Success Message",       "default": "Your application has been received by the House of Nancy Vuu. Due to limited availability, we will review and contact you within 48 hours." }
   ],
   "blocks": [
     {

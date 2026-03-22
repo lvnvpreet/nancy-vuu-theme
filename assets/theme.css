@@ -1068,7 +1068,9 @@ body::after {
   position: relative; z-index: 10; text-align: center; padding: 0 1.5rem;
 }
 .cta-closer__title {
-  font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.1; margin-bottom: 1.5rem;
+  font-size: clamp(3.5rem, 10vw, 10rem); line-height: 0.95;
+  font-style: italic; font-weight: 200; margin-bottom: 2rem;
+  text-transform: lowercase;
 }
 .cta-closer__sub { max-width: 500px; margin: 0 auto 2.5rem; }
 .cta-closer__btns {
@@ -1093,54 +1095,143 @@ body::after {
 /* ── AUDIENCE MODAL ─────────────────────────────────────── */
 .audience-modal {
   position: fixed; inset: 0; z-index: 1000;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity .5s ease;
+  display: none; align-items: center; justify-content: center;
+  padding: 1.25rem;
+  background: rgba(10,10,10,0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .audience-modal[aria-hidden="false"] {
-  opacity: 1; pointer-events: all;
+  display: flex;
 }
-.audience-modal__overlay {
-  position: absolute; inset: 0; background: rgba(255,255,255,.97);
+
+/* Inner white card */
+.audience-modal__inner {
+  background: #fff;
+  width: 100%; max-width: 1100px;
+  max-height: 95vh; overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 80px rgba(0,0,0,.5);
 }
-.audience-modal__panel {
-  position: relative; z-index: 10; width: 100%; max-width: 560px;
-  padding: 3rem 2rem; text-align: center;
-}
+
+/* Close button */
 .audience-modal__close {
-  position: absolute; top: -2rem; right: 0;
-  font-size: 1.25rem; font-weight: 300;
+  position: absolute; top: 2rem; right: 2rem; z-index: 50;
   background: none; border: none; cursor: pointer;
-  transition: opacity .2s ease;
+  color: #a1a1aa; transition: color .2s ease;
+  display: flex; align-items: center; justify-content: center;
 }
-.audience-modal__close:hover { opacity: .4; }
-.audience-modal__title { font-size: 2.25rem; font-style: italic; margin-bottom: 2.5rem; }
-.audience-modal__field { margin-bottom: 2rem; text-align: left; }
-.audience-modal__field label {
+.audience-modal__close:hover { color: var(--ink); }
+
+/* 2-column grid */
+.audience-modal__grid {
+  display: grid; grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .audience-modal__grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Left image panel */
+.audience-modal__left {
+  display: none;
+  background-size: cover; background-position: center;
+  min-height: 600px;
+  position: relative;
+}
+@media (min-width: 768px) { .audience-modal__left { display: block; } }
+
+/* Covenant card overlay on image */
+.audience-modal__covenant {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-left: 4px solid var(--gold, #c5a059);
+  padding: 2.5rem;
+  margin: 3rem;
+}
+.audience-modal__covenant-eyebrow {
+  display: block; color: var(--gold, #c5a059);
+  font-family: var(--font-sans); font-size: .6rem;
+  text-transform: uppercase; letter-spacing: .6em;
+  font-weight: 700; margin-bottom: 1rem;
+}
+.audience-modal__covenant-title { font-size: 1.875rem; }
+.audience-modal__covenant-text {
+  font-family: var(--font-sans); font-size: .75rem;
+  color: #52525b; line-height: 1.7; margin-top: 1.5rem;
+}
+
+/* Right form panel */
+.audience-modal__right {
+  padding: 3rem 2rem;
+}
+@media (min-width: 768px) { .audience-modal__right { padding: 4rem; } }
+
+.audience-modal__form-eyebrow {
+  display: block; color: var(--gold, #c5a059);
+  font-family: var(--font-sans); font-size: .6rem;
+  text-transform: uppercase; letter-spacing: .4em;
+  font-weight: 700; margin-bottom: 1.5rem;
+}
+.audience-modal__title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-style: italic; margin-bottom: 2rem;
+}
+.audience-modal__errors {
+  color: #c00; font-family: var(--font-sans);
+  font-size: .75rem; margin-bottom: 1.5rem;
+}
+
+/* Form fields */
+.audience-modal__field { margin-bottom: 2rem; }
+.audience-modal__label {
   display: block; font-family: var(--font-sans);
   font-size: .6rem; text-transform: uppercase;
-  letter-spacing: .3em; color: var(--mid); margin-bottom: .5rem;
+  letter-spacing: .3em; color: #a1a1aa; margin-bottom: .5rem;
 }
-.audience-modal__field input,
-.audience-modal__field select,
-.audience-modal__field textarea {
+.audience-modal__input {
   width: 100%; background: transparent;
-  border: none; border-bottom: 1px solid #ddd;
+  border: none; border-bottom: 1px solid #e5e5e5;
   padding: 1rem 0; font-family: var(--font-sans);
-  font-size: .75rem; letter-spacing: .15em; text-transform: uppercase;
-  outline: none; transition: border-color .2s ease;
+  font-size: .85rem; outline: none;
+  transition: border-color .3s ease;
+  appearance: none;
 }
-.audience-modal__field input:focus,
-.audience-modal__field select:focus,
-.audience-modal__field textarea:focus { border-color: var(--ink); }
-.audience-modal__field select { appearance: none; }
-.audience-modal__field textarea { resize: none; }
+.audience-modal__input:focus { border-bottom-color: var(--gold, #c5a059); }
+.audience-modal__input[type="textarea"],
+textarea.audience-modal__input { resize: none; }
 .audience-modal__row {
-  display: grid; grid-template-columns: 1fr; gap: 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
 }
-@media (min-width: 768px) { .audience-modal__row { grid-template-columns: 1fr 1fr; } }
-.audience-modal__success { padding: 3rem 0; }
-.audience-modal__success h3 { font-size: 2.25rem; font-style: italic; margin-bottom: 1rem; }
+@media (max-width: 480px) { .audience-modal__row { grid-template-columns: 1fr; gap: 0; } }
+.audience-modal__submit { width: 100%; margin-top: 1rem; }
+
+/* Success column (spans right column) */
+.audience-modal__success-col {
+  padding: 4rem 2rem;
+  grid-column: 1;
+}
+@media (min-width: 768px) { .audience-modal__success-col { grid-column: 2; } }
+.audience-modal__success {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; height: 100%; min-height: 400px;
+}
+.audience-modal__success-icon { color: var(--gold, #c5a059); margin-bottom: 2rem; }
+.audience-modal__success-title { font-size: 2.5rem; font-style: italic; margin-bottom: 1.5rem; }
+.audience-modal__success-message {
+  font-family: var(--font-sans); font-size: .875rem;
+  color: #71717a; font-weight: 400; line-height: 1.7;
+  max-width: 28rem; margin-bottom: 2.5rem;
+}
+.audience-modal__return {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-sans); font-size: .6rem;
+  text-transform: uppercase; letter-spacing: .15em;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: .25rem;
+  transition: opacity .2s ease;
+}
+.audience-modal__return:hover { opacity: .5; }
 
 /* ── SCARCITY TICKER ────────────────────────────────────── */
 .scarcity-bar {

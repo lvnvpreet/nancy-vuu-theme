@@ -26,9 +26,9 @@
     {% endif %}
     {% if section.settings.cta_label != blank %}
       {% if section.settings.cta_style == 'fill' %}
-        <a href="{{ section.settings.cta_link }}" class="btn-fill">{{ section.settings.cta_label }}</a>
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-fill">{{ section.settings.cta_label }}</a>
       {% else %}
-        <a href="{{ section.settings.cta_link }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial on-dark" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">
           {{ section.settings.cta_label }}
         </a>
       {% endif %}
