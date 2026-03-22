@@ -35,8 +35,7 @@
     <p class="hero__subtitle">{{ section.settings.subheading | default: 'Tailored for Earth' }}</p>
     {%- if section.settings.cta_label != blank -%}
       <a href="{{ section.settings.cta_link | default: '/pages/atelier#inquiry' }}"
-         class="btn-editorial on-dark hero__cta"
-         style="margin-top:2rem; display:inline-block;">
+         class="hero__cta">
         {{ section.settings.cta_label }}
       </a>
     {%- endif -%}
