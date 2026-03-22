@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(function(r) { return r.json(); })
       .then(function(cart) {
         updateCartCount(cart.item_count);
+        refreshCartDrawer();
         window.openCart();
         setTimeout(function() {
           if (btn) { btn.textContent = 'Add to Cart'; btn.disabled = false; }
