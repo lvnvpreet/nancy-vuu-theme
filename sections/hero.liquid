@@ -33,6 +33,13 @@
       <span class="hero-word" style="animation-delay:0.6s;"> {{ section.settings.headline_end | default: 'HEAVEN' }}</span>
     </h1>
     <p class="hero__subtitle">{{ section.settings.subheading | default: 'Tailored for Earth' }}</p>
+    {%- if section.settings.cta_label != blank -%}
+      <a href="{{ section.settings.cta_link | default: '/pages/atelier#inquiry' }}"
+         class="btn-editorial on-dark hero__cta"
+         style="margin-top:2rem; display:inline-block;">
+        {{ section.settings.cta_label }}
+      </a>
+    {%- endif -%}
   </div>
 
   <div class="scroll-indicator">
@@ -85,6 +92,18 @@
       "id": "text_color",
       "label": "Text colour",
       "default": "#111111"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA button label",
+      "default": "Request A Consultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA button link",
+      "default": "/pages/atelier#inquiry"
     }
   ],
   "presets": [{ "name": "Hero" }]

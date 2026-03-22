@@ -17,7 +17,9 @@
         "headline_italic": "for",
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
-        "text_color": "#ffffff"
+        "text_color": "#ffffff",
+        "cta_label": "Request A Consultation",
+        "cta_link": "/pages/atelier#inquiry"
       }
     },
     "atelier": {
