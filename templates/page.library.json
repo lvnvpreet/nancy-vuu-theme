@@ -97,7 +97,7 @@
         "body_3": "Let There Be Fashion is an unfiltered masterclass in transcendent architecture. It is a testament to what happens when you dare to merge profound spiritual conviction with unapologetic artistry. Through stirring narratives and hard-won wisdom, Nancy reveals how a single, courageous \"yes\" can open doors across the world.",
         "panel_heading": "Inside the Pages, You Will Discover:",
         "panel_cta_label": "Add to Your Library — $25.00",
-        "panel_cta_link": "#checkout"
+        "panel_cta_link": "shopify://products/let-there-be-fashion-preorder"
       }
     },
     "author_bio": {
@@ -112,18 +112,6 @@
         "body_2": "Yet, her most profound work happens off the runway. As the founder of the House of Vuu Foundation, she utilizes her global platform to combat human trafficking and empower marginalized communities through the Dream Academy.",
         "body_3": "Nancy does not just create garments; she restores human dignity. She is a sought-after speaker, advisor, and mentor, teaching leaders worldwide how to dress their purpose in grace and architect a legacy of lasting impact."
       }
-    },
-    "final_cta": {
-      "type": "book-cta",
-      "settings": {
-        "section_id": "checkout",
-        "eyebrow": "The Collection of Thought",
-        "heading_1": "Begin Your",
-        "heading_2": "Transformation.",
-        "subtext": "Join the many readers who have redesigned their internal landscape and stepped into their ultimate calling.",
-        "cta_label": "Purchase the Softcover",
-        "cta_link": ""
-      }
     }
   },
   "order": [
@@ -131,7 +119,6 @@
     "book_hero",
     "pull_quote",
     "synopsis",
-    "author_bio",
-    "final_cta"
+    "author_bio"
   ]
 }
