@@ -3,15 +3,11 @@
 <section class="about-crowning" data-section-id="{{ section.id }}">
   {%- assign crowning_img_url = section.settings.image_url | strip -%}
   {%- if crowning_img_url != blank -%}
-    <div class="about-crowning__bg">
-      <img src="{{ crowning_img_url }}" class="about-crowning__bg-img" loading="lazy" alt="">
-      <div class="about-crowning__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
-    </div>
+    <div class="about-crowning__bg about-crowning__bg--parallax" style="background-image:url('{{ crowning_img_url }}');"></div>
+    <div class="about-crowning__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
   {%- elsif section.settings.image != blank -%}
-    <div class="about-crowning__bg">
-      {{ section.settings.image | image_url: width: 2000 | image_tag: class: 'about-crowning__bg-img', loading: 'lazy', alt: '' }}
-      <div class="about-crowning__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
-    </div>
+    <div class="about-crowning__bg about-crowning__bg--parallax" style="background-image:url('{{ section.settings.image | image_url: width: 2000 }}');"></div>
+    <div class="about-crowning__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
   {%- else -%}
     <div class="about-crowning__bg about-crowning__bg--solid"></div>
   {%- endif -%}
@@ -38,7 +34,6 @@
   .about-crowning {
     position: relative;
     padding: 10rem 1.5rem;
-    overflow: hidden;
     background: var(--ink);
     color: #fff;
   }
@@ -46,14 +41,14 @@
     position: absolute;
     inset: 0;
   }
+  .about-crowning__bg--parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .about-crowning__bg--solid {
     background: var(--ink);
-  }
-  .about-crowning__bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
   .about-crowning__overlay {
     position: absolute;
