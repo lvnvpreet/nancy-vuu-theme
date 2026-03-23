@@ -13,9 +13,12 @@
       "type": "collection-hero-editorial",
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/8765b73e98cb4a2680b444ed53a28de1.mov",
-        "overlay_opacity": 65,
+        "hero_height": "50vh",
+        "overlay_opacity": 40,
         "eyebrow": "The Evidence of a Promise",
-        "title": ""
+        "title": "",
+        "cta_label": "EDIT CTA IN  ADMIN",
+        "cta_link": "#"
       }
     },
     "manifesto": {
