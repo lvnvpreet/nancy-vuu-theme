@@ -2079,6 +2079,9 @@ textarea.audience-modal__input { resize: none; }
 .seth-feature--dark .seth-feature__img {
   filter: grayscale(100%) brightness(0.9);
 }
+#vitality-threshold .seth-feature__img {
+  filter: none;
+}
 .seth-feature__badge {
   display: inline-block;
   padding: 14px 24px;
