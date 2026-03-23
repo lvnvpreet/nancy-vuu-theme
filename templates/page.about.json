@@ -12,7 +12,8 @@
     "about_hero": {
       "type": "about-hero",
       "settings": {
-        "image_url": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=2000",
+        "image_url": "",
+        "image": "shopify://shop_images/iStock-866175472.jpg",
         "overlay_opacity": 15,
         "eyebrow": "The Legacy",
         "title_line_1": "The Architecture",
