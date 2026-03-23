@@ -130,6 +130,23 @@
         "columns": "3"
       }
     },
+    "bottom-cta": {
+      "type": "cta-closer",
+      "settings": {
+        "eyebrow": "Women's Couture",
+        "heading": "Your Silhouette Awaits",
+        "subtext": "Each piece is sculpted to order. Reserve your private consultation and step into a garment built for the weight of your vision.",
+        "cta_label": "Request a Private Consultation",
+        "cta_link": "/pages/atelier",
+        "cta_style": "fill",
+        "cta2_label": "View Lookbook",
+        "cta2_link": "/collections/womens-couture",
+        "text_color": "#ffffff",
+        "overlay_opacity": 50,
+        "bg_light": false,
+        "compact": false
+      }
+    },
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
@@ -151,6 +168,7 @@
     "exclusivity",
     "lookbook",
     "main",
+    "bottom-cta",
     "cross-sell"
   ]
 }
