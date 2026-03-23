@@ -14,6 +14,7 @@
       "settings": {
         "image": "shopify://shop_images/nancy-vuu-kids-fashion-couture.jpg",
         "overlay_opacity": 0,
+        "hero_height": "75vh",
         "eyebrow": "Little Masterpieces for Their Grand Debut.",
         "title": ""
       }
@@ -32,7 +33,7 @@
         "col1_body": "",
         "col2_heading": "",
         "col2_body": "",
-        "cta1_label": "",
+        "cta1_label": "Start Commissioning",
         "cta1_link": "",
         "cta2_label": "",
         "cta2_link": ""
