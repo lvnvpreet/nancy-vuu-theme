@@ -783,7 +783,7 @@ body::after {
 @media (min-width: 768px) { .product-page__inner { grid-template-columns: 55fr 45fr; } }
 
 .product-gallery__main { overflow: hidden; }
-.product-gallery__img  { width: 100%; object-fit: cover; }
+.product-gallery__img  { width: 100%; object-fit: contain; }
 .product-gallery__thumbs { display: flex; gap: .5rem; margin-top: .75rem; flex-wrap: wrap; }
 .product-gallery__thumb {
   width: 72px; height: 90px; overflow: hidden; cursor: pointer;
