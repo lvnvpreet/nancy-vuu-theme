@@ -12,8 +12,8 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/e22283c6df2b44b3b602cd447c5401c2.mp4",
+        "bg_video_file": "shopify://files/videos/Untitled design(1).mp4",
+        "video_url": "",
         "hero_height": "100vh",
         "overlay_opacity": 55,
         "eyebrow": "The Architecture of Presence",
