@@ -12,7 +12,7 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "video_url": "",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/8765b73e98cb4a2680b444ed53a28de1.mov",
         "overlay_opacity": 65,
         "eyebrow": "The Evidence of a Promise",
         "title": ""
