@@ -32,10 +32,10 @@
     {% if section.settings.cta1_label != blank or section.settings.cta2_label != blank %}
       <div class="manifesto__ctas">
         {% if section.settings.cta1_label != blank %}
-          <a href="{{ section.settings.cta1_link | default: '#' }}" class="btn-luxury" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">{{ section.settings.cta1_label }}</a>
+          <a href="{{ section.settings.cta1_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta1_label }}</a>
         {% endif %}
         {% if section.settings.cta2_label != blank %}
-          <a href="{{ section.settings.cta2_link | default: '#' }}" class="btn-luxury" style="color:{{ section.settings.text_color }};border-color:{{ section.settings.text_color }};">{{ section.settings.cta2_label }}</a>
+          <a href="{{ section.settings.cta2_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta2_label }}</a>
         {% endif %}
       </div>
     {% endif %}
