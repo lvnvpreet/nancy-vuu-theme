@@ -14,7 +14,7 @@
       "settings": {
         "image_url": "",
         "image": "shopify://shop_images/iStock-866175472.jpg",
-        "overlay_opacity": 15,
+        "overlay_opacity": 10,
         "eyebrow": "The Legacy",
         "title_line_1": "The Architecture",
         "title_line_2": "of Distinction"
@@ -83,8 +83,9 @@
     "about_crowning": {
       "type": "about-crowning",
       "settings": {
-        "image_url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=2000",
-        "overlay_opacity": 60,
+        "image_url": "",
+        "image": "shopify://shop_images/Untitled_design_5.jpg",
+        "overlay_opacity": 40,
         "eyebrow": "The Threshold",
         "heading": "The Crowning",
         "paragraph_1": "The Crowning is the moment the garment and the soul align. It is a sacred threshold where you stop seeing the fabric and start seeing your Appointment.",
@@ -95,7 +96,7 @@
       "type": "about-retreats",
       "settings": {
         "image_url": "",
-        "image": "shopify://shop_images/18.jpg",
+        "image": "shopify://shop_images/9.jpg",
         "eyebrow": "Restoration",
         "heading": "The Dream Retreats",
         "paragraph_1": "Because a visionary cannot lead from depletion, our Dream Retreats offer a sanctuary for the spirit.",
