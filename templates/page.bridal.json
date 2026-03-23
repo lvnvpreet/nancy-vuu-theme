@@ -145,11 +145,6 @@
     },
     "heritage": {
       "type": "heritage-narrative",
-      "settings": {
-        "eyebrow": "A Heritage Reclaimed",
-        "title": "The Sovereign Return",
-        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg"
-      },
       "blocks": {
         "p1": {
           "type": "paragraph",
@@ -174,7 +169,12 @@
         "p1",
         "p2",
         "q1"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "A Heritage Reclaimed",
+        "title": "The Sovereign Return",
+        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg"
+      }
     },
     "investment": {
       "type": "investment-tiers",
@@ -309,7 +309,6 @@
       "settings": {
         "eyebrow": "",
         "title": "The Private Registry",
-        "description": "",
         "form_tag": "bridal-inquiry",
         "show_dropdown": true,
         "dropdown_label": "Category of Interest",
