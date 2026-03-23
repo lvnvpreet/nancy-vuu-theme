@@ -1246,7 +1246,7 @@ textarea.audience-modal__input { resize: none; }
 
 /* ── BRIDAL HERO ────────────────────────────────────────── */
 .bridal-hero {
-  height: 65vh; width: 100%; position: relative; overflow: hidden;
+  height: 100vh; min-height: 640px; width: 100%; position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   background: #000;
 }
@@ -4973,7 +4973,7 @@ div + section {
   .cross-sell-luxury__card { min-height: 55vh; }
   .cross-sell-luxury__card-content { padding: 2.5rem 1.5rem; }
   .cross-sell-luxury__card-title { font-size: clamp(1.6rem, 6vw, 2.25rem); }
-  .bridal-hero { height: 85vh; }
+  .bridal-hero { height: 100vh; min-height: 560px; }
   .manifesto { padding: 5rem 1.5rem 4rem; }
   .heritage-section { padding: 8rem 1.5rem; }
 }

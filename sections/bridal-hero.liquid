@@ -26,7 +26,11 @@
     {% endif %}
     <h1 class="bridal-hero__title serif-font" style="color:{{ section.settings.text_color }};">{{ section.settings.title | default: "Bridal Bespoke" }}</h1>
     {% if section.settings.cta_label != blank %}
-      <button class="btn-luxury" data-audience-open>{{ section.settings.cta_label }}</button>
+      {% if section.settings.cta_link != blank %}
+        <a href="{{ section.settings.cta_link }}" class="btn-luxury">{{ section.settings.cta_label }}</a>
+      {% else %}
+        <button class="btn-luxury" data-audience-open>{{ section.settings.cta_label }}</button>
+      {% endif %}
     {% endif %}
   </div>
 </section>
@@ -41,6 +45,7 @@
     { "type": "text",         "id": "eyebrow",     "label": "Eyebrow",        "default": "The Sacred Architecture" },
     { "type": "text",         "id": "title",        "label": "Title",          "default": "Bridal Bespoke" },
     { "type": "text",         "id": "cta_label",    "label": "CTA Label",      "default": "Begin the Commission" },
+    { "type": "url",          "id": "cta_link",     "label": "CTA Link",       "info": "Leave blank to open the inquiry modal instead." },
     { "type": "color",        "id": "text_color",   "label": "Text Color",     "default": "#111111" }
   ]
 }
