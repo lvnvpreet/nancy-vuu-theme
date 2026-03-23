@@ -13,6 +13,7 @@
       "type": "collection-hero-editorial",
       "settings": {
         "image": "shopify://shop_images/untitled--3_1.jpg",
+        "video_url": "",
         "overlay_opacity": 0,
         "eyebrow": "A Shared Legacy of Grace",
         "title": ""
@@ -49,7 +50,8 @@
       "type": "main-collection",
       "settings": {
         "products_per_page": 24,
-        "columns": "3"
+        "columns": "3",
+        "group_by_type": false
       }
     },
     "cross-sell": {
