@@ -1,6 +1,22 @@
-{%- comment -%} Collection Hero Editorial — 50vh hero with bg video or image + centered title {%- endcomment -%}
-<header class="collection-hero-editorial" style="margin-top: 80px;">
-  {%- if section.settings.video_url != blank -%}
+{%- comment -%} Collection Hero Editorial — full-bleed hero with bg video (upload or URL) or image + CTA {%- endcomment -%}
+
+{%- assign hero_height = section.settings.hero_height | default: '50vh' -%}
+
+<header class="collection-hero-editorial" style="margin-top: 80px; height: {{ hero_height }};">
+
+  {%- comment -%} ── Background: Shopify-hosted video > external URL > image ── {%- endcomment -%}
+  {%- if section.settings.bg_video_file != blank -%}
+    <div class="collection-hero-editorial__bg">
+      <video
+        class="collection-hero-editorial__img"
+        autoplay muted loop playsinline
+        poster="{{ section.settings.bg_video_file.preview_image | image_url: width: 2000 }}">
+        {%- for source in section.settings.bg_video_file.sources -%}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {%- endfor -%}
+      </video>
+    </div>
+  {%- elsif section.settings.video_url != blank -%}
     <div class="collection-hero-editorial__bg">
       <video
         class="collection-hero-editorial__img"
@@ -19,14 +35,23 @@
       >
     </div>
   {%- endif -%}
+
   <div class="collection-hero-editorial__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+
   <div class="collection-hero-editorial__content">
     {% if section.settings.eyebrow != blank %}
       <span class="eyebrow" style="color:#fff;">{{ section.settings.eyebrow }}</span>
     {% endif %}
     <h1 class="collection-hero-editorial__title serif-font">{{ section.settings.title | default: collection.title }}</h1>
     <div class="collection-hero-editorial__divider"></div>
+    {%- if section.settings.cta_label != blank -%}
+      <a href="{{ section.settings.cta_link | default: '#' }}"
+         class="collection-hero-editorial__cta btn-editorial on-dark">
+        {{ section.settings.cta_label }}
+      </a>
+    {%- endif -%}
   </div>
+
 </header>
 
 {% schema %}
@@ -34,11 +59,79 @@
   "name": "Collection Hero Editorial",
   "tag": "div",
   "settings": [
-    { "type": "image_picker", "id": "image",           "label": "Background Image", "info": "Used as poster frame when video is set, or as the hero background when no video is provided." },
-    { "type": "text",         "id": "video_url",       "label": "Video URL (MP4)",  "info": "Optional. Paste a direct .mp4 URL for a cinematic background video. Leave blank to use the image only." },
-    { "type": "range",        "id": "overlay_opacity", "label": "Overlay Opacity",  "min": 0, "max": 100, "step": 5, "default": 65 },
-    { "type": "text",         "id": "eyebrow",         "label": "Eyebrow",          "default": "The Evidence of a Promise" },
-    { "type": "text",         "id": "title",           "label": "Title" }
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image",
+      "info": "Used as the poster frame when a video is set, or as the hero background when no video is provided."
+    },
+    {
+      "type": "video",
+      "id": "bg_video_file",
+      "label": "Background Video (Upload)",
+      "info": "Upload a video from your Shopify Files. Takes priority over the external video URL below."
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Background Video URL (External MP4)",
+      "info": "Alternative: paste a direct .mp4 URL. Only used when no uploaded video is set above."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "hero_height",
+      "label": "Hero Height",
+      "options": [
+        { "value": "50vh",  "label": "Half screen (50vh)" },
+        { "value": "75vh",  "label": "Three-quarter screen (75vh)" },
+        { "value": "100vh", "label": "Full screen (100vh)" }
+      ],
+      "default": "50vh"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Dark Overlay",
+      "min": 0, "max": 100, "step": 5, "default": 65
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Evidence of a Promise"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Text",
+      "info": "Leave blank to hide the button."
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
   ]
 }
 {% endschema %}

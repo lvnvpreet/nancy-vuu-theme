@@ -912,6 +912,14 @@ body::after {
 .collection-hero-editorial__divider {
   width: 4rem; height: 1px; background: rgba(255,255,255,.4);
 }
+.collection-hero-editorial__cta {
+  margin-top: 2rem;
+  color: #fff;
+  border-color: rgba(255,255,255,.7);
+}
+.collection-hero-editorial__cta:hover {
+  background: #fff; color: #000; border-color: #fff;
+}
 
 /* ── EXCLUSIVITY NOTICE ─────────────────────────────────── */
 .exclusivity-notice {
