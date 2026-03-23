@@ -13,10 +13,13 @@
       "type": "collection-hero-editorial",
       "settings": {
         "image": "shopify://shop_images/nancy-vuu-kids-fashion-couture.jpg",
-        "overlay_opacity": 0,
+        "video_url": "",
         "hero_height": "75vh",
+        "overlay_opacity": 0,
         "eyebrow": "Little Masterpieces for Their Grand Debut.",
-        "title": ""
+        "title": "",
+        "cta_label": "",
+        "cta_link": ""
       }
     },
     "manifesto": {
@@ -124,7 +127,8 @@
       "type": "main-collection",
       "settings": {
         "products_per_page": 24,
-        "columns": "3"
+        "columns": "3",
+        "group_by_type": false
       }
     },
     "cross-sell": {

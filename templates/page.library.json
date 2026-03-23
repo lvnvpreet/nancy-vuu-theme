@@ -13,7 +13,10 @@
       "type": "library-header",
       "settings": {
         "title": "The Library.",
-        "subtitle": "The Official Collection of Thought"
+        "subtitle": "The Official Collection of Thought",
+        "bg_image": "shopify://shop_images/iStock-2212337400.jpg",
+        "video_url": "",
+        "overlay_opacity": 20
       }
     },
     "book_hero": {
