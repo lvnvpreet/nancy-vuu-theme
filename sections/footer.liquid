@@ -161,6 +161,12 @@
   }
   .nv-btn-submit:hover { background: transparent; color: #0c0c0c; }
 
+  .nv-modal-success {
+    font-family: 'Manrope', sans-serif; font-size: 0.85rem; letter-spacing: 2px;
+    text-transform: uppercase; color: #888; text-align: center;
+    padding: 40px 0; line-height: 2;
+  }
+
   @media (max-width: 1024px) {
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
     .footer-brand { grid-column: span 2; }
@@ -264,20 +270,26 @@
       <p>The House of Nancy Vuu invites visionary leaders and institutions to explore a legacy beyond luxury. This Private Prospectus is a blueprint for <b>Global Restoration</b>—detailing our innovative models for combatting human trafficking and scaling the vocational architecture of the <i>Dream Academy</i>.</p>
       <h4>A Blueprint for Impact</h4>
       <p>We are seeking strategic custodians to partner with the House of Vuu Foundation in architecting a sustainable, measurable future for marginalized communities. This document outlines our five-year expansion plan, humanitarian impact reports, and institutional investment opportunities.</p>
-      <form class="nv-modal-form" onsubmit="return false;">
-        <input type="text" placeholder="FULL NAME" style="color:#ffffff;border-bottom-color:#444;" required>
-        <input type="text" placeholder="INSTITUTION / FIRM NAME" style="color:#ffffff;border-bottom-color:#444;" required>
-        <input type="text" placeholder="ROLE / TITLE WITHIN ORGANIZATION" style="color:#ffffff;border-bottom-color:#444;" required>
-        <input type="email" placeholder="CORPORATE EMAIL ADDRESS" style="color:#ffffff;border-bottom-color:#444;" required>
-        {%- render 'phone-field' -%}
-        <select style="color:#888;border-bottom:1px solid #444;background:transparent;width:100%;padding:18px 0;margin-bottom:30px;font-family:'Manrope',sans-serif;outline:none;" required>
-          <option value="" disabled selected>NATURE OF INTEREST</option>
-          <option value="philanthropic">Philanthropic Partnership</option>
-          <option value="institutional">Institutional Investment</option>
-          <option value="legacy">Legacy Endowment</option>
-        </select>
-        <button type="button" class="nv-btn-submit" style="background:#ffffff;color:#000000;border-color:#ffffff;" onclick="nvCloseModal('modal-gateway')">Request Institutional Access</button>
-      </form>
+      {%- form 'contact', id: 'modal-gateway-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="strategic-partnership">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Your inquiry has been received. Our executive team will be in touch shortly.</p>
+        {%- else -%}
+          {%- if form.errors -%}<div style="color:#ff6b6b;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>{%- endif -%}
+          <input type="text" name="contact[name]" placeholder="FULL NAME" style="color:#ffffff;border-bottom-color:#444;" required>
+          <input type="text" name="contact[company]" placeholder="INSTITUTION / FIRM NAME" style="color:#ffffff;border-bottom-color:#444;" required>
+          <input type="text" name="contact[role]" placeholder="ROLE / TITLE WITHIN ORGANIZATION" style="color:#ffffff;border-bottom-color:#444;" required>
+          <input type="email" name="contact[email]" placeholder="CORPORATE EMAIL ADDRESS" style="color:#ffffff;border-bottom-color:#444;" required>
+          {%- render 'phone-field' -%}
+          <select name="contact[body]" style="color:#888;border-bottom:1px solid #444;background:transparent;width:100%;padding:18px 0;margin-bottom:30px;font-family:'Manrope',sans-serif;outline:none;" required>
+            <option value="" disabled selected>NATURE OF INTEREST</option>
+            <option value="philanthropic">Philanthropic Partnership</option>
+            <option value="institutional">Institutional Investment</option>
+            <option value="legacy">Legacy Endowment</option>
+          </select>
+          <button type="submit" class="nv-btn-submit" style="background:#ffffff;color:#000000;border-color:#ffffff;">Request Institutional Access</button>
+        {%- endif -%}
+      {%- endform -%}
       <p style="font-size:0.8rem;color:#555;text-align:center;letter-spacing:2px;text-transform:uppercase;margin-top:20px;">Strict Discretion Assured. Secure Archival Link Provided via Executive Review.</p>
     </div>
   </div>
@@ -291,11 +303,17 @@
     <h2 class="nv-modal-title">The <br>Journal.</h2>
     <div class="nv-modal-body">
       <p>A quiet space for the visionary. We invite you to receive occasional correspondence from the desk of Nancy Vuu—unfiltered thoughts on identity architecture, sacred insights from the ateliers, and a first look at our upcoming global immersions.</p>
-      <form class="nv-modal-form" onsubmit="return false;">
-        <input type="text" placeholder="FULL NAME" required>
-        <input type="email" placeholder="EMAIL ADDRESS" required>
-        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-journal')">Join The Vanguard</button>
-      </form>
+      {%- form 'contact', id: 'modal-journal-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="journal-subscriber">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Welcome to The Journal. Your first correspondence will arrive shortly.</p>
+        {%- else -%}
+          {%- if form.errors -%}<div style="color:#c00;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>{%- endif -%}
+          <input type="text" name="contact[name]" placeholder="FULL NAME" required>
+          <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required>
+          <button type="submit" class="nv-btn-submit">Join The Vanguard</button>
+        {%- endif -%}
+      {%- endform -%}
       <p style="font-size:0.85rem;color:#888;margin-top:20px;text-align:center;letter-spacing:1px;text-transform:uppercase;">A sanctuary for privacy. Your data remains strictly archived.</p>
     </div>
   </div>
@@ -311,19 +329,25 @@
       <p>The House of Nancy Vuu Retreats are immersive, high-altitude experiences designed for visionary leaders and couples. Set in the world's most breathtaking locales—from the rolling vineyards of <b>Napa Valley</b> to the volcanic shores of <b>Hawaii</b> and the ancestral landscapes of <b>Vietnam</b>.</p>
       <h4>IDENTITY &amp; RESTORATION</h4>
       <p>Each retreat is meticulously curated to help participants shed the "garments of survival" and step into their sovereign identity. It is a profound fusion of sartorial excellence, spiritual architecture, and ultimate restoration of soul and silhouette.</p>
-      <form class="nv-modal-form" onsubmit="return false;">
-        <input type="text" placeholder="FULL NAME(S)" required>
-        <input type="email" placeholder="CONTACT EMAIL" required>
-        {%- render 'phone-field' -%}
-        <select required>
-          <option value="" disabled selected>INTERESTED LOCALE</option>
-          <option value="napa">Napa Valley (Heritage Retreat)</option>
-          <option value="hawaii">Hawaii (Island Restoration)</option>
-          <option value="vietnam">Vietnam (Ancestral Awakening)</option>
-          <option value="intl">Other International Inquiries</option>
-        </select>
-        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-retreats')">Inquire for Private Invitation</button>
-      </form>
+      {%- form 'contact', id: 'modal-retreats-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="private-retreat">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Your retreat inquiry has been received. We will reach out within 48 hours.</p>
+        {%- else -%}
+          {%- if form.errors -%}<div style="color:#c00;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>{%- endif -%}
+          <input type="text" name="contact[name]" placeholder="FULL NAME(S)" required>
+          <input type="email" name="contact[email]" placeholder="CONTACT EMAIL" required>
+          {%- render 'phone-field' -%}
+          <select name="contact[body]" required>
+            <option value="" disabled selected>INTERESTED LOCALE</option>
+            <option value="napa">Napa Valley (Heritage Retreat)</option>
+            <option value="hawaii">Hawaii (Island Restoration)</option>
+            <option value="vietnam">Vietnam (Ancestral Awakening)</option>
+            <option value="intl">Other International Inquiries</option>
+          </select>
+          <button type="submit" class="nv-btn-submit">Inquire for Private Invitation</button>
+        {%- endif -%}
+      {%- endform -%}
     </div>
   </div>
 </div>
@@ -388,12 +412,19 @@
     <h2 class="nv-modal-title">ARCHIVAL <br>PRESERVATION.</h2>
     <div class="nv-modal-body">
       <p>A Nancy Vuu garment is a generational asset. To ensure your couture remains pristine, we offer exclusive preservation services, including structural tailoring, intricate bead restoration, and specialized fabric care.</p>
-      <form class="nv-modal-form" onsubmit="return false;">
-        <input type="text" placeholder="FULL NAME" required>
-        {%- render 'phone-field' -%}
-        <textarea placeholder="DESCRIBE THE CARE NEEDED FOR YOUR GARMENT..." style="height:100px;"></textarea>
-        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-care')">Submit Request</button>
-      </form>
+      {%- form 'contact', id: 'modal-care-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="care-repair">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Your care request has been received. Our atelier concierge will be in touch shortly.</p>
+        {%- else -%}
+          {%- if form.errors -%}<div style="color:#c00;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>{%- endif -%}
+          <input type="text" name="contact[name]" placeholder="FULL NAME" required>
+          <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required>
+          {%- render 'phone-field' -%}
+          <textarea name="contact[body]" placeholder="DESCRIBE THE CARE NEEDED FOR YOUR GARMENT..." style="height:100px;"></textarea>
+          <button type="submit" class="nv-btn-submit">Submit Request</button>
+        {%- endif -%}
+      {%- endform -%}
     </div>
   </div>
 </div>
@@ -420,18 +451,25 @@
     <h2 class="nv-modal-title">REQUEST A <br>PRIVATE VIEWING.</h2>
     <div class="nv-modal-body">
       <p>Step behind the velvet ropes. We invite discerning clients to request a private fitting at one of our global ateliers in Napa Valley, San Jose, Hawaii, or Saigon.</p>
-      <form class="nv-modal-form" onsubmit="return false;">
-        <input type="text" placeholder="FULL NAME" required>
-        {%- render 'phone-field' -%}
-        <select required>
-          <option value="" disabled selected>SELECT LOCATION</option>
-          <option value="sanjose">San Jose Flagship</option>
-          <option value="napa">Napa Valley Estate</option>
-          <option value="hawaii">Hawaii Residence</option>
-          <option value="saigon">Saigon Atelier</option>
-        </select>
-        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-viewing')">Request Access</button>
-      </form>
+      {%- form 'contact', id: 'modal-viewing-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="private-viewing">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Your viewing request has been received. We look forward to welcoming you.</p>
+        {%- else -%}
+          {%- if form.errors -%}<div style="color:#c00;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>{%- endif -%}
+          <input type="text" name="contact[name]" placeholder="FULL NAME" required>
+          <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required>
+          {%- render 'phone-field' -%}
+          <select name="contact[body]" required>
+            <option value="" disabled selected>SELECT LOCATION</option>
+            <option value="sanjose">San Jose Flagship</option>
+            <option value="napa">Napa Valley Estate</option>
+            <option value="hawaii">Hawaii Residence</option>
+            <option value="saigon">Saigon Atelier</option>
+          </select>
+          <button type="submit" class="nv-btn-submit">Request Access</button>
+        {%- endif -%}
+      {%- endform -%}
     </div>
   </div>
 </div>
@@ -444,17 +482,24 @@
     <h2 class="nv-modal-title">COMMISSION <br>AN HEIRLOOM.</h2>
     <div class="nv-modal-body">
       <p>The bespoke journey is the pinnacle of luxury. Nancy Vuu and her master tailors work intimately with you to architect a one-of-a-kind garment that perfectly embodies your ultimate identity.</p>
-      <form class="nv-modal-form" onsubmit="return false;">
-        <input type="text" placeholder="NAME" required>
-        {%- render 'phone-field' -%}
-        <select required>
-          <option value="" disabled selected>TYPE OF COMMISSION</option>
-          <option value="bridal">Bespoke Bridal</option>
-          <option value="couture">Evening Couture</option>
-          <option value="mens">Seth Eden Tailoring</option>
-        </select>
-        <button type="button" class="nv-btn-submit" onclick="nvCloseModal('modal-bespoke')">Initiate Commission</button>
-      </form>
+      {%- form 'contact', id: 'modal-bespoke-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="bespoke-commission">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Your commission inquiry has been received. Our atelier will be in touch to begin your journey.</p>
+        {%- else -%}
+          {%- if form.errors -%}<div style="color:#c00;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>{%- endif -%}
+          <input type="text" name="contact[name]" placeholder="NAME" required>
+          <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required>
+          {%- render 'phone-field' -%}
+          <select name="contact[body]" required>
+            <option value="" disabled selected>TYPE OF COMMISSION</option>
+            <option value="bridal">Bespoke Bridal</option>
+            <option value="couture">Evening Couture</option>
+            <option value="mens">Seth Eden Tailoring</option>
+          </select>
+          <button type="submit" class="nv-btn-submit">Initiate Commission</button>
+        {%- endif -%}
+      {%- endform -%}
     </div>
   </div>
 </div>
