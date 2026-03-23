@@ -15,8 +15,11 @@
         "image": "shopify://shop_images/untitled--3_1.jpg",
         "video_url": "",
         "overlay_opacity": 0,
+        "hero_height": "75vh",
         "eyebrow": "A Shared Legacy of Grace",
-        "title": ""
+        "title": "",
+        "cta_label": "Start the Commissioning",
+        "cta_link": "/pages/atelier"
       }
     },
     "manifesto": {
@@ -33,8 +36,8 @@
         "col1_body": "",
         "col2_heading": "",
         "col2_body": "",
-        "cta1_label": "",
-        "cta1_link": "",
+        "cta1_label": "Start the Commissioning",
+        "cta1_link": "/pages/atelier",
         "cta2_label": "",
         "cta2_link": ""
       }
