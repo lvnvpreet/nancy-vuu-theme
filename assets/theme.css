@@ -4757,6 +4757,7 @@ textarea.audience-modal__input { resize: none; }
 /* Bridal hero — upgrade to full viewport cinematic */
 .bridal-hero {
   height: 100vh;
+  min-height: 700px;
   margin-top: -80px;
 }
 .bridal-hero__overlay {
