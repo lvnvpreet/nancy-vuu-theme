@@ -15,7 +15,10 @@
         "image": "shopify://shop_images/nancy-vuu-about-bg.jpg",
         "overlay_opacity": 55,
         "eyebrow": "The Architecture of Presence",
-        "title": ""
+        "title": "",
+        "hero_height": "100vh",
+        "cta_label": "Request a Private Consultation",
+        "cta_link": "/pages/atelier"
       }
     },
     "manifesto": {
@@ -32,8 +35,8 @@
         "col1_body": "",
         "col2_heading": "",
         "col2_body": "",
-        "cta1_label": "",
-        "cta1_link": "",
+        "cta1_label": "Explore the Collection",
+        "cta1_link": "/collections/womens-couture",
         "cta2_label": "",
         "cta2_link": ""
       }
