@@ -133,6 +133,58 @@
         "badge_text": "Private Invitations Only"
       }
     },
+    "retreat_destinations_rWmhMd": {
+      "type": "retreat-destinations",
+      "blocks": {
+        "destination_ML4x4b": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/5.jpg",
+            "quota": "",
+            "location": "Napa Valley, CA",
+            "title": "Dream Again",
+            "description": "Silence the Echo. Identify the Bedrock. Command Your Appointment.\n\nThe DREAM Again Immersion is not a retreat; it is a Strategic Deconstruction. Located within a private boutique sanctuary in the majestic mountains of Napa Valley, this is the definitive 4-day, 3-night landscape for global leaders, founders, and visionaries to silence the external \"echo\" of generic ambition and identify the bedrock of their True Appointment.\n\nLeveraging the same \"Refugee-to-Cannes\" Blueprint that has commanded global stages, Nancy Vuu provides the private infrastructure for the total recalibration of vision. This intensive is technically engineered for the leader who has achieved significant success but lost the unshakeable Visible Authority and profound clarity required for their next era of influence. Escape to a rustique-luxe environment where nature’s majesty meets The Nancy Vuu Blueprint of Honor—providing the necessary framework for a deep spiritual encounter and total vision reset.\n\nThrough proprietary Sovereign Narrative Architecture and deep spiritual recalibration, you will deconstruct the barriers to your highest potential and leave equipped to don your Mantle of Authority with unapologetic distinction. Enjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. This is where the dreamer is restored, and the Architect is called.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        },
+        "destination_imaDwK": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/10.jpg",
+            "quota": "",
+            "location": "Kaneohe, HI & Napa Valley, Ca",
+            "title": "THE DREAMS REALIZED IMMERSION: The Architecture of Implementation",
+            "description": "While DREAM Again Restores the Dreamer, DREAMS REALIZED Equips the Architect.\n\nThe DREAMS REALIZED Immersion is the definitive, high-level next step for the global visionary ready to move from internal recalibration to External Sovereignty. Located within a private sanctuary of quiet serenity, this 4-day, 3-night intensive focuses exclusively on the \"How\"—the technical engineering required to translate your strategic internal overflow into a visible, lived reality. We are not discussing \"inspiration\"; we are implementing Infrastructure Redemption.\n\nThrough private strategic consultation and the deployment of the Nancy Vuu Blueprint of Honor, you will bridge the gap between divine inspiration and industrial distinction. Discover the concrete mechanics required to engineered the intersection of honor, visibility, and restorative ethics into your personal life and business legacy. Nancy Vuu provides the specialized structural guidance needed to manifest your vision across your entire organization’s DNA.\n\nThis is a workspace where strategic architecture meets legacy-building. You will not leave with a \"dream\"; you will leave with a Sovereign Roadmap to Fulfillment and the unshakeable Mantle of Authority required to lead your next era. Enjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored strategic activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. Build your legacy from bedrock.",
+            "cta_text": "Request audience",
+            "modal_trigger": true
+          }
+        },
+        "destination_NqXjfq": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/7.jpg",
+            "quota": "",
+            "location": "Napa Valley, CA",
+            "title": "THE LEGACY ALLIANCE IMMERSION: Architecting Your Sovereign Union",
+            "description": "While others simply \"connect,\" you will construct an unshakeable infrastructure of distinction.\n\nThe Legacy Alliance Immersion is not a retreat; it is a specialized B2B Strategic Implementation Lab for the couple who co-leads, co-dreams, and co-builds their collective Sovereign Estate.\n\nLocated within a private boutique sanctuary in the majestic mountains of Napa Valley, this is the definitive 4-day, 3-night intensive for global leaders, founders, and visionaries to constructed an infrastructure of enduring significance for their family’s legacy.\n\nLeveraging the same \"Refugee-to-Cannes\" Blueprint of Honor that has commanded global stages, you and your partner will deconstruct the generic models of \"wellness\" and Engineered Honor back into your specific operational infrastructure. Through proprietary Sovereign Narrative Architecture and deep spiritual alignment, you will identify your true joint appointment and privately don your Mantle of Shared Authority.\n\nEnjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored strategic activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. You do not just \"build\" together; you will constructed a lasting legacy of distinction.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        }
+      },
+      "block_order": [
+        "destination_ML4x4b",
+        "destination_imaDwK",
+        "destination_NqXjfq"
+      ],
+      "settings": {
+        "anchor_id": "destinations",
+        "heading": "The Sanctuaries.",
+        "subtitle": "Strictly Twelve Invitations Per Season",
+        "badge_text": "Private Invitations Only"
+      }
+    },
     "retreat_destinations_bQJTgQ": {
       "type": "retreat-destinations",
       "blocks": {
@@ -272,6 +324,7 @@
     "hero",
     "dimensions",
     "destinations",
+    "retreat_destinations_rWmhMd",
     "retreat_destinations_bQJTgQ",
     "academy_cta",
     "final_cta",
