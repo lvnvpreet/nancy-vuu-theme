@@ -116,6 +116,14 @@
             "body": "<p>\"Designated by an institutional media body for demonstrating profound leadership and <strong>unshakeable visible authority</strong> on a global scale. </p>"
           }
         },
+        "card_FabjCF": {
+          "type": "card",
+          "settings": {
+            "label": "MARKETPLACE DEPLOYMENT & CAPITAL VALIDATION",
+            "title": "Dual-Brand Sovereign Architecture Commission (2025)",
+            "body": "<p>Commissioned by a restricted investor consortium to deploy the <strong>Nancy Vuu Blueprint of Honor</strong> as the core operational and aesthetic infrastructure for two distinct high-value market entrants launching in 2025. This dual-mandate validates the proprietary <strong>Architecture of Visible Authority</strong> as an indispensable asset for engineering immediate market distinction and restorative economic DNA.</p>"
+          }
+        },
         "acc_1": {
           "type": "card",
           "settings": {
@@ -156,14 +164,6 @@
             "body": "<p>Honored by the British Chinese Youth Federation for international excellence and cultural leadership on a global diplomatic scale.</p>"
           }
         },
-        "card_FabjCF": {
-          "type": "card",
-          "settings": {
-            "label": "MARKETPLACE DEPLOYMENT & CAPITAL VALIDATION",
-            "title": "Dual-Brand Sovereign Architecture Commission (2025)",
-            "body": "<p>Commissioned by a restricted investor consortium to deploy the <strong>Nancy Vuu Blueprint of Honor</strong> as the core operational and aesthetic infrastructure for two distinct high-value market entrants launching in 2025. This dual-mandate validates the proprietary <strong>Architecture of Visible Authority</strong> as an indispensable asset for engineering immediate market distinction and restorative economic DNA.</p>"
-          }
-        },
         "card_JNpV6p": {
           "type": "card",
           "settings": {
@@ -175,12 +175,12 @@
       },
       "block_order": [
         "card_nqyqy6",
+        "card_FabjCF",
         "acc_1",
         "acc_2",
         "acc_3",
         "acc_4",
         "acc_5",
-        "card_FabjCF",
         "card_JNpV6p"
       ],
       "settings": {
