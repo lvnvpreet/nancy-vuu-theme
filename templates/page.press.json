@@ -124,6 +124,14 @@
             "body": "<p>Commissioned by a restricted investor consortium to deploy the <strong>Nancy Vuu Blueprint of Honor</strong> as the core operational and aesthetic infrastructure for two distinct high-value market entrants launching in 2025. </p>"
           }
         },
+        "card_qWTbL3": {
+          "type": "card",
+          "settings": {
+            "label": "CIVIC MANDATE & GOVERNMENTAL ALIGNMENT",
+            "title": "Keynote Address",
+            "body": "<p>Designated by Hawaii Prayer Breakfast Organization to deliver the primary directive to an assembly of 900 global leaders, including the Governor of Hawaii, jurisdictional Mayors, and influencers across every sphere of society. This high-status platform was utilized to strategically launch <strong>Dream Expo 2025.</strong></p>"
+          }
+        },
         "acc_1": {
           "type": "card",
           "settings": {
@@ -171,26 +179,18 @@
             "title": "Industry Reach",
             "body": "<p>Fashions and styling featured on the world’s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
           }
-        },
-        "card_qWTbL3": {
-          "type": "card",
-          "settings": {
-            "label": "CIVIC MANDATE & GOVERNMENTAL ALIGNMENT",
-            "title": "Keynote Address",
-            "body": "<p>Designated by Hawaii Prayer Breakfast Organization to deliver the primary directive to an assembly of 900 global leaders, including the Governor of Hawaii, jurisdictional Mayors, and influencers across every sphere of society. This high-status platform was utilized to strategically launch <strong>Dream Expo 2025.</strong></p>"
-          }
         }
       },
       "block_order": [
         "card_nqyqy6",
         "card_FabjCF",
+        "card_qWTbL3",
         "acc_1",
         "acc_2",
         "acc_3",
         "acc_4",
         "acc_5",
-        "card_JNpV6p",
-        "card_qWTbL3"
+        "card_JNpV6p"
       ],
       "settings": {
         "eyebrow": "Distinction & Impact",
