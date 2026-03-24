@@ -171,6 +171,14 @@
             "title": "Industry Reach",
             "body": "<p>Fashions and styling featured on the world’s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
           }
+        },
+        "card_qWTbL3": {
+          "type": "card",
+          "settings": {
+            "label": "CIVIC MANDATE & GOVERNMENTAL ALIGNMENT",
+            "title": "Hawaii Prayer Breakfast 2025 | Keynote Address & Sovereign Convocation",
+            "body": "<p>Designated by Hawaii Prayer Breakfast Organization to deliver the primary directive to an assembly of 900 global leaders, including the Governor of Hawaii, jurisdictional Mayors, and influencers across every sphere of society. This high-status platform was utilized to declare the <strong>'Refugee-to-Cannes' Blueprint</strong> and strategically launch <strong>Dream Expo 2025.</strong></p>"
+          }
         }
       },
       "block_order": [
@@ -181,7 +189,8 @@
         "acc_3",
         "acc_4",
         "acc_5",
-        "card_JNpV6p"
+        "card_JNpV6p",
+        "card_qWTbL3"
       ],
       "settings": {
         "eyebrow": "Distinction & Impact",
