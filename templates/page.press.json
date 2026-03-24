@@ -132,6 +132,14 @@
             "body": "<p>Awarded for empowering women locally and globally, breaking barriers as a leader who paves the way for living boldly and embracing creativity.</p>"
           }
         },
+        "card_nqyqy6": {
+          "type": "card",
+          "settings": {
+            "label": "Women Network",
+            "title": "The Inspirique Award",
+            "body": "<p>Awarded for empowering women locally and globally, breaking barriers as a leader who paves the way for living boldly and embracing creativity.</p>"
+          }
+        },
         "acc_4": {
           "type": "card",
           "settings": {
@@ -161,6 +169,7 @@
         "acc_1",
         "acc_2",
         "acc_3",
+        "card_nqyqy6",
         "acc_4",
         "acc_5",
         "acc_6"
