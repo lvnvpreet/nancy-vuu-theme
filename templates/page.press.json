@@ -156,7 +156,15 @@
             "body": "<p>Honored by the British Chinese Youth Federation for international excellence and cultural leadership on a global diplomatic scale.</p>"
           }
         },
-        "acc_6": {
+        "card_FabjCF": {
+          "type": "card",
+          "settings": {
+            "label": "Diplomatic",
+            "title": "Big Ben Award",
+            "body": "<p>Honored by the British Chinese Youth Federation for international excellence and cultural leadership on a global diplomatic scale.</p>"
+          }
+        },
+        "card_JNpV6p": {
           "type": "card",
           "settings": {
             "label": "Global Presence",
@@ -172,7 +180,8 @@
         "card_nqyqy6",
         "acc_4",
         "acc_5",
-        "acc_6"
+        "card_FabjCF",
+        "card_JNpV6p"
       ],
       "settings": {
         "eyebrow": "Distinction & Impact",
