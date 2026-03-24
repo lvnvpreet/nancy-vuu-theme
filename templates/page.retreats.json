@@ -164,6 +164,10 @@
         "compact": false
       }
     },
+    "retreat_disclaimer": {
+      "type": "retreat-disclaimer",
+      "settings": {}
+    },
     "modal": {
       "type": "audience-modal",
       "blocks": {
@@ -217,6 +221,7 @@
     "destinations",
     "academy_cta",
     "final_cta",
+    "retreat_disclaimer",
     "modal"
   ]
 }
