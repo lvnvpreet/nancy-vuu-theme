@@ -12,11 +12,12 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg",
-        "overlay_opacity": 55,
+        "bg_video_file": "shopify://files/videos/Untitled design(1).mp4",
+        "video_url": "",
+        "hero_height": "75vh",
+        "overlay_opacity": 30,
         "eyebrow": "The Architecture of Presence",
         "title": "",
-        "hero_height": "100vh",
         "cta_label": "Request a Private Consultation",
         "cta_link": "/pages/atelier"
       }
@@ -127,12 +128,14 @@
       "type": "main-collection",
       "settings": {
         "products_per_page": 24,
-        "columns": "3"
+        "columns": "3",
+        "group_by_type": false
       }
     },
     "bottom-cta": {
       "type": "cta-closer",
       "settings": {
+        "overlay_opacity": 50,
         "eyebrow": "Women's Couture",
         "heading": "Your Silhouette Awaits",
         "subtext": "Each piece is sculpted to order. Reserve your private consultation and step into a garment built for the weight of your vision.",
@@ -142,7 +145,6 @@
         "cta2_label": "View Lookbook",
         "cta2_link": "/collections/womens-couture",
         "text_color": "#ffffff",
-        "overlay_opacity": 50,
         "bg_light": false,
         "compact": false
       }

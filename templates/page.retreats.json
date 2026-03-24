@@ -14,10 +14,11 @@
       "settings": {
         "section_id": "page-hero",
         "image": "shopify://shop_images/Untitled_45_x_50_in_7.jpg",
+        "video_url": "",
         "overlay_opacity": 40,
         "eyebrow": "",
-        "title_line_1": "Dream",
-        "title_line_2": "Again.",
+        "title_line_1": "Strategic",
+        "title_line_2": "Intensives",
         "title_line_3": "",
         "subtitle": "By Private Invitation Only",
         "subtitle_serif": false,
@@ -87,10 +88,10 @@
           "type": "destination",
           "settings": {
             "image": "shopify://shop_images/5.jpg",
-            "quota": "4 Invitations Remaining",
+            "quota": "",
             "location": "Napa Valley, CA",
-            "title": "Dream Again",
-            "description": "A majestic landscape for the total reset of vision. Our most sought-after intensive for global leaders seeking clarity & spiritual recalibration. Escape to a place where nature’s beauty surrounds you and the spirit leads you. The DREAM Again Retreat is an invitation to step onto sacred grounds and into heavenly gardens. Through spiritual encounters and tailored activities, we provide the framework for you to reignite the dreamer inside.  Located in the majestic mountains of Napa Valley, our boutique sanctuary offers a rustic-luxe environment designed for deep reflection. With nourishing cuisine and exquisite linens, your mind, body, and spirit will find the rest they’ve been seeking. Experience the overflow.",
+            "title": "Sovereign Reset",
+            "description": "Silence the Echo. Identify the Bedrock. Command Your Appointment.\n\nThe Sovereign Reset Intensive is not a retreat; it is a Strategic Deconstruction. Located within a private boutique sanctuary in the majestic mountains of Napa Valley, this is the definitive 4-day, 3-night landscape for global leaders, founders, and visionaries to silence the external \"echo\" of generic ambition and identify the bedrock of their True Appointment.\n\nLeveraging the same \"Refugee-to-Cannes\" Blueprint of Honor that has commanded global stages, Nancy Vuu provides the private infrastructure for the total recalibration of vision—conducted exclusively through specialized mentorship and guided strategic conversations. This intensive is technically engineered for the leader who has achieved significant success but lost the unshakeable Visible Authority and profound clarity required for their next era of influence.\n\nThrough proprietary Sovereign Narrative Architecture and deep spiritual alignment, you will deconstruct the barriers to your highest potential and leave equipped to don your Mantle of Authority with unapologetic distinction. Enjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored strategic activities, and rustic lodging. This is where the dreamer is restored, and the Architect is called.",
             "cta_text": "Request Audience",
             "modal_trigger": true
           }
@@ -99,10 +100,10 @@
           "type": "destination",
           "settings": {
             "image": "shopify://shop_images/10.jpg",
-            "quota": "3 Invitations Remaining",
+            "quota": "",
             "location": "Kaneohe, HI & Napa Valley, Ca",
-            "title": "Dreams Fulfilled",
-            "description": "The Dreams Fulfilled Retreat is the definitive next step for the visionary ready to build. While DREAM Again restores the dreamer, Dreams Fulfilled equips the builder. This high-level immersion focuses on the \"How\"—transforming your internal overflow into a lived reality.\n\nThrough strategic consultation, bespoke blueprints, and identified pathways for both your personal life and business legacy, Nancy Vuu provides the structural guidance needed to manifest your vision. This is a workspace of quiet serenity where strategic conversations meet divine inspiration. You will leave not just with a dream, but with a roadmap to fulfillment.",
+            "title": "The Legacy Build",
+            "description": "While others only \"dream,\" you will construct an unshakeable infrastructure of enduring significance.\n\nThe Legacy Build Intensive is the definitive, high-level strategic architecture workspace for the global visionary ready to move from internal recalibration to External Sovereignty. Located within a private sanctuary of quiet serenity, this 4-day, 3-night intensive focuses exclusively on the \"How\"—the technical engineering required to translate your strategic internal overflow into a visible, lived reality. We are not discussing \"inspiration\"; we are implementing Infrastructure Redemption.\n\nThrough private strategic consultation, bespoke Mantle Assessments, and the deployment of the Nancy Vuu Blueprint of Honor, you will bridge the gap between divine inspiration and industrial distinction. Discover the concrete mechanics required to Engineered the intersection of honor, visibility, and restorative ethics into your personal life and business legacy. Nancy Vuu provides the specialized structural guidance needed to manifest your vision.\n\nYou will not leave with a \"dream\"; you will leave with a Sovereign Roadmap to Fulfillment and the unshakeable Mantle of Authority required to lead your next era.",
             "cta_text": "Request audience",
             "modal_trigger": true
           }
@@ -111,10 +112,10 @@
           "type": "destination",
           "settings": {
             "image": "shopify://shop_images/7.jpg",
-            "quota": "Exclusive Booking",
+            "quota": "",
             "location": "Napa Valley, CA",
-            "title": "The Covenant",
-            "description": "Step away from the noise and into the \"melody of nature.\" Nestled in the majestic mountains of Napa Valley, our all-inclusive sanctuary is a custom-designed experience for the couple who leads, dreams, and builds together.\n\nThrough spiritual healing, intentional exploration, and the quiet serenity of our boutique haven, we provide the sacred space to honor your past and architect your future. This is more than a retreat—it is a reawakening of mind, body, and spirit. Join us for a transformative journey of renewal, where every moment is a celebration of your shared progress.",
+            "title": "The Sovereign Union Intensive",
+            "description": "While others simply \"connect,\" you will construct an unshakeable infrastructure of distinction.\n\nThe Sovereign Union Intensive is not a retreat; it is a specialized B2B Strategic Implementation Lab for the couple who co-leads, co-dreams, and co-builds their collective Sovereign Estate.\n\nLocated within a private boutique sanctuary in the majestic mountains of Napa Valley, this is the definitive 4-day, 3-night intensive for global leaders, founders, and visionaries to constructed an infrastructure of enduring significance for their family’s legacy.\n\nLeveraging the same \"Refugee-to-Cannes\" Blueprint of Honor that has commanded global stages, you and your partner will deconstruct the generic models of \"wellness\" and Engineered Honor back into your specific operational infrastructure. Through proprietary Sovereign Narrative Architecture and deep spiritual alignment, you will identify your true joint appointment and privately don your Mantle of Shared Authority.\n\nEnjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored strategic activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. You do not just \"build\" together; you will constructed a lasting legacy of distinction.",
             "cta_text": "Request Audience",
             "modal_trigger": true
           }
@@ -125,6 +126,59 @@
         "dest_hawaii",
         "dest_couples"
       ],
+      "settings": {
+        "anchor_id": "destinations",
+        "heading": "THE NANCY VUU INTENSIVES: Deconstruction to Construction.",
+        "subtitle": "Strictly Twelve Invitations Per Season",
+        "badge_text": "Private Invitations Only"
+      }
+    },
+    "retreat_destinations_bQJTgQ": {
+      "type": "retreat-destinations",
+      "blocks": {
+        "destination_cVG7Dx": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/5.jpg",
+            "quota": "",
+            "location": "Napa Valley, CA",
+            "title": "Dream Again",
+            "description": "Silence the Echo. Identify the Bedrock. Command Your Appointment.\n\nThe DREAM Again Immersion is not a retreat; it is a Strategic Deconstruction. Located within a private boutique sanctuary in the majestic mountains of Napa Valley, this is the definitive 4-day, 3-night landscape for global leaders, founders, and visionaries to silence the external \"echo\" of generic ambition and identify the bedrock of their True Appointment.\n\nLeveraging the same \"Refugee-to-Cannes\" Blueprint that has commanded global stages, Nancy Vuu provides the private infrastructure for the total recalibration of vision. This intensive is technically engineered for the leader who has achieved significant success but lost the unshakeable Visible Authority and profound clarity required for their next era of influence. Escape to a rustique-luxe environment where nature’s majesty meets The Nancy Vuu Blueprint of Honor—providing the necessary framework for a deep spiritual encounter and total vision reset.\n\nThrough proprietary Sovereign Narrative Architecture and deep spiritual recalibration, you will deconstruct the barriers to your highest potential and leave equipped to don your Mantle of Authority with unapologetic distinction. Enjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. This is where the dreamer is restored, and the Architect is called.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        },
+        "destination_6RWhJz": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/10.jpg",
+            "quota": "",
+            "location": "Kaneohe, HI & Napa Valley, Ca",
+            "title": "THE DREAMS REALIZED IMMERSION: The Architecture of Implementation",
+            "description": "While DREAM Again Restores the Dreamer, DREAMS REALIZED Equips the Architect.\n\nThe DREAMS REALIZED Immersion is the definitive, high-level next step for the global visionary ready to move from internal recalibration to External Sovereignty. Located within a private sanctuary of quiet serenity, this 4-day, 3-night intensive focuses exclusively on the \"How\"—the technical engineering required to translate your strategic internal overflow into a visible, lived reality. We are not discussing \"inspiration\"; we are implementing Infrastructure Redemption.\n\nThrough private strategic consultation and the deployment of the Nancy Vuu Blueprint of Honor, you will bridge the gap between divine inspiration and industrial distinction. Discover the concrete mechanics required to engineered the intersection of honor, visibility, and restorative ethics into your personal life and business legacy. Nancy Vuu provides the specialized structural guidance needed to manifest your vision across your entire organization’s DNA.\n\nThis is a workspace where strategic architecture meets legacy-building. You will not leave with a \"dream\"; you will leave with a Sovereign Roadmap to Fulfillment and the unshakeable Mantle of Authority required to lead your next era. Enjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored strategic activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. Build your legacy from bedrock.",
+            "cta_text": "Request audience",
+            "modal_trigger": true
+          }
+        },
+        "destination_TnkiPy": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/7.jpg",
+            "quota": "",
+            "location": "Napa Valley, CA",
+            "title": "THE LEGACY ALLIANCE IMMERSION: Architecting Your Sovereign Union",
+            "description": "While others simply \"connect,\" you will construct an unshakeable infrastructure of distinction.\n\nThe Legacy Alliance Immersion is not a retreat; it is a specialized B2B Strategic Implementation Lab for the couple who co-leads, co-dreams, and co-builds their collective Sovereign Estate.\n\nLocated within a private boutique sanctuary in the majestic mountains of Napa Valley, this is the definitive 4-day, 3-night intensive for global leaders, founders, and visionaries to constructed an infrastructure of enduring significance for their family’s legacy.\n\nLeveraging the same \"Refugee-to-Cannes\" Blueprint of Honor that has commanded global stages, you and your partner will deconstruct the generic models of \"wellness\" and Engineered Honor back into your specific operational infrastructure. Through proprietary Sovereign Narrative Architecture and deep spiritual alignment, you will identify your true joint appointment and privately don your Mantle of Shared Authority.\n\nEnjoy total, curated Sovereign Alignment with all-inclusive amenities: bespoke cuisine, exquisitely tailored strategic activities, rustic lodging, and curated giftings, including specialized transport to and from the retreat sanctuary. You do not just \"build\" together; you will constructed a lasting legacy of distinction.",
+            "cta_text": "Request Audience",
+            "modal_trigger": true
+          }
+        }
+      },
+      "block_order": [
+        "destination_cVG7Dx",
+        "destination_6RWhJz",
+        "destination_TnkiPy"
+      ],
+      "disabled": true,
       "settings": {
         "anchor_id": "destinations",
         "heading": "The Sanctuaries.",
@@ -199,6 +253,9 @@
         "dd3"
       ],
       "settings": {
+        "left_eyebrow": "The Selection",
+        "left_heading": "A Restricted Covenant.",
+        "left_text": "Invitations are meticulously curated to ensure the synergy of the group and the sanctity of the restoration process. Only twelve seats are released per season.",
         "eyebrow": "",
         "title": "Request an Audience.",
         "form_tag": "audience-inquiry",
@@ -219,6 +276,7 @@
     "hero",
     "dimensions",
     "destinations",
+    "retreat_destinations_bQJTgQ",
     "academy_cta",
     "final_cta",
     "retreat_disclaimer",

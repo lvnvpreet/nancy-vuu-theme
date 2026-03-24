@@ -12,10 +12,10 @@
     "hero": {
       "type": "collection-hero-editorial",
       "settings": {
-        "image": "shopify://shop_images/untitled--3_1.jpg",
+        "image": "shopify://shop_images/untitled--20.jpg",
         "video_url": "",
-        "overlay_opacity": 0,
         "hero_height": "75vh",
+        "overlay_opacity": 0,
         "eyebrow": "A Shared Legacy of Grace",
         "title": "",
         "cta_label": "Start the Commissioning",

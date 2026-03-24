@@ -108,6 +108,30 @@
     "press_accolades": {
       "type": "press-accolades",
       "blocks": {
+        "card_nqyqy6": {
+          "type": "card",
+          "settings": {
+            "label": "INSTITUTIONAL LEADERSHIP & MARKETPLACE FREQUENCY",
+            "title": "KTVU Fox 2 News Women Who Lead: Global Impact",
+            "body": "<p>\"Designated by an institutional media body for demonstrating profound leadership and <strong>unshakeable visible authority</strong> on a global scale. </p>"
+          }
+        },
+        "card_FabjCF": {
+          "type": "card",
+          "settings": {
+            "label": "MARKETPLACE DEPLOYMENT & CAPITAL VALIDATION",
+            "title": "Dual-Brand Sovereign Architecture Commission (2025)",
+            "body": "<p>Commissioned by a restricted investor consortium to deploy the <strong>Nancy Vuu Blueprint of Honor</strong> as the core operational and aesthetic infrastructure for two distinct high-value market entrants launching in 2025. </p>"
+          }
+        },
+        "card_qWTbL3": {
+          "type": "card",
+          "settings": {
+            "label": "FAITH & GOVERNANCE ALIGNMENT",
+            "title": "Keynote Address",
+            "body": "<p>Designated by Hawaii Prayer Breakfast Organization to deliver the primary directive to an assembly of 900 global leaders, including the Governor of Hawaii, jurisdictional Mayors, and influencers across every sphere of society. This high-status platform was utilized to strategically launch <strong>Dream Expo 2025.</strong></p>"
+          }
+        },
         "acc_1": {
           "type": "card",
           "settings": {
@@ -127,7 +151,7 @@
         "acc_3": {
           "type": "card",
           "settings": {
-            "label": "Women Network",
+            "label": "COMMUNITY EMPOWERMENT",
             "title": "The Inspirique Award",
             "body": "<p>Awarded for empowering women locally and globally, breaking barriers as a leader who paves the way for living boldly and embracing creativity.</p>"
           }
@@ -137,7 +161,7 @@
           "settings": {
             "label": "Humanitarian",
             "title": "The Courage Award",
-            "body": "<p>First recipient of World Relief Seattle’s honor, recognized for pioneering creative advocacy and systemic restoration in global communities.</p>"
+            "body": "<p>First recipient of World Relief Seattle’s honor, recognized for pioneering creative advocacy and systemic restoration in global communities. Helped raised over 350K at their gala.</p>"
           }
         },
         "acc_5": {
@@ -148,22 +172,25 @@
             "body": "<p>Honored by the British Chinese Youth Federation for international excellence and cultural leadership on a global diplomatic scale.</p>"
           }
         },
-        "acc_6": {
+        "card_JNpV6p": {
           "type": "card",
           "settings": {
             "label": "Global Presence",
             "title": "Industry Reach",
-            "body": "<p>Fashions and styling featured on the world’s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and major networks like <strong>Nickelodeon.</strong></p>"
+            "body": "<p>Fashions and styling featured on the world’s most prestigious stages, including the <strong>Oscars, Grammys, Cannes, AMAs,</strong> and and the pages of <strong>VOGUE.</strong></p>"
           }
         }
       },
       "block_order": [
+        "card_nqyqy6",
+        "card_FabjCF",
+        "card_qWTbL3",
         "acc_1",
         "acc_2",
         "acc_3",
         "acc_4",
         "acc_5",
-        "acc_6"
+        "card_JNpV6p"
       ],
       "settings": {
         "eyebrow": "Distinction & Impact",
