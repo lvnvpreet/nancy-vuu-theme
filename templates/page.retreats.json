@@ -14,6 +14,7 @@
       "settings": {
         "section_id": "page-hero",
         "image": "shopify://shop_images/Untitled_45_x_50_in_7.jpg",
+        "video_url": "",
         "overlay_opacity": 40,
         "eyebrow": "",
         "title_line_1": "Dream",
@@ -87,7 +88,7 @@
           "type": "destination",
           "settings": {
             "image": "shopify://shop_images/5.jpg",
-            "quota": "4 Invitations Remaining",
+            "quota": "",
             "location": "Napa Valley, CA",
             "title": "Dream Again",
             "description": "A majestic landscape for the total reset of vision. Our most sought-after intensive for global leaders seeking clarity & spiritual recalibration. Escape to a place where nature’s beauty surrounds you and the spirit leads you. The DREAM Again Retreat is an invitation to step onto sacred grounds and into heavenly gardens. Through spiritual encounters and tailored activities, we provide the framework for you to reignite the dreamer inside.  Located in the majestic mountains of Napa Valley, our boutique sanctuary offers a rustic-luxe environment designed for deep reflection. With nourishing cuisine and exquisite linens, your mind, body, and spirit will find the rest they’ve been seeking. Experience the overflow.",
@@ -99,7 +100,7 @@
           "type": "destination",
           "settings": {
             "image": "shopify://shop_images/10.jpg",
-            "quota": "3 Invitations Remaining",
+            "quota": "",
             "location": "Kaneohe, HI & Napa Valley, Ca",
             "title": "Dreams Fulfilled",
             "description": "The Dreams Fulfilled Retreat is the definitive next step for the visionary ready to build. While DREAM Again restores the dreamer, Dreams Fulfilled equips the builder. This high-level immersion focuses on the \"How\"—transforming your internal overflow into a lived reality.\n\nThrough strategic consultation, bespoke blueprints, and identified pathways for both your personal life and business legacy, Nancy Vuu provides the structural guidance needed to manifest your vision. This is a workspace of quiet serenity where strategic conversations meet divine inspiration. You will leave not just with a dream, but with a roadmap to fulfillment.",
@@ -111,7 +112,7 @@
           "type": "destination",
           "settings": {
             "image": "shopify://shop_images/7.jpg",
-            "quota": "Exclusive Booking",
+            "quota": "",
             "location": "Napa Valley, CA",
             "title": "The Covenant",
             "description": "Step away from the noise and into the \"melody of nature.\" Nestled in the majestic mountains of Napa Valley, our all-inclusive sanctuary is a custom-designed experience for the couple who leads, dreams, and builds together.\n\nThrough spiritual healing, intentional exploration, and the quiet serenity of our boutique haven, we provide the sacred space to honor your past and architect your future. This is more than a retreat—it is a reawakening of mind, body, and spirit. Join us for a transformative journey of renewal, where every moment is a celebration of your shared progress.",
@@ -195,6 +196,9 @@
         "dd3"
       ],
       "settings": {
+        "left_eyebrow": "The Selection",
+        "left_heading": "A Restricted Covenant.",
+        "left_text": "Invitations are meticulously curated to ensure the synergy of the group and the sanctity of the restoration process. Only twelve seats are released per season.",
         "eyebrow": "",
         "title": "Request an Audience.",
         "form_tag": "audience-inquiry",
