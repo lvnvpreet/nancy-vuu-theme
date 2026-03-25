@@ -17,7 +17,7 @@
         "title_line_1": "The Architecture",
         "title_italic": "of",
         "title_line_2": "Worth",
-        "subtitle": "Redefining the individual through high-fashion, cinematic truth, and human advocacy."
+        "subtitle": "Redefining the individual through high-fashion, cinematic truth, executive immersions, and human advocacy."
       }
     },
     "press_strip": {
@@ -108,30 +108,6 @@
     "press_accolades": {
       "type": "press-accolades",
       "blocks": {
-        "card_nqyqy6": {
-          "type": "card",
-          "settings": {
-            "label": "INSTITUTIONAL LEADERSHIP & MARKETPLACE FREQUENCY",
-            "title": "KTVU Fox 2 News Women Who Lead: Global Impact",
-            "body": "<p>\"Designated by an institutional media body for demonstrating profound leadership and <strong>unshakeable visible authority</strong> on a global scale. </p>"
-          }
-        },
-        "card_FabjCF": {
-          "type": "card",
-          "settings": {
-            "label": "MARKETPLACE DEPLOYMENT & CAPITAL VALIDATION",
-            "title": "Dual-Brand Sovereign Architecture Commission (2025)",
-            "body": "<p>Commissioned by a restricted investor consortium to deploy the <strong>Nancy Vuu Blueprint of Honor</strong> as the core operational and aesthetic infrastructure for two distinct high-value market entrants launching in 2025. </p>"
-          }
-        },
-        "card_qWTbL3": {
-          "type": "card",
-          "settings": {
-            "label": "FAITH & GOVERNANCE ALIGNMENT",
-            "title": "Keynote Address",
-            "body": "<p>Designated by Hawaii Prayer Breakfast Organization to deliver the primary directive to an assembly of 900 global leaders, including the Governor of Hawaii, jurisdictional Mayors, and influencers across every sphere of society. This high-status platform was utilized to strategically launch <strong>Dream Expo 2025.</strong></p>"
-          }
-        },
         "acc_1": {
           "type": "card",
           "settings": {
@@ -182,9 +158,6 @@
         }
       },
       "block_order": [
-        "card_nqyqy6",
-        "card_FabjCF",
-        "card_qWTbL3",
         "acc_1",
         "acc_2",
         "acc_3",
