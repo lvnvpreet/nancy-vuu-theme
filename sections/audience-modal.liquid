@@ -197,6 +197,46 @@
     letter-spacing: 0.15em;
     line-height: 2;
   }
+
+  /* ── Mobile Responsive ──────────────────────────────────── */
+  @media (max-width: 768px) {
+    .nv-align-inner {
+      padding: 4rem 1rem 3rem;
+    }
+
+    .nv-align-box {
+      padding: 2rem 1.25rem;
+    }
+
+    /* Phase II: stack to single column on mobile */
+    .nv-profile-grid {
+      display: block !important;
+    }
+
+    .nv-profile-grid > div {
+      margin-bottom: 1.5rem;
+    }
+
+    .nv-phone-wrap__code {
+      flex: 0 0 90px;
+      font-size: 0.65rem;
+    }
+
+    .nv-align-submit {
+      padding: 1.25rem 1.5rem;
+      letter-spacing: 0.25em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nv-align-box {
+      padding: 1.5rem 1rem;
+    }
+
+    .nv-align-inner {
+      padding: 3.5rem 0.75rem 2.5rem;
+    }
+  }
 </style>
 
 <div class="audience-modal" id="audience-modal" aria-hidden="true" aria-modal="true" role="dialog">
@@ -290,7 +330,7 @@
           <!-- PHASE II — EXECUTIVE PROFILE -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE II — EXECUTIVE PROFILE</p>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div class="nv-profile-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
             <div style="margin-bottom:1.5rem;">
               <input type="text" name="contact[name]" class="nv-align-input" placeholder="FULL NAME" required>
             </div>
