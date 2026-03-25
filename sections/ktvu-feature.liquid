@@ -1,0 +1,197 @@
+<style>
+.ktvu-feature {
+  padding: 6rem 1.5rem;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+.ktvu-feature__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 5rem;
+  align-items: center;
+}
+.ktvu-feature__thumb-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #111;
+}
+.ktvu-feature__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+.ktvu-feature__video-link:hover .ktvu-feature__thumb {
+  transform: scale(1.03);
+  filter: brightness(0.75);
+}
+.ktvu-feature__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.4s ease;
+}
+.ktvu-feature__video-link:hover .ktvu-feature__overlay {
+  background: rgba(0,0,0,0.45);
+}
+.ktvu-feature__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 1.5px solid rgba(255,255,255,0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.ktvu-feature__video-link:hover .ktvu-feature__play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(255,255,255,0.15);
+}
+.ktvu-feature__badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0,0,0,0.7);
+  padding: 0.4rem 0.8rem;
+}
+.ktvu-feature__badge span {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ktvu-feature__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ktvu-feature__eyebrow {
+  color: #999;
+}
+.ktvu-feature__heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 0;
+  line-height: 1.15;
+}
+.ktvu-feature__caption {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .ktvu-feature__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+</style>
+
+<section class="ktvu-feature">
+  <div class="ktvu-feature__inner">
+
+    <!-- LEFT: Video Thumbnail -->
+    <div class="ktvu-feature__media">
+      <a href="https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5"
+         target="_blank"
+         rel="noopener"
+         class="ktvu-feature__video-link"
+         aria-label="Watch Nancy Vuu on KTVU Fox 2">
+
+        <div class="ktvu-feature__thumb-wrap">
+          <img
+            src="https://static-media.fox.com/fmcv3/prod/fts/8wli9izvpxn6neyy/37bdwwu9jc9nflof.jpg"
+            alt="Nancy Vuu KTVU Fox 2 Interview"
+            class="ktvu-feature__thumb"
+            loading="lazy">
+
+          <!-- Dark overlay on hover -->
+          <div class="ktvu-feature__overlay"></div>
+
+          <!-- Play Button -->
+          <div class="ktvu-feature__play">
+            <svg width="20" height="20" viewBox="0 0 24 24"
+                 fill="white" aria-hidden="true">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+
+          <!-- Fox 2 Badge -->
+          <div class="ktvu-feature__badge">
+            <span>KTVU FOX 2</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- RIGHT: Text Content -->
+    <div class="ktvu-feature__text">
+      <span class="eyebrow ktvu-feature__eyebrow">
+        {{ section.settings.eyebrow }}
+      </span>
+      <h2 class="serif-font ktvu-feature__heading">
+        {{ section.settings.heading }}
+      </h2>
+      <div class="divider"></div>
+      <p class="ktvu-feature__caption">
+        {{ section.settings.caption }}
+      </p>
+      <a href="{{ section.settings.cta_link | default: '#' }}"
+         class="btn-editorial">
+        {{ section.settings.cta_label }}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "KTVU Fox 2 Feature",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "As Featured on KTVU Fox 2"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Leading with Global Impact"
+    },
+    {
+      "type": "textarea",
+      "id": "caption",
+      "label": "Caption Text",
+      "default": "Watch the exclusive cover story detailing the miraculous origin of the House of Vuu — from surviving the ocean to architecting a global luxury and humanitarian empire."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Button Text",
+      "default": "Pre-Order: Let There Be Fashion"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ]
+}
+{% endschema %}

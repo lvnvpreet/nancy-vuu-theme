@@ -20,6 +20,16 @@
         "subtitle": "Redefining the individual through high-fashion, cinematic truth, executive immersions, and human advocacy."
       }
     },
+    "ktvu_press_feature": {
+      "type": "ktvu-feature",
+      "settings": {
+        "eyebrow": "Latest Broadcast — KTVU Fox 2 Cover Story",
+        "heading": "From Runway to Leadership",
+        "caption": "Nancy Vuu sits down with Fox 2 to discuss the intersection of high fashion, diplomacy, and global human advocacy.",
+        "cta_label": "Book Nancy for Speaking & Media",
+        "cta_link": "/pages/book-nancy-vuu"
+      }
+    },
     "press_strip": {
       "type": "press-editorial-strip",
       "blocks": {
@@ -256,6 +266,7 @@
   },
   "order": [
     "press_hero",
+    "ktvu_press_feature",
     "press_strip",
     "press_accolades",
     "press_literary",
