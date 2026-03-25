@@ -80,17 +80,10 @@
     "inquiry": {
       "type": "atelier-inquiry",
       "blocks": {
-        "service_option_cQBV8B": {
+        "service_option_jNWKwh": {
           "type": "service_option",
           "settings": {
-            "option_label": "Couture Creation",
-            "option_value": "tailoring"
-          }
-        },
-        "service_option_rN3k8a": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_label": "",
             "option_value": "tailoring"
           }
         },
@@ -105,6 +98,13 @@
           "type": "service_option",
           "settings": {
             "option_label": "Bespoke Seth Eden Suiting",
+            "option_value": "tailoring"
+          }
+        },
+        "service_option_cQBV8B": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Couture Creation",
             "option_value": "tailoring"
           }
         },
@@ -124,10 +124,10 @@
         }
       },
       "block_order": [
-        "service_option_cQBV8B",
-        "service_option_rN3k8a",
+        "service_option_jNWKwh",
         "opt_bespoke",
         "service_option_DBqqYm",
+        "service_option_cQBV8B",
         "service_option_QTwXcR",
         "opt_preservation"
       ],
