@@ -12,10 +12,10 @@
     "press_hero": {
       "type": "press-hero",
       "settings": {
-        "bg_image": "shopify://shop_images/83322260_10219135889499792_2118225373001940992_n.jpg",
+        "bg_image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
         "use_video": false,
         "bg_video": "",
-        "media_opacity": 40,
+        "media_opacity": 25,
         "eyebrow": "Voice of Authority",
         "title_line_1": "The Architecture",
         "title_italic": "of",
