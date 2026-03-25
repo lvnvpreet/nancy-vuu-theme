@@ -80,6 +80,20 @@
     "inquiry": {
       "type": "atelier-inquiry",
       "blocks": {
+        "service_option_cQBV8B": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Couture Creation",
+            "option_value": "tailoring"
+          }
+        },
+        "service_option_rN3k8a": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "tailoring"
+          }
+        },
         "opt_bespoke": {
           "type": "service_option",
           "settings": {
@@ -110,6 +124,8 @@
         }
       },
       "block_order": [
+        "service_option_cQBV8B",
+        "service_option_rN3k8a",
         "opt_bespoke",
         "service_option_DBqqYm",
         "service_option_QTwXcR",
