@@ -160,13 +160,10 @@
       {%- form 'contact', id: 'nv-alignment-form' -%}
         <input type="hidden" name="contact[tags]" value="alignment-application">
 
-        {%- if form.posted_successfully? -%}
-
-          <div class="nv-align-success">
+          <!-- Success message — shown by JS when contact_posted=true -->
+          <div class="nv-align-success" id="nv-alignment-success" style="display:none;">
             Your Application for Alignment has been received. Our team will conduct your Selective Alignment Audit and contact you within 48 hours.
           </div>
-
-        {%- else -%}
 
           <!-- PHASE I — STRATEGIC ALIGNMENT -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE I — STRATEGIC ALIGNMENT</p>
@@ -259,12 +256,35 @@
 
           <button type="submit" class="nv-align-submit">INITIATE ALIGNMENT AUDIT</button>
 
-        {%- endif -%}
       {%- endform -%}
 
     </div>
   </div>
 </div>
+
+<script>
+  (function() {
+    if (window.location.search.includes('contact_posted=true')) {
+      var formBody = document.getElementById('nv-alignment-form');
+      var successMsg = document.getElementById('nv-alignment-success');
+      if (formBody && successMsg) {
+        successMsg.style.display = 'block';
+        var inputs = formBody.querySelectorAll('.nv-align-label, .nv-align-check-label, .nv-align-radio-label, .nv-align-input, .nv-align-select, .nv-align-textarea, .nv-align-submit, [style*="margin-bottom"]');
+        inputs.forEach(function(el) { el.style.display = 'none'; });
+        var phases = formBody.querySelectorAll('p[style*="letter-spacing"]');
+        phases.forEach(function(el) { el.style.display = 'none'; });
+        var dividers = formBody.querySelectorAll('[style*="width:40px"]');
+        dividers.forEach(function(el) { el.style.display = 'none'; });
+        var legalBox = formBody.querySelector('[style*="rgba(196,160,89,0.04)"]');
+        if (legalBox) legalBox.style.display = 'none';
+        var hiddenInput = formBody.querySelector('[name="contact[tags]"]');
+        if (hiddenInput) hiddenInput.style.display = 'none';
+      }
+      // Clean URL so next modal open shows form again
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  })();
+</script>
 
 {% schema %}
 {
