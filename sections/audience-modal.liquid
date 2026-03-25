@@ -20,6 +20,7 @@
     max-width: 860px;
     margin: 0 auto;
     background: #111111;
+    border: 1px solid rgba(197, 160, 89, 0.2);
     padding: 3rem 4rem;
   }
 
@@ -96,9 +97,65 @@
     font-family: var(--font-sans);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 0.75rem;
     cursor: pointer;
+  }
+
+  .nv-align-check-label input[type="checkbox"],
+  .nv-align-radio-label input[type="radio"] {
+    accent-color: #c5a059;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Phone field */
+  .nv-phone-wrap {
+    display: flex;
+    gap: 0;
+  }
+
+  .nv-phone-wrap__code {
+    flex: 0 0 110px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(196, 160, 89, 0.3);
+    border-right: 1px solid rgba(196, 160, 89, 0.15);
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    padding: 1rem 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .nv-phone-wrap__code option {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .nv-phone-wrap__input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(196, 160, 89, 0.3);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    padding: 1rem 0 1rem 1rem;
+    outline: none;
+    letter-spacing: 0.1em;
+  }
+
+  .nv-phone-wrap__input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
   }
 
   /* Submit button */
@@ -153,7 +210,7 @@
         <div style="width:10px;height:10px;background:#c5a059;border-radius:50%;margin:0 auto 1.5rem;"></div>
         <h2 style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:0.5rem;">APPLICATION FOR ALIGNMENT</h2>
         <h3 style="font-family:var(--font-sans);font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2rem;">INITIATING YOUR STRATEGIC RESET.</h3>
-        <p style="font-family:var(--font-sans);font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.9;max-width:640px;margin:0 auto 3rem;text-align:center;">Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration; it is an application for a Selective Alignment Audit. We are identifying the bedrock of your profound purpose to determine mutual resonance with The Nancy Vuu Blueprint of Honor. To protect your high-status investment and maintain extreme scarcity, please answer with absolute transparency.</p>
+        <p style="font-family:var(--font-sans);font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:580px;margin:0 auto;">Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration &#8212; it is an application for a <span style="color:#c5a059;">Selective Alignment Audit.</span> Please answer with absolute transparency.</p>
       </div>
 
       <!-- FORM -->
@@ -164,6 +221,9 @@
           <div class="nv-align-success" id="nv-alignment-success" style="display:none;">
             Your Application for Alignment has been received. Our team will conduct your Selective Alignment Audit and contact you within 48 hours.
           </div>
+
+          <!-- Divider -->
+          <div style="width:40px;height:1px;background:rgba(197,160,89,0.3);margin:2rem auto;"></div>
 
           <!-- PHASE I — STRATEGIC ALIGNMENT -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE I — STRATEGIC ALIGNMENT</p>
@@ -225,17 +285,19 @@
           <!-- PHASE II — EXECUTIVE PROFILE -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE II — EXECUTIVE PROFILE</p>
 
-          <div style="margin-bottom:2rem;">
-            <input type="text" name="contact[name]" class="nv-align-input" placeholder="FULL NAME" required>
-          </div>
-          <div style="margin-bottom:2rem;">
-            <input type="text" name="contact[organization]" class="nv-align-input" placeholder="TITLE / ORGANIZATION">
-          </div>
-          <div style="margin-bottom:2rem;">
-            <input type="text" name="contact[industry]" class="nv-align-input" placeholder="GLOBAL FIELD (INDUSTRY)">
-          </div>
-          <div style="margin-bottom:2rem;">
-            <input type="email" name="contact[email]" class="nv-align-input" placeholder="WORK EMAIL ADDRESS" required>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+            <div style="margin-bottom:1.5rem;">
+              <input type="text" name="contact[name]" class="nv-align-input" placeholder="FULL NAME" required>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <input type="text" name="contact[organization]" class="nv-align-input" placeholder="TITLE / ORGANIZATION">
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <input type="text" name="contact[industry]" class="nv-align-input" placeholder="GLOBAL FIELD (INDUSTRY)">
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <input type="email" name="contact[email]" class="nv-align-input" placeholder="WORK EMAIL ADDRESS" required>
+            </div>
           </div>
           <div style="margin-bottom:2rem;">
             {%- render 'phone-field' -%}
