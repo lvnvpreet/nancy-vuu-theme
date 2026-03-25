@@ -1,10 +1,28 @@
-{%- comment -%} Press Page — Hero: full-viewport, centred text, faint background image {%- endcomment -%}
-<section class="press-hero" data-section-id="{{ section.id }}">
+{%- comment -%} Press Page — Hero: full-viewport, centred text, background image or video {%- endcomment -%}
+{%- assign media_opacity = section.settings.media_opacity | default: 35 | divided_by: 100.0 -%}
+<style>
+  #press-hero-{{ section.id }} .press-hero__bg-img,
+  #press-hero-{{ section.id }} .press-hero__bg-video {
+    opacity: {{ media_opacity }};
+  }
+</style>
+<section class="press-hero" id="press-hero-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="press-hero__bg">
-    {%- if section.settings.bg_image != blank -%}
+    {%- if section.settings.use_video and section.settings.bg_video != blank -%}
+      <video
+        class="press-hero__bg-video"
+        src="{{ section.settings.bg_video }}"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true">
+      </video>
+    {%- elsif section.settings.bg_image != blank -%}
       <img
         src="{{ section.settings.bg_image | image_url: width: 2000 }}"
-        srcset="{{ section.settings.bg_image | image_url: width: 1000 }} 1000w, {{ section.settings.bg_image | image_url: width: 2000 }} 2000w"
+        srcset="{{ section.settings.bg_image | image_url: width: 800 }} 800w, {{ section.settings.bg_image | image_url: width: 1400 }} 1400w, {{ section.settings.bg_image | image_url: width: 2000 }} 2000w"
         sizes="100vw"
         alt=""
         class="press-hero__bg-img"
@@ -35,12 +53,42 @@
   "name": "Press — Hero",
   "class": "press-section-hero",
   "settings": [
-    { "type": "image_picker", "id": "bg_image",    "label": "Background Image (faint)" },
-    { "type": "text",         "id": "eyebrow",     "label": "Eyebrow Label",    "default": "Voice of Authority" },
-    { "type": "text",         "id": "title_line_1","label": "Title — Line 1",   "default": "The Architecture" },
-    { "type": "text",         "id": "title_italic","label": "Title — Italic Word","default": "of" },
-    { "type": "text",         "id": "title_line_2","label": "Title — Line 3",   "default": "Worth" },
-    { "type": "textarea",     "id": "subtitle",    "label": "Subtitle",         "default": "Redefining the individual through high-fashion, cinematic truth, and human advocacy." }
+    {
+      "type": "header",
+      "content": "Background Media"
+    },
+    { "type": "image_picker", "id": "bg_image",   "label": "Background Image" },
+    {
+      "type": "checkbox",
+      "id": "use_video",
+      "label": "Use Background Video instead of Image",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "bg_video",
+      "label": "Background Video URL (.mp4)",
+      "info": "Paste a direct .mp4 URL. When enabled, the video plays instead of the image."
+    },
+    {
+      "type": "range",
+      "id": "media_opacity",
+      "label": "Background Opacity",
+      "min": 5,
+      "max": 100,
+      "step": 5,
+      "default": 35,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    { "type": "text",     "id": "eyebrow",     "label": "Eyebrow Label",      "default": "Voice of Authority" },
+    { "type": "text",     "id": "title_line_1","label": "Title — Line 1",     "default": "The Architecture" },
+    { "type": "text",     "id": "title_italic","label": "Title — Italic Word", "default": "of" },
+    { "type": "text",     "id": "title_line_2","label": "Title — Line 3",     "default": "Worth" },
+    { "type": "textarea","id": "subtitle",    "label": "Subtitle",           "default": "Redefining the individual through high-fashion, cinematic truth, and human advocacy." }
   ],
   "presets": [
     { "name": "Press — Hero" }
