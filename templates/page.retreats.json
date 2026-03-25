@@ -204,7 +204,7 @@
       "type": "cta-closer",
       "settings": {
         "image": "shopify://shop_images/2.jpg",
-        "overlay_opacity": 50,
+        "overlay_opacity": 0,
         "eyebrow": "",
         "heading": "return to majesty.",
         "subtext": "Napa Valley • Hawaii",
