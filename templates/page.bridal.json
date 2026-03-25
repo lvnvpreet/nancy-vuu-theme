@@ -278,48 +278,10 @@
     },
     "modal": {
       "type": "audience-modal",
-      "blocks": {
-        "opt_1": {
-          "type": "dropdown_option",
-          "settings": {
-            "label": "Custom Bespoke (Waitlist)",
-            "value": "bespoke"
-          }
-        },
-        "opt_2": {
-          "type": "dropdown_option",
-          "settings": {
-            "label": "Made-to-Measure",
-            "value": "mtm"
-          }
-        },
-        "opt_3": {
-          "type": "dropdown_option",
-          "settings": {
-            "label": "Seth Eden",
-            "value": "seth"
-          }
-        }
-      },
-      "block_order": [
-        "opt_1",
-        "opt_2",
-        "opt_3"
-      ],
       "settings": {
-        "eyebrow": "",
-        "title": "The Private Registry",
-        "form_tag": "bridal-inquiry",
-        "show_dropdown": true,
-        "dropdown_label": "Category of Interest",
-        "show_date": true,
-        "date_label": "The Date of Your Covenant",
-        "show_textarea": true,
-        "textarea_label": "Your Vision",
-        "textarea_placeholder": "YOUR VISION...",
-        "submit_label": "Submit Inquiry",
-        "success_title": "Received",
-        "success_message": "The Atelier will contact you shortly regarding your covenant date."
+        "price_tier_1": "$25,000 \u2013 $50,000",
+        "price_tier_2": "$50,000 \u2013 $75,000",
+        "price_tier_3": "$75,000 \u2013 $100,000+"
       }
     }
   },

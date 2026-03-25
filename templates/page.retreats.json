@@ -224,51 +224,10 @@
     },
     "modal": {
       "type": "audience-modal",
-      "blocks": {
-        "dd1": {
-          "type": "dropdown_option",
-          "settings": {
-            "label": "Dream Again — Sanctuary Retreat",
-            "value": "Sanctuary Retreat"
-          }
-        },
-        "dd2": {
-          "type": "dropdown_option",
-          "settings": {
-            "label": "Dreams Fulfilled — Creative Academy",
-            "value": "Creative Academy Admission"
-          }
-        },
-        "dd3": {
-          "type": "dropdown_option",
-          "settings": {
-            "label": "The Covenant — Couples Retreat",
-            "value": "Covenant Couples"
-          }
-        }
-      },
-      "block_order": [
-        "dd1",
-        "dd2",
-        "dd3"
-      ],
       "settings": {
-        "left_eyebrow": "The Selection",
-        "left_heading": "A Restricted Covenant.",
-        "left_text": "Invitations are meticulously curated to ensure the synergy of the group and the sanctity of the restoration process. Only twelve seats are released per season.",
-        "eyebrow": "",
-        "title": "Request an Audience.",
-        "form_tag": "audience-inquiry",
-        "show_dropdown": true,
-        "dropdown_label": "Select Retreat",
-        "show_date": true,
-        "date_label": "Preferred Date",
-        "show_textarea": true,
-        "textarea_label": "Vision Statement",
-        "textarea_placeholder": "Tell us about your vision…",
-        "submit_label": "Submit Application for Review",
-        "success_title": "Recognized.",
-        "success_message": "Your application has been received by the House of Nancy Vuu. Due to limited availability, we will review and contact you within 48 hours."
+        "price_tier_1": "$25,000 \u2013 $50,000",
+        "price_tier_2": "$50,000 \u2013 $75,000",
+        "price_tier_3": "$75,000 \u2013 $100,000+"
       }
     }
   },
