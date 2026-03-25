@@ -225,9 +225,9 @@
     "modal": {
       "type": "audience-modal",
       "settings": {
-        "price_tier_1": "$25,000 – $50,000",
-        "price_tier_2": "$50,000 – $75,000",
-        "price_tier_3": "$75,000 – $100,000+"
+        "price_tier_1": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)",
+        "price_tier_2": "$15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)",
+        "price_tier_3": "$25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)"
       }
     }
   },
