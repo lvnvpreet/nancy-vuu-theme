@@ -80,25 +80,11 @@
     "inquiry": {
       "type": "atelier-inquiry",
       "blocks": {
-        "service_option_QTwXcR": {
+        "service_option_DBqqYm": {
           "type": "service_option",
           "settings": {
-            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_label": "Bespoke Seth Eden Suiting (Tailoring)",
             "option_value": "tailoring"
-          }
-        },
-        "opt_tailoring": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
-            "option_value": "Master Tailoring — Alterations"
-          }
-        },
-        "opt_preservation": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
-            "option_value": "Fine Fabric Care — Preservation & Cleaning"
           }
         },
         "opt_bespoke": {
@@ -107,13 +93,27 @@
             "option_label": "Bespoke Couture / Bridal Consultation",
             "option_value": "Bespoke Couture — Bridal Consultation"
           }
+        },
+        "service_option_QTwXcR": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "tailoring"
+          }
+        },
+        "opt_preservation": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
         }
       },
       "block_order": [
+        "service_option_DBqqYm",
+        "opt_bespoke",
         "service_option_QTwXcR",
-        "opt_tailoring",
-        "opt_preservation",
-        "opt_bespoke"
+        "opt_preservation"
       ],
       "settings": {
         "section_id": "inquiry",
