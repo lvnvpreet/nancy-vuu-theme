@@ -52,101 +52,50 @@
     "pillar_nav": {
       "type": "academy-pillar-nav",
       "blocks": {
+        "nav_5": {
+          "type": "link",
+          "settings": {
+            "label": "I. The Maison Attache Program",
+            "anchor": "ambassador"
+          }
+        },
         "nav_1": {
           "type": "link",
           "settings": {
-            "label": "I. Academy",
+            "label": "II. Academy",
             "anchor": "academy"
-          }
-        },
-        "nav_2": {
-          "type": "link",
-          "settings": {
-            "label": "II. Maison Attache Program",
-            "anchor": "expo"
           }
         },
         "nav_3": {
           "type": "link",
           "settings": {
-            "label": "III. Dream Expo",
+            "label": "IV. Vuu Publishing",
             "anchor": "publishing"
+          }
+        },
+        "nav_2": {
+          "type": "link",
+          "settings": {
+            "label": "III. DREAM EXPO",
+            "anchor": "expo"
           }
         },
         "nav_4": {
           "type": "link",
           "settings": {
-            "label": "IV. Vuu Publishing",
+            "label": "V. Women CEO",
             "anchor": "ceo"
           }
-        },
-        "nav_5": {
-          "type": "link",
-          "settings": {
-            "label": "V. Women CEO",
-            "anchor": "ambassador"
-          }
         }
       },
       "block_order": [
+        "nav_5",
         "nav_1",
-        "nav_2",
         "nav_3",
-        "nav_4",
-        "nav_5"
+        "nav_2",
+        "nav_4"
       ],
       "settings": {}
-    },
-    "pillar_academy": {
-      "type": "academy-pillar",
-      "blocks": {
-        "p1": {
-          "type": "pathway",
-          "settings": {
-            "number": "Pathway 01",
-            "title": "Identity & Vision Mastery",
-            "description": "Applicable to all industries—from technology to the arts. We mentor you on the mindset and practical foundation of identity.",
-            "features": "Sovereign Leadership Coaching|Excellence as a Mandate|Strategic Vision Boarding"
-          }
-        },
-        "p2": {
-          "type": "pathway",
-          "settings": {
-            "number": "Pathway 02",
-            "title": "The Fashion Professional",
-            "description": "A high-level technical track for aspiring models or designers. Building elite portfolios and providing direct industry placement.",
-            "features": "Elite Portfolio Development|Direct Internship Opportunities|Agency Preparation"
-          }
-        },
-        "p3": {
-          "type": "pathway",
-          "settings": {
-            "number": "pathway 03",
-            "title": "The Brand Architect",
-            "description": "Nancy Vuu guides you from brand DNA and development to connecting you with high-end sourcing and manufacturing.",
-            "features": "Sourcing & Manufacturing|Brand DNA Development|Direct Mentorship"
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3"
-      ],
-      "settings": {
-        "anchor_id": "academy",
-        "layout": "text-left",
-        "border_top": false,
-        "eyebrow": "Foundation One",
-        "heading": "The Creative Academy",
-        "subtitle": "Discover your path to mastery",
-        "lead": "Excellence is not an industry; it is an identity. The Creative Academy is an exclusive guild designed for visionaries across all sectors who seek to master their craft and live a \"dream realized.\"",
-        "body": "Under the direct mentorship of Nancy Vuu, students are coached through a rigorous curriculum of spiritual identity, technical precision, and strategic brand architecture. This is not a mass-market course—it is an invitation-only incubator with limited annual enrollment.",
-        "cta_text": "Explore Enrollment",
-        "cta_link": "",
-        "image": "shopify://shop_images/image-asset.webp",
-        "show_play_button": false
-      }
     },
     "ambassador": {
       "type": "academy-ambassador",
@@ -201,6 +150,57 @@
         "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "floating_eyebrow": "Shared Growth",
         "floating_quote": "\"We provide the master artisan craftsmanship; you provide the elite relationship. Together, we dress the world’s legacy.\""
+      }
+    },
+    "pillar_academy": {
+      "type": "academy-pillar",
+      "blocks": {
+        "p1": {
+          "type": "pathway",
+          "settings": {
+            "number": "Pathway 01",
+            "title": "Identity & Vision Mastery",
+            "description": "Applicable to all industries—from technology to the arts. We mentor you on the mindset and practical foundation of identity.",
+            "features": "Sovereign Leadership Coaching|Excellence as a Mandate|Strategic Vision Boarding"
+          }
+        },
+        "p2": {
+          "type": "pathway",
+          "settings": {
+            "number": "Pathway 02",
+            "title": "The Fashion Professional",
+            "description": "A high-level technical track for aspiring models or designers. Building elite portfolios and providing direct industry placement.",
+            "features": "Elite Portfolio Development|Direct Internship Opportunities|Agency Preparation"
+          }
+        },
+        "p3": {
+          "type": "pathway",
+          "settings": {
+            "number": "pathway 03",
+            "title": "The Brand Architect",
+            "description": "Nancy Vuu guides you from brand DNA and development to connecting you with high-end sourcing and manufacturing.",
+            "features": "Sourcing & Manufacturing|Brand DNA Development|Direct Mentorship"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "anchor_id": "academy",
+        "layout": "text-left",
+        "border_top": false,
+        "eyebrow": "Foundation One",
+        "heading": "The Creative Academy",
+        "subtitle": "Discover your path to mastery",
+        "lead": "Excellence is not an industry; it is an identity. The Creative Academy is an exclusive guild designed for visionaries across all sectors who seek to master their craft and live a \"dream realized.\"",
+        "body": "Under the direct mentorship of Nancy Vuu, students are coached through a rigorous curriculum of spiritual identity, technical precision, and strategic brand architecture. This is not a mass-market course—it is an invitation-only incubator with limited annual enrollment.",
+        "cta_text": "Explore Enrollment",
+        "cta_link": "",
+        "image": "shopify://shop_images/image-asset.webp",
+        "show_play_button": false
       }
     },
     "pillar_expo": {
@@ -259,8 +259,8 @@
     "hero",
     "manifesto",
     "pillar_nav",
-    "pillar_academy",
     "ambassador",
+    "pillar_academy",
     "pillar_expo",
     "pillar_publishing",
     "pillar_ceo"
