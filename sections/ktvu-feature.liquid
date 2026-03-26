@@ -1,8 +1,10 @@
 <style>
+/* ── KTVU Feature — Cinematic 60/40 Split ─────────────────── */
 .ktvu-feature {
-  padding: 6rem 1.5rem;
-  background: #fff;
-  border-top: 1px solid #f0f0f0;
+  padding: 7rem 1.5rem;
+  background: #F5F5F3;
+  border-top: 1px solid #e8e8e5;
+  border-bottom: 1px solid #e8e8e5;
 }
 .ktvu-feature__inner {
   max-width: 1400px;
@@ -12,11 +14,14 @@
   gap: 5rem;
   align-items: center;
 }
+
+/* LEFT: Video */
 .ktvu-feature__thumb-wrap {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16/9;
   background: #111;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.14);
 }
 .ktvu-feature__thumb {
   width: 100%;
@@ -32,121 +37,131 @@
 .ktvu-feature__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.2);
   transition: background 0.4s ease;
 }
 .ktvu-feature__video-link:hover .ktvu-feature__overlay {
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.42);
 }
 .ktvu-feature__play {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
-  border: 1.5px solid rgba(255,255,255,0.8);
+  width: 72px;
+  height: 72px;
+  border: 1.5px solid rgba(255,255,255,0.85);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   transition: transform 0.3s ease, background 0.3s ease;
 }
 .ktvu-feature__video-link:hover .ktvu-feature__play {
-  transform: translate(-50%, -50%) scale(1.1);
-  background: rgba(255,255,255,0.15);
+  transform: translate(-50%, -50%) scale(1.12);
+  background: rgba(255,255,255,0.18);
 }
 .ktvu-feature__badge {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: rgba(0,0,0,0.7);
-  padding: 0.4rem 0.8rem;
+  background: rgba(0,0,0,0.72);
+  padding: 0.4rem 0.9rem;
 }
 .ktvu-feature__badge span {
   font-family: var(--font-sans);
   font-size: 0.55rem;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #fff;
 }
+
+/* RIGHT: Text */
 .ktvu-feature__text {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 .ktvu-feature__eyebrow {
-  color: #999;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #B59461;
+  margin-bottom: 1.1rem;
+  display: block;
 }
 .ktvu-feature__heading {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  margin-bottom: 0;
-  line-height: 1.15;
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  color: #0d0d0d;
+  text-transform: uppercase;
 }
-.ktvu-feature__caption {
+.ktvu-feature__rule {
+  width: 3rem;
+  height: 1px;
+  background: #B59461;
+  margin-bottom: 1.25rem;
+}
+.ktvu-feature__sub {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.ktvu-feature__body {
   font-family: var(--font-sans);
   font-size: 0.875rem;
   color: #555;
-  font-weight: 500;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+  font-weight: 400;
+  line-height: 1.9;
+  margin-bottom: 2rem;
 }
-@media (max-width: 768px) {
+.ktvu-feature__pull {
+  border-left: 3px solid #B59461;
+  padding: 0.6rem 0 0.6rem 1.25rem;
+  margin-bottom: 2.25rem;
+}
+.ktvu-feature__pull-quote {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-style: italic;
+  color: #2a2a2a;
+  line-height: 1.65;
+  margin-bottom: 0.5rem;
+}
+.ktvu-feature__pull-attr {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B59461;
+}
+
+@media (max-width: 900px) {
   .ktvu-feature__inner {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 }
 </style>
 
-<section class="ktvu-feature">
-  <div class="ktvu-feature__header" style="
-    text-align: center;
-    padding: 3rem 10% 2rem;
-    border-bottom: 1px solid #f0f0f0;
-    margin-bottom: 0;
-  ">
-    <span class="eyebrow" style="
-      color: #B59461;
-      letter-spacing: 0.4em;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.75rem;
-    ">INSTITUTIONAL VALIDATION: THE NANCY VUU FREQUENCY</span>
-    
-    <h3 style="
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #555;
-      margin-bottom: 1.25rem;
-    ">KTVU FOX 2 | WOMEN WHO LEAD: GLOBAL IMPACT</h3>
-    
-    <p style="
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: #555;
-      max-width: 680px;
-      margin: 0 auto;
-      font-weight: 500;
-    ">In a recent feature on KTVU Fox 2, Nancy Vuu was recognized as a global 
-    leader architecting restoration through design and strategic intervention. 
-    This segment explores the 'Refugee-to-Cannes' Blueprint and the unshakeable 
-    visible authority required to lead in the modern era.</p>
-  </div>
-
+<section class="ktvu-feature" data-section-id="{{ section.id }}">
   <div class="ktvu-feature__inner">
 
-    <!-- LEFT: Video Thumbnail -->
+    <!-- LEFT (60%): Cinematic Video Player -->
     <div class="ktvu-feature__media">
-      <a href="https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5"
+      <a href="{{ section.settings.cta_link | default: 'https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5' }}"
          target="_blank"
          rel="noopener"
          class="ktvu-feature__video-link"
@@ -155,22 +170,18 @@
         <div class="ktvu-feature__thumb-wrap">
           <img
             src="https://static-media.fox.com/fmcv3/prod/fts/8wli9izvpxn6neyy/37bdwwu9jc9nflof.jpg"
-            alt="Nancy Vuu KTVU Fox 2 Interview"
+            alt="Nancy Vuu on the set of KTVU Fox 2"
             class="ktvu-feature__thumb"
             loading="lazy">
 
-          <!-- Dark overlay on hover -->
           <div class="ktvu-feature__overlay"></div>
 
-          <!-- Play Button -->
           <div class="ktvu-feature__play">
-            <svg width="20" height="20" viewBox="0 0 24 24"
-                 fill="white" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
               <polygon points="5,3 19,12 5,21"/>
             </svg>
           </div>
 
-          <!-- Fox 2 Badge -->
           <div class="ktvu-feature__badge">
             <span>KTVU FOX 2</span>
           </div>
@@ -178,21 +189,38 @@
       </a>
     </div>
 
-    <!-- RIGHT: Text Content -->
-    <div class="ktvu-feature__text">
-      <span class="eyebrow ktvu-feature__eyebrow">
-        {{ section.settings.eyebrow }}
-      </span>
+    <!-- RIGHT (40%): Authority Copy -->
+    <div class="ktvu-feature__text reveal">
+      <span class="ktvu-feature__eyebrow">{{ section.settings.eyebrow | default: 'LATEST BROADCAST' }}</span>
+
       <h2 class="serif-font ktvu-feature__heading">
-        {{ section.settings.heading }}
+        {{ section.settings.heading | default: 'LEADING WITH GLOBAL IMPACT' }}
       </h2>
-      <div class="divider"></div>
-      <p class="ktvu-feature__caption">
-        {{ section.settings.caption }}
+
+      <div class="ktvu-feature__rule"></div>
+
+      <p class="ktvu-feature__sub">
+        {{ section.settings.sub_headline | default: 'Mainstream Validation for the House of Vuu' }}
       </p>
-      <a href="{{ section.settings.cta_link | default: '#' }}"
+
+      <p class="ktvu-feature__body">
+        {{ section.settings.body_copy | default: 'Nancy Vuu sits down with KTVU Fox 2 to discuss the architecture of identity, the miraculous journey from the South China Sea to the world\'s most prestigious runways, and the unveiling of her long-awaited book, \'Let There Be Fashion.\' This exclusive feature recognizes Nancy as a definitive global voice for restorative leadership and creative diplomacy.' }}
+      </p>
+
+      {%- if section.settings.pull_quote != blank -%}
+        <div class="ktvu-feature__pull">
+          <p class="ktvu-feature__pull-quote">"{{ section.settings.pull_quote }}"</p>
+          {%- if section.settings.pull_quote_attr != blank -%}
+            <span class="ktvu-feature__pull-attr">{{ section.settings.pull_quote_attr }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <a href="{{ section.settings.cta_link | default: 'https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5' }}"
+         target="_blank"
+         rel="noopener"
          class="btn-editorial">
-        {{ section.settings.cta_label }}
+        {{ section.settings.cta_label | default: 'VIEW FULL TRANSCRIPT & INTERVIEW TOPICS' }}
       </a>
     </div>
 
@@ -207,25 +235,43 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow Label",
-      "default": "As Featured on KTVU Fox 2"
+      "default": "LATEST BROADCAST"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Leading with Global Impact"
+      "default": "LEADING WITH GLOBAL IMPACT"
+    },
+    {
+      "type": "text",
+      "id": "sub_headline",
+      "label": "Sub-Headline",
+      "default": "Mainstream Validation for the House of Vuu"
     },
     {
       "type": "textarea",
-      "id": "caption",
-      "label": "Caption Text",
-      "default": "Watch the exclusive cover story detailing the miraculous origin of the House of Vuu — from surviving the ocean to architecting a global luxury and humanitarian empire."
+      "id": "body_copy",
+      "label": "Body Copy",
+      "default": "Nancy Vuu sits down with KTVU Fox 2 to discuss the architecture of identity, the miraculous journey from the South China Sea to the world's most prestigious runways, and the unveiling of her long-awaited book, 'Let There Be Fashion.' This exclusive feature recognizes Nancy as a definitive global voice for restorative leadership and creative diplomacy."
+    },
+    {
+      "type": "textarea",
+      "id": "pull_quote",
+      "label": "Pull Quote",
+      "default": "A woman who leads with global impact... redefining how we view identity through the lens of fashion."
+    },
+    {
+      "type": "text",
+      "id": "pull_quote_attr",
+      "label": "Pull Quote Attribution",
+      "default": "— KTVU Fox 2"
     },
     {
       "type": "text",
       "id": "cta_label",
       "label": "CTA Button Text",
-      "default": "Pre-Order: Let There Be Fashion"
+      "default": "VIEW FULL TRANSCRIPT & INTERVIEW TOPICS"
     },
     {
       "type": "url",

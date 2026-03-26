@@ -5083,7 +5083,7 @@ div + section {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #FDFCFB;
+  background: #0d0d0d;
 }
 .press-hero__bg {
   position: absolute;
@@ -5113,10 +5113,10 @@ div + section {
   font-size: clamp(3rem, 8vw, 7rem);
   line-height: 1.1;
   margin-bottom: 2rem;
-  color: #1A1A1A;
+  color: #FDFCFB;
 }
 .press-hero__sub {
-  color: #78716C;
+  color: rgba(253,252,251,0.65);
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   max-width: 36rem;
