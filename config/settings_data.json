@@ -18,7 +18,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify://shop_images/Untitled_design_12.png",
+          "logo": "shopify://shop_images/new_logo_tp_ae49d1a9-25af-486d-81d3-6059a3b82d89.png",
           "menu_label": "Menu",
           "cta_label": "private consultation",
           "cta_link": "shopify://pages/book-nancy-vuu",
@@ -28,7 +28,13 @@
           "menu_lifestyle": "lifestyle-menu",
           "menu_location": "San Jose, CA",
           "show_library_link": false,
-          "library_link": ""
+          "library_link": "",
+          "gateway_eyebrow": "Nancy Vuu — House of Legacy",
+          "gateway_heading": "How May We Serve<br>Your Legacy?",
+          "gateway_bridal_link": "",
+          "gateway_suiting_link": "",
+          "gateway_retreats_link": "",
+          "gateway_speaking_link": ""
         }
       },
       "footer": {
