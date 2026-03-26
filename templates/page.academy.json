@@ -52,48 +52,48 @@
     "pillar_nav": {
       "type": "academy-pillar-nav",
       "blocks": {
+        "nav_5": {
+          "type": "link",
+          "settings": {
+            "label": "I. The Maison Attache Program",
+            "anchor": "ambassador"
+          }
+        },
         "nav_1": {
           "type": "link",
           "settings": {
-            "label": "I. Academy",
+            "label": "II. Academy",
             "anchor": "academy"
-          }
-        },
-        "nav_2": {
-          "type": "link",
-          "settings": {
-            "label": "II. Expo",
-            "anchor": "expo"
           }
         },
         "nav_3": {
           "type": "link",
           "settings": {
-            "label": "III. Publishing",
+            "label": "IV. Vuu Publishing",
             "anchor": "publishing"
+          }
+        },
+        "nav_2": {
+          "type": "link",
+          "settings": {
+            "label": "III. DREAM EXPO",
+            "anchor": "expo"
           }
         },
         "nav_4": {
           "type": "link",
           "settings": {
-            "label": "IV. Women CEO",
+            "label": "V. Women CEO",
             "anchor": "ceo"
-          }
-        },
-        "nav_5": {
-          "type": "link",
-          "settings": {
-            "label": "V. Collective",
-            "anchor": "ambassador"
           }
         }
       },
       "block_order": [
+        "nav_5",
         "nav_1",
-        "nav_2",
         "nav_3",
-        "nav_4",
-        "nav_5"
+        "nav_2",
+        "nav_4"
       ],
       "settings": {}
     },
@@ -105,7 +105,7 @@
           "settings": {
             "number": "Pathway 01",
             "title": "Identity & Vision Mastery",
-            "description": "Applicable to all industries—from technology to the arts. We mentor you on the spiritual and practical foundation of identity.",
+            "description": "Applicable to all industries—from technology to the arts. We mentor you on the mindset and practical foundation of identity.",
             "features": "Sovereign Leadership Coaching|Excellence as a Mandate|Strategic Vision Boarding"
           }
         },
@@ -114,14 +114,14 @@
           "settings": {
             "number": "Pathway 02",
             "title": "The Fashion Professional",
-            "description": "A high-level technical track for aspiring models. Building elite portfolios and providing direct industry placement.",
+            "description": "A high-level technical track for aspiring models or designers. Building elite portfolios and providing direct industry placement.",
             "features": "Elite Portfolio Development|Direct Internship Opportunities|Agency Preparation"
           }
         },
         "p3": {
           "type": "pathway",
           "settings": {
-            "number": "Pathway 03",
+            "number": "pathway 03",
             "title": "The Brand Architect",
             "description": "Nancy Vuu guides you from brand DNA and development to connecting you with high-end sourcing and manufacturing.",
             "features": "Sourcing & Manufacturing|Brand DNA Development|Direct Mentorship"
@@ -225,12 +225,21 @@
             "title": "The Family Bespoke Moat",
             "description": "Command the market with the world’s only unified portfolio covering Bridal, Menswear, and Children’s Couture for the total luxury lifestyle."
           }
+        },
+        "benefit_HAyHLW": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 04",
+            "title": "Creative Design Track",
+            "description": "Activate your artistic vision through our exclusive Design Partner incubator. Design bespoke pieces and launch co-branded collections to express your unique creativity and build a lasting name for yourself under the prestige of our global house."
+          }
         }
       },
       "block_order": [
         "b1",
         "b2",
-        "benefit_gUzd9B"
+        "benefit_gUzd9B",
+        "benefit_HAyHLW"
       ],
       "settings": {
         "anchor_id": "ambassador",
@@ -250,10 +259,10 @@
     "hero",
     "manifesto",
     "pillar_nav",
+    "ambassador",
     "pillar_academy",
     "pillar_expo",
     "pillar_publishing",
-    "pillar_ceo",
-    "ambassador"
+    "pillar_ceo"
   ]
 }
