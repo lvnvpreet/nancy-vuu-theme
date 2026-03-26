@@ -355,13 +355,13 @@ body::after {
   padding: 15px 42px;
   font-family: var(--font-sans); font-size: .65rem; font-weight: 500;
   letter-spacing: .3em; text-transform: uppercase; text-decoration: none;
-  background: var(--ink); color: #fff;
-  border: 1px solid var(--ink);
+  background: transparent; color: #fff;
+  border: 1px solid #fff;
   cursor: pointer;
   transition: background .35s ease, color .35s ease, border-color .35s ease;
   opacity: 0; animation: fade-in 1s ease 1.8s forwards;
 }
-.hero__cta:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
+.hero__cta:hover { background: rgba(255,255,255,0.15); color: #fff; border-color: #fff; }
 
 .scroll-indicator {
   position: absolute; bottom: 2rem; left: 50%;
