@@ -117,21 +117,21 @@
         "t1": {
           "type": "title_line",
           "settings": {
-            "text": "Author",
+            "text": "Speaker.",
             "italic": false
           }
         },
         "t2": {
           "type": "title_line",
           "settings": {
-            "text": "Speaker",
+            "text": "Mentor.",
             "italic": true
           }
         },
         "t3": {
           "type": "title_line",
           "settings": {
-            "text": "Global Strategist",
+            "text": "Author.",
             "italic": false
           }
         },
@@ -169,7 +169,7 @@
         "section_id": "speaker",
         "portrait": "shopify://shop_images/untitled-5279.jpg",
         "eyebrow": "The Founder",
-        "bio": "",
+        "bio": "<p>A validated global authority and strategic advisor to high-stakes visionaries. Leveraging her distinct editorial validation, Nancy deconstructs complex operational narratives to engineer unshakeable visible distinction. Through specialized mentorship and proprietary narrative architecture, she provides the private, sovereign infrastructure required to navigate complexity and command your True Appointment on the world stage.</p>",
         "press_id": "press",
         "press_eyebrow": "Press & Media",
         "press_title": "As Seen In",
@@ -230,6 +230,37 @@
       "settings": {
         "eyebrow": "For the Family",
         "title": "The Legacy Collections"
+      }
+    },
+    "legacy_collections_aHRMAD": {
+      "type": "legacy-collections",
+      "blocks": {
+        "collection_card_6jrcN8": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/DSC9102B_1.webp",
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens-couture"
+          }
+        },
+        "collection_card_FEPtF9": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/I1A3307.jpg",
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-me"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_6jrcN8",
+        "collection_card_FEPtF9"
+      ],
+      "settings": {
+        "eyebrow": "For the Family",
+        "title": "House of Vuu Foundation"
       }
     },
     "womens-couture": {
@@ -344,6 +375,7 @@
     "crowns-jewelry",
     "dream-academy",
     "legacy-collections",
+    "legacy_collections_aHRMAD",
     "womens-couture",
     "kingdom",
     "photography",
