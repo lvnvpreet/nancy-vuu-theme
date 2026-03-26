@@ -151,14 +151,6 @@
     "ambassador": {
       "type": "academy-ambassador",
       "blocks": {
-        "benefit_HAyHLW": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 04",
-            "title": "Creative Design Track",
-            "description": "Activate your artistic vision through our exclusive Design Partner incubator. Design bespoke pieces and launch co-branded collections to express your unique creativity and build a lasting name for yourself under the prestige of our global house."
-          }
-        },
         "b1": {
           "type": "benefit",
           "settings": {
@@ -182,13 +174,21 @@
             "title": "The Family Bespoke Moat",
             "description": "Command the market with the world’s only unified portfolio covering Bridal, Menswear, and Children’s Couture for the total luxury lifestyle."
           }
+        },
+        "benefit_HAyHLW": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 04",
+            "title": "Creative Design Track",
+            "description": "Activate your artistic vision through our exclusive Design Partner incubator. Design bespoke pieces and launch co-branded collections to express your unique creativity and build a lasting name for yourself under the prestige of our global house."
+          }
         }
       },
       "block_order": [
-        "benefit_HAyHLW",
         "b1",
         "b2",
-        "benefit_gUzd9B"
+        "benefit_gUzd9B",
+        "benefit_HAyHLW"
       ],
       "settings": {
         "anchor_id": "ambassador",
