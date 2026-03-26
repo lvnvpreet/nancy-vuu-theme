@@ -14,6 +14,7 @@
       "settings": {
         "section_id": "page-hero",
         "image": "shopify://shop_images/IMG_7932.webp",
+        "video_url": "",
         "overlay_opacity": 35,
         "eyebrow": "",
         "title_line_1": "The Dream Academy",
@@ -224,15 +225,15 @@
       ],
       "settings": {
         "anchor_id": "ambassador",
-        "eyebrow": "The Ambassador Program",
-        "heading": "The Global Collective",
-        "lead": "Join the House of Vuu as a brand architect. We are opening our doors to fans and clients to build the future of excellence with us.",
-        "body": "Our Brand Ambassadors are more than representatives—they are partners in prosperity. Through a curated commission-based model, you champion the Vuu standard while creating your own financial legacy.",
-        "cta_text": "Inquire for Partnership",
+        "eyebrow": "The House of vuu partnership",
+        "heading": "The Maison Attache Program",
+        "lead": "We are not looking for representatives; we are appointing envoys. The House of Vuu invites a select group of visionaries and industry leaders to join our global elite as Maison Attachés.\n\nInherit the prestige of a house featured on KTVU Fox 2, Vogue, and the world’s most elite red carpets. As a Maison Attaché, you possess the \"Category of One\" advantage: the ability to clothe the entire family for all occasions in bespoke couture and suiting. Your success is not just a commission—it is a legacy woven into the fabric of our house.",
+        "body": "BENEFIT 01: Elite Profit Participation\nAccess an industry-leading, high-margin commission structure designed for those who manage high-net-worth portfolios. No inventory risk. No overhead. Just pure profitability from day one.\n\nBENEFIT 02: Inherited Brand Equity\nSkip decades of brand building. Step directly into the authority of a house that styles the Oscars, Grammys, and Cannes Film Festival.\n\nBENEFIT 03: The Family Bespoke Moat\nCommand the market with the world’s only unified portfolio covering Bridal, Menswear, and Children’s Couture for the total luxury lifestyle.",
+        "cta_text": "REQUEST THE EXECUTIVE DOSSIER",
         "cta_link": "",
         "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "floating_eyebrow": "Shared Growth",
-        "floating_quote": "\"Your success is woven into the fabric of our house.\""
+        "floating_quote": "\"We provide the master artisan craftsmanship; you provide the elite relationship. Together, we dress the world’s legacy.\""
       }
     }
   },
