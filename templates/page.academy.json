@@ -114,14 +114,14 @@
           "settings": {
             "number": "Pathway 02",
             "title": "The Fashion Professional",
-            "description": "A high-level technical track for aspiring models. Building elite portfolios and providing direct industry placement.",
+            "description": "A high-level technical track for aspiring models or designers. Building elite portfolios and providing direct industry placement.",
             "features": "Elite Portfolio Development|Direct Internship Opportunities|Agency Preparation"
           }
         },
         "p3": {
           "type": "pathway",
           "settings": {
-            "number": "Pathway 03",
+            "number": "a launchpad for the community to believe then live dreams realized",
             "title": "The Brand Architect",
             "description": "Nancy Vuu guides you from brand DNA and development to connecting you with high-end sourcing and manufacturing.",
             "features": "Sourcing & Manufacturing|Brand DNA Development|Direct Mentorship"
