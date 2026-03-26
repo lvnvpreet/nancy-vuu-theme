@@ -117,21 +117,21 @@
         "t1": {
           "type": "title_line",
           "settings": {
-            "text": "Speaker.",
+            "text": "Author",
             "italic": false
           }
         },
         "t2": {
           "type": "title_line",
           "settings": {
-            "text": "Mentor.",
+            "text": "Speaker",
             "italic": true
           }
         },
         "t3": {
           "type": "title_line",
           "settings": {
-            "text": "Author.",
+            "text": "Global Strategist",
             "italic": false
           }
         },
@@ -230,37 +230,6 @@
       "settings": {
         "eyebrow": "For the Family",
         "title": "The Legacy Collections"
-      }
-    },
-    "legacy_collections_aHRMAD": {
-      "type": "legacy-collections",
-      "blocks": {
-        "collection_card_6jrcN8": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/DSC9102B_1.webp",
-            "title": "Children's Couture",
-            "cta": "Shop Kids",
-            "link": "/collections/childrens-couture"
-          }
-        },
-        "collection_card_FEPtF9": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/I1A3307.jpg",
-            "title": "Mommy & Me",
-            "cta": "Shop Matching Sets",
-            "link": "/collections/mommy-me"
-          }
-        }
-      },
-      "block_order": [
-        "collection_card_6jrcN8",
-        "collection_card_FEPtF9"
-      ],
-      "settings": {
-        "eyebrow": "For the Family",
-        "title": "House of Vuu Foundation"
       }
     },
     "womens-couture": {
@@ -375,7 +344,6 @@
     "crowns-jewelry",
     "dream-academy",
     "legacy-collections",
-    "legacy_collections_aHRMAD",
     "womens-couture",
     "kingdom",
     "photography",
