@@ -31,9 +31,9 @@
 
     <!-- Right: CTA + Cart -->
     <div class="nav-right">
-      <a href="{{ section.settings.cta_link | default: '#' }}" class="nav-cta nav-cta--desktop">
-        {{- section.settings.cta_label | default: 'Request Consultation' -}}
-      </a>
+      <button class="nav-cta nav-cta--desktop" data-gateway-open aria-haspopup="dialog">
+        {{- section.settings.cta_label | default: 'Request An Audience With Nancy Vuu' -}}
+      </button>
       <button
         id="cart-toggle-btn"
         onclick="openCart()"
@@ -95,6 +95,329 @@
 
 <!-- Cart Drawer -->
 {% render 'cart-drawer' %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     LEGACY GATEWAY MODAL
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* ── Gateway Modal ───────────────────────────────────────── */
+  .nv-gateway-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 5, 4, 0.97);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2rem 1.25rem;
+    overflow-y: auto;
+  }
+  .nv-gateway-modal--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Close button */
+  .nv-gateway-modal__close {
+    position: fixed;
+    top: 1.75rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.35);
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+  }
+  .nv-gateway-modal__close:hover {
+    color: #c5a059;
+    transform: rotate(90deg);
+  }
+
+  /* Inner wrapper — animates up on open */
+  .nv-gateway-inner {
+    width: 100%;
+    max-width: 860px;
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    transform: translateY(24px);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nv-gateway-modal--open .nv-gateway-inner {
+    transform: translateY(0);
+  }
+
+  /* Crown ornament */
+  .nv-gateway-ornament {
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .nv-gateway-ornament__line {
+    width: 40px;
+    height: 1px;
+    background: rgba(197, 160, 89, 0.4);
+  }
+  .nv-gateway-ornament__dot {
+    width: 6px;
+    height: 6px;
+    background: #c5a059;
+    border-radius: 50%;
+  }
+
+  /* Eyebrow */
+  .nv-gateway-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #c5a059;
+    margin: 0 0 1.25rem;
+  }
+
+  /* Main heading */
+  .nv-gateway-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.25;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Decorative divider */
+  .nv-gateway-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto 3rem;
+  }
+  .nv-gateway-divider::before,
+  .nv-gateway-divider::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to var(--dir, right), transparent, rgba(197,160,89,0.5));
+  }
+  .nv-gateway-divider::before { --dir: right; }
+  .nv-gateway-divider::after  { --dir: left;  }
+  .nv-gateway-divider-gem {
+    width: 5px;
+    height: 5px;
+    background: #c5a059;
+    transform: rotate(45deg);
+  }
+
+  /* 2×2 pathway grid */
+  .nv-gateway-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.12);
+    text-align: left;
+  }
+
+  /* Individual pathway card */
+  .nv-gateway-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 2rem 2rem;
+    background: #0d0c0b;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+    cursor: pointer;
+  }
+  .nv-gateway-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #c5a059;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nv-gateway-card:hover {
+    background: #141210;
+  }
+  .nv-gateway-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* Numeral */
+  .nv-gateway-card__numeral {
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #c5a059;
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Card title */
+  .nv-gateway-card__title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0 0 0.85rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* Card description */
+  .nv-gateway-card__desc {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Arrow */
+  .nv-gateway-card__arrow {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: rgba(197, 160, 89, 0.4);
+    transition: color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 0;
+  }
+  .nv-gateway-card:hover .nv-gateway-card__arrow {
+    color: #c5a059;
+    transform: translateX(5px);
+  }
+
+  /* Footer note */
+  .nv-gateway-footer {
+    margin-top: 2.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .nv-gateway-grid {
+      grid-template-columns: 1fr;
+    }
+    .nv-gateway-card {
+      padding: 2rem 1.5rem 1.75rem;
+    }
+    .nv-gateway-heading {
+      font-size: 1.75rem;
+    }
+    .nv-gateway-modal__close {
+      top: 1.25rem;
+      right: 1.25rem;
+    }
+  }
+  @media (max-width: 400px) {
+    .nv-gateway-card {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+</style>
+
+<div
+  id="nv-gateway-modal"
+  class="nv-gateway-modal"
+  aria-hidden="true"
+  aria-modal="true"
+  role="dialog"
+  aria-labelledby="nv-gateway-heading">
+
+  <button class="nv-gateway-modal__close" data-gateway-close aria-label="Close">
+    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+
+  <div class="nv-gateway-inner">
+
+    <!-- Ornament -->
+    <div class="nv-gateway-ornament" aria-hidden="true">
+      <div class="nv-gateway-ornament__line"></div>
+      <div class="nv-gateway-ornament__dot"></div>
+      <div class="nv-gateway-ornament__line" style="transform:scaleX(-1);"></div>
+    </div>
+
+    <!-- Eyebrow -->
+    <p class="nv-gateway-eyebrow">{{ section.settings.gateway_eyebrow | default: 'Nancy Vuu — House of Legacy' }}</p>
+
+    <!-- Heading -->
+    <h2 id="nv-gateway-heading" class="nv-gateway-heading">
+      {{ section.settings.gateway_heading | default: 'How May We Serve<br>Your Legacy?' }}
+    </h2>
+
+    <!-- Divider gem -->
+    <div class="nv-gateway-divider">
+      <div class="nv-gateway-divider-gem"></div>
+    </div>
+
+    <!-- 4 Pathways -->
+    <div class="nv-gateway-grid">
+
+      <!-- I: Sartorial Bridal -->
+      <a href="{{ section.settings.gateway_bridal_link | default: '/pages/bridal' }}" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">I — Sartorial</span>
+        <h3 class="nv-gateway-card__title">Sartorial Bridal<br>Commissions</h3>
+        <p class="nv-gateway-card__desc">Bespoke couture crafted for the bride who commands the room — from first silhouette to final fit.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+      <!-- II: Bespoke Suiting -->
+      <a href="{{ section.settings.gateway_suiting_link | default: '/pages/seth-eden' }}" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">II — Atelier</span>
+        <h3 class="nv-gateway-card__title">Bespoke Seth Eden<br>Suiting</h3>
+        <p class="nv-gateway-card__desc">Custom suiting commissioned for the man who leads with sovereign authority and timeless distinction.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+      <!-- III: Strategic Immersions -->
+      <a href="{{ section.settings.gateway_retreats_link | default: '/pages/retreats' }}" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">III — Immersions</span>
+        <h3 class="nv-gateway-card__title">Strategic<br>Immersions</h3>
+        <p class="nv-gateway-card__desc">High-level alignment retreats architected for visionary leaders ready to forge their next chapter.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+      <!-- IV: Media & Keynotes -->
+      <a href="{{ section.settings.gateway_speaking_link | default: '/pages/book-nv' }}" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">IV — Global Stage</span>
+        <h3 class="nv-gateway-card__title">Media &amp; Global<br>Keynotes</h3>
+        <p class="nv-gateway-card__desc">Invite Nancy Vuu to architect your next defining cultural or corporate moment on a world stage.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+    </div>
+
+    <p class="nv-gateway-footer">Every inquiry is received in confidence &amp; with intention</p>
+
+  </div>
+</div>
 
 {% schema %}
 {
@@ -161,6 +484,42 @@
       "type": "url",
       "id": "library_link",
       "label": "The Library page link"
+    },
+    {
+      "type": "header",
+      "content": "Legacy Gateway Modal"
+    },
+    {
+      "type": "text",
+      "id": "gateway_eyebrow",
+      "label": "Gateway eyebrow text",
+      "default": "Nancy Vuu — House of Legacy"
+    },
+    {
+      "type": "text",
+      "id": "gateway_heading",
+      "label": "Gateway heading",
+      "default": "How May We Serve<br>Your Legacy?"
+    },
+    {
+      "type": "url",
+      "id": "gateway_bridal_link",
+      "label": "Pathway I: Sartorial Bridal Commissions link"
+    },
+    {
+      "type": "url",
+      "id": "gateway_suiting_link",
+      "label": "Pathway II: Bespoke Seth Eden Suiting link"
+    },
+    {
+      "type": "url",
+      "id": "gateway_retreats_link",
+      "label": "Pathway III: Strategic Immersions (Retreats) link"
+    },
+    {
+      "type": "url",
+      "id": "gateway_speaking_link",
+      "label": "Pathway IV: Media & Global Keynotes (Book NV) link"
     }
   ]
 }

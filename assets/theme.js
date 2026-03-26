@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (menu && !menu.classList.contains('menu-overlay--closed')) window.toggleMenu();
       closeCart();
       window.closeAudienceModal();
+      window.closeGatewayModal();
     }
   });
 
@@ -237,6 +238,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ── LEGACY GATEWAY MODAL ─────────────────────────────────
+  window.openGatewayModal = function() {
+    var modal = document.getElementById('nv-gateway-modal');
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('nv-gateway-modal--open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeGatewayModal = function() {
+    var modal = document.getElementById('nv-gateway-modal');
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('nv-gateway-modal--open');
+    document.body.style.overflow = '';
+  };
+
   // ── AUDIENCE MODAL ────────────────────────────────────────
   window.openAudienceModal = function(retreatType) {
     var modal = document.getElementById('audience-modal');
@@ -297,6 +315,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Delegate [data-audience-open] clicks
   document.addEventListener('click', function(e) {
+    // Gateway modal
+    var gatewayOpen = e.target.closest('[data-gateway-open]');
+    if (gatewayOpen) {
+      e.preventDefault();
+      window.openGatewayModal();
+      return;
+    }
+    var gatewayClose = e.target.closest('[data-gateway-close]');
+    if (gatewayClose) {
+      e.preventDefault();
+      window.closeGatewayModal();
+      return;
+    }
+    // Backdrop click closes gateway modal
+    var gatewayModal = document.getElementById('nv-gateway-modal');
+    if (gatewayModal && gatewayModal.classList.contains('nv-gateway-modal--open') && e.target === gatewayModal) {
+      window.closeGatewayModal();
+      return;
+    }
+
     var openBtn = e.target.closest('[data-audience-open]');
     if (openBtn) {
       e.preventDefault();
