@@ -202,6 +202,22 @@
     "ambassador": {
       "type": "academy-ambassador",
       "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 01",
+            "title": "Elite Profit Participation",
+            "description": "Access an industry-leading, high-margin commission structure designed for those who manage high-net-worth portfolios. No inventory risk. No overhead. Just pure profitability from day one."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 02",
+            "title": "Inherited Brand Equity",
+            "description": "Skip decades of brand building. Step directly into the authority of a house that styles the Oscars, Grammys, and Cannes Film Festival."
+          }
+        },
         "benefit_gUzd9B": {
           "type": "benefit",
           "settings": {
@@ -209,28 +225,12 @@
             "title": "The Family Bespoke Moat",
             "description": "The Family Bespoke Moat\nCommand the market with the world’s only unified portfolio covering Bridal, Menswear, and Children’s Couture for the total luxury lifestyle."
           }
-        },
-        "b1": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 01",
-            "title": "Commission",
-            "description": "Elite Profit Participation -\nAccess an industry-leading, high-margin commission structure designed for those who manage high-net-worth portfolios. No inventory risk. No overhead. Just pure profitability from day one."
-          }
-        },
-        "b2": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 02",
-            "title": "Curated Assets",
-            "description": "Inherited Brand Equity -\nSkip decades of brand building. Step directly into the authority of a house that styles the Oscars, Grammys, and Cannes Film Festival."
-          }
         }
       },
       "block_order": [
-        "benefit_gUzd9B",
         "b1",
-        "b2"
+        "b2",
+        "benefit_gUzd9B"
       ],
       "settings": {
         "anchor_id": "ambassador",
