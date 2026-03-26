@@ -13,14 +13,14 @@
       "type": "page-hero",
       "settings": {
         "section_id": "page-hero",
-        "image": "shopify://shop_images/IMG_7932.webp",
+        "image": "shopify://shop_images/iStock-184116730.jpg",
         "video_url": "",
         "overlay_opacity": 35,
-        "eyebrow": "",
-        "title_line_1": "The Dream Academy",
+        "eyebrow": "A HOUSE OF VUU GLOBAL INITIATIVE",
+        "title_line_1": "Maison Arise",
         "title_line_2": "",
         "title_line_3": "",
-        "subtitle": "The House of Vuu",
+        "subtitle": "A Sovereign House of Magnificent Excellence & Marketplace Activation",
         "subtitle_serif": false,
         "tagline": "",
         "cta_label": "",
@@ -34,7 +34,7 @@
       "settings": {
         "eyebrow": "",
         "quote": "\"We do not simply build brands; we architect legacies of excellence rooted in true identity.\"",
-        "attribution": "The Dream Academy Global Manifesto",
+        "attribution": "The Maison Arise Global Manifesto",
         "body": "",
         "bg_color": "#ffffff",
         "text_color": "#111111",
@@ -96,6 +96,61 @@
         "nav_4"
       ],
       "settings": {}
+    },
+    "ambassador": {
+      "type": "academy-ambassador",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 01",
+            "title": "Elite Profit Participation",
+            "description": "Access an industry-leading, high-margin commission structure designed for those who manage high-net-worth portfolios. No inventory risk. No overhead. Just pure profitability from day one."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 02",
+            "title": "Inherited Brand Equity",
+            "description": "Skip decades of brand building. Step directly into the authority of a house that styles the Oscars, Grammys, and Cannes Film Festival."
+          }
+        },
+        "benefit_gUzd9B": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 03",
+            "title": "The Family Bespoke Moat",
+            "description": "Command the market with the world’s only unified portfolio covering Bridal, Menswear, and Children’s Couture for the total luxury lifestyle."
+          }
+        },
+        "benefit_HAyHLW": {
+          "type": "benefit",
+          "settings": {
+            "number": "Benefit 04",
+            "title": "Creative Design Track",
+            "description": "Activate your artistic vision through our exclusive Design Partner incubator. Design bespoke pieces and launch co-branded collections to express your unique creativity and build a lasting name for yourself under the prestige of our global house."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "benefit_gUzd9B",
+        "benefit_HAyHLW"
+      ],
+      "settings": {
+        "anchor_id": "ambassador",
+        "eyebrow": "The House of vuu partnership",
+        "heading": "The Maison Attache Program",
+        "lead": "We are not looking for representatives; we are appointing envoys. The House of Vuu invites a select group of visionaries and industry leaders to join our global elite as Maison Attachés.",
+        "body": "Inherit the prestige of a house featured on KTVU Fox 2, Vogue, Harper's Bazaar, and the world’s most elite red carpets. As a Maison Attaché, you possess the \"Category of One\" advantage: the ability to clothe the entire family for all occasions in bespoke couture, bridal and suiting. Your success is not just a commission—it is a legacy woven into the fabric of our house.",
+        "cta_text": "REQUEST THE EXECUTIVE DOSSIER",
+        "cta_link": "#inquiry",
+        "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
+        "floating_eyebrow": "Shared Growth",
+        "floating_quote": "\"We provide the master artisan craftsmanship; you provide the elite relationship. Together, we dress the world’s legacy.\""
+      }
     },
     "pillar_academy": {
       "type": "academy-pillar",
@@ -197,61 +252,6 @@
         "cta_link": "",
         "image": "shopify://shop_images/untitled-5330_3.webp",
         "show_play_button": false
-      }
-    },
-    "ambassador": {
-      "type": "academy-ambassador",
-      "blocks": {
-        "b1": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 01",
-            "title": "Elite Profit Participation",
-            "description": "Access an industry-leading, high-margin commission structure designed for those who manage high-net-worth portfolios. No inventory risk. No overhead. Just pure profitability from day one."
-          }
-        },
-        "b2": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 02",
-            "title": "Inherited Brand Equity",
-            "description": "Skip decades of brand building. Step directly into the authority of a house that styles the Oscars, Grammys, and Cannes Film Festival."
-          }
-        },
-        "benefit_gUzd9B": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 03",
-            "title": "The Family Bespoke Moat",
-            "description": "Command the market with the world’s only unified portfolio covering Bridal, Menswear, and Children’s Couture for the total luxury lifestyle."
-          }
-        },
-        "benefit_HAyHLW": {
-          "type": "benefit",
-          "settings": {
-            "number": "Benefit 04",
-            "title": "Creative Design Track",
-            "description": "Activate your artistic vision through our exclusive Design Partner incubator. Design bespoke pieces and launch co-branded collections to express your unique creativity and build a lasting name for yourself under the prestige of our global house."
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "benefit_gUzd9B",
-        "benefit_HAyHLW"
-      ],
-      "settings": {
-        "anchor_id": "ambassador",
-        "eyebrow": "The House of vuu partnership",
-        "heading": "The Maison Attache Program",
-        "lead": "We are not looking for representatives; we are appointing envoys. The House of Vuu invites a select group of visionaries and industry leaders to join our global elite as Maison Attachés.",
-        "body": "Inherit the prestige of a house featured on KTVU Fox 2, Vogue, Harper's Bazaar, and the world’s most elite red carpets. As a Maison Attaché, you possess the \"Category of One\" advantage: the ability to clothe the entire family for all occasions in bespoke couture, bridal and suiting. Your success is not just a commission—it is a legacy woven into the fabric of our house.",
-        "cta_text": "REQUEST THE EXECUTIVE DOSSIER",
-        "cta_link": "#inquiry",
-        "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
-        "floating_eyebrow": "Shared Growth",
-        "floating_quote": "\"We provide the master artisan craftsmanship; you provide the elite relationship. Together, we dress the world’s legacy.\""
       }
     }
   },
