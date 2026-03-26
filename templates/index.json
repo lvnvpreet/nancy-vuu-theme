@@ -303,11 +303,11 @@
     "dream-academy": {
       "type": "atelier-academy",
       "settings": {
-        "image": "shopify://shop_images/DREAM_ACADEMY_IMAGE.webp",
-        "eyebrow": "Education",
+        "image": "shopify://shop_images/iStock-118854546.jpg",
+        "eyebrow": "The House of Vuu Global Initiative",
         "title_line_1": "Maison Arise",
-        "title_line_2": "",
-        "body": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
+        "title_line_2": "A Sovereign House of Magnificent Excellence & Marketplace Activation",
+        "body": "Maison Arise is the sovereign institution of Nancy Vuu Inc., dedicated to the awakening and strategic deployment of visionaries across the globe. As a modular sanctuary and civic anchor, we provide the elite trade mastery and  resources to manifest \"Heavenly Blueprints\" into tangible marketplace reality.\n\nFrom Governance and Media to Horticulture and the Arts, we invite the world's dreamers to leave behind the ordinary and build with a standard of magnificence, fame, and splendor that compels the nations to run toward the light of true excellence.",
         "cta_label": "Join The Academy",
         "cta_link": "/pages/dream-academy"
       }
