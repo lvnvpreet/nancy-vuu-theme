@@ -111,6 +111,73 @@
         "explore_link": "/pages/retreats"
       }
     },
+    "speaker-academy": {
+      "type": "speaker-academy",
+      "blocks": {
+        "t1": {
+          "type": "title_line",
+          "settings": {
+            "text": "Speaker.",
+            "italic": false
+          }
+        },
+        "t2": {
+          "type": "title_line",
+          "settings": {
+            "text": "Mentor.",
+            "italic": true
+          }
+        },
+        "t3": {
+          "type": "title_line",
+          "settings": {
+            "text": "Author.",
+            "italic": false
+          }
+        },
+        "l1": {
+          "type": "link",
+          "settings": {
+            "label": "Book for Speaking",
+            "url": "shopify://pages/book-nancy-vuu"
+          }
+        },
+        "l2": {
+          "type": "link",
+          "settings": {
+            "label": "Mentorship Program",
+            "url": "shopify://pages/book-nancy-vuu"
+          }
+        },
+        "l3": {
+          "type": "link",
+          "settings": {
+            "label": "Buy The Book",
+            "url": "shopify://pages/the-library"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "section_id": "speaker",
+        "portrait": "shopify://shop_images/untitled-5279.jpg",
+        "eyebrow": "The Founder",
+        "bio": "",
+        "press_id": "press",
+        "press_eyebrow": "Press & Media",
+        "press_title": "As Seen In",
+        "press_description": "Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide.",
+        "press_cta": "View Press",
+        "press_link": "shopify://pages/nancy-uvv-press"
+      }
+    },
     "crowns-jewelry": {
       "type": "crowns-jewelry",
       "settings": {
@@ -245,73 +312,6 @@
         "show_marquee": true
       }
     },
-    "speaker-academy": {
-      "type": "speaker-academy",
-      "blocks": {
-        "t1": {
-          "type": "title_line",
-          "settings": {
-            "text": "Speaker.",
-            "italic": false
-          }
-        },
-        "t2": {
-          "type": "title_line",
-          "settings": {
-            "text": "Mentor.",
-            "italic": true
-          }
-        },
-        "t3": {
-          "type": "title_line",
-          "settings": {
-            "text": "Author.",
-            "italic": false
-          }
-        },
-        "l1": {
-          "type": "link",
-          "settings": {
-            "label": "Book for Speaking",
-            "url": "shopify://pages/book-nancy-vuu"
-          }
-        },
-        "l2": {
-          "type": "link",
-          "settings": {
-            "label": "Mentorship Program",
-            "url": "shopify://pages/book-nancy-vuu"
-          }
-        },
-        "l3": {
-          "type": "link",
-          "settings": {
-            "label": "Buy The Book",
-            "url": "shopify://pages/the-library"
-          }
-        }
-      },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "l1",
-        "l2",
-        "l3"
-      ],
-      "settings": {
-        "section_id": "speaker",
-        "portrait": "shopify://shop_images/untitled-5279.jpg",
-        "eyebrow": "The Founder",
-        "bio": "",
-        "press_id": "press",
-        "press_eyebrow": "Press & Media",
-        "press_title": "As Seen In",
-        "press_description": "Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide.",
-        "press_cta": "View Press",
-        "press_link": "shopify://pages/nancy-uvv-press"
-      }
-    },
     "vuu-foundation": {
       "type": "vuu-foundation",
       "settings": {
@@ -340,8 +340,8 @@
     "bridal-bespoke",
     "mens-suits",
     "retreats",
-    "crowns-jewelry",
     "speaker-academy",
+    "crowns-jewelry",
     "dream-academy",
     "womens-couture",
     "legacy-collections",
