@@ -62,28 +62,28 @@
         "nav_2": {
           "type": "link",
           "settings": {
-            "label": "II. Expo",
+            "label": "II. Maison Attache Program",
             "anchor": "expo"
           }
         },
         "nav_3": {
           "type": "link",
           "settings": {
-            "label": "III. Publishing",
+            "label": "III. Dream Expo",
             "anchor": "publishing"
           }
         },
         "nav_4": {
           "type": "link",
           "settings": {
-            "label": "IV. Women CEO",
+            "label": "IV. Vuu Publishing",
             "anchor": "ceo"
           }
         },
         "nav_5": {
           "type": "link",
           "settings": {
-            "label": "V. Collective",
+            "label": "V. Women CEO",
             "anchor": "ambassador"
           }
         }
