@@ -201,18 +201,6 @@
         "cta_link": "/pages/dream-academy"
       }
     },
-    "womens-couture": {
-      "type": "womens-couture",
-      "settings": {
-        "section_id": "womens-couture",
-        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
-        "eyebrow": "Collection",
-        "title": "Women's Couture",
-        "tagline": "Elegance · Power · Grace",
-        "cta_label": "Explore Collection",
-        "cta_link": "/collections/womens-couture"
-      }
-    },
     "legacy-collections": {
       "type": "legacy-collections",
       "blocks": {
@@ -242,6 +230,49 @@
       "settings": {
         "eyebrow": "For the Family",
         "title": "The Legacy Collections"
+      }
+    },
+    "legacy_collections_aHRMAD": {
+      "type": "legacy-collections",
+      "blocks": {
+        "collection_card_6jrcN8": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/DSC9102B_1.webp",
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens-couture"
+          }
+        },
+        "collection_card_FEPtF9": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/I1A3307.jpg",
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-me"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_6jrcN8",
+        "collection_card_FEPtF9"
+      ],
+      "settings": {
+        "eyebrow": "For the Family",
+        "title": "The Legacy Collections"
+      }
+    },
+    "womens-couture": {
+      "type": "womens-couture",
+      "settings": {
+        "section_id": "womens-couture",
+        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
+        "eyebrow": "Collection",
+        "title": "Women's Couture",
+        "tagline": "Elegance · Power · Grace",
+        "cta_label": "Explore Collection",
+        "cta_link": "/collections/womens-couture"
       }
     },
     "kingdom": {
@@ -343,8 +374,9 @@
     "speaker-academy",
     "crowns-jewelry",
     "dream-academy",
-    "womens-couture",
     "legacy-collections",
+    "legacy_collections_aHRMAD",
+    "womens-couture",
     "kingdom",
     "photography",
     "vuu-foundation",
