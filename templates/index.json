@@ -18,7 +18,7 @@
         "headline_end": "HEAVEN",
         "subheading": "Tailored for Earth",
         "text_color": "#ffffff",
-        "cta_label": "Request A Consultation",
+        "cta_label": "Begin your commission",
         "cta_link": "/pages/atelier#inquiry"
       }
     },
@@ -300,16 +300,6 @@
         "press_link": "shopify://pages/nancy-uvv-press"
       }
     },
-    "ktvu-feature": {
-      "type": "ktvu-feature",
-      "settings": {
-        "eyebrow": "As Featured on KTVU Fox 2",
-        "heading": "Leading with Global Impact",
-        "caption": "Watch the exclusive cover story detailing the miraculous origin of the House of Vuu — from surviving the ocean to architecting a global luxury and humanitarian empire.",
-        "cta_label": "Pre-Order: Let There Be Fashion",
-        "cta_link": "/products/let-there-be-fashion-preorder"
-      }
-    },
     "dream-academy": {
       "type": "atelier-academy",
       "settings": {
@@ -356,7 +346,6 @@
     "kingdom",
     "photography",
     "speaker-academy",
-    "ktvu-feature",
     "dream-academy",
     "vuu-foundation",
     "cross-sell-luxury"

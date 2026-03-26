@@ -12,7 +12,10 @@
     "press_hero": {
       "type": "press-hero",
       "settings": {
-        "bg_image": "shopify://shop_images/nancy-vuu-public-speaking.jpg",
+        "bg_image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
+        "use_video": false,
+        "bg_video": "",
+        "media_opacity": 25,
         "eyebrow": "Voice of Authority",
         "title_line_1": "The Architecture",
         "title_italic": "of",
@@ -23,9 +26,15 @@
     "ktvu_press_feature": {
       "type": "ktvu-feature",
       "settings": {
+<<<<<<< HEAD
         "eyebrow": "INSTITUTIONAL VALIDATION: THE NANCY VUU FREQUENCY",
         "heading": "KTVU FOX 2 | WOMEN WHO LEAD: GLOBAL IMPACT",
         "caption": "In a recent feature on KTVU Fox 2, Nancy Vuu was recognized as a global leader architecting restoration through design and strategic intervention. This segment explores the 'Refugee-to-Cannes' Blueprint and the unshakeable visible authority required to lead in the modern era.",
+=======
+        "eyebrow": "Latest Broadcast — KTVU Fox 2 Cover Story",
+        "heading": "From Runway to Leadership",
+        "caption": "Nancy Vuu takes time with Fox 2 to discuss the intersection of high fashion, diplomacy, and global human advocacy.",
+>>>>>>> 39fa0ea283f0da8f315f35ed46cbb210a4eb9198
         "cta_label": "Book Nancy for Speaking & Media",
         "cta_link": "/pages/book-nancy-vuu"
       }
@@ -188,12 +197,12 @@
         "title_line_1": "Let There",
         "title_italic": "Be Fashion.",
         "quote": "A Story of Style, Spirit, and a Life Transformed.",
-        "body_1": "<p>This isn’t just a book—it’s a <strong>revelation</strong>. Creative visionary Nancy Vuu invites you behind the runway into the deeper layers of her life. Woven through intimate stories of transformation, it unveils the narrative of a woman who dared to leap into purpose.</p>",
+        "body_1": "<p>›</p>",
         "body_2": "<p>From dark closets of self-doubt to the bright runways of purpose, this book speaks to everyone seeking to rediscover identity and spiritual clarity through the lens of fashion.</p>",
         "cta_1_label": "Request Speaking / Book Tour",
         "cta_1_link": "",
         "cta_2_label": "Purchase Volume",
-        "cta_2_link": ""
+        "cta_2_link": "shopify://products/let-there-be-fashion-preorder"
       }
     },
     "press_museum": {
