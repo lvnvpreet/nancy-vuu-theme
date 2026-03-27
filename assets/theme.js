@@ -432,3 +432,132 @@ window.nvCloseSuccess = function() {
   document.getElementById('nv-success-overlay').style.display = 'none';
   document.body.style.overflow = '';
 };
+
+// ── DOSSIER MODAL ─────────────────────────────────────────
+window.nvOpenDossier = function() {
+  var modal = document.getElementById('nv-dossier-modal');
+  if (!modal) return;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+window.nvCloseDossier = function() {
+  var modal = document.getElementById('nv-dossier-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(function() {
+    var wrap = document.getElementById('nv-dossier-form-wrap');
+    var success = document.getElementById('nv-dossier-success');
+    if (wrap) wrap.style.display = 'block';
+    if (success) success.style.display = 'none';
+    var form = document.getElementById('nv-dossier-form');
+    if (form) form.reset();
+    var errors = document.getElementById('nv-dossier-errors');
+    if (errors) { errors.style.display = 'none'; errors.textContent = ''; }
+  }, 400);
+};
+
+var dossierModal = document.getElementById('nv-dossier-modal');
+if (dossierModal) {
+  dossierModal.addEventListener('click', function(e) {
+    if (e.target === this) window.nvCloseDossier();
+  });
+}
+
+var dossierForm = document.getElementById('nv-dossier-form');
+if (dossierForm) {
+  dossierForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var legalCheck = document.getElementById('dossier-legal');
+    if (!legalCheck || !legalCheck.checked) {
+      var errors = document.getElementById('nv-dossier-errors');
+      if (errors) {
+        errors.style.display = 'block';
+        errors.textContent = 'Please accept the terms to proceed.';
+      }
+      return;
+    }
+    var formData = new FormData(dossierForm);
+    fetch('/contact', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(function() {
+      document.getElementById('nv-dossier-form-wrap').style.display = 'none';
+      document.getElementById('nv-dossier-success').style.display = 'block';
+    }).catch(function() {
+      dossierForm.submit();
+    });
+  });
+}
+
+// ── GENERIC INQUIRY MODAL ─────────────────────────────────
+var nvInquiryData = {
+  academy: {
+    eyebrow: 'The Creative Academy',
+    title: 'Enrollment Inquiry',
+    desc: 'Submit your interest in The Creative Academy. Our team will reach out with enrollment details and available pathways.',
+    tag: 'creative-academy-inquiry'
+  },
+  womenceo: {
+    eyebrow: 'Women CEO Collective',
+    title: 'Apply for Access',
+    desc: 'Submit your application for the Women CEO Collective. This is an elite, invitation-based network for high-level female executives.',
+    tag: 'women-ceo-inquiry'
+  }
+};
+
+window.nvOpenInquiry = function(vertical) {
+  var data = nvInquiryData[vertical];
+  if (!data) return;
+  document.getElementById('nv-inquiry-eyebrow').textContent = data.eyebrow;
+  document.getElementById('nv-inquiry-title').textContent = data.title;
+  document.getElementById('nv-inquiry-desc').textContent = data.desc;
+  var tag = document.getElementById('nv-inquiry-tag');
+  if (tag) tag.value = data.tag;
+  var modal = document.getElementById('nv-inquiry-modal');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+};
+
+window.nvCloseInquiry = function() {
+  var modal = document.getElementById('nv-inquiry-modal');
+  if (!modal) return;
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+  setTimeout(function() {
+    var wrap = document.getElementById('nv-inquiry-form-wrap');
+    var success = document.getElementById('nv-inquiry-success');
+    if (wrap) wrap.style.display = 'block';
+    if (success) success.style.display = 'none';
+    var form = document.getElementById('nv-inquiry-form');
+    if (form) form.reset();
+  }, 400);
+};
+
+var inquiryModal = document.getElementById('nv-inquiry-modal');
+if (inquiryModal) {
+  inquiryModal.addEventListener('click', function(e) {
+    if (e.target === this) window.nvCloseInquiry();
+  });
+}
+
+var inquiryForm = document.getElementById('nv-inquiry-form');
+if (inquiryForm) {
+  inquiryForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var formData = new FormData(inquiryForm);
+    fetch('/contact', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(function() {
+      document.getElementById('nv-inquiry-form-wrap').style.display = 'none';
+      document.getElementById('nv-inquiry-success').style.display = 'block';
+    }).catch(function() {
+      inquiryForm.submit();
+    });
+  });
+}
+

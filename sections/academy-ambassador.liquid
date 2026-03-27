@@ -32,7 +32,13 @@
         {%- endif -%}
 
         {%- if section.settings.cta_text != blank -%}
-          <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+          {%- if section.settings.cta_type == 'dossier' -%}
+            <button type="button" class="btn-luxury" onclick="nvOpenDossier()">{{ section.settings.cta_text }}</button>
+          {%- elsif section.settings.cta_type == 'inquiry' -%}
+            <button type="button" class="btn-luxury" onclick="nvOpenInquiry('{{ section.settings.cta_vertical }}')">{{ section.settings.cta_text }}</button>
+          {%- else -%}
+            <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+          {%- endif -%}
         {%- endif -%}
       </div>
 
@@ -106,6 +112,27 @@
       "id": "cta_text",
       "label": "CTA text",
       "default": "Inquire for Partnership"
+    },
+    {
+      "type": "select",
+      "id": "cta_type",
+      "label": "CTA Action Type",
+      "options": [
+        { "value": "link", "label": "Regular Link" },
+        { "value": "dossier", "label": "Open Dossier Modal" },
+        { "value": "inquiry", "label": "Open Inquiry Modal" }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "select",
+      "id": "cta_vertical",
+      "label": "Inquiry Modal Type (if Inquiry selected)",
+      "options": [
+        { "value": "academy", "label": "Creative Academy" },
+        { "value": "womenceo", "label": "Women CEO Collective" }
+      ],
+      "default": "academy"
     },
     {
       "type": "url",

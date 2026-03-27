@@ -95,5 +95,447 @@
       <a id="nv-success-cta" href="#" style="display:inline-block;background:#111;color:#fff;padding:1.25rem 3rem;font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;border:1px solid #111;transition:all .35s ease;"></a>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       EXECUTIVE DOSSIER MODAL — Maison Attaché Program
+       ═══════════════════════════════════════════════════ -->
+  <style>
+    .nv-dossier-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+    .nv-dossier-modal.active {
+      display: flex;
+    }
+    .nv-dossier-inner {
+      background: #fff;
+      width: 100%;
+      max-width: 580px;
+      max-height: 92vh;
+      overflow-y: auto;
+      position: relative;
+      padding: 3.5rem 3rem 3rem;
+      text-align: center;
+    }
+    .nv-dossier-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #aaa;
+      transition: color .2s ease;
+      line-height: 1;
+    }
+    .nv-dossier-close:hover { color: #111; }
+    .nv-dossier-eyebrow {
+      font-family: var(--font-sans);
+      font-size: .55rem;
+      letter-spacing: .5em;
+      text-transform: uppercase;
+      color: #c5a059;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .nv-dossier-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-style: italic;
+      color: #111;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .nv-dossier-desc {
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #666;
+      line-height: 1.8;
+      max-width: 380px;
+      margin: 0 auto 1.5rem;
+    }
+    .nv-dossier-divider {
+      width: 2.5rem;
+      height: 1px;
+      background: #c5a059;
+      margin: 0 auto 2rem;
+    }
+    /* Form fields */
+    .nv-dossier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 2rem;
+      text-align: left;
+    }
+    .nv-dossier-field {
+      margin-bottom: 1.75rem;
+      text-align: left;
+    }
+    .nv-dossier-field.full {
+      grid-column: span 2;
+    }
+    .nv-dossier-label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: .55rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: .5rem;
+    }
+    .nv-dossier-input,
+    .nv-dossier-textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #e5e5e5;
+      padding: .75rem 0;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #111;
+      background: transparent;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color .3s ease;
+    }
+    .nv-dossier-input:focus,
+    .nv-dossier-textarea:focus {
+      border-bottom-color: #c5a059;
+    }
+    .nv-dossier-input::placeholder,
+    .nv-dossier-textarea::placeholder {
+      color: #ccc;
+      font-size: .75rem;
+    }
+    .nv-dossier-textarea {
+      resize: none;
+      min-height: 80px;
+    }
+    /* Social 3-col */
+    .nv-dossier-social {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0 1.5rem;
+      grid-column: span 2;
+      text-align: left;
+      margin-bottom: 1.75rem;
+    }
+    /* Checkboxes */
+    .nv-dossier-check-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem 1.5rem;
+      grid-column: span 2;
+      margin-bottom: 1.75rem;
+      text-align: left;
+    }
+    .nv-dossier-check-label {
+      font-family: var(--font-sans);
+      font-size: .75rem;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      cursor: pointer;
+    }
+    .nv-dossier-check-label input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      accent-color: #c5a059;
+    }
+    /* Radio */
+    .nv-dossier-radio-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      grid-column: span 2;
+      margin-bottom: 1.75rem;
+      text-align: left;
+    }
+    .nv-dossier-radio-label {
+      font-family: var(--font-sans);
+      font-size: .75rem;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      cursor: pointer;
+    }
+    .nv-dossier-radio-label input[type="radio"] {
+      accent-color: #c5a059;
+    }
+    /* Legal */
+    .nv-dossier-legal {
+      grid-column: span 2;
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .nv-dossier-legal input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: #111;
+    }
+    .nv-dossier-legal span {
+      font-family: var(--font-sans);
+      font-size: .65rem;
+      color: #888;
+      line-height: 1.7;
+    }
+    /* Submit */
+    .nv-dossier-submit {
+      grid-column: span 2;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+      padding: 1.4rem;
+      font-family: var(--font-sans);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .35s ease, color .35s ease;
+    }
+    .nv-dossier-submit:hover {
+      background: transparent;
+      color: #111;
+    }
+    .nv-dossier-success {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .nv-dossier-success h3 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.75rem;
+      color: #111;
+      margin-bottom: 1rem;
+    }
+    .nv-dossier-success p {
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #666;
+      line-height: 1.8;
+    }
+    .nv-dossier-errors {
+      color: #c00;
+      font-family: var(--font-sans);
+      font-size: .75rem;
+      margin-bottom: 1rem;
+      grid-column: span 2;
+      text-align: left;
+    }
+    @media (max-width: 640px) {
+      .nv-dossier-inner { padding: 2.5rem 1.5rem 2rem; }
+      .nv-dossier-grid { grid-template-columns: 1fr; }
+      .nv-dossier-field.full { grid-column: span 1; }
+      .nv-dossier-check-group { grid-template-columns: 1fr; grid-column: span 1; }
+      .nv-dossier-radio-group { grid-column: span 1; }
+      .nv-dossier-social { grid-template-columns: 1fr; grid-column: span 1; }
+      .nv-dossier-legal { grid-column: span 1; }
+      .nv-dossier-submit { grid-column: span 1; }
+    }
+  </style>
+
+  <div id="nv-dossier-modal" class="nv-dossier-modal" aria-modal="true" role="dialog">
+    <div class="nv-dossier-inner">
+      <button class="nv-dossier-close" onclick="nvCloseDossier()" aria-label="Close">✕</button>
+
+      <div id="nv-dossier-form-wrap">
+        <span class="nv-dossier-eyebrow">The House of Vuu</span>
+        <h2 class="nv-dossier-title">Executive Dossier Request</h2>
+        <p class="nv-dossier-desc">Access the blueprints to your luxury empire. Please provide your professional details to receive the confidential House of Vuu dossier.</p>
+        <div class="nv-dossier-divider"></div>
+
+        <form id="nv-dossier-form">
+          <input type="hidden" name="form_type" value="contact">
+          <input type="hidden" name="utf8" value="✓">
+          <input type="hidden" name="contact[tags]" value="maison-attache-dossier">
+
+          <div class="nv-dossier-grid">
+
+            <!-- Row 1: Name + Title -->
+            <div class="nv-dossier-field">
+              <label class="nv-dossier-label">Full Name</label>
+              <input type="text" name="contact[name]" class="nv-dossier-input" placeholder="Your full name" required>
+            </div>
+            <div class="nv-dossier-field">
+              <label class="nv-dossier-label">Professional Title & Firm</label>
+              <input type="text" name="contact[firm]" class="nv-dossier-input" placeholder="CEO, Acme Corp">
+            </div>
+
+            <!-- Row 2: LinkedIn + Territory -->
+            <div class="nv-dossier-field">
+              <label class="nv-dossier-label">LinkedIn Profile URL</label>
+              <input type="url" name="contact[linkedin]" class="nv-dossier-input" placeholder="linkedin.com/in/...">
+            </div>
+            <div class="nv-dossier-field">
+              <label class="nv-dossier-label">Primary Market / Territory</label>
+              <input type="text" name="contact[territory]" class="nv-dossier-input" placeholder="e.g. California, UAE">
+            </div>
+
+            <!-- Row 3: Email (full width) -->
+            <div class="nv-dossier-field full">
+              <label class="nv-dossier-label">Email Address</label>
+              <input type="email" name="contact[email]" class="nv-dossier-input" placeholder="your@email.com" required>
+            </div>
+
+            <!-- Social Media — 3 col -->
+            <div class="nv-dossier-social">
+              <div class="nv-dossier-field">
+                <label class="nv-dossier-label">Instagram</label>
+                <input type="text" name="contact[instagram]" class="nv-dossier-input" placeholder="@handle">
+              </div>
+              <div class="nv-dossier-field">
+                <label class="nv-dossier-label">Facebook</label>
+                <input type="text" name="contact[facebook]" class="nv-dossier-input" placeholder="@handle">
+              </div>
+              <div class="nv-dossier-field">
+                <label class="nv-dossier-label">TikTok</label>
+                <input type="text" name="contact[tiktok]" class="nv-dossier-input" placeholder="@handle">
+              </div>
+            </div>
+
+            <!-- Client Portfolio Checkboxes -->
+            <div style="grid-column:span 2; text-align:left; margin-bottom:.75rem;">
+              <label class="nv-dossier-label">Current Client Portfolio Profile</label>
+            </div>
+            <div class="nv-dossier-check-group">
+              <label class="nv-dossier-check-label">
+                <input type="checkbox" name="contact[portfolio]" value="High-Net-Worth Individuals">
+                High-Net-Worth Individuals
+              </label>
+              <label class="nv-dossier-check-label">
+                <input type="checkbox" name="contact[portfolio]" value="Luxury Wedding & Event Industry">
+                Luxury Wedding &amp; Event Industry
+              </label>
+              <label class="nv-dossier-check-label">
+                <input type="checkbox" name="contact[portfolio]" value="Corporate Executives">
+                Corporate Executives
+              </label>
+              <label class="nv-dossier-check-label">
+                <input type="checkbox" name="contact[portfolio]" value="Public Figures / Talent">
+                Public Figures / Talent
+              </label>
+            </div>
+
+            <!-- Q1: Vision -->
+            <div class="nv-dossier-field full">
+              <label class="nv-dossier-label">What is your vision as a Maison Attaché, and what compels you to represent the House of Vuu?</label>
+              <textarea name="contact[vision]" class="nv-dossier-textarea" placeholder="Share your vision..."></textarea>
+            </div>
+
+            <!-- Q2: Alignment -->
+            <div class="nv-dossier-field full">
+              <label class="nv-dossier-label">How does your vision align with restoring identity, elevating humanity and ending trafficking?</label>
+              <textarea name="contact[alignment]" class="nv-dossier-textarea" placeholder="Describe your alignment..."></textarea>
+            </div>
+
+            <!-- Partnership Track Radios -->
+            <div style="grid-column:span 2; text-align:left; margin-bottom:.75rem;">
+              <label class="nv-dossier-label">Intent for Partnership Track</label>
+            </div>
+            <div class="nv-dossier-radio-group">
+              <label class="nv-dossier-radio-label">
+                <input type="radio" name="contact[partnership_track]" value="Maison Attaché">
+                Maison Attaché
+              </label>
+              <label class="nv-dossier-radio-label">
+                <input type="radio" name="contact[partnership_track]" value="Design Partner">
+                Design Partner
+              </label>
+              <label class="nv-dossier-radio-label">
+                <input type="radio" name="contact[partnership_track]" value="Referral Advocate">
+                Referral Advocate
+              </label>
+            </div>
+
+            <!-- Legal -->
+            <div class="nv-dossier-legal">
+              <input type="checkbox" id="dossier-legal" required>
+              <span>I understand that the Maison Attaché program is highly selective and that the Executive Dossier contains proprietary financial structures of Nancy Vuu Inc.</span>
+            </div>
+
+            <!-- Errors -->
+            <div class="nv-dossier-errors" id="nv-dossier-errors" style="display:none;"></div>
+
+            <!-- Submit -->
+            <button type="submit" class="nv-dossier-submit">Request Confidential Access</button>
+
+          </div>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div id="nv-dossier-success" class="nv-dossier-success" style="display:none;">
+        <div style="width:8px;height:8px;background:#c5a059;border-radius:50%;margin:0 auto 1.5rem;"></div>
+        <h3>Your Dossier Request<br>Has Been Secured.</h3>
+        <p>Our executive team will conduct a confidential review of your application. You will receive the House of Vuu Executive Dossier upon approval. Thank you for your interest in the Maison Attaché Program.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       GENERIC INQUIRY MODAL — Academy CTAs
+       ═══════════════════════════════════════════════════ -->
+  <div id="nv-inquiry-modal" style="display:none;position:fixed;inset:0;z-index:9997;align-items:center;justify-content:center;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);padding:1.5rem;">
+    <div style="background:#fff;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative;padding:3.5rem 3rem 3rem;text-align:center;">
+      <button onclick="nvCloseInquiry()" style="position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.1rem;cursor:pointer;color:#aaa;">✕</button>
+
+      <div id="nv-inquiry-form-wrap">
+        <span id="nv-inquiry-eyebrow" style="font-family:var(--font-sans);font-size:.55rem;letter-spacing:.5em;text-transform:uppercase;color:#c5a059;margin-bottom:1rem;display:block;"></span>
+        <h2 id="nv-inquiry-title" style="font-family:var(--font-serif);font-size:clamp(1.5rem,3vw,2.25rem);font-style:italic;color:#111;margin-bottom:1rem;"></h2>
+        <p id="nv-inquiry-desc" style="font-family:var(--font-sans);font-size:.8rem;color:#666;line-height:1.8;max-width:380px;margin:0 auto 1.5rem;"></p>
+        <div style="width:2.5rem;height:1px;background:#c5a059;margin:0 auto 2rem;"></div>
+
+        <form id="nv-inquiry-form" style="text-align:left;">
+          <input type="hidden" name="form_type" value="contact">
+          <input type="hidden" name="utf8" value="✓">
+          <input id="nv-inquiry-tag" type="hidden" name="contact[tags]" value="academy-inquiry">
+
+          <div style="margin-bottom:1.75rem;">
+            <input type="text" name="contact[name]" placeholder="FULL NAME" required
+              style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
+          </div>
+          <div style="margin-bottom:1.75rem;">
+            <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required
+              style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
+          </div>
+          <div style="margin-bottom:1.75rem;">
+            <input type="text" name="contact[company]" placeholder="ORGANIZATION / COMPANY"
+              style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
+          </div>
+          <div style="margin-bottom:2rem;">
+            <textarea name="contact[body]" placeholder="BRIEFLY DESCRIBE YOUR INTEREST..." rows="4"
+              style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;resize:none;"></textarea>
+          </div>
+          <button type="submit"
+            style="width:100%;background:#111;color:#fff;border:1px solid #111;padding:1.4rem;font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;cursor:pointer;">
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
+
+      <div id="nv-inquiry-success" style="display:none;padding:3rem 1rem;text-align:center;">
+        <div style="width:8px;height:8px;background:#c5a059;border-radius:50%;margin:0 auto 1.5rem;"></div>
+        <h3 style="font-family:var(--font-serif);font-style:italic;font-size:1.75rem;color:#111;margin-bottom:1rem;">Your Inquiry Has Been Received.</h3>
+        <p style="font-family:var(--font-sans);font-size:.8rem;color:#666;line-height:1.8;">Our team will be in touch shortly to discuss next steps.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

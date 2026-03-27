@@ -146,7 +146,8 @@
         "lead": "We are not looking for representatives; we are appointing envoys. The House of Vuu invites a select group of visionaries and industry leaders to join our global elite as Maison Attachés.",
         "body": "Inherit the prestige of a house featured on KTVU Fox 2, Vogue, Harper's Bazaar, and the world’s most elite red carpets. As a Maison Attaché, you possess the \"Category of One\" advantage: the ability to clothe the entire family for all occasions in bespoke couture, bridal and suiting. Your success is not just a commission—it is a legacy woven into the fabric of our house.",
         "cta_text": "REQUEST THE EXECUTIVE DOSSIER",
-        "cta_link": "#inquiry",
+        "cta_type": "dossier",
+        "cta_link": "",
         "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "floating_eyebrow": "Shared Growth",
         "floating_quote": "\"We provide the master artisan craftsmanship; you provide the elite relationship. Together, we dress the world’s legacy.\""
@@ -198,6 +199,8 @@
         "lead": "Excellence is not an industry; it is an identity. The Creative Academy is an exclusive guild designed for visionaries across all sectors who seek to master their craft and live a \"dream realized.\"",
         "body": "Under the direct mentorship of Nancy Vuu, students are coached through a rigorous curriculum of spiritual identity, technical precision, and strategic brand architecture. This is not a mass-market course—it is an invitation-only incubator with limited annual enrollment.",
         "cta_text": "Explore Enrollment",
+        "cta_type": "inquiry",
+        "cta_vertical": "academy",
         "cta_link": "",
         "image": "shopify://shop_images/image-asset.webp",
         "show_play_button": false
@@ -249,6 +252,8 @@
         "lead": "Leading with Sovereignty & Excellence",
         "body": "An elite network for high-level female executives and founders. We facilitate connections that transcend standard networking, focused on spiritual leadership and global impact.",
         "cta_text": "Apply for Access",
+        "cta_type": "inquiry",
+        "cta_vertical": "womenceo",
         "cta_link": "",
         "image": "shopify://shop_images/untitled-5330_3.webp",
         "show_play_button": false

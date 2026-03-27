@@ -43,7 +43,13 @@
         <div class="academy-pillar__body-centered">
           <p>{{ section.settings.body }}</p>
           {%- if section.settings.cta_text != blank -%}
-            <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+            {%- if section.settings.cta_type == 'dossier' -%}
+              <button type="button" class="btn-luxury" onclick="nvOpenDossier()">{{ section.settings.cta_text }}</button>
+            {%- elsif section.settings.cta_type == 'inquiry' -%}
+              <button type="button" class="btn-luxury" onclick="nvOpenInquiry('{{ section.settings.cta_vertical }}')">{{ section.settings.cta_text }}</button>
+            {%- else -%}
+              <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+            {%- endif -%}
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -63,7 +69,13 @@
             <p class="academy-pillar__body">{{ section.settings.body }}</p>
           {%- endif -%}
           {%- if section.settings.cta_text != blank -%}
-            <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+            {%- if section.settings.cta_type == 'dossier' -%}
+              <button type="button" class="btn-luxury" onclick="nvOpenDossier()">{{ section.settings.cta_text }}</button>
+            {%- elsif section.settings.cta_type == 'inquiry' -%}
+              <button type="button" class="btn-luxury" onclick="nvOpenInquiry('{{ section.settings.cta_vertical }}')">{{ section.settings.cta_text }}</button>
+            {%- else -%}
+              <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-luxury">{{ section.settings.cta_text }}</a>
+            {%- endif -%}
           {%- endif -%}
         </div>
         <div class="academy-pillar__media">
@@ -168,6 +180,27 @@
       "id": "cta_text",
       "label": "CTA text",
       "default": "Explore Enrollment"
+    },
+    {
+      "type": "select",
+      "id": "cta_type",
+      "label": "CTA Action Type",
+      "options": [
+        { "value": "link", "label": "Regular Link" },
+        { "value": "dossier", "label": "Open Dossier Modal" },
+        { "value": "inquiry", "label": "Open Inquiry Modal" }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "select",
+      "id": "cta_vertical",
+      "label": "Inquiry Modal Type (if Inquiry selected)",
+      "options": [
+        { "value": "academy", "label": "Creative Academy" },
+        { "value": "womenceo", "label": "Women CEO Collective" }
+      ],
+      "default": "academy"
     },
     {
       "type": "url",
