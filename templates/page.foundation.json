@@ -14,6 +14,7 @@
       "settings": {
         "section_id": "page-hero",
         "image": "shopify://shop_images/iStock-1343420861.jpg",
+        "video_url": "",
         "overlay_opacity": 40,
         "eyebrow": "",
         "title_line_1": "House of Vuu Foundation",
@@ -22,8 +23,8 @@
         "subtitle": "The Philanthropic House",
         "subtitle_serif": false,
         "tagline": "",
-        "cta_label": "",
-        "cta_link": "",
+        "cta_label": "partner in restoration",
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "cta_style": "outline",
         "text_color": "#ffffff"
       }
