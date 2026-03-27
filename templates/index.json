@@ -111,6 +111,73 @@
         "explore_link": "/pages/retreats"
       }
     },
+    "speaker-academy": {
+      "type": "speaker-academy",
+      "blocks": {
+        "t1": {
+          "type": "title_line",
+          "settings": {
+            "text": "Speaker.",
+            "italic": false
+          }
+        },
+        "t2": {
+          "type": "title_line",
+          "settings": {
+            "text": "Mentor.",
+            "italic": true
+          }
+        },
+        "t3": {
+          "type": "title_line",
+          "settings": {
+            "text": "Author.",
+            "italic": false
+          }
+        },
+        "l1": {
+          "type": "link",
+          "settings": {
+            "label": "request engagement",
+            "url": "shopify://pages/book-nancy-vuu"
+          }
+        },
+        "l2": {
+          "type": "link",
+          "settings": {
+            "label": "Mentorship Program",
+            "url": "shopify://pages/book-nancy-vuu"
+          }
+        },
+        "l3": {
+          "type": "link",
+          "settings": {
+            "label": "obtain her book: Let There Be Fashion",
+            "url": "shopify://pages/the-library"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "section_id": "speaker",
+        "portrait": "shopify://shop_images/untitled-5279.jpg",
+        "eyebrow": "The Founder",
+        "bio": "<p>A validated global authority and strategic advisor to high-stakes visionaries. Leveraging her distinct editorial validation, Nancy deconstructs complex operational narratives to engineer unshakeable visible distinction. Through specialized mentorship and proprietary narrative architecture, she provides the private, sovereign infrastructure required to navigate complexity and command your True Appointment on the world stage.</p>",
+        "press_id": "press",
+        "press_eyebrow": "Press & Media",
+        "press_title": "As Seen In",
+        "press_description": "Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide.",
+        "press_cta": "View Press",
+        "press_link": "shopify://pages/nancy-uvv-press"
+      }
+    },
     "crowns-jewelry": {
       "type": "crowns-jewelry",
       "settings": {
@@ -122,16 +189,16 @@
         "cta_link": "/collections/crowns-jewelry"
       }
     },
-    "womens-couture": {
-      "type": "womens-couture",
+    "dream-academy": {
+      "type": "atelier-academy",
       "settings": {
-        "section_id": "womens-couture",
-        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
-        "eyebrow": "Collection",
-        "title": "Women's Couture",
-        "tagline": "Elegance · Power · Grace",
-        "cta_label": "Explore Collection",
-        "cta_link": "/collections/womens-couture"
+        "image": "shopify://shop_images/iStock-471723393.jpg",
+        "eyebrow": "The House of Vuu Global Initiative",
+        "title_line_1": "Maison Arise",
+        "title_line_2": "",
+        "body": "Maison Arise is a sovereign House of Magnificent Excellence & Marketplace Activation, dedicated to the awakening and strategic deployment of visionaries across the globe. As a modular sanctuary and civic anchor, we provide the elite trade mastery and resources required to manifest \"Heavenly Blueprints\" into tangible marketplace reality.\n\nFrom Governance and Media to Horticulture and the Arts, we invite the world's dreamers to leave behind the ordinary and build with a standard of magnificence, fame, and splendor that compels the nations to run toward the light of true excellence.",
+        "cta_label": "Arise to Magnificent",
+        "cta_link": "/pages/dream-academy"
       }
     },
     "legacy-collections": {
@@ -163,6 +230,49 @@
       "settings": {
         "eyebrow": "For the Family",
         "title": "The Legacy Collections"
+      }
+    },
+    "legacy_collections_aHRMAD": {
+      "type": "legacy-collections",
+      "blocks": {
+        "collection_card_6jrcN8": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/DSC9102B_1.webp",
+            "title": "Children's Couture",
+            "cta": "Shop Kids",
+            "link": "/collections/childrens-couture"
+          }
+        },
+        "collection_card_FEPtF9": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/I1A3307.jpg",
+            "title": "Mommy & Me",
+            "cta": "Shop Matching Sets",
+            "link": "/collections/mommy-me"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_6jrcN8",
+        "collection_card_FEPtF9"
+      ],
+      "settings": {
+        "eyebrow": "For the Family",
+        "title": "House of Vuu Foundation"
+      }
+    },
+    "womens-couture": {
+      "type": "womens-couture",
+      "settings": {
+        "section_id": "womens-couture",
+        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
+        "eyebrow": "Collection",
+        "title": "Women's Couture",
+        "tagline": "Elegance · Power · Grace",
+        "cta_label": "Explore Collection",
+        "cta_link": "/collections/womens-couture"
       }
     },
     "kingdom": {
@@ -233,85 +343,6 @@
         "show_marquee": true
       }
     },
-    "speaker-academy": {
-      "type": "speaker-academy",
-      "blocks": {
-        "t1": {
-          "type": "title_line",
-          "settings": {
-            "text": "Speaker.",
-            "italic": false
-          }
-        },
-        "t2": {
-          "type": "title_line",
-          "settings": {
-            "text": "Mentor.",
-            "italic": true
-          }
-        },
-        "t3": {
-          "type": "title_line",
-          "settings": {
-            "text": "Author.",
-            "italic": false
-          }
-        },
-        "l1": {
-          "type": "link",
-          "settings": {
-            "label": "Book for Speaking",
-            "url": "shopify://pages/book-nancy-vuu"
-          }
-        },
-        "l2": {
-          "type": "link",
-          "settings": {
-            "label": "Mentorship Program",
-            "url": "shopify://pages/book-nancy-vuu"
-          }
-        },
-        "l3": {
-          "type": "link",
-          "settings": {
-            "label": "Buy The Book",
-            "url": "shopify://pages/the-library"
-          }
-        }
-      },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "l1",
-        "l2",
-        "l3"
-      ],
-      "settings": {
-        "section_id": "speaker",
-        "portrait": "shopify://shop_images/untitled-5279.jpg",
-        "eyebrow": "The Founder",
-        "bio": "",
-        "press_id": "press",
-        "press_eyebrow": "Press & Media",
-        "press_title": "As Seen In",
-        "press_description": "Nancy Vuu has been featured in leading publications, film festivals, and media outlets worldwide.",
-        "press_cta": "View Press",
-        "press_link": "shopify://pages/nancy-uvv-press"
-      }
-    },
-    "dream-academy": {
-      "type": "atelier-academy",
-      "settings": {
-        "image": "shopify://shop_images/DREAM_ACADEMY_IMAGE.webp",
-        "eyebrow": "Education",
-        "title_line_1": "Dream Academy",
-        "title_line_2": "",
-        "body": "Vuu Publishing. Women's CEO. Media Marketing. We equip the next generation of kingdom leaders to build with vision and authenticity.",
-        "cta_label": "Join The Academy",
-        "cta_link": "/pages/dream-academy"
-      }
-    },
     "vuu-foundation": {
       "type": "vuu-foundation",
       "settings": {
@@ -340,13 +371,14 @@
     "bridal-bespoke",
     "mens-suits",
     "retreats",
+    "speaker-academy",
     "crowns-jewelry",
-    "womens-couture",
+    "dream-academy",
     "legacy-collections",
+    "legacy_collections_aHRMAD",
+    "womens-couture",
     "kingdom",
     "photography",
-    "speaker-academy",
-    "dream-academy",
     "vuu-foundation",
     "cross-sell-luxury"
   ]

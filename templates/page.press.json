@@ -15,21 +15,12 @@
         "bg_image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
         "use_video": false,
         "bg_video": "",
-        "media_opacity": 75,
+        "media_opacity": 35,
         "eyebrow": "Voice of Authority",
         "title_line_1": "The Architecture",
         "title_italic": "of",
         "title_line_2": "Worth",
         "subtitle": "Redefining the individual through high-fashion, cinematic truth, executive immersions, and human advocacy."
-      }
-    },
-    "ktvu_press_feature": {
-      "type": "ktvu-feature",
-      "settings": {
-        "eyebrow": "LATEST BROADCAST",
-        "heading": "LEADING WITH GLOBAL IMPACT",
-        "cta_label": "VIEW FULL TRANSCRIPT & INTERVIEW TOPICS",
-        "cta_link": "https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5"
       }
     },
     "press_strip": {
@@ -116,6 +107,19 @@
         "strip_11"
       ],
       "settings": {}
+    },
+    "ktvu_press_feature": {
+      "type": "ktvu-feature",
+      "settings": {
+        "eyebrow": "LATEST BROADCAST",
+        "heading": "LEADING WITH GLOBAL IMPACT",
+        "sub_headline": "Mainstream Validation for the House of Vuu",
+        "body_copy": "Nancy Vuu sits down with KTVU Fox 2 to discuss the architecture of identity, the miraculous journey from the South China Sea to the world's most prestigious runways, and the unveiling of her long-awaited book, 'Let There Be Fashion.' This exclusive feature recognizes Nancy as a definitive global voice for restorative leadership and creative diplomacy.",
+        "pull_quote": "A woman who leads with global impact... redefining how we view identity through the lens of fashion.",
+        "pull_quote_attr": "— KTVU Fox 2",
+        "cta_label": "VIEW FULL TRANSCRIPT & INTERVIEW TOPICS",
+        "cta_link": "https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5"
+      }
     },
     "press_accolades": {
       "type": "press-accolades",
