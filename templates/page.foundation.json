@@ -14,6 +14,7 @@
       "settings": {
         "section_id": "page-hero",
         "image": "shopify://shop_images/iStock-1343420861.jpg",
+        "video_url": "",
         "overlay_opacity": 40,
         "eyebrow": "",
         "title_line_1": "House of Vuu Foundation",
@@ -22,8 +23,8 @@
         "subtitle": "The Philanthropic House",
         "subtitle_serif": false,
         "tagline": "",
-        "cta_label": "",
-        "cta_link": "",
+        "cta_label": "partner in restoration",
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "cta_style": "outline",
         "text_color": "#ffffff"
       }
@@ -42,8 +43,8 @@
         "col1_body": "",
         "col2_heading": "",
         "col2_body": "",
-        "cta1_label": "",
-        "cta1_link": "",
+        "cta1_label": "partner in restoration",
+        "cta1_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "cta2_label": "",
         "cta2_link": ""
       }
@@ -98,8 +99,8 @@
         "subtitle": "Discover your path to mastery",
         "lead": "Global Reach — Direct humanitarian relief across borders.",
         "body": "Security of basic needs is the prerequisite for vision. We invest in sustainable community support, ensuring vulnerable populations have the food, water, and safety required to begin the journey toward restoration.",
-        "cta_text": "Explore Enrollment",
-        "cta_link": "",
+        "cta_text": "partner in restoration",
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "image": "shopify://shop_images/3F280C43-45F4-4A34-8350-600EC77D608B.webp",
         "show_play_button": false
       }
@@ -115,8 +116,8 @@
         "subtitle": "Discover your path to mastery",
         "lead": "Excellence is not an industry; it is an identity.",
         "body": "Partnering with elite global organizations to dismantle human trafficking and restore sovereignty to the individual through restorative identity work and high-level leadership training.",
-        "cta_text": "Explore Enrollment",
-        "cta_link": "",
+        "cta_text": "partner in freedom",
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "image": "shopify://shop_images/iStock-1025190216.jpg",
         "show_play_button": false
       }
@@ -152,8 +153,8 @@
         "subtitle": "Discover your path to mastery",
         "lead": "Excellence is not an industry; it is an identity.",
         "body": "Bridging the gap between hidden potential and global influence through education, grants, and industry placement.",
-        "cta_text": "Explore Enrollment",
-        "cta_link": "",
+        "cta_text": "partner in elevation",
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "image": "shopify://shop_images/iStock-1271617757.jpg",
         "show_play_button": false
       }

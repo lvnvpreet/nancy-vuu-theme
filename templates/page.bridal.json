@@ -22,6 +22,7 @@
         "eyebrow": "The Sacred Architecture",
         "title": "Bridal Bespoke",
         "cta_label": "Begin the Commission",
+        "cta_link": "",
         "text_color": "#111111"
       }
     },
@@ -173,7 +174,7 @@
       "settings": {
         "eyebrow": "A Heritage Reclaimed",
         "title": "The Sovereign Return",
-        "image": "shopify://shop_images/nancy-vuu-about-bg.jpg"
+        "image": "shopify://shop_images/iStock-866175472.jpg"
       }
     },
     "investment": {
@@ -279,9 +280,9 @@
     "modal": {
       "type": "audience-modal",
       "settings": {
-        "price_tier_1": "$25,000 \u2013 $50,000",
-        "price_tier_2": "$50,000 \u2013 $75,000",
-        "price_tier_3": "$75,000 \u2013 $100,000+"
+        "price_tier_1": "$25,000 – $50,000",
+        "price_tier_2": "$50,000 – $75,000",
+        "price_tier_3": "$75,000 – $100,000+"
       }
     }
   },

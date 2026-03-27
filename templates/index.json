@@ -350,7 +350,7 @@
         "title": "House of Vuu Foundation",
         "description": "The House of Vuu Foundation is the philanthropic heart of our institution, dedicated to the systemic restoration of human dignity on a global scale. Operating at the intersection of high-aesthetic craftsmanship and humanitarian strategy, we believe that every stitch is a life. We move beyond traditional aid to engineer sustainable pathways of empowerment, ensuring that vulnerable populations can reclaim their sovereign identity. By weaving a new narrative of honor into the fabric of global recovery, we are restoring the internal and external architecture of lives to their true appointment.\"",
         "donate_label": "Partner in Restoration",
-        "donate_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
+        "donate_link": "shopify://pages/house-of-vuu-foundation",
         "pct_outreach": 45,
         "pct_education": 30,
         "pct_aid": 25,
