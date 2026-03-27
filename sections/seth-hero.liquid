@@ -22,6 +22,10 @@
     {%- if section.settings.brand_sub != blank -%}
       <span class="seth-cinematic-hero__brand-sub">{{ section.settings.brand_sub }}</span>
     {%- endif -%}
+
+    {%- if section.settings.cta_label != blank -%}
+      <a href="{{ section.settings.cta_link | default: '#' }}" class="btn-editorial seth-cinematic-hero__cta">{{ section.settings.cta_label }}</a>
+    {%- endif -%}
   </div>
 </section>
 
@@ -65,6 +69,18 @@
       "id": "brand_sub",
       "label": "Brand Subtitle",
       "default": "By Nancy Vuu"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "Start Commissioning"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "#"
     }
   ],
   "presets": [
