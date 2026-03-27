@@ -34,10 +34,9 @@
     </h1>
     <p class="hero__subtitle">{{ section.settings.subheading | default: 'Tailored for Earth' }}</p>
     {%- if section.settings.cta_label != blank -%}
-      <a href="{{ section.settings.cta_link | default: '/pages/atelier#inquiry' }}"
-         class="hero__cta">
+      <button type="button" class="hero__cta" data-gateway-open>
         {{ section.settings.cta_label }}
-      </a>
+      </button>
     {%- endif -%}
   </div>
 

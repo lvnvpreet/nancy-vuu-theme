@@ -200,6 +200,51 @@
         "secondary_link": ""
       }
     },
+    "retreat_inline_form": {
+      "type": "atelier-inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "Private Application",
+        "title_line_1": "Apply for",
+        "title_line_2": "Alignment.",
+        "subtext": "Submit your details below to begin the vetting process for a Nancy Vuu Executive Immersion. All submissions are held in strict confidence.",
+        "address_eyebrow": "",
+        "address_line_1": "",
+        "address_line_2": "",
+        "phone": "",
+        "label_service": "TYPE OF IMMERSION",
+        "label_message": "DESCRIBE YOUR LEADERSHIP FOCUS AND DESIRED OUTCOME...",
+        "submit_label": "Apply for Private Immersion"
+      },
+      "blocks": {
+        "opt1": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Sovereign Reset Intensive (Napa Valley)",
+            "option_value": "Sovereign Reset"
+          }
+        },
+        "opt2": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "The Legacy Build Intensive (Hawaii)",
+            "option_value": "Legacy Build"
+          }
+        },
+        "opt3": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Sovereign Union Intensive (Couples)",
+            "option_value": "Sovereign Union"
+          }
+        }
+      },
+      "block_order": [
+        "opt1",
+        "opt2",
+        "opt3"
+      ]
+    },
     "final_cta": {
       "type": "cta-closer",
       "settings": {
@@ -237,6 +282,7 @@
     "destinations",
     "retreat_destinations_bQJTgQ",
     "academy_cta",
+    "retreat_inline_form",
     "final_cta",
     "retreat_disclaimer",
     "modal"

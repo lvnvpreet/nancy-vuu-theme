@@ -347,4 +347,88 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ── FORM VERTICAL DETECTION ────────────────────────────────
+  var nvFormMap = [
+    { selector: '#atelier-contact-form', vertical: 'bridal' },
+    { selector: '#seth-commission-form', vertical: 'sartorial' },
+    { selector: '#booknv-booking-form', vertical: 'global' },
+    { selector: '#nv-alignment-form', vertical: 'immersion' },
+    { selector: '#retreat_inline_form form', vertical: 'immersion' }
+  ];
+
+  nvFormMap.forEach(function(item) {
+    var form = document.querySelector(item.selector);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var vertical = item.vertical;
+      if (item.selector === '#atelier-contact-form' && window.location.pathname === '/pages/retreats') {
+        vertical = 'immersion';
+      }
+      var formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function() {
+        form.reset();
+        window.nvShowSuccess(vertical);
+      }).catch(function() {
+        // Fallback: native submit
+        form.submit();
+      });
+    });
+  });
+
 });
+
+// ── NV POST-SUBMISSION SUCCESS OVERLAY ───────────────────
+var nvSuccessMessages = {
+  bridal: {
+    eyebrow: 'Bridal Commission Secured',
+    title: 'Your Vision Has Been Received.',
+    body: 'Your private bridal inquiry has been secured. Nancy Vuu will review your vision personally. While we schedule your initial private consultation, explore the artistry and silhouettes we have crafted for the sovereign bride.',
+    cta: 'Enter the Bridal House',
+    href: '/collections/bridal'
+  },
+  sartorial: {
+    eyebrow: 'Commission Initialized',
+    title: 'Your File Has Been Opened.',
+    body: 'Your private commission inquiry for an Executive or Groom suit has been initialized. While your file is finalized, explore the architecture and bespoke options of the Seth Eden collection.',
+    cta: 'Explore Seth Eden',
+    href: '/pages/seth-eden'
+  },
+  global: {
+    eyebrow: 'Engagement Inquiry Logged',
+    title: 'Your Inquiry Has Been Secured.',
+    body: 'Your organizational inquiry for a keynote or media appearance has been secured and logged. We are reviewing event logistics and availability. Review Nancy Vuu\'s latest prime-time broadcast, validated by KTVU Fox 2.',
+    cta: 'Latest Broadcast',
+    href: '/pages/nancy-uvv-press'
+  },
+  immersion: {
+    eyebrow: 'Application Received',
+    title: 'Your Vetting Process Has Begun.',
+    body: 'Your private application for an Executive Immersion has been received. This initiates our formal vetting process. We are reviewing your specific leadership focus for the upcoming calendar year.',
+    cta: 'Executive Immersions',
+    href: '/pages/retreats'
+  }
+};
+
+window.nvShowSuccess = function(vertical) {
+  var msg = nvSuccessMessages[vertical];
+  if (!msg) return;
+  document.getElementById('nv-success-eyebrow').textContent = msg.eyebrow;
+  document.getElementById('nv-success-title').textContent = msg.title;
+  document.getElementById('nv-success-body').textContent = msg.body;
+  var ctaEl = document.getElementById('nv-success-cta');
+  ctaEl.textContent = msg.cta;
+  ctaEl.href = msg.href;
+  var overlay = document.getElementById('nv-success-overlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+};
+
+window.nvCloseSuccess = function() {
+  document.getElementById('nv-success-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+};
