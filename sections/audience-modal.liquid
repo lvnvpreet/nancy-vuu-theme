@@ -253,9 +253,15 @@
       <!-- HEADER -->
       <div style="text-align:center;">
         <div style="width:10px;height:10px;background:#c5a059;border-radius:50%;margin:0 auto 1.5rem;"></div>
-        <h2 style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:0.5rem;">APPLICATION FOR ALIGNMENT</h2>
-        <h3 style="font-family:var(--font-sans);font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2rem;">INITIATING YOUR STRATEGIC RESET.</h3>
-        <p style="font-family:var(--font-sans);font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:580px;margin:0 auto;">Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration &#8212; it is an application for a&nbsp;<span style="color:#c5a059;">Selective Alignment Audit.</span> Please answer with absolute transparency.</p>
+          <h2 style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:0.5rem;">
+            {{ section.settings.modal_eyebrow | default: 'APPLICATION FOR ALIGNMENT' }}
+          </h2>
+          <h3 style="font-family:var(--font-sans);font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2rem;">
+            {{ section.settings.modal_subheading | default: 'INITIATING YOUR STRATEGIC RESET.' }}
+          </h3>
+          <p style="font-family:var(--font-sans);font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:580px;margin:0 auto;">
+            {{ section.settings.modal_intro | default: 'Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration — it is an application for a Selective Alignment Audit. Please answer with absolute transparency.' }}
+          </p>
       </div>
 
       <!-- FORM -->
@@ -271,73 +277,86 @@
           <div style="width:40px;height:1px;background:rgba(197,160,89,0.3);margin:2rem auto;"></div>
 
           <!-- PHASE I — STRATEGIC ALIGNMENT -->
-          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE I — STRATEGIC ALIGNMENT</p>
+          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase1_label | default: 'PHASE I — STRATEGIC ALIGNMENT' }}</p>
 
           <!-- Q1: Primary Objective -->
           <div style="margin-bottom:2rem;">
-            <label class="nv-align-label">1. Primary Objective for this Immersion?</label>
-            <label class="nv-align-check-label">
-              <input type="checkbox" name="contact[objective]" value="Silence Echo - Phase I"> Silence the &#8220;Echo&#8221; &amp; Reclaim Vision. (Phase I)
+            <label class="nv-align-label">
+              {{ section.settings.q1_label | default: '1. Primary Objective for this Immersion?' }}
             </label>
-            <label class="nv-align-check-label">
-              <input type="checkbox" name="contact[objective]" value="Build Authority - Phase II"> Architect my Visible Authority &amp; Build my Legacy. (Phase II)
-            </label>
-            <label class="nv-align-check-label">
-              <input type="checkbox" name="contact[objective]" value="Sovereign Couples"> Forge a Sovereign Legacy Alliance (Couple).
-            </label>
-            <label class="nv-align-check-label">
-              <input type="checkbox" name="contact[objective]" value="Dream Retreat"> 
-              Dream Retreat.
-            </label>
-            <label class="nv-align-check-label">
-              <input type="checkbox" name="contact[objective]" value="Women CEO Retreat"> 
-              Women CEO Retreat.
-            </label>
+            {%- assign checkbox_blocks = section.blocks | where: 'type', 'checkbox_option' -%}
+            {%- for block in checkbox_blocks -%}
+              <label class="nv-align-check-label" {{ block.shopify_attributes }}>
+                <input type="checkbox" name="contact[objective]" value="{{ block.settings.value }}">
+                {{ block.settings.label }}
+              </label>
+            {%- endfor -%}
           </div>
 
           <!-- Q2: Leadership Frequency -->
           <div style="margin-bottom:2rem;">
-            <label class="nv-align-label">2. Describe your leadership frequency.</label>
-            <textarea 
-              name="contact[leadership_frequency]" 
-              class="nv-align-textarea" 
-              placeholder="Describe in your own words..." 
-              rows="3"
-              maxlength="500"
-            ></textarea>
+            <label class="nv-align-label">
+              {{ section.settings.q2_label | default: '2. Describe your leadership frequency.' }}
+            </label>
+            <select name="contact[leadership_frequency]" class="nv-align-select">
+              <option value="" disabled selected>
+                {{ section.settings.q2_placeholder | default: 'Select Your Alignment' }}
+              </option>
+              {%- assign dropdown_blocks = section.blocks | where: 'type', 'dropdown_option' -%}
+              {%- for block in dropdown_blocks -%}
+                <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>
+                  {{ block.settings.label }}
+                </option>
+              {%- endfor -%}
+            </select>
           </div>
 
           <!-- Q3: Single Barrier -->
           <div style="margin-bottom:2rem;">
-            <label class="nv-align-label">3. The Single Barrier to your Sovereignty?</label>
-            <textarea name="contact[single_barrier]" class="nv-align-textarea" placeholder="Describe in 250 characters or less..." maxlength="250" rows="2"></textarea>
+            <label class="nv-align-label">
+              {{ section.settings.q3_label | default: '3. The Single Barrier to your Sovereignty?' }}
+            </label>
+            <textarea 
+              name="contact[single_barrier]" 
+              class="nv-align-textarea" 
+              placeholder="{{ section.settings.q3_placeholder | default: 'Describe in 250 characters or less...' }}" 
+              maxlength="250" 
+              rows="2">
+            </textarea>
           </div>
 
           <!-- Q4: Implementation Fund -->
           <div style="margin-bottom:2rem;">
-            <label class="nv-align-label">4. Anticipated Implementation Fund?</label>
-            <label class="nv-align-radio-label">
-              <input type="radio" name="contact[implementation_fund]" value="25k-50k"> {{ section.settings.price_tier_1 }}
+            <label class="nv-align-label">
+              {{ section.settings.q4_label | default: '4. Anticipated Implementation Fund?' }}
             </label>
-            <label class="nv-align-radio-label">
-              <input type="radio" name="contact[implementation_fund]" value="50k-75k"> {{ section.settings.price_tier_2 }}
-            </label>
-            <label class="nv-align-radio-label">
-              <input type="radio" name="contact[implementation_fund]" value="75k-100k+"> {{ section.settings.price_tier_3 }}
-            </label>
+            {%- assign radio_blocks = section.blocks | where: 'type', 'radio_option' -%}
+            {%- for block in radio_blocks -%}
+              <label class="nv-align-radio-label" {{ block.shopify_attributes }}>
+                <input type="radio" name="contact[implementation_fund]" value="{{ block.settings.value }}">
+                {{ block.settings.label }}
+              </label>
+            {%- endfor -%}
           </div>
 
           <!-- Q5: True Appointment -->
           <div style="margin-bottom:2rem;">
-            <label class="nv-align-label">5. Describe your True Appointment in one word.</label>
-            <input type="text" name="contact[true_appointment]" class="nv-align-input" placeholder="VISIONARY. REDEEMED. SOVEREIGN..." maxlength="50">
+            <label class="nv-align-label">
+              {{ section.settings.q5_label | default: '5. Describe your True Appointment in one word.' }}
+            </label>
+            <input 
+              type="text" 
+              name="contact[true_appointment]" 
+              class="nv-align-input" 
+              placeholder="{{ section.settings.q5_placeholder | default: 'VISIONARY. REDEEMED. SOVEREIGN...' }}" 
+              maxlength="50">
           </div>
 
           <!-- Divider -->
           <div style="width:40px;height:1px;background:rgba(196,160,89,0.3);margin:2.5rem auto;"></div>
 
           <!-- PHASE II — EXECUTIVE PROFILE -->
-          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE II — EXECUTIVE PROFILE</p>
+          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase2_label | default: 'PHASE II — EXECUTIVE PROFILE' }}</p>
 
           <div class="nv-profile-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
             <div style="margin-bottom:1.5rem;">
@@ -361,16 +380,20 @@
           <div style="width:40px;height:1px;background:rgba(196,160,89,0.3);margin:2.5rem auto;"></div>
 
           <!-- PHASE III — ALIGNMENT DECLARATION -->
-          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">PHASE III — ALIGNMENT DECLARATION</p>
+          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase3_label | default: 'PHASE III — ALIGNMENT DECLARATION' }}</p>
 
           <div style="background:rgba(196,160,89,0.04);border:1px solid rgba(196,160,89,0.25);padding:2rem;margin-bottom:2.5rem;">
             <label for="nv-legal-agree" style="display:flex;align-items:flex-start;">
               <input type="checkbox" id="nv-legal-agree" name="contact[legal_agreement]" required style="margin-right:1rem;margin-top:3px;flex-shrink:0;">
-              <span style="font-family:var(--font-sans);font-size:0.7rem;color:rgba(255,255,255,0.65);line-height:1.85;letter-spacing:0.04em;">By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling. I am prepared to explore the uncompromising unraveling of my leadership narrative in pursuit of Sovereign Distinction. My submission confirms my Selective Alignment for this process.</span>
+              <span style="font-family:var(--font-sans);font-size:0.7rem;color:rgba(255,255,255,0.65);line-height:1.85;letter-spacing:0.04em;">
+                {{ section.settings.legal_text | default: 'By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling.' }}
+              </span>
             </label>
           </div>
 
-          <button type="submit" class="nv-align-submit">INITIATE ALIGNMENT AUDIT</button>
+          <button type="submit" class="nv-align-submit">
+            {{ section.settings.submit_label | default: 'INITIATE ALIGNMENT AUDIT' }}
+          </button>
 
       {%- endform -%}
 
@@ -404,32 +427,215 @@
 
 {% schema %}
 {
-  "name": "Alignment Application",
+  "name": "Alignment Application Modal",
   "settings": [
     {
       "type": "header",
-      "content": "Investment Tiers (Editable)"
+      "content": "Modal Header"
     },
     {
       "type": "text",
-      "id": "price_tier_1",
-      "label": "Investment Tier 1",
-      "default": "$25,000 \u2013 $50,000"
+      "id": "modal_eyebrow",
+      "label": "Modal Eyebrow (Gold Text)",
+      "default": "APPLICATION FOR ALIGNMENT"
     },
     {
       "type": "text",
-      "id": "price_tier_2",
-      "label": "Investment Tier 2",
-      "default": "$50,000 \u2013 $75,000"
+      "id": "modal_subheading",
+      "label": "Modal Subheading",
+      "default": "INITIATING YOUR STRATEGIC RESET."
+    },
+    {
+      "type": "textarea",
+      "id": "modal_intro",
+      "label": "Intro Paragraph",
+      "default": "Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration — it is an application for a Selective Alignment Audit. Please answer with absolute transparency."
+    },
+    {
+      "type": "header",
+      "content": "Phase Labels"
     },
     {
       "type": "text",
-      "id": "price_tier_3",
-      "label": "Investment Tier 3",
-      "default": "$75,000 \u2013 $100,000+"
+      "id": "phase1_label",
+      "label": "Phase I Label",
+      "default": "PHASE I — STRATEGIC ALIGNMENT"
+    },
+    {
+      "type": "text",
+      "id": "phase2_label",
+      "label": "Phase II Label",
+      "default": "PHASE II — EXECUTIVE PROFILE"
+    },
+    {
+      "type": "text",
+      "id": "phase3_label",
+      "label": "Phase III Label",
+      "default": "PHASE III — ALIGNMENT DECLARATION"
+    },
+    {
+      "type": "header",
+      "content": "Question 1 — Checkboxes"
+    },
+    {
+      "type": "text",
+      "id": "q1_label",
+      "label": "Q1 Question Text",
+      "default": "1. Primary Objective for this Immersion?"
+    },
+    {
+      "type": "header",
+      "content": "Question 2 — Leadership Dropdown"
+    },
+    {
+      "type": "text",
+      "id": "q2_label",
+      "label": "Q2 Question Text",
+      "default": "2. Describe your leadership frequency."
+    },
+    {
+      "type": "text",
+      "id": "q2_placeholder",
+      "label": "Q2 Dropdown Placeholder",
+      "default": "Select Your Alignment"
+    },
+    {
+      "type": "header",
+      "content": "Question 3 — Barrier Textarea"
+    },
+    {
+      "type": "text",
+      "id": "q3_label",
+      "label": "Q3 Question Text",
+      "default": "3. The Single Barrier to your Sovereignty?"
+    },
+    {
+      "type": "text",
+      "id": "q3_placeholder",
+      "label": "Q3 Placeholder Text",
+      "default": "Describe in 250 characters or less..."
+    },
+    {
+      "type": "header",
+      "content": "Question 4 — Price Tiers (Radio)"
+    },
+    {
+      "type": "text",
+      "id": "q4_label",
+      "label": "Q4 Question Text",
+      "default": "4. Anticipated Implementation Fund?"
+    },
+    {
+      "type": "header",
+      "content": "Question 5 — True Appointment"
+    },
+    {
+      "type": "text",
+      "id": "q5_label",
+      "label": "Q5 Question Text",
+      "default": "5. Describe your True Appointment in one word."
+    },
+    {
+      "type": "text",
+      "id": "q5_placeholder",
+      "label": "Q5 Placeholder",
+      "default": "VISIONARY. REDEEMED. SOVEREIGN..."
+    },
+    {
+      "type": "header",
+      "content": "Form Actions"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit Button Text",
+      "default": "INITIATE ALIGNMENT AUDIT"
+    },
+    {
+      "type": "header",
+      "content": "Legal Text"
+    },
+    {
+      "type": "textarea",
+      "id": "legal_text",
+      "label": "Legal Agreement Text",
+      "default": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
     }
   ],
-  "blocks": []
+  "blocks": [
+    {
+      "type": "checkbox_option",
+      "name": "Q1 Checkbox Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Checkbox Label",
+          "default": "Silence the \"Echo\" & Reclaim Vision. (Phase I)"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Form Value",
+          "default": "Silence Echo - Phase I"
+        }
+      ]
+    },
+    {
+      "type": "dropdown_option",
+      "name": "Q2 Dropdown Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Dropdown Label",
+          "default": "Successful but Unseen. (Invisible Giant)"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Form Value",
+          "default": "Successful but Unseen"
+        }
+      ]
+    },
+    {
+      "type": "radio_option",
+      "name": "Q4 Price Tier Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Radio Label",
+          "default": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Form Value",
+          "default": "8500-15000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Alignment Application",
+      "blocks": [
+        { "type": "checkbox_option", "settings": { "label": "Silence the \"Echo\" & Reclaim Vision. (Phase I)", "value": "Silence Echo - Phase I" }},
+        { "type": "checkbox_option", "settings": { "label": "Architect my Visible Authority & Build my Legacy. (Phase II)", "value": "Build Authority - Phase II" }},
+        { "type": "checkbox_option", "settings": { "label": "Forge a Sovereign Legacy Alliance (Couple).", "value": "Sovereign Couples" }},
+        { "type": "checkbox_option", "settings": { "label": "Dream Retreat.", "value": "Dream Retreat" }},
+        { "type": "checkbox_option", "settings": { "label": "Women CEO Retreat.", "value": "Women CEO Retreat" }},
+        { "type": "dropdown_option", "settings": { "label": "Successful but Unseen. (Invisible Giant)", "value": "Successful but Unseen" }},
+        { "type": "dropdown_option", "settings": { "label": "Reactive & Stuck. (The Echo)", "value": "Reactive and Stuck" }},
+        { "type": "dropdown_option", "settings": { "label": "Strategic but Fragmented.", "value": "Strategic but Fragmented" }},
+        { "type": "radio_option", "settings": { "label": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)", "value": "8500-15000" }},
+        { "type": "radio_option", "settings": { "label": "$15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)", "value": "15000-25000" }},
+        { "type": "radio_option", "settings": { "label": "$25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)", "value": "25000plus" }}
+      ]
+    }
+  ]
 }
 {% endschema %}
 
