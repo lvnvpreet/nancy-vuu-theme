@@ -247,7 +247,7 @@
         "label_name": "Full Name",
         "label_company": "Company / Organization",
         "label_email": "Professional Email Address",
-        "label_inquiry": "Nature of Inquiry (Keynote, Mentorship, etc.)",
+        "label_inquiry": "Briefly describe the legacy or transformation you are currently architecting.",
         "label_investment": "Projected Investment Tier (USD)",
         "submit_label": "Initiate Request"
       }
