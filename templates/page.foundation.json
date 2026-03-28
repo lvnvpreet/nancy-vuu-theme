@@ -88,45 +88,6 @@
         "bg_tint": true
       }
     },
-    "foundation_phases_ERWpPG": {
-      "type": "foundation-phases",
-      "blocks": {
-        "phase_kXJzWf": {
-          "type": "phase",
-          "settings": {
-            "phase": "Phase I",
-            "title": "Investment",
-            "description": "Foundation: Basic Needs & Security."
-          }
-        },
-        "phase_bqHKyw": {
-          "type": "phase",
-          "settings": {
-            "phase": "Phase II",
-            "title": "Freedom",
-            "description": "Restoration: Identity & Anti-Exploitation."
-          }
-        },
-        "phase_Rh3gAc": {
-          "type": "phase",
-          "settings": {
-            "phase": "Phase III",
-            "title": "Pathways",
-            "description": "Future: Education & Industry Exposure."
-          }
-        }
-      },
-      "block_order": [
-        "phase_kXJzWf",
-        "phase_bqHKyw",
-        "phase_Rh3gAc"
-      ],
-      "settings": {
-        "heading": "The Access to Excellence Framework",
-        "description": "Excellence is a byproduct of security and restoration. Our framework provides a scalable model for human flourishing across three vital phases.",
-        "bg_tint": true
-      }
-    },
     "investment": {
       "type": "academy-pillar",
       "settings": {
@@ -202,6 +163,45 @@
         "cta_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
         "image": "shopify://shop_images/iStock-1271617757.jpg",
         "show_play_button": false
+      }
+    },
+    "foundation_phases_ERWpPG": {
+      "type": "foundation-phases",
+      "blocks": {
+        "phase_kXJzWf": {
+          "type": "phase",
+          "settings": {
+            "phase": "Phase I",
+            "title": "Investment",
+            "description": "Foundation: Basic Needs & Security."
+          }
+        },
+        "phase_bqHKyw": {
+          "type": "phase",
+          "settings": {
+            "phase": "Phase II",
+            "title": "Freedom",
+            "description": "Restoration: Identity & Anti-Exploitation."
+          }
+        },
+        "phase_Rh3gAc": {
+          "type": "phase",
+          "settings": {
+            "phase": "Phase III",
+            "title": "Pathways",
+            "description": "Future: Education & Industry Exposure."
+          }
+        }
+      },
+      "block_order": [
+        "phase_kXJzWf",
+        "phase_bqHKyw",
+        "phase_Rh3gAc"
+      ],
+      "settings": {
+        "heading": "The Alliance to Restoration",
+        "description": "Choose your mantle within the House of Vuu.",
+        "bg_tint": true
       }
     },
     "partners": {
