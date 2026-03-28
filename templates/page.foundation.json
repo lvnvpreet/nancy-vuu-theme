@@ -180,16 +180,16 @@
           "type": "phase",
           "settings": {
             "phase": "Phase II",
-            "title": "Freedom",
-            "description": "Restoration: Identity & Anti-Exploitation."
+            "title": "The Recipient",
+            "description": "Seeking restoration? If you or your organization serve those in need, apply for restorative support."
           }
         },
         "phase_Rh3gAc": {
           "type": "phase",
           "settings": {
             "phase": "Phase III",
-            "title": "Pathways",
-            "description": "Future: Education & Industry Exposure."
+            "title": "The Collaborator",
+            "description": "We don't build in isolation. Partner with us to scale the architecture of honor globally."
           }
         }
       },
