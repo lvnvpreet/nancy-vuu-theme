@@ -29,19 +29,19 @@
         "strip_1": {
           "type": "item",
           "settings": {
-            "name": "The Oscars"
+            "name": "KTVU FOX 2"
           }
         },
         "strip_2": {
           "type": "item",
           "settings": {
-            "name": "The Grammys"
+            "name": "the oscars"
           }
         },
         "strip_3": {
           "type": "item",
           "settings": {
-            "name": "Nickelodeon"
+            "name": "the grammys"
           }
         },
         "strip_4": {
