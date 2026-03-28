@@ -34,7 +34,7 @@
       "settings": {
         "eyebrow": "",
         "quote": "\"We do not simply build brands; we architect legacies of excellence rooted in true identity.\"",
-        "attribution": "The Maison Arise Global Manifesto",
+        "attribution": "",
         "body": "",
         "bg_color": "#ffffff",
         "text_color": "#111111",
@@ -147,6 +147,7 @@
         "body": "Inherit the prestige of a house featured on KTVU Fox 2, Vogue, Harper's Bazaar, and the world’s most elite red carpets. As a Maison Attaché, you possess the \"Category of One\" advantage: the ability to clothe the entire family for all occasions in bespoke couture, bridal and suiting. Your success is not just a commission—it is a legacy woven into the fabric of our house.",
         "cta_text": "REQUEST THE EXECUTIVE DOSSIER",
         "cta_type": "dossier",
+        "cta_vertical": "academy",
         "cta_link": "",
         "image": "shopify://shop_images/09969f2a-1b04-424b-949f-ca6817bb9481.png",
         "floating_eyebrow": "Shared Growth",
@@ -218,6 +219,8 @@
         "lead": "Excellence is not an industry; it is an identity.",
         "body": "The world is your runway. Dream Expo is the platform where our students and partners showcase their talent to the world.",
         "cta_text": "Enter the Expo",
+        "cta_type": "link",
+        "cta_vertical": "academy",
         "cta_link": "shopify://pages/dream-expo-event",
         "image": "shopify://shop_images/iStock-1161922208.jpg",
         "show_play_button": false
@@ -235,6 +238,8 @@
         "lead": "Excellence is not an industry; it is an identity.",
         "body": "Helping visionaries architect their message into world-class publications. Turn your story and expertise into a professional publication that leaves a lasting legacy.",
         "cta_text": "Publish Your Story",
+        "cta_type": "link",
+        "cta_vertical": "academy",
         "cta_link": "",
         "image": "shopify://shop_images/iStock-1372102179.jpg",
         "show_play_button": false
