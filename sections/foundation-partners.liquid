@@ -52,7 +52,7 @@
         </div>
         {%- if section.settings.contact_text != blank -%}
           <div class="foundation-guardians__cta">
-            <a href="{{ section.settings.contact_link | default: '#' }}" class="btn-luxury">{{ section.settings.contact_text }}</a>
+            <button type="button" class="btn-luxury" onclick="document.getElementById('modal-corporate-engagement').classList.add('active'); document.body.style.overflow='hidden';">{{ section.settings.contact_text }}</button>
           </div>
         {%- endif -%}
       </div>
@@ -60,6 +60,34 @@
 
   </div>
 </section>
+
+<div class="nv-modal-overlay" id="modal-corporate-engagement">
+  <div class="nv-modal-content">
+    <button class="nv-modal-close" onclick="document.getElementById('modal-corporate-engagement').classList.remove('active'); document.body.style.overflow='';">&#215;</button>
+    <span class="nv-modal-eyebrow">Corporate Partnership</span>
+    <h2 class="nv-modal-title">Become a<br>Corporate Guardian.</h2>
+    <div class="nv-modal-body">
+      <p>Join the House of Vuu Foundation as a corporate donor and invest in the restoration of human dignity globally.</p>
+      {%- form 'contact', id: 'corporate-engagement-form', class: 'nv-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="corporate-donor-inquiry">
+        {%- if form.posted_successfully? -%}
+          <p class="nv-modal-success">Thank you. Our foundation team will be in touch shortly.</p>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div style="color:#c00;font-size:.8rem;margin-bottom:1rem;">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <input type="text" name="contact[name]" placeholder="FULL NAME" required>
+          <input type="text" name="contact[title]" placeholder="TITLE / ROLE" required>
+          <input type="text" name="contact[company]" placeholder="COMPANY NAME" required>
+          <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required>
+          {%- render 'phone-field' -%}
+          <textarea name="contact[body]" placeholder="SHARE YOUR VISION FOR THIS PARTNERSHIP..." rows="4"></textarea>
+          <button type="submit" class="nv-btn-submit">Submit Inquiry</button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</div>
 
 {% schema %}
 {
