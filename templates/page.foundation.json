@@ -248,6 +248,11 @@
         "contact_link": ""
       }
     }
+    ,
+    "foundation_disclaimer": {
+      "type": "foundation-disclaimer",
+      "settings": {}
+    }
   },
   "order": [
     "hero",
@@ -257,6 +262,7 @@
     "freedom",
     "quote",
     "pathways",
-    "partners"
+    "partners",
+    "foundation_disclaimer"
   ]
 }
