@@ -20,11 +20,22 @@
         "title_line_2": "Tailored for Earth"
       }
     },
-    "about_letter": {
+    "about_bridge_ULzaHf": {
+      "type": "about-bridge",
+      "name": "About — The Bridge",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "body": "<p><strong>The Vuu story isn’t just a timeline; it’s a testament. From the silence of a refugee boat to the lights of Cannes, every mile of the journey has been an education in the architecture of identity. This lived reality—this transition from survival to sovereignty—is what breathes life into the Blueprint of Honor. We don't just design garments or strategies; we forge the visible mantle for leaders who understand that true authority is rooted in a history of resilience and a future of excellence.</strong></p>",
+        "body_size": "1.35rem",
+        "body_align": "justify"
+      }
+    },
+    "about_letter_T7U3UA": {
       "type": "about-letter",
       "settings": {
         "eyebrow": "The Foundation",
-        "heading": "From Open Sea to the World Stage",
+        "heading": "",
         "paragraph_1": "In 1979, the story of Nancy Vuu did not begin in a studio; it began on the open sea. I was a one-year-old baby, carried into the unknown by parents who possessed the rarest kind of wealth: the courage to dream. Leaving the shores of Vietnam as refugees, they sacrificed their lineage to secure my freedom. They traded the only world they knew for a promise they couldn't see—so that decades later, I could return with a vision that spans continents.",
         "paragraph_2": "But the journey wasn't linear. Before the silks and the runways, I spent years navigating the high-stakes world of corporate leadership as a Vice President. I had planned a quiet transition to motherhood when a radical spiritual encounter shifted my entire trajectory. It was a \"Divine Yes\" that pulled me into fashion—not to follow trends, but to facilitate the restoration of true and sovereign identity.",
         "pullquote": "\"This is the foundation of our house: A legacy of survival turned into a mission of restoration.\""
@@ -35,7 +46,7 @@
       "settings": {
         "eyebrow": "The 44-year Return",
         "heading": "The Architecture of Identity",
-        "body": "I left the shores of Vietnam as a child, but I returned as a woman carrying a vision that spans continents. In January 2026, the House of Vuu officially established our Atelier in Saigon. This was not merely a business expansion; it was a homecoming—a convergence of raw, ancestral strength and the expansive freedom of the modern dreamer.\n\nPeople often ask how a visionary who leads from a place of spiritual authority can command a global name in couture. The answer lies in the distinction between the craft and the calling. The House of Vuu is built upon a proprietary, institutional standard of sartorial excellence—a pedigree of craftsmanship cultivated through decades of mastery.\n\nBeyond garment construction, I serve as a translator of distinction. Inspired by the patterns of heavenly dimensions, I direct an elite collective of master artisans to capture the unique silhouette of your presence—ensuring your external mantle is in perfect alignment with your internal authority. From the heritage-rich ateliers of Saigon to our flagship sanctuary in San Jose, we breathe life into these visions through a bridge of excellence. We are honoring a global collective of masterful souls whose hands carry the gravity of history and the resonance of hope.",
+        "body": "I left the shores of Vietnam as a child, but I returned as a woman carrying a vision that spans continents. In January 2026, the House of Vuu officially established our Atelier in Saigon. This was not merely a business expansion; it was a homecoming—a convergence of raw, ancestral strength and the expansive freedom of the modern dreamer.\n\nThe intersection of internal magnitude and global couture is not a paradox; it is an alignment. For the House of Vuu, there is no separation between the precision of the craft and the depth of the calling—one is simply the visible evidence of the other. The House of Vuu is built upon a proprietary, institutional standard of sartorial excellence—a pedigree of craftsmanship cultivated through decades of mastery.\n\nBeyond garment construction, I serve as a translator of distinction. Inspired by the patterns of heavenly dimensions, I direct an elite collective of master artisans to capture the unique silhouette of your presence—ensuring your external mantle is in perfect alignment with your internal authority. From the heritage-rich ateliers of Saigon to our flagship sanctuary in San Jose, we breathe life into these visions through a bridge of excellence. We are honoring a global collective of masterful souls whose hands carry the gravity of history and the resonance of hope.",
         "image_url": "",
         "image": "shopify://shop_images/untitled-5208_2.jpg"
       }
@@ -120,7 +131,8 @@
   },
   "order": [
     "about_hero",
-    "about_letter",
+    "about_bridge_ULzaHf",
+    "about_letter_T7U3UA",
     "about_return",
     "about_mantle",
     "about_bridge",
