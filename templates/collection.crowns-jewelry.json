@@ -13,9 +13,13 @@
       "type": "collection-hero-editorial",
       "settings": {
         "image": "shopify://shop_images/image10_1.jpg",
+        "video_url": "",
+        "hero_height": "50vh",
         "overlay_opacity": 0,
         "eyebrow": "The Physical Proof of Royalty",
-        "title": ""
+        "title": "",
+        "cta_label": "",
+        "cta_link": ""
       }
     },
     "manifesto": {
@@ -52,7 +56,8 @@
       ],
       "settings": {
         "products_per_page": 24,
-        "columns": "3"
+        "columns": "3",
+        "group_by_type": false
       }
     },
     "cross-sell": {

@@ -186,7 +186,7 @@
         "eyebrow": "Jewelry & Headpieces",
         "title": "The Crowning",
         "cta_label": "Adorn Yourself",
-        "cta_link": "/collections/crowns-jewelry"
+        "cta_link": "shopify://collections/crowns-jewelry"
       }
     },
     "dream-academy": {
