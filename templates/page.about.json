@@ -26,8 +26,8 @@
       "settings": {
         "eyebrow": "",
         "heading": "",
-        "body": "<p><strong>The Vuu story isn’t just a timeline; it’s a testament. From the silence of a refugee boat to the lights of Cannes, every mile of the journey has been an education in the architecture of identity. This lived reality—this transition from survival to sovereignty—is what breathes life into the Blueprint of Honor. We don't just design garments or strategies; we forge the visible mantle for leaders who understand that true authority is rooted in a history of resilience and a future of excellence.</strong></p><p></p><p><em>\"Honor is the thread that connects where you’ve been to where you are destined to stand.\"</em></p>",
-        "body_size": "1.35rem",
+        "body": "<p>The Vuu story isn’t just a timeline; it’s a testament. From the silence of a refugee boat to the lights of Cannes, every mile of the journey has been an education in the architecture of identity. This lived reality—this transition from survival to sovereignty—is what breathes life into the Blueprint of Honor. We don't just design garments or strategies; we forge the visible mantle for leaders who understand that true authority is rooted in a history of resilience and a future of excellence.</p><p></p><p><em><strong>\"Honor is the thread that connects where you’ve been to where you are destined to stand.\"</strong></em></p>",
+        "body_size": "1.5rem",
         "body_align": "justify"
       }
     },
