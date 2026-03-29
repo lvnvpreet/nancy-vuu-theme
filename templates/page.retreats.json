@@ -45,7 +45,7 @@
           "type": "dimension",
           "settings": {
             "number": "02",
-            "heading": "Elevated Mind",
+            "heading": "Cognitive Architecture",
             "subtitle": "Strategic Silence & Cognitive Clarity",
             "text": "Detach from the noise to reconstruct your mental architecture. We facilitate the high-frequency thinking necessary to architect a lasting legacy."
           }
@@ -54,7 +54,7 @@
           "type": "dimension",
           "settings": {
             "number": "03",
-            "heading": "Restored Soul",
+            "heading": "Sovereign Identity",
             "subtitle": "Sovereign Identity & Worth",
             "text": "The cornerstone of our work: Reclaiming unshakeable intrinsic worth. Move beyond performance-based metrics to lead from a foundation of sovereign internal authority."
           }
@@ -63,7 +63,7 @@
           "type": "dimension",
           "settings": {
             "number": "04",
-            "heading": "Activated Spirit",
+            "heading": "Strategic Visionary Alignment",
             "subtitle": "Divine Blueprint & Mandate",
             "text": "Secure vertical alignment with your ultimate purpose. A sacred space for spiritual encounter that clarifies your divine mandate and future vision."
           }
@@ -190,8 +190,8 @@
       "type": "cross-sell",
       "settings": {
         "image": "shopify://shop_images/untitled-0.jpg",
-        "title": "The Crowning | The Sacred Seal of Your Elevation",
-        "description": "Seal your transformation with the ultimate capstone. Receive a bespoke, named crown or lapel pin—each bearing a unique anointing—as we speak a word of destiny over your future. The essential conclusion to your Napa Valley sanctuary experience.",
+        "title": "THE INVESTITURE | THE SOVEREIGN ANCHOR",
+        "description": "Conclude your intensive with a private investiture. Receive a bespoke, hand-crafted crown or lapel pin—a physical anchor of your reclaimed authority. This final ceremony serves as a mandate for your future, marking your transition into your next era of global influence.",
         "cta_label": "Explore Accessories",
         "cta_link": "",
         "primary_label": "Experience \"The Crowning\"",
