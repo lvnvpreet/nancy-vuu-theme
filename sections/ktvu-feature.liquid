@@ -161,34 +161,35 @@
 
     <!-- LEFT (60%): Cinematic Video Player -->
     <div class="ktvu-feature__media">
-      <div class="ktvu-feature__thumb-wrap" id="ktvu-thumb-wrap" style="cursor:pointer;" tabindex="0" aria-label="Play video" onclick="openKtvuModal()">
-        <img
-          src="https://static-media.fox.com/fmcv3/prod/fts/8wli9izvpxn6neyy/37bdwwu9jc9nflof.jpg"
-          alt="Nancy Vuu on the set of KTVU Fox 2"
-          class="ktvu-feature__thumb"
-          loading="lazy">
+      <a
+        href="https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5"
+        target="_blank"
+        rel="noopener"
+        class="ktvu-feature__video-link"
+        style="display:block;"
+      >
+        <div class="ktvu-feature__thumb-wrap">
+          <img
+            src="https://static-media.fox.com/fmcv3/prod/fts/8wli9izvpxn6neyy/37bdwwu9jc9nflof.jpg"
+            alt="Nancy Vuu on the set of KTVU Fox 2"
+            class="ktvu-feature__thumb"
+            loading="lazy">
 
-        <div class="ktvu-feature__overlay"></div>
+          <div class="ktvu-feature__overlay"></div>
 
-        <div class="ktvu-feature__play">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-            <polygon points="5,3 19,12 5,21"/>
-          </svg>
+          <div class="ktvu-feature__play">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+
+          <div class="ktvu-feature__badge">
+            <span>KTVU FOX 2</span>
+          </div>
         </div>
-
-        <div class="ktvu-feature__badge">
-          <span>KTVU FOX 2</span>
-        </div>
-      </div>
+      </a>
       <div style="margin-top:0.75rem; text-align:center;">
         <a href="https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5" target="_blank" rel="noopener" style="font-size:0.92em; color:#888; text-decoration:underline;">Watch on KTVU Fox 2 &rarr;</a>
-      </div>
-      <div id="ktvu-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;">
-        <button onclick="closeKtvuModal()" aria-label="Close video modal" style="position:absolute; top:1rem; right:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;">&times;</button>
-        <video id="ktvu-video" controls autoplay style="max-width:90vw; max-height:85vh; background:#000; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,0.45);">
-          <source src="https://cdn.shopify.com/videos/c/o/v/8765b73e98cb4a2680b444ed53a28de1.mov" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
 
@@ -229,48 +230,7 @@
 
   </div>
 
-<script>
-function openKtvuModal() {
-  var modal = document.getElementById('ktvu-modal');
-  var video = document.getElementById('ktvu-video');
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    if (video) {
-      video.currentTime = 0;
-      video.play();
-    }
-  }
-}
-function closeKtvuModal() {
-  var modal = document.getElementById('ktvu-modal');
-  var video = document.getElementById('ktvu-video');
-  if (modal) modal.style.display = 'none';
-  if (video) video.pause();
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeKtvuModal();
-});
-document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById('ktvu-modal');
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeKtvuModal();
-    });
-  }
-  // Accessibility: allow Enter/Space to open modal
-  var thumb = document.getElementById('ktvu-thumb-wrap');
-  if (thumb) {
-    thumb.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openKtvuModal();
-      }
-    });
-  }
-});
-</script>
+
 </section>
 
 {% schema %}
