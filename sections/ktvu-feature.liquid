@@ -161,32 +161,28 @@
 
     <!-- LEFT (60%): Cinematic Video Player -->
     <div class="ktvu-feature__media">
-      <a href="{{ section.settings.cta_link | default: 'https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5' }}"
-         target="_blank"
-         rel="noopener"
-         class="ktvu-feature__video-link"
-         aria-label="Watch Nancy Vuu on KTVU Fox 2">
+      <div class="ktvu-feature__thumb-wrap" id="ktvu-thumb-wrap">
+        <img
+          src="https://static-media.fox.com/fmcv3/prod/fts/8wli9izvpxn6neyy/37bdwwu9jc9nflof.jpg"
+          alt="Nancy Vuu on the set of KTVU Fox 2"
+          class="ktvu-feature__thumb"
+          loading="lazy">
 
-        <div class="ktvu-feature__thumb-wrap">
-          <img
-            src="https://static-media.fox.com/fmcv3/prod/fts/8wli9izvpxn6neyy/37bdwwu9jc9nflof.jpg"
-            alt="Nancy Vuu on the set of KTVU Fox 2"
-            class="ktvu-feature__thumb"
-            loading="lazy">
+        <div class="ktvu-feature__overlay"></div>
 
-          <div class="ktvu-feature__overlay"></div>
+        <button type="button" class="ktvu-feature__play" id="ktvu-play-btn" aria-label="Play video">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+        </button>
 
-          <div class="ktvu-feature__play">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-              <polygon points="5,3 19,12 5,21"/>
-            </svg>
-          </div>
-
-          <div class="ktvu-feature__badge">
-            <span>KTVU FOX 2</span>
-          </div>
+        <div class="ktvu-feature__badge">
+          <span>KTVU FOX 2</span>
         </div>
-      </a>
+      </div>
+      <div style="margin-top:0.75rem; text-align:center;">
+        <a href="https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5" target="_blank" rel="noopener" style="font-size:0.92em; color:#888; text-decoration:underline;">Watch on KTVU.com</a>
+      </div>
     </div>
 
     <!-- RIGHT (40%): Authority Copy -->
@@ -225,6 +221,37 @@
     </div>
 
   </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var playBtn = document.getElementById('ktvu-play-btn');
+    var thumbWrap = document.getElementById('ktvu-thumb-wrap');
+    if (playBtn && thumbWrap) {
+      playBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Hide overlay, play button, and image
+        var overlay = thumbWrap.querySelector('.ktvu-feature__overlay');
+        var img = thumbWrap.querySelector('.ktvu-feature__thumb');
+        var badge = thumbWrap.querySelector('.ktvu-feature__badge');
+        playBtn.style.display = 'none';
+        if (overlay) overlay.style.display = 'none';
+        if (img) img.style.display = 'none';
+        if (badge) badge.style.display = 'none';
+        // Inject iframe (fallback: KTVU direct video, else show message)
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.ktvu.com/video/fmc-qfxvfb5kmt3mxiv5';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        iframe.style.border = 'none';
+        iframe.allow = 'autoplay; fullscreen';
+        iframe.allowFullscreen = true;
+        iframe.title = 'KTVU Fox 2 Video';
+        // Try to embed, fallback if not embeddable
+        thumbWrap.appendChild(iframe);
+      });
+    }
+  });
+</script>
 </section>
 
 {% schema %}
