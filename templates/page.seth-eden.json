@@ -354,49 +354,6 @@
         "badge_text": "Available In-Atelier Only"
       }
     },
-    "seth_limited_YTyTkz": {
-      "type": "seth-limited",
-      "blocks": {
-        "design_fUtGXA": {
-          "type": "design",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.46.02_PM.png",
-            "number": "Inspiration 01",
-            "title": "The Floral Fashion",
-            "subtitle": "Architectural Framing in Silk Jacquard"
-          }
-        },
-        "design_66qmbT": {
-          "type": "design",
-          "settings": {
-            "image": "shopify://shop_images/iStock-2011819012.jpg",
-            "number": "Inspiration 02",
-            "title": "For Him & Her",
-            "subtitle": "Embracing Their Unique Silhouette"
-          }
-        },
-        "design_4nJE8d": {
-          "type": "design",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.48.51_PM.png",
-            "number": "Inspiration 03",
-            "title": "The Exquisite 3 piece",
-            "subtitle": "Structural Command in Brown Wool"
-          }
-        }
-      },
-      "block_order": [
-        "design_fUtGXA",
-        "design_66qmbT",
-        "design_4nJE8d"
-      ],
-      "settings": {
-        "eyebrow": "Invitations to the Journey",
-        "heading": "Limited Designs",
-        "description": "A curation of \"Seth Eden\" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey.",
-        "badge_text": "Available In-Atelier Only"
-      }
-    },
     "gallery_mens": {
       "type": "seth-gallery",
       "blocks": {
@@ -404,7 +361,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.46.02_PM.png",
-            "label": "The Architect that demands",
+            "label": "",
             "wide": false
           }
         },
@@ -412,7 +369,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/iStock-2011819012.jpg",
-            "label": "The Executive Blazer",
+            "label": "",
             "wide": false
           }
         },
@@ -420,7 +377,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/iStock-839014260.jpg",
-            "label": "The Tuxedo",
+            "label": "",
             "wide": false
           }
         }
@@ -446,7 +403,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
-            "label": "The Empowered Designs",
+            "label": "",
             "wide": false
           }
         },
@@ -454,7 +411,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
-            "label": "The Chic & Classy",
+            "label": "",
             "wide": false
           }
         },
@@ -462,7 +419,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.39.53_PM.png",
-            "label": "Formal Evening Tailoring",
+            "label": "",
             "wide": false
           }
         }
@@ -624,7 +581,6 @@
     "seth_feature_iQN7tW",
     "tailoring",
     "limited",
-    "seth_limited_YTyTkz",
     "gallery_mens",
     "gallery_womens",
     "narrative",
