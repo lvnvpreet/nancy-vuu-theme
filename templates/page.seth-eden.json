@@ -354,6 +354,49 @@
         "badge_text": "Available In-Atelier Only"
       }
     },
+    "seth_limited_YTyTkz": {
+      "type": "seth-limited",
+      "blocks": {
+        "design_fUtGXA": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.31.29_PM.png",
+            "number": "Inspiration 01",
+            "title": "The Floral Fashion",
+            "subtitle": "Architectural Framing in Silk Jacquard"
+          }
+        },
+        "design_66qmbT": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.37.12_AM.png",
+            "number": "Inspiration 02",
+            "title": "For Him & Her",
+            "subtitle": "Embracing Their Unique Silhouette"
+          }
+        },
+        "design_4nJE8d": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.40.01_AM.png",
+            "number": "Inspiration 03",
+            "title": "The Exquisite 3 piece",
+            "subtitle": "Structural Command in Brown Wool"
+          }
+        }
+      },
+      "block_order": [
+        "design_fUtGXA",
+        "design_66qmbT",
+        "design_4nJE8d"
+      ],
+      "settings": {
+        "eyebrow": "Invitations to the Journey",
+        "heading": "Limited Designs",
+        "description": "A curation of \"Seth Eden\" inspirations available for immediate purchase at the atelier. These limited-release garments serve as the initial vision—an inspiration for the client to begin their customized tailoring journey.",
+        "badge_text": "Available In-Atelier Only"
+      }
+    },
     "gallery_mens": {
       "type": "seth-gallery",
       "blocks": {
@@ -581,6 +624,7 @@
     "seth_feature_iQN7tW",
     "tailoring",
     "limited",
+    "seth_limited_YTyTkz",
     "gallery_mens",
     "gallery_womens",
     "narrative",
