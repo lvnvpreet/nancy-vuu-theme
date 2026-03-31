@@ -97,7 +97,7 @@
           "type": "timeline",
           "settings": {
             "badge": "The Expedited Path",
-            "duration": "4–6 Weeks",
+            "duration": "6-8 Weeks",
             "description": "Mastery Sprints for urgent mandates. (Availability Limited)",
             "highlight": true
           }
@@ -280,9 +280,22 @@
     "modal": {
       "type": "audience-modal",
       "settings": {
-        "price_tier_1": "$25,000 – $50,000",
-        "price_tier_2": "$50,000 – $75,000",
-        "price_tier_3": "$75,000 – $100,000+"
+        "modal_eyebrow": "APPLICATION FOR ALIGNMENT",
+        "modal_subheading": "INITIATING YOUR STRATEGIC RESET.",
+        "modal_intro": "Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration — it is an application for a Selective Alignment Audit. Please answer with absolute transparency.",
+        "phase1_label": "PHASE I — STRATEGIC ALIGNMENT",
+        "phase2_label": "PHASE II — EXECUTIVE PROFILE",
+        "phase3_label": "PHASE III — ALIGNMENT DECLARATION",
+        "q1_label": "1. Primary Objective for this Immersion?",
+        "q2_label": "2. Describe your leadership frequency.",
+        "q2_placeholder": "Select Your Alignment",
+        "q3_label": "3. The Single Barrier to your Sovereignty?",
+        "q3_placeholder": "Describe in 250 characters or less...",
+        "q4_label": "4. Anticipated Implementation Fund?",
+        "q5_label": "5. Describe your True Appointment in one word.",
+        "q5_placeholder": "VISIONARY. REDEEMED. SOVEREIGN...",
+        "submit_label": "INITIATE ALIGNMENT AUDIT",
+        "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
     }
   },
