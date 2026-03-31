@@ -261,7 +261,7 @@
         "theme": "light",
         "image_position": "left",
         "image_height": 750,
-        "image": "shopify://shop_images/iStock-1184401712.jpg",
+        "image": "shopify://shop_images/iStock-667443640.jpg",
         "badge_text": "",
         "eyebrow": "Legacy Beginnings",
         "title_line_1": "The Heirloom",
@@ -282,7 +282,7 @@
             "level": "Level I",
             "heading": "Made-to-Measure",
             "description": "The \"Recognition\" experience. Utilizing our signature architectural patterns as a foundation, we adjust to your specific dimensions. This journey involves two fittings and ensures the Seth Eden silhouette is flawlessly aligned with your frame.",
-            "features": "Signature Pattern Base|40+ Premium Fabric Choices|4-Week Delivery",
+            "features": "Signature Pattern Base|40+ Premium Fabric Choices|6-8-Week Delivery",
             "cta_text": "Inquire MTM",
             "cta_link": "#inquiry",
             "dark": false
@@ -293,7 +293,7 @@
           "settings": {
             "level": "Level II",
             "heading": "Full Bespoke",
-            "description": "The \"Covenant\" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of the Husted & Vuu house—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.",
+            "description": "The \"Covenant\" experience. A unique pattern is hand-drafted specifically for you from a blank canvas. This is the absolute height of Seth Eden—incorporating infinite hand-stitch details and multiple skeletal fittings for total anatomical command.",
             "features": "Hand-Drafted Individual Pattern|Exclusive Rare Textiles|10-Week Master Craft",
             "cta_text": "Begin Bespoke",
             "cta_link": "#inquiry",
