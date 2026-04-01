@@ -24,7 +24,7 @@
         "subtitle_serif": false,
         "tagline": "",
         "cta_label": "Explore Destinations",
-        "cta_link": "#destinations",
+        "cta_link": "#INQUIRY",
         "cta_style": "outline",
         "text_color": "#ffffff"
       }
@@ -167,7 +167,7 @@
             "paragraph_2": "Within this private mountain sanctuary, we go beyond the physical to the profound. This is where you silence the noise of the \"event\" to hear the voice of your Purpose.\nThe Internal Architecture",
             "paragraph_3": "Through a curated blend of spiritual anchoring and emotional recalibration, we awaken the Dreamer within. We believe a sacred union is not where your individual dreams go to die, but where they are catalyzed. You will deconstruct any fear of \"losing yourself\" and replace it with an unshakeable security in who you were always meant to be. Donning the Mantle of Authority.",
             "paragraph_4": "This is your season of elevation. You will be guided to move past the role of \"fiancée\" and step into your Mantle of Grace and Authority. You will leave refreshed, elevated, and anchored—carrying a sense of hope and passion that will fuel your marriage for decades to come. You are not just a bride; you are a woman fashioned for a kingdom. It is time to prepare the Queen.",
-            "paragraph_5": "THE EXPERIENCE: Identity, Intention, and Legacy\n\n    Sovereign Foundations: High-level strategic sessions designed to anchor your identity before the vow. We troubleshoot the noise of the \"event\" to focus on the magnitude of your upcoming union and the legacy you will build as a unified force.\n\n    The Internal Atelier: A private, collaborative experience where you begin to architect your internal \"Blueprint of Grace\"—the spiritual and emotional landscape that will define your presence as a wife, a partner, and a queen.\n\n    The Identity Lab: Creative workshops designed to awaken the \"Dreamer\" within the Bride. Find the freedom and the infrastructure to carry your individual calling into your joint mandate with unshakeable confidence.\n\n    Sacred Circles: Curated social hours and \"Covenant Dinners\" held under the Napa Valley stars, designed to foster deep, lifelong connections with other women of high-level influence who are also walking the path of legacy.\n\n    The Sanctuary Suite: Exclusive lodging, bespoke organic cuisine, and restorative treatments that prioritize \"Peace as a Foundation\" for the season ahead.",
+            "paragraph_5": "THE EXPERIENCE: Identity, Intention, and Legacy.\n\n    Sovereign Foundations: High-level strategic sessions designed to anchor your identity before the vow. We troubleshoot the noise of the \"event\" to focus on the magnitude of your upcoming union and the legacy you will build as a unified force.\n\n    The Internal Atelier: A private, collaborative experience where you begin to architect your internal \"Blueprint of Grace\"—the spiritual and emotional landscape that will define your presence as a wife, a partner, and a queen.\n\n    The Identity Lab: Creative workshops designed to awaken the \"Dreamer\" within the Bride. Find the freedom and the infrastructure to carry your individual calling into your joint mandate with unshakeable confidence.\n\n    Sacred Circles: Curated social hours and \"Covenant Dinners\" held under the Napa Valley stars, designed to foster deep, lifelong connections with other women of high-level influence who are also walking the path of legacy.\n\n    The Sanctuary Suite: Exclusive lodging, bespoke organic cuisine, and restorative treatments that prioritize \"Peace as a Foundation\" for the season ahead.",
             "cta_text": "Apply for Alignment",
             "modal_trigger": true
           }
@@ -348,8 +348,8 @@
         "phone": "",
         "label_name": "FULL NAME",
         "label_email": "CONTACT EMAIL ADDRESS",
-        "label_service": "TYPE OF IMMERSION",
-        "label_message": "DESCRIBE YOUR LEADERSHIP FOCUS AND DESIRED OUTCOME...",
+        "label_service": "WHICH INTENSIVE OR RETREAT YOU ARE APPLYING FOR?",
+        "label_message": "DESCRIBE YOUR FOCUS AND DESIRED OUTCOME...",
         "submit_label": "Apply for Private Immersion"
       }
     },
