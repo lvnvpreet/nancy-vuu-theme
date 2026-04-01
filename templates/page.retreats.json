@@ -133,6 +133,58 @@
         "badge_text": "LIMITED 2026 ENGAGEMENTS"
       }
     },
+    "retreat_destinations_AKtM4t": {
+      "type": "retreat-destinations",
+      "blocks": {
+        "destination_DRCBPi": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/5.jpg",
+            "quota": "",
+            "location": "Napa Valley, CA",
+            "title": "Sovereign Reset",
+            "description": "Quiet the Noise. Find Your Center. Remember Who You Are. \n\nThe Sovereign Reset is more than a strategy session; it is a high-stakes deconstruction of the life you’ve built to make room for the life you were meant for.\n\nAt the top, the \"Echo\" of generic ambition is loudest. It tells you to do more, be more, and move faster—until your own voice is lost in the static. Located within a private sanctuary in the majestic mountains of Napa Valley, this 4-day immersive experience allows you to finally silence that external noise.\n\nThrough our Sovereign Narrative Architecture, we strip away the layers of \"who you’re supposed to be\" to reveal the unshakeable clarity required for your next decade of influence. We don’t just build a plan; we restore the person behind it. You will leave equipped to don your Mantle of Authority with unapologetic distinction.\n\nThis is where the Dreamer is restored, and the Architect is called.\n\nTHE EXPERIENCE:\n\n    Total Recalibration: A deep dive into your vision and legacy.\n\n    Specialized Mentorship: Direct, high-level strategic guidance.\n\n    Sovereign Alignment: Curated lodging in nature's serenity and bespoke cuisine designed to nourish the soul while we build the future.",
+            "cta_text": "Apply for Alignment",
+            "modal_trigger": true
+          }
+        },
+        "destination_h4AgrP": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/10.jpg",
+            "quota": "",
+            "location": "Kaneohe, HI & Napa Valley, Ca",
+            "title": "The Legacy Build",
+            "description": "From Vision to Infrastructure. Architect Your Sovereign Legacy.\n\nMost visionaries possess the \"what,\" but they lack the \"how.\" You have the magnitude, the ideas, and the drive—but is your infrastructure strong enough to hold the weight of your future?\n\nThe Legacy Builder is a high-stakes workspace designed for the leader who is tired of \"winging it\" and ready to translate internal genius into measurable external influence. This is where we move beyond conceptual dreams and into the technical engineering of a lasting legacy.\n\nOver four days, we perform a deep-dive into the mechanics of your impact. Utilizing our Mantle Assessments and the Blueprint of Honor, we deconstruct your current operations to build a visible standard of excellence. You won’t leave with a \"concept\" or a \"vibe\"—you will leave with the strategic architecture and operational clarity required to command your next era of distinction.\n\nDiscover the blueprint that commands your vision into reality.\n\nTHE EXPERIENCE:\n\n    Implementation Labs: Real-time strategic building. We don’t just talk about the work; we do the work.\n\n    The Mechanics of Visibility: Engineering how your brand is seen, felt, and respected on a global stage.\n\n    Honor-Based Ethics: Systematizing your values so your legacy remains unshakeable and untarnished.\n\n    The Blueprint: Walk away with the literal map for your next decade of institutional growth.",
+            "cta_text": "Apply for Alignment",
+            "modal_trigger": true
+          }
+        },
+        "destination_Mrjdri": {
+          "type": "destination",
+          "settings": {
+            "image": "shopify://shop_images/7.jpg",
+            "quota": "",
+            "location": "Napa Valley, CA",
+            "title": "The Sovereign Union Intensive",
+            "description": "From Co-existence to Unified Command. Architect Your Joint Legacy. In high-stakes leadership, the strength of your private union determines the ceiling of your public influence. The Sovereign Union is the definitive strategic environment for the power couple ready to synchronize individual mandates into a single, unshakeable Sovereign Estate. This is not a \"retreat\"; it is a private architecture session for the duo operating at the highest levels of impact. This 4-day intensive focuses on the Technical Alignment of your combined legacies. Moving beyond traditional \"communication,\" we deconstruct the mechanics of your joint governance. Through bespoke Mantle Assessments for each partner and the deployment of the Blueprint of Honor, you will bridge the gap between individual ambition and collective sovereignty. You will not leave with a \"renewed bond\"; you will leave with a Joint Strategic Directive and the infrastructure required to command your next era as a unified force. THE EXPERIENCE: Private governance labs, the concrete mechanics of joint honor and visibility, and the systemic engineering of your combined legacy.",
+            "cta_text": "Apply for Alignment",
+            "modal_trigger": true
+          }
+        }
+      },
+      "block_order": [
+        "destination_DRCBPi",
+        "destination_h4AgrP",
+        "destination_Mrjdri"
+      ],
+      "settings": {
+        "anchor_id": "destinations",
+        "heading": "THE NANCY VUU INTENSIVES: Deconstruction to Sovereignty.",
+        "subtitle": "by invitation only",
+        "badge_text": "LIMITED 2026 ENGAGEMENTS"
+      }
+    },
     "retreat_destinations_bQJTgQ": {
       "type": "retreat-destinations",
       "blocks": {
@@ -295,6 +347,7 @@
     "hero",
     "dimensions",
     "destinations",
+    "retreat_destinations_AKtM4t",
     "retreat_destinations_bQJTgQ",
     "academy_cta",
     "retreat_inline_form",
