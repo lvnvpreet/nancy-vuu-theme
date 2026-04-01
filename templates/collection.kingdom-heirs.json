@@ -13,9 +13,13 @@
       "type": "collection-hero-editorial",
       "settings": {
         "image": "shopify://shop_images/Untitled_design_14.jpg",
+        "video_url": "",
+        "hero_height": "50vh",
         "overlay_opacity": 35,
         "eyebrow": "ready-to-wear",
-        "title": ""
+        "title": "",
+        "cta_label": "",
+        "cta_link": ""
       }
     },
     "manifesto": {
@@ -123,7 +127,8 @@
       "type": "main-collection",
       "settings": {
         "products_per_page": 24,
-        "columns": "3"
+        "columns": "3",
+        "group_by_type": false
       }
     },
     "cross-sell": {
@@ -134,8 +139,8 @@
         "description": "Our retreats are a curated space for those who move through the world with quiet intention. We’ve designed a weekend that honors the art of presence, trading the noise of the everyday for the clarity of shared ease and refined community. It is an invitation to inhabit our values fully, surrounded by the textures and conversations that define our modern lineage. Here, we gather not just to rest, but to recalibrate for the journey ahead.",
         "cta_label": "",
         "cta_link": "shopify://collections/crowns-jewelry",
-        "primary_label": "Procure Online",
-        "primary_link": "shopify://collections/crowns-jewelry",
+        "primary_label": "Enter Retreats",
+        "primary_link": "shopify://pages/dream-retreats",
         "secondary_label": "",
         "secondary_link": ""
       }
