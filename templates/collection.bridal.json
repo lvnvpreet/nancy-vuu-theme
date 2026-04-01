@@ -56,6 +56,20 @@
         "group_by_type": true
       }
     },
+    "about_retreats_EWU49g": {
+      "type": "about-retreats",
+      "name": "About — Retreats",
+      "settings": {
+        "image_url": "",
+        "image": "shopify://shop_images/Untitled_45_x_50_in.jpg",
+        "eyebrow": "Sacred Immersion",
+        "heading": "Co-Author Your Bridal Legacy",
+        "paragraph_1": "The world prepares you for a wedding; the House of Vuu prepares you for a legacy. The Masterpiece Immersion is an exclusive 4-day sanctuary where the evolution of your soul meets the artistry of high couture. This is your invitation to step away from the noise of the \"event\" and into the quiet luxury of your own becoming.",
+        "paragraph_2": "Within this private mountain sanctuary, the spiritual anchoring of our bridal retreat merges with the creative fire of the Atelier. Here, you will co-design your bespoke bridal gown alongside Nancy Vuu—architecting a garment that is not merely \"found,\" but born from your own internal awakening. Every stitch becomes a physical manifestation of your purpose; every silhouette a reflection of your grace. Walk toward your future not in a dress you bought, but in a masterpiece you became.",
+        "cta_label": "EXPLORE THE MASTERPIECE IMMERSION",
+        "cta_link": "shopify://pages/dream-retreats"
+      }
+    },
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
@@ -76,6 +90,7 @@
     "manifesto",
     "exclusivity",
     "main",
+    "about_retreats_EWU49g",
     "cross-sell"
   ]
 }
