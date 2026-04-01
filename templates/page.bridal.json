@@ -279,6 +279,7 @@
     "closer": {
       "type": "cta-closer",
       "settings": {
+        "image": "shopify://shop_images/iStock-1322975669.jpg",
         "overlay_opacity": 20,
         "eyebrow": "The Final Amen",
         "heading": "Your Legacy Awaits Its Form.",
