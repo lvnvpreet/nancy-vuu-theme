@@ -83,6 +83,54 @@
         "secondary_label": "",
         "secondary_link": ""
       }
+    },
+    "atelier_inquiry_xXF6mq": {
+      "type": "atelier-inquiry",
+      "blocks": {
+        "service_option_zgUyDD": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        "service_option_YLPJ6M": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
+        },
+        "service_option_DEL7Ek": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        }
+      },
+      "block_order": [
+        "service_option_zgUyDD",
+        "service_option_YLPJ6M",
+        "service_option_DEL7Ek"
+      ],
+      "name": "Atelier Inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "The Atelier Concierge",
+        "title_line_1": "Request a",
+        "title_line_2": "Consultation.",
+        "subtext": "Step into the sanctuary of the Atelier for a Made-to-Measure Consultation for one of our current designs. Or explore a private, architectural dialogue that transcends traditional design. This is a covenant of creation, where the Dreamer within you meets the master craftsmanship of the House. We translate the quiet magnitude of your future into a masterpiece of grace, ensuring your walk toward the altar is a definitive arrival in your truest, most sovereign identity. Beyond the dream lies the creation. Beyond the dress stands the woman.",
+        "address_eyebrow": "The San Jose Flagship",
+        "address_line_1": "1520 Southwest Expwy #10",
+        "address_line_2": "San Jose, CA 95126",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "Please provide your wedding date.",
+        "label_message": "Tell u about yourself and your vision for your dream gown.",
+        "submit_label": "Submit Request to the Atelier"
+      }
     }
   },
   "order": [
@@ -91,6 +139,7 @@
     "exclusivity",
     "main",
     "about_retreats_EWU49g",
-    "cross-sell"
+    "cross-sell",
+    "atelier_inquiry_xXF6mq"
   ]
 }

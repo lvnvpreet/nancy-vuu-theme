@@ -142,6 +142,7 @@
         "phase_2",
         "phase_3"
       ],
+      "disabled": true,
       "settings": {}
     },
     "investment": {
@@ -372,9 +373,9 @@
     "hero",
     "manifesto",
     "ritual",
+    "investment",
     "lead-times",
     "workflow",
-    "investment",
     "heritage",
     "cross-sell-luxury",
     "about_retreats_3Dzctt",
