@@ -39,7 +39,32 @@
               <span class="retreat-card__location">{{ block.settings.location }}</span>
             {%- endif -%}
             <h4 class="retreat-card__title serif"><em>{{ block.settings.title }}</em></h4>
-            {%- if block.settings.description != blank -%}
+            {%- if block.settings.content_subtitle != blank -%}
+              <p class="retreat-card__desc-subtitle">{{ block.settings.content_subtitle }}</p>
+            {%- endif -%}
+
+            {%- assign has_split_paragraphs = false -%}
+            {%- if block.settings.paragraph_1 != blank or block.settings.paragraph_2 != blank or block.settings.paragraph_3 != blank or block.settings.paragraph_4 != blank or block.settings.paragraph_5 != blank -%}
+              {%- assign has_split_paragraphs = true -%}
+            {%- endif -%}
+
+            {%- if has_split_paragraphs -%}
+              {%- if block.settings.paragraph_1 != blank -%}
+                <p class="retreat-card__desc">{{ block.settings.paragraph_1 }}</p>
+              {%- endif -%}
+              {%- if block.settings.paragraph_2 != blank -%}
+                <p class="retreat-card__desc">{{ block.settings.paragraph_2 }}</p>
+              {%- endif -%}
+              {%- if block.settings.paragraph_3 != blank -%}
+                <p class="retreat-card__desc">{{ block.settings.paragraph_3 }}</p>
+              {%- endif -%}
+              {%- if block.settings.paragraph_4 != blank -%}
+                <p class="retreat-card__desc">{{ block.settings.paragraph_4 }}</p>
+              {%- endif -%}
+              {%- if block.settings.paragraph_5 != blank -%}
+                <p class="retreat-card__desc">{{ block.settings.paragraph_5 }}</p>
+              {%- endif -%}
+            {%- elsif block.settings.description != blank -%}
               <p class="retreat-card__desc">{{ block.settings.description }}</p>
             {%- endif -%}
             {%- if block.settings.cta_text != blank -%}
@@ -117,6 +142,36 @@
           "type": "textarea",
           "id": "description",
           "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content_subtitle",
+          "label": "Content subtitle"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph_1",
+          "label": "Paragraph 1"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph_2",
+          "label": "Paragraph 2"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph_3",
+          "label": "Paragraph 3"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph_4",
+          "label": "Paragraph 4"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph_5",
+          "label": "Paragraph 5"
         },
         {
           "type": "text",
