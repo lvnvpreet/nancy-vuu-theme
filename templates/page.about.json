@@ -121,9 +121,9 @@
       "settings": {
         "tagline": "Clothe yourself in your calling.",
         "cta_1_label": "Inquire for Couture",
-        "cta_1_link": "/pages/atelier",
+        "cta_1_link": "shopify://pages/atelier",
         "cta_2_label": "Join a Retreat",
-        "cta_2_link": "/pages/retreats",
+        "cta_2_link": "shopify://pages/dream-retreats",
         "signature_name": "Nancy Vuu",
         "signature_title": "Architect of Distinction"
       }
