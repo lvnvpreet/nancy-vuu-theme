@@ -27,9 +27,9 @@
           </div>
           <div class="tier-card__bottom">
             <p class="tier-card__price serif-font">{{ block.settings.price }}</p>
-            <button class="btn-luxury {% if block.settings.featured %}btn-luxury--inverted{% endif %}" data-audience-open>
+            <!--- <button class="btn-luxury {% if block.settings.featured %}btn-luxury--inverted{% endif %}" data-audience-open>
               {{ block.settings.cta_label | default: "Inquire" }}
-            </button>
+            </button> --->
             {% if block.settings.cta_label != blank %}
               {% if block.settings.cta_link != blank %}
                 <a href="{{ block.settings.cta_link }}" class="btn-luxury" style="color:{{ block.settings.text_color }};border-color:{{ block.settings.text_color }};">{{ block.settings.cta_label }}</a>
