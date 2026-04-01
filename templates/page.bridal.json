@@ -188,6 +188,7 @@
             "features": "<p>• Signature Design Selections<br/>• Standard Measurements<br/>• Vietnam Artisan Build<br/>• San Jose Final Coronation</p>",
             "price": "From $2500",
             "cta_label": "Inquire",
+            "cta_link": "shopify://pages/contact-us",
             "badge": "",
             "featured": false
           }
@@ -200,6 +201,7 @@
             "features": "<p>• Modified Silhouette Engineering<br/>• Advanced Body Mapping<br/>• Premium Fabric Access<br/>• San Jose Master Tailoring</p>",
             "price": "From $3800",
             "cta_label": "Inquire",
+            "cta_link": "",
             "badge": "",
             "featured": false
           }
@@ -212,6 +214,7 @@
             "features": "<p>• Original Vision Sketching<br>• <strong>THE ARTISAN TOILE EXPERIENCE</strong><br>• Master Draper Immersion<br>• Legacy Record Retention</p>",
             "price": "From $8,500",
             "cta_label": "Request Commission",
+            "cta_link": "",
             "badge": "Most Coveted",
             "featured": true
           }
