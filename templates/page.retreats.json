@@ -99,7 +99,7 @@
         "dest_hawaii": {
           "type": "destination",
           "settings": {
-            "image": "shopify://shop_images/10.jpg",
+            "image": "shopify://shop_images/5.jpg",
             "quota": "",
             "location": "Hawaii & Napa Valley, Ca",
             "title": "The Legacy Build",
