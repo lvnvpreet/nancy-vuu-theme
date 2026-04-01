@@ -144,39 +144,6 @@
       ],
       "settings": {}
     },
-    "heritage": {
-      "type": "heritage-narrative",
-      "blocks": {
-        "p1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "My journey began as a refugee, leaving the shores of Vietnam with nothing but a dream. Today, I return not as a stranger, but as a restorer."
-          }
-        },
-        "p2": {
-          "type": "paragraph",
-          "settings": {
-            "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our gowns in our Vietnam Atelier, we aren't just making a dress; we are empowering a community and honoring a lineage."
-          }
-        },
-        "q1": {
-          "type": "quote",
-          "settings": {
-            "text": "\"From the first sketch in San Jose to the final stitch in the homeland, your gown is a physical anthem of a dream realized.\""
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "q1"
-      ],
-      "settings": {
-        "eyebrow": "A Heritage Reclaimed",
-        "title": "The Sovereign Return",
-        "image": "shopify://shop_images/iStock-866175472.jpg"
-      }
-    },
     "investment": {
       "type": "investment-tiers",
       "blocks": {
@@ -229,6 +196,39 @@
         "title": "Your Pathway to Sovereignty",
         "subtitle": "Defining the architectural depth of your commission",
         "footnote": "*The Artisan Toile is a dedicated mock-up fitting exclusive to Bespoke commissions."
+      }
+    },
+    "heritage": {
+      "type": "heritage-narrative",
+      "blocks": {
+        "p1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "My journey began as a refugee, leaving the shores of Vietnam with nothing but a dream. Today, I return not as a stranger, but as a restorer."
+          }
+        },
+        "p2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our gowns in our Vietnam Atelier, we aren't just making a dress; we are empowering a community and honoring a lineage."
+          }
+        },
+        "q1": {
+          "type": "quote",
+          "settings": {
+            "text": "\"From the first sketch in San Jose to the final stitch in the homeland, your gown is a physical anthem of a dream realized.\""
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "q1"
+      ],
+      "settings": {
+        "eyebrow": "A Heritage Reclaimed",
+        "title": "The Sovereign Return",
+        "image": "shopify://shop_images/iStock-866175472.jpg"
       }
     },
     "cross-sell-luxury": {
@@ -374,8 +374,8 @@
     "ritual",
     "lead-times",
     "workflow",
-    "heritage",
     "investment",
+    "heritage",
     "cross-sell-luxury",
     "about_retreats_3Dzctt",
     "closer",
