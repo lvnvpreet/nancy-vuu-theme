@@ -30,6 +30,13 @@
             <button class="btn-luxury {% if block.settings.featured %}btn-luxury--inverted{% endif %}" data-audience-open>
               {{ block.settings.cta_label | default: "Inquire" }}
             </button>
+            {% if block.settings.cta_label != blank %}
+              {% if block.settings.cta_link != blank %}
+                <a href="{{ block.settings.cta_link }}" class="btn-luxury" style="color:{{ block.settings.text_color }};border-color:{{ block.settings.text_color }};">{{ block.settings.cta_label }}</a>
+              {% else %}
+                <button class="btn-luxury" data-audience-open style="color:{{ block.settings.text_color }};border-color:{{ block.settings.text_color }};">{{ block.settings.cta_label }}</button>
+              {% endif %}
+            {% endif %}
           </div>
         </div>
       {% endfor %}
