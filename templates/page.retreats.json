@@ -111,7 +111,7 @@
         "dest_couples": {
           "type": "destination",
           "settings": {
-            "image": "shopify://shop_images/10.jpg",
+            "image": "shopify://shop_images/5.jpg",
             "quota": "",
             "location": "Napa Valley, CA",
             "title": "The Sovereign Union Intensive",
