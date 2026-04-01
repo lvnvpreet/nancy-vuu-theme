@@ -233,6 +233,7 @@
       "blocks": {
         "card_crowns": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/image10_1.jpg",
             "eyebrow": "The Crowning Moment",
@@ -297,6 +298,20 @@
         "submit_label": "INITIATE ALIGNMENT AUDIT",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
+    },
+    "about_retreats_3Dzctt": {
+      "type": "about-retreats",
+      "name": "About — Retreats",
+      "settings": {
+        "image_url": "",
+        "image": "shopify://shop_images/Untitled_design_8.jpg",
+        "eyebrow": "Sacred Immersion",
+        "heading": "Co-Author Your Bridal Legacy",
+        "paragraph_1": "The world prepares you for a wedding; the House of Vuu prepares you for a legacy. The Masterpiece Immersion is an exclusive 5-day sanctuary where the evolution of your soul meets the artistry of high couture. This is your invitation to step away from the noise of the \"event\" and into the quiet luxury of your own becoming.",
+        "paragraph_2": "Within this private mountain residency, the spiritual anchoring of our bridal retreat merges with the creative fire of the Atelier. Here, you will co-design your bespoke bridal gown alongside Nancy Vuu—architecting a garment that is not merely \"found,\" but born from your own internal awakening. Every stitch becomes a physical manifestation of your purpose; every silhouette a reflection of your grace. Walk toward your future not in a dress you bought, but in a masterpiece you became.",
+        "cta_label": "EXPLORE THE MASTERPIECE IMMERSION",
+        "cta_link": "shopify://pages/dream-retreats"
+      }
     }
   },
   "order": [
@@ -310,6 +325,7 @@
     "investment",
     "cross-sell-luxury",
     "closer",
-    "modal"
+    "modal",
+    "about_retreats_3Dzctt"
   ]
 }
