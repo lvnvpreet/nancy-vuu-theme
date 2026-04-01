@@ -284,7 +284,7 @@
         "heading": "Your Legacy Awaits Its Form.",
         "subtext": "",
         "cta_label": "Request Private Audience",
-        "cta_link": "",
+        "cta_link": "#atelierinquiry",
         "cta_style": "outline",
         "cta2_label": "",
         "cta2_link": "",
@@ -313,6 +313,54 @@
         "submit_label": "INITIATE ALIGNMENT AUDIT",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
+    },
+    "atelier_inquiry_nQ8dYM": {
+      "type": "atelier-inquiry",
+      "blocks": {
+        "service_option_VBwTak": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        "service_option_w46FKV": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
+        },
+        "service_option_KtLJzm": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        }
+      },
+      "block_order": [
+        "service_option_VBwTak",
+        "service_option_w46FKV",
+        "service_option_KtLJzm"
+      ],
+      "name": "Atelier Inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "The Atelier Concierge",
+        "title_line_1": "Request a",
+        "title_line_2": "Bridal Consultation.",
+        "subtext": "Step into the sanctuary of the Atelier for a private, architectural dialogue that transcends traditional design. This is a covenant of creation, where the Dreamer within you meets the master craftsmanship of the House.\n\nWe translate the quiet magnitude of your future into a masterpiece of grace, ensuring your walk toward the altar is a definitive arrival in your truest, most sovereign identity.\n\nBeyond the dream lies the creation. Beyond the dress stands the woman.",
+        "address_eyebrow": "The San Jose Flagship",
+        "address_line_1": "1520 Southwest Expwy #10",
+        "address_line_2": "San Jose, CA 95126",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "Please provide your wedding date.",
+        "label_message": "Tell us about yourself and your vision for your dream gown.",
+        "submit_label": "Submit Request to the Atelier"
+      }
     }
   },
   "order": [
@@ -327,6 +375,7 @@
     "cross-sell-luxury",
     "about_retreats_3Dzctt",
     "closer",
-    "modal"
+    "modal",
+    "atelier_inquiry_nQ8dYM"
   ]
 }
