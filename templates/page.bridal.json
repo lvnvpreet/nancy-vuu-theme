@@ -185,7 +185,7 @@
           "settings": {
             "name": "Atelier Signature",
             "tagline": "A Heritage Beginning",
-            "features": "<p>• Signature Design Selections<br>• Standard Measurements<br>• Vietnam Artisan Build<br>• San Jose Final Coronation</p>",
+            "features": "<p>• Signature Design Selections<br/>• Standard Measurements<br/>• Vietnam Artisan Build<br/>• San Jose Final Coronation</p>",
             "price": "From $1,800",
             "cta_label": "Inquire",
             "badge": "",
@@ -284,7 +284,7 @@
         "heading": "Your Legacy Awaits Its Form.",
         "subtext": "",
         "cta_label": "Request Private Audience",
-        "cta_link": "#atelierinquiry",
+        "cta_link": "#inquiry",
         "cta_style": "outline",
         "cta2_label": "",
         "cta2_link": "",
