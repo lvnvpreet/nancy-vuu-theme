@@ -99,6 +99,7 @@
             "paragraph_4": "This is where the Dreamer is restored, and the Architect is called.",
             "paragraph_5": "THE EXPERIENCE:\n\n    Total Recalibration: A deep dive into your vision and legacy.\n\n    Specialized Mentorship: Direct, high-level strategic guidance.\n\n    Sovereign Alignment: Curated lodging in nature's serenity and bespoke cuisine designed to nourish the soul while we build the future.",
             "cta_text": "Apply for Alignment",
+            "cta_link": "",
             "modal_trigger": true
           }
         },
@@ -117,6 +118,7 @@
             "paragraph_4": "Discover the blueprint that commands your vision into reality.",
             "paragraph_5": "THE EXPERIENCE:\n\n    Implementation Labs: Real-time strategic building. We don’t just talk about the work; we do the work.\n\n    The Mechanics of Visibility: Engineering how your brand is seen, felt, and respected on a global stage.\n\n    Honor-Based Ethics: Systematizing your values so your legacy remains unshakeable and untarnished.\n\n    The Blueprint: Walk away with the literal map for your next decade of institutional growth. Curated lodging in nature's serenity and bespoke cuisine designed to nourish the soul while we build the future.",
             "cta_text": "Apply for Alignment",
+            "cta_link": "",
             "modal_trigger": true
           }
         },
@@ -135,6 +137,7 @@
             "paragraph_4": "You will not leave with a \"renewed bond\"; you will leave with a Joint Strategic Directive and the infrastructure required to command your next era as a unified force.",
             "paragraph_5": "THE EXPERIENCE: Private governance labs, the concrete mechanics of joint honor and visibility, and the systemic engineering of your combined legacy.  Curated lodging in nature's serenity and bespoke cuisine designed to nourish the soul while we build the future.",
             "cta_text": "Apply for Alignment",
+            "cta_link": "",
             "modal_trigger": true
           }
         }
@@ -169,6 +172,7 @@
             "paragraph_4": "This is your season of elevation. You will be guided to move past the role of \"fiancée\" and step into your Mantle of Grace and Authority. You will leave refreshed, elevated, and anchored—carrying a sense of hope and passion that will fuel your marriage for decades to come. You are not just a bride; you are a woman fashioned for a kingdom. It is time to prepare the Queen.",
             "paragraph_5": "THE EXPERIENCE: Identity, Intention, and Legacy.\n\n    Sovereign Foundations: High-level strategic sessions designed to anchor your identity before the vow. We troubleshoot the noise of the \"event\" to focus on the magnitude of your upcoming union and the legacy you will build as a unified force.\n\n    The Internal Atelier: A private, collaborative experience where you begin to architect your internal \"Blueprint of Grace\"—the spiritual and emotional landscape that will define your presence as a wife, a partner, and a queen.\n\n    The Identity Lab: Creative workshops designed to awaken the \"Dreamer\" within the Bride. Find the freedom and the infrastructure to carry your individual calling into your joint mandate with unshakeable confidence.\n\n    Sacred Circles: Curated social hours and \"Covenant Dinners\" held under the Napa Valley stars, designed to foster deep, lifelong connections with other women of high-level influence who are also walking the path of legacy.\n\n    The Sanctuary Suite: Exclusive lodging, bespoke organic cuisine, and restorative treatments that prioritize \"Peace as a Foundation\" for the season ahead.",
             "cta_text": "Apply for Alignment",
+            "cta_link": "",
             "modal_trigger": true
           }
         },
@@ -187,6 +191,7 @@
             "paragraph_4": "THE ELEVATED EXPERIENCE:\n\n    The Sacred Immersion: The complete physical, emotional, and spiritual recalibration to anchor your highest identity and secure your dreams within your union.\n\n    The Co-Design Atelier: Private, one-on-one design sessions with Nancy Vuu to architect your bespoke bridal gown from concept to couture sketch.\n\n    Fabric & Soul Pairing: A sensory exploration of world-class textiles, selecting the materials that best represent the \"Mantle\" you are preparing to don.",
             "paragraph_5": "The Masterpiece Blueprint: You walk away with your custom design finalized, your measurements secured, and the peace of knowing your gown is being handcrafted by master artisans who know your story.\n\n    Couture Sanctuary: All-inclusive lodging, bespoke nourishment, and restorative treatments designed to prepare your body for the season ahead.",
             "cta_text": "Apply for Alignment",
+            "cta_link": "",
             "modal_trigger": true
           }
         },
@@ -205,6 +210,7 @@
             "paragraph_4": "This isn't just shopping; it is the creation of your Mantle of Authority. You will co-design the garments that reflect your current power and your future destiny—pieces that tell the world exactly who you are before you ever speak a word.",
             "paragraph_5": "THE EXPERIENCE: Joy, Strategy, and Style.\n\n    Champion Circles: Lighthearted but high-level strategic alignment sessions where women leaders troubleshoot, brainstorm, and champion each other’s upcoming \"Big Moves.\"\n\n    The Design Atelier: A private, collaborative experience where you co-design a capsule of bespoke pieces—including your definitive \"Mantle of Authority\" (a signature power suit, coat, or gown).\n\n    The Freedom Lab: Creative workshops designed to awaken the \"Dreamer\" and find the freedom to pivot, expand, or simply enjoy your success.\n\n    Couture Connections: Curated social hours, mountaintop toasts, and \"Legacy Dinners\" designed to turn high-level contacts into lifelong friends.\n\nNapa Valley lodging, bespoke cuisine, and wellness experiences that prioritize \"Rest as a Strategy.\"",
             "cta_text": "Apply for Alignment",
+            "cta_link": "",
             "modal_trigger": true
           }
         }
@@ -239,6 +245,7 @@
             "paragraph_4": "",
             "paragraph_5": "",
             "cta_text": "Request Audience",
+            "cta_link": "",
             "modal_trigger": true
           }
         },
@@ -257,6 +264,7 @@
             "paragraph_4": "",
             "paragraph_5": "",
             "cta_text": "Request audience",
+            "cta_link": "",
             "modal_trigger": true
           }
         },
@@ -275,6 +283,7 @@
             "paragraph_4": "",
             "paragraph_5": "",
             "cta_text": "Request Audience",
+            "cta_link": "",
             "modal_trigger": true
           }
         }
@@ -394,7 +403,99 @@
         "q5_placeholder": "VISIONARY. REDEEMED. SOVEREIGN...",
         "submit_label": "INITIATE ALIGNMENT AUDIT",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
-      }
+      },
+      "blocks": {
+        "q1_opt_1": {
+          "type": "checkbox_option",
+          "settings": {
+            "label": "Silence the \"Echo\" & Reclaim Vision. (Phase I)",
+            "value": "Silence Echo - Phase I"
+          }
+        },
+        "q1_opt_2": {
+          "type": "checkbox_option",
+          "settings": {
+            "label": "Architect my Visible Authority & Build my Legacy. (Phase II)",
+            "value": "Build Authority - Phase II"
+          }
+        },
+        "q1_opt_3": {
+          "type": "checkbox_option",
+          "settings": {
+            "label": "Forge a Sovereign Legacy Alliance (Couple).",
+            "value": "Sovereign Couples"
+          }
+        },
+        "q1_opt_4": {
+          "type": "checkbox_option",
+          "settings": {
+            "label": "Dream Retreat.",
+            "value": "Dream Retreat"
+          }
+        },
+        "q1_opt_5": {
+          "type": "checkbox_option",
+          "settings": {
+            "label": "Women CEO Retreat.",
+            "value": "Women CEO Retreat"
+          }
+        },
+        "q2_opt_1": {
+          "type": "dropdown_option",
+          "settings": {
+            "label": "Successful but Unseen. (Invisible Giant)",
+            "value": "Successful but Unseen"
+          }
+        },
+        "q2_opt_2": {
+          "type": "dropdown_option",
+          "settings": {
+            "label": "Reactive & Stuck. (The Echo)",
+            "value": "Reactive and Stuck"
+          }
+        },
+        "q2_opt_3": {
+          "type": "dropdown_option",
+          "settings": {
+            "label": "Strategic but Fragmented.",
+            "value": "Strategic but Fragmented"
+          }
+        },
+        "q4_opt_1": {
+          "type": "radio_option",
+          "settings": {
+            "label": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)",
+            "value": "8500-15000"
+          }
+        },
+        "q4_opt_2": {
+          "type": "radio_option",
+          "settings": {
+            "label": "$15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)",
+            "value": "15000-25000"
+          }
+        },
+        "q4_opt_3": {
+          "type": "radio_option",
+          "settings": {
+            "label": "$25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)",
+            "value": "25000plus"
+          }
+        }
+      },
+      "block_order": [
+        "q1_opt_1",
+        "q1_opt_2",
+        "q1_opt_3",
+        "q1_opt_4",
+        "q1_opt_5",
+        "q2_opt_1",
+        "q2_opt_2",
+        "q2_opt_3",
+        "q4_opt_1",
+        "q4_opt_2",
+        "q4_opt_3"
+      ]
     }
   },
   "order": [

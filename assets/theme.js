@@ -260,8 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('audience-modal');
     if (!modal) return;
     if (retreatType) {
-      var select = modal.querySelector('select');
-      if (select) select.value = retreatType;
+      var retreatProgramInput = modal.querySelector('[data-retreat-program-input]');
+      if (retreatProgramInput) retreatProgramInput.value = retreatType;
     }
     modal.setAttribute('aria-hidden', 'false');
     modal.style.display = 'flex';
@@ -343,6 +343,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var closeBtn = e.target.closest('[data-audience-close]');
     if (closeBtn) {
       e.preventDefault();
+      window.closeAudienceModal();
+      return;
+    }
+    var audienceModal = document.getElementById('audience-modal');
+    if (audienceModal && audienceModal.getAttribute('aria-hidden') === 'false' && e.target === audienceModal) {
+      window.closeAudienceModal();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Escape') return;
+    var audienceModal = document.getElementById('audience-modal');
+    if (audienceModal && audienceModal.getAttribute('aria-hidden') === 'false') {
       window.closeAudienceModal();
     }
   });

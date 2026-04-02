@@ -68,9 +68,20 @@
               <div class="retreat-card__desc">{{ block.settings.description | newline_to_br }}</div>
             {%- endif -%}
             {%- if block.settings.cta_text != blank -%}
-              <button class="retreat-card__cta" {% if block.settings.modal_trigger %}onclick="openAudienceModal('{{ block.settings.title | escape }}')"{% endif %}>
-                {{ block.settings.cta_text }}
-              </button>
+              {%- if block.settings.modal_trigger -%}
+                <button type="button" class="retreat-card__cta" onclick="openAudienceModal('{{ block.settings.title | escape }}')">
+                  {{ block.settings.cta_text }}
+                </button>
+              {%- elsif block.settings.cta_link != blank -%}
+                <a
+                  href="{{ block.settings.cta_link }}"
+                  class="retreat-card__cta"
+                  {% if block.settings.cta_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                  {{ block.settings.cta_text }}
+                </a>
+              {%- else -%}
+                <span class="retreat-card__cta" aria-disabled="true">{{ block.settings.cta_text }}</span>
+              {%- endif -%}
             {%- endif -%}
           </div>
         </div>
@@ -180,9 +191,20 @@
           "default": "Apply for Alignment"
         },
         {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA link"
+        },
+        {
+          "type": "checkbox",
+          "id": "cta_new_tab",
+          "label": "Open CTA in new tab",
+          "default": false
+        },
+        {
           "type": "checkbox",
           "id": "modal_trigger",
-          "label": "Trigger audience modal on click",
+          "label": "Open application popup instead of link",
           "default": true
         }
       ]
