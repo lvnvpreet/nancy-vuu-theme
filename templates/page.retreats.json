@@ -215,8 +215,8 @@
             "paragraph_4": "<p>This isn't just shopping; it is the creation of your Mantle of Authority. You will co-design the garments that reflect your current power and your future destiny—pieces that tell the world exactly who you are before you ever speak a word.</p>",
             "paragraph_5": "<p>THE EXPERIENCE: Joy, Strategy, and Style.<br/><br/>    Champion Circles: Lighthearted but high-level strategic alignment sessions where women leaders troubleshoot, brainstorm, and champion each other’s upcoming \"Big Moves.\"<br/><br/>    The Design Atelier: A private, collaborative experience where you co-design a capsule of bespoke pieces—including your definitive \"Mantle of Authority\" (a signature power suit, coat, or gown).<br/><br/>    The Freedom Lab: Creative workshops designed to awaken the \"Dreamer\" and find the freedom to pivot, expand, or simply enjoy your success.<br/><br/>    Couture Connections: Curated social hours, mountaintop toasts, and \"Legacy Dinners\" designed to turn high-level contacts into lifelong friends.<br/><br/>Napa Valley lodging, bespoke cuisine, and wellness experiences that prioritize \"Rest as a Strategy.\"</p>",
             "cta_text": "Apply for Alignment",
-            "cta_link": "shopify://pages/dream-retreats",
-            "cta_new_tab": true,
+            "cta_link": "",
+            "cta_new_tab": false,
             "modal_trigger": true
           }
         }
