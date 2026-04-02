@@ -40,7 +40,7 @@
             {%- endif -%}
             <h4 class="retreat-card__title serif"><em>{{ block.settings.title }}</em></h4>
             {%- if block.settings.content_subtitle != blank -%}
-              <p class="retreat-card__desc-subtitle">{{ block.settings.content_subtitle }}</p>
+              <div class="retreat-card__desc-subtitle rte">{{ block.settings.content_subtitle }}</div>
             {%- endif -%}
 
             {%- assign has_split_paragraphs = false -%}
@@ -50,22 +50,22 @@
 
             {%- if has_split_paragraphs -%}
               {%- if block.settings.paragraph_1 != blank -%}
-                <p class="retreat-card__desc">{{ block.settings.paragraph_1 }}</p>
+                <div class="retreat-card__desc rte">{{ block.settings.paragraph_1 }}</div>
               {%- endif -%}
               {%- if block.settings.paragraph_2 != blank -%}
-                <p class="retreat-card__desc">{{ block.settings.paragraph_2 }}</p>
+                <div class="retreat-card__desc rte">{{ block.settings.paragraph_2 }}</div>
               {%- endif -%}
               {%- if block.settings.paragraph_3 != blank -%}
-                <p class="retreat-card__desc">{{ block.settings.paragraph_3 }}</p>
+                <div class="retreat-card__desc rte">{{ block.settings.paragraph_3 }}</div>
               {%- endif -%}
               {%- if block.settings.paragraph_4 != blank -%}
-                <p class="retreat-card__desc">{{ block.settings.paragraph_4 }}</p>
+                <div class="retreat-card__desc rte">{{ block.settings.paragraph_4 }}</div>
               {%- endif -%}
               {%- if block.settings.paragraph_5 != blank -%}
-                <p class="retreat-card__desc">{{ block.settings.paragraph_5 }}</p>
+                <div class="retreat-card__desc rte">{{ block.settings.paragraph_5 }}</div>
               {%- endif -%}
             {%- elsif block.settings.description != blank -%}
-              <p class="retreat-card__desc">{{ block.settings.description }}</p>
+              <div class="retreat-card__desc">{{ block.settings.description | newline_to_br }}</div>
             {%- endif -%}
             {%- if block.settings.cta_text != blank -%}
               <button class="retreat-card__cta" {% if block.settings.modal_trigger %}onclick="openAudienceModal('{{ block.settings.title | escape }}')"{% endif %}>
@@ -144,32 +144,32 @@
           "label": "Description"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "content_subtitle",
           "label": "Content subtitle"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "paragraph_1",
           "label": "Paragraph 1"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "paragraph_2",
           "label": "Paragraph 2"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "paragraph_3",
           "label": "Paragraph 3"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "paragraph_4",
           "label": "Paragraph 4"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "paragraph_5",
           "label": "Paragraph 5"
         },

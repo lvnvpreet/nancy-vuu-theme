@@ -3679,12 +3679,29 @@ textarea.audience-modal__input { resize: none; }
   line-height: 1.5;
   margin-bottom: 1rem;
 }
+.retreat-card__desc-subtitle p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
 .retreat-card__desc {
   font-size: .875rem; color: #555555; font-weight: 500;
   line-height: 1.7; margin-bottom: 1rem;
 }
 .retreat-card__desc:last-of-type {
   margin-bottom: 2.5rem;
+}
+.retreat-card__desc p {
+  margin: 0;
+}
+.retreat-card__desc ul,
+.retreat-card__desc ol {
+  margin: .6rem 0 0;
+  padding-left: 1.2rem;
+}
+.retreat-card__desc li {
+  margin-bottom: .35rem;
 }
 .retreat-card__cta {
   background: none; border: none; cursor: pointer;
