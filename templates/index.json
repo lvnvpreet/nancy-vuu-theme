@@ -29,7 +29,7 @@
         "image": "shopify://shop_images/Atelier.png",
         "eyebrow": "San Jose, CA · 1520 Southwest Expy #10",
         "title": "The Atelier",
-        "description": "A sanctuary of restoration and creation. From its humble origin as a specialized tailoring house to its current standing as a global center for bespoke architecture—where every stitch is an engineered act of intention.",
+        "description": "A sanctuary of restoration and creation. From its humble origin as a specialized tailoring house to its current standing as a couture house for bespoke architecture—where every stitch is an engineered act of intention.",
         "cta_label": "Enter The Atelier",
         "cta_link": "shopify://pages/atelier"
       }
@@ -320,9 +320,6 @@
         "description": "The House of Vuu Foundation is the philanthropic heart of our institution, dedicated to the systemic restoration of human dignity on a global scale. Operating at the intersection of high-aesthetic craftsmanship and humanitarian strategy, we believe that every stitch is a life. We move beyond traditional aid to engineer sustainable pathways of empowerment, ensuring that vulnerable populations can reclaim their sovereign identity. By weaving a new narrative of honor into the fabric of global recovery, we are restoring the internal and external architecture of lives to their true appointment.\"",
         "donate_label": "inquire further",
         "donate_link": "shopify://pages/house-of-vuu-foundation",
-        "pct_outreach": 45,
-        "pct_education": 30,
-        "pct_aid": 25,
         "social_instagram": "",
         "social_linkedin": "",
         "social_pinterest": ""
