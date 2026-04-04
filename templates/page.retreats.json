@@ -304,7 +304,7 @@
             "bullet_vertical_position": 8,
             "show_button": true,
             "button_text": "Inquire for Bridal Preparation",
-            "button_link": "#AtelierInquiry",
+            "button_link": "#atelierinquiry",
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_text_color": "#ffffff",
