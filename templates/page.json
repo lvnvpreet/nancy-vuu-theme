@@ -16,13 +16,6 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
-        "service_option_D44eTe": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Maison Arise",
-            "option_value": "maison arise, dream academy"
-          }
-        },
         "service_option_gY7L9V": {
           "type": "service_option",
           "settings": {
@@ -78,10 +71,16 @@
             "option_label": "Strategic Intensives",
             "option_value": "strategic Intensives"
           }
+        },
+        "service_option_D44eTe": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Maison Arise",
+            "option_value": "maison arise, dream academy"
+          }
         }
       },
       "block_order": [
-        "service_option_D44eTe",
         "service_option_gY7L9V",
         "service_option_YzRatH",
         "service_option_6GPj43",
@@ -89,7 +88,8 @@
         "service_option_7i9QyC",
         "service_option_Ly6wRW",
         "service_option_4AxDHg",
-        "service_option_QUD3Ui"
+        "service_option_QUD3Ui",
+        "service_option_D44eTe"
       ],
       "name": "Atelier Inquiry",
       "settings": {
