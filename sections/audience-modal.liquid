@@ -93,27 +93,36 @@
 
   #audience-modal .nv-align-label {
     font-family: var(--font-sans);
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #555555 !important;
+    color: #444444 !important;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.7;
+  }
+
+  #audience-modal .nv-align-help {
+    margin: 0 0 0.85rem;
+    color: #666666 !important;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
     line-height: 1.6;
   }
 
   #audience-modal .nv-align-check-label,
   #audience-modal .nv-align-radio-label {
-    color: #333333 !important;
+    color: #222222 !important;
     font-family: var(--font-sans);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-size: 0.84rem;
+    letter-spacing: 0.03em;
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.95rem;
     cursor: pointer;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .nv-align-check-label input[type="checkbox"],
@@ -258,20 +267,36 @@
           <div style="width:40px;height:1px;background:#e5e5e5;margin:2rem auto;"></div>
 
           <!-- PHASE I — STRATEGIC ALIGNMENT -->
-          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase1_label | default: 'PHASE I — STRATEGIC ALIGNMENT' }}</p>
+          <p style="font-family:var(--font-sans);font-size:0.58rem;letter-spacing:0.36em;text-transform:uppercase;color:#a8843f;margin-bottom:2rem;">{{ section.settings.phase1_label | default: 'PHASE I — STRATEGIC ALIGNMENT' }}</p>
 
           <!-- Q1: Primary Objective -->
           <div style="margin-bottom:2rem;">
             <label class="nv-align-label">
               {{ section.settings.q1_label | default: '1. Primary Objective for this Immersion?' }}
             </label>
+            <p class="nv-align-help">Choose one or more options that best describe what you need right now.</p>
             {%- assign checkbox_blocks = section.blocks | where: 'type', 'checkbox_option' -%}
-            {%- for block in checkbox_blocks -%}
-              <label class="nv-align-check-label" {{ block.shopify_attributes }}>
-                <input type="checkbox" name="contact[objective]" value="{{ block.settings.value }}">
-                {{ block.settings.label }}
+            {%- if checkbox_blocks.size > 0 -%}
+              {%- for block in checkbox_blocks -%}
+                <label class="nv-align-check-label" {{ block.shopify_attributes }}>
+                  <input type="checkbox" name="contact[objective]" value="{{ block.settings.value }}">
+                  {{ block.settings.label }}
+                </label>
+              {%- endfor -%}
+            {%- else -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="Silence Echo - Phase I">
+                Silence the "Echo" &amp; Reclaim Vision. (Phase I)
               </label>
-            {%- endfor -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="Build Authority - Phase II">
+                Architect my Visible Authority &amp; Build my Legacy. (Phase II)
+              </label>
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="Sovereign Couples">
+                Forge a Sovereign Legacy Alliance (Couple).
+              </label>
+            {%- endif -%}
           </div>
 
           <!-- Q2: Leadership Frequency -->
@@ -279,16 +304,23 @@
             <label class="nv-align-label">
               {{ section.settings.q2_label | default: '2. Describe your leadership frequency.' }}
             </label>
+            <p class="nv-align-help">Select the one option that best matches your current stage.</p>
             <select name="contact[leadership_frequency]" class="nv-align-select" style="background:#ffffff !important;color:#111111 !important;border:none !important;border-bottom:1px solid #cccccc !important;width:100%;padding:0.85rem 0;">
               <option value="" disabled selected>
                 {{ section.settings.q2_placeholder | default: 'Select Your Alignment' }}
               </option>
               {%- assign dropdown_blocks = section.blocks | where: 'type', 'dropdown_option' -%}
-              {%- for block in dropdown_blocks -%}
-                <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>
-                  {{ block.settings.label }}
-                </option>
-              {%- endfor -%}
+              {%- if dropdown_blocks.size > 0 -%}
+                {%- for block in dropdown_blocks -%}
+                  <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>
+                    {{ block.settings.label }}
+                  </option>
+                {%- endfor -%}
+              {%- else -%}
+                <option value="Successful but Unseen">Successful but Unseen. (Invisible Giant)</option>
+                <option value="Reactive and Stuck">Reactive &amp; Stuck. (The Echo)</option>
+                <option value="Strategic but Fragmented">Strategic but Fragmented.</option>
+              {%- endif -%}
             </select>
           </div>
 
@@ -311,13 +343,29 @@
             <label class="nv-align-label">
               {{ section.settings.q4_label | default: '4. Anticipated Implementation Fund?' }}
             </label>
+            <p class="nv-align-help">Choose one budget range for your application.</p>
             {%- assign radio_blocks = section.blocks | where: 'type', 'radio_option' -%}
-            {%- for block in radio_blocks -%}
-              <label class="nv-align-radio-label" {{ block.shopify_attributes }}>
-                <input type="radio" name="contact[implementation_fund]" value="{{ block.settings.value }}">
-                {{ block.settings.label }}
+            {%- if radio_blocks.size > 0 -%}
+              {%- for block in radio_blocks -%}
+                <label class="nv-align-radio-label" {{ block.shopify_attributes }}>
+                  <input type="radio" name="contact[implementation_fund]" value="{{ block.settings.value }}">
+                  {{ block.settings.label }}
+                </label>
+              {%- endfor -%}
+            {%- else -%}
+              <label class="nv-align-radio-label">
+                <input type="radio" name="contact[implementation_fund]" value="8500-15000">
+                $8,500 – $15,000 (The Executive Vanguard - Group Immersion)
               </label>
-            {%- endfor -%}
+              <label class="nv-align-radio-label">
+                <input type="radio" name="contact[implementation_fund]" value="15000-25000">
+                $15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)
+              </label>
+              <label class="nv-align-radio-label">
+                <input type="radio" name="contact[implementation_fund]" value="25000plus">
+                $25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)
+              </label>
+            {%- endif -%}
           </div>
 
           <!-- Q5: True Appointment -->
@@ -338,7 +386,7 @@
           <div style="width:40px;height:1px;background:#e5e5e5;margin:2.5rem auto;"></div>
 
           <!-- PHASE II — EXECUTIVE PROFILE -->
-          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase2_label | default: 'PHASE II — EXECUTIVE PROFILE' }}</p>
+          <p style="font-family:var(--font-sans);font-size:0.58rem;letter-spacing:0.36em;text-transform:uppercase;color:#a8843f;margin-bottom:2rem;">{{ section.settings.phase2_label | default: 'PHASE II — EXECUTIVE PROFILE' }}</p>
 
           <div class="nv-profile-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
             <div style="margin-bottom:1.5rem;">
@@ -362,7 +410,7 @@
           <div style="width:40px;height:1px;background:#e5e5e5;margin:2.5rem auto;"></div>
 
           <!-- PHASE III — ALIGNMENT DECLARATION -->
-          <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase3_label | default: 'PHASE III — ALIGNMENT DECLARATION' }}</p>
+          <p style="font-family:var(--font-sans);font-size:0.58rem;letter-spacing:0.36em;text-transform:uppercase;color:#a8843f;margin-bottom:2rem;">{{ section.settings.phase3_label | default: 'PHASE III — ALIGNMENT DECLARATION' }}</p>
 
           <div style="background:rgba(196,160,89,0.04);border:1px solid #e5e5e5;padding:2rem;margin-bottom:2.5rem;">
             <label for="nv-legal-agree" style="display:flex;align-items:flex-start;">
