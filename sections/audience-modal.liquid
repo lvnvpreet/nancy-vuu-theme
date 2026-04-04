@@ -18,10 +18,12 @@
   #audience-modal .nv-align-box {
     max-width: 860px;
     margin: 0 auto;
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.7) !important;
     border: 1px solid #e5e5e5 !important;
     box-shadow: 0 20px 50px rgba(17, 17, 17, 0.08) !important;
     padding: 3rem 4rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   #audience-modal .audience-modal__close {
@@ -238,7 +240,7 @@
       </svg>
     </button>
 
-    <div class="nv-align-box" style="background:#ffffff !important;border:1px solid #e5e5e5 !important;box-shadow:0 20px 50px rgba(17,17,17,0.08) !important;">
+    <div class="nv-align-box" style="background:rgba(255,255,255,0.7) !important;border:1px solid #e5e5e5 !important;box-shadow:0 20px 50px rgba(17,17,17,0.08) !important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);">
 
       <!-- HEADER -->
       <div style="text-align:center;">
@@ -509,6 +511,10 @@
       "content": "Question 1 — Checkboxes"
     },
     {
+      "type": "paragraph",
+      "content": "Edit the visible checkbox options for Question 1 from the section blocks below. You can add, remove, or rename each option."
+    },
+    {
       "type": "text",
       "id": "q1_label",
       "label": "Q1 Question Text",
@@ -517,6 +523,10 @@
     {
       "type": "header",
       "content": "Question 2 — Leadership Dropdown"
+    },
+    {
+      "type": "paragraph",
+      "content": "Edit the dropdown choices for Question 2 from the section blocks below. Each dropdown block controls one option."
     },
     {
       "type": "text",
@@ -549,6 +559,10 @@
     {
       "type": "header",
       "content": "Question 4 — Price Tiers (Radio)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Edit the budget/radio options for Question 4 from the section blocks below. Each radio block controls one visible choice."
     },
     {
       "type": "text",
@@ -596,54 +610,54 @@
   "blocks": [
     {
       "type": "checkbox_option",
-      "name": "Q1 Checkbox Option",
+      "name": "Q1 Option (Checkbox)",
       "settings": [
         {
           "type": "text",
           "id": "label",
-          "label": "Checkbox Label",
+          "label": "Visible option text",
           "default": "Silence the \"Echo\" & Reclaim Vision. (Phase I)"
         },
         {
           "type": "text",
           "id": "value",
-          "label": "Form Value",
+          "label": "Submitted value",
           "default": "Silence Echo - Phase I"
         }
       ]
     },
     {
       "type": "dropdown_option",
-      "name": "Q2 Dropdown Option",
+      "name": "Q2 Option (Dropdown)",
       "settings": [
         {
           "type": "text",
           "id": "label",
-          "label": "Dropdown Label",
+          "label": "Visible option text",
           "default": "Successful but Unseen. (Invisible Giant)"
         },
         {
           "type": "text",
           "id": "value",
-          "label": "Form Value",
+          "label": "Submitted value",
           "default": "Successful but Unseen"
         }
       ]
     },
     {
       "type": "radio_option",
-      "name": "Q4 Price Tier Option",
+      "name": "Q4 Option (Radio)",
       "settings": [
         {
           "type": "text",
           "id": "label",
-          "label": "Radio Label",
+          "label": "Visible option text",
           "default": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)"
         },
         {
           "type": "text",
           "id": "value",
-          "label": "Form Value",
+          "label": "Submitted value",
           "default": "8500-15000"
         }
       ]
