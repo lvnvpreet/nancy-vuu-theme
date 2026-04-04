@@ -16,6 +16,13 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
+        "service_option_6GPj43": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Custom Bespoke Suiting | Bespoke Couture | Bespoke Wardrobe",
+            "option_value": "bespoke suits, couture, wardrobe"
+          }
+        },
         "service_option_gY7L9V": {
           "type": "service_option",
           "settings": {
@@ -67,6 +74,7 @@
         }
       },
       "block_order": [
+        "service_option_6GPj43",
         "service_option_gY7L9V",
         "service_option_4AxDHg",
         "service_option_QUD3Ui",
