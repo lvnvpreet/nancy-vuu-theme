@@ -17,7 +17,7 @@
           "settings": {
             "hero_image": "shopify://shop_images/iStock-118854546.jpg",
             "hero_height": 500,
-            "mobile_hero_height": 400,
+            "mobile_hero_height": 350,
             "show_overlay": true,
             "overlay_color": "#ffffff",
             "overlay_opacity": 0.4,
