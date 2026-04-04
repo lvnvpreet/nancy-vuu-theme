@@ -2,111 +2,118 @@
 <style>
   /* ── NV Alignment Application Modal ────────────────────── */
 
-  /* Remove outer modal padding so inner fills edge-to-edge */
   #audience-modal {
     padding: 0;
   }
 
-  .nv-align-inner {
+  #audience-modal .nv-align-inner {
     width: 100%;
     align-self: stretch;
-    background: #1a1a1a;
+    background: #ffffff !important;
     position: relative;
     overflow-y: auto;
     padding: 5rem 1.5rem 4rem;
   }
 
-  .nv-align-box {
+  #audience-modal .nv-align-box {
     max-width: 860px;
     margin: 0 auto;
-    background: #111111;
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    box-shadow: 0 20px 50px rgba(17, 17, 17, 0.08) !important;
     padding: 3rem 4rem;
   }
 
-  /* Close button — visible on dark background */
   #audience-modal .audience-modal__close {
-    color: rgba(255, 255, 255, 0.45);
-  }
-  #audience-modal .audience-modal__close:hover {
-    color: #c5a059;
+    color: #555555;
   }
 
-  /* Form fields */
+  #audience-modal .audience-modal__close:hover {
+    color: #111111;
+  }
+
   .nv-align-input,
   .nv-align-select,
-  .nv-align-textarea {
-    background: transparent !important;
+  .nv-align-textarea,
+  .nv-phone-wrap__code,
+  .nv-phone-wrap__input {
+    background: #ffffff !important;
     border: none !important;
-    border-bottom: 1px solid rgba(196, 160, 89, 0.3) !important;
-    color: #ffffff !important;
+    border-bottom: 1px solid #cccccc !important;
+    color: #111111 !important;
     font-family: var(--font-sans);
     font-size: 0.8rem;
-    padding: 1rem 0;
+    padding: 0.85rem 0;
     width: 100%;
     outline: none;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
     transition: border-color 0.3s ease;
     display: block;
+    border-radius: 0;
   }
 
-  .nv-align-select {
+  .nv-align-select,
+  .nv-phone-wrap__code {
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
-    background-color: transparent !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(197%2C160%2C89%2C0.8)' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat !important;
     background-position: right 0.25rem center !important;
     padding-right: 2rem;
-    color: rgba(255, 255, 255, 0.55) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555555' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
   }
 
-  .nv-align-select option {
-    background: #1a1a1a;
-    color: #ffffff;
+  .nv-align-select option,
+  .nv-phone-wrap__code option {
+    background: #ffffff;
+    color: #111111;
   }
 
   .nv-align-textarea {
-    resize: none;
+    min-height: 110px;
+    resize: vertical;
   }
 
   .nv-align-input:focus,
   .nv-align-select:focus,
-  .nv-align-textarea:focus {
-    border-bottom-color: #c5a059;
+  .nv-align-textarea:focus,
+  .nv-phone-wrap__code:focus,
+  .nv-phone-wrap__input:focus {
+    border-bottom-color: #999999 !important;
   }
 
   .nv-align-input::placeholder,
-  .nv-align-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.35);
+  .nv-align-textarea::placeholder,
+  .nv-phone-wrap__input::placeholder {
+    color: #777777;
     font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
   }
 
-  /* Phase field labels */
-  .nv-align-label {
+  #audience-modal .nv-align-label {
     font-family: var(--font-sans);
     font-size: 0.6rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: #555555 !important;
     display: block;
     margin-bottom: 1rem;
+    line-height: 1.6;
   }
 
-  /* Checkbox and radio option labels */
-  .nv-align-check-label,
-  .nv-align-radio-label {
-    color: rgba(255, 255, 255, 0.75);
+  #audience-modal .nv-align-check-label,
+  #audience-modal .nv-align-radio-label {
+    color: #333333 !important;
     font-family: var(--font-sans);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
     cursor: pointer;
+    line-height: 1.6;
   }
 
   .nv-align-check-label input[type="checkbox"],
@@ -115,55 +122,25 @@
     width: 16px;
     height: 16px;
     flex-shrink: 0;
+    margin-top: 2px;
   }
 
-  /* Phone field */
   .nv-phone-wrap {
     display: flex;
-    gap: 0;
+    gap: 0.75rem;
+    align-items: flex-end;
   }
 
   .nv-phone-wrap__code {
     flex: 0 0 110px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(196, 160, 89, 0.3);
-    border-right: 1px solid rgba(196, 160, 89, 0.15);
-    color: rgba(255, 255, 255, 0.5);
-    font-family: var(--font-sans);
     font-size: 0.7rem;
-    padding: 1rem 0;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-  }
-
-  .nv-phone-wrap__code option {
-    background: #1a1a1a;
-    color: #ffffff;
   }
 
   .nv-phone-wrap__input {
     flex: 1;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(196, 160, 89, 0.3);
-    color: #ffffff;
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    padding: 1rem 0 1rem 1rem;
-    outline: none;
-    letter-spacing: 0.1em;
+    padding-left: 0;
   }
 
-  .nv-phone-wrap__input::placeholder {
-    color: rgba(255, 255, 255, 0.35);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-  }
-
-  /* Submit button */
   .nv-align-submit {
     background: #c5a059;
     color: #111111;
@@ -185,20 +162,18 @@
     background: rgba(196, 160, 89, 0.8);
   }
 
-  /* Success message */
   .nv-align-success {
-    background: rgba(196, 160, 89, 0.06);
-    border: 1px solid rgba(196, 160, 89, 0.3);
+    background: #faf8f4;
+    border: 1px solid #e5e5e5;
     padding: 2.5rem;
     text-align: center;
-    color: #c5a059;
+    color: #8c6a2a;
     font-family: var(--font-sans);
     font-size: 0.8rem;
     letter-spacing: 0.15em;
     line-height: 2;
   }
 
-  /* ── Mobile Responsive ──────────────────────────────────── */
   @media (max-width: 768px) {
     .nv-align-inner {
       padding: 4rem 1rem 3rem;
@@ -208,7 +183,6 @@
       padding: 2rem 1.25rem;
     }
 
-    /* Phase II: stack to single column on mobile */
     .nv-profile-grid {
       display: block !important;
     }
@@ -217,8 +191,14 @@
       margin-bottom: 1.5rem;
     }
 
+    .nv-phone-wrap {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+
     .nv-phone-wrap__code {
-      flex: 0 0 90px;
+      flex: 0 0 auto;
       font-size: 0.65rem;
     }
 
@@ -240,7 +220,7 @@
 </style>
 
 <div class="audience-modal" id="audience-modal" aria-hidden="true" aria-modal="true" role="dialog">
-  <div class="nv-align-inner">
+  <div class="nv-align-inner" style="background:#ffffff !important;">
 
     <button class="audience-modal__close" data-audience-close aria-label="Close">
       <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -248,7 +228,7 @@
       </svg>
     </button>
 
-    <div class="nv-align-box">
+    <div class="nv-align-box" style="background:#ffffff !important;border:1px solid #e5e5e5 !important;box-shadow:0 20px 50px rgba(17,17,17,0.08) !important;">
 
       <!-- HEADER -->
       <div style="text-align:center;">
@@ -256,10 +236,10 @@
           <h2 style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:0.5rem;">
             {{ section.settings.modal_eyebrow | default: 'APPLICATION FOR ALIGNMENT' }}
           </h2>
-          <h3 style="font-family:var(--font-sans);font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2rem;">
+          <h3 style="font-family:var(--font-sans);font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:#555555;margin-bottom:2rem;">
             {{ section.settings.modal_subheading | default: 'INITIATING YOUR STRATEGIC RESET.' }}
           </h3>
-          <p style="font-family:var(--font-sans);font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:580px;margin:0 auto;">
+          <p style="font-family:var(--font-sans);font-size:0.8rem;color:#333333;line-height:1.9;max-width:580px;margin:0 auto;">
             {{ section.settings.modal_intro | default: 'Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration — it is an application for a Selective Alignment Audit. Please answer with absolute transparency.' }}
           </p>
       </div>
@@ -275,7 +255,7 @@
           </div>
 
           <!-- Divider -->
-          <div style="width:40px;height:1px;background:rgba(197,160,89,0.3);margin:2rem auto;"></div>
+          <div style="width:40px;height:1px;background:#e5e5e5;margin:2rem auto;"></div>
 
           <!-- PHASE I — STRATEGIC ALIGNMENT -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase1_label | default: 'PHASE I — STRATEGIC ALIGNMENT' }}</p>
@@ -299,7 +279,7 @@
             <label class="nv-align-label">
               {{ section.settings.q2_label | default: '2. Describe your leadership frequency.' }}
             </label>
-            <select name="contact[leadership_frequency]" class="nv-align-select">
+            <select name="contact[leadership_frequency]" class="nv-align-select" style="background:#ffffff !important;color:#111111 !important;border:none !important;border-bottom:1px solid #cccccc !important;width:100%;padding:0.85rem 0;">
               <option value="" disabled selected>
                 {{ section.settings.q2_placeholder | default: 'Select Your Alignment' }}
               </option>
@@ -322,8 +302,8 @@
               class="nv-align-textarea" 
               placeholder="{{ section.settings.q3_placeholder | default: 'Describe in 250 characters or less...' }}" 
               maxlength="250" 
-              rows="2">
-            </textarea>
+              rows="4"
+              style="background:#ffffff !important;color:#111111 !important;border:none !important;border-bottom:1px solid #cccccc !important;width:100%;padding:0.85rem 0;min-height:110px;"></textarea>
           </div>
 
           <!-- Q4: Implementation Fund -->
@@ -350,11 +330,12 @@
               name="contact[true_appointment]" 
               class="nv-align-input" 
               placeholder="{{ section.settings.q5_placeholder | default: 'VISIONARY. REDEEMED. SOVEREIGN...' }}" 
-              maxlength="50">
+              maxlength="50"
+              style="background:#ffffff !important;color:#111111 !important;border:none !important;border-bottom:1px solid #cccccc !important;width:100%;padding:0.85rem 0;">
           </div>
 
           <!-- Divider -->
-          <div style="width:40px;height:1px;background:rgba(196,160,89,0.3);margin:2.5rem auto;"></div>
+          <div style="width:40px;height:1px;background:#e5e5e5;margin:2.5rem auto;"></div>
 
           <!-- PHASE II — EXECUTIVE PROFILE -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase2_label | default: 'PHASE II — EXECUTIVE PROFILE' }}</p>
@@ -378,15 +359,15 @@
           </div>
 
           <!-- Divider -->
-          <div style="width:40px;height:1px;background:rgba(196,160,89,0.3);margin:2.5rem auto;"></div>
+          <div style="width:40px;height:1px;background:#e5e5e5;margin:2.5rem auto;"></div>
 
           <!-- PHASE III — ALIGNMENT DECLARATION -->
           <p style="font-family:var(--font-sans);font-size:0.5rem;letter-spacing:0.5em;text-transform:uppercase;color:#c5a059;margin-bottom:2rem;">{{ section.settings.phase3_label | default: 'PHASE III — ALIGNMENT DECLARATION' }}</p>
 
-          <div style="background:rgba(196,160,89,0.04);border:1px solid rgba(196,160,89,0.25);padding:2rem;margin-bottom:2.5rem;">
+          <div style="background:rgba(196,160,89,0.04);border:1px solid #e5e5e5;padding:2rem;margin-bottom:2.5rem;">
             <label for="nv-legal-agree" style="display:flex;align-items:flex-start;">
-              <input type="checkbox" id="nv-legal-agree" name="contact[legal_agreement]" required style="margin-right:1rem;margin-top:3px;flex-shrink:0;">
-              <span style="font-family:var(--font-sans);font-size:0.7rem;color:rgba(255,255,255,0.65);line-height:1.85;letter-spacing:0.04em;">
+              <input type="checkbox" id="nv-legal-agree" name="contact[legal_agreement]" required style="margin-right:1rem;margin-top:3px;flex-shrink:0;accent-color:#c5a059;">
+              <span style="font-family:var(--font-sans);font-size:0.7rem;color:#333333;line-height:1.85;letter-spacing:0.04em;">
                 {{ section.settings.legal_text | default: 'By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling.' }}
               </span>
             </label>
