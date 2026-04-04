@@ -4289,9 +4289,9 @@ textarea.audience-modal__input { resize: none; }
 }
 .booknv-hero__img {
   width: 100%;
-  aspect-ratio: 9/16;
+  aspect-ratio: 2/3;
   object-fit: contain;
-  object-position: 50% 90%;
+  object-position: center bottom;
   background: #f5f5f4;
   display: block;
   filter: grayscale(100%);
@@ -4304,7 +4304,7 @@ textarea.audience-modal__input { resize: none; }
   object-fit: cover;
   background: transparent;
 }
-.booknv-hero__img.placeholder { aspect-ratio: 9/16; height: auto; }
+.booknv-hero__img.placeholder { aspect-ratio: 2/3; height: auto; }
 
 /* ── BookNV Accolades Marquee ────────────── */
 .booknv-marquee {
