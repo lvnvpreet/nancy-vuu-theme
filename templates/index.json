@@ -111,6 +111,41 @@
         "explore_link": "/pages/retreats"
       }
     },
+    "retreats_eJ84aA": {
+      "type": "retreats",
+      "blocks": {
+        "retreat_9VhcwB": {
+          "type": "retreat",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_45_x_50_in_6.jpg",
+            "name": "Napa Valley",
+            "subtitle": "rest.  reflect.  replenish.",
+            "link": ""
+          }
+        },
+        "retreat_QEwbdt": {
+          "type": "retreat",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_45_x_50_in_5.jpg",
+            "name": "Hawaii",
+            "subtitle": "awakening of soul | mind | body.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "retreat_9VhcwB",
+        "retreat_QEwbdt"
+      ],
+      "settings": {
+        "eyebrow": "Elevation of Spirit | Authority | Impact",
+        "title": "Strategic Intensives",
+        "calendar_label": "View Calendar",
+        "calendar_link": "/pages/retreats",
+        "explore_label": "Explore All Retreats",
+        "explore_link": "shopify://pages/test"
+      }
+    },
     "speaker-academy": {
       "type": "speaker-academy",
       "blocks": {
@@ -169,7 +204,7 @@
         "section_id": "speaker",
         "portrait": "shopify://shop_images/untitled-5279.jpg",
         "eyebrow": "The Founder",
-        "bio": "<p>Nancy Vuu is the visionary architect behind The House of Nancy Vuu and Maison Arise. She is a globally recognized bespoke designer. With a profound understanding of how identity dictates influence, she is called to support those carrying immense responsibility. Nancy provides strategic counsel to leaders, dignitaries, and innovators shaping our world.</p><p>She does not merely address an audience; she elevates the atmosphere<strong>.</strong> Utilizing her proprietary Blueprint of Honor, Nancy provides the practical and strategic architecture for leaders to occupy their True Appointment—transforming complex vision into realized, global impact. As a speaker, Nancy brings a rare combination of raw authenticity, high-level strategy, and unshakeable wisdom to every room she enters.</p>",
+        "bio": "<p>Nancy Vuu is the visionary architect behind <strong>The House of Nancy Vuu</strong> and <strong>Maison Arise</strong>.  She is a globally recognized bespoke designer. With a profound understanding of how identity dictates influence, Nancy serves as a strategic advisor to world leaders, dignitaries, and high-stakes innovators. She does not merely address an audience; she commands the environment. Utilizing her proprietary <em><strong>Blueprint of Honor</strong></em>, Nancy provides the practical and strategic architecture for leaders to occupy their <strong>True Appointment</strong>—transforming complex vision into realized, global impact. As a speaker, Nancy brings a rare combination of raw authenticity, high-level strategy, and unshakeable wisdom to every room she enters.</p><h3></h3>",
         "press_id": "press",
         "press_eyebrow": "Press & Media",
         "press_title": "As Seen In",
@@ -337,6 +372,7 @@
     "bridal-bespoke",
     "mens-suits",
     "retreats",
+    "retreats_eJ84aA",
     "speaker-academy",
     "crowns-jewelry",
     "dream-academy",
