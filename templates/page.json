@@ -16,18 +16,25 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
-        "service_option_6GPj43": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Custom Bespoke Suiting | Bespoke Couture | Bespoke Wardrobe",
-            "option_value": "bespoke suits, couture, wardrobe"
-          }
-        },
         "service_option_gY7L9V": {
           "type": "service_option",
           "settings": {
             "option_label": "Nancy Vuu | Key Note Speaker",
             "option_value": "key note speaker"
+          }
+        },
+        "service_option_YzRatH": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        },
+        "service_option_6GPj43": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Custom Bespoke Suiting | Bespoke Wardrobe",
+            "option_value": "bespoke suits, couture, wardrobe"
           }
         },
         "service_option_4AxDHg": {
@@ -64,24 +71,17 @@
             "option_label": "Fine Fabric Care & Preservation (Cleaning)",
             "option_value": "Fine Fabric Care — Preservation & Cleaning"
           }
-        },
-        "service_option_YzRatH": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Bespoke Couture / Bridal Consultation",
-            "option_value": "Bespoke Couture — Bridal Consultation"
-          }
         }
       },
       "block_order": [
-        "service_option_6GPj43",
         "service_option_gY7L9V",
+        "service_option_YzRatH",
+        "service_option_6GPj43",
         "service_option_4AxDHg",
         "service_option_QUD3Ui",
         "service_option_Ly6wRW",
         "service_option_nPbdiC",
-        "service_option_7i9QyC",
-        "service_option_YzRatH"
+        "service_option_7i9QyC"
       ],
       "name": "Atelier Inquiry",
       "settings": {
