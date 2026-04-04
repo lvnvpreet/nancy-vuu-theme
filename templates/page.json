@@ -44,8 +44,23 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
+        "service_option_qbMPmW": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "The Masterpiece Bride",
+            "option_value": "BRIDAL IMMERSIONS, BESPOKE GOWN"
+          }
+        },
+        "service_option_U9thzL": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Preparing the Bride",
+            "option_value": "BRIDAL IMMERSION"
+          }
+        },
         "service_option_gY7L9V": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Nancy Vuu | Key Note Speaker",
             "option_value": "key note speaker"
@@ -53,6 +68,7 @@
         },
         "service_option_YzRatH": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Bespoke Couture / Bridal Consultation",
             "option_value": "Bespoke Couture — Bridal Consultation"
@@ -60,6 +76,7 @@
         },
         "service_option_6GPj43": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Custom Bespoke Suiting | Bespoke Wardrobe",
             "option_value": "bespoke suits, couture, wardrobe"
@@ -67,6 +84,7 @@
         },
         "service_option_nPbdiC": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Master Tailoring & Fit Architecture",
             "option_value": "Master Tailoring — Alterations"
@@ -75,12 +93,13 @@
         "service_option_Ly6wRW": {
           "type": "service_option",
           "settings": {
-            "option_label": "Bridal Immersions",
-            "option_value": "Bridal Immersions"
+            "option_label": "Bespoke Bridal Consultation",
+            "option_value": "Bridal Immersions, bespoke bridal"
           }
         },
         "service_option_4AxDHg": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "DREAM Retreats",
             "option_value": "Dream Retreats"
@@ -88,6 +107,7 @@
         },
         "service_option_QUD3Ui": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Strategic Intensives",
             "option_value": "strategic Intensives"
@@ -95,6 +115,7 @@
         },
         "service_option_D44eTe": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Maison Arise",
             "option_value": "maison arise, dream academy"
@@ -102,6 +123,8 @@
         }
       },
       "block_order": [
+        "service_option_qbMPmW",
+        "service_option_U9thzL",
         "service_option_gY7L9V",
         "service_option_YzRatH",
         "service_option_6GPj43",
@@ -114,18 +137,18 @@
       "name": "Atelier Inquiry",
       "settings": {
         "section_id": "inquiry",
-        "eyebrow": "Connect with the",
-        "title_line_1": "House of Nancy Vuu",
+        "eyebrow": "Submission Form for",
+        "title_line_1": "Bridal Immersions",
         "title_line_2": "",
-        "subtext": "Connect with our team to inquire on how we can serve you through our fashion house or lifestyle and legacy channels.",
-        "address_eyebrow": "The San Jose Flagship",
-        "address_line_1": "1520 Southwest Expwy #10",
-        "address_line_2": "San Jose, CA 95126",
+        "subtext": "Connect with our team to to schedule a  consultation on our Bridal Immersions.",
+        "address_eyebrow": "The San Jose & Napa Valley flagship",
+        "address_line_1": "By Appointment Only",
+        "address_line_2": "info@nancyvuu.com",
         "phone": "800.200.2079",
         "label_name": "FULL NAME",
         "label_email": "CONTACT EMAIL ADDRESS",
-        "label_service": "HOUSE OF NANCY VUU  SERVICE REQUESTED",
-        "label_message": "PLEASE DESCRIBE YOUR VISION AND SERVICE REQUESTED.",
+        "label_service": "BRIDAL IMMERSION OF CHOICE",
+        "label_message": "PLEASE SHARE A BIT ABOUT YOURSELF, AND THE VISION YOU ASPIRE AS A BRIDE AND  HOW WE CAN BEST SERVE AND PREPARE YOU DURING YOUR BRIDAL JOURNEY.",
         "submit_label": "Submit Request to House of Nancy Vuu"
       }
     },
