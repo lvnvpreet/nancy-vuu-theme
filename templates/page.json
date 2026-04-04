@@ -37,27 +37,6 @@
             "option_value": "bespoke suits, couture, wardrobe"
           }
         },
-        "service_option_4AxDHg": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "DREAM Retreats",
-            "option_value": "Dream Retreats"
-          }
-        },
-        "service_option_QUD3Ui": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Strategic Intensives",
-            "option_value": "strategic Intensives"
-          }
-        },
-        "service_option_Ly6wRW": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Bridal Immersions",
-            "option_value": "Bridal Immersions"
-          }
-        },
         "service_option_nPbdiC": {
           "type": "service_option",
           "settings": {
@@ -71,17 +50,38 @@
             "option_label": "Fine Fabric Care & Preservation",
             "option_value": "Fine Fabric Care — Preservation & Cleaning"
           }
+        },
+        "service_option_Ly6wRW": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bridal Immersions",
+            "option_value": "Bridal Immersions"
+          }
+        },
+        "service_option_4AxDHg": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "DREAM Retreats",
+            "option_value": "Dream Retreats"
+          }
+        },
+        "service_option_QUD3Ui": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Strategic Intensives",
+            "option_value": "strategic Intensives"
+          }
         }
       },
       "block_order": [
         "service_option_gY7L9V",
         "service_option_YzRatH",
         "service_option_6GPj43",
-        "service_option_4AxDHg",
-        "service_option_QUD3Ui",
-        "service_option_Ly6wRW",
         "service_option_nPbdiC",
-        "service_option_7i9QyC"
+        "service_option_7i9QyC",
+        "service_option_Ly6wRW",
+        "service_option_4AxDHg",
+        "service_option_QUD3Ui"
       ],
       "name": "Atelier Inquiry",
       "settings": {
