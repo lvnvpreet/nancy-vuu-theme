@@ -395,18 +395,6 @@
     },
     "modal": {
       "type": "audience-modal",
-      "blocks": {
-        "checkbox_option_8jEcqF": {
-          "type": "checkbox_option",
-          "settings": {
-            "label": "",
-            "value": "Silence Echo - Phase I"
-          }
-        }
-      },
-      "block_order": [
-        "checkbox_option_8jEcqF"
-      ],
       "settings": {
         "modal_eyebrow": "APPLICATION FOR ALIGNMENT",
         "modal_subheading": "INITIATING YOUR STRATEGIC RESET.",
