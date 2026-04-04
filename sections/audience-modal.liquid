@@ -279,27 +279,58 @@
             </label>
             <p class="nv-align-help">Choose one or more options that best describe what you need right now.</p>
             {%- assign checkbox_blocks = section.blocks | where: 'type', 'checkbox_option' -%}
-            {%- if checkbox_blocks.size > 0 -%}
-              {%- for block in checkbox_blocks -%}
-                <label class="nv-align-check-label" {{ block.shopify_attributes }}>
-                  <input type="checkbox" name="contact[objective]" value="{{ block.settings.value }}">
-                  {{ block.settings.label }}
-                </label>
-              {%- endfor -%}
-            {%- else -%}
+            {%- assign has_q1_options = false -%}
+
+            {%- if section.settings.q1_option_1_label != blank -%}
+              {%- assign has_q1_options = true -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="{{ section.settings.q1_option_1_value | default: section.settings.q1_option_1_label }}">
+                {{ section.settings.q1_option_1_label }}
+              </label>
+            {%- endif -%}
+            {%- if section.settings.q1_option_2_label != blank -%}
+              {%- assign has_q1_options = true -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="{{ section.settings.q1_option_2_value | default: section.settings.q1_option_2_label }}">
+                {{ section.settings.q1_option_2_label }}
+              </label>
+            {%- endif -%}
+            {%- if section.settings.q1_option_3_label != blank -%}
+              {%- assign has_q1_options = true -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="{{ section.settings.q1_option_3_value | default: section.settings.q1_option_3_label }}">
+                {{ section.settings.q1_option_3_label }}
+              </label>
+            {%- endif -%}
+            {%- if section.settings.q1_option_4_label != blank -%}
+              {%- assign has_q1_options = true -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="{{ section.settings.q1_option_4_value | default: section.settings.q1_option_4_label }}">
+                {{ section.settings.q1_option_4_label }}
+              </label>
+            {%- endif -%}
+            {%- if section.settings.q1_option_5_label != blank -%}
+              {%- assign has_q1_options = true -%}
+              <label class="nv-align-check-label">
+                <input type="checkbox" name="contact[objective]" value="{{ section.settings.q1_option_5_value | default: section.settings.q1_option_5_label }}">
+                {{ section.settings.q1_option_5_label }}
+              </label>
+            {%- endif -%}
+
+            {%- for block in checkbox_blocks -%}
+              {%- assign has_q1_options = true -%}
+              <label class="nv-align-check-label" {{ block.shopify_attributes }}>
+                <input type="checkbox" name="contact[objective]" value="{{ block.settings.value }}">
+                {{ block.settings.label }}
+              </label>
+            {%- endfor -%}
+
+            {%- unless has_q1_options -%}
               <label class="nv-align-check-label">
                 <input type="checkbox" name="contact[objective]" value="Silence Echo - Phase I">
                 Silence the "Echo" &amp; Reclaim Vision. (Phase I)
               </label>
-              <label class="nv-align-check-label">
-                <input type="checkbox" name="contact[objective]" value="Build Authority - Phase II">
-                Architect my Visible Authority &amp; Build my Legacy. (Phase II)
-              </label>
-              <label class="nv-align-check-label">
-                <input type="checkbox" name="contact[objective]" value="Sovereign Couples">
-                Forge a Sovereign Legacy Alliance (Couple).
-              </label>
-            {%- endif -%}
+            {%- endunless -%}
           </div>
 
           <!-- Q2: Leadership Frequency -->
@@ -313,17 +344,31 @@
                 {{ section.settings.q2_placeholder | default: 'Select Your Alignment' }}
               </option>
               {%- assign dropdown_blocks = section.blocks | where: 'type', 'dropdown_option' -%}
-              {%- if dropdown_blocks.size > 0 -%}
-                {%- for block in dropdown_blocks -%}
-                  <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.label }}
-                  </option>
-                {%- endfor -%}
-              {%- else -%}
-                <option value="Successful but Unseen">Successful but Unseen. (Invisible Giant)</option>
-                <option value="Reactive and Stuck">Reactive &amp; Stuck. (The Echo)</option>
-                <option value="Strategic but Fragmented">Strategic but Fragmented.</option>
+              {%- assign has_q2_options = false -%}
+
+              {%- if section.settings.q2_option_1_label != blank -%}
+                {%- assign has_q2_options = true -%}
+                <option value="{{ section.settings.q2_option_1_value | default: section.settings.q2_option_1_label }}">{{ section.settings.q2_option_1_label }}</option>
               {%- endif -%}
+              {%- if section.settings.q2_option_2_label != blank -%}
+                {%- assign has_q2_options = true -%}
+                <option value="{{ section.settings.q2_option_2_value | default: section.settings.q2_option_2_label }}">{{ section.settings.q2_option_2_label }}</option>
+              {%- endif -%}
+              {%- if section.settings.q2_option_3_label != blank -%}
+                {%- assign has_q2_options = true -%}
+                <option value="{{ section.settings.q2_option_3_value | default: section.settings.q2_option_3_label }}">{{ section.settings.q2_option_3_label }}</option>
+              {%- endif -%}
+
+              {%- for block in dropdown_blocks -%}
+                {%- assign has_q2_options = true -%}
+                <option value="{{ block.settings.value }}" {{ block.shopify_attributes }}>
+                  {{ block.settings.label }}
+                </option>
+              {%- endfor -%}
+
+              {%- unless has_q2_options -%}
+                <option value="Successful but Unseen">Successful but Unseen. (Invisible Giant)</option>
+              {%- endunless -%}
             </select>
           </div>
 
@@ -348,27 +393,44 @@
             </label>
             <p class="nv-align-help">Choose one budget range for your application.</p>
             {%- assign radio_blocks = section.blocks | where: 'type', 'radio_option' -%}
-            {%- if radio_blocks.size > 0 -%}
-              {%- for block in radio_blocks -%}
-                <label class="nv-align-radio-label" {{ block.shopify_attributes }}>
-                  <input type="radio" name="contact[implementation_fund]" value="{{ block.settings.value }}">
-                  {{ block.settings.label }}
-                </label>
-              {%- endfor -%}
-            {%- else -%}
+            {%- assign has_q4_options = false -%}
+
+            {%- if section.settings.q4_option_1_label != blank -%}
+              {%- assign has_q4_options = true -%}
+              <label class="nv-align-radio-label">
+                <input type="radio" name="contact[implementation_fund]" value="{{ section.settings.q4_option_1_value | default: section.settings.q4_option_1_label }}">
+                {{ section.settings.q4_option_1_label }}
+              </label>
+            {%- endif -%}
+            {%- if section.settings.q4_option_2_label != blank -%}
+              {%- assign has_q4_options = true -%}
+              <label class="nv-align-radio-label">
+                <input type="radio" name="contact[implementation_fund]" value="{{ section.settings.q4_option_2_value | default: section.settings.q4_option_2_label }}">
+                {{ section.settings.q4_option_2_label }}
+              </label>
+            {%- endif -%}
+            {%- if section.settings.q4_option_3_label != blank -%}
+              {%- assign has_q4_options = true -%}
+              <label class="nv-align-radio-label">
+                <input type="radio" name="contact[implementation_fund]" value="{{ section.settings.q4_option_3_value | default: section.settings.q4_option_3_label }}">
+                {{ section.settings.q4_option_3_label }}
+              </label>
+            {%- endif -%}
+
+            {%- for block in radio_blocks -%}
+              {%- assign has_q4_options = true -%}
+              <label class="nv-align-radio-label" {{ block.shopify_attributes }}>
+                <input type="radio" name="contact[implementation_fund]" value="{{ block.settings.value }}">
+                {{ block.settings.label }}
+              </label>
+            {%- endfor -%}
+
+            {%- unless has_q4_options -%}
               <label class="nv-align-radio-label">
                 <input type="radio" name="contact[implementation_fund]" value="8500-15000">
                 $8,500 – $15,000 (The Executive Vanguard - Group Immersion)
               </label>
-              <label class="nv-align-radio-label">
-                <input type="radio" name="contact[implementation_fund]" value="15000-25000">
-                $15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)
-              </label>
-              <label class="nv-align-radio-label">
-                <input type="radio" name="contact[implementation_fund]" value="25000plus">
-                $25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)
-              </label>
-            {%- endif -%}
+            {%- endunless -%}
           </div>
 
           <!-- Q5: True Appointment -->
@@ -486,7 +548,7 @@
     },
     {
       "type": "header",
-      "content": "Phase Labels"
+      "content": "Phase I — Strategic Alignment"
     },
     {
       "type": "text",
@@ -496,37 +558,73 @@
     },
     {
       "type": "text",
-      "id": "phase2_label",
-      "label": "Phase II Label",
-      "default": "PHASE II — EXECUTIVE PROFILE"
-    },
-    {
-      "type": "text",
-      "id": "phase3_label",
-      "label": "Phase III Label",
-      "default": "PHASE III — ALIGNMENT DECLARATION"
-    },
-    {
-      "type": "header",
-      "content": "Question 1 — Checkboxes"
-    },
-    {
-      "type": "paragraph",
-      "content": "Edit the visible checkbox options for Question 1 from the section blocks below. You can add, remove, or rename each option."
-    },
-    {
-      "type": "text",
       "id": "q1_label",
       "label": "Q1 Question Text",
       "default": "1. Primary Objective for this Immersion?"
     },
     {
-      "type": "header",
-      "content": "Question 2 — Leadership Dropdown"
+      "type": "text",
+      "id": "q1_option_1_label",
+      "label": "Q1 Option 1 Text",
+      "default": "Silence the \"Echo\" & Reclaim Vision. (Phase I)"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_1_value",
+      "label": "Q1 Option 1 Value",
+      "default": "Silence Echo - Phase I"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_2_label",
+      "label": "Q1 Option 2 Text",
+      "default": "Architect my Visible Authority & Build my Legacy. (Phase II)"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_2_value",
+      "label": "Q1 Option 2 Value",
+      "default": "Build Authority - Phase II"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_3_label",
+      "label": "Q1 Option 3 Text",
+      "default": "Forge a Sovereign Legacy Alliance (Couple)."
+    },
+    {
+      "type": "text",
+      "id": "q1_option_3_value",
+      "label": "Q1 Option 3 Value",
+      "default": "Sovereign Couples"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_4_label",
+      "label": "Q1 Option 4 Text",
+      "default": "Dream Retreat."
+    },
+    {
+      "type": "text",
+      "id": "q1_option_4_value",
+      "label": "Q1 Option 4 Value",
+      "default": "Dream Retreat"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_5_label",
+      "label": "Q1 Option 5 Text",
+      "default": "Women CEO Retreat."
+    },
+    {
+      "type": "text",
+      "id": "q1_option_5_value",
+      "label": "Q1 Option 5 Value",
+      "default": "Women CEO Retreat"
     },
     {
       "type": "paragraph",
-      "content": "Edit the dropdown choices for Question 2 from the section blocks below. Each dropdown block controls one option."
+      "content": "To add more Question 1 options, scroll to the Blocks area and click Add block → Extra Q1 Option (Checkbox)."
     },
     {
       "type": "text",
@@ -541,8 +639,44 @@
       "default": "Select Your Alignment"
     },
     {
-      "type": "header",
-      "content": "Question 3 — Barrier Textarea"
+      "type": "text",
+      "id": "q2_option_1_label",
+      "label": "Q2 Option 1 Text",
+      "default": "Successful but Unseen. (Invisible Giant)"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_1_value",
+      "label": "Q2 Option 1 Value",
+      "default": "Successful but Unseen"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_2_label",
+      "label": "Q2 Option 2 Text",
+      "default": "Reactive & Stuck. (The Echo)"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_2_value",
+      "label": "Q2 Option 2 Value",
+      "default": "Reactive and Stuck"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_3_label",
+      "label": "Q2 Option 3 Text",
+      "default": "Strategic but Fragmented."
+    },
+    {
+      "type": "text",
+      "id": "q2_option_3_value",
+      "label": "Q2 Option 3 Value",
+      "default": "Strategic but Fragmented"
+    },
+    {
+      "type": "paragraph",
+      "content": "To add more Question 2 options, use Add block → Extra Q2 Option (Dropdown)."
     },
     {
       "type": "text",
@@ -558,11 +692,23 @@
     },
     {
       "type": "header",
-      "content": "Question 4 — Price Tiers (Radio)"
+      "content": "Phase II — Executive Profile"
     },
     {
-      "type": "paragraph",
-      "content": "Edit the budget/radio options for Question 4 from the section blocks below. Each radio block controls one visible choice."
+      "type": "text",
+      "id": "phase2_label",
+      "label": "Phase II Label",
+      "default": "PHASE II — EXECUTIVE PROFILE"
+    },
+    {
+      "type": "header",
+      "content": "Phase III — Alignment Declaration"
+    },
+    {
+      "type": "text",
+      "id": "phase3_label",
+      "label": "Phase III Label",
+      "default": "PHASE III — ALIGNMENT DECLARATION"
     },
     {
       "type": "text",
@@ -571,8 +717,44 @@
       "default": "4. Anticipated Implementation Fund?"
     },
     {
-      "type": "header",
-      "content": "Question 5 — True Appointment"
+      "type": "text",
+      "id": "q4_option_1_label",
+      "label": "Q4 Option 1 Text",
+      "default": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)"
+    },
+    {
+      "type": "text",
+      "id": "q4_option_1_value",
+      "label": "Q4 Option 1 Value",
+      "default": "8500-15000"
+    },
+    {
+      "type": "text",
+      "id": "q4_option_2_label",
+      "label": "Q4 Option 2 Text",
+      "default": "$15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)"
+    },
+    {
+      "type": "text",
+      "id": "q4_option_2_value",
+      "label": "Q4 Option 2 Value",
+      "default": "15000-25000"
+    },
+    {
+      "type": "text",
+      "id": "q4_option_3_label",
+      "label": "Q4 Option 3 Text",
+      "default": "$25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)"
+    },
+    {
+      "type": "text",
+      "id": "q4_option_3_value",
+      "label": "Q4 Option 3 Value",
+      "default": "25000plus"
+    },
+    {
+      "type": "paragraph",
+      "content": "To add more Question 4 options, use Add block → Extra Q4 Option (Radio)."
     },
     {
       "type": "text",
@@ -610,7 +792,7 @@
   "blocks": [
     {
       "type": "checkbox_option",
-      "name": "Q1 Option (Checkbox)",
+      "name": "Extra Q1 Option (Checkbox)",
       "settings": [
         {
           "type": "text",
@@ -628,7 +810,7 @@
     },
     {
       "type": "dropdown_option",
-      "name": "Q2 Option (Dropdown)",
+      "name": "Extra Q2 Option (Dropdown)",
       "settings": [
         {
           "type": "text",
@@ -646,7 +828,7 @@
     },
     {
       "type": "radio_option",
-      "name": "Q4 Option (Radio)",
+      "name": "Extra Q4 Option (Radio)",
       "settings": [
         {
           "type": "text",
@@ -665,20 +847,7 @@
   ],
   "presets": [
     {
-      "name": "Alignment Application",
-      "blocks": [
-        { "type": "checkbox_option", "settings": { "label": "Silence the \"Echo\" & Reclaim Vision. (Phase I)", "value": "Silence Echo - Phase I" }},
-        { "type": "checkbox_option", "settings": { "label": "Architect my Visible Authority & Build my Legacy. (Phase II)", "value": "Build Authority - Phase II" }},
-        { "type": "checkbox_option", "settings": { "label": "Forge a Sovereign Legacy Alliance (Couple).", "value": "Sovereign Couples" }},
-        { "type": "checkbox_option", "settings": { "label": "Dream Retreat.", "value": "Dream Retreat" }},
-        { "type": "checkbox_option", "settings": { "label": "Women CEO Retreat.", "value": "Women CEO Retreat" }},
-        { "type": "dropdown_option", "settings": { "label": "Successful but Unseen. (Invisible Giant)", "value": "Successful but Unseen" }},
-        { "type": "dropdown_option", "settings": { "label": "Reactive & Stuck. (The Echo)", "value": "Reactive and Stuck" }},
-        { "type": "dropdown_option", "settings": { "label": "Strategic but Fragmented.", "value": "Strategic but Fragmented" }},
-        { "type": "radio_option", "settings": { "label": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)", "value": "8500-15000" }},
-        { "type": "radio_option", "settings": { "label": "$15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)", "value": "15000-25000" }},
-        { "type": "radio_option", "settings": { "label": "$25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)", "value": "25000plus" }}
-      ]
+      "name": "Alignment Application"
     }
   ]
 }
