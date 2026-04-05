@@ -9,11 +9,53 @@
  */
 {
   "sections": {
+    "1775350063393ab73c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_08da6a2_tnEb6a": {
+          "type": "ai_gen_block_08da6a2",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/iStock-509994166.jpg",
+            "hero_height": 600,
+            "hero_height_mobile": 500,
+            "overlay_color": "#000000",
+            "overlay_strength": 0.2,
+            "eyebrow": "Welcome",
+            "title": "Bridal Immersions",
+            "subtitle": "EXPERIENCE THE ART AND ELEVATION OF COUTURE SOUL IMMERSION.",
+            "cta_subtitle": "",
+            "button_text": "",
+            "button_link": "",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#ffffff",
+            "title_size": 95,
+            "title_color": "#ffffff",
+            "subtitle_size": 18,
+            "subtitle_color": "#ffffff",
+            "cta_subtitle_size": 16,
+            "cta_subtitle_color": "#ffffff",
+            "button_text_size": 16,
+            "button_bg_color": "#c9a961",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#ffffff",
+            "button_hover_text_color": "#0f0f0f",
+            "button_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_08da6a2_tnEb6a"
+      ],
+      "settings": {}
+    },
     "hero": {
       "type": "page-hero",
+      "disabled": true,
       "settings": {
         "section_id": "page-hero",
-        "image": "shopify://shop_images/Untitled_45_x_50_in_7.jpg",
+        "image": "shopify://shop_images/iStock-509994166.jpg",
         "video_url": "",
         "overlay_opacity": 40,
         "eyebrow": "",
@@ -419,13 +461,13 @@
             "kicker_font_size": 12,
             "kicker_letter_spacing": 2,
             "kicker_spacing": 20,
-            "headline": "Design Your Dream Gown",
+            "headline": "The Bridal Atelier: Architect Your Masterpiece.",
             "headline_color": "#0f0f0f",
-            "headline_font_size": 48,
+            "headline_font_size": 38,
             "headline_font_size_mobile": 32,
             "headline_line_height": 1.2,
             "headline_spacing": 30,
-            "description": "",
+            "description": "<p>\"We believe you were not meant to fit into a dress; a dress was meant to be built around your identity. At the House of Vuu, we do not believe in off-the-rack compromises for once-in-a-lifetime moments. Your gown is the physical manifestation of your internal grace—a legacy piece that speaks your name before you ever utter a vow. Step into our private atelier and experience the profound luxury of a garment handcrafted entirely for you. Dreamed by you. Architected by House of Vuu.\"</p>",
             "description_font_type": "sans_serif",
             "description_bold": false,
             "description_italic": false,
@@ -568,6 +610,7 @@
     },
     "academy_cta": {
       "type": "cross-sell",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/gown-2-ELSA_BRIDAL50045.jpg",
         "title": "THE INVESTITURE | THE SOVEREIGN ANCHOR",
@@ -638,7 +681,7 @@
         "subtext": "Napa Valley • Hawaii",
         "cta_label": "Apply for Selection",
         "cta_link": "shopify://pages/bridal-immersion-fill-out-form",
-        "cta_style": "fill",
+        "cta_style": "outline",
         "cta2_label": "",
         "cta2_link": "",
         "text_color": "#ffffff",
@@ -695,6 +738,7 @@
     }
   },
   "order": [
+    "1775350063393ab73c",
     "hero",
     "dimensions",
     "destinations",
