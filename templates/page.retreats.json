@@ -21,11 +21,11 @@
             "hero_height_mobile": 500,
             "overlay_color": "#000000",
             "overlay_strength": 0,
-            "eyebrow": "the bridal sanctuary",
-            "title": "Become The Dream",
-            "subtitle": "A private immersion to quiet the noise, anchor your identity, and architect your couture legacy before you walk the aisle.",
+            "eyebrow": "The House of Vuu sanctuary",
+            "title": "Reignite Your Soul. Architect Your Legacy",
+            "subtitle": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space to quiet the noise, find your center, and remember who you are. We believe the greatest impact comes from an internal overflow. Whether you seek our heavenly gardens to rediscover buried passions, the strategic blueprint to build your future, or the bespoke environment to co-design your calling—our sanctuary is a safe haven to dream again.",
             "cta_subtitle": "",
-            "button_text": "",
+            "button_text": "Discover Your Dream Immersion",
             "button_link": "",
             "eyebrow_size": 12,
             "eyebrow_color": "#ffffff",
@@ -81,7 +81,7 @@
             "section_height": 80,
             "max_width": 900,
             "background_color": "#faf8f5",
-            "eyebrow": "The House of vuu philosophy",
+            "eyebrow": "The Sanctuary Manifesto",
             "eyebrow_size": 12,
             "eyebrow_color": "#0f0f0f",
             "title": "",
@@ -96,19 +96,19 @@
             "paragraph_text_color": "#0f0f0f",
             "paragraph_1_enabled": true,
             "paragraph_1_title": "",
-            "paragraph_1_text": "<p><strong>We believe the bridal industry has it backward.</strong></p><p>It asks you to obsess over the spectacle, the timeline, and the expectations of everyone else in the room. It demands a performance, treating you like the host of an event rather than a woman stepping into a sacred covenant.</p>",
+            "paragraph_1_text": "<p><strong>We believe</strong> the greatest impact comes from an internal overflow, not an external grind.</p>",
             "paragraph_2_enabled": true,
             "paragraph_2_title": "",
-            "paragraph_2_text": "<p><strong>We offer a sanctuary.</strong></p><p>At the House of Vuu, we believe the most vital element of your wedding day is not the production—it is the woman at the center of it. We believe your preparation should reflect the magnitude of the legacy you are building. You deserve a space to quiet the noise, exhale the pressure, and rediscover the woman behind the white dress.</p>",
+            "paragraph_2_text": "<p><strong>We believe</strong> conventional leadership has it backward, demanding you sacrifice your peace to amplify your success.</p>",
             "paragraph_3_enabled": true,
             "paragraph_3_title": "",
-            "paragraph_3_text": "<p><strong>We believe your peace is your highest aesthetic.</strong> We believe you should never have to compromise your identity to fit into a generic, off-the-rack silhouette. We believe your gown is not merely a dress; it is a <strong>Mantle</strong>. It is the physical manifestation of your intrinsic worth, handcrafted by master artisans to carry your unique story before you ever utter a vow.</p>",
+            "paragraph_3_text": "<p><strong>We exist</strong> to quiet the noise, allowing you to find your center and remember who you are.</p>",
             "paragraph_4_enabled": true,
             "paragraph_4_title": "",
-            "paragraph_4_text": "<p><strong>You were fashioned for greatness.</strong><br/>It is time to step out of the performance, anchor your soul, and let us architect your masterpiece.</p>",
+            "paragraph_4_text": "<p><strong>We know</strong> that true elevation—emotionally, mentally, and spiritually—requires both sacred space and guided revelation. Through deeply personal, guided conversations with founder Nancy Vuu, we walk with you into your highest state of being.</p>",
             "paragraph_5_enabled": true,
             "paragraph_5_title": "",
-            "paragraph_5_text": ""
+            "paragraph_5_text": "<p><strong>We offer</strong> a safe haven to dream again—because a lasting, sovereign legacy can only be built from a place of profound rest, restored identity, and renewed purpose.</p>"
           },
           "blocks": {}
         }
@@ -166,7 +166,7 @@
       ],
       "settings": {
         "eyebrow": "The Immersion Experience",
-        "heading": "Beyond the Dress",
+        "heading": "The Sanctuary Approach",
         "subtext": "THE INTERNAL PREPARATION FOR A ONCE-IN-A-LIFETIME LEGACY."
       }
     },
