@@ -246,7 +246,7 @@
             "text_column_padding_mobile": 30,
             "content_max_width": 500,
             "image": "shopify://shop_images/7.jpg",
-            "image_padding": 40,
+            "image_padding": 70,
             "image_padding_mobile": 20,
             "serif_font": "serif",
             "sans_serif_font": "system_ui_n4",
