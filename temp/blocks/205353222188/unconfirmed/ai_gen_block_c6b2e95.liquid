@@ -1,6 +1,426 @@
+{% doc %}
+  @prompt
+    create a manifesto that includes, eyebrow, title, and subtitle with 5 paragraph options. each paragraph has a the ability to have an subtitle and all fonts and words have the option for bold, italicized and font size change.  keep font consistent with my page. and allow me to adjust height of the section. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-manifesto-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_height }}px 40px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-manifesto-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-manifesto-eyebrow-{{ ai_gen_id }} {
+    font-family: 'Manrope', {{ block.settings.type_body_font.family }}, sans-serif;
+    font-size: {{ block.settings.eyebrow_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .ai-manifesto-title-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', {{ block.settings.type_header_font.family }}, serif;
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .ai-manifesto-subtitle-{{ ai_gen_id }} {
+    font-family: 'Manrope', {{ block.settings.type_body_font.family }}, sans-serif;
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+
+  .ai-manifesto-paragraphs-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .ai-manifesto-paragraph-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-manifesto-paragraph-title-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', {{ block.settings.type_header_font.family }}, serif;
+    font-size: {{ block.settings.paragraph_title_size }}px;
+    color: {{ block.settings.paragraph_title_color }};
+    line-height: 1.3;
+  }
+
+  .ai-manifesto-paragraph-text-{{ ai_gen_id }} {
+    font-family: 'Manrope', {{ block.settings.type_body_font.family }}, sans-serif;
+    font-size: {{ block.settings.paragraph_text_size }}px;
+    color: {{ block.settings.paragraph_text_color }};
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-manifesto-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_height | times: 0.6 }}px 20px;
+    }
+
+    .ai-manifesto-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.7 }}px;
+    }
+
+    .ai-manifesto-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .ai-manifesto-paragraph-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.paragraph_title_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<manifesto-block-{{ ai_gen_id }} class="ai-manifesto-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-manifesto-container-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow != blank %}
+      <div class="ai-manifesto-eyebrow-{{ ai_gen_id }}">
+        {{ block.settings.eyebrow }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <h2 class="ai-manifesto-title-{{ ai_gen_id }}">
+        {{ block.settings.title }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.subtitle != blank %}
+      <div class="ai-manifesto-subtitle-{{ ai_gen_id }}">
+        {{ block.settings.subtitle }}
+      </div>
+    {% endif %}
+
+    <div class="ai-manifesto-paragraphs-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% assign paragraph_enabled_key = 'paragraph_' | append: i | append: '_enabled' %}
+        {% assign paragraph_title_key = 'paragraph_' | append: i | append: '_title' %}
+        {% assign paragraph_text_key = 'paragraph_' | append: i | append: '_text' %}
+
+        {% assign paragraph_enabled = block.settings[paragraph_enabled_key] %}
+        {% assign paragraph_title = block.settings[paragraph_title_key] %}
+        {% assign paragraph_text = block.settings[paragraph_text_key] %}
+
+        {% if paragraph_enabled %}
+          <div class="ai-manifesto-paragraph-{{ ai_gen_id }}">
+            {% if paragraph_title != blank %}
+              <div class="ai-manifesto-paragraph-title-{{ ai_gen_id }}">
+                {{ paragraph_title }}
+              </div>
+            {% endif %}
+
+            {% if paragraph_text != blank %}
+              <div class="ai-manifesto-paragraph-text-{{ ai_gen_id }}">
+                {{ paragraph_text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</manifesto-block-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ManifestoBlock{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('manifesto-block-{{ ai_gen_id }}', ManifestoBlock{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Manifesto",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Section padding",
+      "min": 20,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content max width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Our Philosophy"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title text",
+      "default": "A Manifesto for Timeless Elegance"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Font size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle text",
+      "default": "Every piece tells a story of craftsmanship, intention, and beauty."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Font size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Paragraph style"
+    },
+    {
+      "type": "range",
+      "id": "paragraph_title_size",
+      "label": "Paragraph title size",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "paragraph_title_color",
+      "label": "Paragraph title color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "paragraph_text_size",
+      "label": "Paragraph text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "paragraph_text_color",
+      "label": "Paragraph text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Paragraph 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_1_enabled",
+      "label": "Enable paragraph 1",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "paragraph_1_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_1_text",
+      "label": "Text",
+      "default": "<p>We believe in the power of <strong>intentional design</strong>—where every stitch, every silhouette, and every detail is crafted with purpose. Our work is not about trends; it is about creating pieces that transcend time.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Paragraph 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_2_enabled",
+      "label": "Enable paragraph 2",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "paragraph_2_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_2_text",
+      "label": "Text",
+      "default": "<p>Each garment is a reflection of <em>artistry and dedication</em>, honoring the traditions of couture while embracing modern sensibilities. We are committed to excellence in every thread.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Paragraph 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_3_enabled",
+      "label": "Enable paragraph 3",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "paragraph_3_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_3_text",
+      "label": "Text",
+      "default": "<p>Our atelier is a sanctuary of creativity, where vision meets execution. We pour our hearts into every creation, ensuring that what we make is not just worn, but <strong>cherished</strong>.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Paragraph 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_4_enabled",
+      "label": "Enable paragraph 4",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "paragraph_4_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_4_text",
+      "label": "Text",
+      "default": "<p>We honor the journey of each bride, understanding that this moment is more than fashion—it is a <em>celebration of love, identity, and transformation</em>.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Paragraph 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_5_enabled",
+      "label": "Enable paragraph 5",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "paragraph_5_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_5_text",
+      "label": "Text",
+      "default": "<p>This is our promise: to create with <strong>integrity</strong>, to design with <em>passion</em>, and to deliver pieces that become part of your story—forever.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Manifesto"
+    }
+  ]
+}
 {% endschema %}
