@@ -17,8 +17,8 @@
         "video_url": "",
         "overlay_opacity": 40,
         "eyebrow": "",
-        "title_line_1": "Strategic Immersion",
-        "title_line_2": "Dream Retreats",
+        "title_line_1": "Bridal Immersions",
+        "title_line_2": "",
         "title_line_3": "",
         "subtitle": "By Private Invitation Only",
         "subtitle_serif": false,
@@ -150,6 +150,7 @@
         "dest_hawaii",
         "dest_couples"
       ],
+      "disabled": true,
       "settings": {
         "anchor_id": "destinations",
         "heading": "THE NANCY VUU Immersion:",
@@ -226,6 +227,7 @@
         "destination_h4AgrP",
         "destination_Mrjdri"
       ],
+      "disabled": true,
       "settings": {
         "anchor_id": "dreamretreats",
         "heading": "Dream Retreats",
@@ -526,6 +528,7 @@
         "opt2",
         "opt3"
       ],
+      "disabled": true,
       "settings": {
         "section_id": "inquiry",
         "eyebrow": "Private Application",
@@ -552,7 +555,7 @@
         "heading": "return to majesty.",
         "subtext": "Napa Valley • Hawaii",
         "cta_label": "Apply for Selection",
-        "cta_link": "",
+        "cta_link": "shopify://pages/bridal-immersion-fill-out-form",
         "cta_style": "fill",
         "cta2_label": "",
         "cta2_link": "",
