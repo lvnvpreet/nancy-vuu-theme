@@ -20,10 +20,10 @@
             "hero_height": 600,
             "hero_height_mobile": 500,
             "overlay_color": "#000000",
-            "overlay_strength": 0.2,
-            "eyebrow": "Welcome",
-            "title": "Bridal Immersions",
-            "subtitle": "EXPERIENCE THE ART AND ELEVATION OF COUTURE SOUL IMMERSION.",
+            "overlay_strength": 0.4,
+            "eyebrow": "the bridal sanctuary",
+            "title": "Become The Dream",
+            "subtitle": "A private immersion to quiet the noise, anchor your identity, and architect your couture legacy before you walk the aisle.",
             "cta_subtitle": "",
             "button_text": "",
             "button_link": "",
@@ -735,6 +735,53 @@
         "submit_label": "Submit Private Application",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
+    },
+    "1775352877e43957d3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c6b2e95_893ztb": {
+          "type": "ai_gen_block_c6b2e95",
+          "settings": {
+            "desktop_width_percent": 100,
+            "section_height": 80,
+            "max_width": 900,
+            "background_color": "#faf8f5",
+            "eyebrow": "The House of vuu philosophy",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#0f0f0f",
+            "title": "",
+            "title_size": 48,
+            "title_color": "#0f0f0f",
+            "subtitle": "",
+            "subtitle_size": 18,
+            "subtitle_color": "#0f0f0f",
+            "paragraph_title_size": 24,
+            "paragraph_title_color": "#0f0f0f",
+            "paragraph_text_size": 16,
+            "paragraph_text_color": "#0f0f0f",
+            "paragraph_1_enabled": true,
+            "paragraph_1_title": "",
+            "paragraph_1_text": "<p><strong>We believe the bridal industry has it backward.</strong></p><p>It asks you to obsess over the spectacle, the timeline, and the expectations of everyone else in the room. It demands a performance, treating you like the host of an event rather than a woman stepping into a sacred covenant.</p>",
+            "paragraph_2_enabled": true,
+            "paragraph_2_title": "",
+            "paragraph_2_text": "<p><strong>We offer a sanctuary.</strong></p><p>At the House of Vuu, we believe the most vital element of your wedding day is not the production—it is the woman at the center of it. We believe your preparation should reflect the magnitude of the legacy you are building. You deserve a space to quiet the noise, exhale the pressure, and rediscover the woman behind the white dress.</p>",
+            "paragraph_3_enabled": true,
+            "paragraph_3_title": "",
+            "paragraph_3_text": "<p><strong>We believe your peace is your highest aesthetic.</strong> We believe you should never have to compromise your identity to fit into a generic, off-the-rack silhouette. We believe your gown is not merely a dress; it is a <strong>Mantle</strong>. It is the physical manifestation of your intrinsic worth, handcrafted by master artisans to carry your unique story before you ever utter a vow.</p>",
+            "paragraph_4_enabled": true,
+            "paragraph_4_title": "",
+            "paragraph_4_text": "<p><strong>You were fashioned for greatness.</strong><br/>It is time to step out of the performance, anchor your soul, and let us architect your masterpiece.</p>",
+            "paragraph_5_enabled": true,
+            "paragraph_5_title": "",
+            "paragraph_5_text": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c6b2e95_893ztb"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -749,6 +796,7 @@
     "retreat_inline_form",
     "final_cta",
     "retreat_disclaimer",
-    "modal"
+    "modal",
+    "1775352877e43957d3"
   ]
 }
