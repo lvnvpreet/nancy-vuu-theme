@@ -17,7 +17,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/L1060905_copy.jpg",
-            "hero_height": 650,
+            "hero_height": 600,
             "hero_height_mobile": 500,
             "overlay_color": "#000000",
             "overlay_strength": 0,
