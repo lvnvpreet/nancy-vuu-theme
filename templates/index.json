@@ -363,6 +363,10 @@
     "cross-sell-luxury": {
       "type": "cross-sell-luxury",
       "settings": {}
+    },
+    "17753488369d2a259f": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -381,6 +385,7 @@
     "kingdom",
     "photography",
     "vuu-foundation",
-    "cross-sell-luxury"
+    "cross-sell-luxury",
+    "17753488369d2a259f"
   ]
 }
