@@ -47,7 +47,7 @@
         "service_option_qbMPmW": {
           "type": "service_option",
           "settings": {
-            "option_label": "The Masterpiece Bride",
+            "option_label": "DREAM Again",
             "option_value": "BRIDAL IMMERSIONS, BESPOKE GOWN"
           }
         },
@@ -138,17 +138,17 @@
       "settings": {
         "section_id": "inquiry",
         "eyebrow": "Submission Form for",
-        "title_line_1": "Bridal Immersions",
+        "title_line_1": "Dream Immersions",
         "title_line_2": "",
-        "subtext": "Connect with our team to to schedule a  20 minute consultation on our Bridal Immersions.",
+        "subtext": "Connect with our team to to schedule a  20 minute consultation on our Dream Immersions.",
         "address_eyebrow": "The San Jose & Napa Valley flagship",
         "address_line_1": "By Appointment Only",
         "address_line_2": "info@nancyvuu.com",
         "phone": "800.200.2079",
         "label_name": "FULL NAME",
         "label_email": "CONTACT EMAIL ADDRESS",
-        "label_service": "BRIDAL IMMERSION OF CHOICE",
-        "label_message": "PLEASE SHARE A BIT ABOUT YOURSELF, AND THE VISION YOU ASPIRE AS A BRIDE AND  HOW WE CAN BEST SERVE AND PREPARE YOU DURING YOUR BRIDAL JOURNEY.",
+        "label_service": "DREAM IMMERSION OF CHOICE",
+        "label_message": "PLEASE SHARE A BIT ABOUT YOURSELF, AND THE VISION YOU HOLD THIS SEASON AND HOW WE CAN BEST SERVE AND PREPARE YOU FOR YOUR DREAM REALIZED.",
         "submit_label": "Submit Request to House of Nancy Vuu"
       }
     },
