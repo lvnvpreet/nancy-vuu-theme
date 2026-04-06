@@ -1,0 +1,28 @@
+{% doc %}
+  @prompt
+    add custom liquid block with this code: <div id="unified-covenant"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div id="unified-covenant" {{ block.shopify_attributes }}></div>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Custom code"
+    },
+    {
+      "type": "paragraph",
+      "content": "This block contains custom HTML with id 'unified-covenant'."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom liquid"
+    }
+  ]
+}
+{% endschema %}
