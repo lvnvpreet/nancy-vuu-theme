@@ -1238,6 +1238,87 @@
         "submit_label": "INITIATE ALIGNMENT AUDIT",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
+    },
+    "1775514830d5666031": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d008ee4_TKXLni": {
+          "type": "ai_gen_block_d008ee4",
+          "settings": {
+            "eyebrow": "The Selection",
+            "eyebrow_font": "manrope_n4",
+            "eyebrow_size": 15,
+            "eyebrow_color": "#0f0f0f",
+            "eyebrow_spacing": 15,
+            "section_title": "Choose Your Path to the Altar",
+            "title_font": "bodoni_moda_n4",
+            "title_size": 48,
+            "title_color": "#0f0f0f",
+            "title_spacing": 20,
+            "subtext": "<p>A sacred journey of preparation to embody your highest inner and outer couture self before the vows.</p>",
+            "subtext_font": "manrope_n4",
+            "subtext_size": 20,
+            "subtext_color": "#0f0f0f",
+            "header_spacing": 60,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "desktop_width_percent": 100,
+            "grid_gap": 40,
+            "row_spacing": 40,
+            "card_spacing": 20,
+            "card_width": 80,
+            "card_height": 300,
+            "card_height_mobile": 275,
+            "card_padding": 60,
+            "card_bg_color": "#f5f1eb",
+            "card_hover_bg_color": "#ebe6df",
+            "card_title_font": "bodoni_moda_n4",
+            "card_title_size": 36,
+            "card_title_color": "#0f0f0f",
+            "card_title_spacing": 15,
+            "card_subtext_font": "manrope_n3",
+            "card_subtext_size": 15,
+            "card_subtext_color": "#0f0f0f",
+            "show_cta": true,
+            "cta_text": "Learn More",
+            "cta_font": "manrope_n4",
+            "cta_font_size": 12,
+            "cta_padding_vertical": 10,
+            "cta_padding_horizontal": 20,
+            "cta_border_width": 1,
+            "cta_border_color": "#0f0f0f",
+            "cta_text_color": "#0f0f0f",
+            "cta_hover_bg_color": "#0f0f0f",
+            "cta_hover_border_color": "#0f0f0f",
+            "cta_hover_text_color": "#ffffff",
+            "card_1_enabled": true,
+            "card_1_title": "The Becoming Bride",
+            "card_1_subtext": "Awaken your most radiant inner presence.",
+            "card_1_link": "",
+            "card_2_enabled": true,
+            "card_2_title": "The Masterpiece Bride",
+            "card_2_subtext": "Where your highest self meets your highest style.",
+            "card_2_link": "",
+            "card_3_enabled": true,
+            "card_3_title": "The Unified Covenant",
+            "card_3_subtext": "A shared journey of discovery and visionary alignment.",
+            "card_3_link": "",
+            "card_4_enabled": true,
+            "card_4_title": "The Matriarch & The Bride",
+            "card_4_subtext": "A mother-daughter immersion to honor your shared legacy and highest grace.",
+            "card_4_link": "",
+            "card_5_enabled": true,
+            "card_5_title": "The Masterpiece Collective",
+            "card_5_subtext": "Elevating the spirits of those who walk beside you.",
+            "card_5_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d008ee4_TKXLni"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -1255,6 +1336,7 @@
     "final_cta",
     "retreat_disclaimer",
     "modal",
-    "audience_modal_4qEBez"
+    "audience_modal_4qEBez",
+    "1775514830d5666031"
   ]
 }
