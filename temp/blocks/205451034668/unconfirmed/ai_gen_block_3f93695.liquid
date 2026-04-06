@@ -1,6 +1,569 @@
+{% doc %}
+  @prompt
+    Build a new homepage section using the "Image with Text" layout (50% image, 50% text). Please apply the following structural and design instructions to match a high-end, quiet luxury editorial aesthetic:
+    
+    1. Layout & Styling:
+    
+        Image Placement: Place one large, high-resolution portrait or square image on the left side. The image should be borderless.
+    
+        Text Alignment: Align all text to the left within the right-side block.
+    
+        Spacing: Add generous padding (white space) above and below this entire section so it breathes. Add significant padding between the image and the text block. give me the option to adjust photo size to maximum ability. give me ability to adjust line height for all areas of text content. 
+    
+        Typography: Keep fonts strictly consistent with the site's global theme. Use a small, clean sans-serif for the eyebrow and button. Use the elegant global serif font for the Main Title.
+    
+        Colors: Use a minimalist color palette. White or very light neutral background, dark charcoal or black text for high contrast and luxury feel.
+    
+    2. Insert the following exact content into the text block:
+    
+        Eyebrow/Subheading (Small, uppercase, wide letter-spacing): ELEVATION OF PRESENCE | GRACE | LEGACY
+    
+        Main Title (Large, Bodoni Moda Serif, Elegant): NANCY VUU Bridal Immersions
+    
+        Body Text / Paragraph (Manrope body font, 1.75 line height for readability but give me option to adjust spacing in between the lines.): A wedding is a singular event; a marriage is a lasting covenant. Our Bridal Immersions in Napa Valley are private sanctuaries designed to transition you from the exhaustion of wedding planning into a state of profound peace and preparation. Step away from the noise to cultivate your inner grace. As an exquisite enhancement to your immersion, you are invited into the private Design Atelier to co-design your bespoke bridal gown—ensuring you walk down the aisle not just in a breathtaking masterpiece, but clothed in unshakeable presence, radiant confidence, and profound inner alignment.
+    
+        Button / Call to Action: * Button Text: INQUIRE FOR SELECTION →
+    
+            Button Style: Outline button or a solid black button with white text. Keep it sleek.
+    
+            Button Link: [Insert link to Bridal Immersion inquiry page]. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-text-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-image-text-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-image-text-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.content_gap }}px;
+    align-items: center;
+  }
+
+  .ai-image-text-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-image-text-image-{{ ai_gen_id }} {
+    width: {{ block.settings.image_width }}%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-image-text-image-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.image_width }}%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-image-text-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-text-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-image-text-content-{{ ai_gen_id }} {
+    text-align: left;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-image-text-eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.eyebrow_font_size }}px;
+    text-transform: uppercase;
+    letter-spacing: {{ block.settings.eyebrow_letter_spacing }}px;
+    margin-bottom: {{ block.settings.eyebrow_margin_bottom }}px;
+    line-height: {{ block.settings.eyebrow_line_height }};
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-image-text-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_header_font.family }}, {{ block.settings.type_header_font.fallback_families }};
+    font-weight: {{ block.settings.type_header_font.weight }};
+    font-size: {{ block.settings.title_font_size }}px;
+    margin-bottom: {{ block.settings.title_margin_bottom }}px;
+    line-height: {{ block.settings.title_line_height }};
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-image-text-body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.body_font_size }}px;
+    line-height: {{ block.settings.body_line_height }};
+    margin-bottom: {{ block.settings.body_margin_bottom }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-image-text-button-{{ ai_gen_id }} {
+    display: inline-block;
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.button_font_size }}px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    {% if block.settings.button_style == 'solid' %}
+      background-color: {{ block.settings.button_bg_color }};
+      color: {{ block.settings.button_text_color }};
+      border: 2px solid {{ block.settings.button_bg_color }};
+    {% else %}
+      background-color: transparent;
+      color: {{ block.settings.button_outline_color }};
+      border: 2px solid {{ block.settings.button_outline_color }};
+    {% endif %}
+  }
+
+  .ai-image-text-button-{{ ai_gen_id }}:hover {
+    {% if block.settings.button_style == 'solid' %}
+      background-color: {{ block.settings.button_hover_bg_color }};
+      color: {{ block.settings.button_hover_text_color }};
+      border-color: {{ block.settings.button_hover_bg_color }};
+    {% else %}
+      background-color: {{ block.settings.button_outline_color }};
+      color: {{ block.settings.background_color }};
+    {% endif %}
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-image-text-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-image-text-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_font_size | times: 0.7 }}px;
+    }
+
+    .ai-image-text-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<image-text-block-{{ ai_gen_id }} class="ai-image-text-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-image-text-container-{{ ai_gen_id }}">
+    <div class="ai-image-text-grid-{{ ai_gen_id }}">
+      <div class="ai-image-text-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 2000 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+            class="ai-image-text-image-{{ ai_gen_id }}"
+          >
+        {% else %}
+          <div class="ai-image-text-image-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+            <div class="ai-image-text-empty-state-{{ ai_gen_id }}">
+              Add your high-resolution portrait or square image
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-image-text-content-{{ ai_gen_id }}">
+        {% if block.settings.eyebrow != blank %}
+          <div class="ai-image-text-eyebrow-{{ ai_gen_id }}">
+            {{ block.settings.eyebrow }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.title != blank %}
+          <h2 class="ai-image-text-title-{{ ai_gen_id }}">
+            {{ block.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.body_text != blank %}
+          <div class="ai-image-text-body-{{ ai_gen_id }}">
+            {{ block.settings.body_text }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.button_text != blank %}
+          <a
+            href="{{ block.settings.button_link }}"
+            class="ai-image-text-button-{{ ai_gen_id }}"
+          >
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</image-text-block-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImageTextBlock{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('image-text-block-{{ ai_gen_id }}', ImageTextBlock{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "ELEVATION OF PRESENCE | GRACE | LEGACY"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "NANCY VUU Bridal Immersions"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "A wedding is a singular event; a marriage is a lasting covenant. Our Bridal Immersions in Napa Valley are private sanctuaries designed to transition you from the exhaustion of wedding planning into a state of profound peace and preparation. Step away from the noise to cultivate your inner grace. As an exquisite enhancement to your immersion, you are invited into the private Design Atelier to co-design your bespoke bridal gown—ensuring you walk down the aisle not just in a breathtaking masterpiece, but clothed in unshakeable presence, radiant confidence, and profound inner alignment."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "INQUIRE FOR SELECTION →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section padding top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Space between image and text",
+      "min": 20,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "type_header_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "type_body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "label": "Eyebrow font size",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Eyebrow letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_line_height",
+      "label": "Eyebrow line height",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_margin_bottom",
+      "label": "Eyebrow bottom spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "label": "Title line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Title bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "label": "Body font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_line_height",
+      "label": "Body line height",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.1,
+      "default": 1.8
+    },
+    {
+      "type": "range",
+      "id": "body_margin_bottom",
+      "label": "Body bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "outline",
+          "label": "Outline"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Solid background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Solid text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Solid hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Solid hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_outline_color",
+      "label": "Outline border and text",
+      "default": "#0f0f0f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text"
+    }
+  ]
+}
 {% endschema %}
