@@ -230,9 +230,9 @@
             "grid_gap": 40,
             "row_spacing": 40,
             "card_spacing": 20,
-            "card_width": 80,
-            "card_height": 300,
-            "card_height_mobile": 275,
+            "card_width": 70,
+            "card_height": 250,
+            "card_height_mobile": 250,
             "card_padding": 60,
             "card_bg_color": "#f5f1eb",
             "card_hover_bg_color": "#ebe6df",
@@ -258,7 +258,7 @@
             "card_1_enabled": true,
             "card_1_title": "The Becoming Bride",
             "card_1_subtext": "Awaken your most radiant inner presence.",
-            "card_1_link": "",
+            "card_1_link": "#becoming-bride",
             "card_2_enabled": true,
             "card_2_title": "The Masterpiece Bride",
             "card_2_subtext": "Where your highest self meets your highest style.",
@@ -277,10 +277,16 @@
             "card_5_link": ""
           },
           "blocks": {}
+        },
+        "ai_gen_block_a7a307f_qhRLpR": {
+          "type": "ai_gen_block_a7a307f",
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_d008ee4_TKXLni"
+        "ai_gen_block_d008ee4_TKXLni",
+        "ai_gen_block_a7a307f_qhRLpR"
       ],
       "settings": {}
     },
