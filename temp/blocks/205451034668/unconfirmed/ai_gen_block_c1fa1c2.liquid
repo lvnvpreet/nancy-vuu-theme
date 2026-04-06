@@ -1,6 +1,854 @@
+{% doc %}
+  @prompt
+    Create a custom section titled 'Selection Gallery' with a clean, high-fashion grid layout. I need 5 image cards in total. The layout should be a 3-column row followed by a 2-column row centered below it. Each card must have a full-bleed background image, a title in an elegant serif font overlay, and a 'Learn More' button. Ensure the layout is mobile-responsive, switching to a single column on small screens. Include settings for each card to link to a custom URL or Page Anchor (#ID).", make the 5 image cards the same size, give this section an eyebrow, title and subtext and make it two rows to space it out more. keep the photo box the same size
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-selection-gallery-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-selection-gallery__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-selection-gallery__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.eyebrow_font.family }}, sans-serif;
+    font-weight: {{ block.settings.eyebrow_font.weight }};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0 0 {{ block.settings.eyebrow_spacing }}px;
+  }
+
+  .ai-selection-gallery__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.title_font.family }}, serif;
+    font-weight: {{ block.settings.title_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    letter-spacing: 0.02em;
+  }
+
+  .ai-selection-gallery__subtext-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subtext_font.family }}, sans-serif;
+    font-weight: {{ block.settings.subtext_font.weight }};
+    font-size: {{ block.settings.subtext_size }}px;
+    color: {{ block.settings.subtext_color }};
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ai-selection-gallery__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-bottom: {{ block.settings.row_spacing }}px;
+  }
+
+  .ai-selection-gallery__grid-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-selection-gallery__row-2-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    max-width: calc(66.666% + {{ block.settings.grid_gap }}px);
+    margin: 0 auto;
+  }
+
+  .ai-selection-gallery__card-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: {{ block.settings.card_aspect_ratio }};
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: {{ block.settings.card_padding }}px;
+    text-decoration: none;
+    transition: transform 0.4s ease;
+  }
+
+  .ai-selection-gallery__card-{{ ai_gen_id }}:hover {
+    transform: scale(1.02);
+  }
+
+  .ai-selection-gallery__card-bg-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .ai-selection-gallery__card-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.placeholder_bg_color }};
+    z-index: 1;
+  }
+
+  .ai-selection-gallery__card-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-selection-gallery__card-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, {{ block.settings.overlay_opacity }}), transparent 60%);
+    z-index: 2;
+  }
+
+  .ai-selection-gallery__card-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+  }
+
+  .ai-selection-gallery__card-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.card_title_font.family }}, serif;
+    font-weight: {{ block.settings.card_title_font.weight }};
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.card_title_color }};
+    margin: 0 0 {{ block.settings.card_title_spacing }}px;
+    letter-spacing: 0.03em;
+  }
+
+  .ai-selection-gallery__card-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-family: {{ block.settings.button_font.family }}, sans-serif;
+    font-weight: {{ block.settings.button_font.weight }};
+    font-size: {{ block.settings.button_font_size }}px;
+    text-decoration: none;
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .ai-selection-gallery__card-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  @media screen and (max-width: 1024px) {
+    .ai-selection-gallery__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-selection-gallery__row-2-{{ ai_gen_id }} {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-selection-gallery__grid-{{ ai_gen_id }},
+    .ai-selection-gallery__row-2-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-selection-gallery__eyebrow-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.eyebrow_size }}px * 0.85);
+    }
+
+    .ai-selection-gallery__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.7);
+    }
+
+    .ai-selection-gallery__subtext-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtext_size }}px * 0.9);
+    }
+
+    .ai-selection-gallery__card-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.card_title_size }}px * 0.8);
+    }
+
+    .ai-selection-gallery__card-{{ ai_gen_id }} {
+      aspect-ratio: {{ block.settings.card_aspect_ratio_mobile }};
+    }
+  }
+{% endstyle %}
+
+<selection-gallery-{{ ai_gen_id }} class="ai-selection-gallery-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-selection-gallery__header-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow != blank %}
+      <div class="ai-selection-gallery__eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow }}</div>
+    {% endif %}
+    {% if block.settings.section_title != blank %}
+      <h2 class="ai-selection-gallery__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+    {% endif %}
+    {% if block.settings.subtext != blank %}
+      <div class="ai-selection-gallery__subtext-{{ ai_gen_id }}">{{ block.settings.subtext }}</div>
+    {% endif %}
+  </div>
+
+  <div class="ai-selection-gallery__grid-{{ ai_gen_id }}">
+    {% for i in (1..3) %}
+      {% liquid
+        assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+        assign card_image_key = 'card_' | append: i | append: '_image'
+        assign card_title_key = 'card_' | append: i | append: '_title'
+        assign card_link_key = 'card_' | append: i | append: '_link'
+        assign card_button_text_key = 'card_' | append: i | append: '_button_text'
+
+        assign card_enabled = block.settings[card_enabled_key]
+        assign card_image = block.settings[card_image_key]
+        assign card_title = block.settings[card_title_key]
+        assign card_link = block.settings[card_link_key]
+        assign card_button_text = block.settings[card_button_text_key]
+      %}
+
+      {% if card_enabled %}
+        <a href="{{ card_link }}" class="ai-selection-gallery__card-{{ ai_gen_id }}">
+          {% if card_image %}
+            <img
+              src="{{ card_image | image_url: width: 800 }}"
+              alt="{{ card_image.alt | escape }}"
+              class="ai-selection-gallery__card-bg-{{ ai_gen_id }}"
+              loading="lazy"
+              width="{{ card_image.width }}"
+              height="{{ card_image.height }}"
+            >
+          {% else %}
+            <div class="ai-selection-gallery__card-placeholder-{{ ai_gen_id }}">
+              {{ 'collection-apparel-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+
+          <div class="ai-selection-gallery__card-overlay-{{ ai_gen_id }}"></div>
+
+          <div class="ai-selection-gallery__card-content-{{ ai_gen_id }}">
+            {% if card_title != blank %}
+              <h3 class="ai-selection-gallery__card-title-{{ ai_gen_id }}">{{ card_title }}</h3>
+            {% endif %}
+            {% if card_button_text != blank %}
+              <span class="ai-selection-gallery__card-button-{{ ai_gen_id }}">{{ card_button_text }}</span>
+            {% endif %}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="ai-selection-gallery__row-2-{{ ai_gen_id }}">
+    {% for i in (4..5) %}
+      {% liquid
+        assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+        assign card_image_key = 'card_' | append: i | append: '_image'
+        assign card_title_key = 'card_' | append: i | append: '_title'
+        assign card_link_key = 'card_' | append: i | append: '_link'
+        assign card_button_text_key = 'card_' | append: i | append: '_button_text'
+
+        assign card_enabled = block.settings[card_enabled_key]
+        assign card_image = block.settings[card_image_key]
+        assign card_title = block.settings[card_title_key]
+        assign card_link = block.settings[card_link_key]
+        assign card_button_text = block.settings[card_button_text_key]
+      %}
+
+      {% if card_enabled %}
+        <a href="{{ card_link }}" class="ai-selection-gallery__card-{{ ai_gen_id }}">
+          {% if card_image %}
+            <img
+              src="{{ card_image | image_url: width: 800 }}"
+              alt="{{ card_image.alt | escape }}"
+              class="ai-selection-gallery__card-bg-{{ ai_gen_id }}"
+              loading="lazy"
+              width="{{ card_image.width }}"
+              height="{{ card_image.height }}"
+            >
+          {% else %}
+            <div class="ai-selection-gallery__card-placeholder-{{ ai_gen_id }}">
+              {{ 'collection-apparel-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+
+          <div class="ai-selection-gallery__card-overlay-{{ ai_gen_id }}"></div>
+
+          <div class="ai-selection-gallery__card-content-{{ ai_gen_id }}">
+            {% if card_title != blank %}
+              <h3 class="ai-selection-gallery__card-title-{{ ai_gen_id }}">{{ card_title }}</h3>
+            {% endif %}
+            {% if card_button_text != blank %}
+              <span class="ai-selection-gallery__card-button-{{ ai_gen_id }}">{{ card_button_text }}</span>
+            {% endif %}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</selection-gallery-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SelectionGallery{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.cards = this.querySelectorAll('.ai-selection-gallery__card-{{ ai_gen_id }}');
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        this.cards.forEach((card) => {
+          card.setAttribute('role', 'link');
+        });
+      }
+    }
+
+    customElements.define('selection-gallery-{{ ai_gen_id }}', SelectionGallery{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Selection gallery",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Discover"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Eyebrow font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Eyebrow spacing",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "inline_richtext",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Selection Gallery"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Explore our curated collections of timeless elegance and modern sophistication.</p>"
+    },
+    {
+      "type": "font_picker",
+      "id": "subtext_font",
+      "label": "Subtext font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "label": "Subtext size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 30,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Grid layout"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Gap between cards",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "row_spacing",
+      "label": "Space between rows",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "card_aspect_ratio",
+      "label": "Card aspect ratio (desktop)",
+      "options": [
+        { "value": "1 / 1", "label": "Square (1:1)" },
+        { "value": "4 / 5", "label": "Portrait (4:5)" },
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "2 / 3", "label": "Portrait (2:3)" },
+        { "value": "16 / 9", "label": "Landscape (16:9)" }
+      ],
+      "default": "4 / 5"
+    },
+    {
+      "type": "select",
+      "id": "card_aspect_ratio_mobile",
+      "label": "Card aspect ratio (mobile)",
+      "options": [
+        { "value": "1 / 1", "label": "Square (1:1)" },
+        { "value": "4 / 5", "label": "Portrait (4:5)" },
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "2 / 3", "label": "Portrait (2:3)" },
+        { "value": "16 / 9", "label": "Landscape (16:9)" }
+      ],
+      "default": "3 / 4"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "placeholder_bg_color",
+      "label": "Placeholder background",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "header",
+      "content": "Card overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "Card title"
+    },
+    {
+      "type": "font_picker",
+      "id": "card_title_font",
+      "label": "Font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_title_spacing",
+      "label": "Spacing below title",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Bridal Gowns"
+    },
+    {
+      "type": "url",
+      "id": "card_1_link",
+      "label": "Link (URL or #anchor)"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Evening Wear"
+    },
+    {
+      "type": "url",
+      "id": "card_2_link",
+      "label": "Link (URL or #anchor)"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Accessories"
+    },
+    {
+      "type": "url",
+      "id": "card_3_link",
+      "label": "Link (URL or #anchor)"
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_4_enabled",
+      "label": "Enable card 4",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_4_title",
+      "label": "Title",
+      "default": "Bespoke Services"
+    },
+    {
+      "type": "url",
+      "id": "card_4_link",
+      "label": "Link (URL or #anchor)"
+    },
+    {
+      "type": "text",
+      "id": "card_4_button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "header",
+      "content": "Card 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_5_enabled",
+      "label": "Enable card 5",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_5_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_5_title",
+      "label": "Title",
+      "default": "Consultations"
+    },
+    {
+      "type": "url",
+      "id": "card_5_link",
+      "label": "Link (URL or #anchor)"
+    },
+    {
+      "type": "text",
+      "id": "card_5_button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Selection gallery"
+    }
+  ]
+}
 {% endschema %}
