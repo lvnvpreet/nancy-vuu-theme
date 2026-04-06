@@ -16,14 +16,14 @@
           "type": "ai_gen_block_08da6a2",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/iStock-471723373.jpg",
-            "hero_height": 600,
+            "image": "shopify://shop_images/L1060905_copy_3449d54f-fce1-4c5c-b3ae-b185f062e63f.jpg",
+            "hero_height": 650,
             "hero_height_mobile": 500,
             "overlay_color": "#000000",
-            "overlay_strength": 0.4,
+            "overlay_strength": 0,
             "eyebrow": "The House of Vuu sanctuary",
             "title": "Bridal Immersions",
-            "subtitle": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space to quiet the noise, find your center, and remember who you are. We believe the greatest impact comes from an internal overflow. Whether you seek our heavenly gardens to rediscover buried passions, the strategic blueprint to build your future, or the bespoke environment to co-design your calling—our sanctuary is a safe haven to dream again.",
+            "subtitle": "",
             "cta_subtitle": "",
             "button_text": "Discover Your Dream Immersion",
             "button_link": "",
@@ -81,7 +81,7 @@
             "section_height": 80,
             "max_width": 900,
             "background_color": "#faf8f5",
-            "eyebrow": "The SANCTUARY Manifesto",
+            "eyebrow": "",
             "eyebrow_size": 12,
             "eyebrow_color": "#0f0f0f",
             "title": "",
@@ -95,26 +95,59 @@
             "paragraph_text_size": 16,
             "paragraph_text_color": "#0f0f0f",
             "paragraph_1_enabled": true,
-            "paragraph_1_title": "",
-            "paragraph_1_text": "<p><strong>We believe</strong> the greatest impact comes from an internal overflow, not an external grind.</p><p></p>",
+            "paragraph_1_title": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space for the bride to quiet the noise, find her center, and remember who she is before she becomes a wife.",
+            "paragraph_1_text": "<p></p><p></p>",
             "paragraph_2_enabled": true,
-            "paragraph_2_title": "",
-            "paragraph_2_text": "<p><strong>We believe</strong> conventional leadership has it backward, demanding you sacrifice your peace to amplify your success.</p>",
+            "paragraph_2_title": "A wedding is a singular event; a marriage is a lasting covenant. Our Bridal Immersions are private sanctuaries designed to transition you from the exhaustion of wedding planning into a state of profound peace and preparation. While the world prepares you for a wedding, we prepare you for a legacy. We believe the greatest presence comes from an internal overflow—shifting from the \"performance\" of the event into the profound peace of the covenant.",
+            "paragraph_2_text": "",
             "paragraph_3_enabled": true,
-            "paragraph_3_title": "",
-            "paragraph_3_text": "<p><strong>We exist</strong> to quiet the noise, allowing you to find your center and remember who you are.</p>",
+            "paragraph_3_title": "Whether you seek our heavenly gardens to rediscover your inner glow, the majestic tower of a castle to receive your crowning, or the private Atelier to co-design the masterpiece you will wear—our sanctuary is a safe haven to rest, restore, and prepare. We know that true elevation requires both sacred space and guided revelation. Through deeply personal, guided conversations with founder Nancy Vuu, we walk with you into your highest state of being, ensuring you walk down the aisle not just as a bride, but as a woman of infinite worth and unshakeable grace.",
+            "paragraph_3_text": "",
             "paragraph_4_enabled": true,
             "paragraph_4_title": "",
-            "paragraph_4_text": "<p><strong>We know</strong> that true elevation—emotionally, mentally, and spiritually—requires both sacred space and guided revelation. Through deeply personal, guided conversations with founder Nancy Vuu, we walk with you into your highest state of being.</p>",
+            "paragraph_4_text": "",
             "paragraph_5_enabled": true,
             "paragraph_5_title": "",
-            "paragraph_5_text": "<p><strong>We offer</strong> a safe haven to dream again—because a lasting, sovereign legacy can only be built from a place of profound rest, restored identity, and renewed purpose.</p>"
+            "paragraph_5_text": ""
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_08da6a2_qFbwDK": {
+          "type": "ai_gen_block_08da6a2",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/L1050781_copy.jpg",
+            "hero_height": 600,
+            "hero_height_mobile": 300,
+            "overlay_color": "#ffffff",
+            "overlay_strength": 0.1,
+            "eyebrow": "",
+            "title": "Step into your forever, beautifully anchored.",
+            "subtitle": "",
+            "cta_subtitle": "",
+            "button_text": "",
+            "button_link": "",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#ffffff",
+            "title_size": 30,
+            "title_color": "#ffffff",
+            "subtitle_size": 18,
+            "subtitle_color": "#ffffff",
+            "cta_subtitle_size": 16,
+            "cta_subtitle_color": "#ffffff",
+            "button_text_size": 16,
+            "button_bg_color": "#c9a961",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#ffffff",
+            "button_hover_text_color": "#0f0f0f",
+            "button_border_radius": 0
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_c6b2e95_893ztb"
+        "ai_gen_block_c6b2e95_893ztb",
+        "ai_gen_block_08da6a2_qFbwDK"
       ],
       "settings": {}
     },
@@ -165,9 +198,9 @@
         "d4"
       ],
       "settings": {
-        "eyebrow": "The Immersion Experience",
-        "heading": "The Sanctuary Approach",
-        "subtext": "THE INTERNAL PREPARATION FOR A DREAMS REALIZED."
+        "eyebrow": "The Bridal Immersion Experience",
+        "heading": "A Journey to Becoming the Masterpiece",
+        "subtext": "Silence gives birth to your greatest inspirations."
       }
     },
     "destinations": {
