@@ -1,0 +1,14 @@
+{% doc %}
+  @prompt
+    select custom liquid block with code: <div id="selection-gallery" style="position: relative; top: -120px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div id="selection-gallery" style="position: relative; top: -120px;"></div>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "settings": []
+}
+{% endschema %}
