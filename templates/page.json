@@ -44,13 +44,6 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
-        "service_option_D6M8KX": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Unified Dream",
-            "option_value": "tailoring"
-          }
-        },
         "service_option_qbMPmW": {
           "type": "service_option",
           "settings": {
@@ -63,6 +56,20 @@
           "settings": {
             "option_label": "Dream Realized",
             "option_value": "BRIDAL IMMERSION"
+          }
+        },
+        "service_option_Ly6wRW": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Women CEO: Dress The Dream",
+            "option_value": "Bridal Immersions, bespoke bridal"
+          }
+        },
+        "service_option_D6M8KX": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Unified Dream",
+            "option_value": "tailoring"
           }
         },
         "service_option_gY7L9V": {
@@ -97,13 +104,6 @@
             "option_value": "Master Tailoring — Alterations"
           }
         },
-        "service_option_Ly6wRW": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Women CEO: Dress The Dream",
-            "option_value": "Bridal Immersions, bespoke bridal"
-          }
-        },
         "service_option_4AxDHg": {
           "type": "service_option",
           "disabled": true,
@@ -130,14 +130,14 @@
         }
       },
       "block_order": [
-        "service_option_D6M8KX",
         "service_option_qbMPmW",
         "service_option_U9thzL",
+        "service_option_Ly6wRW",
+        "service_option_D6M8KX",
         "service_option_gY7L9V",
         "service_option_YzRatH",
         "service_option_6GPj43",
         "service_option_nPbdiC",
-        "service_option_Ly6wRW",
         "service_option_4AxDHg",
         "service_option_QUD3Ui",
         "service_option_D44eTe"
