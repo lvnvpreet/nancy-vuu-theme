@@ -1,6 +1,635 @@
+{% doc %}
+  @prompt
+    CREATE three column editorial style with two photos on each end and text in the center. the text should include eyebrow (above title), title, and text body. the body should allow up to 3 paragraphs. then after the body should be the CTA Button with title in center of cta button. cta button has no added color, but is a thin box frame just enought to frame the cta title without extra space. the cta should be able to be linked to the preferred destination link. All the font should be able to be customizable with size, boldness and italicized and with the two fonts, san serif and serif to match the two column editorial. the fonts should also be customizable with black, white and gold. the two photos should be customizable whether it's portrait or landscape. photos should also be customizable in size so it can also be maximized to reach the ends of the section or created with more white space around it. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-three-col-editorial-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 60px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-three-col-editorial__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: {{ block.settings.column_gap }}px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .ai-three-col-editorial__image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.image_padding }}px;
+  }
+
+  .ai-three-col-editorial__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    {% if block.settings.image_orientation == 'portrait' %}
+      aspect-ratio: 3 / 4;
+    {% else %}
+      aspect-ratio: 4 / 3;
+    {% endif %}
+    object-fit: cover;
+  }
+
+  .ai-three-col-editorial__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    {% if block.settings.image_orientation == 'portrait' %}
+      aspect-ratio: 3 / 4;
+    {% else %}
+      aspect-ratio: 4 / 3;
+    {% endif %}
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-three-col-editorial__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-three-col-editorial__content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.content_gap }}px;
+    padding: {{ block.settings.content_padding }}px;
+    text-align: center;
+  }
+
+  .ai-three-col-editorial__eyebrow-{{ ai_gen_id }} {
+    font-family: {% if block.settings.eyebrow_font == 'serif' %}serif{% else %}sans-serif{% endif %};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    font-weight: {% if block.settings.eyebrow_bold %}700{% else %}400{% endif %};
+    font-style: {% if block.settings.eyebrow_italic %}italic{% else %}normal{% endif %};
+    color: {{ block.settings.eyebrow_color }};
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .ai-three-col-editorial__title-{{ ai_gen_id }} {
+    font-family: {% if block.settings.title_font == 'serif' %}serif{% else %}sans-serif{% endif %};
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {% if block.settings.title_bold %}700{% else %}400{% endif %};
+    font-style: {% if block.settings.title_italic %}italic{% else %}normal{% endif %};
+    color: {{ block.settings.title_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-three-col-editorial__body-{{ ai_gen_id }} {
+    font-family: {% if block.settings.body_font == 'serif' %}serif{% else %}sans-serif{% endif %};
+    font-size: {{ block.settings.body_size }}px;
+    font-weight: {% if block.settings.body_bold %}700{% else %}400{% endif %};
+    font-style: {% if block.settings.body_italic %}italic{% else %}normal{% endif %};
+    color: {{ block.settings.body_color }};
+    line-height: 1.6;
+  }
+
+  .ai-three-col-editorial__body-{{ ai_gen_id }} p {
+    margin: 0 0 16px 0;
+  }
+
+  .ai-three-col-editorial__body-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-three-col-editorial__cta-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid {{ block.settings.cta_border_color }};
+    background-color: transparent;
+    font-family: {% if block.settings.cta_font == 'serif' %}serif{% else %}sans-serif{% endif %};
+    font-size: {{ block.settings.cta_size }}px;
+    font-weight: {% if block.settings.cta_bold %}700{% else %}400{% endif %};
+    font-style: {% if block.settings.cta_italic %}italic{% else %}normal{% endif %};
+    color: {{ block.settings.cta_color }};
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+  }
+
+  .ai-three-col-editorial__cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_border_color }};
+    color: {{ block.settings.cta_hover_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-three-col-editorial__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-three-col-editorial__image-wrapper-{{ ai_gen_id }}:first-child {
+      order: 1;
+    }
+
+    .ai-three-col-editorial__content-{{ ai_gen_id }} {
+      order: 2;
+    }
+
+    .ai-three-col-editorial__image-wrapper-{{ ai_gen_id }}:last-child {
+      order: 3;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-three-col-editorial-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-three-col-editorial__container-{{ ai_gen_id }}">
+    <div class="ai-three-col-editorial__image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image_left %}
+        <img
+          src="{{ block.settings.image_left | image_url: width: 800 }}"
+          alt="{{ block.settings.image_left.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image_left.width }}"
+          height="{{ block.settings.image_left.height }}"
+          class="ai-three-col-editorial__image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-three-col-editorial__image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-three-col-editorial__content-{{ ai_gen_id }}">
+      {% if block.settings.eyebrow != blank %}
+        <p class="ai-three-col-editorial__eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow }}</p>
+      {% endif %}
+
+      {% if block.settings.title != blank %}
+        <h2 class="ai-three-col-editorial__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      {% endif %}
+
+      {% if block.settings.paragraph_1 != blank or block.settings.paragraph_2 != blank or block.settings.paragraph_3 != blank %}
+        <div class="ai-three-col-editorial__body-{{ ai_gen_id }}">
+          {% if block.settings.paragraph_1 != blank %}
+            <p>{{ block.settings.paragraph_1 }}</p>
+          {% endif %}
+          {% if block.settings.paragraph_2 != blank %}
+            <p>{{ block.settings.paragraph_2 }}</p>
+          {% endif %}
+          {% if block.settings.paragraph_3 != blank %}
+            <p>{{ block.settings.paragraph_3 }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.cta_text != blank %}
+        <a
+          href="{{ block.settings.cta_link }}"
+          class="ai-three-col-editorial__cta-{{ ai_gen_id }}"
+        >
+          {{ block.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="ai-three-col-editorial__image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image_right %}
+        <img
+          src="{{ block.settings.image_right | image_url: width: 800 }}"
+          alt="{{ block.settings.image_right.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image_right.width }}"
+          height="{{ block.settings.image_right.height }}"
+          class="ai-three-col-editorial__image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-three-col-editorial__image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Three column editorial",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Content spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Right image"
+    },
+    {
+      "type": "select",
+      "id": "image_orientation",
+      "label": "Image orientation",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape (4:3)"
+        }
+      ],
+      "default": "portrait"
+    },
+    {
+      "type": "range",
+      "id": "image_padding",
+      "label": "Image padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Introducing"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_font",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "sans-serif",
+          "label": "Sans serif"
+        },
+        {
+          "value": "serif",
+          "label": "Serif"
+        }
+      ],
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "options": [
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        },
+        {
+          "value": "#d4af37",
+          "label": "Gold"
+        }
+      ],
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Editorial Excellence"
+    },
+    {
+      "type": "select",
+      "id": "title_font",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "sans-serif",
+          "label": "Sans serif"
+        },
+        {
+          "value": "serif",
+          "label": "Serif"
+        }
+      ],
+      "default": "serif"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Font size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "title_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "title_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "title_color",
+      "label": "Color",
+      "options": [
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        },
+        {
+          "value": "#d4af37",
+          "label": "Gold"
+        }
+      ],
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Body text"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "Discover the perfect blend of style and substance in our carefully curated collection."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_2",
+      "label": "Paragraph 2"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_3",
+      "label": "Paragraph 3"
+    },
+    {
+      "type": "select",
+      "id": "body_font",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "sans-serif",
+          "label": "Sans serif"
+        },
+        {
+          "value": "serif",
+          "label": "Serif"
+        }
+      ],
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "body_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "body_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "body_color",
+      "label": "Color",
+      "options": [
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        },
+        {
+          "value": "#d4af37",
+          "label": "Gold"
+        }
+      ],
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "cta_font",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "sans-serif",
+          "label": "Sans serif"
+        },
+        {
+          "value": "serif",
+          "label": "Serif"
+        }
+      ],
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "cta_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "cta_color",
+      "label": "Text color",
+      "options": [
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        },
+        {
+          "value": "#d4af37",
+          "label": "Gold"
+        }
+      ],
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "cta_border_color",
+      "label": "Border color",
+      "options": [
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        },
+        {
+          "value": "#d4af37",
+          "label": "Gold"
+        }
+      ],
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "cta_hover_color",
+      "label": "Hover text color",
+      "options": [
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        },
+        {
+          "value": "#d4af37",
+          "label": "Gold"
+        }
+      ],
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Three column editorial"
+    }
+  ]
+}
 {% endschema %}
