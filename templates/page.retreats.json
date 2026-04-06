@@ -92,7 +92,7 @@
             "subtitle_color": "#0f0f0f",
             "paragraph_title_size": 24,
             "paragraph_title_color": "#0f0f0f",
-            "paragraph_text_size": 16,
+            "paragraph_text_size": 17,
             "paragraph_text_color": "#0f0f0f",
             "paragraph_1_enabled": true,
             "paragraph_1_title": "",
@@ -111,10 +111,43 @@
             "paragraph_5_text": "<p><strong>We offer</strong> a safe haven to dream again—because a lasting, sovereign legacy can only be built from a place of profound rest, restored identity, and renewed purpose.</p>"
           },
           "blocks": {}
+        },
+        "ai_gen_block_08da6a2_g9Lqi8": {
+          "type": "ai_gen_block_08da6a2",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/10.jpg",
+            "hero_height": 300,
+            "hero_height_mobile": 300,
+            "overlay_color": "#000000",
+            "overlay_strength": 0.4,
+            "eyebrow": "",
+            "title": "Silence is the Architecture of Revelation",
+            "subtitle": "",
+            "cta_subtitle": "",
+            "button_text": "",
+            "button_link": "",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#ffffff",
+            "title_size": 35,
+            "title_color": "#ffffff",
+            "subtitle_size": 14,
+            "subtitle_color": "#faf8f5",
+            "cta_subtitle_size": 16,
+            "cta_subtitle_color": "#ffffff",
+            "button_text_size": 16,
+            "button_bg_color": "#c9a961",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#ffffff",
+            "button_hover_text_color": "#0f0f0f",
+            "button_border_radius": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_c6b2e95_893ztb"
+        "ai_gen_block_c6b2e95_893ztb",
+        "ai_gen_block_08da6a2_g9Lqi8"
       ],
       "settings": {}
     },
