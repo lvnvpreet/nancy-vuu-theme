@@ -1,6 +1,616 @@
+{% doc %}
+  @prompt
+    Create a three column layout with photo holder portrait style on both ends and text in the center. For the text, it needs, eyebrow, title, and body text. make sure font matches this page and after the body text have a CTA button with no background color but a frame box around the CTA title matching the same color of the text. the cta button should also be able to set up to a CTA link. all the text should have options to to adjust, fonts size, boldness, italicize, and font style using the two fonts on this page. the font colors for all text should also be interchangeable from black and white. photos should also be adjustable in size and whether portrait or landscape. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-three-column-layout-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-three-column-content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: {{ block.settings.column_gap }}px;
+    align-items: center;
+  }
+
+  .ai-three-column-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-three-column-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .ai-three-column-image-{{ ai_gen_id }}--portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .ai-three-column-image-{{ ai_gen_id }}--landscape {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ai-three-column-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-three-column-placeholder-{{ ai_gen_id }}--portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .ai-three-column-placeholder-{{ ai_gen_id }}--landscape {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ai-three-column-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-three-column-text-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.text_gap }}px;
+    padding: {{ block.settings.text_padding }}px;
+  }
+
+  .ai-three-column-eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.eyebrow_font.family }}, {{ block.settings.eyebrow_font.fallback_families }};
+    font-weight: {{ block.settings.eyebrow_font.weight }};
+    font-size: {{ block.settings.eyebrow_font_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0;
+    {% if block.settings.eyebrow_bold %}font-weight: bold;{% endif %}
+    {% if block.settings.eyebrow_italic %}font-style: italic;{% endif %}
+  }
+
+  .ai-three-column-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.title_font.family }}, {{ block.settings.title_font.fallback_families }};
+    font-weight: {{ block.settings.title_font.weight }};
+    font-size: {{ block.settings.title_font_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0;
+    {% if block.settings.title_bold %}font-weight: bold;{% endif %}
+    {% if block.settings.title_italic %}font-style: italic;{% endif %}
+  }
+
+  .ai-three-column-body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.body_font_size }}px;
+    color: {{ block.settings.body_color }};
+    margin: 0;
+    line-height: 1.6;
+    {% if block.settings.body_bold %}font-weight: bold;{% endif %}
+    {% if block.settings.body_italic %}font-style: italic;{% endif %}
+  }
+
+  .ai-three-column-cta-{{ ai_gen_id }} {
+    display: inline-block;
+    font-family: {{ block.settings.cta_font.family }}, {{ block.settings.cta_font.fallback_families }};
+    font-weight: {{ block.settings.cta_font.weight }};
+    font-size: {{ block.settings.cta_font_size }}px;
+    color: {{ block.settings.cta_color }};
+    background-color: transparent;
+    border: {{ block.settings.cta_border_width }}px solid {{ block.settings.cta_color }};
+    padding: {{ block.settings.cta_padding_vertical }}px {{ block.settings.cta_padding_horizontal }}px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    {% if block.settings.cta_bold %}font-weight: bold;{% endif %}
+    {% if block.settings.cta_italic %}font-style: italic;{% endif %}
+  }
+
+  .ai-three-column-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_color }};
+    color: {{ block.settings.cta_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-three-column-content-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-three-column-text-wrapper-{{ ai_gen_id }} {
+      order: {{ block.settings.mobile_text_order }};
+    }
+
+    .ai-three-column-image-wrapper-{{ ai_gen_id }}:first-child {
+      order: {{ block.settings.mobile_image_left_order }};
+    }
+
+    .ai-three-column-image-wrapper-{{ ai_gen_id }}:last-child {
+      order: {{ block.settings.mobile_image_right_order }};
+    }
+  }
+{% endstyle %}
+
+<div class="ai-three-column-layout-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-three-column-content-{{ ai_gen_id }}">
+    <div class="ai-three-column-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image_left %}
+        <img
+          src="{{ block.settings.image_left | image_url: width: 1000 }}"
+          alt="{{ block.settings.image_left.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image_left.width }}"
+          height="{{ block.settings.image_left.height }}"
+          class="ai-three-column-image-{{ ai_gen_id }} ai-three-column-image-{{ ai_gen_id }}--{{ block.settings.image_left_orientation }}"
+        >
+      {% else %}
+        <div class="ai-three-column-placeholder-{{ ai_gen_id }} ai-three-column-placeholder-{{ ai_gen_id }}--{{ block.settings.image_left_orientation }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-three-column-text-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.eyebrow_text != blank %}
+        <p class="ai-three-column-eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow_text }}</p>
+      {% endif %}
+
+      {% if block.settings.title_text != blank %}
+        <h2 class="ai-three-column-title-{{ ai_gen_id }}">{{ block.settings.title_text }}</h2>
+      {% endif %}
+
+      {% if block.settings.body_text != blank %}
+        <div class="ai-three-column-body-{{ ai_gen_id }}">{{ block.settings.body_text }}</div>
+      {% endif %}
+
+      {% if block.settings.cta_text != blank %}
+        <a href="{{ block.settings.cta_link }}" class="ai-three-column-cta-{{ ai_gen_id }}">
+          {{ block.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="ai-three-column-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image_right %}
+        <img
+          src="{{ block.settings.image_right | image_url: width: 1000 }}"
+          alt="{{ block.settings.image_right.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image_right.width }}"
+          height="{{ block.settings.image_right.height }}"
+          class="ai-three-column-image-{{ ai_gen_id }} ai-three-column-image-{{ ai_gen_id }}--{{ block.settings.image_right_orientation }}"
+        >
+      {% else %}
+        <div class="ai-three-column-placeholder-{{ ai_gen_id }} ai-three-column-placeholder-{{ ai_gen_id }}--{{ block.settings.image_right_orientation }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Three column layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_gap",
+      "label": "Text spacing",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_padding",
+      "label": "Text padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_left_orientation",
+      "label": "Orientation",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        }
+      ],
+      "default": "portrait"
+    },
+    {
+      "type": "header",
+      "content": "Right image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_right_orientation",
+      "label": "Orientation",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        }
+      ],
+      "default": "portrait"
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Text",
+      "default": "Eyebrow"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "options": [
+        {
+          "value": "#0f0f0f",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        }
+      ],
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Text",
+      "default": "Your Title Here"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Font size",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "checkbox",
+      "id": "title_bold",
+      "label": "Bold",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "title_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "title_color",
+      "label": "Color",
+      "options": [
+        {
+          "value": "#0f0f0f",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        }
+      ],
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Body text"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Text",
+      "default": "<p>This is your body text. Customize it to share your message with your audience.</p>"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "body_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "body_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "body_color",
+      "label": "Color",
+      "options": [
+        {
+          "value": "#0f0f0f",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        }
+      ],
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "font_picker",
+      "id": "cta_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "cta_color",
+      "label": "Text and border color",
+      "options": [
+        {
+          "value": "#0f0f0f",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        }
+      ],
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "select",
+      "id": "cta_hover_text_color",
+      "label": "Hover text color",
+      "options": [
+        {
+          "value": "#0f0f0f",
+          "label": "Black"
+        },
+        {
+          "value": "#ffffff",
+          "label": "White"
+        }
+      ],
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "cta_border_width",
+      "label": "Border width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_vertical",
+      "label": "Vertical padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_order",
+      "label": "Text order",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_left_order",
+      "label": "Left image order",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_right_order",
+      "label": "Right image order",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Three column layout"
+    }
+  ]
+}
 {% endschema %}
