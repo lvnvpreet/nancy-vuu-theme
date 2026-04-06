@@ -44,6 +44,13 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
+        "service_option_D6M8KX": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Unified Dream",
+            "option_value": "tailoring"
+          }
+        },
         "service_option_qbMPmW": {
           "type": "service_option",
           "settings": {
@@ -93,7 +100,7 @@
         "service_option_Ly6wRW": {
           "type": "service_option",
           "settings": {
-            "option_label": "Bespoke Bridal Consultation",
+            "option_label": "Women CEO: Dress The Dream",
             "option_value": "Bridal Immersions, bespoke bridal"
           }
         },
@@ -123,6 +130,7 @@
         }
       },
       "block_order": [
+        "service_option_D6M8KX",
         "service_option_qbMPmW",
         "service_option_U9thzL",
         "service_option_gY7L9V",
