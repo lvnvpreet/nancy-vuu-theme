@@ -262,19 +262,19 @@
             "card_2_enabled": true,
             "card_2_title": "The Masterpiece Bride",
             "card_2_subtext": "Where your highest self meets your highest style.",
-            "card_2_link": "",
+            "card_2_link": "#masterpiece-bride",
             "card_3_enabled": true,
             "card_3_title": "The Unified Covenant",
             "card_3_subtext": "A shared journey of discovery and visionary alignment.",
-            "card_3_link": "",
+            "card_3_link": "#unified-covenant",
             "card_4_enabled": true,
             "card_4_title": "The Matriarch & The Bride",
             "card_4_subtext": "A mother-daughter immersion to honor your shared legacy and highest grace.",
-            "card_4_link": "",
+            "card_4_link": "#matriarch-bride",
             "card_5_enabled": true,
             "card_5_title": "The Masterpiece Collective",
             "card_5_subtext": "Elevating the spirits of those who walk beside you.",
-            "card_5_link": ""
+            "card_5_link": "#masterpiece-collective"
           },
           "blocks": {}
         },
