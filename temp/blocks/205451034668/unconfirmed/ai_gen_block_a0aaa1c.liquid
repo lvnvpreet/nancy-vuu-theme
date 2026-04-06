@@ -1,0 +1,25 @@
+{% doc %}
+  @prompt
+    add custom liquid block with code: <div id="masterpiece-collective"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div id="masterpiece-collective" {{ block.shopify_attributes }}></div>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Custom Liquid"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom liquid"
+    }
+  ]
+}
+{% endschema %}
