@@ -137,6 +137,7 @@
         "retreat_9VhcwB",
         "retreat_QEwbdt"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Elevation of Spirit | Authority | Impact",
         "title": "Nancy Vuu Immersions",
@@ -371,6 +372,60 @@
     "17754541703f55f024": {
       "type": "_blocks",
       "settings": {}
+    },
+    "177546198737070015": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1775463172573567f5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3f93695_JjcP4C": {
+          "type": "ai_gen_block_3f93695",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_y8dmpcy8dmpcy8dm.png",
+            "image_width": 100,
+            "eyebrow": "ELEVATION OF PRESENCE | GRACE | LEGACY",
+            "title": "NANCY VUU Bridal Immersions",
+            "body_text": "A wedding is a singular event; a marriage is a lasting covenant. Our Bridal Immersions in Napa Valley are private sanctuaries designed to transition you from the exhaustion of wedding planning into a state of profound peace and preparation. Step away from the noise to cultivate your inner grace. As an exquisite enhancement to your immersion, you are invited into the private Design Atelier to co-design your bespoke bridal gown—ensuring you walk down the aisle not just in a breathtaking masterpiece, but clothed in unshakeable presence, radiant confidence, and profound inner alignment.",
+            "button_text": "INQUIRE FOR BRIDAL IMMERSIONS",
+            "button_link": "",
+            "container_max_width": 1400,
+            "section_padding_top": 100,
+            "section_padding_bottom": 100,
+            "content_gap": 80,
+            "background_color": "#faf8f5",
+            "text_color": "#0f0f0f",
+            "type_header_font": "bodoni_moda_n4",
+            "type_body_font": "manrope_n4",
+            "eyebrow_font_size": 11,
+            "eyebrow_letter_spacing": 2,
+            "eyebrow_line_height": 1.5,
+            "eyebrow_margin_bottom": 20,
+            "title_font_size": 48,
+            "title_line_height": 1.3,
+            "title_margin_bottom": 30,
+            "body_font_size": 20,
+            "body_line_height": 2,
+            "body_margin_bottom": 30,
+            "button_style": "outline",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 35,
+            "button_border_radius": 0,
+            "button_bg_color": "#0f0f0f",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_outline_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3f93695_JjcP4C"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -391,6 +446,8 @@
     "vuu-foundation",
     "cross-sell-luxury",
     "17753488369d2a259f",
-    "17754541703f55f024"
+    "17754541703f55f024",
+    "177546198737070015",
+    "1775463172573567f5"
   ]
 }
