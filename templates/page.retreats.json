@@ -687,7 +687,7 @@
             "body_italic": false,
             "body_color": "#000000",
             "cta_text": "Design Your Wardrobe",
-            "cta_link": "",
+            "cta_link": "shopify://pages/contact-us",
             "cta_font": "sans-serif",
             "cta_size": 14,
             "cta_bold": false,
