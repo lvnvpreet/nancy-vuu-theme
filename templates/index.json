@@ -367,6 +367,10 @@
     "17753488369d2a259f": {
       "type": "_blocks",
       "settings": {}
+    },
+    "17754541703f55f024": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -386,6 +390,7 @@
     "photography",
     "vuu-foundation",
     "cross-sell-luxury",
-    "17753488369d2a259f"
+    "17753488369d2a259f",
+    "17754541703f55f024"
   ]
 }

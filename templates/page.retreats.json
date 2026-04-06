@@ -324,6 +324,10 @@
         "badge_text": "LIMITED 2026 ENGAGEMENTS"
       }
     },
+    "177545288939c1f651": {
+      "type": "_blocks",
+      "settings": {}
+    },
     "1775336419772f5ed1": {
       "type": "_blocks",
       "blocks": {
@@ -433,7 +437,7 @@
             "headline_font_size_mobile": 32,
             "headline_line_height": 1.2,
             "headline_spacing": 30,
-            "description": "<p>Most visionaries possess the \"what,\" but they lack the \"how.\" You have the magnitude, the groundbreaking ideas, and the drive—but is your current infrastructure strong enough to hold the weight of your future? This immersion is a high-stakes workspace designed specifically for the leader who is ready to translate internal genius into measurable, unshakeable external influence.</p><p>Over four days, we move far beyond conceptual dreams and into the technical engineering of a lasting legacy. Utilizing the Blueprint of Honor, we perform a deep dive into the mechanics of your impact, deconstructing your current operations to build a visible standard of excellence.</p><p>You will not leave our sanctuary with a mere \"concept\" or a temporary surge of motivation. You will leave with the structural architecture, the honor-based ethics, and the operational clarity required to walk out your realized dreams and seamlessly command your next era of distinction.</p>",
+            "description": "<p>Most visionaries possess the \"what,\" but they lack the \"how.\" You have the magnitude, the groundbreaking ideas, and the drive—but is your foundation strong enough to hold the weight of your future? This immersion is an exclusive, high-level workspace designed specifically for the leader who is ready to translate internal genius into measurable, unshakeable external results.</p><p>Over four days, we move far beyond conceptual dreams and into the masterful architecture of a lasting legacy. Utilizing the Blueprint of Honor, we perform a deep dive into the fabric of your impact, refining your strategies to build a visible standard of excellence.</p><p>You will not leave our sanctuary with a mere \"concept\" or a temporary surge of motivation. You will leave with the structural framework, the honor-based ethics, and the absolute clarity required to walk out your realized dreams and seamlessly command your next era of distinction.</p>",
             "description_font_type": "sans_serif",
             "description_bold": false,
             "description_italic": false,
@@ -443,12 +447,12 @@
             "paragraph_spacing": 15,
             "description_spacing": 30,
             "show_list": true,
-            "list_subtitle_1": "Implementation Labs:",
-            "list_item_1": "Real-time strategic building where we move beyond conceptual dreams into the technical engineering of a lasting legacy.",
-            "list_subtitle_2": "The Mechanics of Visibility:",
-            "list_item_2": "Systematically engineer how your brand, mission, and mandate are seen, felt, and respected on a global stage.",
+            "list_subtitle_1": "Strategic Architecture:",
+            "list_item_1": "Real-time building where we move beyond conceptual dreams into the masterful design of a lasting legacy.",
+            "list_subtitle_2": "The Art of Visibility:",
+            "list_item_2": "Intentionally curate how your brand, mission, and mandate are seen, felt, and respected.",
             "list_subtitle_3": "Honor-Based Ethics:",
-            "list_item_3": "Deconstruct your current operations using the Blueprint of Honor to build a visible, unshakeable standard of excellence.",
+            "list_item_3": "Refine your core framework using the Blueprint of Honor to build a visible, unshakeable standard of excellence.",
             "list_subtitle_4": "The Sovereign Blueprint:",
             "list_item_4": "Walk away with the literal map, structural architecture, and operational clarity required to command your vision into reality over the next decade.",
             "list_subtitle_5": "Restoration as Strategy:",
@@ -486,6 +490,49 @@
             "button_border_width": 1,
             "button_padding_vertical": 12,
             "button_padding_horizontal": 32
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_c76648c_VpqkjA": {
+          "type": "ai_gen_block_c76648c",
+          "settings": {
+            "background_color": "#faf8f5",
+            "column_gap": 15,
+            "content_gap": 30,
+            "content_padding": 60,
+            "image_left": "shopify://shop_images/untitled--6.jpg",
+            "image_right": "shopify://shop_images/untitled-5359_2.jpg",
+            "image_orientation": "portrait",
+            "image_padding": 0,
+            "eyebrow": "The Design Atelier",
+            "eyebrow_font": "sans-serif",
+            "eyebrow_size": 12,
+            "eyebrow_bold": false,
+            "eyebrow_italic": false,
+            "eyebrow_color": "#000000",
+            "title": "Architect Your Wardrobe",
+            "title_font": "serif",
+            "title_size": 40,
+            "title_bold": false,
+            "title_italic": false,
+            "title_color": "#000000",
+            "paragraph_1": "\"We believe you were not meant to fit into a garment; a garment was meant to be built around your identity. For the woman who curates a life of exquisite distinction, your bespoke wardrobe becomes the ultimate expression of your personal elevation—a true masterpiece that tells the world exactly who you are before you ever speak a word. Step into our private atelier and experience the profound luxury of pieces handcrafted exclusively for your unique essence. Dreamed by you. Architected by House of Vuu.\"",
+            "paragraph_2": "",
+            "paragraph_3": "",
+            "body_font": "sans-serif",
+            "body_size": 16,
+            "body_bold": false,
+            "body_italic": false,
+            "body_color": "#000000",
+            "cta_text": "Design Your Wardrobe",
+            "cta_link": "",
+            "cta_font": "sans-serif",
+            "cta_size": 14,
+            "cta_bold": false,
+            "cta_italic": false,
+            "cta_color": "#000000",
+            "cta_border_color": "#000000",
+            "cta_hover_color": "#ffffff"
           },
           "blocks": {}
         },
@@ -574,6 +621,7 @@
       "block_order": [
         "ai_gen_block_f6661e8_7x7eE6",
         "ai_gen_block_f6661e8_FPLWDm",
+        "ai_gen_block_c76648c_VpqkjA",
         "ai_gen_block_f6661e8_AnkBpP"
       ],
       "settings": {}
@@ -782,58 +830,6 @@
         "submit_label": "Submit Private Application",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
-    },
-    "177545288939c1f651": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_c76648c_pAy3qr": {
-          "type": "ai_gen_block_c76648c",
-          "settings": {
-            "background_color": "#faf8f5",
-            "column_gap": 15,
-            "content_gap": 30,
-            "content_padding": 60,
-            "image_left": "shopify://shop_images/untitled--6.jpg",
-            "image_right": "shopify://shop_images/untitled-5359_2.jpg",
-            "image_orientation": "portrait",
-            "image_padding": 0,
-            "eyebrow": "The Design Atelier",
-            "eyebrow_font": "sans-serif",
-            "eyebrow_size": 12,
-            "eyebrow_bold": false,
-            "eyebrow_italic": false,
-            "eyebrow_color": "#000000",
-            "title": "Architect Your Wardrobe",
-            "title_font": "serif",
-            "title_size": 40,
-            "title_bold": false,
-            "title_italic": false,
-            "title_color": "#000000",
-            "paragraph_1": "\"We believe you were not meant to fit into a garment; a garment was meant to be built around your identity. For the woman who curates a life of exquisite distinction, your bespoke wardrobe becomes the ultimate expression of your personal elevation—a true masterpiece that tells the world exactly who you are before you ever speak a word. Step into our private atelier and experience the profound luxury of pieces handcrafted exclusively for your unique essence. Dreamed by you. Architected by House of Vuu.\"",
-            "paragraph_2": "",
-            "paragraph_3": "",
-            "body_font": "sans-serif",
-            "body_size": 16,
-            "body_bold": false,
-            "body_italic": false,
-            "body_color": "#000000",
-            "cta_text": "Design Your Wardrobe",
-            "cta_link": "",
-            "cta_font": "sans-serif",
-            "cta_size": 14,
-            "cta_bold": false,
-            "cta_italic": false,
-            "cta_color": "#000000",
-            "cta_border_color": "#000000",
-            "cta_hover_color": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_c76648c_pAy3qr"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -843,13 +839,13 @@
     "dimensions",
     "destinations",
     "retreat_destinations_AKtM4t",
+    "177545288939c1f651",
     "1775336419772f5ed1",
     "retreat_destinations_bQJTgQ",
     "academy_cta",
     "retreat_inline_form",
     "final_cta",
     "retreat_disclaimer",
-    "modal",
-    "177545288939c1f651"
+    "modal"
   ]
 }
