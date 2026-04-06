@@ -26,7 +26,7 @@
             "subtitle": "",
             "cta_subtitle": "",
             "button_text": "Discover Your Dream Immersion",
-            "button_link": "",
+            "button_link": "#selection-gallery",
             "eyebrow_size": 12,
             "eyebrow_color": "#ffffff",
             "title_size": 95,
@@ -206,6 +206,11 @@
     "1775514830d5666031": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_3a7708d_WcHaT6": {
+          "type": "ai_gen_block_3a7708d",
+          "settings": {},
+          "blocks": {}
+        },
         "ai_gen_block_d008ee4_TKXLni": {
           "type": "ai_gen_block_d008ee4",
           "settings": {
@@ -285,6 +290,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_3a7708d_WcHaT6",
         "ai_gen_block_d008ee4_TKXLni",
         "ai_gen_block_a7a307f_qhRLpR"
       ],
