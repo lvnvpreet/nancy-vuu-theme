@@ -1,0 +1,22 @@
+{% doc %}
+  @prompt
+    Add a "Custom Liquid" block right here with this code:  <div id="becoming-bride"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div
+  id="becoming-bride"
+  {{ block.shopify_attributes }}
+></div>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom liquid"
+    }
+  ]
+}
+{% endschema %}
