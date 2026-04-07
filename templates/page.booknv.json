@@ -489,7 +489,7 @@
         "label_company": "Company / Organization",
         "label_email": "Professional Email Address",
         "label_inquiry": "Describe the intended impact",
-        "label_investment": "Projected Investment Tier (USD)",
+        "label_investment": "Intended Investment Range",
         "submit_label": "Initiate Alignment"
       }
     },
