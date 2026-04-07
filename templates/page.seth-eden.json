@@ -386,6 +386,54 @@
         "swap_layout": false
       }
     },
+    "blocks_wCpmxE": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4347913_EDGbb8": {
+          "type": "ai_gen_block_4347913",
+          "settings": {
+            "eyebrow": "THE NANCY VUU ATELIER",
+            "subtext": "Experience the precision of couture. We invite you to our private atelier to explore our exclusive made-to-measure collections and initiate your Seth Eden bespoke journey.",
+            "button_text": "INITITATE YOUR COMMISSION",
+            "button_link": "#INQUIRY",
+            "desktop_width_percent": 100,
+            "text_alignment": "center",
+            "vertical_padding": 40,
+            "horizontal_padding": 40,
+            "content_gap": 30,
+            "eyebrow_top_spacing": 0,
+            "button_bottom_spacing": 30,
+            "background_color": "#faf8f5",
+            "eyebrow_size": 14,
+            "eyebrow_weight": "600",
+            "eyebrow_transform": "uppercase",
+            "eyebrow_spacing": 0.1,
+            "eyebrow_color": "#0f0f0f",
+            "subtext_size": 20,
+            "subtext_weight": "400",
+            "subtext_color": "#0f0f0f",
+            "button_font_size": 16,
+            "button_font_weight": "500",
+            "button_padding_vertical": 20,
+            "button_padding_horizontal": 40,
+            "button_border_radius": 0,
+            "button_border_width": 1,
+            "button_text_color": "#faf8f5",
+            "button_bg_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_text_hover_color": "#0f0f0f",
+            "button_bg_hover_color": "#faf8f5",
+            "button_border_hover_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4347913_EDGbb8"
+      ],
+      "name": "CTA banner",
+      "settings": {}
+    },
     "gallery_womens": {
       "type": "seth-gallery",
       "blocks": {
@@ -427,54 +475,6 @@
         "description": "Seth Eden's feminine blueprint — where master craftsmanship meets the architecture of grace.",
         "swap_layout": true
       }
-    },
-    "blocks_wCpmxE": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_4347913_EDGbb8": {
-          "type": "ai_gen_block_4347913",
-          "settings": {
-            "eyebrow": "THE NANCY VUU ATELIER",
-            "subtext": "Experience the precision of couture. We invite you to our private atelier to explore our exclusive made-to-measure collections and initiate your Seth Eden bespoke journey.",
-            "button_text": "INITITATE YOUR COMMISSION",
-            "button_link": "#INQUIRY",
-            "desktop_width_percent": 100,
-            "text_alignment": "center",
-            "vertical_padding": 10,
-            "horizontal_padding": 40,
-            "content_gap": 30,
-            "eyebrow_top_spacing": 0,
-            "button_bottom_spacing": 30,
-            "background_color": "#f4f4f4",
-            "eyebrow_size": 14,
-            "eyebrow_weight": "600",
-            "eyebrow_transform": "uppercase",
-            "eyebrow_spacing": 0.1,
-            "eyebrow_color": "#0f0f0f",
-            "subtext_size": 20,
-            "subtext_weight": "400",
-            "subtext_color": "#0f0f0f",
-            "button_font_size": 16,
-            "button_font_weight": "500",
-            "button_padding_vertical": 20,
-            "button_padding_horizontal": 40,
-            "button_border_radius": 0,
-            "button_border_width": 1,
-            "button_text_color": "#faf8f5",
-            "button_bg_color": "#0f0f0f",
-            "button_border_color": "#0f0f0f",
-            "button_text_hover_color": "#0f0f0f",
-            "button_bg_hover_color": "#faf8f5",
-            "button_border_hover_color": "#0f0f0f"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_4347913_EDGbb8"
-      ],
-      "name": "CTA banner",
-      "settings": {}
     },
     "narrative": {
       "type": "seth-narrative",
