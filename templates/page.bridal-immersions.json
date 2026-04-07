@@ -1435,6 +1435,7 @@
       "blocks": {
         "ai_gen_block_01ea066_MEhXpF": {
           "type": "ai_gen_block_01ea066",
+          "disabled": true,
           "settings": {
             "eyebrow": "THE ATELIER OF THE SOUL",
             "title": "<p>Awaken Your Highest Self</p>",
@@ -1620,7 +1621,7 @@
     "177552204805f6d672",
     "17755224121e7ebbbe",
     "17755237312ed48271",
-    "1775523006e5fa1bf2",
-    "17755259385e73fae0"
+    "17755259385e73fae0",
+    "1775523006e5fa1bf2"
   ]
 }
