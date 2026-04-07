@@ -608,7 +608,7 @@
             "bullet_vertical_position": 8,
             "show_button": true,
             "button_text": "Inquire for Dreams Realized",
-            "button_link": "shopify://pages/bridal-immersion-fill-out-form",
+            "button_link": "shopify://pages/dream-immersion-fill-out-form",
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_text_color": "#ffffff",
