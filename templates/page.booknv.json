@@ -247,6 +247,7 @@
         "pillar_5",
         "pillar_6"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Core Framework",
         "heading_pre_italic": "Strategic",
@@ -370,6 +371,57 @@
         "cta_2_link": "",
         "text_color": "#ffffff"
       }
+    },
+    "1775582329f302a826": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_726fc09_chNVfj": {
+          "type": "ai_gen_block_726fc09",
+          "settings": {
+            "main_title": "THE 9 FOUNDATIONS",
+            "main_title_size": 48,
+            "subtext": "A comprehensive blueprint designed to align internal magnitude with external authority.",
+            "subtext_size": 18,
+            "pillar_1_numeral": "I",
+            "pillar_1_title": "Internal Architecture",
+            "pillar_1_description": "Restoring the foundational bedrock of the leader's core through the activation of original intent.",
+            "pillar_1_list": "Original Design • Unshakeable Truth • The Peace of Sovereignty",
+            "pillar_2_numeral": "II",
+            "pillar_2_title": "The Sovereign Mantle",
+            "pillar_2_description": "Harmonizing spiritual authority with marketplace authenticity to carry influence without the weight of performance.",
+            "pillar_2_list": "Structural Grace • The Language of Honor • Identity Stewardship",
+            "pillar_3_numeral": "III",
+            "pillar_3_title": "Legacy Curation",
+            "pillar_3_description": "Extending global impact through generational systems and the strategic alignment of economic wisdom.",
+            "pillar_3_list": "Economic Stewardship • Generational Echo • Unified Vision",
+            "numeral_size": 60,
+            "column_title_size": 28,
+            "body_text_size": 18,
+            "section_padding_top": 140,
+            "section_padding_bottom": 140,
+            "column_gap": 60,
+            "mobile_column_gap": 50,
+            "numeral_spacing": 30,
+            "footer_note": "These foundations are the structural grace upon which every Sovereign Mantle is built.",
+            "footer_note_size": 17,
+            "footer_spacing": 85,
+            "show_prophetic_note": true,
+            "prophetic_note": "These foundations are not a curriculum; they are a calibration. We do not build on top of old structures; we return to the original intent.",
+            "prophetic_text_size": 17,
+            "prophetic_spacing": 50,
+            "background_color": "#faf8f5",
+            "heading_color": "#0f0f0f",
+            "body_text_color": "#0f0f0f",
+            "subtext_color": "#4A4A4A",
+            "prophetic_text_color": "#1a1a1a"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_726fc09_chNVfj"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -381,6 +433,7 @@
     "booknv_topics",
     "booknv_book",
     "booknv_inquiry",
-    "atelier_hero_ccmiJx"
+    "atelier_hero_ccmiJx",
+    "1775582329f302a826"
   ]
 }
