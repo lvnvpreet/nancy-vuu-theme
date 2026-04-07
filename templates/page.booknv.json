@@ -252,23 +252,21 @@
         "submit_label": "Initiate Request"
       }
     },
-    "academy_pillar_fzPcdT": {
-      "type": "academy-pillar",
-      "name": "Academy Pillar",
+    "atelier_hero_ccmiJx": {
+      "type": "atelier-hero",
+      "name": "Atelier Hero",
       "settings": {
-        "anchor_id": "academy",
-        "layout": "text-left",
-        "border_top": false,
-        "eyebrow": "Foundation One",
-        "heading": "The Creative Academy",
-        "subtitle": "Discover your path to mastery",
-        "lead": "Excellence is not an industry; it is an identity.",
-        "body": "",
-        "cta_text": "Explore Enrollment",
-        "cta_type": "link",
-        "cta_vertical": "academy",
-        "cta_link": "",
-        "show_play_button": false
+        "video_url": "",
+        "overlay_opacity": 50,
+        "eyebrow": "The Nancy Vuu Master Atelier",
+        "title_line_1": "Preservation &",
+        "title_line_2": "Architecture.",
+        "subtitle": "A sanctuary for sartorial excellence. We do not merely construct garments; we preserve history and educate the next generation of master artisans.",
+        "cta_1_label": "Explore The Atelier",
+        "cta_1_link": "",
+        "cta_2_label": "Request a Consultation",
+        "cta_2_link": "",
+        "text_color": "#ffffff"
       }
     }
   },
@@ -279,6 +277,6 @@
     "booknv_topics",
     "booknv_book",
     "booknv_inquiry",
-    "academy_pillar_fzPcdT"
+    "atelier_hero_ccmiJx"
   ]
 }
