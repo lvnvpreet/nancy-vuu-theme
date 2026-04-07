@@ -81,6 +81,60 @@
         "title": "The Atelier Ritual"
       }
     },
+    "investment": {
+      "type": "investment-tiers",
+      "blocks": {
+        "t1": {
+          "type": "tier",
+          "settings": {
+            "name": "Atelier Signature",
+            "tagline": "A Heritage Beginning",
+            "features": "<p>• Signature Design Selections<br/>• Standard Measurements<br/>• Vietnam Artisan Build<br/>• San Jose Final Coronation</p>",
+            "price": "From $2500",
+            "cta_label": "Inquire",
+            "cta_link": "#inquiry",
+            "badge": "",
+            "featured": false
+          }
+        },
+        "t2": {
+          "type": "tier",
+          "settings": {
+            "name": "Made-to-Measure",
+            "tagline": "Personalized Grace",
+            "features": "<p>• Modified Silhouette Engineering<br/>• Advanced Body Mapping<br/>• Premium Fabric Access<br/>• San Jose Master Tailoring</p>",
+            "price": "From $3800",
+            "cta_label": "Inquire",
+            "cta_link": "#inquiry",
+            "badge": "",
+            "featured": false
+          }
+        },
+        "t3": {
+          "type": "tier",
+          "settings": {
+            "name": "Custom Bespoke",
+            "tagline": "The Masterpiece Heirloom",
+            "features": "<p>• Original Vision Sketching<br/>• <strong>THE ARTISAN TOILE EXPERIENCE</strong><br/>• Master Draper Immersion<br/>• Legacy Record Retention</p>",
+            "price": "From $8,500",
+            "cta_label": "Request Commission",
+            "cta_link": "#inquiry",
+            "badge": "Most Coveted",
+            "featured": true
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {
+        "title": "Your Pathway to Sovereignty",
+        "subtitle": "Defining the architectural depth of your commission",
+        "footnote": "*The Artisan Toile is a dedicated mock-up fitting exclusive to Bespoke commissions."
+      }
+    },
     "lead-times": {
       "type": "lead-times",
       "blocks": {
@@ -144,60 +198,6 @@
       ],
       "disabled": true,
       "settings": {}
-    },
-    "investment": {
-      "type": "investment-tiers",
-      "blocks": {
-        "t1": {
-          "type": "tier",
-          "settings": {
-            "name": "Atelier Signature",
-            "tagline": "A Heritage Beginning",
-            "features": "<p>• Signature Design Selections<br/>• Standard Measurements<br/>• Vietnam Artisan Build<br/>• San Jose Final Coronation</p>",
-            "price": "From $2500",
-            "cta_label": "Inquire",
-            "cta_link": "#inquiry",
-            "badge": "",
-            "featured": false
-          }
-        },
-        "t2": {
-          "type": "tier",
-          "settings": {
-            "name": "Made-to-Measure",
-            "tagline": "Personalized Grace",
-            "features": "<p>• Modified Silhouette Engineering<br/>• Advanced Body Mapping<br/>• Premium Fabric Access<br/>• San Jose Master Tailoring</p>",
-            "price": "From $3800",
-            "cta_label": "Inquire",
-            "cta_link": "#inquiry",
-            "badge": "",
-            "featured": false
-          }
-        },
-        "t3": {
-          "type": "tier",
-          "settings": {
-            "name": "Custom Bespoke",
-            "tagline": "The Masterpiece Heirloom",
-            "features": "<p>• Original Vision Sketching<br/>• <strong>THE ARTISAN TOILE EXPERIENCE</strong><br/>• Master Draper Immersion<br/>• Legacy Record Retention</p>",
-            "price": "From $8,500",
-            "cta_label": "Request Commission",
-            "cta_link": "#inquiry",
-            "badge": "Most Coveted",
-            "featured": true
-          }
-        }
-      },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3"
-      ],
-      "settings": {
-        "title": "Your Pathway to Sovereignty",
-        "subtitle": "Defining the architectural depth of your commission",
-        "footnote": "*The Artisan Toile is a dedicated mock-up fitting exclusive to Bespoke commissions."
-      }
     },
     "heritage": {
       "type": "heritage-narrative",
@@ -305,19 +305,74 @@
         "modal_subheading": "INITIATING YOUR STRATEGIC RESET.",
         "modal_intro": "Thank you for seeking to don your Mantle of Authority. This is not a request for generic inspiration — it is an application for a Selective Alignment Audit. Please answer with absolute transparency.",
         "phase1_label": "PHASE I — STRATEGIC ALIGNMENT",
-        "phase2_label": "PHASE II — EXECUTIVE PROFILE",
-        "phase3_label": "PHASE III — ALIGNMENT DECLARATION",
         "q1_label": "1. Primary Objective for this Immersion?",
+        "q1_option_1_label": "Silence the \"Echo\" & Reclaim Vision. (Phase I)",
+        "q1_option_1_value": "Silence Echo - Phase I",
+        "q1_option_2_label": "Architect my Visible Authority & Build my Legacy. (Phase II)",
+        "q1_option_2_value": "Build Authority - Phase II",
+        "q1_option_3_label": "Forge a Sovereign Legacy Alliance (Couple).",
+        "q1_option_3_value": "Sovereign Couples",
+        "q1_option_4_label": "Dream Retreat.",
+        "q1_option_4_value": "Dream Retreat",
+        "q1_option_5_label": "Women CEO Retreat.",
+        "q1_option_5_value": "Women CEO Retreat",
         "q2_label": "2. Describe your leadership style.",
         "q2_placeholder": "Select Your Alignment",
+        "q2_option_1_label": "Successful but Unseen. (Invisible Giant)",
+        "q2_option_1_value": "Successful but Unseen",
+        "q2_option_2_label": "Reactive & Stuck. (The Echo)",
+        "q2_option_2_value": "Reactive and Stuck",
+        "q2_option_3_label": "Strategic but Fragmented.",
+        "q2_option_3_value": "Strategic but Fragmented",
         "q3_label": "3. The Single Barrier to your Sovereignty?",
         "q3_placeholder": "Describe in 250 characters or less...",
+        "phase2_label": "PHASE II — EXECUTIVE PROFILE",
+        "phase3_label": "PHASE III — ALIGNMENT DECLARATION",
         "q4_label": "4. Anticipated Implementation Fund?",
+        "q4_option_1_label": "$8,500 – $15,000 (The Executive Vanguard - Group Immersion)",
+        "q4_option_1_value": "8500-15000",
+        "q4_option_2_label": "$15,000 – $25,000 (The Private Architecture - 1-on-1 or Couple's Alliance)",
+        "q4_option_2_value": "15000-25000",
+        "q4_option_3_label": "$25,000+ (The Legacy Blueprint - Immersion + Long-Term Strategic Mentorship)",
+        "q4_option_3_value": "25000plus",
         "q5_label": "5. Describe your True Appointment in one word.",
         "q5_placeholder": "VISIONARY. REDEEMED. SOVEREIGN...",
         "submit_label": "INITIATE ALIGNMENT AUDIT",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
+    },
+    "cross_sell_luxury_FUtVFr": {
+      "type": "cross-sell-luxury",
+      "blocks": {
+        "card_LpQxQq": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/iStock-2161713126.jpg",
+            "eyebrow": "For the Groom",
+            "title": "Bespoke Tailored Tuxedo",
+            "description": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples.",
+            "cta_label": "Commission His Tuxedo",
+            "link": "shopify://pages/seth-eden"
+          }
+        },
+        "card_HJhhK8": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/10.jpg",
+            "eyebrow": "The House of Vuu Sanctuary",
+            "title": "Bridal Immersions",
+            "description": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space for the bride to quiet the noise, find her center, and remember who she is before she walks down the aisle.",
+            "cta_label": "Explore the Bridal Immersions",
+            "link": "shopify://pages/bridal-immersions"
+          }
+        }
+      },
+      "block_order": [
+        "card_LpQxQq",
+        "card_HJhhK8"
+      ],
+      "name": "Cross-Sell Luxury",
+      "settings": {}
     },
     "atelier_inquiry_nQ8dYM": {
       "type": "atelier-inquiry",
@@ -381,6 +436,7 @@
     "about_retreats_3Dzctt",
     "closer",
     "modal",
+    "cross_sell_luxury_FUtVFr",
     "atelier_inquiry_nQ8dYM"
   ]
 }

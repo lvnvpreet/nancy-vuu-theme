@@ -431,6 +431,39 @@
         "cta_link": "#booking"
       }
     },
+    "cross_sell_luxury_rMLzhq": {
+      "type": "cross-sell-luxury",
+      "blocks": {
+        "card_dEJw7H": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.50.28_AM.png",
+            "eyebrow": "The Appointed Mantle",
+            "title": "SETH EDEN Bespoke",
+            "description": "The external reflection of internal authority. We create custom, handcrafted masterpieces for the visionary who refuses to compromise on quality or identity. Wear the mantle you were born to carry.",
+            "cta_label": "Commission Your Masterpiece",
+            "link": "shopify://pages/seth-eden"
+          }
+        },
+        "card_rUpPDf": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/8.jpg",
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Immersions",
+            "description": "This is not a retreat; it is a strategic restoration for the builders and the doers. Step into a curated atmosphere designed to silence the noise, rediscover your original design, and architect the strategy for your highest potential. This is where your next level begins.",
+            "cta_label": "Explore the Immersions",
+            "link": "shopify://pages/dream-retreats"
+          }
+        }
+      },
+      "block_order": [
+        "card_dEJw7H",
+        "card_rUpPDf"
+      ],
+      "name": "Cross-Sell Luxury",
+      "settings": {}
+    },
     "booknv_inquiry": {
       "type": "booknv-inquiry",
       "blocks": {
@@ -514,39 +547,6 @@
     "177558902188524e53": {
       "type": "_blocks",
       "settings": {}
-    },
-    "cross_sell_luxury_rMLzhq": {
-      "type": "cross-sell-luxury",
-      "blocks": {
-        "card_dEJw7H": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.50.28_AM.png",
-            "eyebrow": "The Appointed Mantle",
-            "title": "SETH EDEN Bespoke",
-            "description": "The external reflection of internal authority. We create custom, handcrafted masterpieces for the visionary who refuses to compromise on quality or identity. Wear the mantle you were born to carry.",
-            "cta_label": "Commission Your Masterpiece",
-            "link": "shopify://pages/seth-eden"
-          }
-        },
-        "card_rUpPDf": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/8.jpg",
-            "eyebrow": "The Nancy Vuu Experience",
-            "title": "Dream Immersions",
-            "description": "This is not a retreat; it is a strategic restoration for the builders and the doers. Step into a curated atmosphere designed to silence the noise, rediscover your original design, and architect the strategy for your highest potential. This is where your next level begins.",
-            "cta_label": "Explore the Immersions",
-            "link": "shopify://pages/dream-retreats"
-          }
-        }
-      },
-      "block_order": [
-        "card_dEJw7H",
-        "card_rUpPDf"
-      ],
-      "name": "Cross-Sell Luxury",
-      "settings": {}
     }
   },
   "order": [
@@ -559,9 +559,9 @@
     "1775582329f302a826",
     "booknv_topics",
     "booknv_book",
+    "cross_sell_luxury_rMLzhq",
     "booknv_inquiry",
     "atelier_hero_ccmiJx",
-    "177558902188524e53",
-    "cross_sell_luxury_rMLzhq"
+    "177558902188524e53"
   ]
 }
