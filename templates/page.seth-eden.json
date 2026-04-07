@@ -9,16 +9,6 @@
  */
 {
   "sections": {
-    "seth_cinematic_hero": {
-      "type": "seth-hero",
-      "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/1fcd0d2607694fd3ad5badeba4dd02bd.mov",
-        "eyebrow": "The House of Nancy Vuu Presents",
-        "heading": "Seth Eden",
-        "subtext": "Custom Bespoke Masterpieces for Men & Women.",
-        "brand_sub": "By Nancy Vuu"
-      }
-    },
     "manifesto": {
       "type": "manifesto",
       "settings": {
@@ -504,14 +494,14 @@
         "comm_1": {
           "type": "commission_option",
           "settings": {
-            "label": "Sovereign Bespoke",
+            "label": "Bespoke",
             "value": "bespoke"
           }
         },
         "comm_2": {
           "type": "commission_option",
           "settings": {
-            "label": "Custom MTM Blueprint",
+            "label": "Custom Made-to-measure",
             "value": "mtm"
           }
         }
@@ -569,7 +559,6 @@
     }
   },
   "order": [
-    "seth_cinematic_hero",
     "manifesto",
     "seth_hero",
     "vitality",
