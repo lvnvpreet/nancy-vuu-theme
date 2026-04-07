@@ -63,13 +63,13 @@
     "cross-sell": {
       "type": "cross-sell",
       "settings": {
-        "image": "shopify://shop_images/untitled-0.jpg",
-        "title": "Direct Acquisition",
-        "description": "Unlike our garments which are architected to order, our Crowns and Jewelry are curated for immediate attainment. Every physical masterpiece is prepared for secure shipment to serve as a constant reminder of your unshakeable presence.",
+        "image": "shopify://shop_images/IMG_1527.webp",
+        "title": "DREAM Immersions",
+        "description": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space to quiet the noise, find your center, and remember who you are. We believe the greatest impact comes from an internal overflow. Whether you seek our heavenly gardens to rediscover buried passions, the strategic blueprint to build your future, or the bespoke environment to co-design your calling—our sanctuary is a safe haven to dream, build and create.",
         "cta_label": "",
         "cta_link": "",
-        "primary_label": "Place an Order",
-        "primary_link": "shopify://collections/crowns-jewelry",
+        "primary_label": "EXPLORE OUR DREAM IMMERSIONS",
+        "primary_link": "shopify://pages/dream-retreats",
         "secondary_label": "Book Atelier Visit",
         "secondary_link": "shopify://pages/atelier"
       }
