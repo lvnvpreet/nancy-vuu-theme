@@ -1446,7 +1446,7 @@
             "body_font": "system_ui_n4",
             "row_title_size": 18,
             "body_text_size": 15,
-            "background_color": "#fbf3e7",
+            "background_color": "#fbf7f1",
             "text_color": "#0f0f0f",
             "divider_color": "#ece9e3",
             "desktop_width_percent": 100,
