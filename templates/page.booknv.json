@@ -73,7 +73,7 @@
             "background_image": "shopify://shop_images/untitled--8_2.jpg",
             "section_height": 900,
             "overlay_color": "black",
-            "overlay_strength": 0.1,
+            "overlay_strength": 0.3,
             "eyebrow": "Book Nancy Vuu",
             "eyebrow_font": "manrope_n4",
             "eyebrow_size": 14,
