@@ -40,7 +40,7 @@
             "subtext_italic": false,
             "subtext_spacing": 35,
             "cta_text": "REQUEST AN INVITATION",
-            "cta_link": "",
+            "cta_link": "#booking",
             "button_font": "manrope_n4",
             "button_font_size": 16,
             "button_italic": false,
