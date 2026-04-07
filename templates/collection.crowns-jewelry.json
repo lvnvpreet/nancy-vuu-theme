@@ -69,7 +69,7 @@
         "cta_label": "",
         "cta_link": "",
         "primary_label": "Place an Order",
-        "primary_link": "shopify://pages/crowns",
+        "primary_link": "shopify://collections/crowns-jewelry",
         "secondary_label": "Book Atelier Visit",
         "secondary_link": "shopify://pages/atelier"
       }
