@@ -172,30 +172,11 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
-    },
-    "cta_closer_hEmPr7": {
-      "type": "cta-closer",
-      "name": "CTA Closer",
-      "settings": {
-        "overlay_opacity": 50,
-        "eyebrow": "",
-        "heading": "Begin Your Journey",
-        "subtext": "",
-        "cta_label": "Book Consultation",
-        "cta_link": "",
-        "cta_style": "outline",
-        "cta2_label": "",
-        "cta2_link": "",
-        "text_color": "#ffffff",
-        "bg_light": false,
-        "compact": false
-      }
     }
   },
   "order": [
     "17753441280ec98742",
     "atelier_inquiry_MwdRTd",
-    "main",
-    "cta_closer_hEmPr7"
+    "main"
   ]
 }
