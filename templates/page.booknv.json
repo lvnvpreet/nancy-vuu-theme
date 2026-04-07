@@ -251,6 +251,25 @@
         "label_investment": "Projected Investment Tier (USD)",
         "submit_label": "Initiate Request"
       }
+    },
+    "academy_pillar_fzPcdT": {
+      "type": "academy-pillar",
+      "name": "Academy Pillar",
+      "settings": {
+        "anchor_id": "academy",
+        "layout": "text-left",
+        "border_top": false,
+        "eyebrow": "Foundation One",
+        "heading": "The Creative Academy",
+        "subtitle": "Discover your path to mastery",
+        "lead": "Excellence is not an industry; it is an identity.",
+        "body": "",
+        "cta_text": "Explore Enrollment",
+        "cta_type": "link",
+        "cta_vertical": "academy",
+        "cta_link": "",
+        "show_play_button": false
+      }
     }
   },
   "order": [
@@ -259,6 +278,7 @@
     "booknv_story",
     "booknv_topics",
     "booknv_book",
-    "booknv_inquiry"
+    "booknv_inquiry",
+    "academy_pillar_fzPcdT"
   ]
 }
