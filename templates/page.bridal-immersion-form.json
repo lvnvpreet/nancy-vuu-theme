@@ -1,0 +1,182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17753441280ec98742": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9039eb0_G4CgeJ": {
+          "type": "ai_gen_block_9039eb0",
+          "settings": {
+            "hero_image": "shopify://shop_images/iStock-118854546.jpg",
+            "hero_height": 500,
+            "mobile_hero_height": 250,
+            "show_overlay": true,
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 0.4,
+            "eyebrow": "",
+            "subtitle": "CONNECT WITH THE",
+            "title": "House of Nancy Vuu",
+            "text_color": "#0f0f0f",
+            "vertical_alignment": "center",
+            "horizontal_alignment": "center",
+            "text_alignment": "center",
+            "content_max_width": 800,
+            "eyebrow_size": 12,
+            "subtitle_size": 18,
+            "title_size": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9039eb0_G4CgeJ"
+      ],
+      "settings": {}
+    },
+    "atelier_inquiry_MwdRTd": {
+      "type": "atelier-inquiry",
+      "blocks": {
+        "service_option_qbMPmW": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "DREAM Again",
+            "option_value": "BRIDAL IMMERSIONS, BESPOKE GOWN"
+          }
+        },
+        "service_option_U9thzL": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Dream Realized",
+            "option_value": "BRIDAL IMMERSION"
+          }
+        },
+        "service_option_Ly6wRW": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Women CEO: Dress The Dream",
+            "option_value": "Bridal Immersions, bespoke bridal"
+          }
+        },
+        "service_option_D6M8KX": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Unified Dream",
+            "option_value": "tailoring"
+          }
+        },
+        "service_option_TjADGp": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "1-on-1 Mentorship",
+            "option_value": "mentorship"
+          }
+        },
+        "service_option_gY7L9V": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "Nancy Vuu | Key Note Speaker",
+            "option_value": "key note speaker"
+          }
+        },
+        "service_option_YzRatH": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        },
+        "service_option_6GPj43": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "Custom Bespoke Suiting | Bespoke Wardrobe",
+            "option_value": "bespoke suits, couture, wardrobe"
+          }
+        },
+        "service_option_nPbdiC": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        "service_option_4AxDHg": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "DREAM Retreats",
+            "option_value": "Dream Retreats"
+          }
+        },
+        "service_option_QUD3Ui": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "Strategic Intensives",
+            "option_value": "strategic Intensives"
+          }
+        },
+        "service_option_D44eTe": {
+          "type": "service_option",
+          "disabled": true,
+          "settings": {
+            "option_label": "Maison Arise",
+            "option_value": "maison arise, dream academy"
+          }
+        }
+      },
+      "block_order": [
+        "service_option_qbMPmW",
+        "service_option_U9thzL",
+        "service_option_Ly6wRW",
+        "service_option_D6M8KX",
+        "service_option_TjADGp",
+        "service_option_gY7L9V",
+        "service_option_YzRatH",
+        "service_option_6GPj43",
+        "service_option_nPbdiC",
+        "service_option_4AxDHg",
+        "service_option_QUD3Ui",
+        "service_option_D44eTe"
+      ],
+      "name": "Atelier Inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "Submission Form for",
+        "title_line_1": "Bridel Immersions",
+        "title_line_2": "",
+        "subtext": "Connect with our team to to schedule a  20 minute consultation on our Dream Immersions.",
+        "address_eyebrow": "The San Jose & Napa Valley flagship",
+        "address_line_1": "By Appointment Only",
+        "address_line_2": "info@nancyvuu.com",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "DREAM IMMERSION OF CHOICE",
+        "label_message": "PLEASE SHARE A BIT ABOUT YOURSELF, AND THE VISION YOU HOLD THIS SEASON AND HOW WE CAN BEST SERVE AND PREPARE YOU FOR YOUR DREAM REALIZED.",
+        "submit_label": "Submit Request to House of Nancy Vuu"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "17753441280ec98742",
+    "atelier_inquiry_MwdRTd",
+    "main"
+  ]
+}
