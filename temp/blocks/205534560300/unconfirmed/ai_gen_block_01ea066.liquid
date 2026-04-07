@@ -1,6 +1,918 @@
+{% doc %}
+  @prompt
+    Create a section that duplicates the layout of the "Atelier Inquiry" section but with these questions: Text Field: 'The Muse (Full Name)'
+    
+        Email Field: 'The Connection (Email)'
+    
+        Phone Field: 'The Voice (Phone Number)'
+    
+        Date Field: 'The Covenant Date (Wedding Date)'
+    
+        Dropdown: 'Your Desired Path' (Options: I. The Becoming Bride, II. The Masterpiece Bride, III. The Unified Covenant, IV. The Matriarch & The Bride, V. The Masterpiece Collective)
+    
+        Large Text: 'The Vision: Please share the heart behind the woman you aspire to be as you stand at the altar—both in spirit and in style.'
+    
+        Large Text: 'The Soul’s Requirement: In this season of transition, what is the one thing your soul needs most before you say "I do"?'
+    
+        Text Field: 'How did the story of our bridal immersions first reach you?' Give block space to answer the questions and use text Bodoni Moda  for title and Manrope for all other  text, add eyebrow above title and allow me to modify the questions being asked. Also make the CTA button smaller, just enough to fit the CTA text. Give more space in between questions.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-bridal-inquiry-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-bridal-inquiry-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-bridal-inquiry-eyebrow-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.eyebrow_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.eyebrow_spacing }}px 0;
+    text-align: {{ block.settings.title_alignment }};
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+  .ai-bridal-inquiry-title-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', serif;
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px 0;
+    text-align: {{ block.settings.title_alignment }};
+    line-height: 1.2;
+  }
+
+  .ai-bridal-inquiry-description-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.form_spacing }}px 0;
+    text-align: {{ block.settings.title_alignment }};
+    line-height: 1.6;
+  }
+
+  .ai-bridal-inquiry-form-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.field_spacing }}px;
+  }
+
+  .ai-bridal-inquiry-field-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-bridal-inquiry-label-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.text_color }};
+    font-weight: 500;
+  }
+
+  .ai-bridal-inquiry-input-{{ ai_gen_id }},
+  .ai-bridal-inquiry-select-{{ ai_gen_id }},
+  .ai-bridal-inquiry-textarea-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.input_size }}px;
+    color: {{ block.settings.text_color }};
+    background-color: {{ block.settings.input_background }};
+    border: {{ block.settings.input_border_width }}px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    padding: {{ block.settings.input_padding }}px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+
+  .ai-bridal-inquiry-input-{{ ai_gen_id }}:focus,
+  .ai-bridal-inquiry-select-{{ ai_gen_id }}:focus,
+  .ai-bridal-inquiry-textarea-{{ ai_gen_id }}:focus {
+    outline: none;
+    border-color: {{ block.settings.input_focus_border }};
+  }
+
+  .ai-bridal-inquiry-textarea-{{ ai_gen_id }} {
+    min-height: {{ block.settings.textarea_height }}px;
+    resize: vertical;
+  }
+
+  .ai-bridal-inquiry-select-{{ ai_gen_id }} {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%230f0f0f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right {{ block.settings.input_padding }}px center;
+    padding-right: calc({{ block.settings.input_padding }}px + 24px);
+  }
+
+  .ai-bridal-inquiry-button-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: {{ block.settings.title_alignment }};
+    margin-top: {{ block.settings.button_spacing }}px;
+  }
+
+  .ai-bridal-inquiry-button-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.button_size }}px;
+    color: {{ block.settings.button_text_color }};
+    background-color: {{ block.settings.button_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    display: inline-block;
+  }
+
+  .ai-bridal-inquiry-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-bridal-inquiry-success-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.input_size }}px;
+    color: {{ block.settings.success_color }};
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .ai-bridal-inquiry-error-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.input_size }}px;
+    color: {{ block.settings.error_color }};
+    margin-top: 8px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-bridal-inquiry-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.6 }}px 16px;
+    }
+
+    .ai-bridal-inquiry-eyebrow-{{ ai_gen_id }} {
+      font-size: {{ block.settings.eyebrow_size | times: 0.9 }}px;
+    }
+
+    .ai-bridal-inquiry-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.7 }}px;
+    }
+
+    .ai-bridal-inquiry-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<bridal-inquiry-{{ ai_gen_id }} class="ai-bridal-inquiry-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-bridal-inquiry-container-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow != blank %}
+      <div class="ai-bridal-inquiry-eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow }}</div>
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <h2 class="ai-bridal-inquiry-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-bridal-inquiry-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+    {% endif %}
+
+    {% form 'contact' %}
+      <input type="hidden" name="contact[form_type]" value="bridal_inquiry">
+      
+      <div class="ai-bridal-inquiry-form-{{ ai_gen_id }}">
+        {% if block.settings.show_field_1 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-1-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_1_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-bridal-field-1-{{ ai_gen_id }}"
+              name="contact[field_1]"
+              class="ai-bridal-inquiry-input-{{ ai_gen_id }}"
+              {% if block.settings.field_1_required %}required{% endif %}
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_2 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-2-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_2_label }}
+            </label>
+            <input
+              type="email"
+              id="ai-bridal-field-2-{{ ai_gen_id }}"
+              name="contact[email]"
+              class="ai-bridal-inquiry-input-{{ ai_gen_id }}"
+              autocomplete="email"
+              {% if block.settings.field_2_required %}required{% endif %}
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="ai-bridal-inquiry-error-{{ ai_gen_id }}"
+              {% endif %}
+              {% if form.posted_successfully? %}
+                aria-describedby="ai-bridal-inquiry-success-{{ ai_gen_id }}"
+              {% endif %}
+            >
+            {% if form.errors %}
+              <div id="ai-bridal-inquiry-error-{{ ai_gen_id }}" class="ai-bridal-inquiry-error-{{ ai_gen_id }}">
+                {{ form.errors.messages.email }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_3 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-3-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_3_label }}
+            </label>
+            <input
+              type="tel"
+              id="ai-bridal-field-3-{{ ai_gen_id }}"
+              name="contact[phone]"
+              class="ai-bridal-inquiry-input-{{ ai_gen_id }}"
+              autocomplete="tel"
+              {% if block.settings.field_3_required %}required{% endif %}
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_4 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-4-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_4_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-bridal-field-4-{{ ai_gen_id }}"
+              name="contact[date]"
+              class="ai-bridal-inquiry-input-{{ ai_gen_id }}"
+              placeholder="MM/DD/YYYY"
+              {% if block.settings.field_4_required %}required{% endif %}
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_5 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-5-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_5_label }}
+            </label>
+            <select
+              id="ai-bridal-field-5-{{ ai_gen_id }}"
+              name="contact[dropdown]"
+              class="ai-bridal-inquiry-select-{{ ai_gen_id }}"
+              {% if block.settings.field_5_required %}required{% endif %}
+            >
+              <option value="">Please select</option>
+              <option value="I. The Becoming Bride">I. The Becoming Bride</option>
+              <option value="II. The Masterpiece Bride">II. The Masterpiece Bride</option>
+              <option value="III. The Unified Covenant">III. The Unified Covenant</option>
+              <option value="IV. The Matriarch & The Bride">IV. The Matriarch & The Bride</option>
+              <option value="V. The Masterpiece Collective">V. The Masterpiece Collective</option>
+            </select>
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_6 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-6-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_6_label }}
+            </label>
+            <textarea
+              id="ai-bridal-field-6-{{ ai_gen_id }}"
+              name="contact[textarea_1]"
+              class="ai-bridal-inquiry-textarea-{{ ai_gen_id }}"
+              {% if block.settings.field_6_required %}required{% endif %}
+            ></textarea>
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_7 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-7-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_7_label }}
+            </label>
+            <textarea
+              id="ai-bridal-field-7-{{ ai_gen_id }}"
+              name="contact[textarea_2]"
+              class="ai-bridal-inquiry-textarea-{{ ai_gen_id }}"
+              {% if block.settings.field_7_required %}required{% endif %}
+            ></textarea>
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_field_8 %}
+          <div class="ai-bridal-inquiry-field-{{ ai_gen_id }}">
+            <label for="ai-bridal-field-8-{{ ai_gen_id }}" class="ai-bridal-inquiry-label-{{ ai_gen_id }}">
+              {{ block.settings.field_8_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-bridal-field-8-{{ ai_gen_id }}"
+              name="contact[field_8]"
+              class="ai-bridal-inquiry-input-{{ ai_gen_id }}"
+              {% if block.settings.field_8_required %}required{% endif %}
+            >
+          </div>
+        {% endif %}
+
+        <div class="ai-bridal-inquiry-button-wrapper-{{ ai_gen_id }}">
+          <button type="submit" class="ai-bridal-inquiry-button-{{ ai_gen_id }}">
+            {{ block.settings.button_text }}
+          </button>
+        </div>
+
+        {% if form.posted_successfully? %}
+          <div id="ai-bridal-inquiry-success-{{ ai_gen_id }}" class="ai-bridal-inquiry-success-{{ ai_gen_id }}">
+            {{ block.settings.success_message }}
+          </div>
+        {% endif %}
+      </div>
+    {% endform %}
+  </div>
+</bridal-inquiry-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BridalInquiry{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.form = this.querySelector('form');
+        if (this.form) {
+          this.setupFormValidation();
+        }
+      }
+
+      setupFormValidation() {
+        const dateInput = this.querySelector('#ai-bridal-field-4-{{ ai_gen_id }}');
+        if (dateInput) {
+          dateInput.addEventListener('blur', function() {
+            const value = this.value.trim();
+            if (value && !value.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+              this.setCustomValidity('Please use MM/DD/YYYY format');
+            } else {
+              this.setCustomValidity('');
+            }
+          });
+        }
+      }
+    }
+
+    customElements.define('bridal-inquiry-{{ ai_gen_id }}', BridalInquiry{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Bridal inquiry form",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Begin Your Journey</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Share your vision with us and let us craft an experience as unique as your love story.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Submit Inquiry"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you for your inquiry. We will be in touch soon."
+    },
+    {
+      "type": "header",
+      "content": "Field 1 - Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_1",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_1_label",
+      "label": "Label",
+      "default": "The Muse (Full Name)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_1_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 2 - Email"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_2",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_2_label",
+      "label": "Label",
+      "default": "The Connection (Email)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_2_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 3 - Phone"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_3",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_3_label",
+      "label": "Label",
+      "default": "The Voice (Phone Number)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_3_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Field 4 - Date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_4",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_4_label",
+      "label": "Label",
+      "default": "The Covenant Date (Wedding Date)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_4_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Field 5 - Dropdown"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_5",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_5_label",
+      "label": "Label",
+      "default": "Your Desired Path"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_5_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 6 - Large text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_6",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "field_6_label",
+      "label": "Label",
+      "default": "The Vision: Please share the heart behind the woman you aspire to be as you stand at the altar—both in spirit and in style."
+    },
+    {
+      "type": "checkbox",
+      "id": "field_6_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Field 7 - Large text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_7",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "field_7_label",
+      "label": "Label",
+      "default": "The Soul's Requirement: In this season of transition, what is the one thing your soul needs most before you say \"I do\"?"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_7_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Field 8 - Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_field_8",
+      "label": "Show field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_8_label",
+      "label": "Label",
+      "default": "How did the story of our bridal immersions first reach you?"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_8_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum content width",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "input_size",
+      "label": "Input text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Eyebrow bottom spacing",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title bottom spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "form_spacing",
+      "label": "Form top spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "field_spacing",
+      "label": "Field spacing",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "label": "Button top spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_background",
+      "label": "Input background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_border",
+      "label": "Input focus border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover background",
+      "default": "#2f2f2f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success message",
+      "default": "#008060"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error message",
+      "default": "#D82C0D"
+    },
+    {
+      "type": "header",
+      "content": "Input style"
+    },
+    {
+      "type": "range",
+      "id": "input_padding",
+      "label": "Input padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "input_border_width",
+      "label": "Input border width",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "label": "Input border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "textarea_height",
+      "label": "Large text field height",
+      "min": 80,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Button vertical padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Button horizontal padding",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal inquiry form"
+    }
+  ]
+}
 {% endschema %}
