@@ -1,0 +1,20 @@
+{% doc %}
+  @prompt
+    create custom liquid block with code: <div id="dream-again" style="scroll-margin-top: 100px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div id="dream-again" style="scroll-margin-top: 100px;" {{ block.shopify_attributes }}></div>
+
+{% schema %}
+{
+  "name": "Dream again anchor",
+  "tag": null,
+  "settings": [],
+  "presets": [
+    {
+      "name": "Dream again anchor"
+    }
+  ]
+}
+{% endschema %}
