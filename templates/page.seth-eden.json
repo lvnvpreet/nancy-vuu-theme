@@ -480,15 +480,22 @@
         "gen_1": {
           "type": "gender_option",
           "settings": {
-            "label": "Masculine Tailoring",
-            "value": "masculine"
+            "label": "Mens Tailoring",
+            "value": "mens tailoring"
           }
         },
         "gen_2": {
           "type": "gender_option",
           "settings": {
-            "label": "Feminine Tailoring",
-            "value": "feminine"
+            "label": "Womens Tailoring",
+            "value": "womens tailoring"
+          }
+        },
+        "gender_option_aMwrwY": {
+          "type": "gender_option",
+          "settings": {
+            "label": "Childrens Tailoring",
+            "value": "childrens"
           }
         },
         "comm_1": {
@@ -509,6 +516,7 @@
       "block_order": [
         "gen_1",
         "gen_2",
+        "gender_option_aMwrwY",
         "comm_1",
         "comm_2"
       ],
