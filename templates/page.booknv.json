@@ -437,8 +437,8 @@
         "tier_1": {
           "type": "tier",
           "settings": {
-            "label": "Under $25,000",
-            "value": "Under $25,000"
+            "label": "Strategic Keynote / Event Appearance: (10-25K)",
+            "value": "$10,000 - $25,000"
           }
         },
         "tier_2": {
