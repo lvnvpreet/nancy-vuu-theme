@@ -1,0 +1,40 @@
+{% doc %}
+  @prompt
+    create custom liquid block with code: <div id="dreams-realized" style="scroll-margin-top: 100px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div
+  id="dreams-realized"
+  class="ai-anchor-block-{{ ai_gen_id }}"
+  style="scroll-margin-top: {{ block.settings.scroll_margin_top }}px;"
+  {{ block.shopify_attributes }}
+></div>
+
+{% schema %}
+{
+  "name": "Anchor point",
+  "tag": null,
+  "settings": [
+    {
+      "type": "range",
+      "id": "scroll_margin_top",
+      "label": "Scroll offset",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "paragraph",
+      "content": "This creates an invisible anchor point with ID 'dreams-realized' that can be linked to from other sections."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anchor point"
+    }
+  ]
+}
+{% endschema %}
