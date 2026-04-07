@@ -1,6 +1,679 @@
+{% doc %}
+  @prompt
+    Create a custom section titled 'Selection Gallery' with a clean, high-fashion grid layout. I need 4 image cards in total. The layout should be a 4-column row. Each card must have a full-bleed background image, a title in an elegant serif font overlay, and a 'Learn More' button. Ensure the layout is mobile-responsive, switching to a single column on small screens. Include settings for each card to link to a custom URL or Page Anchor (#ID).", make the 4 image cards the same size, give this section an eyebrow, title and subtext. keep the photo box the same size, give me the option to adjust the photo box sizes. , Each card should NOT use an image. Instead, use a very light, airy solid background color (choose a warm champagne or light oatmeal color) to create large, minimalist buttons.
+    
+    The text on each card must be centered with generous white space (padding). The primary title must be a prominent  bodini Moda serif font, followed by a smaller subtext in a lightweight  manrope sans-serif font.
+    
+    Make the entire card clickable and include a subtle hover effect, such as the background color softly darkening or the title subtly rising, to signify interactivity. The layout must switch to a single column on mobile.", give me the option to make the buttons smaller being more editorial style  with more white space around each button and create a CTA button with text Learn More (make cta text editable) and make it a cta button with a thin frame box around cta text without extra space.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-selection-gallery-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.section_background_color }};
+  }
+
+  .ai-selection-gallery__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-selection-gallery__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-selection-gallery__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {{ block.settings.eyebrow_color }};
+    margin-bottom: 16px;
+  }
+
+  .ai-selection-gallery__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_header_font.family }}, {{ block.settings.type_header_font.fallback_families }};
+    font-weight: {{ block.settings.type_header_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .ai-selection-gallery__subtext-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.subtext_size }}px;
+    color: {{ block.settings.subtext_color }};
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ai-selection-gallery__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-top: {{ block.settings.grid_top_spacing }}px;
+  }
+
+  .ai-selection-gallery__card-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: {{ block.settings.card_background_color }};
+    padding: {{ block.settings.card_padding }}px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    min-height: {{ block.settings.card_height }}px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+  }
+
+  .ai-selection-gallery__card-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.card_hover_background_color }};
+  }
+
+  .ai-selection-gallery__card-{{ ai_gen_id }}:hover .ai-selection-gallery__card-title-{{ ai_gen_id }} {
+    transform: translateY(-4px);
+  }
+
+  .ai-selection-gallery__card-content-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-selection-gallery__card-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_header_font.family }}, {{ block.settings.type_header_font.fallback_families }};
+    font-weight: {{ block.settings.type_header_font.weight }};
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.card_title_color }};
+    margin-bottom: 12px;
+    line-height: 1.3;
+    transition: transform 0.4s ease;
+  }
+
+  .ai-selection-gallery__card-subtext-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: 300;
+    font-size: {{ block.settings.card_subtext_size }}px;
+    color: {{ block.settings.card_subtext_color }};
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .ai-selection-gallery__card-cta-{{ ai_gen_id }} {
+    display: inline-block;
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.cta_text_size }}px;
+    color: {{ block.settings.cta_text_color }};
+    border: {{ block.settings.cta_border_width }}px solid {{ block.settings.cta_border_color }};
+    padding: {{ block.settings.cta_padding_vertical }}px {{ block.settings.cta_padding_horizontal }}px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .ai-selection-gallery__card-{{ ai_gen_id }}:hover .ai-selection-gallery__card-cta-{{ ai_gen_id }} {
+    background-color: {{ block.settings.cta_hover_background_color }};
+    color: {{ block.settings.cta_hover_text_color }};
+    border-color: {{ block.settings.cta_hover_border_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-selection-gallery__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-selection-gallery-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 16px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-selection-gallery__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.grid_gap | times: 0.7 }}px;
+    }
+
+    .ai-selection-gallery__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.7 }}px;
+    }
+
+    .ai-selection-gallery__card-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.card_title_size | times: 0.8 }}px;
+    }
+
+    .ai-selection-gallery__card-{{ ai_gen_id }} {
+      min-height: {{ block.settings.card_height | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<selection-gallery-{{ ai_gen_id }} class="ai-selection-gallery-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-selection-gallery__container-{{ ai_gen_id }}">
+    {% if block.settings.show_header %}
+      <div class="ai-selection-gallery__header-{{ ai_gen_id }}">
+        {% if block.settings.eyebrow != blank %}
+          <div class="ai-selection-gallery__eyebrow-{{ ai_gen_id }}">
+            {{ block.settings.eyebrow }}
+          </div>
+        {% endif %}
+        
+        {% if block.settings.title != blank %}
+          <h2 class="ai-selection-gallery__title-{{ ai_gen_id }}">
+            {{ block.settings.title }}
+          </h2>
+        {% endif %}
+        
+        {% if block.settings.subtext != blank %}
+          <div class="ai-selection-gallery__subtext-{{ ai_gen_id }}">
+            {{ block.settings.subtext }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-selection-gallery__grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign card_title_key = 'card_' | append: i | append: '_title'
+          assign card_subtext_key = 'card_' | append: i | append: '_subtext'
+          assign card_url_key = 'card_' | append: i | append: '_url'
+          
+          assign card_title = block.settings[card_title_key]
+          assign card_subtext = block.settings[card_subtext_key]
+          assign card_url = block.settings[card_url_key]
+        %}
+        
+        <a 
+          href="{% if card_url != blank %}{{ card_url }}{% else %}#{% endif %}" 
+          class="ai-selection-gallery__card-{{ ai_gen_id }}"
+          {% if card_url == blank %}onclick="return false;"{% endif %}
+        >
+          <div class="ai-selection-gallery__card-content-{{ ai_gen_id }}">
+            {% if card_title != blank %}
+              <h3 class="ai-selection-gallery__card-title-{{ ai_gen_id }}">
+                {{ card_title }}
+              </h3>
+            {% endif %}
+            
+            {% if card_subtext != blank %}
+              <div class="ai-selection-gallery__card-subtext-{{ ai_gen_id }}">
+                {{ card_subtext }}
+              </div>
+            {% endif %}
+            
+            <span class="ai-selection-gallery__card-cta-{{ ai_gen_id }}">
+              {{ block.settings.cta_text }}
+            </span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</selection-gallery-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SelectionGallery{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.cards = this.querySelectorAll('.ai-selection-gallery__card-{{ ai_gen_id }}');
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        this.cards.forEach((card) => {
+          card.setAttribute('role', 'button');
+          card.setAttribute('tabindex', '0');
+          
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              card.click();
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('selection-gallery-{{ ai_gen_id }}', SelectionGallery{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Selection Gallery",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Discover"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Selection Gallery"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Explore our curated collection of refined experiences"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "label": "Subtext size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Atelier"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_subtext",
+      "label": "Subtext",
+      "default": "Bespoke creations"
+    },
+    {
+      "type": "url",
+      "id": "card_1_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_subtext",
+      "label": "Subtext",
+      "default": "Curated pieces"
+    },
+    {
+      "type": "url",
+      "id": "card_2_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Experience"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_subtext",
+      "label": "Subtext",
+      "default": "Immersive moments"
+    },
+    {
+      "type": "url",
+      "id": "card_3_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "text",
+      "id": "card_4_title",
+      "label": "Title",
+      "default": "Journal"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_subtext",
+      "label": "Subtext",
+      "default": "Stories & insights"
+    },
+    {
+      "type": "url",
+      "id": "card_4_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_height",
+      "label": "Card height",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Background color",
+      "default": "#f5f1eb"
+    },
+    {
+      "type": "color",
+      "id": "card_hover_background_color",
+      "label": "Hover background color",
+      "default": "#ebe7e1"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Title size",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_subtext_size",
+      "label": "Subtext size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Title color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "card_subtext_color",
+      "label": "Subtext color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Learn More"
+    },
+    {
+      "type": "range",
+      "id": "cta_text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_vertical",
+      "label": "Vertical padding",
+      "min": 6,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "cta_border_width",
+      "label": "Border width",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "cta_border_color",
+      "label": "Border color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_background_color",
+      "label": "Hover background color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_border_color",
+      "label": "Hover border color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Space between cards",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "label": "Space above grid",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header bottom spacing",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section top padding",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "font_picker",
+      "id": "type_header_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "type_body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Selection Gallery"
+    }
+  ]
+}
 {% endschema %}
