@@ -521,11 +521,12 @@
         "card_dEJw7H": {
           "type": "card",
           "settings": {
-            "eyebrow": "The Crowning Moment",
-            "title": "Finish the Look",
-            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
-            "cta_label": "Explore Crowns & Jewelry",
-            "link": ""
+            "image": "shopify://shop_images/Screen_Shot_2026-03-30_at_10.57.53_PM.png",
+            "eyebrow": "The Appointed Mantle",
+            "title": "SETH EDEN",
+            "description": "Custom Bespoke Masterpieces for Men & Women.",
+            "cta_label": "Commission A Seth Eden",
+            "link": "shopify://pages/seth-eden"
           }
         },
         "card_rUpPDf": {
