@@ -1616,10 +1616,10 @@
         "card_rdbeyR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/wedding-gown-and-bouquet-near-beach.jpg",
-            "eyebrow": "NANCY VUU ATELIER",
-            "title": "Bespoke Wardrobe",
-            "description": "Step into our private atelier and expeience the profound luxury of pieces handcrafted exclusively for your unique essense. Dreamed by you. Tailored by The House of Vuu.",
+            "image": "shopify://shop_images/bride-holding-bouquet-in-front-of-old-wall-vertical.jpg",
+            "eyebrow": "For the Bride",
+            "title": "Bespoke Gowns",
+            "description": "Step into our private atelier and experience the profound luxury of your wedding gown handcrafted exclusively for your unique essense. Dreamed by you. Tailored by The House of Vuu.",
             "cta_label": "Enter the Atelier",
             "link": "shopify://pages/atelier"
           }
