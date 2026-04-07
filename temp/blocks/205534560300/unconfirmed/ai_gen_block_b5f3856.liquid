@@ -1,0 +1,23 @@
+{% doc %}
+  @prompt
+    create a custom liquid block with code: <div id="unified-dream" style="scroll-margin-top: 100px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div
+  id="unified-dream"
+  style="scroll-margin-top: 100px;"
+  {{ block.shopify_attributes }}
+></div>
+
+{% schema %}
+{
+  "name": "Unified dream anchor",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Unified dream anchor"
+    }
+  ]
+}
+{% endschema %}
