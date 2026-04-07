@@ -531,6 +531,7 @@
         "card_rUpPDf": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/8.jpg",
             "eyebrow": "The Nancy Vuu Experience",
             "title": "Dream Immersions",
             "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
