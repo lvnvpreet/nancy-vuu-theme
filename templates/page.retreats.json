@@ -1114,6 +1114,49 @@
       ],
       "name": "Honoring our partnership",
       "settings": {}
+    },
+    "1775526586dd7719ae": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0c9ea7b_AnzVNt": {
+          "type": "ai_gen_block_0c9ea7b",
+          "settings": {
+            "heading": "<p>Dream Immersion Packages</p>",
+            "subtitle": "<p>Explore our exclusive Dream Immersion experiences</p>",
+            "header_spacing": 40,
+            "package_1_name": "Signature Dream",
+            "package_1_link": "",
+            "package_2_name": "Luxury Dream",
+            "package_2_link": "",
+            "package_3_name": "Elite Dream",
+            "package_3_link": "",
+            "package_4_name": "Ultimate Dream",
+            "package_4_link": "",
+            "desktop_width_percent": 100,
+            "section_padding": 60,
+            "grid_gap": 20,
+            "grid_spacing": 40,
+            "box_aspect_ratio": "4 / 5",
+            "box_border_radius": 8,
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 48,
+            "subtitle_size": 16,
+            "package_name_size": 24,
+            "background_color": "#faf8f5",
+            "heading_color": "#0f0f0f",
+            "text_color": "#0f0f0f",
+            "overlay_text_color": "#ffffff",
+            "placeholder_bg_color": "#ece9e3",
+            "overlay_opacity": 0.7,
+            "overlay_padding": 25
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0c9ea7b_AnzVNt"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -1132,6 +1175,7 @@
     "retreat_disclaimer",
     "modal",
     "audience_modal_4qEBez",
-    "blocks_yzQ9XJ"
+    "blocks_yzQ9XJ",
+    "1775526586dd7719ae"
   ]
 }
