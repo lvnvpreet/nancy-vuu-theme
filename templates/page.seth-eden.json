@@ -386,6 +386,48 @@
         "swap_layout": false
       }
     },
+    "gallery_womens": {
+      "type": "seth-gallery",
+      "blocks": {
+        "img_4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
+            "label": "",
+            "wide": false
+          }
+        },
+        "img_5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
+            "label": "",
+            "wide": false
+          }
+        },
+        "img_6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.39.53_PM.png",
+            "label": "",
+            "wide": false
+          }
+        }
+      },
+      "block_order": [
+        "img_4",
+        "img_5",
+        "img_6"
+      ],
+      "settings": {
+        "background": "#f4f4f4",
+        "text_color": "#000000",
+        "eyebrow": "Feminine Inspiration",
+        "heading": "The Women's Showroom.",
+        "description": "Seth Eden's feminine blueprint — where master craftsmanship meets the architecture of grace.",
+        "swap_layout": true
+      }
+    },
     "blocks_wCpmxE": {
       "type": "_blocks",
       "blocks": {
@@ -433,48 +475,6 @@
       ],
       "name": "CTA banner",
       "settings": {}
-    },
-    "gallery_womens": {
-      "type": "seth-gallery",
-      "blocks": {
-        "img_4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
-            "label": "",
-            "wide": false
-          }
-        },
-        "img_5": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
-            "label": "",
-            "wide": false
-          }
-        },
-        "img_6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.39.53_PM.png",
-            "label": "",
-            "wide": false
-          }
-        }
-      },
-      "block_order": [
-        "img_4",
-        "img_5",
-        "img_6"
-      ],
-      "settings": {
-        "background": "#f4f4f4",
-        "text_color": "#000000",
-        "eyebrow": "Feminine Inspiration",
-        "heading": "The Women's Showroom.",
-        "description": "Seth Eden's feminine blueprint — where master craftsmanship meets the architecture of grace.",
-        "swap_layout": true
-      }
     },
     "narrative": {
       "type": "seth-narrative",
@@ -627,8 +627,8 @@
     "tailoring",
     "limited",
     "gallery_mens",
-    "blocks_wCpmxE",
     "gallery_womens",
+    "blocks_wCpmxE",
     "narrative",
     "commission",
     "cross-sell-luxury"
