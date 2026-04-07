@@ -1,6 +1,441 @@
+{% doc %}
+  @prompt
+    "Generate a minimalist 'Collapsible Content' (Accordion) section titled 'Honoring Our Partnership.'
+    
+    Visual Style: Use a very light, clean background in a soft cream or oatmeal. The typography should feature an elegant Serif font for the main title and a lightweight, readable Sans-Serif for the body text. Use generous white space between rows.
+    
+    Row 1 Title: Our Shared Vision
+    Row 1 Text: The work we do at the House of Vuu is a high-level mentorship and strategic partnership. Nancy Vuu serves as your Visionary Mentor and Strategic Partner. Our goal is to help you uncover your highest self and build a beautiful, lasting legacy.
+    
+    Row 2 Title: A Clear Understanding
+    Row 2 Text: While our time together is deeply transformative, it is not a replacement for professional or medical care. Nancy Vuu is not a licensed doctor, therapist, marriage counselor, or attorney. Our immersions are meant to support your journey, but they are not a substitute for clinical therapy, legal advice, or medical treatment.
+    
+    Row 3 Title: Your Journey & Results
+    Row 3 Text: Every person’s path is unique. The House of Vuu does not guarantee specific results, such as a particular financial outcome or the guaranteed healing of a relationship. Your transformation depends on your own heart, your commitment, and the steps you choose to take. By applying, you agree to take full responsibility for your own personal and professional choices.
+    
+    Row 4 Title: The Selection Process
+    Row 4 Text: To keep our community intentional, every guest is invited through a private application. This ensures that our hearts and visions are truly aligned before we begin."
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-accordion-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 40px;
+  }
+
+  .ai-accordion-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-accordion-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    text-align: {{ block.settings.title_alignment }};
+    margin: 0 0 {{ block.settings.title_spacing }}px 0;
+    letter-spacing: 0.02em;
+  }
+
+  .ai-accordion-item-{{ ai_gen_id }} {
+    border-bottom: 1px solid {{ block.settings.divider_color }};
+    margin-bottom: {{ block.settings.row_spacing }}px;
+  }
+
+  .ai-accordion-item-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-accordion-header-{{ ai_gen_id }} {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: {{ block.settings.row_padding }}px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    transition: opacity 0.2s ease;
+  }
+
+  .ai-accordion-header-{{ ai_gen_id }}:hover {
+    opacity: 0.7;
+  }
+
+  .ai-accordion-row-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.row_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .ai-accordion-icon-{{ ai_gen_id }} {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-accordion-header-{{ ai_gen_id }}[aria-expanded="true"] .ai-accordion-icon-{{ ai_gen_id }} {
+    transform: rotate(180deg);
+  }
+
+  .ai-accordion-content-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0;
+  }
+
+  .ai-accordion-content-{{ ai_gen_id }}.active {
+    max-height: 1000px;
+    padding-bottom: {{ block.settings.row_padding }}px;
+  }
+
+  .ai-accordion-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.body_text_size }}px;
+    line-height: 1.7;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-accordion-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.6 }}px 20px;
+    }
+
+    .ai-accordion-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.75 }}px;
+    }
+
+    .ai-accordion-row-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.row_title_size | times: 0.9 }}px;
+    }
+
+    .ai-accordion-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<collapsible-accordion-{{ ai_gen_id }} class="ai-accordion-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-accordion-container-{{ ai_gen_id }}">
+    {% if block.settings.main_title != blank %}
+      <h2 class="ai-accordion-title-{{ ai_gen_id }}">{{ block.settings.main_title }}</h2>
+    {% endif %}
+
+    {% for i in (1..4) %}
+      {% assign row_title_key = 'row_' | append: i | append: '_title' %}
+      {% assign row_text_key = 'row_' | append: i | append: '_text' %}
+      {% assign row_title = block.settings[row_title_key] %}
+      {% assign row_text = block.settings[row_text_key] %}
+
+      {% if row_title != blank %}
+        <div class="ai-accordion-item-{{ ai_gen_id }}">
+          <button
+            class="ai-accordion-header-{{ ai_gen_id }}"
+            aria-expanded="false"
+            aria-controls="ai-accordion-content-{{ ai_gen_id }}-{{ i }}"
+          >
+            <h3 class="ai-accordion-row-title-{{ ai_gen_id }}">{{ row_title }}</h3>
+            <svg class="ai-accordion-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div
+            class="ai-accordion-content-{{ ai_gen_id }}"
+            id="ai-accordion-content-{{ ai_gen_id }}-{{ i }}"
+          >
+            {% if row_text != blank %}
+              <div class="ai-accordion-text-{{ ai_gen_id }}">{{ row_text }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</collapsible-accordion-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CollapsibleAccordion{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.headers = this.querySelectorAll('.ai-accordion-header-{{ ai_gen_id }}');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.headers.forEach((header) => {
+          header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+            header.setAttribute('aria-expanded', !isExpanded);
+            content.classList.toggle('active');
+          });
+        });
+      }
+    }
+
+    customElements.define('collapsible-accordion-{{ ai_gen_id }}', CollapsibleAccordion{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Honoring our partnership",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Main title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "main_title",
+      "label": "Title",
+      "default": "Honoring Our Partnership"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Space below title",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Row 1"
+    },
+    {
+      "type": "text",
+      "id": "row_1_title",
+      "label": "Title",
+      "default": "Our Shared Vision"
+    },
+    {
+      "type": "richtext",
+      "id": "row_1_text",
+      "label": "Text",
+      "default": "<p>The work we do at the House of Vuu is a high-level mentorship and strategic partnership. Nancy Vuu serves as your Visionary Mentor and Strategic Partner. Our goal is to help you uncover your highest self and build a beautiful, lasting legacy.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Row 2"
+    },
+    {
+      "type": "text",
+      "id": "row_2_title",
+      "label": "Title",
+      "default": "A Clear Understanding"
+    },
+    {
+      "type": "richtext",
+      "id": "row_2_text",
+      "label": "Text",
+      "default": "<p>While our time together is deeply transformative, it is not a replacement for professional or medical care. Nancy Vuu is not a licensed doctor, therapist, marriage counselor, or attorney. Our immersions are meant to support your journey, but they are not a substitute for clinical therapy, legal advice, or medical treatment.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Row 3"
+    },
+    {
+      "type": "text",
+      "id": "row_3_title",
+      "label": "Title",
+      "default": "Your Journey & Results"
+    },
+    {
+      "type": "richtext",
+      "id": "row_3_text",
+      "label": "Text",
+      "default": "<p>Every person's path is unique. The House of Vuu does not guarantee specific results, such as a particular financial outcome or the guaranteed healing of a relationship. Your transformation depends on your own heart, your commitment, and the steps you choose to take. By applying, you agree to take full responsibility for your own personal and professional choices.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Row 4"
+    },
+    {
+      "type": "text",
+      "id": "row_4_title",
+      "label": "Title",
+      "default": "The Selection Process"
+    },
+    {
+      "type": "richtext",
+      "id": "row_4_text",
+      "label": "Text",
+      "default": "<p>To keep our community intentional, every guest is invited through a private application. This ensures that our hearts and visions are truly aligned before we begin.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "row_title_size",
+      "label": "Row title size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "body_text_size",
+      "label": "Body text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content max width",
+      "min": 600,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "row_spacing",
+      "label": "Space between rows",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "row_padding",
+      "label": "Row padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    }
+  ],
+  "presets": [
+    {
+      "name": "Honoring our partnership"
+    }
+  ]
+}
 {% endschema %}
