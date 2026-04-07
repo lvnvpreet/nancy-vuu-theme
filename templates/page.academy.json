@@ -263,6 +263,59 @@
         "image": "shopify://shop_images/untitled-5330_3.webp",
         "show_play_button": false
       }
+    },
+    "blocks_PdP6W4": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c76648c_nVgLHb": {
+          "type": "ai_gen_block_c76648c",
+          "settings": {
+            "background_color": "#faf8f5",
+            "column_gap": 40,
+            "content_gap": 20,
+            "content_padding": 20,
+            "image_left": "shopify://shop_images/untitled--6.jpg",
+            "image_right": "shopify://shop_images/untitled--3_2.jpg",
+            "image_orientation": "portrait",
+            "image_padding": 0,
+            "eyebrow": "NANCY VUU ATELIER",
+            "eyebrow_font": "sans-serif",
+            "eyebrow_size": 12,
+            "eyebrow_bold": false,
+            "eyebrow_italic": false,
+            "eyebrow_color": "#000000",
+            "title": "Bespoke Wardrobe",
+            "title_font": "serif",
+            "title_size": 40,
+            "title_bold": false,
+            "title_italic": false,
+            "title_color": "#000000",
+            "paragraph_1": "We believe you were not meant to fit into a garment; a garment was meant to be built around your identity. For the woman who curates a life of exquisite distinction, your bespoke wardrobe becomes the ultimate expression of your personal elevation—a true masterpiece that tells the world exactly who you are before you ever speak a word. Step into our private atelier and experience the profound luxury of pieces handcrafted exclusively for your unique essence. Dreamed by you. Architected by House of Vuu.",
+            "paragraph_2": "",
+            "paragraph_3": "",
+            "body_font": "sans-serif",
+            "body_size": 16,
+            "body_bold": false,
+            "body_italic": false,
+            "body_color": "#000000",
+            "cta_text": "Enter the Atelier",
+            "cta_link": "shopify://pages/atelier",
+            "cta_font": "sans-serif",
+            "cta_size": 14,
+            "cta_bold": false,
+            "cta_italic": false,
+            "cta_color": "#000000",
+            "cta_border_color": "#000000",
+            "cta_hover_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c76648c_nVgLHb"
+      ],
+      "name": "Three column editorial",
+      "settings": {}
     }
   },
   "order": [
@@ -273,6 +326,7 @@
     "pillar_academy",
     "pillar_expo",
     "pillar_publishing",
-    "pillar_ceo"
+    "pillar_ceo",
+    "blocks_PdP6W4"
   ]
 }
