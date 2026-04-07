@@ -323,6 +323,52 @@
         "cta_2_link": "",
         "text_color": "#ffffff"
       }
+    },
+    "1775578715de363c22": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_17ce21c_C3iq9x": {
+          "type": "ai_gen_block_17ce21c",
+          "settings": {
+            "background_image": "shopify://shop_images/untitled--8_2.jpg",
+            "section_height": 900,
+            "overlay_color": "black",
+            "overlay_strength": 0,
+            "eyebrow": "Book Nancy Vuu",
+            "eyebrow_font": "manrope_n4",
+            "eyebrow_size": 14,
+            "eyebrow_weight": 400,
+            "eyebrow_italic": false,
+            "eyebrow_color": "#0f0f0f",
+            "title": "Inspiring Speaker & Thought Leader",
+            "title_font": "bodoni_moda_n4",
+            "title_size": 64,
+            "title_weight": 400,
+            "title_italic": false,
+            "title_color": "#0f0f0f",
+            "subtext": "Transform your event with powerful insights and authentic storytelling that resonates with your audience.",
+            "subtext_font": "manrope_n4",
+            "subtext_size": 18,
+            "subtext_weight": 400,
+            "subtext_italic": false,
+            "subtext_color": "#0f0f0f",
+            "cta_text": "Book Now",
+            "cta_link": "",
+            "cta_font": "manrope_n4",
+            "cta_size": 16,
+            "cta_weight": 500,
+            "cta_italic": false,
+            "cta_color": "#000000",
+            "frame_spacing": 8,
+            "frame_thickness": 1
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_17ce21c_C3iq9x"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -333,6 +379,7 @@
     "booknv_topics",
     "booknv_book",
     "booknv_inquiry",
-    "atelier_hero_ccmiJx"
+    "atelier_hero_ccmiJx",
+    "1775578715de363c22"
   ]
 }
