@@ -84,6 +84,39 @@
         "secondary_link": ""
       }
     },
+    "cross_sell_luxury_rGLrnA": {
+      "type": "cross-sell-luxury",
+      "blocks": {
+        "card_KraMCE": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/C5CE17AA-63A9-4681-89C8-D4A0CF2D2F89.webp",
+            "eyebrow": "The House of Vuu Sanctuary",
+            "title": "Bridal Dream Immersions",
+            "description": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space for the bride to quiet the noise, find her center, and remember who she is before she walks down the aisle.",
+            "cta_label": "Explore the Bridal Immersions",
+            "link": "shopify://pages/bridal-immersions"
+          }
+        },
+        "card_LBfHip": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/iStock-657336212.jpg",
+            "eyebrow": "For the Groom",
+            "title": "Custom Tailored Suit",
+            "description": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples.",
+            "cta_label": "Commission His Suit",
+            "link": "shopify://pages/seth-eden"
+          }
+        }
+      },
+      "block_order": [
+        "card_KraMCE",
+        "card_LBfHip"
+      ],
+      "name": "Cross-Sell Luxury",
+      "settings": {}
+    },
     "atelier_inquiry_xXF6mq": {
       "type": "atelier-inquiry",
       "blocks": {
@@ -131,39 +164,6 @@
         "label_message": "Tell u about yourself and your vision for your dream gown.",
         "submit_label": "Submit Request to the Atelier"
       }
-    },
-    "cross_sell_luxury_rGLrnA": {
-      "type": "cross-sell-luxury",
-      "blocks": {
-        "card_KraMCE": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/C5CE17AA-63A9-4681-89C8-D4A0CF2D2F89.webp",
-            "eyebrow": "The House of Vuu Sanctuary",
-            "title": "Bridal Dream Immersions",
-            "description": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space for the bride to quiet the noise, find her center, and remember who she is before she walks down the aisle.",
-            "cta_label": "Explore the Bridal Immersions",
-            "link": "shopify://pages/bridal-immersions"
-          }
-        },
-        "card_LBfHip": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/iStock-657336212.jpg",
-            "eyebrow": "For the Groom",
-            "title": "Custom Tailored Suit",
-            "description": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples.",
-            "cta_label": "Commission His Suit",
-            "link": "shopify://pages/seth-eden"
-          }
-        }
-      },
-      "block_order": [
-        "card_KraMCE",
-        "card_LBfHip"
-      ],
-      "name": "Cross-Sell Luxury",
-      "settings": {}
     }
   },
   "order": [
@@ -173,7 +173,7 @@
     "main",
     "about_retreats_EWU49g",
     "cross-sell",
-    "atelier_inquiry_xXF6mq",
-    "cross_sell_luxury_rGLrnA"
+    "cross_sell_luxury_rGLrnA",
+    "atelier_inquiry_xXF6mq"
   ]
 }
