@@ -56,6 +56,53 @@
         "group_by_type": true
       }
     },
+    "1775603492b29b1e93": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4347913_PfVhw7": {
+          "type": "ai_gen_block_4347913",
+          "settings": {
+            "eyebrow": "NANCY VUU BRIDAL ATELIER",
+            "subtext": "Experience the precision of couture. We invite you to our private atelier to explore our exclusive made-to-measure collections and initiate your bridal bespoke journey.",
+            "button_text": "INITIATE YOUR COMMISSION",
+            "button_link": "#inquiry",
+            "desktop_width_percent": 100,
+            "text_alignment": "center",
+            "vertical_padding": 50,
+            "horizontal_padding": 40,
+            "content_gap": 30,
+            "eyebrow_top_spacing": 80,
+            "button_bottom_spacing": 80,
+            "background_color": "#faf8f5",
+            "eyebrow_size": 14,
+            "eyebrow_weight": "600",
+            "eyebrow_transform": "uppercase",
+            "eyebrow_spacing": 0.1,
+            "eyebrow_color": "#0f0f0f",
+            "subtext_size": 20,
+            "subtext_weight": "400",
+            "subtext_color": "#0f0f0f",
+            "button_font_size": 16,
+            "button_font_weight": "500",
+            "button_padding_vertical": 20,
+            "button_padding_horizontal": 40,
+            "button_border_radius": 0,
+            "button_border_width": 1,
+            "button_text_color": "#faf8f5",
+            "button_bg_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_text_hover_color": "#0f0f0f",
+            "button_bg_hover_color": "#faf8f5",
+            "button_border_hover_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4347913_PfVhw7"
+      ],
+      "settings": {}
+    },
     "about_retreats_EWU49g": {
       "type": "about-retreats",
       "name": "About — Retreats",
@@ -68,20 +115,6 @@
         "paragraph_2": "Within this private mountain sanctuary, the spiritual anchoring of our bridal retreat merges with the creative fire of the Atelier. Here, you will co-design your bespoke bridal gown alongside Nancy Vuu—architecting a garment that is not merely \"found,\" but born from your own internal awakening. Every stitch becomes a physical manifestation of your purpose; every silhouette a reflection of your grace. Walk toward your future not in a dress you bought, but in a masterpiece you became.",
         "cta_label": "EXPLORE THE MASTERPIECE IMMERSION",
         "cta_link": "shopify://pages/dream-retreats"
-      }
-    },
-    "cross-sell": {
-      "type": "cross-sell",
-      "settings": {
-        "image": "shopify://shop_images/untitled-0.jpg",
-        "title": "The Crowning Moment",
-        "description": "Complete your bridal vision with hand-crafted crowns, veils, and jewelry pieces. Each accessory is designed to harmonize with your gown, creating a singular vision of majesty on your covenant day.",
-        "cta_label": "",
-        "cta_link": "/collections/crowns-jewelry",
-        "primary_label": "Experience the Crowning",
-        "primary_link": "shopify://collections/crowns-jewelry",
-        "secondary_label": "",
-        "secondary_link": ""
       }
     },
     "cross_sell_luxury_rGLrnA": {
@@ -116,6 +149,20 @@
       ],
       "name": "Cross-Sell Luxury",
       "settings": {}
+    },
+    "cross-sell": {
+      "type": "cross-sell",
+      "settings": {
+        "image": "shopify://shop_images/untitled-0.jpg",
+        "title": "The Crowning Moment",
+        "description": "Complete your bridal vision with hand-crafted crowns, veils, and jewelry pieces. Each accessory is designed to harmonize with your gown, creating a singular vision of majesty on your covenant day.",
+        "cta_label": "",
+        "cta_link": "/collections/crowns-jewelry",
+        "primary_label": "Experience the Crowning",
+        "primary_link": "shopify://collections/crowns-jewelry",
+        "secondary_label": "",
+        "secondary_link": ""
+      }
     },
     "atelier_inquiry_xXF6mq": {
       "type": "atelier-inquiry",
@@ -171,9 +218,10 @@
     "manifesto",
     "exclusivity",
     "main",
+    "1775603492b29b1e93",
     "about_retreats_EWU49g",
-    "cross-sell",
     "cross_sell_luxury_rGLrnA",
+    "cross-sell",
     "atelier_inquiry_xXF6mq"
   ]
 }
