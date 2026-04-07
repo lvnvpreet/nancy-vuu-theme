@@ -191,7 +191,7 @@
             "image": "shopify://shop_images/83322260_10219135889499792_2118225373001940992_n.jpg",
             "show_button": true,
             "button_text": "REQUEST A SPEAKING ENGAGEMENT",
-            "button_url": "",
+            "button_url": "#booking",
             "button_margin_top": 85,
             "button_font_size": 14,
             "button_font_weight": 500,
