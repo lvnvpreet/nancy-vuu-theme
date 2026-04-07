@@ -564,6 +564,19 @@
         "card_retreats"
       ],
       "settings": {}
+    },
+    "book_cta_rCJM36": {
+      "type": "book-cta",
+      "name": "Book CTA",
+      "settings": {
+        "section_id": "checkout",
+        "eyebrow": "",
+        "heading_1": "",
+        "heading_2": "",
+        "subtext": "",
+        "cta_label": "Schedule A Consultation",
+        "cta_link": "#inquiry"
+      }
     }
   },
   "order": [
@@ -582,6 +595,7 @@
     "gallery_womens",
     "narrative",
     "commission",
-    "cross-sell-luxury"
+    "cross-sell-luxury",
+    "book_cta_rCJM36"
   ]
 }
