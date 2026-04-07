@@ -1,6 +1,546 @@
+{% doc %}
+  @prompt
+    Create a duplicate of the "selection gallery" for our bridal immersions but this time only have 4 boxes for our Dream Immersion packages since we only have 4 different offerings. Make sure I can edit the names of the package. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-dream-packages-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+    background-color: {{ block.settings.background_color }};
+    display: block;
+  }
+
+  .ai-dream-packages__container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-dream-packages__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-dream-packages__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-dream-packages__subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-dream-packages__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-top: {{ block.settings.grid_spacing }}px;
+  }
+
+  .ai-dream-packages__box-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ block.settings.box_border_radius }}px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: {{ block.settings.box_aspect_ratio }};
+  }
+
+  .ai-dream-packages__box-{{ ai_gen_id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-dream-packages__box-link-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .ai-dream-packages__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-dream-packages__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .ai-dream-packages__box-{{ ai_gen_id }}:hover .ai-dream-packages__image-{{ ai_gen_id }} {
+    transform: scale(1.05);
+  }
+
+  .ai-dream-packages__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.placeholder_bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-dream-packages__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-dream-packages__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, {{ block.settings.overlay_opacity }}), transparent);
+    padding: {{ block.settings.overlay_padding }}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 40%;
+  }
+
+  .ai-dream-packages__package-name-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.package_name_size }}px;
+    color: {{ block.settings.overlay_text_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-dream-packages__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: {{ block.settings.grid_gap | times: 0.75 }}px;
+    }
+
+    .ai-dream-packages__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-dream-packages__package-name-{{ ai_gen_id }} {
+      font-size: {{ block.settings.package_name_size | times: 0.85 }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-dream-packages-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.6 }}px 0;
+    }
+
+    .ai-dream-packages__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.grid_gap | times: 0.5 }}px;
+    }
+
+    .ai-dream-packages__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-dream-packages__subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .ai-dream-packages__package-name-{{ ai_gen_id }} {
+      font-size: {{ block.settings.package_name_size | times: 0.75 }}px;
+    }
+  }
+{% endstyle %}
+
+<dream-packages-{{ ai_gen_id }} class="ai-dream-packages-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-dream-packages__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank or block.settings.subtitle != blank %}
+      <div class="ai-dream-packages__header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-dream-packages__title-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <div class="ai-dream-packages__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-dream-packages__grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign package_name_key = 'package_' | append: i | append: '_name'
+          assign package_image_key = 'package_' | append: i | append: '_image'
+          assign package_link_key = 'package_' | append: i | append: '_link'
+
+          assign package_name = block.settings[package_name_key]
+          assign package_image = block.settings[package_image_key]
+          assign package_link = block.settings[package_link_key]
+        %}
+
+        <div class="ai-dream-packages__box-{{ ai_gen_id }}">
+          {% if package_link != blank %}
+            <a href="{{ package_link }}" class="ai-dream-packages__box-link-{{ ai_gen_id }}">
+          {% else %}
+            <div class="ai-dream-packages__box-link-{{ ai_gen_id }}">
+          {% endif %}
+            <div class="ai-dream-packages__image-wrapper-{{ ai_gen_id }}">
+              {% if package_image %}
+                <img
+                  src="{{ package_image | image_url: width: 800 }}"
+                  alt="{{ package_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ package_image.width }}"
+                  height="{{ package_image.height }}"
+                  class="ai-dream-packages__image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-dream-packages__image-placeholder-{{ ai_gen_id }}">
+                  {{ 'collection-apparel-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+              <div class="ai-dream-packages__overlay-{{ ai_gen_id }}">
+                {% if package_name != blank %}
+                  <h3 class="ai-dream-packages__package-name-{{ ai_gen_id }}">{{ package_name }}</h3>
+                {% endif %}
+              </div>
+            </div>
+          {% if package_link != blank %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</dream-packages-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class DreamPackages{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.boxes = this.querySelectorAll('.ai-dream-packages__box-{{ ai_gen_id }}');
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        this.boxes.forEach((box) => {
+          const link = box.querySelector('.ai-dream-packages__box-link-{{ ai_gen_id }}');
+          if (link && link.tagName === 'A') {
+            link.setAttribute('role', 'link');
+          }
+        });
+      }
+    }
+
+    customElements.define('dream-packages-{{ ai_gen_id }}', DreamPackages{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Dream immersion packages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Dream Immersion Packages</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Explore our exclusive Dream Immersion experiences</p>"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Package 1"
+    },
+    {
+      "type": "text",
+      "id": "package_1_name",
+      "label": "Package name",
+      "default": "Signature Dream"
+    },
+    {
+      "type": "image_picker",
+      "id": "package_1_image",
+      "label": "Package image"
+    },
+    {
+      "type": "url",
+      "id": "package_1_link",
+      "label": "Package link"
+    },
+    {
+      "type": "header",
+      "content": "Package 2"
+    },
+    {
+      "type": "text",
+      "id": "package_2_name",
+      "label": "Package name",
+      "default": "Luxury Dream"
+    },
+    {
+      "type": "image_picker",
+      "id": "package_2_image",
+      "label": "Package image"
+    },
+    {
+      "type": "url",
+      "id": "package_2_link",
+      "label": "Package link"
+    },
+    {
+      "type": "header",
+      "content": "Package 3"
+    },
+    {
+      "type": "text",
+      "id": "package_3_name",
+      "label": "Package name",
+      "default": "Elite Dream"
+    },
+    {
+      "type": "image_picker",
+      "id": "package_3_image",
+      "label": "Package image"
+    },
+    {
+      "type": "url",
+      "id": "package_3_link",
+      "label": "Package link"
+    },
+    {
+      "type": "header",
+      "content": "Package 4"
+    },
+    {
+      "type": "text",
+      "id": "package_4_name",
+      "label": "Package name",
+      "default": "Ultimate Dream"
+    },
+    {
+      "type": "image_picker",
+      "id": "package_4_image",
+      "label": "Package image"
+    },
+    {
+      "type": "url",
+      "id": "package_4_link",
+      "label": "Package link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "grid_spacing",
+      "label": "Grid spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "box_aspect_ratio",
+      "label": "Box aspect ratio",
+      "options": [
+        {
+          "value": "1 / 1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "16 / 9",
+          "label": "Landscape (16:9)"
+        }
+      ],
+      "default": "4 / 5"
+    },
+    {
+      "type": "range",
+      "id": "box_border_radius",
+      "label": "Box border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "package_name_size",
+      "label": "Package name size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text_color",
+      "label": "Overlay text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_bg_color",
+      "label": "Placeholder background",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "range",
+      "id": "overlay_padding",
+      "label": "Overlay padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dream immersion packages"
+    }
+  ]
+}
 {% endschema %}
