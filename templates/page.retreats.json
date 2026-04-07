@@ -711,6 +711,11 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_b5f3856_rqXJ7c": {
+          "type": "ai_gen_block_b5f3856",
+          "settings": {},
+          "blocks": {}
+        },
         "ai_gen_block_f6661e8_JWtHCQ": {
           "type": "ai_gen_block_f6661e8",
           "settings": {
@@ -924,6 +929,7 @@
         "ai_gen_block_f6661e8_FPLWDm",
         "ai_gen_block_dda27ba_FBrH3r",
         "ai_gen_block_f6661e8_Qz3hWn",
+        "ai_gen_block_b5f3856_rqXJ7c",
         "ai_gen_block_f6661e8_JWtHCQ",
         "ai_gen_block_c76648c_VpqkjA",
         "ai_gen_block_f6661e8_AnkBpP"
