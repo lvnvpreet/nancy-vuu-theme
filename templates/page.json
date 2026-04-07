@@ -44,6 +44,13 @@
     "atelier_inquiry_MwdRTd": {
       "type": "atelier-inquiry",
       "blocks": {
+        "service_option_TjADGp": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "1-on-1 Mentorship",
+            "option_value": "mentorship"
+          }
+        },
         "service_option_qbMPmW": {
           "type": "service_option",
           "settings": {
@@ -130,6 +137,7 @@
         }
       },
       "block_order": [
+        "service_option_TjADGp",
         "service_option_qbMPmW",
         "service_option_U9thzL",
         "service_option_Ly6wRW",
@@ -146,7 +154,7 @@
       "settings": {
         "section_id": "inquiry",
         "eyebrow": "Submission Form for",
-        "title_line_1": "Bridal Immersions",
+        "title_line_1": "DREAM Immersions",
         "title_line_2": "",
         "subtext": "Connect with our team to to schedule a  20 minute consultation on our Dream Immersions.",
         "address_eyebrow": "The San Jose & Napa Valley flagship",
