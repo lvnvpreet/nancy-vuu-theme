@@ -1,6 +1,483 @@
+{% doc %}
+  @prompt
+    Add a book nancy vuu speaker hero section with eyebrow, title and subtext. use bodoni moda for title and manrope for everthing else.  the fonts should be adjustable in color (black or white), size, boldness and italicized. the overlay should also be adjustable in strength from white or black overlay. there should be a cta button with a thin ine that frames around teh cta button with just enough space, the cta button should be able to be link to another destination link. the eyebrow, title, and subtext and CTA button should be on the top right of section. , keep the eyebrow, title, subtext, and CTA center aligned with each other but keep it on the right, right now shift everything slightly over to the left, i need it to be centered between the end  of the right and  the model. , move the eyebrow, title, subtext and cta button more to the right but. not completely to the right end. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-speaker-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    min-height: {{ block.settings.section_height }}px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 40px;
+    overflow: hidden;
+  }
+
+  .ai-speaker-hero-bg-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-speaker-hero-bg-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-speaker-hero-bg-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-speaker-hero-bg-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-speaker-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    {% if block.settings.overlay_color == 'black' %}
+      background-color: rgba(0, 0, 0, {{ block.settings.overlay_strength }});
+    {% else %}
+      background-color: rgba(255, 255, 255, {{ block.settings.overlay_strength }});
+    {% endif %}
+  }
+
+  .ai-speaker-hero-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    text-align: center;
+    margin-left: 40%;
+  }
+
+  .ai-speaker-hero-eyebrow-{{ ai_gen_id }} {
+    font-family: 'Manrope', {{ block.settings.eyebrow_font.family }}, {{ block.settings.eyebrow_font.fallback_families }};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    font-weight: {{ block.settings.eyebrow_weight }};
+    {% if block.settings.eyebrow_italic %}font-style: italic;{% else %}font-style: normal;{% endif %}
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0 0 16px 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .ai-speaker-hero-title-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', {{ block.settings.title_font.family }}, {{ block.settings.title_font.fallback_families }};
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    {% if block.settings.title_italic %}font-style: italic;{% else %}font-style: normal;{% endif %}
+    color: {{ block.settings.title_color }};
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+  }
+
+  .ai-speaker-hero-subtext-{{ ai_gen_id }} {
+    font-family: 'Manrope', {{ block.settings.subtext_font.family }}, {{ block.settings.subtext_font.fallback_families }};
+    font-size: {{ block.settings.subtext_size }}px;
+    font-weight: {{ block.settings.subtext_weight }};
+    {% if block.settings.subtext_italic %}font-style: italic;{% else %}font-style: normal;{% endif %}
+    color: {{ block.settings.subtext_color }};
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+  }
+
+  .ai-speaker-hero-cta-wrapper-{{ ai_gen_id }} {
+    display: inline-block;
+    position: relative;
+  }
+
+  .ai-speaker-hero-cta-frame-{{ ai_gen_id }} {
+    position: absolute;
+    top: -{{ block.settings.frame_spacing }}px;
+    left: -{{ block.settings.frame_spacing }}px;
+    right: -{{ block.settings.frame_spacing }}px;
+    bottom: -{{ block.settings.frame_spacing }}px;
+    border: {{ block.settings.frame_thickness }}px solid {{ block.settings.cta_color }};
+    pointer-events: none;
+  }
+
+  .ai-speaker-hero-cta-{{ ai_gen_id }} {
+    font-family: 'Manrope', {{ block.settings.cta_font.family }}, {{ block.settings.cta_font.fallback_families }};
+    font-size: {{ block.settings.cta_size }}px;
+    font-weight: {{ block.settings.cta_weight }};
+    {% if block.settings.cta_italic %}font-style: italic;{% else %}font-style: normal;{% endif %}
+    color: {{ block.settings.cta_color }};
+    background-color: transparent;
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-speaker-hero-cta-{{ ai_gen_id }}:hover {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-speaker-hero-{{ ai_gen_id }} {
+      padding: 40px 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ai-speaker-hero-content-{{ ai_gen_id }} {
+      text-align: center;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    .ai-speaker-hero-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.7);
+    }
+
+    .ai-speaker-hero-eyebrow-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.eyebrow_size }}px * 0.9);
+    }
+
+    .ai-speaker-hero-subtext-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtext_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-speaker-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-speaker-hero-bg-{{ ai_gen_id }}">
+    {% if block.settings.background_image %}
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.background_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.background_image.width }}"
+        height="{{ block.settings.background_image.height }}"
+      >
+    {% else %}
+      <div class="ai-speaker-hero-bg-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-speaker-hero-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-speaker-hero-content-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow != blank %}
+      <div class="ai-speaker-hero-eyebrow-{{ ai_gen_id }}">
+        {{ block.settings.eyebrow }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <h1 class="ai-speaker-hero-title-{{ ai_gen_id }}">
+        {{ block.settings.title }}
+      </h1>
+    {% endif %}
+
+    {% if block.settings.subtext != blank %}
+      <div class="ai-speaker-hero-subtext-{{ ai_gen_id }}">
+        {{ block.settings.subtext }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.cta_text != blank %}
+      <div class="ai-speaker-hero-cta-wrapper-{{ ai_gen_id }}">
+        <div class="ai-speaker-hero-cta-frame-{{ ai_gen_id }}"></div>
+        <a
+          href="{{ block.settings.cta_link }}"
+          class="ai-speaker-hero-cta-{{ ai_gen_id }}"
+        >
+          {{ block.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Speaker hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Section height",
+      "min": 400,
+      "max": 900,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "select",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "options": [
+        {
+          "value": "black",
+          "label": "Black"
+        },
+        {
+          "value": "white",
+          "label": "White"
+        }
+      ],
+      "default": "black"
+    },
+    {
+      "type": "range",
+      "id": "overlay_strength",
+      "label": "Overlay strength",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Book Nancy Vuu"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Eyebrow font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_weight",
+      "label": "Weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title text",
+      "default": "Inspiring Speaker & Thought Leader"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Size",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "title_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Subtext"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Transform your event with powerful insights and authentic storytelling that resonates with your audience."
+    },
+    {
+      "type": "font_picker",
+      "id": "subtext_font",
+      "label": "Subtext font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "label": "Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtext_weight",
+      "label": "Weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "subtext_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "font_picker",
+      "id": "cta_font",
+      "label": "Button font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "cta_size",
+      "label": "Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_weight",
+      "label": "Weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "frame_spacing",
+      "label": "Frame spacing",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "frame_thickness",
+      "label": "Frame thickness",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Speaker hero"
+    }
+  ]
+}
 {% endschema %}
