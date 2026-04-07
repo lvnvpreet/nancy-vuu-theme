@@ -1,0 +1,58 @@
+{% doc %}
+  @prompt
+    create custom liquid block with code: <div id="women-ceo" style="scroll-margin-top: 100px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-anchor-block-{{ ai_gen_id }} {
+    display: block;
+    scroll-margin-top: {{ block.settings.scroll_margin_top }}px;
+    width: {{ block.settings.desktop_width_percent }}%;
+  }
+{% endstyle %}
+
+<div
+  id="{{ block.settings.anchor_id }}"
+  class="ai-anchor-block-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+></div>
+
+{% schema %}
+{
+  "name": "Anchor point",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "women-ceo"
+    },
+    {
+      "type": "range",
+      "id": "scroll_margin_top",
+      "label": "Scroll margin top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anchor point"
+    }
+  ]
+}
+{% endschema %}
