@@ -71,7 +71,7 @@
         "primary_label": "Place an Order",
         "primary_link": "shopify://pages/crowns",
         "secondary_label": "Book Atelier Visit",
-        "secondary_link": ""
+        "secondary_link": "shopify://pages/atelier"
       }
     }
   },
