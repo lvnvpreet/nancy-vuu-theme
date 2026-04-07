@@ -399,19 +399,19 @@
         "pt_1": {
           "type": "point",
           "settings": {
-            "text": "Architecting the Sovereign Narrative: Bespoke Identity Blueprint"
+            "text": "RESTORED CONFIDENCE: Lead with natural authority instead of performing a role."
           }
         },
         "pt_2": {
           "type": "point",
           "settings": {
-            "text": "Strategic Aesthetic Alignment:  High-Status Creative Command"
+            "text": "STRATEGIC STYLE: A visual presence that commands the room before you speak."
           }
         },
         "pt_3": {
           "type": "point",
           "settings": {
-            "text": "ENGINEERING AN ENDURING LEGACY: Sovereign Impact & Global Honor"
+            "text": "LASTING IMPACT: Aligning your professional success with your personal values."
           }
         }
       },
@@ -423,10 +423,10 @@
       "settings": {
         "image": "shopify://shop_images/untitled-5298_3.jpg",
         "float_quote": "\"Ambition is an echo; Sovereignty is the unshakeable architecture of your true appointment.\" — Nancy Vuu",
-        "eyebrow": "FOUNDATIONS & PROVENANCE",
-        "title_line_1": "A Heritage",
-        "title_italic": "of Distinction",
-        "body": "The Nancy Vuu heritage is defined by a singular trajectory: a transition from survival to systemic global influence. This evolution—from a refugee journey to the global stages of Cannes—is the foundation of the Blueprint of Honor. This signature methodology is a systemic guide for restorative ethics and the visible dignification of leadership, architecting the unshakeable authority of the most discerning visionaries.",
+        "eyebrow": "The Heritage",
+        "title_line_1": "A Legacy of",
+        "title_italic": "Real Transformation",
+        "body": "My journey—from arriving as a refugee to the global stages of fashion—taught me that true style is more than a look; it’s a foundation. From the red carpets of Cannes to the boardrooms of industry leaders, I’ve seen that when your identity is clear, your influence is unshakeable. This isn't just about clothing; it’s about aligning who you are with how the world sees you. We don't just dress the leader; we strengthen the person behind the title.",
         "cta_label": "Request Selective Alignment",
         "cta_link": "#booking"
       }
@@ -509,6 +509,10 @@
         "cta_2_link": "",
         "text_color": "#ffffff"
       }
+    },
+    "177558902188524e53": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -522,6 +526,7 @@
     "booknv_topics",
     "booknv_book",
     "booknv_inquiry",
-    "atelier_hero_ccmiJx"
+    "atelier_hero_ccmiJx",
+    "177558902188524e53"
   ]
 }
