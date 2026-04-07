@@ -525,7 +525,7 @@
             "bullet_vertical_position": 8,
             "show_button": true,
             "button_text": "Inquire for The Becoming Bride",
-            "button_link": "shopify://pages/dream-immersion-fill-out-form",
+            "button_link": "#alignment-application",
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_text_color": "#ffffff",
@@ -1021,6 +1021,11 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_9b43e51_N4GgYJ": {
+          "type": "ai_gen_block_9b43e51",
+          "settings": {},
+          "blocks": {}
+        },
         "ai_gen_block_f6661e8_AnkBpP": {
           "type": "ai_gen_block_f6661e8",
           "disabled": true,
@@ -1117,6 +1122,7 @@
         "ai_gen_block_f6661e8_mbNFrY",
         "ai_gen_block_f6661e8_Qz3hWn",
         "ai_gen_block_c76648c_VpqkjA",
+        "ai_gen_block_9b43e51_N4GgYJ",
         "ai_gen_block_f6661e8_AnkBpP"
       ],
       "settings": {}
@@ -1424,45 +1430,6 @@
       "type": "_blocks",
       "settings": {}
     },
-    "1775523006e5fa1bf2": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_b37c7b5_fMAagE": {
-          "type": "ai_gen_block_b37c7b5",
-          "settings": {
-            "main_title": "Honoring Our Partnership",
-            "title_size": 48,
-            "title_alignment": "center",
-            "title_spacing": 60,
-            "row_1_title": "Our Shared Vision",
-            "row_1_text": "<p>The work we do at the House of Nancy Vuu —including our Bridal Immersions and Dream Immersions—is a high-level mentorship and strategic partnership. Nancy Vuu serves as your Visionary Mentor and Strategic Partner. Our goal is to help you uncover your highest self and build a beautiful, lasting legacy.</p>",
-            "row_2_title": "A Clear Understanding",
-            "row_2_text": "<p>While our time together is deeply transformative, it is not a replacement for professional or medical care. Nancy Vuu is not a licensed doctor, therapist, marriage counselor, or attorney. Our immersions are meant to support your journey, but they are not a substitute for clinical therapy, legal advice, or medical treatment.</p>",
-            "row_3_title": "Your Journey & Results",
-            "row_3_text": "<p>Every person's path is unique. The House of Vuu does not guarantee specific results, such as a particular financial outcome or the guaranteed healing of a relationship. Your transformation depends on your own heart, your commitment, and the steps you choose to take. By applying, you agree to take full responsibility for your own personal and professional choices.</p>",
-            "row_4_title": "The Selection Process",
-            "row_4_text": "<p>To keep our community intentional, every guest is invited through a private application. This ensures that our hearts and visions are truly aligned before we begin.</p>",
-            "heading_font": "bodoni_moda_n4",
-            "body_font": "system_ui_n4",
-            "row_title_size": 18,
-            "body_text_size": 15,
-            "background_color": "#fbf7f1",
-            "text_color": "#0f0f0f",
-            "divider_color": "#ece9e3",
-            "desktop_width_percent": 100,
-            "max_width": 900,
-            "section_padding": 80,
-            "row_spacing": 30,
-            "row_padding": 25
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_b37c7b5_fMAagE"
-      ],
-      "settings": {}
-    },
     "17755237312ed48271": {
       "type": "_blocks",
       "blocks": {
@@ -1538,6 +1505,45 @@
         "ai_gen_block_01ea066_MEhXpF"
       ],
       "settings": {}
+    },
+    "1775523006e5fa1bf2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b37c7b5_fMAagE": {
+          "type": "ai_gen_block_b37c7b5",
+          "settings": {
+            "main_title": "Honoring Our Partnership",
+            "title_size": 48,
+            "title_alignment": "center",
+            "title_spacing": 60,
+            "row_1_title": "Our Shared Vision",
+            "row_1_text": "<p>The work we do at the House of Nancy Vuu —including our Bridal Immersions and Dream Immersions—is a high-level mentorship and strategic partnership. Nancy Vuu serves as your Visionary Mentor and Strategic Partner. Our goal is to help you uncover your highest self and build a beautiful, lasting legacy.</p>",
+            "row_2_title": "A Clear Understanding",
+            "row_2_text": "<p>While our time together is deeply transformative, it is not a replacement for professional or medical care. Nancy Vuu is not a licensed doctor, therapist, marriage counselor, or attorney. Our immersions are meant to support your journey, but they are not a substitute for clinical therapy, legal advice, or medical treatment.</p>",
+            "row_3_title": "Your Journey & Results",
+            "row_3_text": "<p>Every person's path is unique. The House of Vuu does not guarantee specific results, such as a particular financial outcome or the guaranteed healing of a relationship. Your transformation depends on your own heart, your commitment, and the steps you choose to take. By applying, you agree to take full responsibility for your own personal and professional choices.</p>",
+            "row_4_title": "The Selection Process",
+            "row_4_text": "<p>To keep our community intentional, every guest is invited through a private application. This ensures that our hearts and visions are truly aligned before we begin.</p>",
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "system_ui_n4",
+            "row_title_size": 18,
+            "body_text_size": 15,
+            "background_color": "#fbf7f1",
+            "text_color": "#0f0f0f",
+            "divider_color": "#ece9e3",
+            "desktop_width_percent": 100,
+            "max_width": 900,
+            "section_padding": 80,
+            "row_spacing": 30,
+            "row_padding": 25
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b37c7b5_fMAagE"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -1560,7 +1566,7 @@
     "audience_modal_gAwWEE",
     "177552204805f6d672",
     "17755224121e7ebbbe",
-    "1775523006e5fa1bf2",
-    "17755237312ed48271"
+    "17755237312ed48271",
+    "1775523006e5fa1bf2"
   ]
 }
