@@ -495,6 +495,7 @@
     },
     "atelier_hero_ccmiJx": {
       "type": "atelier-hero",
+      "disabled": true,
       "name": "Atelier Hero",
       "settings": {
         "video_url": "",
@@ -513,6 +514,37 @@
     "177558902188524e53": {
       "type": "_blocks",
       "settings": {}
+    },
+    "cross_sell_luxury_rMLzhq": {
+      "type": "cross-sell-luxury",
+      "blocks": {
+        "card_dEJw7H": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Crowning Moment",
+            "title": "Finish the Look",
+            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
+            "cta_label": "Explore Crowns & Jewelry",
+            "link": ""
+          }
+        },
+        "card_rUpPDf": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "The Nancy Vuu Experience",
+            "title": "Dream Retreats",
+            "description": "Immerse yourself in restoration. Luxury destinations designed to renew the soul.",
+            "cta_label": "Discover Retreats",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_dEJw7H",
+        "card_rUpPDf"
+      ],
+      "name": "Cross-Sell Luxury",
+      "settings": {}
     }
   },
   "order": [
@@ -527,6 +559,7 @@
     "booknv_book",
     "booknv_inquiry",
     "atelier_hero_ccmiJx",
-    "177558902188524e53"
+    "177558902188524e53",
+    "cross_sell_luxury_rMLzhq"
   ]
 }
