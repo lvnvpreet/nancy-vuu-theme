@@ -1,6 +1,456 @@
+{% doc %}
+  @prompt
+    Shopify AI Task: Update 'Dream Immersions' Page Structure
+    
+    1. Add New 'Origin' Section:
+    
+        Placement: Directly after the first introductory paragraph and before the 'Silence Creates Space' quote.
+    
+        Layout: Rich Text or Image with Text (Centered).
+    
+        Headline (Serif/Bodoni): A Mandate of Splendor: The Origin of the Sanctuary
+    
+        Body Copy: > "The House of Vuu Sanctuary was established through a divine appointment. In 2021, Nancy was given a vision of a celestial portal—a Launchpad for the world’s dreamers to ascend into new strategies and breakthroughs. On February 22, 2022 (Isaiah 22:22), the 'Keys' were placed in our hands to open this consecrated gateway in Napa Valley.
+    
+    At 5:55 PM, the promise of Isaiah 55:5 was sealed: a mandate that the splendor of this land would call the nations. Here, the veil is thin. We invite you to step into the Garden of the Lord—home to 100 varieties of roses and a seasonal creek—to capture the revelation your next chapter requires."
+    
+    2. Fix #1: Navigation Anchoring:
+    
+        Ensure all 'Inquire' or 'Explore' buttons under the individual immersion types (DREAM Again, Sovereign Legacy, etc.) are linked to the #apply-now anchor ID at the bottom of the page.
+    
+    3. Fix #2: Semantic Narrative Integration:
+    
+        In the 'Sanctuary Approach' section, locate point 04 (Architecting the Legacy).
+    
+        Append this sentence to the description: "Securing the strategic alignment promised in the 555 mandate."
+    
+    4. Mobile Optimization:
+    
+        Ensure the new 'Origin' section has generous padding (at least 60px) on mobile so the text remains elegant and readable., break the Headline into two separate lines allowing me to control to adjust color and font size. Also give me the option of adding 3 more paragraphers here. Add an eyebrow. and give me control to adjust top and bottom padding of section. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-origin-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-origin-section__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-origin-section__eyebrow-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.eyebrow_size }}px;
+    line-height: 1.4;
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0 0 {{ block.settings.spacing_after_eyebrow }}px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .ai-origin-section__headline-{{ ai_gen_id }} {
+    margin: 0 0 {{ block.settings.spacing_after_headline }}px 0;
+  }
+
+  .ai-origin-section__headline-line1-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', serif;
+    font-size: {{ block.settings.headline_line1_size }}px;
+    line-height: 1.2;
+    color: {{ block.settings.headline_line1_color }};
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: {{ block.settings.spacing_between_headline_lines }}px;
+  }
+
+  .ai-origin-section__headline-line2-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', serif;
+    font-size: {{ block.settings.headline_line2_size }}px;
+    line-height: 1.2;
+    color: {{ block.settings.headline_line2_color }};
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+
+  .ai-origin-section__body-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.body_size }}px;
+    line-height: 1.7;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+  }
+
+  .ai-origin-section__body-{{ ai_gen_id }} p {
+    margin: 0 0 1.5em 0;
+  }
+
+  .ai-origin-section__body-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-origin-section__body-{{ ai_gen_id }} blockquote {
+    margin: 2em 0;
+    padding-left: 1.5em;
+    border-left: 2px solid {{ block.settings.text_color }};
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-origin-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_padding_top }}px 20px {{ block.settings.mobile_padding_bottom }}px;
+    }
+
+    .ai-origin-section__eyebrow-{{ ai_gen_id }} {
+      font-size: {{ block.settings.eyebrow_size | times: 0.9 }}px;
+    }
+
+    .ai-origin-section__headline-line1-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_line1_size | times: 0.7 }}px;
+    }
+
+    .ai-origin-section__headline-line2-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_line2_size | times: 0.7 }}px;
+    }
+
+    .ai-origin-section__body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<ai-origin-section-{{ ai_gen_id }} class="ai-origin-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-origin-section__container-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow != blank %}
+      <div class="ai-origin-section__eyebrow-{{ ai_gen_id }}">
+        {{ block.settings.eyebrow }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.headline_line1 != blank or block.settings.headline_line2 != blank %}
+      <h2 class="ai-origin-section__headline-{{ ai_gen_id }}">
+        {% if block.settings.headline_line1 != blank %}
+          <span class="ai-origin-section__headline-line1-{{ ai_gen_id }}">
+            {{ block.settings.headline_line1 }}
+          </span>
+        {% endif %}
+        {% if block.settings.headline_line2 != blank %}
+          <span class="ai-origin-section__headline-line2-{{ ai_gen_id }}">
+            {{ block.settings.headline_line2 }}
+          </span>
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    <div class="ai-origin-section__body-{{ ai_gen_id }}">
+      {% if block.settings.paragraph_1 != blank %}
+        <div>{{ block.settings.paragraph_1 }}</div>
+      {% endif %}
+
+      {% if block.settings.paragraph_2 != blank %}
+        <div>{{ block.settings.paragraph_2 }}</div>
+      {% endif %}
+
+      {% if block.settings.paragraph_3 != blank %}
+        <div>{{ block.settings.paragraph_3 }}</div>
+      {% endif %}
+
+      {% if block.settings.paragraph_4 != blank %}
+        <div>{{ block.settings.paragraph_4 }}</div>
+      {% endif %}
+
+      {% if block.settings.paragraph_5 != blank %}
+        <div>{{ block.settings.paragraph_5 }}</div>
+      {% endif %}
+    </div>
+  </div>
+</ai-origin-section-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AiOriginSection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('ai-origin-section-{{ ai_gen_id }}', AiOriginSection{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Origin section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "eyebrow",
+      "label": "Eyebrow text"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_eyebrow",
+      "label": "Space after eyebrow",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Headline line 1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "headline_line1",
+      "label": "Text",
+      "default": "A Mandate of Splendor:"
+    },
+    {
+      "type": "range",
+      "id": "headline_line1_size",
+      "label": "Size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "headline_line1_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Headline line 2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "headline_line2",
+      "label": "Text",
+      "default": "The Origin of the Sanctuary"
+    },
+    {
+      "type": "range",
+      "id": "headline_line2_size",
+      "label": "Size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "headline_line2_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "spacing_between_headline_lines",
+      "label": "Space between lines",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_headline",
+      "label": "Space after headline",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Paragraphs"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "<p>The House of Vuu Sanctuary was established through a divine appointment. In 2021, Nancy was given a vision of a celestial portal—a Launchpad for the world's dreamers to ascend into new strategies and breakthroughs. On February 22, 2022 (Isaiah 22:22), the 'Keys' were placed in our hands to open this consecrated gateway in Napa Valley.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "<p>At 5:55 PM, the promise of Isaiah 55:5 was sealed: a mandate that the splendor of this land would call the nations. Here, the veil is thin. We invite you to step into the Garden of the Lord—home to 100 varieties of roses and a seasonal creek—to capture the revelation your next chapter requires.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_3",
+      "label": "Paragraph 3"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_4",
+      "label": "Paragraph 4"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_5",
+      "label": "Paragraph 5"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Paragraph text size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 600,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile top padding",
+      "min": 40,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile bottom padding",
+      "min": 40,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text",
+      "default": "#0f0f0f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Origin section"
+    }
+  ]
+}
 {% endschema %}
