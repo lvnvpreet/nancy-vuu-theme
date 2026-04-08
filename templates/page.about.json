@@ -127,6 +127,7 @@
     },
     "about_crowning": {
       "type": "about-crowning",
+      "disabled": true,
       "settings": {
         "image_url": "",
         "image": "shopify://shop_images/Untitled_design_5.jpg",
@@ -143,9 +144,9 @@
         "image_url": "",
         "image": "shopify://shop_images/9.jpg",
         "eyebrow": "Restoration",
-        "heading": "Strategic Intensives",
-        "paragraph_1": "Because a visionary cannot lead from depletion, our Dream Retreats offer a sanctuary for the spirit.",
-        "paragraph_2": "We gather in places of profound beauty to silence the noise of the world and remember why we were called. These are curated spaces of quiet luxury, designed for visualization, restoration, and the architecting of your next decade.",
+        "heading": "Dream Immersions",
+        "paragraph_1": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space to quiet the noise, find your center, and remember who you are. We believe the greatest impact comes from an internal overflow. Whether you seek our heavenly gardens to rediscover buried passions, the strategic blueprint to build your future, or the bespoke environment to co-design your calling—our sanctuary is a safe haven to dream, build and create.",
+        "paragraph_2": "We know that true elevation—emotionally, mentally, and spiritually—requires both sacred space and guided revelation. Through deeply personal, guided conversations with founder Nancy Vuu, we walk with you into your highest state of being, ensuring your next chapter is written from a place of profound clarity, restored strength, and renewed purpose.",
         "cta_label": "View Upcoming Sanctuaries",
         "cta_link": "/pages/retreats"
       }
