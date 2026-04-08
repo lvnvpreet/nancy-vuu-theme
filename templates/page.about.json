@@ -124,7 +124,7 @@
             "eyebrow_text": "THE ATELIER INVITATION",
             "body_text": "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey.",
             "button_text": "INITIATE A COMMISSION",
-            "button_link": "",
+            "button_link": "shopify://pages/bridal-immersion-fill-out-form",
             "heading_font": "manrope_n4",
             "body_font": "manrope_n4",
             "body_font_size": 24,
