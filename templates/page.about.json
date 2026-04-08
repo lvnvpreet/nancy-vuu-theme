@@ -227,7 +227,7 @@
         "cta2_link": "",
         "text_color": "#ffffff",
         "bg_light": false,
-        "compact": false
+        "compact": true
       }
     }
   },
