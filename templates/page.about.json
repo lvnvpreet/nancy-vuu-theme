@@ -158,7 +158,8 @@
       "name": "Heritage Narrative",
       "settings": {
         "eyebrow": "A Heritage Reclaimed",
-        "title": "The Sovereign Return"
+        "title": "The Sovereign Return",
+        "image": "shopify://shop_images/iStock-866175472.jpg"
       }
     }
   },
