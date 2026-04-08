@@ -158,14 +158,14 @@
         "service_option_axtB6n": {
           "type": "service_option",
           "settings": {
-            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_label": "Master Tailoring & Fit Architecture",
             "option_value": "Master Tailoring — Alterations"
           }
         },
         "service_option_qzJk6R": {
           "type": "service_option",
           "settings": {
-            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_label": "Fine Fabric Care & Preservation",
             "option_value": "Fine Fabric Care — Preservation & Cleaning"
           }
         },
