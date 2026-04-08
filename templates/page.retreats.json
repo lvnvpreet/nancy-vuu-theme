@@ -27,15 +27,15 @@
             "cta_subtitle": "",
             "button_text": "Discover Your Dream Immersion",
             "button_link": "",
-            "eyebrow_size": 12,
+            "eyebrow_size": 18,
             "eyebrow_color": "#ffffff",
             "title_size": 95,
             "title_color": "#ffffff",
-            "subtitle_size": 18,
+            "subtitle_size": 24,
             "subtitle_color": "#ffffff",
-            "cta_subtitle_size": 16,
+            "cta_subtitle_size": 20,
             "cta_subtitle_color": "#ffffff",
-            "button_text_size": 16,
+            "button_text_size": 18,
             "button_bg_color": "#c9a961",
             "button_text_color": "#ffffff",
             "button_hover_bg_color": "#ffffff",
@@ -78,7 +78,7 @@
           "type": "ai_gen_block_c6b2e95",
           "settings": {
             "desktop_width_percent": 100,
-            "section_height": 50,
+            "section_height": 140,
             "max_width": 900,
             "background_color": "#faf8f5",
             "eyebrow": "",
@@ -148,6 +148,48 @@
       "block_order": [
         "ai_gen_block_c6b2e95_893ztb",
         "ai_gen_block_08da6a2_g9Lqi8"
+      ],
+      "settings": {}
+    },
+    "1775631462eb464662": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ceac77c_pLbAfG": {
+          "type": "ai_gen_block_ceac77c",
+          "settings": {
+            "eyebrow": "",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#0f0f0f",
+            "spacing_after_eyebrow": 20,
+            "headline_line1": "A Mandate of Splendor:",
+            "headline_line1_size": 48,
+            "headline_line1_color": "#0f0f0f",
+            "headline_line2": "The Origin of the Sanctuary",
+            "headline_line2_size": 48,
+            "headline_line2_color": "#cccccc",
+            "spacing_between_headline_lines": 10,
+            "spacing_after_headline": 40,
+            "paragraph_1": "<p>The House of Vuu Sanctuary was established through a divine appointment. In 2021, Nancy was given a vision of a celestial portal—a Launchpad for the world's dreamers to ascend into new strategies and breakthroughs. On February 22, 2022 (Isaiah 22:22), the 'Keys' were placed in our hands to open this consecrated gateway in Napa Valley.</p>",
+            "paragraph_2": "<p></p><p>At 5:55 PM, the promise of Isaiah 55:5 was sealed: a mandate that the splendor of this land would call the nations. Here, the veil is thin. We invite you to step into the Garden of the Lord—home to 100 varieties of roses and a seasonal creek—to capture the revelation your next chapter requires.</p>",
+            "paragraph_3": "<p></p><p>In this sanctuary, strategy is born from stillness. We specialize in the <strong>Architecture of Identity</strong>—providing a consecrated space where world leaders and visionaries shed the weight of their current mantle to receive the keys (Isaiah 22:22) for their global future. You are entering a Launchpad designed for the strategic realization of your highest potential.</p>",
+            "paragraph_4": "<p></p><p>The Sanctuary air is thick with the scent of the heavens. Our gardens are home to some of the world’s most coveted English roses, curated for their rare fragrance and historical beauty. From the ethereal, cream-colored blooms of <strong>Earth Angel</strong> to the majestic <strong>Spirit of Freedom</strong>—a rose of such abundance it houses over 200 petals within a single bloom—each flower serves as a living testament to the intricate architecture of God’s creation. <br/>Here, beauty is not just seen; it is inhaled.</p>",
+            "paragraph_5": "",
+            "body_size": 20,
+            "max_width": 900,
+            "text_alignment": "center",
+            "desktop_width_percent": 100,
+            "padding_top": 120,
+            "padding_bottom": 130,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 60,
+            "background_color": "#faf8f5",
+            "text_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ceac77c_pLbAfG"
       ],
       "settings": {}
     },
@@ -1336,6 +1378,7 @@
     "1775350063393ab73c",
     "hero",
     "1775352877e43957d3",
+    "1775631462eb464662",
     "dimensions",
     "blocks_nAXmLQ",
     "destinations",
