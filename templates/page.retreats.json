@@ -520,7 +520,7 @@
             "bullet_vertical_position": 8,
             "show_button": true,
             "button_text": "Inquire for DREAM Again",
-            "button_link": "#dreamimmersionform",
+            "button_link": "#apply-now",
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_text_color": "#ffffff",
@@ -1214,6 +1214,27 @@
     "177561709129893d0f": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_9dbefa4_EyGedh": {
+          "type": "ai_gen_block_9dbefa4",
+          "settings": {
+            "offset_top": -100,
+            "show_content": false,
+            "heading": "",
+            "text": "",
+            "text_alignment": "center",
+            "desktop_width_percent": 100,
+            "background_color": "#faf8f5",
+            "text_color": "#0f0f0f",
+            "heading_size": 48,
+            "text_size": 16,
+            "spacing": 20,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "type_header_font": "bodoni_moda_n4",
+            "type_body_font": "manrope_n4"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_c91d130_gr8QPh": {
           "type": "ai_gen_block_c91d130",
           "name": "Anchor point",
@@ -1304,6 +1325,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_9dbefa4_EyGedh",
         "ai_gen_block_c91d130_gr8QPh",
         "ai_gen_block_2316b27_hFbCYn"
       ],
