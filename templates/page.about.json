@@ -163,6 +163,72 @@
         "signature_name": "Nancy Vuu",
         "signature_title": "Architect of Distinction"
       }
+    },
+    "blocks_YnCxzz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4347913_ha33P6": {
+          "type": "ai_gen_block_4347913",
+          "settings": {
+            "eyebrow": "",
+            "subtext": "Our collections are more than garments; they are the architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite you to begin your bespoke journey.",
+            "button_text": "INITIATE A COMMISSION",
+            "button_link": "",
+            "desktop_width_percent": 100,
+            "text_alignment": "center",
+            "vertical_padding": 80,
+            "horizontal_padding": 45,
+            "content_gap": 30,
+            "eyebrow_top_spacing": 80,
+            "button_bottom_spacing": 80,
+            "background_color": "#faf8f5",
+            "eyebrow_size": 15,
+            "eyebrow_weight": "600",
+            "eyebrow_transform": "uppercase",
+            "eyebrow_spacing": 0.1,
+            "eyebrow_color": "#0f0f0f",
+            "subtext_size": 20,
+            "subtext_weight": "400",
+            "subtext_color": "#0f0f0f",
+            "button_font_size": 14,
+            "button_font_weight": "500",
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 30,
+            "button_border_radius": 0,
+            "button_border_width": 1,
+            "button_text_color": "#faf8f5",
+            "button_bg_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_text_hover_color": "#0f0f0f",
+            "button_bg_hover_color": "#faf8f5",
+            "button_border_hover_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4347913_ha33P6"
+      ],
+      "name": "CTA banner",
+      "settings": {}
+    },
+    "cta_closer_BdHMU8": {
+      "type": "cta-closer",
+      "name": "CTA Closer",
+      "settings": {
+        "overlay_opacity": 50,
+        "eyebrow": "",
+        "heading": "Begin Your Journey",
+        "subtext": "",
+        "cta_label": "Book Consultation",
+        "cta_link": "",
+        "cta_style": "outline",
+        "cta2_label": "",
+        "cta2_link": "",
+        "text_color": "#ffffff",
+        "bg_light": false,
+        "compact": false
+      }
     }
   },
   "order": [
@@ -175,6 +241,8 @@
     "about_bridge",
     "about_crowning",
     "about_retreats",
-    "about_signature"
+    "about_signature",
+    "blocks_YnCxzz",
+    "cta_closer_BdHMU8"
   ]
 }
