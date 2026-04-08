@@ -33,10 +33,10 @@
           "library_link": "",
           "gateway_eyebrow": "Nancy Vuu — House of Legacy",
           "gateway_heading": "How May We Serve<br>Your Legacy?",
-          "gateway_bridal_link": "",
-          "gateway_suiting_link": "",
-          "gateway_retreats_link": "",
-          "gateway_speaking_link": ""
+          "gateway_bridal_link": "shopify://pages/request-atelier-consultation",
+          "gateway_suiting_link": "shopify://pages/seth-eden",
+          "gateway_retreats_link": "shopify://pages/dream-academy",
+          "gateway_speaking_link": "shopify://pages/book-nancy-vuu"
         }
       },
       "footer": {
@@ -59,7 +59,14 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "pagefly-page-builder": {
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {}
 }
