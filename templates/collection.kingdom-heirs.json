@@ -155,6 +155,13 @@
             "option_value": "Kingdom Heirs Collection Viewing"
           }
         },
+        "service_option_9ApQf7": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        },
         "service_option_axtB6n": {
           "type": "service_option",
           "settings": {
@@ -168,20 +175,13 @@
             "option_label": "Fine Fabric Care & Preservation",
             "option_value": "Fine Fabric Care — Preservation & Cleaning"
           }
-        },
-        "service_option_9ApQf7": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Bespoke Couture / Bridal Consultation",
-            "option_value": "Bespoke Couture — Bridal Consultation"
-          }
         }
       },
       "block_order": [
         "service_option_KqitBa",
+        "service_option_9ApQf7",
         "service_option_axtB6n",
-        "service_option_qzJk6R",
-        "service_option_9ApQf7"
+        "service_option_qzJk6R"
       ],
       "name": "Atelier Inquiry",
       "settings": {
