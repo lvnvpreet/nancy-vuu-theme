@@ -520,7 +520,7 @@
             "bullet_vertical_position": 8,
             "show_button": true,
             "button_text": "Inquire for DREAM Again",
-            "button_link": "shopify://pages/dream-immersion-fill-out-form",
+            "button_link": "#dreamimmersionform",
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_text_color": "#ffffff",
@@ -1214,10 +1214,18 @@
     "177561709129893d0f": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_c91d130_gr8QPh": {
+          "type": "ai_gen_block_c91d130",
+          "name": "Anchor point",
+          "settings": {
+            "scroll_margin_top": 100
+          },
+          "blocks": {}
+        },
         "ai_gen_block_2316b27_hFbCYn": {
           "type": "ai_gen_block_2316b27",
           "settings": {
-            "background_color": "#F9F9F9",
+            "background_color": "#f9f9f9",
             "form_max_width": 800,
             "padding_top_desktop": 200,
             "padding_bottom_desktop": 200,
@@ -1239,7 +1247,7 @@
             "subtext_font_size": 25,
             "subtext_color": "#0f0f0f",
             "spacing_after_subtext": 40,
-            "divider_color": "#CCCCCC",
+            "divider_color": "#cccccc",
             "spacing_before_contact": 0,
             "spacing_after_divider": 60,
             "contact_line_1": "THE SAN JOSE & NAPA VALLEY FLAGSHIP",
@@ -1255,7 +1263,7 @@
             "input_font_size": 18,
             "input_text_color": "#0f0f0f",
             "placeholder_color": "#777777",
-            "input_underline_color": "#CCCCCC",
+            "input_underline_color": "#cccccc",
             "field_1_placeholder": "FULL NAME",
             "field_2_placeholder": "CONTACT EMAIL ADDRESS",
             "field_3_placeholder": "PHONE NUMBER",
@@ -1288,7 +1296,7 @@
             "button_font": "manrope_n4",
             "button_font_size": 16,
             "button_bg_color": "#000000",
-            "button_text_color": "#FFFFFF",
+            "button_text_color": "#ffffff",
             "button_padding_vertical": 18,
             "button_padding_horizontal": 40
           },
@@ -1296,6 +1304,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_c91d130_gr8QPh",
         "ai_gen_block_2316b27_hFbCYn"
       ],
       "settings": {}
