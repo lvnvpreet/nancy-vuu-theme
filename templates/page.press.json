@@ -94,6 +94,65 @@
         "image_3": "shopify://shop_images/mommy-me-photographer_9707ff60-017f-46af-a113-9d70f3c94c2a.jpg"
       }
     },
+    "1775676692b131ffbb": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_36501dc_f3nRPB": {
+          "type": "ai_gen_block_36501dc",
+          "settings": {
+            "eyebrow": "DISTINCTION & IMPACT",
+            "eyebrow_size": 16,
+            "title": "Global Accolades",
+            "title_size": 48,
+            "logo_text_1": "VOGUE",
+            "logo_text_2": "ELLE",
+            "logo_text_3": "HARPER'S BAZAAR",
+            "logo_text_4": "THE GRAMMYS",
+            "logo_text_5": "THE OSCARS",
+            "logo_text_6": "AMERICAN MUSIC AWARDS",
+            "logo_text_7": "BRIDES",
+            "logo_text_8": "CANNES FILM FESTIVAL",
+            "logo_height": 70,
+            "logo_gap": 60,
+            "scroll_speed": 60,
+            "logo_text_font": "playfair_display_n7",
+            "logo_text_size": 17,
+            "logo_text_letter_spacing": 0.4,
+            "logo_text_min_width": 120,
+            "logo_text_padding": 20,
+            "logo_text_color": "#000000",
+            "column_1_title": "Cinematic Excellence",
+            "column_1_content": "<p>\"Unto Me\" Film Honors - Official Selection at prestigious international film festivals. Recognized for outstanding cinematography <br/>and narrative excellence.</p>",
+            "column_2_title": "Leadership Recognition",
+            "column_2_content": "<p>Silicon Valley Business Journal - Women on the Move. Honored for exceptional leadership and innovation in business and creative industries.</p>",
+            "column_3_title": "Humanitarian & Diplomatic",
+            "column_3_content": "<p>The Courage Award - Recognized for humanitarian efforts and advocacy. Big Ben <br/>Award - Honored for diplomatic contributions <br/>and international cultural exchange.</p>",
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "manrope_n4",
+            "column_title_size": 26,
+            "column_content_size": 18,
+            "background_color": "#ffffff",
+            "text_color": "#0f0f0f",
+            "eyebrow_color": "#999999",
+            "section_padding_top": 100,
+            "section_padding_bottom": 190,
+            "eyebrow_bottom_spacing": 16,
+            "header_bottom_spacing": 60,
+            "logo_bar_top_spacing": 0,
+            "logo_bar_bottom_spacing": 80,
+            "columns_top_spacing": 0,
+            "column_gap": 80,
+            "column_title_bottom_spacing": 20,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_36501dc_f3nRPB"
+      ],
+      "settings": {}
+    },
     "press_strip": {
       "type": "press-editorial-strip",
       "blocks": {
@@ -177,6 +236,7 @@
         "strip_10",
         "strip_11"
       ],
+      "disabled": true,
       "settings": {}
     },
     "press_accolades": {
@@ -239,6 +299,7 @@
         "acc_5",
         "card_JNpV6p"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Distinction & Impact",
         "heading": "Global Accolades"
@@ -341,62 +402,72 @@
       "name": "Media divider",
       "settings": {}
     },
-    "1775676692b131ffbb": {
+    "1775678589b2fd2c09": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_36501dc_f3nRPB": {
-          "type": "ai_gen_block_36501dc",
+        "ai_gen_block_728bcc0_QQ9MdT": {
+          "type": "ai_gen_block_728bcc0",
           "settings": {
-            "eyebrow": "DISTINCTION & IMPACT",
-            "eyebrow_size": 16,
-            "title": "Global Accolades",
-            "title_size": 48,
-            "logo_text_1": "VOGUE",
-            "logo_text_2": "ELLE",
-            "logo_text_3": "HARPER'S BAZAAR",
-            "logo_text_4": "THE GRAMMYS",
-            "logo_text_5": "THE OSCARS",
-            "logo_text_6": "AMERICAN MUSIC AWARDS",
-            "logo_text_7": "BRIDES",
-            "logo_text_8": "CANNES FILM FESTIVAL",
-            "logo_height": 70,
-            "logo_gap": 60,
-            "scroll_speed": 60,
-            "logo_text_font": "playfair_display_n7",
-            "logo_text_size": 17,
-            "logo_text_letter_spacing": 0.4,
-            "logo_text_min_width": 120,
-            "logo_text_padding": 20,
-            "logo_text_color": "#000000",
-            "column_1_title": "Cinematic Excellence",
-            "column_1_content": "<p>\"Unto Me\" Film Honors - Official Selection at prestigious international film festivals. Recognized for outstanding cinematography <br/>and narrative excellence.</p>",
-            "column_2_title": "Leadership Recognition",
-            "column_2_content": "<p>Silicon Valley Business Journal - Women on the Move. Honored for exceptional leadership and innovation in business and creative industries.</p>",
-            "column_3_title": "Humanitarian & Diplomatic",
-            "column_3_content": "<p>The Courage Award - Recognized for humanitarian efforts and advocacy. Big Ben <br/>Award - Honored for diplomatic contributions <br/>and international cultural exchange.</p>",
-            "heading_font": "bodoni_moda_n4",
-            "body_font": "manrope_n4",
-            "column_title_size": 26,
-            "column_content_size": 18,
+            "padding_top": 260,
+            "padding_bottom": 150,
             "background_color": "#ffffff",
-            "text_color": "#0f0f0f",
+            "image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
+            "image_width": 100,
+            "image_height": 700,
+            "enable_fade": true,
+            "fade_height": 30,
+            "fade_color": "#ffffff",
+            "form_background_color": "#ffffff",
+            "form_padding_top": 80,
+            "form_padding_bottom": 80,
+            "form_padding_horizontal": 110,
+            "eyebrow": "THE CALL TO CONVENE",
+            "eyebrow_font": "manrope_n4",
+            "eyebrow_size": 17,
             "eyebrow_color": "#999999",
-            "section_padding_top": 100,
-            "section_padding_bottom": 190,
-            "eyebrow_bottom_spacing": 16,
-            "header_bottom_spacing": 60,
-            "logo_bar_top_spacing": 0,
-            "logo_bar_bottom_spacing": 80,
-            "columns_top_spacing": 0,
-            "column_gap": 80,
-            "column_title_bottom_spacing": 20,
-            "desktop_width_percent": 100
+            "eyebrow_spacing": 20,
+            "title": "Engage the Visionary",
+            "title_font": "bodoni_moda_n4",
+            "title_size": 60,
+            "title_color": "#0f0f0f",
+            "title_spacing": 24,
+            "subheader": "<p>Please entrust the details of your <em>brief </em>below as we review for visionary alignment and the potential for a shared narrative.</p>",
+            "subheader_font": "manrope_n4",
+            "subheader_size": 21,
+            "subheader_color": "#666666",
+            "subheader_spacing": 40,
+            "form_field_spacing": 40,
+            "label_font": "manrope_n4",
+            "label_size": 17,
+            "label_color": "#0f0f0f",
+            "helper_font": "manrope_n4",
+            "helper_size": 16,
+            "helper_color": "#999999",
+            "input_font": "manrope_n4",
+            "input_size": 18,
+            "input_text_color": "#0f0f0f",
+            "input_background_color": "#faf8f5",
+            "input_border_color": "#ece9e3",
+            "input_border_width": 1,
+            "input_border_radius": 0,
+            "button_text": "INITIATE THE DIALOGUE",
+            "button_font": "manrope_n4",
+            "button_size": 15,
+            "button_text_color": "#ffffff",
+            "button_background_color": "#0f0f0f",
+            "button_hover_color": "#333333",
+            "button_border_radius": 0,
+            "button_spacing": 16,
+            "success_message": "<p>Thank you for initiating the dialogue. We hold each inquiry in high regard and look forward to the possibility of a shared narrative. Our Atelier will acknowledge your request within 48 hours.</p>",
+            "message_size": 14,
+            "success_color": "#008060",
+            "error_color": "#D82C0D"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_36501dc_f3nRPB"
+        "ai_gen_block_728bcc0_QQ9MdT"
       ],
       "settings": {}
     }
@@ -406,12 +477,13 @@
     "1775670851427a034f",
     "ktvu_press_feature",
     "press_museum",
+    "1775676692b131ffbb",
     "press_strip",
     "press_accolades",
     "press_literary",
     "press_media",
     "press_engage",
     "blocks_7dRWHL",
-    "1775676692b131ffbb"
+    "1775678589b2fd2c09"
   ]
 }
