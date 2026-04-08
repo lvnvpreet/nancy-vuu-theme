@@ -148,6 +148,13 @@
     "atelier_inquiry_pXV4Xe": {
       "type": "atelier-inquiry",
       "blocks": {
+        "service_option_R6PktP": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Childrens | Teen Bespoke Couture",
+            "option_value": "Childrens | Teen Bespoke Couture"
+          }
+        },
         "service_option_eALKRT": {
           "type": "service_option",
           "settings": {
@@ -158,22 +165,15 @@
         "service_option_E8JdfP": {
           "type": "service_option",
           "settings": {
-            "option_label": "Fine Fabric Care & Preservation",
-            "option_value": "Fine Fabric Care — Preservation & Cleaning"
-          }
-        },
-        "service_option_R6PktP": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Childrens | Teen Bespoke Couture",
-            "option_value": "Childrens | Teen Bespoke Couture"
+            "option_label": "Mommy & Me Matching Bespoke Couture",
+            "option_value": "Mommy & Me Matching Bespoke Couture"
           }
         }
       },
       "block_order": [
+        "service_option_R6PktP",
         "service_option_eALKRT",
-        "service_option_E8JdfP",
-        "service_option_R6PktP"
+        "service_option_E8JdfP"
       ],
       "name": "Atelier Inquiry",
       "settings": {
