@@ -81,6 +81,13 @@
             "option_value": "Mommy & Me Bespoke Couture"
           }
         },
+        "service_option_9RrK7q": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Childrens | Teen Bespoke Couture",
+            "option_value": "Childrens | Teen Bespoke Couture"
+          }
+        },
         "service_option_RKkCnB": {
           "type": "service_option",
           "settings": {
@@ -88,15 +95,9 @@
             "option_value": "Master Tailoring — Alterations"
           }
         },
-        "service_option_9RrK7q": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
-            "option_value": "Fine Fabric Care — Preservation & Cleaning"
-          }
-        },
         "service_option_jJTxBh": {
           "type": "service_option",
+          "disabled": true,
           "settings": {
             "option_label": "Bespoke Couture / Bridal Consultation",
             "option_value": "Bespoke Couture — Bridal Consultation"
@@ -105,8 +106,8 @@
       },
       "block_order": [
         "service_option_Qbpnhd",
-        "service_option_RKkCnB",
         "service_option_9RrK7q",
+        "service_option_RKkCnB",
         "service_option_jJTxBh"
       ],
       "name": "Atelier Inquiry",
