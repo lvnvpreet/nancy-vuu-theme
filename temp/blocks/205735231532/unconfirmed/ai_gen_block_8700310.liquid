@@ -1,6 +1,867 @@
+{% doc %}
+  @prompt
+    Shopify AI Task: Insert Merged 'Engage the Visionary' Form
+    
+    1. Placement: * This section must be the final "Call to Action" block on the Press Page. Set a 150px top and bottom padding to give it a "Sovereign" breathing space.
+    
+    2. Layout (50/50 Split):
+    
+        Image Side (Left): Use the Black & White photo (with the audience hands raised at the World Relief Gala). Crop it to be a powerful vertical portrait. Apply a soft fade effect at the bottom of the image to blend into the footer.
+    
+        Form Side (Right): Create a clean, white-background inquiry form.
+    
+    3. The Header (Quiet Authority):
+    
+        Eyebrow (Soft Grey): THE CALL TO CONVENE
+    
+        Title (Sovereign Serif): Engage the Visionary
+    
+        Sub-Header (The Whisper): "Our mission is a documented miracle. We open the gates at 5:55 PM daily to review inquiries for the restoration of hope." (This includes the "Sovereign Anchor" details). Give me control access to adjust photo box size freeform. and give me control access to chagne text size, font, boldness, color and to give me access to adjust padding on top and bottom of segment and in between each information category. , give me options to add 5 more questions in the form fields. so create 5 more boxes. only show the form field box if there is a question. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-engage-visionary-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-engage-visionary-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-engage-visionary-image-side-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    width: {{ block.settings.image_width }}%;
+    height: {{ block.settings.image_height }}px;
+  }
+
+  .ai-engage-visionary-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ai-engage-visionary-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-engage-visionary-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .ai-engage-visionary-fade-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: {{ block.settings.fade_height }}%;
+    background: linear-gradient(to bottom, transparent, {{ block.settings.fade_color }});
+    pointer-events: none;
+  }
+
+  .ai-engage-visionary-form-side-{{ ai_gen_id }} {
+    background-color: {{ block.settings.form_background_color }};
+    padding: {{ block.settings.form_padding_top }}px {{ block.settings.form_padding_horizontal }}px {{ block.settings.form_padding_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-engage-visionary-eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.eyebrow_font.family }}, {{ block.settings.eyebrow_font.fallback_families }};
+    font-weight: {{ block.settings.eyebrow_font.weight }};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: {{ block.settings.eyebrow_spacing }}px;
+  }
+
+  .ai-engage-visionary-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.title_font.family }}, {{ block.settings.title_font.fallback_families }};
+    font-weight: {{ block.settings.title_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    line-height: 1.2;
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+  }
+
+  .ai-engage-visionary-subheader-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subheader_font.family }}, {{ block.settings.subheader_font.fallback_families }};
+    font-weight: {{ block.settings.subheader_font.weight }};
+    font-size: {{ block.settings.subheader_size }}px;
+    color: {{ block.settings.subheader_color }};
+    line-height: 1.6;
+    margin-bottom: {{ block.settings.subheader_spacing }}px;
+  }
+
+  .ai-engage-visionary-form-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.form_field_spacing }}px;
+  }
+
+  .ai-engage-visionary-field-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-engage-visionary-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.label_font.family }}, {{ block.settings.label_font.fallback_families }};
+    font-weight: {{ block.settings.label_font.weight }};
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-engage-visionary-input-{{ ai_gen_id }},
+  .ai-engage-visionary-textarea-{{ ai_gen_id }} {
+    font-family: {{ block.settings.input_font.family }}, {{ block.settings.input_font.fallback_families }};
+    font-weight: {{ block.settings.input_font.weight }};
+    font-size: {{ block.settings.input_size }}px;
+    color: {{ block.settings.input_text_color }};
+    background-color: {{ block.settings.input_background_color }};
+    border: {{ block.settings.input_border_width }}px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  .ai-engage-visionary-textarea-{{ ai_gen_id }} {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .ai-engage-visionary-button-{{ ai_gen_id }} {
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-size: {{ block.settings.button_size }}px;
+    color: {{ block.settings.button_text_color }};
+    background-color: {{ block.settings.button_background_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: 16px 32px;
+    cursor: pointer;
+    margin-top: {{ block.settings.button_spacing }}px;
+  }
+
+  .ai-engage-visionary-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-engage-visionary-success-{{ ai_gen_id }} {
+    color: {{ block.settings.success_color }};
+    font-size: {{ block.settings.message_size }}px;
+    margin-top: 16px;
+  }
+
+  .ai-engage-visionary-error-{{ ai_gen_id }} {
+    color: {{ block.settings.error_color }};
+    font-size: {{ block.settings.message_size }}px;
+    margin-top: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-engage-visionary-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-engage-visionary-image-side-{{ ai_gen_id }} {
+      width: 100%;
+      height: 400px;
+    }
+
+    .ai-engage-visionary-form-side-{{ ai_gen_id }} {
+      padding: 40px 24px;
+    }
+  }
+{% endstyle %}
+
+<engage-visionary-{{ ai_gen_id }}
+  class="ai-engage-visionary-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-engage-visionary-container-{{ ai_gen_id }}">
+    <div class="ai-engage-visionary-image-side-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1200 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-engage-visionary-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-engage-visionary-image-placeholder-{{ ai_gen_id }}">
+          {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+      {% if block.settings.enable_fade %}
+        <div class="ai-engage-visionary-fade-overlay-{{ ai_gen_id }}"></div>
+      {% endif %}
+    </div>
+
+    <div class="ai-engage-visionary-form-side-{{ ai_gen_id }}">
+      {%- if block.settings.eyebrow != blank -%}
+        <div class="ai-engage-visionary-eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow }}</div>
+      {%- endif -%}
+
+      {%- if block.settings.title != blank -%}
+        <h2 class="ai-engage-visionary-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if block.settings.subheader != blank -%}
+        <div class="ai-engage-visionary-subheader-{{ ai_gen_id }}">{{ block.settings.subheader }}</div>
+      {%- endif -%}
+
+      {%- form 'contact' -%}
+        <input type="hidden" name="contact[form_type]" value="engage_visionary">
+        
+        <div class="ai-engage-visionary-form-{{ ai_gen_id }}">
+          <div class="ai-engage-visionary-field-{{ ai_gen_id }}">
+            <label for="ai-engage-name-{{ ai_gen_id }}" class="ai-engage-visionary-label-{{ ai_gen_id }}">
+              {{ block.settings.name_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-engage-name-{{ ai_gen_id }}"
+              name="contact[name]"
+              class="ai-engage-visionary-input-{{ ai_gen_id }}"
+              required
+            >
+          </div>
+
+          <div class="ai-engage-visionary-field-{{ ai_gen_id }}">
+            <label for="ai-engage-email-{{ ai_gen_id }}" class="ai-engage-visionary-label-{{ ai_gen_id }}">
+              {{ block.settings.email_label }}
+            </label>
+            <input
+              type="email"
+              id="ai-engage-email-{{ ai_gen_id }}"
+              name="contact[email]"
+              class="ai-engage-visionary-input-{{ ai_gen_id }}"
+              autocomplete="email"
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="ai-engage-error-{{ ai_gen_id }}"
+              {% endif %}
+              {% if form.posted_successfully? %}
+                aria-describedby="ai-engage-success-{{ ai_gen_id }}"
+              {% endif %}
+              required
+            >
+          </div>
+
+          <div class="ai-engage-visionary-field-{{ ai_gen_id }}">
+            <label for="ai-engage-message-{{ ai_gen_id }}" class="ai-engage-visionary-label-{{ ai_gen_id }}">
+              {{ block.settings.message_label }}
+            </label>
+            <textarea
+              id="ai-engage-message-{{ ai_gen_id }}"
+              name="contact[body]"
+              class="ai-engage-visionary-textarea-{{ ai_gen_id }}"
+              required
+            ></textarea>
+          </div>
+
+          {% for i in (1..5) %}
+            {% liquid
+              assign question_key = 'question_' | append: i
+              assign question_value = block.settings[question_key]
+            %}
+            {% if question_value != blank %}
+              <div class="ai-engage-visionary-field-{{ ai_gen_id }}">
+                <label for="ai-engage-question-{{ i }}-{{ ai_gen_id }}" class="ai-engage-visionary-label-{{ ai_gen_id }}">
+                  {{ question_value }}
+                </label>
+                <input
+                  type="text"
+                  id="ai-engage-question-{{ i }}-{{ ai_gen_id }}"
+                  name="contact[question_{{ i }}]"
+                  class="ai-engage-visionary-input-{{ ai_gen_id }}"
+                >
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {%- if form.errors -%}
+            <div
+              id="ai-engage-error-{{ ai_gen_id }}"
+              class="ai-engage-visionary-error-{{ ai_gen_id }}"
+            >
+              {{ form.errors.messages.email }}
+            </div>
+          {%- endif -%}
+
+          {%- if form.posted_successfully? -%}
+            <div
+              id="ai-engage-success-{{ ai_gen_id }}"
+              class="ai-engage-visionary-success-{{ ai_gen_id }}"
+            >
+              {{ block.settings.success_message }}
+            </div>
+          {%- endif -%}
+
+          <button
+            type="submit"
+            class="ai-engage-visionary-button-{{ ai_gen_id }}"
+          >
+            {{ block.settings.button_text }}
+          </button>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</engage-visionary-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class EngageVisionary{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.form = this.querySelector('form');
+        if (this.form) {
+          this.setupFormValidation();
+        }
+      }
+
+      setupFormValidation() {
+        this.form.addEventListener('submit', (e) => {
+          const inputs = this.form.querySelectorAll('input[required], textarea[required]');
+          let isValid = true;
+
+          inputs.forEach((input) => {
+            if (!input.value.trim()) {
+              isValid = false;
+              input.setAttribute('aria-invalid', 'true');
+            } else {
+              input.removeAttribute('aria-invalid');
+            }
+          });
+
+          if (!isValid) {
+            e.preventDefault();
+          }
+        });
+      }
+    }
+
+    customElements.define('engage-visionary-{{ ai_gen_id }}', EngageVisionary{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Engage the visionary",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Width",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Height",
+      "min": 300,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_fade",
+      "label": "Enable fade effect",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "fade_height",
+      "label": "Fade height",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "fade_color",
+      "label": "Fade color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Form container"
+    },
+    {
+      "type": "color",
+      "id": "form_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "form_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "form_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "form_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 20,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "eyebrow",
+      "label": "Text",
+      "default": "THE CALL TO CONVENE"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Size",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#999999"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Text",
+      "default": "Engage the Visionary"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Subheader"
+    },
+    {
+      "type": "richtext",
+      "id": "subheader",
+      "label": "Text",
+      "default": "<p>Our mission is a documented miracle. We open the gates at 5:55 PM daily to review inquiries for the restoration of hope.</p>"
+    },
+    {
+      "type": "font_picker",
+      "id": "subheader_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheader_size",
+      "label": "Size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheader_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "subheader_spacing",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Form fields"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "name_label",
+      "label": "Name label",
+      "default": "Name"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "email_label",
+      "label": "Email label",
+      "default": "Email"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "message_label",
+      "label": "Message label",
+      "default": "Your inquiry"
+    },
+    {
+      "type": "range",
+      "id": "form_field_spacing",
+      "label": "Spacing between fields",
+      "min": 8,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "font_picker",
+      "id": "label_font",
+      "label": "Label font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "font_picker",
+      "id": "input_font",
+      "label": "Input font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "input_size",
+      "label": "Input size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_background_color",
+      "label": "Input background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "range",
+      "id": "input_border_width",
+      "label": "Input border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "label": "Input border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Additional questions"
+    },
+    {
+      "type": "text",
+      "id": "question_1",
+      "label": "Question 1"
+    },
+    {
+      "type": "text",
+      "id": "question_2",
+      "label": "Question 2"
+    },
+    {
+      "type": "text",
+      "id": "question_3",
+      "label": "Question 3"
+    },
+    {
+      "type": "text",
+      "id": "question_4",
+      "label": "Question 4"
+    },
+    {
+      "type": "text",
+      "id": "question_5",
+      "label": "Question 5"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "button_text",
+      "label": "Text",
+      "default": "Submit inquiry"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "richtext",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "<p>Thank you. Your inquiry has been received and will be reviewed at 5:55 PM.</p>"
+    },
+    {
+      "type": "range",
+      "id": "message_size",
+      "label": "Size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success color",
+      "default": "#008060"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error color",
+      "default": "#D82C0D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Engage the visionary"
+    }
+  ]
+}
 {% endschema %}
