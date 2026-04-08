@@ -83,6 +83,17 @@
         "cta_link": "shopify://pages/book-nancy-vuu"
       }
     },
+    "press_museum": {
+      "type": "press-museum",
+      "settings": {
+        "eyebrow": "The Archive",
+        "heading": "Museum of Editorials",
+        "archive_link": "",
+        "image_1": "shopify://shop_images/Isabella_Vogue_-_Nancy_Vuu.webp",
+        "image_2": "shopify://shop_images/49.webp",
+        "image_3": "shopify://shop_images/mommy-me-photographer_9707ff60-017f-46af-a113-9d70f3c94c2a.jpg"
+      }
+    },
     "press_strip": {
       "type": "press-editorial-strip",
       "blocks": {
@@ -293,17 +304,6 @@
         "submit_label": "Submit Inquiry"
       }
     },
-    "press_museum": {
-      "type": "press-museum",
-      "settings": {
-        "eyebrow": "The Archive",
-        "heading": "Museum of Editorials",
-        "archive_link": "",
-        "image_1": "shopify://shop_images/Isabella_Vogue_-_Nancy_Vuu.webp",
-        "image_2": "shopify://shop_images/49.webp",
-        "image_3": "shopify://shop_images/mommy-me-photographer_9707ff60-017f-46af-a113-9d70f3c94c2a.jpg"
-      }
-    },
     "press_engage": {
       "type": "press-engage",
       "custom_css": [],
@@ -340,18 +340,78 @@
       ],
       "name": "Media divider",
       "settings": {}
+    },
+    "1775676692b131ffbb": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_36501dc_f3nRPB": {
+          "type": "ai_gen_block_36501dc",
+          "settings": {
+            "eyebrow": "DISTINCTION & IMPACT",
+            "eyebrow_size": 16,
+            "title": "Global Accolades",
+            "title_size": 48,
+            "logo_text_1": "VOGUE",
+            "logo_text_2": "ELLE",
+            "logo_text_3": "HARPER'S BAZAAR",
+            "logo_text_4": "THE GRAMMYS",
+            "logo_text_5": "THE OSCARS",
+            "logo_text_6": "AMERICAN MUSIC AWARDS",
+            "logo_text_7": "BRIDES",
+            "logo_text_8": "CANNES FILM FESTIVAL",
+            "logo_height": 70,
+            "logo_gap": 60,
+            "scroll_speed": 60,
+            "logo_text_font": "playfair_display_n7",
+            "logo_text_size": 17,
+            "logo_text_letter_spacing": 0.4,
+            "logo_text_min_width": 120,
+            "logo_text_padding": 20,
+            "logo_text_color": "#000000",
+            "column_1_title": "Cinematic Excellence",
+            "column_1_content": "<p>\"Unto Me\" Film Honors - Official Selection at prestigious international film festivals. Recognized for outstanding cinematography <br/>and narrative excellence.</p>",
+            "column_2_title": "Leadership Recognition",
+            "column_2_content": "<p>Silicon Valley Business Journal - Women on the Move. Honored for exceptional leadership and innovation in business and creative industries.</p>",
+            "column_3_title": "Humanitarian & Diplomatic",
+            "column_3_content": "<p>The Courage Award - Recognized for humanitarian efforts and advocacy. Big Ben <br/>Award - Honored for diplomatic contributions <br/>and international cultural exchange.</p>",
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "manrope_n4",
+            "column_title_size": 26,
+            "column_content_size": 18,
+            "background_color": "#ffffff",
+            "text_color": "#0f0f0f",
+            "eyebrow_color": "#999999",
+            "section_padding_top": 100,
+            "section_padding_bottom": 190,
+            "eyebrow_bottom_spacing": 16,
+            "header_bottom_spacing": 60,
+            "logo_bar_top_spacing": 0,
+            "logo_bar_bottom_spacing": 80,
+            "columns_top_spacing": 0,
+            "column_gap": 80,
+            "column_title_bottom_spacing": 20,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_36501dc_f3nRPB"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "press_hero_Ax4cTf",
     "1775670851427a034f",
     "ktvu_press_feature",
+    "press_museum",
     "press_strip",
     "press_accolades",
     "press_literary",
     "press_media",
-    "press_museum",
     "press_engage",
-    "blocks_7dRWHL"
+    "blocks_7dRWHL",
+    "1775676692b131ffbb"
   ]
 }
