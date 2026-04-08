@@ -144,7 +144,7 @@
         "cta_link": "#inquiry",
         "cta_style": "fill",
         "cta2_label": "View Lookbook",
-        "cta2_link": "/collections/womens-couture",
+        "cta2_link": "shopify://collections/women",
         "text_color": "#ffffff",
         "bg_light": false,
         "compact": false
