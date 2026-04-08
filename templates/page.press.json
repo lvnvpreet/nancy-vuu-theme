@@ -389,6 +389,11 @@
     "1775678589b2fd2c09": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_160c01a_RAh8iP": {
+          "type": "ai_gen_block_160c01a",
+          "settings": {},
+          "blocks": {}
+        },
         "ai_gen_block_728bcc0_QQ9MdT": {
           "type": "ai_gen_block_728bcc0",
           "settings": {
@@ -451,6 +456,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_160c01a_RAh8iP",
         "ai_gen_block_728bcc0_QQ9MdT"
       ],
       "settings": {}
