@@ -194,6 +194,27 @@
       "name": "Origin section",
       "settings": {}
     },
+    "1775634364dcdd2d54": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6602bd5_c4CBw6": {
+          "type": "ai_gen_block_6602bd5",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-04-08_at_12.54.38_AM_2.jpg",
+            "section_height": 26,
+            "desktop_width_percent": 100,
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 0.7
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6602bd5_c4CBw6"
+      ],
+      "settings": {}
+    },
     "dimensions": {
       "type": "retreat-dimensions",
       "blocks": {
@@ -1684,27 +1705,6 @@
         "ai_gen_block_b37c7b5_fMAagE"
       ],
       "settings": {}
-    },
-    "1775634364dcdd2d54": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_6602bd5_c4CBw6": {
-          "type": "ai_gen_block_6602bd5",
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/WhatsApp_Image_2026-04-08_at_12.54.38_AM_2.jpg",
-            "section_height": 26,
-            "desktop_width_percent": 100,
-            "overlay_color": "#ffffff",
-            "overlay_opacity": 0.7
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_6602bd5_c4CBw6"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -1712,6 +1712,7 @@
     "hero",
     "1775352877e43957d3",
     "blocks_tAbdE8",
+    "1775634364dcdd2d54",
     "dimensions",
     "1775514830d5666031",
     "destinations",
@@ -1731,7 +1732,6 @@
     "177552204805f6d672",
     "17755224121e7ebbbe",
     "17755237312ed48271",
-    "1775523006e5fa1bf2",
-    "1775634364dcdd2d54"
+    "1775523006e5fa1bf2"
   ]
 }
