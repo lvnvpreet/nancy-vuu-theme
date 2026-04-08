@@ -1,6 +1,235 @@
+{% doc %}
+  @prompt
+    <div id="apply-now"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-anchor-block-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-anchor-point-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.offset_top }}px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-anchor-content-{{ ai_gen_id }} {
+    padding: {{ block.settings.padding_top }}px 0 {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-anchor-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_header_font.family }}, {{ block.settings.type_header_font.fallback_families }};
+    font-weight: {{ block.settings.type_header_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.spacing }}px;
+    line-height: 1.2;
+  }
+
+  .ai-anchor-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.type_body_font.family }}, {{ block.settings.type_body_font.fallback_families }};
+    font-weight: {{ block.settings.type_body_font.weight }};
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-anchor-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-anchor-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-anchor-block-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div id="apply-now" class="ai-anchor-point-{{ ai_gen_id }}"></div>
+  
+  {% if block.settings.show_content %}
+    <div class="ai-anchor-content-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-anchor-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      
+      {% if block.settings.text != blank %}
+        <div class="ai-anchor-text-{{ ai_gen_id }}">{{ block.settings.text }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Anchor point",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Anchor settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "This block creates an anchor point with ID 'apply-now' that can be linked to from navigation or buttons using #apply-now"
+    },
+    {
+      "type": "range",
+      "id": "offset_top",
+      "label": "Scroll offset",
+      "min": -200,
+      "max": 0,
+      "step": 10,
+      "unit": "px",
+      "default": -100
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content",
+      "label": "Show content below anchor",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Spacing between heading and text",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "font_picker",
+      "id": "type_header_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "type_body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anchor point"
+    }
+  ]
+}
 {% endschema %}
