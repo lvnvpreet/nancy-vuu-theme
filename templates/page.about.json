@@ -81,46 +81,6 @@
         "intro": "We do not create masks to hide behind. We architect the Mantle that reflects the appointment you have already been given."
       }
     },
-    "1775612952351cb5ce": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_38b8ce6_eydJAy": {
-          "type": "ai_gen_block_38b8ce6",
-          "settings": {
-            "eyebrow_text": "THE ATELIER INVITATION",
-            "body_text": "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey.",
-            "button_text": "INITIATE A COMMISSION",
-            "button_link": "",
-            "heading_font": "manrope_n4",
-            "body_font": "manrope_n4",
-            "body_font_size": 24,
-            "body_font_weight": "300",
-            "body_line_height": 1.6,
-            "padding_top": 130,
-            "padding_bottom": 130,
-            "eyebrow_spacing": 30,
-            "body_spacing": 60,
-            "background_color": "#ffffff",
-            "text_color": "#0f0f0f",
-            "button_padding_vertical": 16,
-            "button_padding_horizontal": 40,
-            "button_border_width": 1,
-            "button_background": "rgba(0,0,0,0)",
-            "button_text_color": "#0f0f0f",
-            "button_border_color": "#0f0f0f",
-            "button_hover_background": "#0f0f0f",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_border_color": "#0f0f0f",
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_38b8ce6_eydJAy"
-      ],
-      "settings": {}
-    },
     "heritage_narrative_B3f9Dd": {
       "type": "heritage-narrative",
       "blocks": {
@@ -154,6 +114,46 @@
         "title": "The Alchemy of Triumph",
         "image": "shopify://shop_images/iStock-866175472.jpg"
       }
+    },
+    "1775612952351cb5ce": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_38b8ce6_eydJAy": {
+          "type": "ai_gen_block_38b8ce6",
+          "settings": {
+            "eyebrow_text": "THE ATELIER INVITATION",
+            "body_text": "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey.",
+            "button_text": "INITIATE A COMMISSION",
+            "button_link": "",
+            "heading_font": "manrope_n4",
+            "body_font": "manrope_n4",
+            "body_font_size": 24,
+            "body_font_weight": "300",
+            "body_line_height": 1.6,
+            "padding_top": 130,
+            "padding_bottom": 130,
+            "eyebrow_spacing": 30,
+            "body_spacing": 60,
+            "background_color": "#ebe6df",
+            "text_color": "#0f0f0f",
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 40,
+            "button_border_width": 1,
+            "button_background": "rgba(0,0,0,0)",
+            "button_text_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_hover_background": "#0f0f0f",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#0f0f0f",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_38b8ce6_eydJAy"
+      ],
+      "settings": {}
     },
     "about_bridge": {
       "type": "about-bridge",
