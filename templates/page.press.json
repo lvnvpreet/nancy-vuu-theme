@@ -108,12 +108,59 @@
       ],
       "settings": {}
     },
+    "1775670851427a034f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a11c9ca_H73enz": {
+          "type": "ai_gen_block_a11c9ca",
+          "settings": {
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "grid_gap": 80,
+            "block_spacing": 120,
+            "content_padding": 40,
+            "background_color": "#faf8f5",
+            "image_width": 100,
+            "image_height": 850,
+            "block_1_image": "shopify://shop_images/20160518_213250.jpg",
+            "block_1_eyebrow": "THE ASSIGNMENT: CANNES",
+            "block_1_headline": "A Decade of Opening Doors for the Next Generation.",
+            "block_1_body": "<p>True stewardship isn't just about walking the carpet; it's about building a gateway for the next generation to step into their own original design. For years, the House has used the world's most prestigious stages as a platform to mentor young visionaries—cloaking them in the dignity of couture and the reality of their high calling.</p>",
+            "block_2_image": "shopify://shop_images/Screen_Shot_2026-04-08_at_9.47.33_AM.png",
+            "block_2_eyebrow": "THE RECOGNITION",
+            "block_2_headline": "Establishing the standard for Cinematic Truth.",
+            "block_2_body": "<p>Recognition as 'Best Fashion Film' is a testament to our belief that the lens should be a mirror for the soul. Whether through a single garment or a high-definition film, we are dedicated to architecting narratives of restoration that remain timeless—long after the flashbulbs fade.</p>",
+            "image_grayscale": 100,
+            "image_contrast": 115,
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "serif",
+            "eyebrow_size": 17,
+            "eyebrow_letter_spacing": 0.2,
+            "eyebrow_margin": 15,
+            "eyebrow_color": "#999999",
+            "headline_size": 36,
+            "headline_letter_spacing": 0.1,
+            "headline_line_height": 1.2,
+            "headline_margin": 25,
+            "headline_color": "#7f7c7c",
+            "body_size": 16,
+            "body_line_height": 1.6,
+            "body_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a11c9ca_H73enz"
+      ],
+      "settings": {}
+    },
     "ktvu_press_feature": {
       "type": "ktvu-feature",
       "settings": {
         "eyebrow": "LATEST BROADCAST",
         "heading": "LEADING WITH GLOBAL IMPACT",
-        "sub_headline": "Architecting Identity through Bespoke Excellence",
+        "sub_headline": "Refining the Narrative of Success through Bespoke Excellence",
         "body_copy": "Nancy Vuu joins KTVU Fox 2 for a standing interview to discuss the architecture of identity and her mission to restore purpose through couture. The segment spotlights her specialized work in bridal gowns and the expansion of Seth Eden suits, exploring how high-fashion serves as a medium for restorative leadership. Recognized as a global voice of influence, Nancy shares how her entry into the industry was a calling to integrate world-class craftsmanship with strategic initiatives designed to inspire and elevate.",
         "pull_quote": "Beyond the runway, Nancy Vuu is building something deeper—guiding global leaders with faith-driven strategy, and expanding her influence through fashion, film, and community-focused initiatives designed to inspire, empower, and elevate.\"",
         "pull_quote_attr": "— KTVU Fox 2",
@@ -297,6 +344,7 @@
   "order": [
     "press_hero_Ax4cTf",
     "press_strip",
+    "1775670851427a034f",
     "ktvu_press_feature",
     "press_accolades",
     "press_literary",
