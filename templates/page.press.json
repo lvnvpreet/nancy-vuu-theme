@@ -118,7 +118,7 @@
         "pull_quote": "Beyond the runway, Nancy Vuu is building something deeper—guiding global leaders with faith-driven strategy, and expanding her influence through fashion, film, and community-focused initiatives designed to inspire, empower, and elevate.\"",
         "pull_quote_attr": "— KTVU Fox 2",
         "cta_label": "inquire for speaking & engagements",
-        "cta_link": "shopify://pages/book-nancy-vuu"
+        "cta_link": "#press-inquiry"
       }
     },
     "press_accolades": {
@@ -243,6 +243,7 @@
         "type_2",
         "type_3"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Voice of Authority",
         "title_line_1": "Elevate Your Story",
@@ -257,6 +258,7 @@
     },
     "press_engage": {
       "type": "press-engage",
+      "custom_css": [],
       "settings": {
         "eyebrow": "Global Engagements",
         "title_line_1": "Engage the",
@@ -268,6 +270,28 @@
         "label_message": "Nature of Inquiry",
         "submit_label": "Initiate Request"
       }
+    },
+    "blocks_7dRWHL": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6602bd5_NhgTTQ": {
+          "type": "ai_gen_block_6602bd5",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
+            "section_height": 57,
+            "desktop_width_percent": 100,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6602bd5_NhgTTQ"
+      ],
+      "name": "Media divider",
+      "settings": {}
     }
   },
   "order": [
@@ -278,6 +302,7 @@
     "press_literary",
     "press_museum",
     "press_media",
-    "press_engage"
+    "press_engage",
+    "blocks_7dRWHL"
   ]
 }
