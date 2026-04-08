@@ -132,6 +132,20 @@
         "group_by_type": false
       }
     },
+    "cross-sell": {
+      "type": "cross-sell",
+      "settings": {
+        "image": "shopify://shop_images/untitled-0.jpg",
+        "title": "The Crowning",
+        "description": "A crown is not an ornament—it is an anointing made visible. Our hand-crafted crowns and jewelry are not accessories; they are declarations of authority. Each piece is designed to rest upon those who carry the weight of purpose with grace.",
+        "cta_label": "",
+        "cta_link": "",
+        "primary_label": "Experience the Crowning",
+        "primary_link": "shopify://collections/crowns-jewelry",
+        "secondary_label": "",
+        "secondary_link": "#inquiry"
+      }
+    },
     "bottom-cta": {
       "type": "cta-closer",
       "settings": {
@@ -148,20 +162,6 @@
         "text_color": "#ffffff",
         "bg_light": false,
         "compact": false
-      }
-    },
-    "cross-sell": {
-      "type": "cross-sell",
-      "settings": {
-        "image": "shopify://shop_images/untitled-0.jpg",
-        "title": "The Crowning",
-        "description": "A crown is not an ornament—it is an anointing made visible. Our hand-crafted crowns and jewelry are not accessories; they are declarations of authority. Each piece is designed to rest upon those who carry the weight of purpose with grace.",
-        "cta_label": "",
-        "cta_link": "",
-        "primary_label": "Experience the Crowning",
-        "primary_link": "shopify://collections/crowns-jewelry",
-        "secondary_label": "",
-        "secondary_link": "#inquiry"
       }
     },
     "atelier_inquiry_GmRcGX": {
@@ -235,8 +235,8 @@
     "exclusivity",
     "lookbook",
     "main",
-    "bottom-cta",
     "cross-sell",
+    "bottom-cta",
     "atelier_inquiry_GmRcGX"
   ]
 }
