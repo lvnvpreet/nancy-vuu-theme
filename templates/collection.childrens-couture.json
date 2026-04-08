@@ -18,8 +18,8 @@
         "overlay_opacity": 0,
         "eyebrow": "Little Masterpieces for Their Grand Debut.",
         "title": "",
-        "cta_label": "",
-        "cta_link": ""
+        "cta_label": "INITIATE BESPOKE COMMISSION",
+        "cta_link": "#inquiry"
       }
     },
     "manifesto": {
@@ -37,7 +37,7 @@
         "col2_heading": "",
         "col2_body": "",
         "cta1_label": "Start Commissioning",
-        "cta1_link": "",
+        "cta1_link": "#inquiry",
         "cta2_label": "",
         "cta2_link": ""
       }
