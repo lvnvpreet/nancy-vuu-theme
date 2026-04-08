@@ -1,6 +1,204 @@
+{% doc %}
+  @prompt
+    create a small (height is between 1/30 of a page to 1/4 of a page) section that i can insert a photo to be full blead. give me control to do a white or black adjustable overlay i want to have the option to make the segment height completely adjustable even to the point of being a fine thin line. also give me the option of putting a video or photo as a full bleed. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-media-divider-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.section_height }}vh;
+    overflow: hidden;
+  }
+
+  .ai-media-divider__media-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-media-divider__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-media-divider__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-media-divider__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-media-divider__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+{% endstyle %}
+
+<media-divider-{{ ai_gen_id }}
+  class="ai-media-divider-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.media_type == 'video' and block.settings.video != blank %}
+    {{ block.settings.video | video_tag: 
+      class: 'ai-media-divider__media-' | append: ai_gen_id,
+      autoplay: true,
+      loop: true,
+      muted: true,
+      playsinline: true,
+      controls: false
+    }}
+  {% elsif block.settings.media_type == 'image' and block.settings.image != blank %}
+    <img
+      src="{{ block.settings.image | image_url: width: 2000 }}"
+      alt="{{ block.settings.image.alt | escape }}"
+      loading="lazy"
+      width="{{ block.settings.image.width }}"
+      height="{{ block.settings.image.height }}"
+      class="ai-media-divider__media-{{ ai_gen_id }}"
+    >
+  {% else %}
+    <div class="ai-media-divider__placeholder-{{ ai_gen_id }}">
+      {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      <div class="ai-media-divider__empty-state-{{ ai_gen_id }}">
+        Next, add an image or video
+      </div>
+    </div>
+  {% endif %}
+
+  {% if block.settings.overlay_opacity > 0 %}
+    <div class="ai-media-divider__overlay-{{ ai_gen_id }}"></div>
+  {% endif %}
+</media-divider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class MediaDivider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const video = this.querySelector('video');
+        if (video) {
+          video.play().catch(function() {});
+        }
+      }
+    }
+
+    customElements.define('media-divider-{{ ai_gen_id }}', MediaDivider{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Media divider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Height",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "vh",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media divider"
+    }
+  ]
+}
 {% endschema %}
