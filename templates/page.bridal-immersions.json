@@ -614,7 +614,7 @@
             "bullet_vertical_position": 8,
             "show_button": true,
             "button_text": "Inquire for The Masterpiece Bride",
-            "button_link": "shopify://pages/bridal-immersion-fill-out-form",
+            "button_link": "#bridalimmersioncontact",
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_text_color": "#ffffff",
@@ -1544,6 +1544,14 @@
     "17755259385e73fae0": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_c91d130_DJRDR9": {
+          "type": "ai_gen_block_c91d130",
+          "name": "Anchor point",
+          "settings": {
+            "scroll_margin_top": 100
+          },
+          "blocks": {}
+        },
         "ai_gen_block_746aed2_tygiF9": {
           "type": "ai_gen_block_746aed2",
           "settings": {
@@ -1590,6 +1598,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_c91d130_DJRDR9",
         "ai_gen_block_746aed2_tygiF9"
       ],
       "settings": {}
