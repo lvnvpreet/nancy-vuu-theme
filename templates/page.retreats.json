@@ -193,6 +193,11 @@
       ],
       "settings": {}
     },
+    "blocks_qKAUg7": {
+      "type": "_blocks",
+      "name": "Media divider",
+      "settings": {}
+    },
     "dimensions": {
       "type": "retreat-dimensions",
       "blocks": {
@@ -248,6 +253,18 @@
     "blocks_nAXmLQ": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_6602bd5_9yfeF3": {
+          "type": "ai_gen_block_6602bd5",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-04-08_at_12.54.38_AM_2.jpg",
+            "section_height": 14,
+            "desktop_width_percent": 100,
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 0.7
+          },
+          "blocks": {}
+        },
         "ai_gen_block_d008ee4_kk3mf7": {
           "type": "ai_gen_block_d008ee4",
           "settings": {
@@ -327,6 +344,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_6602bd5_9yfeF3",
         "ai_gen_block_d008ee4_kk3mf7",
         "ai_gen_block_6d01dc7_jPLKnA"
       ],
@@ -1364,12 +1382,25 @@
             "button_padding_horizontal": 40
           },
           "blocks": {}
+        },
+        "ai_gen_block_6602bd5_FaGAUB": {
+          "type": "ai_gen_block_6602bd5",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/rows-of-a-vineyard-on-a-sunny-day.jpg",
+            "section_height": 15,
+            "desktop_width_percent": 100,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_9dbefa4_EyGedh",
         "ai_gen_block_c91d130_gr8QPh",
-        "ai_gen_block_2316b27_hFbCYn"
+        "ai_gen_block_2316b27_hFbCYn",
+        "ai_gen_block_6602bd5_FaGAUB"
       ],
       "settings": {}
     }
@@ -1379,6 +1410,7 @@
     "hero",
     "1775352877e43957d3",
     "1775631462eb464662",
+    "blocks_qKAUg7",
     "dimensions",
     "blocks_nAXmLQ",
     "destinations",
