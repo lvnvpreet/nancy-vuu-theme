@@ -367,6 +367,7 @@
     },
     "press_engage": {
       "type": "press-engage",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "eyebrow": "Global Engagements",
@@ -382,23 +383,6 @@
     },
     "blocks_7dRWHL": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_6602bd5_NhgTTQ": {
-          "type": "ai_gen_block_6602bd5",
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
-            "section_height": 57,
-            "desktop_width_percent": 100,
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_6602bd5_NhgTTQ"
-      ],
       "name": "Media divider",
       "settings": {}
     },
