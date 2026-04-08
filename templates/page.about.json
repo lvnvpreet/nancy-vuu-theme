@@ -115,9 +115,44 @@
         "image": "shopify://shop_images/iStock-866175472.jpg"
       }
     },
-    "blocks_YnCxzz": {
+    "1775612952351cb5ce": {
       "type": "_blocks",
-      "name": "CTA banner",
+      "blocks": {
+        "ai_gen_block_38b8ce6_eydJAy": {
+          "type": "ai_gen_block_38b8ce6",
+          "settings": {
+            "eyebrow_text": "THE ATELIER INVITATION",
+            "body_text": "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey.",
+            "button_text": "INITIATE A COMMISSION",
+            "button_link": "",
+            "heading_font": "manrope_n4",
+            "body_font": "manrope_n4",
+            "body_font_size": 24,
+            "body_font_weight": "300",
+            "body_line_height": 1.6,
+            "padding_top": 130,
+            "padding_bottom": 130,
+            "eyebrow_spacing": 30,
+            "body_spacing": 60,
+            "background_color": "#ffffff",
+            "text_color": "#0f0f0f",
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 40,
+            "button_border_width": 1,
+            "button_background": "rgba(0,0,0,0)",
+            "button_text_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_hover_background": "#0f0f0f",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#0f0f0f",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_38b8ce6_eydJAy"
+      ],
       "settings": {}
     },
     "about_bridge": {
@@ -129,24 +164,6 @@
         "body": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>\"beautiful souls\"</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <strong>gravity of history</strong> and the <strong>resonance of hope</strong>.</p>",
         "body_size": "1.5rem",
         "body_align": "center"
-      }
-    },
-    "cta_closer_BdHMU8": {
-      "type": "cta-closer",
-      "name": "CTA Closer",
-      "settings": {
-        "overlay_opacity": 50,
-        "eyebrow": "",
-        "heading": "",
-        "subtext": "Our collections are more than garments; they are the architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite you to begin your bespoke journey.",
-        "cta_label": "Book Consultation",
-        "cta_link": "",
-        "cta_style": "outline",
-        "cta2_label": "",
-        "cta2_link": "",
-        "text_color": "#ffffff",
-        "bg_light": false,
-        "compact": true
       }
     },
     "about_signature": {
@@ -187,46 +204,6 @@
         "cta_label": "Explore Our Dream Immersions",
         "cta_link": "/pages/retreats"
       }
-    },
-    "1775612952351cb5ce": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_38b8ce6_eydJAy": {
-          "type": "ai_gen_block_38b8ce6",
-          "settings": {
-            "eyebrow_text": "THE ATELIER INVITATION",
-            "body_text": "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey.",
-            "button_text": "INITIATE A COMMISSION",
-            "button_link": "",
-            "heading_font": "manrope_n4",
-            "body_font": "manrope_n4",
-            "body_font_size": 24,
-            "body_font_weight": "300",
-            "body_line_height": 1.6,
-            "padding_top": 130,
-            "padding_bottom": 130,
-            "eyebrow_spacing": 30,
-            "body_spacing": 60,
-            "background_color": "#F9F9F9",
-            "text_color": "#0f0f0f",
-            "button_padding_vertical": 16,
-            "button_padding_horizontal": 40,
-            "button_border_width": 1,
-            "button_background": "rgba(0,0,0,0)",
-            "button_text_color": "#0f0f0f",
-            "button_border_color": "#0f0f0f",
-            "button_hover_background": "#0f0f0f",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_border_color": "#0f0f0f",
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_38b8ce6_eydJAy"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -236,12 +213,10 @@
     "about_return",
     "about_mantle",
     "heritage_narrative_B3f9Dd",
-    "blocks_YnCxzz",
+    "1775612952351cb5ce",
     "about_bridge",
-    "cta_closer_BdHMU8",
     "about_signature",
     "about_crowning",
-    "about_retreats",
-    "1775612952351cb5ce"
+    "about_retreats"
   ]
 }
