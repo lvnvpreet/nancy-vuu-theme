@@ -151,6 +151,49 @@
       ],
       "settings": {}
     },
+    "blocks_tAbdE8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ceac77c_FkchcU": {
+          "type": "ai_gen_block_ceac77c",
+          "settings": {
+            "eyebrow": "",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#0f0f0f",
+            "spacing_after_eyebrow": 20,
+            "headline_line1": "Covenant on Holy Ground:",
+            "headline_line1_size": 48,
+            "headline_line1_color": "#0f0f0f",
+            "headline_line2": "The Origin of the Sanctuary",
+            "headline_line2_size": 48,
+            "headline_line2_color": "#cccccc",
+            "spacing_between_headline_lines": 10,
+            "spacing_after_headline": 40,
+            "paragraph_1": "<p>The House of Vuu Sanctuary was established through a divine mandate—a vision of a consecrated garden where beauty meets belief. On February 22, 2022 (Isaiah 22:22), the \"Keys\" were placed in our hands to open this private Napa Valley estate as a gateway for the modern Bride. This land is not merely a setting; it is a participant in the legacy of your union.</p>",
+            "paragraph_2": "<p></p><p>At 5:55 PM, the promise of Isaiah 55:5 was sealed: a mandate that the splendor of this land would call the nations to witness the restoration of beauty. We invite you to step into the Garden of the Lord—home to nearly 100 varieties of the world’s most coveted English roses, from the pure <strong>Earth Angel</strong> to the majestic <strong>Spirit of Freedom</strong>, a bloom so abundant it houses over 200 petals.</p>",
+            "paragraph_3": "<p></p><p>Within this thin veil between heaven and earth, we architect your \"Garment of Grace.\" As you walk along the seasonal creek and through the heritage blooms, you aren't just fitting a gown; you are anchoring your covenant in a place of divine favor. You are entering a sanctuary designed for the realization of your highest potential as a wife and a legacy-builder.</p>",
+            "paragraph_4": "<p></p><p>To preserve this sacred resonance, our accommodations are <strong>intentionally grounded</strong>—favoring the restorative stillness and intimacy of mountainside living over traditional resort luxury. The true luxury of the House of Vuu is found in the consecrated atmosphere of the land and the depth of the experience. It is a space for the Bride who is ready to shed the noise of the world and <br/>emerge fully aligned with her original design.</p>",
+            "paragraph_5": "",
+            "body_size": 20,
+            "max_width": 900,
+            "text_alignment": "center",
+            "desktop_width_percent": 100,
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 60,
+            "background_color": "#faf8f5",
+            "text_color": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ceac77c_FkchcU"
+      ],
+      "name": "Origin section",
+      "settings": {}
+    },
     "dimensions": {
       "type": "retreat-dimensions",
       "blocks": {
@@ -1641,12 +1684,34 @@
         "ai_gen_block_b37c7b5_fMAagE"
       ],
       "settings": {}
+    },
+    "1775634364dcdd2d54": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6602bd5_c4CBw6": {
+          "type": "ai_gen_block_6602bd5",
+          "settings": {
+            "media_type": "image",
+            "video": "shopify://files/videos/WhatsApp Video 2026-04-08 at 12.51.59 AM.mp4",
+            "section_height": 50,
+            "desktop_width_percent": 100,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6602bd5_c4CBw6"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "1775350063393ab73c",
     "hero",
     "1775352877e43957d3",
+    "blocks_tAbdE8",
     "dimensions",
     "1775514830d5666031",
     "destinations",
@@ -1666,6 +1731,7 @@
     "177552204805f6d672",
     "17755224121e7ebbbe",
     "17755237312ed48271",
-    "1775523006e5fa1bf2"
+    "1775523006e5fa1bf2",
+    "1775634364dcdd2d54"
   ]
 }
