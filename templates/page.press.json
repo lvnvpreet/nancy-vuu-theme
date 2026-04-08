@@ -235,6 +235,7 @@
     },
     "press_literary": {
       "type": "press-literary",
+      "disabled": true,
       "settings": {
         "book_image": "shopify://shop_images/Untitled_5_x_5_in.jpg",
         "eyebrow": "The Literary Movement",
