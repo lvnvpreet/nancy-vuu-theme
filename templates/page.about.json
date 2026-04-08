@@ -81,40 +81,6 @@
         "intro": "We do not create masks to hide behind. We architect the Mantle that reflects the appointment you have already been given."
       }
     },
-    "heritage_narrative_B3f9Dd": {
-      "type": "heritage-narrative",
-      "blocks": {
-        "paragraph_hKDpFm": {
-          "type": "paragraph",
-          "settings": {
-            "text": ""
-          }
-        },
-        "paragraph_rydzrd": {
-          "type": "paragraph",
-          "settings": {
-            "text": "This is the alchemy of a history refined into gold. My return to Vietnam—forty-four years after leaving as a refugee on a wooden boat—was the closing of a divine circle. Today, we are not merely crafting garments; we are honoring a lineage and empowering a global collective of beautiful souls. From the quiet workrooms of Saigon to the global stages of fashion, every stitch is the physical anthem of a dream realized."
-          }
-        },
-        "quote_fCDct4": {
-          "type": "quote",
-          "settings": {
-            "text": "\"When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the gravity of history and the resonance of hope.\""
-          }
-        }
-      },
-      "block_order": [
-        "paragraph_hKDpFm",
-        "paragraph_rydzrd",
-        "quote_fCDct4"
-      ],
-      "name": "Heritage Narrative",
-      "settings": {
-        "eyebrow": "A LINEAGE RESTORED",
-        "title": "The Alchemy of Triumph",
-        "image": "shopify://shop_images/iStock-866175472.jpg"
-      }
-    },
     "1775612952351cb5ce": {
       "type": "_blocks",
       "blocks": {
@@ -154,6 +120,40 @@
         "ai_gen_block_38b8ce6_eydJAy"
       ],
       "settings": {}
+    },
+    "heritage_narrative_B3f9Dd": {
+      "type": "heritage-narrative",
+      "blocks": {
+        "paragraph_hKDpFm": {
+          "type": "paragraph",
+          "settings": {
+            "text": ""
+          }
+        },
+        "paragraph_rydzrd": {
+          "type": "paragraph",
+          "settings": {
+            "text": "This is the alchemy of a history refined into gold. My return to Vietnam—forty-four years after leaving as a refugee on a wooden boat—was the closing of a divine circle. Today, we are not merely crafting garments; we are honoring a lineage and empowering a global collective of beautiful souls. From the quiet workrooms of Saigon to the global stages of fashion, every stitch is the physical anthem of a dream realized."
+          }
+        },
+        "quote_fCDct4": {
+          "type": "quote",
+          "settings": {
+            "text": "\"When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the gravity of history and the resonance of hope.\""
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_hKDpFm",
+        "paragraph_rydzrd",
+        "quote_fCDct4"
+      ],
+      "name": "Heritage Narrative",
+      "settings": {
+        "eyebrow": "A LINEAGE RESTORED",
+        "title": "The Alchemy of Triumph",
+        "image": "shopify://shop_images/iStock-866175472.jpg"
+      }
     },
     "about_bridge": {
       "type": "about-bridge",
