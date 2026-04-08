@@ -127,6 +127,39 @@
         "signature_name": "Nancy Vuu",
         "signature_title": "Architect of Distinction"
       }
+    },
+    "heritage_narrative_B3f9Dd": {
+      "type": "heritage-narrative",
+      "blocks": {
+        "paragraph_hKDpFm": {
+          "type": "paragraph",
+          "settings": {
+            "text": "My journey began as a refugee, leaving the shores of Vietnam with nothing but a dream. Today, I return not as a stranger, but as a restorer."
+          }
+        },
+        "paragraph_rydzrd": {
+          "type": "paragraph",
+          "settings": {
+            "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our gowns in our Vietnam Atelier, we aren't just making a dress; we are empowering a community and honoring a lineage."
+          }
+        },
+        "quote_fCDct4": {
+          "type": "quote",
+          "settings": {
+            "text": "\"From the first sketch in San Jose to the final stitch in the homeland, your gown is a physical anthem of a dream realized.\""
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_hKDpFm",
+        "paragraph_rydzrd",
+        "quote_fCDct4"
+      ],
+      "name": "Heritage Narrative",
+      "settings": {
+        "eyebrow": "A Heritage Reclaimed",
+        "title": "The Sovereign Return"
+      }
     }
   },
   "order": [
@@ -138,6 +171,7 @@
     "about_bridge",
     "about_crowning",
     "about_retreats",
-    "about_signature"
+    "about_signature",
+    "heritage_narrative_B3f9Dd"
   ]
 }
