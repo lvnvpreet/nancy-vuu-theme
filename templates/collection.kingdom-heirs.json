@@ -39,7 +39,7 @@
         "cta1_label": "VISIT OUR ATELIER",
         "cta1_link": "",
         "cta2_label": "SHOP KINGDOM HEIRS CROWNS",
-        "cta2_link": "#collection"
+        "cta2_link": "shopify://collections/crowns-jewelry"
       }
     },
     "exclusivity": {
