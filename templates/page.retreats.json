@@ -1252,7 +1252,7 @@
             "padding_bottom_desktop": 200,
             "padding_top_mobile": 60,
             "padding_bottom_mobile": 60,
-            "spacing_above_eyebrow": 100,
+            "spacing_above_eyebrow": 0,
             "eyebrow_text": "SUBMISSION FORM FOR",
             "eyebrow_font": "manrope_n4",
             "eyebrow_font_size": 17,
