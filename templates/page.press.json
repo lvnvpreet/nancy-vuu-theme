@@ -197,20 +197,9 @@
         "body_1": "<p>›</p>",
         "body_2": "<p>From dark closets of self-doubt to the bright runways of purpose, this book speaks to everyone seeking to rediscover identity and spiritual clarity through the lens of fashion.</p>",
         "cta_1_label": "Request Speaking / Book Tour",
-        "cta_1_link": "",
+        "cta_1_link": "shopify://pages/book-nancy-vuu",
         "cta_2_label": "Purchase Volume",
         "cta_2_link": "shopify://products/let-there-be-fashion-preorder"
-      }
-    },
-    "press_museum": {
-      "type": "press-museum",
-      "settings": {
-        "eyebrow": "The Archive",
-        "heading": "Museum of Editorials",
-        "archive_link": "",
-        "image_1": "shopify://shop_images/Isabella_Vogue_-_Nancy_Vuu.webp",
-        "image_2": "shopify://shop_images/49.webp",
-        "image_3": "shopify://shop_images/mommy-me-photographer_9707ff60-017f-46af-a113-9d70f3c94c2a.jpg"
       }
     },
     "press_media": {
@@ -254,6 +243,17 @@
         "form_eyebrow": "Media Inquiries",
         "label_name": "Full Name / Publication",
         "submit_label": "Submit Inquiry"
+      }
+    },
+    "press_museum": {
+      "type": "press-museum",
+      "settings": {
+        "eyebrow": "The Archive",
+        "heading": "Museum of Editorials",
+        "archive_link": "",
+        "image_1": "shopify://shop_images/Isabella_Vogue_-_Nancy_Vuu.webp",
+        "image_2": "shopify://shop_images/49.webp",
+        "image_3": "shopify://shop_images/mommy-me-photographer_9707ff60-017f-46af-a113-9d70f3c94c2a.jpg"
       }
     },
     "press_engage": {
@@ -300,8 +300,8 @@
     "ktvu_press_feature",
     "press_accolades",
     "press_literary",
-    "press_museum",
     "press_media",
+    "press_museum",
     "press_engage",
     "blocks_7dRWHL"
   ]
