@@ -81,16 +81,6 @@
         "intro": "We do not create masks to hide behind. We architect the Mantle that reflects the appointment you have already been given."
       }
     },
-    "about_bridge": {
-      "type": "about-bridge",
-      "settings": {
-        "eyebrow": "Artisanship",
-        "heading": "The Bridge",
-        "body": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>\"beautiful souls\"</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <strong>gravity of history</strong> and the <strong>resonance of hope</strong>.</p>",
-        "body_size": "1.5rem",
-        "body_align": "center"
-      }
-    },
     "heritage_narrative_B3f9Dd": {
       "type": "heritage-narrative",
       "blocks": {
@@ -103,7 +93,7 @@
         "paragraph_rydzrd": {
           "type": "paragraph",
           "settings": {
-            "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our gowns in our Vietnam Atelier, we aren't just making a dress; we are empowering a community and honoring a lineage."
+            "text": "The House of VUU is the bridge between my birthland's artisanal soul and your divine design. By hand-crafting our bespoke garments in our Vietnam Atelier, we aren't just making a garments; we are empowering a community and honoring a lineage."
           }
         },
         "quote_fCDct4": {
@@ -123,6 +113,16 @@
         "eyebrow": "A Heritage Reclaimed",
         "title": "The Sovereign Return",
         "image": "shopify://shop_images/iStock-866175472.jpg"
+      }
+    },
+    "about_bridge": {
+      "type": "about-bridge",
+      "settings": {
+        "eyebrow": "Artisanship",
+        "heading": "The Bridge",
+        "body": "<p>We are building a bridge—honoring the excellence of our people and showcasing the <strong>\"beautiful souls\"</strong> of our artisans through their masterful craft. This is the alchemy of history refined into gold. When you step into a Nancy Vuu creation, you are participating in a story of survival turned into triumph—draped in the excellence of artisans whose hands carry the <strong>gravity of history</strong> and the <strong>resonance of hope</strong>.</p>",
+        "body_size": "1.5rem",
+        "body_align": "center"
       }
     },
     "about_crowning": {
