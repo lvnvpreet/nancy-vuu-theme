@@ -1368,6 +1368,68 @@
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
     },
+    "17755259385e73fae0": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c91d130_DJRDR9": {
+          "type": "ai_gen_block_c91d130",
+          "name": "Anchor point",
+          "settings": {
+            "scroll_margin_top": 170
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_746aed2_tygiF9": {
+          "type": "ai_gen_block_746aed2",
+          "settings": {
+            "heading": "Awaken Your Highest Self",
+            "subtext": "<p>Request an invitation to the Napa Sanctuary and begin the sacred preparation of your heart, mind, and couture for the covenant ahead.</p>",
+            "label_name": "The Muse (Full Name)",
+            "label_email": "The Connection (Email)",
+            "label_phone": "The Voice (Phone Number)",
+            "label_wedding_date": "The Covenant Date (Wedding Date)",
+            "label_path": "Your Desired Path",
+            "label_vision": "The Vision: Please share the heart behind the woman you aspire to be as you stand at the altar—both in spirit and in style.",
+            "label_soul_requirement": "The Soul's Requirement: In this season of transition, what is the one thing your soul needs most before you say \"I do\"?",
+            "label_referral": "How did the story of our bridal immersions first reach you?",
+            "button_text": "REQUEST AN INVITATION",
+            "success_message": "<p>Thank you for your invitation request. We will be in touch soon to begin your sacred journey.</p>",
+            "error_message": "Please correct the following errors:",
+            "desktop_width_percent": 100,
+            "padding_vertical": 60,
+            "padding_horizontal": 20,
+            "background_color": "#faf8f5",
+            "heading_color": "#0f0f0f",
+            "text_color": "#0f0f0f",
+            "input_background": "#ffffff",
+            "input_border_color": "#ece9e3",
+            "input_focus_border": "#0f0f0f",
+            "button_color": "#0f0f0f",
+            "button_hover_color": "#2f2f2f",
+            "button_text_color": "#ffffff",
+            "success_background": "#e8f5e9",
+            "success_color": "#2e7d32",
+            "error_background": "#ffebee",
+            "error_color": "#c62828",
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 56,
+            "subtext_size": 18,
+            "body_font": "manrope_n4",
+            "label_size": 18,
+            "input_size": 16,
+            "button_size": 16,
+            "input_border_radius": 4,
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c91d130_DJRDR9",
+        "ai_gen_block_746aed2_tygiF9"
+      ],
+      "settings": {}
+    },
     "audience_modal_4qEBez": {
       "type": "audience-modal",
       "name": "Alignment Application",
@@ -1541,68 +1603,6 @@
       ],
       "settings": {}
     },
-    "17755259385e73fae0": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_c91d130_DJRDR9": {
-          "type": "ai_gen_block_c91d130",
-          "name": "Anchor point",
-          "settings": {
-            "scroll_margin_top": 170
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_746aed2_tygiF9": {
-          "type": "ai_gen_block_746aed2",
-          "settings": {
-            "heading": "Awaken Your Highest Self",
-            "subtext": "<p>Request an invitation to the Napa Sanctuary and begin the sacred preparation of your heart, mind, and couture for the covenant ahead.</p>",
-            "label_name": "The Muse (Full Name)",
-            "label_email": "The Connection (Email)",
-            "label_phone": "The Voice (Phone Number)",
-            "label_wedding_date": "The Covenant Date (Wedding Date)",
-            "label_path": "Your Desired Path",
-            "label_vision": "The Vision: Please share the heart behind the woman you aspire to be as you stand at the altar—both in spirit and in style.",
-            "label_soul_requirement": "The Soul's Requirement: In this season of transition, what is the one thing your soul needs most before you say \"I do\"?",
-            "label_referral": "How did the story of our bridal immersions first reach you?",
-            "button_text": "REQUEST AN INVITATION",
-            "success_message": "<p>Thank you for your invitation request. We will be in touch soon to begin your sacred journey.</p>",
-            "error_message": "Please correct the following errors:",
-            "desktop_width_percent": 100,
-            "padding_vertical": 60,
-            "padding_horizontal": 20,
-            "background_color": "#faf8f5",
-            "heading_color": "#0f0f0f",
-            "text_color": "#0f0f0f",
-            "input_background": "#ffffff",
-            "input_border_color": "#ece9e3",
-            "input_focus_border": "#0f0f0f",
-            "button_color": "#0f0f0f",
-            "button_hover_color": "#2f2f2f",
-            "button_text_color": "#ffffff",
-            "success_background": "#e8f5e9",
-            "success_color": "#2e7d32",
-            "error_background": "#ffebee",
-            "error_color": "#c62828",
-            "heading_font": "bodoni_moda_n4",
-            "heading_size": 56,
-            "subtext_size": 18,
-            "body_font": "manrope_n4",
-            "label_size": 18,
-            "input_size": 16,
-            "button_size": 16,
-            "input_border_radius": 4,
-            "button_border_radius": 4
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_c91d130_DJRDR9",
-        "ai_gen_block_746aed2_tygiF9"
-      ],
-      "settings": {}
-    },
     "1775523006e5fa1bf2": {
       "type": "_blocks",
       "blocks": {
@@ -1660,12 +1660,12 @@
     "final_cta",
     "retreat_disclaimer",
     "modal",
+    "17755259385e73fae0",
     "audience_modal_4qEBez",
     "audience_modal_gAwWEE",
     "177552204805f6d672",
     "17755224121e7ebbbe",
     "17755237312ed48271",
-    "17755259385e73fae0",
     "1775523006e5fa1bf2"
   ]
 }
