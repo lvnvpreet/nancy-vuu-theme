@@ -144,6 +144,62 @@
         "secondary_label": "",
         "secondary_link": ""
       }
+    },
+    "atelier_inquiry_kqEJaE": {
+      "type": "atelier-inquiry",
+      "blocks": {
+        "service_option_KqitBa": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Kingdom Heirs Collection Viewing",
+            "option_value": "Kingdom Heirs Collection Viewing"
+          }
+        },
+        "service_option_axtB6n": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        "service_option_qzJk6R": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation (Cleaning)",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
+        },
+        "service_option_9ApQf7": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Bespoke Couture / Bridal Consultation",
+            "option_value": "Bespoke Couture — Bridal Consultation"
+          }
+        }
+      },
+      "block_order": [
+        "service_option_KqitBa",
+        "service_option_axtB6n",
+        "service_option_qzJk6R",
+        "service_option_9ApQf7"
+      ],
+      "name": "Atelier Inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "The NANCY VUU ATELIER CONCIERGE",
+        "title_line_1": "Schedule A Visit",
+        "title_line_2": "",
+        "subtext": "Connect with our master artisans to discuss your bespoke tailoring needs or schedule a private viewing of our Kingdom Heirs Collection. By Appointment Only.",
+        "address_eyebrow": "The San Jose Flagship",
+        "address_line_1": "1520 Southwest Expwy #10",
+        "address_line_2": "San Jose, CA 95126",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "TYPE OF ATELIER SERVICE REQUESTED",
+        "label_message": "PLEASE DESCRIBE YOUR INSPIRATION FOR YOUR ATELIER VISIT.",
+        "submit_label": "Submit Request to the Atelier"
+      }
     }
   },
   "order": [
@@ -152,6 +208,7 @@
     "exclusivity",
     "lookbook",
     "main",
-    "cross-sell"
+    "cross-sell",
+    "atelier_inquiry_kqEJaE"
   ]
 }
