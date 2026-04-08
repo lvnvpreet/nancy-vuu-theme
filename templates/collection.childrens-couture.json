@@ -144,6 +144,54 @@
         "secondary_label": "Virtual Consultation",
         "secondary_link": "shopify://pages/contact-us"
       }
+    },
+    "atelier_inquiry_pXV4Xe": {
+      "type": "atelier-inquiry",
+      "blocks": {
+        "service_option_eALKRT": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture",
+            "option_value": "Master Tailoring — Alterations"
+          }
+        },
+        "service_option_E8JdfP": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Fine Fabric Care & Preservation",
+            "option_value": "Fine Fabric Care — Preservation & Cleaning"
+          }
+        },
+        "service_option_R6PktP": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Childrens | Teen Bespoke Couture",
+            "option_value": "Childrens | Teen Bespoke Couture"
+          }
+        }
+      },
+      "block_order": [
+        "service_option_eALKRT",
+        "service_option_E8JdfP",
+        "service_option_R6PktP"
+      ],
+      "name": "Atelier Inquiry",
+      "settings": {
+        "section_id": "inquiry",
+        "eyebrow": "The Atelier Concierge",
+        "title_line_1": "Request a",
+        "title_line_2": "Consultation.",
+        "subtext": "Connect with our master artisans to discuss your bespoke tailoring needs or schedule a private fitting. By Appointment Only.",
+        "address_eyebrow": "The San Jose Flagship",
+        "address_line_1": "1520 Southwest Expwy #10",
+        "address_line_2": "San Jose, CA 95126",
+        "phone": "800.200.2079",
+        "label_name": "FULL NAME",
+        "label_email": "CONTACT EMAIL ADDRESS",
+        "label_service": "TYPE OF ATELIER SERVICE REQUESTED",
+        "label_message": "PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED...",
+        "submit_label": "Submit Request to the Atelier"
+      }
     }
   },
   "order": [
@@ -152,6 +200,7 @@
     "exclusivity",
     "lookbook",
     "main",
-    "cross-sell"
+    "cross-sell",
+    "atelier_inquiry_pXV4Xe"
   ]
 }
