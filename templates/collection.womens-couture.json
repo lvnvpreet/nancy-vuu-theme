@@ -135,6 +135,7 @@
     "bottom-cta": {
       "type": "cta-closer",
       "settings": {
+        "image": "shopify://shop_images/a-bright-pink-rose-s-numerous-petals-clasps-its-heart.jpg",
         "overlay_opacity": 50,
         "eyebrow": "Women's Couture",
         "heading": "Your Silhouette Awaits",
