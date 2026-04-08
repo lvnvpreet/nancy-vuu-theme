@@ -1,6 +1,392 @@
+{% doc %}
+  @prompt
+    Shopify AI Instruction: Nancy Vuu "Heritage Page" CTA Section
+    
+    The Goal: Create a new, minimalist call-to-action (CTA) section to place immediately after the "Bridal and Seth Eden (The Mantle)" section on the About Nancy Vuu page. This section must bridge the educational storytelling of the Saigon Atelier with a client's desire to commission a bespoke garment, maintaining the highest standard of luxury and exclusivity.
+    1. Copy Hierarchy
+    
+    Use the exact text and hierarchy below for the section content:
+    
+        The Eyebrow: THE ATELIER INVITATION
+    
+        The Body Text: "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey."
+    
+        The CTA Button Text: INITIATE A COMMISSION
+    
+    2. Typographic Style (KTVU/Global Standard)
+    
+    Apply the existing brand fonts to ensure seamless visual consistency:
+    
+        Eyebrow: Use Manrope (or your existing body sans-serif). Font-style: All-Caps. Font-size: 14px. Letter-spacing: 2px. Font-weight: Medium. Color: Black.
+    
+        Body Text: Use Bodoni Moda (or your existing elegant serif). Font-size: 18px-20px. Font-weight: Light/Regular. Text-align: Center. Color: Black. Line-height: 1.6 (spacious).
+    
+        CTA Button: Use Manrope (Sans-Serif). Font-style: All-Caps. Font-size: 16px. Letter-spacing: 1.5px. Color: Black.
+    
+    3. Layout & Visual Specifications
+    
+    This section must look like a "Benediction," not a "Sales Pitch."
+    
+        Background: Use a Solid White or Extra-Light Gray (e.g., #F9F9F9) background. This creates a visual "Pause" or "Sanctuary" on the page, distinguishing it from the preceding product images.
+    
+        Alignment: All content must be center-aligned.
+    
+        Padding (Essential for Quiet Power): Apply significant vertical padding above and below the text blocks.
+    
+            AI Hint: Add padding-top: 100px; padding-bottom: 100px; (on desktop).
+    
+        Button Design:
+    
+            Style: Use a "Ghost" or Minimalist style. This means a thin Black Border with a Transparent or White background.
+    
+            Border-radius: 0px (Sharp Corners).
+    
+            Width: Do not make the button full-width. It should be only as wide as the text (width: auto).
+    
+            Hover Effect (The Soul of the Brand): On hover, the button should elegantly transition to a Solid Black Background with White Text. MAKE SURE you give me control access to adjust height of section and line spacing 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-heritage-cta-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ai-heritage-cta__container-{{ ai_gen_id }} {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ai-heritage-cta__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.eyebrow_spacing }}px 0;
+  }
+
+  .ai-heritage-cta__body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.body_font_weight }};
+    font-size: {{ block.settings.body_font_size }}px;
+    line-height: {{ block.settings.body_line_height }};
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.body_spacing }}px 0;
+  }
+
+  .ai-heritage-cta__button-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ai-heritage-cta__button-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: {{ block.settings.button_text_color }};
+    background-color: {{ block.settings.button_background }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: 0;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+  }
+
+  .ai-heritage-cta__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-heritage-cta-{{ ai_gen_id }} {
+      padding-top: {{ block.settings.padding_top | times: 0.6 }}px;
+      padding-bottom: {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-heritage-cta__body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_font_size | times: 0.9 }}px;
+    }
+
+    .ai-heritage-cta__button-{{ ai_gen_id }} {
+      font-size: 14px;
+      padding: {{ block.settings.button_padding_vertical | times: 0.8 }}px {{ block.settings.button_padding_horizontal | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-heritage-cta-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-heritage-cta__container-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow_text != blank %}
+      <div class="ai-heritage-cta__eyebrow-{{ ai_gen_id }}">
+        {{ block.settings.eyebrow_text }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.body_text != blank %}
+      <div class="ai-heritage-cta__body-{{ ai_gen_id }}">
+        {{ block.settings.body_text }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank %}
+      <div class="ai-heritage-cta__button-wrapper-{{ ai_gen_id }}">
+        <a 
+          href="{{ block.settings.button_link }}" 
+          class="ai-heritage-cta__button-{{ ai_gen_id }}"
+        >
+          {{ block.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Heritage CTA",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow text",
+      "default": "THE ATELIER INVITATION"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "Our collections are more than garments; they are the physical architecture of a soul's triumph. Whether for the sacred walk of a bride or the global stage of a leader, we invite a select number of visionaries to begin their bespoke journey."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "INITIATE A COMMISSION"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Body text font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Eyebrow and button font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "label": "Body text size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 19
+    },
+    {
+      "type": "select",
+      "id": "body_font_weight",
+      "label": "Body text weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        }
+      ],
+      "default": "300"
+    },
+    {
+      "type": "range",
+      "id": "body_line_height",
+      "label": "Body line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Section top padding",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Section bottom padding",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Eyebrow bottom spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "body_spacing",
+      "label": "Body bottom spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#F9F9F9"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heritage CTA"
+    }
+  ]
+}
 {% endschema %}
