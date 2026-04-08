@@ -117,6 +117,7 @@
     },
     "about_bridge": {
       "type": "about-bridge",
+      "disabled": true,
       "settings": {
         "eyebrow": "Artisanship",
         "heading": "The Bridge",
