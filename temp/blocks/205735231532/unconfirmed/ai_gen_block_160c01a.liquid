@@ -1,0 +1,23 @@
+{% doc %}
+  @prompt
+    Implement a Navigation Anchor via Custom Liquid Block
+    
+    1. Create the Target Anchor:
+    Please add a Custom Liquid Block immediately above the "Engage the Visionary" section. Inside that block, insert the following code: <div id="press-inquiry" style="position: absolute; margin-top: -100px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+<div id="press-inquiry" style="position: absolute; margin-top: -100px;"></div>
+
+{% schema %}
+{
+  "name": "Navigation anchor",
+  "tag": null,
+  "settings": [],
+  "presets": [
+    {
+      "name": "Navigation anchor"
+    }
+  ]
+}
+{% endschema %}
