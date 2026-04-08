@@ -47,36 +47,43 @@
         "service_option_qbMPmW": {
           "type": "service_option",
           "settings": {
-            "option_label": "DREAM Again",
+            "option_label": "Bespoke Bridal Couture",
             "option_value": "BRIDAL IMMERSIONS, BESPOKE GOWN"
           }
         },
         "service_option_U9thzL": {
           "type": "service_option",
           "settings": {
-            "option_label": "Dream Realized",
-            "option_value": "BRIDAL IMMERSION"
+            "option_label": "Bespoke Tailored Suit Gallery",
+            "option_value": "tailored suits"
           }
         },
         "service_option_Ly6wRW": {
           "type": "service_option",
           "settings": {
-            "option_label": "Women CEO: Dress The Dream",
-            "option_value": "Bridal Immersions, bespoke bridal"
+            "option_label": "Red Carpet/Gala",
+            "option_value": "special occasion"
           }
         },
         "service_option_D6M8KX": {
           "type": "service_option",
           "settings": {
-            "option_label": "Unified Dream",
-            "option_value": "tailoring"
+            "option_label": "Childrens | Teen Bespoke Couture",
+            "option_value": "Childrens | Teen Bespoke Couture"
           }
         },
         "service_option_TjADGp": {
           "type": "service_option",
           "settings": {
-            "option_label": "1-on-1 Mentorship",
-            "option_value": "mentorship"
+            "option_label": "Private Archive Collection",
+            "option_value": "Private Archive Collection"
+          }
+        },
+        "service_option_nPbdiC": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture",
+            "option_value": "Master Tailoring — Alterations"
           }
         },
         "service_option_gY7L9V": {
@@ -85,6 +92,13 @@
           "settings": {
             "option_label": "Nancy Vuu | Key Note Speaker",
             "option_value": "key note speaker"
+          }
+        },
+        "service_option_grQxG6": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
+            "option_value": "tailoring"
           }
         },
         "service_option_YzRatH": {
@@ -101,14 +115,6 @@
           "settings": {
             "option_label": "Custom Bespoke Suiting | Bespoke Wardrobe",
             "option_value": "bespoke suits, couture, wardrobe"
-          }
-        },
-        "service_option_nPbdiC": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "Master Tailoring & Fit Architecture",
-            "option_value": "Master Tailoring — Alterations"
           }
         },
         "service_option_4AxDHg": {
@@ -142,10 +148,11 @@
         "service_option_Ly6wRW",
         "service_option_D6M8KX",
         "service_option_TjADGp",
+        "service_option_nPbdiC",
         "service_option_gY7L9V",
+        "service_option_grQxG6",
         "service_option_YzRatH",
         "service_option_6GPj43",
-        "service_option_nPbdiC",
         "service_option_4AxDHg",
         "service_option_QUD3Ui",
         "service_option_D44eTe"
@@ -153,18 +160,18 @@
       "name": "Atelier Inquiry",
       "settings": {
         "section_id": "inquiry",
-        "eyebrow": "Submission Form for",
-        "title_line_1": "DREAM Immersions",
+        "eyebrow": "The Atelier Concierge",
+        "title_line_1": "Begin Your Bespoke Journey",
         "title_line_2": "",
-        "subtext": "Connect with our team to to schedule a  20 minute consultation on our Dream Immersions.",
+        "subtext": "Bespoke is more than a measurement; it is an architecture of identity. Whether for a sacred covenant or a global mantle, we invite you to share your vision. Our concierge team will review your inquiry with intentionality to begin the process of crafting your garment of grace.",
         "address_eyebrow": "The San Jose & Napa Valley flagship",
         "address_line_1": "By Appointment Only",
         "address_line_2": "info@nancyvuu.com",
         "phone": "800.200.2079",
         "label_name": "FULL NAME",
         "label_email": "CONTACT EMAIL ADDRESS",
-        "label_service": "DREAM IMMERSION OF CHOICE",
-        "label_message": "PLEASE SHARE A BIT ABOUT YOURSELF, AND THE VISION YOU HOLD THIS SEASON AND HOW WE CAN BEST SERVE AND PREPARE YOU FOR YOUR DREAM REALIZED.",
+        "label_service": "Service of Interest",
+        "label_message": "Tell us about the occasion and the legacy you wish to represent through this garment.",
         "submit_label": "Submit Request to House of Nancy Vuu"
       }
     },
