@@ -166,18 +166,32 @@
     "atelier_inquiry_GmRcGX": {
       "type": "atelier-inquiry",
       "blocks": {
-        "service_option_LaPAyy": {
+        "service_option_kci6YD": {
           "type": "service_option",
           "settings": {
-            "option_label": "Master Tailoring & Fit Architecture",
-            "option_value": "Master Tailoring — Alterations"
+            "option_label": "Children's Bespoke Couture",
+            "option_value": "children's bespoke couture"
           }
         },
         "service_option_gaN6jc": {
           "type": "service_option",
           "settings": {
-            "option_label": "Women's Couture",
+            "option_label": "Women's Bespoke Couture",
             "option_value": "womens couture"
+          }
+        },
+        "service_option_X7DiRm": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Mommy & Me Bespoke Couture",
+            "option_value": "tailoring"
+          }
+        },
+        "service_option_LaPAyy": {
+          "type": "service_option",
+          "settings": {
+            "option_label": "Master Tailoring & Fit Architecture",
+            "option_value": "Master Tailoring — Alterations"
           }
         },
         "service_option_BFh7nw": {
@@ -189,8 +203,10 @@
         }
       },
       "block_order": [
-        "service_option_LaPAyy",
+        "service_option_kci6YD",
         "service_option_gaN6jc",
+        "service_option_X7DiRm",
+        "service_option_LaPAyy",
         "service_option_BFh7nw"
       ],
       "name": "Atelier Inquiry",
