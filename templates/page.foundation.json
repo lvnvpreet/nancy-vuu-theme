@@ -44,7 +44,7 @@
         "col2_heading": "",
         "col2_body": "",
         "cta1_label": "partner in restoration",
-        "cta1_link": "https://www.paypal.com/donate/?hosted_button_id=7X3MREAFTLBJE",
+        "cta1_link": "",
         "cta2_label": "",
         "cta2_link": ""
       }
@@ -296,6 +296,40 @@
     "foundation_disclaimer": {
       "type": "foundation-disclaimer",
       "settings": {}
+    },
+    "1775778024e4db39af": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_64f8800_qCWXgk": {
+          "type": "ai_gen_block_64f8800",
+          "settings": {
+            "heading": "ONE HOUSE. ONE MISSION. TOTAL RESTORATION.",
+            "narrative": "<p>We do not just heal; we house. We do not just protect; we propel. Your investment fuels the complete cycle—from the restoration of worth to the elevation of dreams realized.</p>",
+            "button_text": "JOIN THE ALLIANCE",
+            "button_link": "",
+            "padding_top": 100,
+            "padding_bottom": 100,
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 32,
+            "body_font": "manrope_n4",
+            "narrative_size": 18,
+            "button_size": 14,
+            "background_color": "#F5F5F1",
+            "separator_color": "#C9B382",
+            "heading_color": "#1A1A1A",
+            "narrative_color": "#1A1A1A",
+            "button_bg_color": "#1A1A1A",
+            "button_text_color": "#FFFFFF",
+            "button_hover_bg_color": "#000000",
+            "button_hover_text_color": "#FFFFFF"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_64f8800_qCWXgk"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -308,6 +342,7 @@
     "pathways",
     "foundation_phases_ERWpPG",
     "partners",
-    "foundation_disclaimer"
+    "foundation_disclaimer",
+    "1775778024e4db39af"
   ]
 }
