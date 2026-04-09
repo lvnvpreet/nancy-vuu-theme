@@ -114,7 +114,7 @@
         "layout": "text-right",
         "border_top": true,
         "eyebrow": "Phase II: Ending Exploitation",
-        "heading": "Architects of Freedom",
+        "heading": "Guardians of Freedom",
         "subtitle": "Discover your path to mastery",
         "lead": "Excellence is not an industry; it is an identity.",
         "body": "Partnering with elite global organizations to dismantle human trafficking and restore sovereignty to the individual through restorative identity work and high-level leadership training.",
@@ -292,8 +292,7 @@
         "contact_text": "Corporate Engagement",
         "contact_link": ""
       }
-    }
-    ,
+    },
     "foundation_disclaimer": {
       "type": "foundation-disclaimer",
       "settings": {}
