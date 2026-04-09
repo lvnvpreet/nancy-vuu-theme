@@ -1,6 +1,454 @@
+{% doc %}
+  @prompt
+    Segment 1: The Shared Narrative (The Invitation)
+    Purpose: To bridge the individual book purchase to a collective, institutional immersion.
+    
+    Layout: Full-width text immersion.
+    
+    Background Color: Pure White (#FFFFFF).
+    
+    Padding: 120px Top / 80px Bottom.
+    
+    Dividing Line: A subtle 1px horizontal rule (#E5E5E5) at the very top of the section.
+    
+    Typography & Copy:
+    
+    Eyebrow (Sans-Serif): "THE SHARED NARRATIVE" (11px, All Caps, 0.3em letter spacing, Color: #999).
+    
+    Header (Serif/Bodoni Moda): "IMMERSION & IMPACT" (32px, All Caps, 0.25em letter spacing).
+    
+    Body Text (Sans-Serif/Inter): > "Beyond the individual journey lies the opportunity for collective transformation. The Let There Be Fashion curriculum is designed for leadership collectives, academic institutions, and faith-based organizations seeking to move beyond theory and into the structural restoration of worth. We invite you to engage the House of Vuu to facilitate a shared narrative through group immersion and speaking engagements."
+    
+    Style: 18px, Line Height 1.8, Max-width: 800px, Centered. (Italicize the book title).
+    
+    CTA Button:
+    
+    Text: "INITIATE THE DIALOGUE"
+    
+    Style: Minimalist Ghost Button (1px solid black border, no background, 12px, Bold, All Caps).
+    
+    Link: Anchor to #engage-the-visionary. give me control access to adjust top and bottom padding of segment, and content verbiage. allow me to have controll access to adjust text size, italic bold, and color.  For the body text give me the option to have up to four paragraphs. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-shared-narrative-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    border-top: 1px solid {{ block.settings.divider_color }};
+  }
+
+  .ai-shared-narrative__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ai-shared-narrative__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.eyebrow_font.family }}, {{ block.settings.eyebrow_font.fallback_families }};
+    font-weight: {{ block.settings.eyebrow_font.weight }};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+    {% if block.settings.eyebrow_italic %}font-style: italic;{% endif %}
+    {% if block.settings.eyebrow_bold %}font-weight: 700;{% endif %}
+  }
+
+  .ai-shared-narrative__header-{{ ai_gen_id }} {
+    font-family: {{ block.settings.header_font.family }}, {{ block.settings.header_font.fallback_families }};
+    font-weight: {{ block.settings.header_font.weight }};
+    font-size: {{ block.settings.header_size }}px;
+    color: {{ block.settings.header_color }};
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 40px;
+    {% if block.settings.header_italic %}font-style: italic;{% endif %}
+    {% if block.settings.header_bold %}font-weight: 700;{% endif %}
+  }
+
+  .ai-shared-narrative__body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.body_color }};
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 48px;
+    {% if block.settings.body_italic %}font-style: italic;{% endif %}
+    {% if block.settings.body_bold %}font-weight: 700;{% endif %}
+  }
+
+  .ai-shared-narrative__body-{{ ai_gen_id }} p {
+    margin-bottom: 24px;
+  }
+
+  .ai-shared-narrative__body-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-shared-narrative__cta-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 16px 40px;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: {{ block.settings.button_text_color }};
+    background-color: transparent;
+    border: 1px solid {{ block.settings.button_border_color }};
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.1em;
+  }
+
+  .ai-shared-narrative__cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg }};
+    color: {{ block.settings.button_hover_text }};
+    border-color: {{ block.settings.button_hover_border }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-shared-narrative-{{ ai_gen_id }} {
+      padding-top: {{ block.settings.padding_top | times: 0.6 }}px;
+      padding-bottom: {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-shared-narrative__eyebrow-{{ ai_gen_id }} {
+      font-size: {{ block.settings.eyebrow_size | times: 0.9 }}px;
+    }
+
+    .ai-shared-narrative__header-{{ ai_gen_id }} {
+      font-size: {{ block.settings.header_size | times: 0.7 }}px;
+    }
+
+    .ai-shared-narrative__body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<shared-narrative-{{ ai_gen_id }}
+  class="ai-shared-narrative-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-shared-narrative__container-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow_text != blank %}
+      <div class="ai-shared-narrative__eyebrow-{{ ai_gen_id }}">
+        {{ block.settings.eyebrow_text }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.header_text != blank %}
+      <h2 class="ai-shared-narrative__header-{{ ai_gen_id }}">
+        {{ block.settings.header_text }}
+      </h2>
+    {% endif %}
+
+    <div class="ai-shared-narrative__body-{{ ai_gen_id }}">
+      {% if block.settings.body_paragraph_1 != blank %}
+        {{ block.settings.body_paragraph_1 }}
+      {% endif %}
+
+      {% if block.settings.body_paragraph_2 != blank %}
+        {{ block.settings.body_paragraph_2 }}
+      {% endif %}
+
+      {% if block.settings.body_paragraph_3 != blank %}
+        {{ block.settings.body_paragraph_3 }}
+      {% endif %}
+
+      {% if block.settings.body_paragraph_4 != blank %}
+        {{ block.settings.body_paragraph_4 }}
+      {% endif %}
+    </div>
+
+    {% if block.settings.cta_text != blank %}
+      <a
+        href="{{ block.settings.cta_link }}"
+        class="ai-shared-narrative__cta-{{ ai_gen_id }}"
+      >
+        {{ block.settings.cta_text }}
+      </a>
+    {% endif %}
+  </div>
+</shared-narrative-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SharedNarrative{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const cta = this.querySelector('.ai-shared-narrative__cta-{{ ai_gen_id }}');
+        if (cta) {
+          cta.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+              e.preventDefault();
+              const targetId = href.substring(1);
+              const targetElement = document.getElementById(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }
+          });
+        }
+      }
+    }
+
+    customElements.define('shared-narrative-{{ ai_gen_id }}', SharedNarrative{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Shared narrative",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Top divider color",
+      "default": "#E5E5E5"
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow text",
+      "default": "THE SHARED NARRATIVE"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Eyebrow font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#999999"
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "eyebrow_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header text",
+      "default": "IMMERSION & IMPACT"
+    },
+    {
+      "type": "font_picker",
+      "id": "header_font",
+      "label": "Header font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "header_size",
+      "label": "Header size",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "header_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Body text"
+    },
+    {
+      "type": "richtext",
+      "id": "body_paragraph_1",
+      "label": "Paragraph 1",
+      "default": "<p>Beyond the individual journey lies the opportunity for collective transformation. The <em>Let There Be Fashion</em> curriculum is designed for leadership collectives, academic institutions, and faith-based organizations seeking to move beyond theory and into the structural restoration of worth. We invite you to engage the House of Vuu to facilitate a shared narrative through group immersion and speaking engagements.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_paragraph_2",
+      "label": "Paragraph 2"
+    },
+    {
+      "type": "richtext",
+      "id": "body_paragraph_3",
+      "label": "Paragraph 3"
+    },
+    {
+      "type": "richtext",
+      "id": "body_paragraph_4",
+      "label": "Paragraph 4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "checkbox",
+      "id": "body_bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "body_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "INITIATE THE DIALOGUE"
+    },
+    {
+      "type": "text",
+      "id": "cta_link",
+      "label": "Button link",
+      "default": "#engage-the-visionary"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button border color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Hover background color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Hover text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border",
+      "label": "Hover border color",
+      "default": "#0f0f0f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shared narrative"
+    }
+  ]
+}
 {% endschema %}
