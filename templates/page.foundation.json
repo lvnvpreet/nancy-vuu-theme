@@ -24,7 +24,7 @@
         "subtitle_serif": false,
         "tagline": "",
         "cta_label": "partner in restoration",
-        "cta_link": "",
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=AJMYG5ZH3AC22",
         "cta_style": "outline",
         "text_color": "#ffffff"
       }
@@ -299,12 +299,19 @@
     },
     "1775778024e4db39af": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "1775778498c051b647": {
+      "type": "_blocks",
       "blocks": {
-        "ai_gen_block_64f8800_qCWXgk": {
-          "type": "ai_gen_block_64f8800",
+        "ai_gen_block_69f5e0d_xHXkEz": {
+          "type": "ai_gen_block_69f5e0d",
           "settings": {
             "heading": "ONE HOUSE. ONE MISSION. TOTAL RESTORATION.",
-            "narrative": "<p>We do not just heal; we house. We do not just protect; we propel. Your investment fuels the complete cycle—from the restoration of worth to the elevation of dreams realized.</p>",
+            "subtext": "",
+            "paragraph_1": "<p>We do not just heal; we provide the sanctuary for transformation. We do not just protect; we liberate. Your investment fuels the complete cycle—from the restoration of worth and the pursuit of absolute freedom, to the elevation of dreams realized through our immersive pathways of excellence.</p>",
+            "paragraph_2": "",
+            "paragraph_3": "",
             "button_text": "JOIN THE ALLIANCE",
             "button_link": "",
             "padding_top": 100,
@@ -312,22 +319,23 @@
             "heading_font": "bodoni_moda_n4",
             "heading_size": 32,
             "body_font": "manrope_n4",
-            "narrative_size": 18,
+            "subtext_size": 16,
+            "body_size": 18,
             "button_size": 14,
             "background_color": "#F5F5F1",
-            "separator_color": "#C9B382",
+            "separator_color": "#C9A961",
             "heading_color": "#1A1A1A",
-            "narrative_color": "#1A1A1A",
+            "text_color": "#1A1A1A",
             "button_bg_color": "#1A1A1A",
             "button_text_color": "#FFFFFF",
-            "button_hover_bg_color": "#000000",
-            "button_hover_text_color": "#FFFFFF"
+            "button_hover_bg_color": "#C9A961",
+            "button_hover_text_color": "#1A1A1A"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_64f8800_qCWXgk"
+        "ai_gen_block_69f5e0d_xHXkEz"
       ],
       "settings": {}
     }
@@ -343,6 +351,7 @@
     "foundation_phases_ERWpPG",
     "partners",
     "foundation_disclaimer",
-    "1775778024e4db39af"
+    "1775778024e4db39af",
+    "1775778498c051b647"
   ]
 }
