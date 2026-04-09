@@ -115,6 +115,114 @@
         "body_2": "Yet, her most profound work happens off the runway. As the founder of the House of Vuu Foundation, she utilizes her global platform to combat human trafficking and empower marginalized communities through the Maison Arise.",
         "body_3": "She does not just create garments; she restores human dignity. As a sought-after speaker and mentor, Nancy teaches leaders worldwide how to attire their mandate in grace and fashion a legacy of eternal significance."
       }
+    },
+    "1775763245c8857bbf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8be8379_DjEDiW": {
+          "type": "ai_gen_block_8be8379",
+          "settings": {
+            "padding_top": 120,
+            "padding_bottom": 80,
+            "background_color": "#FFFFFF",
+            "divider_color": "#E5E5E5",
+            "eyebrow_text": "THE SHARED NARRATIVE",
+            "eyebrow_font": "manrope_n4",
+            "eyebrow_size": 12,
+            "eyebrow_color": "#999999",
+            "eyebrow_bold": false,
+            "eyebrow_italic": false,
+            "header_text": "IMMERSION & IMPACT",
+            "header_font": "bodoni_moda_n4",
+            "header_size": 32,
+            "header_color": "#0f0f0f",
+            "header_bold": false,
+            "header_italic": false,
+            "body_paragraph_1": "<p>Beyond the individual journey lies the opportunity for collective transformation. The <em>Let There Be Fashion</em> curriculum is designed for leadership collectives, academic institutions, and faith-based organizations seeking to move beyond theory and into the structural restoration of worth. We invite you to engage the House of Vuu to facilitate a shared narrative through group immersion and speaking engagements.</p>",
+            "body_paragraph_2": "",
+            "body_paragraph_3": "",
+            "body_paragraph_4": "",
+            "body_font": "manrope_n4",
+            "body_size": 18,
+            "body_color": "#0f0f0f",
+            "body_bold": false,
+            "body_italic": false,
+            "cta_text": "INITIATE THE DIALOGUE",
+            "cta_link": "#engage-the-visionary",
+            "button_text_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_hover_bg": "#0f0f0f",
+            "button_hover_text": "#FFFFFF",
+            "button_hover_border": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8be8379_DjEDiW"
+      ],
+      "settings": {}
+    },
+    "1775762725b0c63246": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ce3c797_hjgHN9": {
+          "type": "ai_gen_block_ce3c797",
+          "settings": {
+            "anchor_id": "engage-the-visionary",
+            "image_width": 50,
+            "gap_between": 0,
+            "min_height": 800,
+            "image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
+            "image_box_width": 100,
+            "image_box_height": 500,
+            "image_fit": "cover",
+            "image_position": "center center",
+            "image_padding_top": 90,
+            "image_padding_right": 0,
+            "image_padding_bottom": 0,
+            "image_padding_left": 0,
+            "show_fade": true,
+            "fade_height": 120,
+            "fade_opacity": 0.8,
+            "form_padding_top": 80,
+            "form_padding_right": 60,
+            "form_padding_bottom": 80,
+            "form_padding_left": 60,
+            "form_max_width": 540,
+            "heading": "Engage the Visionary",
+            "intro_text": "<p>Please entrust the details of your brief below as we review for visionary alignment and the potential for a shared narrative.</p>",
+            "button_text": "INITIATE THE DIALOGUE",
+            "success_message": "<p>Thank you for your inquiry. We will review your submission and respond within 48 hours.</p>",
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "manrope_n4",
+            "heading_size": 28,
+            "intro_size": 16,
+            "label_size": 14,
+            "input_size": 15,
+            "button_size": 13,
+            "background_color": "#FFFFFF",
+            "form_background": "#FFFFFF",
+            "heading_color": "#0f0f0f",
+            "body_color": "#0f0f0f",
+            "label_color": "#0f0f0f",
+            "input_color": "#0f0f0f",
+            "input_background": "#FFFFFF",
+            "input_border": "#cccccc",
+            "input_focus_border": "#0f0f0f",
+            "button_bg_color": "#0f0f0f",
+            "button_text_color": "#FFFFFF",
+            "button_hover_bg": "#333333",
+            "button_hover_text": "#FFFFFF",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ce3c797_hjgHN9"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -122,6 +230,8 @@
     "book_hero",
     "pull_quote",
     "synopsis",
-    "author_bio"
+    "author_bio",
+    "1775763245c8857bbf",
+    "1775762725b0c63246"
   ]
 }
