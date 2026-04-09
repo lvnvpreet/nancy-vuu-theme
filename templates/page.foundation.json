@@ -16,11 +16,11 @@
         "image": "shopify://shop_images/iStock-1343420861.jpg",
         "video_url": "",
         "overlay_opacity": 40,
-        "eyebrow": "",
+        "eyebrow": "The Philantropic House",
         "title_line_1": "House of Vuu Foundation",
         "title_line_2": "",
         "title_line_3": "",
-        "subtitle": "The Philanthropic House",
+        "subtitle": "Restoration is the precursor to Excellence. We rebuild the internal structure of worth so that legacy can endure.",
         "subtitle_serif": false,
         "tagline": "",
         "cta_label": "partner in restoration",
@@ -84,7 +84,7 @@
       ],
       "settings": {
         "heading": "The Access to Excellence Framework",
-        "description": "Excellence is a byproduct of security and restoration. Our framework provides a scalable model for human flourishing across three vital phases.",
+        "description": "Excellence is a byproduct of security and restoration. Our framework provides a scalable model for human flourishing across three vital phases.\n\nUtilizing the foundational principles of identity restoration, the House of Vuu Foundation reconstructs the internal worth of individuals before preparing them for external excellence.",
         "bg_tint": true
       }
     },
@@ -173,7 +173,7 @@
           "settings": {
             "phase": "Phase I",
             "title": "The Legacy Parter",
-            "description": "Your capital is the fuel for human restoration. Seed a legacy by funding the architecture of identity."
+            "description": "Your capital is the strategic fuel for human restoration. As a Legacy Partner, you aren't just funding a program; you are investing in the structural rebuilding of the next generation of leaders."
           }
         },
         "phase_bqHKyw": {
