@@ -55,7 +55,7 @@
           "col2_menu": "footer",
           "col3_title": "Concierge",
           "col4_title": "Institutional",
-          "col4_menu": ""
+          "col4_menu": "footer-menu"
         }
       }
     },
