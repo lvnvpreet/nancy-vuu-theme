@@ -1,6 +1,646 @@
+{% doc %}
+  @prompt
+    <section style="background-color: #F5F5F1; padding: 100px 20px; min-height: 100vh;">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h1 style="font-family: serif; font-size: 2.2rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 30px; font-weight: normal;">The Pathway to Emergence</h1>
+        <p style="font-family: serif; font-style: italic; font-size: 1.2rem; color: #555; line-height: 1.8; margin-bottom: 60px;">
+          "You are fashioned for Heaven and tailored for Earth. This is the beginning of your pathway to emergence. Share the vision you are ready to launch into motion."
+        </p>
+        <div style="text-align: left; background: #ffffff; padding: 60px 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.03);">
+          {% form 'contact' %}
+            {% if form.posted_successfully? %}
+              <div style="text-align: center; padding: 40px;"><h2 style="font-family: serif; font-style: italic;">Your vision has been received.</h2><p style="font-family: serif; color: #666;">We will review your story with the care it deserves.</p></div>
+            {% else %}
+              <div style="display: flex; flex-direction: column; gap: 35px;">
+                <div><label style="font-family: serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #999;">Full Name</label><input type="text" name="contact[name]" style="width: 100%; border: none; border-bottom: 1px solid #1a1a1a; padding: 10px 0; font-family: serif; background: transparent;" required></div>
+                <div><label style="font-family: serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #999;">Email Address</label><input type="email" name="contact[email]" style="width: 100%; border: none; border-bottom: 1px solid #1a1a1a; padding: 10px 0; font-family: serif; background: transparent;" required></div>
+                <div><label style="font-family: serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #999;">The Dream You Are Fashioning</label><textarea name="contact[the_dream]" rows="4" style="width: 100%; border: none; border-bottom: 1px solid #1a1a1a; padding: 15px 0; font-family: serif; background: transparent;"></textarea></div>
+                <div><label style="font-family: serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #999;">House of Vuu Alignment</label><select name="contact[pillar_alignment]" style="width: 100%; border: none; border-bottom: 1px solid #1a1a1a; padding: 15px 0; font-family: serif; background: transparent; color: #555;"><option value="" disabled selected>Which pillar resonates most with you?</option><option value="Worth">Worth</option><option value="Freedom">Freedom</option><option value="Elevation">Elevation</option></select></div>
+                <div><label style="font-family: serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #999;">The Request</label><textarea name="contact[request]" rows="3" placeholder="How can the Foundation assist in your emergence?" style="width: 100%; border: none; border-bottom: 1px solid #1a1a1a; padding: 15px 0; font-family: serif; background: transparent;"></textarea></div>
+                <div style="text-align: center;"><button type="submit" style="background-color: #1a1a1a; color: #fff; padding: 20px 60px; border: none; text-transform: uppercase; letter-spacing: 0.3em; font-family: serif; cursor: pointer;">Submit Your Vision</button></div>
+              </div>
+            {% endif %}
+          {% endform %}
+        </div>
+      </div>
+    </section>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-emergence-form-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 20px;
+    min-height: {{ block.settings.min_height }}vh;
+    width: 100%;
+  }
+
+  .ai-emergence-form__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ai-emergence-form__heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-size: {{ block.settings.heading_size }}px;
+    letter-spacing: {{ block.settings.heading_letter_spacing }}em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: {{ block.settings.heading_font.weight }};
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-emergence-form__subheading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, serif;
+    font-style: italic;
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    line-height: 1.8;
+    margin-bottom: 60px;
+  }
+
+  .ai-emergence-form__form-wrapper-{{ ai_gen_id }} {
+    text-align: left;
+    background: {{ block.settings.form_background }};
+    padding: 60px 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.03);
+  }
+
+  .ai-emergence-form__success-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .ai-emergence-form__success-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-emergence-form__success-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, serif;
+    color: {{ block.settings.subheading_color }};
+    font-size: 1rem;
+  }
+
+  .ai-emergence-form__fields-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .ai-emergence-form__field-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-emergence-form__label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: {{ block.settings.label_color }};
+    margin-bottom: 8px;
+  }
+
+  .ai-emergence-form__input-{{ ai_gen_id }},
+  .ai-emergence-form__textarea-{{ ai_gen_id }},
+  .ai-emergence-form__select-{{ ai_gen_id }} {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid {{ block.settings.input_border_color }};
+    padding: 10px 0;
+    font-family: {{ block.settings.body_font.family }}, serif;
+    background: transparent;
+    color: {{ block.settings.input_text_color }};
+    font-size: 1rem;
+  }
+
+  .ai-emergence-form__textarea-{{ ai_gen_id }} {
+    padding: 15px 0;
+    resize: vertical;
+  }
+
+  .ai-emergence-form__select-{{ ai_gen_id }} {
+    padding: 15px 0;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    cursor: pointer;
+  }
+
+  .ai-emergence-form__input-{{ ai_gen_id }}::placeholder,
+  .ai-emergence-form__textarea-{{ ai_gen_id }}::placeholder {
+    color: {{ block.settings.placeholder_color }};
+    opacity: 0.7;
+  }
+
+  .ai-emergence-form__input-{{ ai_gen_id }}:focus,
+  .ai-emergence-form__textarea-{{ ai_gen_id }}:focus,
+  .ai-emergence-form__select-{{ ai_gen_id }}:focus {
+    outline: none;
+    border-bottom-color: {{ block.settings.input_focus_color }};
+  }
+
+  .ai-emergence-form__button-wrapper-{{ ai_gen_id }} {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .ai-emergence-form__button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    padding: 20px 60px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-family: {{ block.settings.body_font.family }}, serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.75rem;
+  }
+
+  .ai-emergence-form__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    transform: translateY(-2px);
+  }
+
+  .ai-emergence-form__error-{{ ai_gen_id }} {
+    color: {{ block.settings.error_color }};
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-family: {{ block.settings.body_font.family }}, serif;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-emergence-form__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+      letter-spacing: 0.15em;
+    }
+
+    .ai-emergence-form__subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.85 }}px;
+      margin-bottom: 40px;
+    }
+
+    .ai-emergence-form__form-wrapper-{{ ai_gen_id }} {
+      padding: 40px 25px;
+    }
+
+    .ai-emergence-form__button-{{ ai_gen_id }} {
+      padding: 18px 40px;
+      letter-spacing: 0.2em;
+    }
+  }
+{% endstyle %}
+
+<emergence-form-{{ ai_gen_id }}
+  class="ai-emergence-form-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-emergence-form__container-{{ ai_gen_id }}">
+    <h1 class="ai-emergence-form__heading-{{ ai_gen_id }}">
+      {{ block.settings.heading }}
+    </h1>
+    
+    <p class="ai-emergence-form__subheading-{{ ai_gen_id }}">
+      {{ block.settings.subheading }}
+    </p>
+
+    <div class="ai-emergence-form__form-wrapper-{{ ai_gen_id }}">
+      {%- form 'contact' -%}
+        <input type="hidden" name="contact[form_type]" value="{{ block.settings.form_identifier }}">
+        
+        {%- if form.posted_successfully? -%}
+          <div class="ai-emergence-form__success-{{ ai_gen_id }}">
+            <h2 class="ai-emergence-form__success-heading-{{ ai_gen_id }}">
+              {{ block.settings.success_heading }}
+            </h2>
+            <p class="ai-emergence-form__success-text-{{ ai_gen_id }}">
+              {{ block.settings.success_message }}
+            </p>
+          </div>
+        {%- else -%}
+          <div class="ai-emergence-form__fields-{{ ai_gen_id }}">
+            <div class="ai-emergence-form__field-{{ ai_gen_id }}">
+              <label class="ai-emergence-form__label-{{ ai_gen_id }}">
+                {{ block.settings.name_label }}
+              </label>
+              <input
+                type="text"
+                name="contact[name]"
+                class="ai-emergence-form__input-{{ ai_gen_id }}"
+                required
+                aria-required="true"
+              >
+            </div>
+
+            <div class="ai-emergence-form__field-{{ ai_gen_id }}">
+              <label class="ai-emergence-form__label-{{ ai_gen_id }}">
+                {{ block.settings.email_label }}
+              </label>
+              <input
+                type="email"
+                name="contact[email]"
+                class="ai-emergence-form__input-{{ ai_gen_id }}"
+                required
+                aria-required="true"
+                autocomplete="email"
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="ai-emergence-form-error-{{ ai_gen_id }}"
+                {% endif %}
+              >
+              {%- if form.errors -%}
+                <div
+                  id="ai-emergence-form-error-{{ ai_gen_id }}"
+                  class="ai-emergence-form__error-{{ ai_gen_id }}"
+                >
+                  {{ form.errors.messages.email }}
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="ai-emergence-form__field-{{ ai_gen_id }}">
+              <label class="ai-emergence-form__label-{{ ai_gen_id }}">
+                {{ block.settings.dream_label }}
+              </label>
+              <textarea
+                name="contact[{{ block.settings.dream_field_name }}]"
+                rows="4"
+                class="ai-emergence-form__textarea-{{ ai_gen_id }}"
+              ></textarea>
+            </div>
+
+            <div class="ai-emergence-form__field-{{ ai_gen_id }}">
+              <label class="ai-emergence-form__label-{{ ai_gen_id }}">
+                {{ block.settings.alignment_label }}
+              </label>
+              <select
+                name="contact[{{ block.settings.alignment_field_name }}]"
+                class="ai-emergence-form__select-{{ ai_gen_id }}"
+              >
+                <option value="" disabled selected>{{ block.settings.alignment_placeholder }}</option>
+                <option value="Worth">Worth</option>
+                <option value="Freedom">Freedom</option>
+                <option value="Elevation">Elevation</option>
+              </select>
+            </div>
+
+            <div class="ai-emergence-form__field-{{ ai_gen_id }}">
+              <label class="ai-emergence-form__label-{{ ai_gen_id }}">
+                {{ block.settings.request_label }}
+              </label>
+              <textarea
+                name="contact[{{ block.settings.request_field_name }}]"
+                rows="3"
+                placeholder="{{ block.settings.request_placeholder }}"
+                class="ai-emergence-form__textarea-{{ ai_gen_id }}"
+              ></textarea>
+            </div>
+
+            <div class="ai-emergence-form__button-wrapper-{{ ai_gen_id }}">
+              <button
+                type="submit"
+                class="ai-emergence-form__button-{{ ai_gen_id }}"
+              >
+                {{ block.settings.button_text }}
+              </button>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</emergence-form-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class EmergenceForm{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.form = this.querySelector('form');
+        if (this.form) {
+          this.setupFormValidation();
+        }
+      }
+
+      setupFormValidation() {
+        const inputs = this.form.querySelectorAll('input[required], textarea[required]');
+        inputs.forEach(input => {
+          input.addEventListener('invalid', (e) => {
+            e.preventDefault();
+            input.style.borderBottomColor = '{{ block.settings.error_color }}';
+          });
+
+          input.addEventListener('input', () => {
+            input.style.borderBottomColor = '{{ block.settings.input_border_color }}';
+          });
+        });
+      }
+    }
+
+    customElements.define('emergence-form-{{ ai_gen_id }}', EmergenceForm{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Pathway to emergence",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Pathway to Emergence"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "You are fashioned for Heaven and tailored for Earth. This is the beginning of your pathway to emergence. Share the vision you are ready to launch into motion."
+    },
+    {
+      "type": "text",
+      "id": "form_identifier",
+      "label": "Form identifier",
+      "default": "pathway_to_emergence"
+    },
+    {
+      "type": "header",
+      "content": "Form fields"
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "Name field label",
+      "default": "Full Name"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email field label",
+      "default": "Email Address"
+    },
+    {
+      "type": "text",
+      "id": "dream_label",
+      "label": "Dream field label",
+      "default": "The Dream You Are Fashioning"
+    },
+    {
+      "type": "text",
+      "id": "dream_field_name",
+      "label": "Dream field name",
+      "default": "the_dream"
+    },
+    {
+      "type": "text",
+      "id": "alignment_label",
+      "label": "Alignment field label",
+      "default": "House of Vuu Alignment"
+    },
+    {
+      "type": "text",
+      "id": "alignment_field_name",
+      "label": "Alignment field name",
+      "default": "pillar_alignment"
+    },
+    {
+      "type": "text",
+      "id": "alignment_placeholder",
+      "label": "Alignment placeholder",
+      "default": "Which pillar resonates most with you?"
+    },
+    {
+      "type": "text",
+      "id": "request_label",
+      "label": "Request field label",
+      "default": "The Request"
+    },
+    {
+      "type": "text",
+      "id": "request_field_name",
+      "label": "Request field name",
+      "default": "request"
+    },
+    {
+      "type": "text",
+      "id": "request_placeholder",
+      "label": "Request placeholder",
+      "default": "How can the Foundation assist in your emergence?"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Submit Your Vision"
+    },
+    {
+      "type": "header",
+      "content": "Success message"
+    },
+    {
+      "type": "text",
+      "id": "success_heading",
+      "label": "Success heading",
+      "default": "Your vision has been received."
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "We will review your story with the care it deserves."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Minimum height",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "vh",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "label": "Heading letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "unit": "em",
+      "default": 0.3
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#F5F5F1"
+    },
+    {
+      "type": "color",
+      "id": "form_background",
+      "label": "Form background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_color",
+      "label": "Input focus border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder text",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Button hover background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error",
+      "default": "#D82C0D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pathway to emergence"
+    }
+  ]
+}
 {% endschema %}
