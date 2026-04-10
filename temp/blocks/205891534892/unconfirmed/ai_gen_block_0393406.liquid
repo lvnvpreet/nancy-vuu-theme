@@ -1,6 +1,811 @@
+{% doc %}
+  @prompt
+    <section id="alliance-sorting" style="background-color: #ffffff; padding: 100px 20px; text-align: center;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        
+        <h2 style="font-family: serif; font-size: 3rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; font-weight: normal;">
+          The Alliance to Restoration
+        </h2>
+        <p style="font-family: serif; font-style: italic; font-size: 1.1rem; color: #555; margin-bottom: 80px;">
+          Choose your mantle within the House of Vuu Foundation.
+        </p>
+    
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+          
+          <div class="alliance-card">
+            <span class="phase-label">Phase I</span>
+            <h3 class="alliance-title">The Legacy Partner</h3>
+            <p class="alliance-text">
+              YOUR CAPITAL IS THE STRATEGIC FUEL FOR HUMAN RESTORATION. AS A LEGACY PARTNER, YOU AREN’T JUST FUNDING A PROGRAM; YOU ARE INVESTING IN THE STRUCTURAL REBUILDING OF THE NEXT GENERATION OF LEADERS.
+            </p>
+            <a href="#alliance-form" class="alliance-cta">Invest in Excellence</a>
+          </div>
+    
+          <div class="alliance-card">
+            <span class="phase-label">Phase II</span>
+            <h3 class="alliance-title">The Visionary</h3>
+            <p class="alliance-text">
+              SEEKING RESTORATION? IF YOU OR YOUR ORGANIZATION SERVE THOSE IN NEED, APPLY FOR RESTORATIVE SUPPORT AND JOIN THE PATHWAY TO ASCENSION.
+            </p>
+            <a href="/pages/visionary-inquiry" class="alliance-cta">Begin Your Inquiry</a>
+          </div>
+    
+          <div class="alliance-card">
+            <span class="phase-label">Phase III</span>
+            <h3 class="alliance-title">The Collaborator</h3>
+            <p class="alliance-text">
+              WE DON’T BUILD IN ISOLATION. PARTNER WITH US TO SCALE THE ARCHITECTURE OF HONOR GLOBALLY THROUGH STRATEGIC INSTITUTIONAL ALIGNMENT.
+            </p>
+            <a href="#alliance-form" class="alliance-cta">Initiate Alliance</a>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+    <style>
+      .alliance-card {
+        flex: 1 1 350px;
+        background: #fff;
+        padding: 60px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        transition: transform 0.3s ease;
+      }
+      
+      .alliance-card:hover {
+        transform: translateY(-5px);
+      }
+    
+      .phase-label {
+        font-family: serif;
+        font-style: italic;
+        color: #c5a059; /* Subtle gold tone for Phase labels */
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+    
+      .alliance-title {
+        font-family: serif;
+        font-size: 1.6rem;
+        font-style: italic;
+        margin-bottom: 25px;
+        font-weight: normal;
+      }
+    
+      .alliance-text {
+        font-family: sans-serif;
+        font-size: 0.75rem;
+        line-height: 1.8;
+        letter-spacing: 0.1em;
+        color: #666;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+      }
+    
+      .alliance-cta {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        border: 1px solid #1a1a1a;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-family: serif;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+      }
+    
+      .alliance-cta:hover {
+        background-color: #1a1a1a;
+        color: #fff;
+      }
+    
+      @media (max-width: 768px) {
+        .alliance-card { flex: 1 1 100%; }
+      }
+    </style>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-alliance-sorting-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .ai-alliance-sorting__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-alliance-sorting__heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-size: {{ block.settings.heading_size }}px;
+    letter-spacing: {{ block.settings.heading_letter_spacing }}em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-alliance-sorting__subheading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-style: italic;
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    margin-bottom: {{ block.settings.subheading_margin_bottom }}px;
+  }
+
+  .ai-alliance-sorting__cards-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: {{ block.settings.card_gap }}px;
+    justify-content: center;
+  }
+
+  .ai-alliance-sorting__card-{{ ai_gen_id }} {
+    flex: 1 1 {{ block.settings.card_min_width }}px;
+    background: {{ block.settings.card_background }};
+    padding: {{ block.settings.card_padding_vertical }}px {{ block.settings.card_padding_horizontal }}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid {{ block.settings.card_border_color }};
+    box-shadow: 0 10px 30px {{ block.settings.card_shadow_color }};
+    transition: transform 0.3s ease;
+  }
+
+  .ai-alliance-sorting__card-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+  }
+
+  .ai-alliance-sorting__phase-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-style: italic;
+    color: {{ block.settings.phase_label_color }};
+    font-size: {{ block.settings.phase_label_size }}px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .ai-alliance-sorting__card-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-size: {{ block.settings.card_title_size }}px;
+    font-style: italic;
+    margin-bottom: 25px;
+    font-weight: normal;
+    color: {{ block.settings.card_title_color }};
+  }
+
+  .ai-alliance-sorting__card-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: {{ block.settings.card_text_size }}px;
+    line-height: {{ block.settings.card_text_line_height }};
+    letter-spacing: {{ block.settings.card_text_letter_spacing }}em;
+    color: {{ block.settings.card_text_color }};
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  .ai-alliance-sorting__cta-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.cta_padding }}px 0;
+    border: 1px solid {{ block.settings.cta_border_color }};
+    color: {{ block.settings.cta_text_color }};
+    text-decoration: none;
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    text-transform: uppercase;
+    letter-spacing: {{ block.settings.cta_letter_spacing }}em;
+    font-size: {{ block.settings.cta_font_size }}px;
+    transition: all 0.3s ease;
+    background-color: {{ block.settings.cta_background }};
+  }
+
+  .ai-alliance-sorting__cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_hover_background }};
+    color: {{ block.settings.cta_hover_text_color }};
+  }
+
+  @media (max-width: 768px) {
+    .ai-alliance-sorting__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.6 }}px;
+    }
+
+    .ai-alliance-sorting__card-{{ ai_gen_id }} {
+      flex: 1 1 100%;
+    }
+  }
+{% endstyle %}
+
+<alliance-sorting-{{ ai_gen_id }}
+  class="ai-alliance-sorting-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-alliance-sorting__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-alliance-sorting__heading-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.subheading != blank %}
+      <p class="ai-alliance-sorting__subheading-{{ ai_gen_id }}">
+        {{ block.settings.subheading }}
+      </p>
+    {% endif %}
+
+    <div class="ai-alliance-sorting__cards-{{ ai_gen_id }}">
+      {% if block.settings.card_1_enabled %}
+        <div class="ai-alliance-sorting__card-{{ ai_gen_id }}">
+          {% if block.settings.card_1_phase != blank %}
+            <span class="ai-alliance-sorting__phase-label-{{ ai_gen_id }}">
+              {{ block.settings.card_1_phase }}
+            </span>
+          {% endif %}
+          {% if block.settings.card_1_title != blank %}
+            <h3 class="ai-alliance-sorting__card-title-{{ ai_gen_id }}">
+              {{ block.settings.card_1_title }}
+            </h3>
+          {% endif %}
+          {% if block.settings.card_1_text != blank %}
+            <p class="ai-alliance-sorting__card-text-{{ ai_gen_id }}">
+              {{ block.settings.card_1_text }}
+            </p>
+          {% endif %}
+          {% if block.settings.card_1_cta_text != blank %}
+            <a
+              href="{{ block.settings.card_1_cta_link }}"
+              class="ai-alliance-sorting__cta-{{ ai_gen_id }}"
+            >
+              {{ block.settings.card_1_cta_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_2_enabled %}
+        <div class="ai-alliance-sorting__card-{{ ai_gen_id }}">
+          {% if block.settings.card_2_phase != blank %}
+            <span class="ai-alliance-sorting__phase-label-{{ ai_gen_id }}">
+              {{ block.settings.card_2_phase }}
+            </span>
+          {% endif %}
+          {% if block.settings.card_2_title != blank %}
+            <h3 class="ai-alliance-sorting__card-title-{{ ai_gen_id }}">
+              {{ block.settings.card_2_title }}
+            </h3>
+          {% endif %}
+          {% if block.settings.card_2_text != blank %}
+            <p class="ai-alliance-sorting__card-text-{{ ai_gen_id }}">
+              {{ block.settings.card_2_text }}
+            </p>
+          {% endif %}
+          {% if block.settings.card_2_cta_text != blank %}
+            <a
+              href="{{ block.settings.card_2_cta_link }}"
+              class="ai-alliance-sorting__cta-{{ ai_gen_id }}"
+            >
+              {{ block.settings.card_2_cta_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_3_enabled %}
+        <div class="ai-alliance-sorting__card-{{ ai_gen_id }}">
+          {% if block.settings.card_3_phase != blank %}
+            <span class="ai-alliance-sorting__phase-label-{{ ai_gen_id }}">
+              {{ block.settings.card_3_phase }}
+            </span>
+          {% endif %}
+          {% if block.settings.card_3_title != blank %}
+            <h3 class="ai-alliance-sorting__card-title-{{ ai_gen_id }}">
+              {{ block.settings.card_3_title }}
+            </h3>
+          {% endif %}
+          {% if block.settings.card_3_text != blank %}
+            <p class="ai-alliance-sorting__card-text-{{ ai_gen_id }}">
+              {{ block.settings.card_3_text }}
+            </p>
+          {% endif %}
+          {% if block.settings.card_3_cta_text != blank %}
+            <a
+              href="{{ block.settings.card_3_cta_link }}"
+              class="ai-alliance-sorting__cta-{{ ai_gen_id }}"
+            >
+              {{ block.settings.card_3_cta_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</alliance-sorting-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AllianceSorting{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        const links = this.querySelectorAll('.ai-alliance-sorting__cta-{{ ai_gen_id }}');
+        links.forEach(link => {
+          if (link.getAttribute('href') === '' || link.getAttribute('href') === '#') {
+            link.setAttribute('role', 'button');
+            link.setAttribute('tabindex', '0');
+          }
+        });
+      }
+    }
+
+    customElements.define('alliance-sorting-{{ ai_gen_id }}', AllianceSorting{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Alliance sorting",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Alliance to Restoration"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "label": "Heading letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "unit": "em",
+      "default": 0.3
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Choose your mantle within the House of Vuu Foundation."
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "subheading_margin_bottom",
+      "label": "Subheading margin bottom",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Cards layout"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Gap between cards",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "card_min_width",
+      "label": "Card minimum width",
+      "min": 250,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "default": 350
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "color",
+      "id": "card_shadow_color",
+      "label": "Card shadow",
+      "default": "rgba(0,0,0,0.02)"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_vertical",
+      "label": "Card padding vertical",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "card_padding_horizontal",
+      "label": "Card padding horizontal",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Card typography"
+    },
+    {
+      "type": "color",
+      "id": "phase_label_color",
+      "label": "Phase label color",
+      "default": "#c5a059"
+    },
+    {
+      "type": "range",
+      "id": "phase_label_size",
+      "label": "Phase label size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Card title size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Card text size",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_text_line_height",
+      "label": "Card text line height",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.1,
+      "default": 1.8
+    },
+    {
+      "type": "range",
+      "id": "card_text_letter_spacing",
+      "label": "Card text letter spacing",
+      "min": 0,
+      "max": 0.3,
+      "step": 0.1,
+      "unit": "em",
+      "default": 0.1
+    },
+    {
+      "type": "header",
+      "content": "CTA button style"
+    },
+    {
+      "type": "color",
+      "id": "cta_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "cta_border_color",
+      "label": "Border color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_background",
+      "label": "Hover background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "cta_padding",
+      "label": "CTA padding",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size",
+      "label": "CTA font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "cta_letter_spacing",
+      "label": "CTA letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "unit": "em",
+      "default": 0.2
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_1_phase",
+      "label": "Phase label",
+      "default": "Phase I"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "The Legacy Partner"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_text",
+      "label": "Description",
+      "default": "YOUR CAPITAL IS THE STRATEGIC FUEL FOR HUMAN RESTORATION. AS A LEGACY PARTNER, YOU AREN'T JUST FUNDING A PROGRAM; YOU ARE INVESTING IN THE STRUCTURAL REBUILDING OF THE NEXT GENERATION OF LEADERS."
+    },
+    {
+      "type": "text",
+      "id": "card_1_cta_text",
+      "label": "CTA text",
+      "default": "Invest in Excellence"
+    },
+    {
+      "type": "url",
+      "id": "card_1_cta_link",
+      "label": "CTA link"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_2_phase",
+      "label": "Phase label",
+      "default": "Phase II"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "The Visionary"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_text",
+      "label": "Description",
+      "default": "SEEKING RESTORATION? IF YOU OR YOUR ORGANIZATION SERVE THOSE IN NEED, APPLY FOR RESTORATIVE SUPPORT AND JOIN THE PATHWAY TO ASCENSION."
+    },
+    {
+      "type": "text",
+      "id": "card_2_cta_text",
+      "label": "CTA text",
+      "default": "Begin Your Inquiry"
+    },
+    {
+      "type": "url",
+      "id": "card_2_cta_link",
+      "label": "CTA link"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_3_phase",
+      "label": "Phase label",
+      "default": "Phase III"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "The Collaborator"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_text",
+      "label": "Description",
+      "default": "WE DON'T BUILD IN ISOLATION. PARTNER WITH US TO SCALE THE ARCHITECTURE OF HONOR GLOBALLY THROUGH STRATEGIC INSTITUTIONAL ALIGNMENT."
+    },
+    {
+      "type": "text",
+      "id": "card_3_cta_text",
+      "label": "CTA text",
+      "default": "Initiate Alliance"
+    },
+    {
+      "type": "url",
+      "id": "card_3_cta_link",
+      "label": "CTA link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Alliance sorting"
+    }
+  ]
+}
 {% endschema %}
