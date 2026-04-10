@@ -328,7 +328,7 @@
         "guardians_heading": "Corporate Guardians",
         "guardians_body": "Acknowledging the private sector entities that fuel community restoration and global excellence.",
         "contact_text": "Corporate Engagement",
-        "contact_link": "#alliance-form"
+        "contact_link": "#alliance-form-anchor"
       }
     },
     "foundation_disclaimer": {
@@ -345,7 +345,7 @@
         "ai_gen_block_0ee6718_CYW9my": {
           "type": "ai_gen_block_0ee6718",
           "settings": {
-            "anchor_id": "alliance-form",
+            "anchor_id": "alliance-form-anchor",
             "offset": -100
           },
           "blocks": {}
