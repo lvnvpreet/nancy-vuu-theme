@@ -1,6 +1,371 @@
+{% doc %}
+  @prompt
+    Segment Intent: Create a minimalist, high-end 'Pathway to Ascension' teaser segment for the House of Vuu Foundation page. This segment acts as a gateway for individuals seeking financial aid.
+    
+    1. Aesthetic & Layout:
+    
+    Background: Solid Cream (#F5F5F1).
+    
+    Padding: 100px Top and Bottom.
+    
+    Alignment: Centered.
+    
+    2. Content Blocks:
+    
+    Header: THE PATHWAY TO ASCENSION (All Caps, Serif font, 0.4em letter spacing).
+    
+    Sub-header: "The House of Vuu Foundation is committed to fueling the next generation of excellence. If you are a visionary seeking to realize your full potential through Maison Arise but require financial stewardship to begin, we invite you to share your vision." (Italicized Serif font, max-width 700px).
+    
+    3. The Call to Action (The Link):
+    
+    Button Text: BEGIN YOUR INQUIRY
+    
+    Style: Outline Button (0px corner radius), Transparent background with a thin 1px Charcoal Black border. Text in Charcoal Black. Letter spacing 0.2em.
+    
+    Link: [Insert link to your new 'Visionary Inquiry' page]. give me control access to adjust top and bottom padding of section and to edit content. also give me the option to have a body content after the subheader
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-pathway-ascension-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    width: 100%;
+  }
+
+  .ai-pathway-ascension__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .ai-pathway-ascension__header-{{ ai_gen_id }} {
+    font-family: {{ block.settings.header_font.family }}, serif;
+    font-weight: {{ block.settings.header_font.weight }};
+    font-style: {{ block.settings.header_font.style }};
+    font-size: {{ block.settings.header_size }}px;
+    color: {{ block.settings.text_color }};
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+    line-height: 1.2;
+  }
+
+  .ai-pathway-ascension__subheader-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subheader_font.family }}, serif;
+    font-weight: {{ block.settings.subheader_font.weight }};
+    font-style: italic;
+    font-size: {{ block.settings.subheader_size }}px;
+    color: {{ block.settings.text_color }};
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+  }
+
+  .ai-pathway-ascension__body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.text_color }};
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.7;
+  }
+
+  .ai-pathway-ascension__cta-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: transparent;
+    border: 1px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    color: {{ block.settings.button_text_color }};
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.button_size }}px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-pathway-ascension__cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg }};
+    color: {{ block.settings.button_hover_text }};
+    border-color: {{ block.settings.button_hover_border }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-pathway-ascension-{{ ai_gen_id }} {
+      padding-top: {{ block.settings.padding_top | times: 0.6 }}px;
+      padding-bottom: {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-pathway-ascension__header-{{ ai_gen_id }} {
+      font-size: {{ block.settings.header_size | times: 0.7 }}px;
+      letter-spacing: 0.2em;
+    }
+
+    .ai-pathway-ascension__subheader-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheader_size | times: 0.9 }}px;
+    }
+
+    .ai-pathway-ascension__body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+
+    .ai-pathway-ascension__cta-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_size | times: 0.9 }}px;
+      padding: 14px 30px;
+    }
+  }
+{% endstyle %}
+
+<pathway-ascension-{{ ai_gen_id }}
+  class="ai-pathway-ascension-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-pathway-ascension__container-{{ ai_gen_id }}">
+    {% if block.settings.header != blank %}
+      <h2 class="ai-pathway-ascension__header-{{ ai_gen_id }}">
+        {{ block.settings.header }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.subheader != blank %}
+      <div class="ai-pathway-ascension__subheader-{{ ai_gen_id }}">
+        {{ block.settings.subheader }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.body_content != blank %}
+      <div class="ai-pathway-ascension__body-{{ ai_gen_id }}">
+        {{ block.settings.body_content }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank %}
+      <a
+        href="{{ block.settings.button_link }}"
+        class="ai-pathway-ascension__cta-{{ ai_gen_id }}"
+      >
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</pathway-ascension-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PathwayAscension{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        const cta = this.querySelector('.ai-pathway-ascension__cta-{{ ai_gen_id }}');
+        if (cta && !cta.getAttribute('href')) {
+          cta.setAttribute('role', 'button');
+          cta.setAttribute('tabindex', '0');
+        }
+      }
+    }
+
+    customElements.define('pathway-ascension-{{ ai_gen_id }}', PathwayAscension{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Pathway to Ascension",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F5F1"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "header",
+      "label": "Header",
+      "default": "The Pathway to Ascension"
+    },
+    {
+      "type": "richtext",
+      "id": "subheader",
+      "label": "Subheader",
+      "default": "<p>The House of Vuu Foundation is committed to fueling the next generation of excellence. If you are a visionary seeking to realize your full potential through Maison Arise but require financial stewardship to begin, we invite you to share your vision.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_content",
+      "label": "Body content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Begin Your Inquiry"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "header_font",
+      "label": "Header font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "header_size",
+      "label": "Header size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "font_picker",
+      "id": "subheader_font",
+      "label": "Subheader font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheader_size",
+      "label": "Subheader size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Button text size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Hover background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Hover text color",
+      "default": "#F5F5F1"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border",
+      "label": "Hover border color",
+      "default": "#0f0f0f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pathway to Ascension"
+    }
+  ]
+}
 {% endschema %}
