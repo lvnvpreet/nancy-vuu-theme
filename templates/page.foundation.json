@@ -43,7 +43,7 @@
         "col1_body": "",
         "col2_heading": "",
         "col2_body": "",
-        "cta1_label": "partner in restoration",
+        "cta1_label": "Invest",
         "cta1_link": "https://www.paypal.com/donate/?hosted_button_id=AJMYG5ZH3AC22",
         "cta2_label": "",
         "cta2_link": ""
@@ -164,6 +164,44 @@
         "image": "shopify://shop_images/iStock-1271617757.jpg",
         "show_play_button": false
       }
+    },
+    "1775778498c051b647": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_69f5e0d_xHXkEz": {
+          "type": "ai_gen_block_69f5e0d",
+          "settings": {
+            "heading": "ONE HOUSE. ONE MISSION. TOTAL RESTORATION.",
+            "subtext": "",
+            "paragraph_1": "<p>We do not just heal; we provide the sanctuary for transformation. We do not just protect; we liberate. Your investment fuels the complete cycle—from the restoration of worth and the pursuit of absolute freedom, to the elevation of dreams realized through our immersive pathways of excellence.</p>",
+            "paragraph_2": "",
+            "paragraph_3": "",
+            "button_text": "JOIN THE ALLIANCE",
+            "button_link": "https://www.paypal.com/donate/?hosted_button_id=AJMYG5ZH3AC22",
+            "padding_top": 100,
+            "padding_bottom": 100,
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 32,
+            "body_font": "manrope_n4",
+            "subtext_size": 16,
+            "body_size": 18,
+            "button_size": 14,
+            "background_color": "#F5F5F1",
+            "separator_color": "#C9A961",
+            "heading_color": "#1A1A1A",
+            "text_color": "#1A1A1A",
+            "button_bg_color": "#1A1A1A",
+            "button_text_color": "#FFFFFF",
+            "button_hover_bg_color": "#C9A961",
+            "button_hover_text_color": "#1A1A1A"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_69f5e0d_xHXkEz"
+      ],
+      "settings": {}
     },
     "foundation_phases_ERWpPG": {
       "type": "foundation-phases",
@@ -300,44 +338,6 @@
     "1775778024e4db39af": {
       "type": "_blocks",
       "settings": {}
-    },
-    "1775778498c051b647": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_69f5e0d_xHXkEz": {
-          "type": "ai_gen_block_69f5e0d",
-          "settings": {
-            "heading": "ONE HOUSE. ONE MISSION. TOTAL RESTORATION.",
-            "subtext": "",
-            "paragraph_1": "<p>We do not just heal; we provide the sanctuary for transformation. We do not just protect; we liberate. Your investment fuels the complete cycle—from the restoration of worth and the pursuit of absolute freedom, to the elevation of dreams realized through our immersive pathways of excellence.</p>",
-            "paragraph_2": "",
-            "paragraph_3": "",
-            "button_text": "JOIN THE ALLIANCE",
-            "button_link": "https://www.paypal.com/donate/?hosted_button_id=AJMYG5ZH3AC22",
-            "padding_top": 100,
-            "padding_bottom": 100,
-            "heading_font": "bodoni_moda_n4",
-            "heading_size": 32,
-            "body_font": "manrope_n4",
-            "subtext_size": 16,
-            "body_size": 18,
-            "button_size": 14,
-            "background_color": "#F5F5F1",
-            "separator_color": "#C9A961",
-            "heading_color": "#1A1A1A",
-            "text_color": "#1A1A1A",
-            "button_bg_color": "#1A1A1A",
-            "button_text_color": "#FFFFFF",
-            "button_hover_bg_color": "#C9A961",
-            "button_hover_text_color": "#1A1A1A"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_69f5e0d_xHXkEz"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -348,10 +348,10 @@
     "freedom",
     "quote",
     "pathways",
+    "1775778498c051b647",
     "foundation_phases_ERWpPG",
     "partners",
     "foundation_disclaimer",
-    "1775778024e4db39af",
-    "1775778498c051b647"
+    "1775778024e4db39af"
   ]
 }
