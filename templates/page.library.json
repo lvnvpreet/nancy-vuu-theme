@@ -29,7 +29,7 @@
         "subtitle": "A Story of Style, Spirit, and a Life Transformed.",
         "description": "This is not just a book about garments. It is a revelation of the human spirit. Nancy Vuu invites you behind the velvet ropes of the runway and into the deepest, most vulnerable layers of her life—proving that true luxury is forged in the fires of resilience.",
         "availability": "Now Available",
-        "cta_label": "Secure Your Copy",
+        "cta_label": "AQUIRE THE REVELATION.",
         "cta_link": "shopify://products/let-there-be-fashion-preorder"
       }
     },
@@ -95,7 +95,7 @@
         "eyebrow": "The Blueprint",
         "heading_1": "Design Your",
         "heading_2": "Destiny.",
-        "body_1": "For those who refuse to be defined by their past and are ready to architect a legacy of absolute significance—this is your blueprint.",
+        "body_1": "For those who refuse to be defined by their past and are ready to build a legacy of absolute significance—this is your blueprint.",
         "body_2": "From the harrowing journey of a childhood refugee to commanding the global stages of Cannes and high-fashion runways, Nancy Vuu deconstructs the barriers between survival and significance.",
         "body_3": "Let There Be Fashion is an unfiltered masterclass in transcendent architecture. It is a testament to what happens when you dare to merge profound spiritual conviction with unapologetic artistry. Through stirring narratives and hard-won wisdom, Nancy reveals how a single, courageous \"yes\" can open doors across the world.",
         "panel_heading": "Inside the Pages, You Will Discover:",
@@ -108,121 +108,13 @@
       "settings": {
         "image": "shopify://shop_images/untitled-5298_3.jpg",
         "eyebrow": "About the Author",
-        "heading_1": "The Architect",
-        "heading_2": "of Identity",
-        "intro": "Nancy Vuu is a multi-hyphenate visionary—a Creative Director and Global Advisor dedicated to the structural restoration of worth. Her work transcends the traditional boundaries of fashion, recognized globally by Vogue, Harper’s Bazaar, and Elle.",
-        "body_1": "Nancy’s runway has featured notable figures from the NBA and NFL, while her styling counsel is sought by Hollywood’s talent, the Medici Royal Family, and government dignitaries. Entrusted with the visual stewardship of those on the world’s most visible stages, her work spans the red carpets of the Oscars and Cannes to the corridors of international leadership.",
-        "body_2": "Yet, her most profound work happens off the runway. As the founder of the House of Vuu Foundation, she utilizes her global platform to combat human trafficking and empower marginalized communities through the Maison Arise, building the infrastructure of honor where true identity is discovered, tailored, and launched.",
-        "body_3": "She does not just create garments; she restores human dignity. As a sought-after speaker and mentor, Nancy teaches leaders how to attire their mandate in grace and fashion a legacy of eternal significance."
+        "heading_1": "The Identity",
+        "heading_2": "Architect.",
+        "intro": "Nancy Vuu is a multi-hyphenate visionary—a Creative Director, Philanthropist, and Global Advisor.",
+        "body_1": "Her work transcends the traditional boundaries of fashion. Recognized by Vogue, Harper's Bazaar, and Elle, Nancy is trusted with styling the world's most visible figures, from NBA and NFL elite to global Royalty and dignitaries.",
+        "body_2": "Yet, her most profound work happens off the runway. As the founder of the House of Vuu Foundation, she utilizes her global platform to combat human trafficking and empower marginalized communities through the Dream Academy.",
+        "body_3": "Nancy does not just create garments; she restores human dignity. She is a sought-after speaker, advisor, and mentor, teaching leaders worldwide how to dress their purpose in grace and architect a legacy of lasting impact."
       }
-    },
-    "1775763245c8857bbf": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_8be8379_DjEDiW": {
-          "type": "ai_gen_block_8be8379",
-          "settings": {
-            "padding_top": 200,
-            "padding_bottom": 200,
-            "background_color": "#ffffff",
-            "divider_color": "#e5e5e5",
-            "eyebrow_text": "THE SHARED NARRATIVE",
-            "eyebrow_font": "manrope_n4",
-            "eyebrow_size": 12,
-            "eyebrow_color": "#999999",
-            "eyebrow_bold": false,
-            "eyebrow_italic": false,
-            "header_text": "IMMERSION & IMPACT",
-            "header_font": "bodoni_moda_n4",
-            "header_size": 32,
-            "header_color": "#0f0f0f",
-            "header_bold": false,
-            "header_italic": false,
-            "body_paragraph_1": "<p>Beyond the individual journey lies the opportunity for collective transformation. The<em> Let There Be Fashion</em> curriculum is a versatile framework for leadership collectives, academic institutions, and organizations seeking to move beyond theory and into the structural restoration of worth.</p>",
-            "body_paragraph_2": "<p>By rebuilding the foundation of identity, we pave the way for true elevation and the ability to fashion a legacy of eternal significance. Each immersion is intentionally curated to the specific culture and mandate of your organization, facilitating a shared narrative that empowers lasting change.</p>",
-            "body_paragraph_3": "",
-            "body_paragraph_4": "",
-            "body_font": "manrope_n4",
-            "body_size": 17,
-            "body_color": "#0f0f0f",
-            "body_bold": false,
-            "body_italic": false,
-            "cta_text": "INITIATE THE DIALOGUE",
-            "cta_link": "#engage-the-visionary",
-            "button_text_color": "#0f0f0f",
-            "button_border_color": "#0f0f0f",
-            "button_hover_bg": "#0f0f0f",
-            "button_hover_text": "#ffffff",
-            "button_hover_border": "#0f0f0f"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_8be8379_DjEDiW"
-      ],
-      "settings": {}
-    },
-    "1775762725b0c63246": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_ce3c797_hjgHN9": {
-          "type": "ai_gen_block_ce3c797",
-          "settings": {
-            "anchor_id": "engage-the-visionary",
-            "image_width": 50,
-            "gap_between": 0,
-            "min_height": 800,
-            "image": "shopify://shop_images/75424627_10218422679949999_4492149815790010368_n.jpg",
-            "image_box_width": 100,
-            "image_box_height": 500,
-            "image_fit": "cover",
-            "image_position": "center center",
-            "image_padding_top": 200,
-            "image_padding_right": 0,
-            "image_padding_bottom": 0,
-            "image_padding_left": 0,
-            "show_fade": true,
-            "fade_height": 120,
-            "fade_opacity": 0.8,
-            "form_padding_top": 200,
-            "form_padding_right": 60,
-            "form_padding_bottom": 80,
-            "form_padding_left": 60,
-            "form_max_width": 540,
-            "heading": "Engage the Visionary",
-            "intro_text": "<p>Please entrust the details of your brief below as we review for visionary alignment and the potential for a shared narrative.</p>",
-            "button_text": "INITIATE THE DIALOGUE",
-            "success_message": "<p>Thank you for your inquiry. We will review your submission and respond within 48 hours.</p>",
-            "heading_font": "bodoni_moda_n4",
-            "body_font": "manrope_n4",
-            "heading_size": 28,
-            "intro_size": 16,
-            "label_size": 14,
-            "input_size": 15,
-            "button_size": 13,
-            "background_color": "#ffffff",
-            "form_background": "#ffffff",
-            "heading_color": "#0f0f0f",
-            "body_color": "#0f0f0f",
-            "label_color": "#0f0f0f",
-            "input_color": "#0f0f0f",
-            "input_background": "#ffffff",
-            "input_border": "#cccccc",
-            "input_focus_border": "#0f0f0f",
-            "button_bg_color": "#0f0f0f",
-            "button_text_color": "#ffffff",
-            "button_hover_bg": "#333333",
-            "button_hover_text": "#ffffff",
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_ce3c797_hjgHN9"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -230,8 +122,6 @@
     "book_hero",
     "pull_quote",
     "synopsis",
-    "author_bio",
-    "1775763245c8857bbf",
-    "1775762725b0c63246"
+    "author_bio"
   ]
 }
