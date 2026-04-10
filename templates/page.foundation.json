@@ -165,6 +165,45 @@
         "show_play_button": false
       }
     },
+    "foundation_phases_ERWpPG": {
+      "type": "foundation-phases",
+      "blocks": {
+        "phase_kXJzWf": {
+          "type": "phase",
+          "settings": {
+            "phase": "",
+            "title": "The Legacy Parter",
+            "description": "Your capital is the strategic fuel for human restoration. As a Legacy Partner, you aren't just funding a program; you are investing in the structural rebuilding of the next generation of leaders."
+          }
+        },
+        "phase_bqHKyw": {
+          "type": "phase",
+          "settings": {
+            "phase": "",
+            "title": "The Recipient",
+            "description": "Seeking restoration? If you or your organization serve those in need, apply for restorative support."
+          }
+        },
+        "phase_Rh3gAc": {
+          "type": "phase",
+          "settings": {
+            "phase": "",
+            "title": "The Collaborator",
+            "description": "We don't build in isolation. Partner with us to scale the architecture of honor globally."
+          }
+        }
+      },
+      "block_order": [
+        "phase_kXJzWf",
+        "phase_bqHKyw",
+        "phase_Rh3gAc"
+      ],
+      "settings": {
+        "heading": "The Alliance to Restoration",
+        "description": "Choose your mantle within the House of Vuu Foundation.",
+        "bg_tint": true
+      }
+    },
     "1775778498c051b647": {
       "type": "_blocks",
       "blocks": {
@@ -178,8 +217,8 @@
             "paragraph_3": "",
             "button_text": "JOIN THE ALLIANCE",
             "button_link": "https://www.paypal.com/donate/?hosted_button_id=AJMYG5ZH3AC22",
-            "padding_top": 100,
-            "padding_bottom": 100,
+            "padding_top": 160,
+            "padding_bottom": 180,
             "heading_font": "bodoni_moda_n4",
             "heading_size": 32,
             "body_font": "manrope_n4",
@@ -210,8 +249,8 @@
           "type": "ai_gen_block_6602bd5",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/iStock-118854546.jpg",
-            "section_height": 51,
+            "image": "shopify://shop_images/10.jpg",
+            "section_height": 11,
             "desktop_width_percent": 100,
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -231,8 +270,8 @@
         "ai_gen_block_108a132_MXiTRW": {
           "type": "ai_gen_block_108a132",
           "settings": {
-            "padding_top": 100,
-            "padding_bottom": 100,
+            "padding_top": 180,
+            "padding_bottom": 180,
             "background_color": "#F5F5F1",
             "header": "The Pathway to Ascension",
             "subheader": "<p>The House of Vuu Foundation is committed to fueling the next generation of excellence. If you are a visionary seeking to realize your full potential through Maison Arise but require financial stewardship to begin, we invite you to share your vision.</p>",
@@ -261,45 +300,6 @@
         "ai_gen_block_108a132_MXiTRW"
       ],
       "settings": {}
-    },
-    "foundation_phases_ERWpPG": {
-      "type": "foundation-phases",
-      "blocks": {
-        "phase_kXJzWf": {
-          "type": "phase",
-          "settings": {
-            "phase": "Phase I",
-            "title": "The Legacy Parter",
-            "description": "Your capital is the strategic fuel for human restoration. As a Legacy Partner, you aren't just funding a program; you are investing in the structural rebuilding of the next generation of leaders."
-          }
-        },
-        "phase_bqHKyw": {
-          "type": "phase",
-          "settings": {
-            "phase": "Phase II",
-            "title": "The Recipient",
-            "description": "Seeking restoration? If you or your organization serve those in need, apply for restorative support."
-          }
-        },
-        "phase_Rh3gAc": {
-          "type": "phase",
-          "settings": {
-            "phase": "Phase III",
-            "title": "The Collaborator",
-            "description": "We don't build in isolation. Partner with us to scale the architecture of honor globally."
-          }
-        }
-      },
-      "block_order": [
-        "phase_kXJzWf",
-        "phase_bqHKyw",
-        "phase_Rh3gAc"
-      ],
-      "settings": {
-        "heading": "The Alliance to Restoration",
-        "description": "Choose your mantle within the House of Vuu Foundation.",
-        "bg_tint": true
-      }
     },
     "partners": {
       "type": "foundation-partners",
@@ -505,10 +505,10 @@
     "freedom",
     "quote",
     "pathways",
+    "foundation_phases_ERWpPG",
     "1775778498c051b647",
     "blocks_EkJiwq",
     "17757855402695e700",
-    "foundation_phases_ERWpPG",
     "partners",
     "foundation_disclaimer",
     "1775778024e4db39af",
