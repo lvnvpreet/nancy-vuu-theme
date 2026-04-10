@@ -203,6 +203,65 @@
       ],
       "settings": {}
     },
+    "blocks_EkJiwq": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6602bd5_AdhUUQ": {
+          "type": "ai_gen_block_6602bd5",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/iStock-118854546.jpg",
+            "section_height": 51,
+            "desktop_width_percent": 100,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6602bd5_AdhUUQ"
+      ],
+      "name": "Media divider",
+      "settings": {}
+    },
+    "17757855402695e700": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_108a132_MXiTRW": {
+          "type": "ai_gen_block_108a132",
+          "settings": {
+            "padding_top": 100,
+            "padding_bottom": 100,
+            "background_color": "#F5F5F1",
+            "header": "The Pathway to Ascension",
+            "subheader": "<p>The House of Vuu Foundation is committed to fueling the next generation of excellence. If you are a visionary seeking to realize your full potential through Maison Arise but require financial stewardship to begin, we invite you to share your vision.</p>",
+            "body_content": "",
+            "button_text": "Begin Your Inquiry",
+            "button_link": "",
+            "header_font": "bodoni_moda_n4",
+            "header_size": 32,
+            "subheader_font": "bodoni_moda_n4",
+            "subheader_size": 18,
+            "body_font": "manrope_n4",
+            "body_size": 16,
+            "text_color": "#0f0f0f",
+            "button_size": 14,
+            "button_border_radius": 0,
+            "button_border_color": "#0f0f0f",
+            "button_text_color": "#0f0f0f",
+            "button_hover_bg": "#0f0f0f",
+            "button_hover_text": "#F5F5F1",
+            "button_hover_border": "#0f0f0f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_108a132_MXiTRW"
+      ],
+      "settings": {}
+    },
     "foundation_phases_ERWpPG": {
       "type": "foundation-phases",
       "blocks": {
@@ -432,6 +491,10 @@
         "ai_gen_block_7c4e997_tPJtep"
       ],
       "settings": {}
+    },
+    "177578497404c1031c": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -443,11 +506,14 @@
     "quote",
     "pathways",
     "1775778498c051b647",
+    "blocks_EkJiwq",
+    "17757855402695e700",
     "foundation_phases_ERWpPG",
     "partners",
     "foundation_disclaimer",
     "1775778024e4db39af",
     "17757808461259cf22",
-    "1775784332e045d812"
+    "1775784332e045d812",
+    "177578497404c1031c"
   ]
 }
