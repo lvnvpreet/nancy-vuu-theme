@@ -23,7 +23,7 @@
             "overlay_opacity": 0.4,
             "eyebrow": "",
             "subtitle": "CONNECT WITH THE",
-            "title": "House of Nancy Vuu",
+            "title": "House of Vuu Foundation",
             "text_color": "#0f0f0f",
             "vertical_alignment": "center",
             "horizontal_alignment": "center",
@@ -157,6 +157,7 @@
         "service_option_QUD3Ui",
         "service_option_D44eTe"
       ],
+      "disabled": true,
       "name": "Atelier Inquiry",
       "settings": {
         "section_id": "inquiry",
@@ -179,11 +180,65 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
+    },
+    "17757925094cb4f6d5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_efe6777_zadzRL": {
+          "type": "ai_gen_block_efe6777",
+          "settings": {
+            "heading": "The Pathway to Emergence",
+            "subheading": "You are fashioned for Heaven and tailored for Earth. This is the beginning of your pathway to emergence. Share the vision you are ready to launch into motion.",
+            "form_identifier": "pathway_to_emergence",
+            "name_label": "Full Name",
+            "email_label": "Email Address",
+            "dream_label": "The Dream You Are Fashioning",
+            "dream_field_name": "the_dream",
+            "alignment_label": "House of Vuu Alignment",
+            "alignment_field_name": "pillar_alignment",
+            "alignment_placeholder": "Which pillar resonates most with you?",
+            "request_label": "The Request",
+            "request_field_name": "request",
+            "request_placeholder": "How can the Foundation assist in your emergence?",
+            "button_text": "Submit Your Vision",
+            "success_heading": "Your vision has been received.",
+            "success_message": "We will review your story with the care it deserves.",
+            "section_padding": 100,
+            "min_height": 100,
+            "max_width": 700,
+            "desktop_width_percent": 100,
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "manrope_n4",
+            "heading_size": 36,
+            "heading_letter_spacing": 0.3,
+            "subheading_size": 20,
+            "background_color": "#F5F5F1",
+            "form_background": "#ffffff",
+            "heading_color": "#0f0f0f",
+            "subheading_color": "#555555",
+            "label_color": "#999999",
+            "input_text_color": "#0f0f0f",
+            "input_border_color": "#1a1a1a",
+            "input_focus_color": "#0f0f0f",
+            "placeholder_color": "#999999",
+            "button_background": "#1a1a1a",
+            "button_hover_background": "#0f0f0f",
+            "button_text_color": "#ffffff",
+            "error_color": "#D82C0D"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_efe6777_zadzRL"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "17753441280ec98742",
     "atelier_inquiry_MwdRTd",
-    "main"
+    "main",
+    "17757925094cb4f6d5"
   ]
 }
