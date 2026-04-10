@@ -1,0 +1,49 @@
+{% doc %}
+  @prompt
+    create a custom liquid block: <div id="alliance-form" style="position: absolute; margin-top: -100px;"></div>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-anchor-{{ ai_gen_id }} {
+    position: absolute;
+    margin-top: {{ block.settings.offset }}px;
+    pointer-events: none;
+  }
+{% endstyle %}
+
+<div
+  id="{{ block.settings.anchor_id }}"
+  class="ai-anchor-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+></div>
+
+{% schema %}
+{
+  "name": "Anchor point",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "alliance-form"
+    },
+    {
+      "type": "range",
+      "id": "offset",
+      "label": "Offset",
+      "min": -200,
+      "max": 0,
+      "step": 10,
+      "unit": "px",
+      "default": -100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anchor point"
+    }
+  ]
+}
+{% endschema %}
