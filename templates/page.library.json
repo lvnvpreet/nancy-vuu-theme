@@ -108,11 +108,11 @@
       "settings": {
         "image": "shopify://shop_images/untitled-5298_3.jpg",
         "eyebrow": "About the Author",
-        "heading_1": "The Vox",
+        "heading_1": "The Architect",
         "heading_2": "of Identity",
         "intro": "Nancy Vuu is a multi-hyphenate visionary—a Creative Director and Global Advisor dedicated to the structural restoration of worth. Her work transcends the traditional boundaries of fashion, recognized globally by Vogue, Harper’s Bazaar, and Elle.",
         "body_1": "Nancy’s runway has featured notable figures from the NBA and NFL, while her styling counsel is sought by Hollywood’s talent, the Medici Royal Family, and government dignitaries. Entrusted with the visual stewardship of those on the world’s most visible stages, her work spans the red carpets of the Oscars and Cannes to the corridors of international leadership.",
-        "body_2": "Yet, her most profound work happens off the runway. As the founder of the House of Vuu Foundation, she utilizes her global platform to combat human trafficking and empower marginalized communities through the Maison Arise.",
+        "body_2": "Yet, her most profound work happens off the runway. As the founder of the House of Vuu Foundation, she utilizes her global platform to combat human trafficking and empower marginalized communities through the Maison Arise, building the infrastructure of honor where true identity is discovered, tailored, and launched.",
         "body_3": "She does not just create garments; she restores human dignity. As a sought-after speaker and mentor, Nancy teaches leaders how to attire their mandate in grace and fashion a legacy of eternal significance."
       }
     },
@@ -124,8 +124,8 @@
           "settings": {
             "padding_top": 200,
             "padding_bottom": 200,
-            "background_color": "#FFFFFF",
-            "divider_color": "#E5E5E5",
+            "background_color": "#ffffff",
+            "divider_color": "#e5e5e5",
             "eyebrow_text": "THE SHARED NARRATIVE",
             "eyebrow_font": "manrope_n4",
             "eyebrow_size": 12,
@@ -152,7 +152,7 @@
             "button_text_color": "#0f0f0f",
             "button_border_color": "#0f0f0f",
             "button_hover_bg": "#0f0f0f",
-            "button_hover_text": "#FFFFFF",
+            "button_hover_text": "#ffffff",
             "button_hover_border": "#0f0f0f"
           },
           "blocks": {}
@@ -201,19 +201,19 @@
             "label_size": 14,
             "input_size": 15,
             "button_size": 13,
-            "background_color": "#FFFFFF",
-            "form_background": "#FFFFFF",
+            "background_color": "#ffffff",
+            "form_background": "#ffffff",
             "heading_color": "#0f0f0f",
             "body_color": "#0f0f0f",
             "label_color": "#0f0f0f",
             "input_color": "#0f0f0f",
-            "input_background": "#FFFFFF",
+            "input_background": "#ffffff",
             "input_border": "#cccccc",
             "input_focus_border": "#0f0f0f",
             "button_bg_color": "#0f0f0f",
-            "button_text_color": "#FFFFFF",
+            "button_text_color": "#ffffff",
             "button_hover_bg": "#333333",
-            "button_hover_text": "#FFFFFF",
+            "button_hover_text": "#ffffff",
             "desktop_width_percent": 100
           },
           "blocks": {}
