@@ -1,6 +1,737 @@
+{% doc %}
+  @prompt
+    "Create a sophisticated, minimalist 'Corporate Guardian' inquiry segment for the House of Vuu Foundation. This is a full-width section at the bottom of the page, designed to be a landing anchor for a 'Corporate Engagement' call to action."
+    
+    1. Anchoring Structure (The ID)
+    Tell the AI/Developer: "The container for this entire section must be assigned the specific HTML ID: alliance-form."
+    
+    This is the invisible "bookmark" that makes the glide happen.
+    
+    2. Aesthetic & Content Blocks
+    Aesthetic: Sovereign Luxury. Centered alignment, elegant serif typography (e.g., Bodoni Moda or Montserrat Light).
+    
+    Header: BECOME A CORPORATE GUARDIAN (All Caps, Serif, 0.4em letter spacing).
+    
+    Sub-Header: "Join the House of Vuu Foundation in a strategic alliance to restore human dignity and fashion a future of global excellence." (Italicized Serif).
+    
+    3. Strategic Form Fields (The Intake)
+    Design with no borders, using subtle lines below the fields for a clean, editorial look.
+    
+    Field 1 (Single Line): Full Name
+    
+    Field 2 (Single Line): Company Email
+    
+    Field 3 (Single Line): Company Name
+    
+    Field 4 (Dropdown Menu): Nature of Alliance
+    
+    Options: Corporate Stewardship (Donation), Strategic Collaboration (Partnership), Educational Integration (Maison Arise).
+    
+    Field 5 (Large Text Box): Share Your Vision for this Alliance.
+    
+    4. Sovereign CTA Button (The Decree)
+    Text: INITIATE ALLIANCE
+    
+    Style: Sharp-edged rectangle (0px corner radius), Solid Charcoal Black (#1A1A1A) with White Text.
+    
+    Padding: 18px 45px. Letter spacing: 0.2em. give me control to modify top and bottom padding of segment and control access to edit all content. and the ability to add more questions on the inquiry form. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-corporate-guardian-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 40px {{ block.settings.padding_bottom }}px;
+  }
+
+  .ai-corporate-guardian__container-{{ ai_gen_id }} {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ai-corporate-guardian__header-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.heading_size }}px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 24px;
+  }
+
+  .ai-corporate-guardian__subheader-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subheading_font.family }}, serif;
+    font-weight: {{ block.settings.subheading_font.weight }};
+    font-style: italic;
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 48px;
+    line-height: 1.6;
+  }
+
+  .ai-corporate-guardian__form-wrapper-{{ ai_gen_id }} {
+    margin-top: 40px;
+  }
+
+  .ai-corporate-guardian__field-group-{{ ai_gen_id }} {
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .ai-corporate-guardian__label-{{ ai_gen_id }} {
+    display: block;
+    font-family: {{ block.settings.label_font.family }}, sans-serif;
+    font-weight: {{ block.settings.label_font.weight }};
+    font-size: {{ block.settings.label_size }}px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 8px;
+  }
+
+  .ai-corporate-guardian__input-{{ ai_gen_id }},
+  .ai-corporate-guardian__select-{{ ai_gen_id }},
+  .ai-corporate-guardian__textarea-{{ ai_gen_id }} {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid {{ block.settings.field_border_color }};
+    padding: 12px 0;
+    font-family: {{ block.settings.label_font.family }}, sans-serif;
+    font-size: 16px;
+    color: {{ block.settings.text_color }};
+    transition: border-color 0.3s ease;
+  }
+
+  .ai-corporate-guardian__input-{{ ai_gen_id }}:focus,
+  .ai-corporate-guardian__select-{{ ai_gen_id }}:focus,
+  .ai-corporate-guardian__textarea-{{ ai_gen_id }}:focus {
+    outline: none;
+    border-bottom-color: {{ block.settings.text_color }};
+  }
+
+  .ai-corporate-guardian__select-{{ ai_gen_id }} {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231A1A1A' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 32px;
+  }
+
+  .ai-corporate-guardian__textarea-{{ ai_gen_id }} {
+    min-height: 120px;
+    resize: vertical;
+    font-family: {{ block.settings.label_font.family }}, sans-serif;
+  }
+
+  .ai-corporate-guardian__button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: 0;
+    padding: 18px 45px;
+    font-family: {{ block.settings.label_font.family }}, sans-serif;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+  }
+
+  .ai-corporate-guardian__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-corporate-guardian__success-{{ ai_gen_id }} {
+    color: {{ block.settings.success_color }};
+    font-family: {{ block.settings.label_font.family }}, sans-serif;
+    font-size: 16px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .ai-corporate-guardian__error-{{ ai_gen_id }} {
+    color: {{ block.settings.error_color }};
+    font-family: {{ block.settings.label_font.family }}, sans-serif;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-corporate-guardian-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.6 }}px 20px {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-corporate-guardian__header-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+      letter-spacing: 0.2em;
+    }
+
+    .ai-corporate-guardian__subheader-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.85 }}px;
+    }
+
+    .ai-corporate-guardian__button-{{ ai_gen_id }} {
+      padding: 16px 32px;
+      font-size: {{ block.settings.button_text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<corporate-guardian-{{ ai_gen_id }}
+  id="alliance-form"
+  class="ai-corporate-guardian-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-corporate-guardian__container-{{ ai_gen_id }}">
+    {%- if block.settings.heading != blank -%}
+      <h2 class="ai-corporate-guardian__header-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if block.settings.subheading != blank -%}
+      <div class="ai-corporate-guardian__subheader-{{ ai_gen_id }}">
+        {{ block.settings.subheading }}
+      </div>
+    {%- endif -%}
+
+    {%- form 'contact' -%}
+      <input type="hidden" name="contact[form_type]" value="Corporate Guardian Alliance">
+      
+      <div class="ai-corporate-guardian__form-wrapper-{{ ai_gen_id }}">
+        {%- if block.settings.field_1_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-1-{{ ai_gen_id }}">
+              {{ block.settings.field_1_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-field-1-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_1_label }}]"
+              class="ai-corporate-guardian__input-{{ ai_gen_id }}"
+              {% if block.settings.field_1_required %}required{% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.field_2_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-2-{{ ai_gen_id }}">
+              {{ block.settings.field_2_label }}
+            </label>
+            <input
+              type="email"
+              id="ai-field-2-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_2_label }}]"
+              class="ai-corporate-guardian__input-{{ ai_gen_id }}"
+              {% if block.settings.field_2_required %}required{% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.field_3_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-3-{{ ai_gen_id }}">
+              {{ block.settings.field_3_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-field-3-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_3_label }}]"
+              class="ai-corporate-guardian__input-{{ ai_gen_id }}"
+              {% if block.settings.field_3_required %}required{% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.field_4_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-4-{{ ai_gen_id }}">
+              {{ block.settings.field_4_label }}
+            </label>
+            <select
+              id="ai-field-4-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_4_label }}]"
+              class="ai-corporate-guardian__select-{{ ai_gen_id }}"
+              {% if block.settings.field_4_required %}required{% endif %}
+            >
+              <option value="">Select an option</option>
+              <option value="{{ block.settings.field_4_option_1 }}">{{ block.settings.field_4_option_1 }}</option>
+              <option value="{{ block.settings.field_4_option_2 }}">{{ block.settings.field_4_option_2 }}</option>
+              <option value="{{ block.settings.field_4_option_3 }}">{{ block.settings.field_4_option_3 }}</option>
+            </select>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.field_5_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-5-{{ ai_gen_id }}">
+              {{ block.settings.field_5_label }}
+            </label>
+            <textarea
+              id="ai-field-5-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_5_label }}]"
+              class="ai-corporate-guardian__textarea-{{ ai_gen_id }}"
+              rows="5"
+              {% if block.settings.field_5_required %}required{% endif %}
+            ></textarea>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.field_6_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-6-{{ ai_gen_id }}">
+              {{ block.settings.field_6_label }}
+            </label>
+            <input
+              type="text"
+              id="ai-field-6-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_6_label }}]"
+              class="ai-corporate-guardian__input-{{ ai_gen_id }}"
+              {% if block.settings.field_6_required %}required{% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.field_7_enabled -%}
+          <div class="ai-corporate-guardian__field-group-{{ ai_gen_id }}">
+            <label class="ai-corporate-guardian__label-{{ ai_gen_id }}" for="ai-field-7-{{ ai_gen_id }}">
+              {{ block.settings.field_7_label }}
+            </label>
+            <textarea
+              id="ai-field-7-{{ ai_gen_id }}"
+              name="contact[{{ block.settings.field_7_label }}]"
+              class="ai-corporate-guardian__textarea-{{ ai_gen_id }}"
+              rows="5"
+              {% if block.settings.field_7_required %}required{% endif %}
+            ></textarea>
+          </div>
+        {%- endif -%}
+
+        <button type="submit" class="ai-corporate-guardian__button-{{ ai_gen_id }}">
+          {{ block.settings.button_text }}
+        </button>
+
+        {%- if form.posted_successfully? -%}
+          <div
+            id="ai-corporate-guardian-success-{{ ai_gen_id }}"
+            class="ai-corporate-guardian__success-{{ ai_gen_id }}"
+          >
+            {{ block.settings.success_message }}
+          </div>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="ai-corporate-guardian__error-{{ ai_gen_id }}">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endform -%}
+  </div>
+</corporate-guardian-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CorporateGuardian{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.form = this.querySelector('form');
+        if (this.form) {
+          this.form.addEventListener('submit', this.handleSubmit.bind(this));
+        }
+      }
+
+      handleSubmit(event) {
+        const requiredFields = this.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.style.borderBottomColor = '#D82C0D';
+          } else {
+            field.style.borderBottomColor = '';
+          }
+        });
+
+        if (!isValid) {
+          event.preventDefault();
+        }
+      }
+    }
+
+    customElements.define('corporate-guardian-{{ ai_gen_id }}', CorporateGuardian{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Corporate Guardian",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "BECOME A CORPORATE GUARDIAN"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Join the House of Vuu Foundation in a strategic alliance to restore human dignity and fashion a future of global excellence."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "INITIATE ALLIANCE"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you. Your alliance inquiry has been received."
+    },
+    {
+      "type": "header",
+      "content": "Field 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_1_enabled",
+      "label": "Enable field 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_1_label",
+      "label": "Label",
+      "default": "Full Name"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_1_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_2_enabled",
+      "label": "Enable field 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_2_label",
+      "label": "Label",
+      "default": "Company Email"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_2_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_3_enabled",
+      "label": "Enable field 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_3_label",
+      "label": "Label",
+      "default": "Company Name"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_3_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 4 (dropdown)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_4_enabled",
+      "label": "Enable field 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_4_label",
+      "label": "Label",
+      "default": "Nature of Alliance"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_4_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_4_option_1",
+      "label": "Option 1",
+      "default": "Corporate Stewardship (Donation)"
+    },
+    {
+      "type": "text",
+      "id": "field_4_option_2",
+      "label": "Option 2",
+      "default": "Strategic Collaboration (Partnership)"
+    },
+    {
+      "type": "text",
+      "id": "field_4_option_3",
+      "label": "Option 3",
+      "default": "Educational Integration (Maison Arise)"
+    },
+    {
+      "type": "header",
+      "content": "Field 5 (text area)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_5_enabled",
+      "label": "Enable field 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "field_5_label",
+      "label": "Label",
+      "default": "Share Your Vision for this Alliance"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_5_required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Field 6 (additional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_6_enabled",
+      "label": "Enable field 6",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "field_6_label",
+      "label": "Label",
+      "default": "Additional Question"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_6_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Field 7 (additional text area)"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_7_enabled",
+      "label": "Enable field 7",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "field_7_label",
+      "label": "Label",
+      "default": "Additional Details"
+    },
+    {
+      "type": "checkbox",
+      "id": "field_7_required",
+      "label": "Required",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "font_picker",
+      "id": "subheading_font",
+      "label": "Subheading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "font_picker",
+      "id": "label_font",
+      "label": "Label and input font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#1A1A1A"
+    },
+    {
+      "type": "color",
+      "id": "field_border_color",
+      "label": "Field border",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#1A1A1A"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success message",
+      "default": "#008060"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error message",
+      "default": "#D82C0D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Corporate Guardian"
+    }
+  ]
+}
 {% endschema %}
