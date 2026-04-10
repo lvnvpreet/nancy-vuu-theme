@@ -219,7 +219,7 @@
             "card_2_title": "The Visionary",
             "card_2_text": "SEEKING RESTORATION? WHETHER YOU ARE AN INDIVIDUAL SEEKING ASCENSION OR YOUR ORGANIZATION SERVE THOSE IN NEED, APPLY FOR RESTORATIVE SUPPORT AND JOIN THE PATHWAY TO ASCENSION.",
             "card_2_cta_text": "Begin Your Inquiry",
-            "card_2_cta_link": "/pages/visionary-inquiry",
+            "card_2_cta_link": "shopify://pages/test",
             "card_3_enabled": true,
             "card_3_phase": "",
             "card_3_title": "The Collaborator",
