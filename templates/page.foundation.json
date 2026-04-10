@@ -294,13 +294,6 @@
             "role": "Logistics Patron"
           }
         },
-        "guard_5": {
-          "type": "guardian",
-          "settings": {
-            "name": "Hawaii Prayer Breakfast",
-            "role": "Faith-Inspired Alliance"
-          }
-        },
         "guard_6": {
           "type": "guardian",
           "settings": {
@@ -317,7 +310,6 @@
         "guard_2",
         "guard_3",
         "guard_4",
-        "guard_5",
         "guard_6"
       ],
       "settings": {
@@ -408,6 +400,37 @@
         "ai_gen_block_024aed2_kBKar7"
       ],
       "settings": {}
+    },
+    "1775784332e045d812": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7c4e997_tPJtep": {
+          "type": "ai_gen_block_7c4e997",
+          "settings": {
+            "heading": "",
+            "disclaimer_text": "<p><strong>THE HOUSE OF VUU FOUNDATION</strong> is a 501(c)(3) nonprofit organization. All contributions are tax-deductible to the extent allowed by law. We are committed to the highest standards of financial stewardship and transparency as we work to restore dignity and fashion excellence globally. No goods or services were provided in exchange for your contribution, other than intangible religious or humanitarian benefits.</p>",
+            "padding_top": 110,
+            "padding_bottom": 110,
+            "heading_spacing": 20,
+            "paragraph_spacing": 16,
+            "desktop_width_percent": 100,
+            "max_width": 1000,
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 20,
+            "heading_color": "#0f0f0f",
+            "body_font": "manrope_n4",
+            "body_size": 16,
+            "body_line_height": 1.6,
+            "body_color": "#0f0f0f",
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7c4e997_tPJtep"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -423,6 +446,7 @@
     "partners",
     "foundation_disclaimer",
     "1775778024e4db39af",
-    "17757808461259cf22"
+    "17757808461259cf22",
+    "1775784332e045d812"
   ]
 }
