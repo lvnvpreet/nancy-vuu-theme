@@ -435,33 +435,33 @@
     },
     "1775844329f81b5d82": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "1775844828879a779c": {
+      "type": "_blocks",
       "blocks": {
-        "ai_gen_block_98d9e9c_74aUqQ": {
-          "type": "ai_gen_block_98d9e9c",
+        "ai_gen_block_c0a037b_3knTdm": {
+          "type": "ai_gen_block_c0a037b",
           "settings": {
-            "media_type": "image",
-            "video": "",
-            "section_height": 25,
-            "background_color": "#0f0f0f",
-            "overlay_color": "none",
-            "overlay_opacity": 0.3,
             "eyebrow": "",
-            "title": "FASHIONED FOR HEAVEN.  TAILORED FOR EARTH.",
-            "text_color": "#ffffff",
-            "eyebrow_size": 12,
+            "title": "FASHIONED FOR HEAVEN. TAILORED FOR EARTH.",
+            "section_height": 9,
+            "background_color": "#100f0f",
+            "text_color": "#faf8f5",
+            "eyebrow_font_size": 11,
             "eyebrow_letter_spacing": 0.1,
             "eyebrow_word_spacing": 0,
-            "title_size": 28,
-            "title_letter_spacing": 0.1,
-            "title_word_spacing": 0,
-            "vertical_alignment": "center",
-            "horizontal_alignment": "center"
+            "title_font": "manrope",
+            "title_font_size": 22,
+            "title_letter_spacing": 0.2,
+            "title_word_spacing": 0.3,
+            "spacing_between_eyebrow_title": 12
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_98d9e9c_74aUqQ"
+        "ai_gen_block_c0a037b_3knTdm"
       ],
       "settings": {}
     }
@@ -488,6 +488,7 @@
     "17754541703f55f024",
     "177546198737070015",
     "blocks_gATtDd",
-    "1775844329f81b5d82"
+    "1775844329f81b5d82",
+    "1775844828879a779c"
   ]
 }
