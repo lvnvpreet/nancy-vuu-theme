@@ -235,36 +235,6 @@
       ],
       "settings": {}
     },
-    "foundation_phases_ERWpPG": {
-      "type": "foundation-phases",
-      "blocks": {
-        "phase_bqHKyw": {
-          "type": "phase",
-          "settings": {
-            "phase": "",
-            "title": "The Recipient",
-            "description": "Seeking restoration? If you or your organization serve those in need, apply for restorative support."
-          }
-        },
-        "phase_Rh3gAc": {
-          "type": "phase",
-          "settings": {
-            "phase": "",
-            "title": "The Collaborator",
-            "description": "We don't build in isolation. Partner with us to scale the architecture of honor globally."
-          }
-        }
-      },
-      "block_order": [
-        "phase_bqHKyw",
-        "phase_Rh3gAc"
-      ],
-      "settings": {
-        "heading": "The Alliance to Restoration",
-        "description": "Choose your mantle within the House of Vuu Foundation.",
-        "bg_tint": true
-      }
-    },
     "1775778498c051b647": {
       "type": "_blocks",
       "blocks": {
@@ -330,6 +300,7 @@
       "blocks": {
         "ai_gen_block_108a132_MXiTRW": {
           "type": "ai_gen_block_108a132",
+          "disabled": true,
           "settings": {
             "padding_top": 180,
             "padding_bottom": 180,
@@ -567,7 +538,6 @@
     "quote",
     "pathways",
     "1775789297b950a224",
-    "foundation_phases_ERWpPG",
     "1775778498c051b647",
     "blocks_EkJiwq",
     "17757855402695e700",
