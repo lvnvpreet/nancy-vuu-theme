@@ -186,14 +186,14 @@
             "subtext_size": 16,
             "body_size": 18,
             "button_size": 14,
-            "background_color": "#F5F5F1",
-            "separator_color": "#C9A961",
-            "heading_color": "#1A1A1A",
-            "text_color": "#1A1A1A",
-            "button_bg_color": "#1A1A1A",
-            "button_text_color": "#FFFFFF",
-            "button_hover_bg_color": "#C9A961",
-            "button_hover_text_color": "#1A1A1A"
+            "background_color": "#f5f5f1",
+            "separator_color": "#c9a961",
+            "heading_color": "#1a1a1a",
+            "text_color": "#1a1a1a",
+            "button_bg_color": "#1a1a1a",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#c9a961",
+            "button_hover_text_color": "#1a1a1a"
           },
           "blocks": {}
         }
@@ -328,7 +328,7 @@
         "guardians_heading": "Corporate Guardians",
         "guardians_body": "Acknowledging the private sector entities that fuel community restoration and global excellence.",
         "contact_text": "Corporate Engagement",
-        "contact_link": ""
+        "contact_link": "#initiate-alliance"
       }
     },
     "foundation_disclaimer": {
@@ -337,6 +337,67 @@
     },
     "1775778024e4db39af": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "17757808461259cf22": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_024aed2_kBKar7": {
+          "type": "ai_gen_block_024aed2",
+          "settings": {
+            "heading": "BECOME A CORPORATE GUARDIAN",
+            "subheading": "Join the House of Vuu Foundation in a strategic alliance to restore human dignity and fashion a future of global excellence.",
+            "button_text": "INITIATE ALLIANCE",
+            "success_message": "Thank you. Your alliance inquiry has been received.",
+            "field_1_enabled": true,
+            "field_1_label": "Full Name and role",
+            "field_1_required": true,
+            "field_2_enabled": true,
+            "field_2_label": "Company Name",
+            "field_2_required": true,
+            "field_3_enabled": true,
+            "field_3_label": "Company Email",
+            "field_3_required": true,
+            "field_4_enabled": true,
+            "field_4_label": "Nature of Alliance",
+            "field_4_required": true,
+            "field_4_option_1": "Corporate Stewardship (Donation)",
+            "field_4_option_2": "Strategic Collaboration (Partnership)",
+            "field_4_option_3": "Educational Integration (Maison Arise)",
+            "field_5_enabled": true,
+            "field_5_label": "Share Your Vision for this Alliance",
+            "field_5_required": true,
+            "field_6_enabled": false,
+            "field_6_label": "Additional Question",
+            "field_6_required": false,
+            "field_7_enabled": false,
+            "field_7_label": "Additional Details",
+            "field_7_required": false,
+            "padding_top": 200,
+            "padding_bottom": 80,
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 36,
+            "subheading_font": "bodoni_moda_n4",
+            "subheading_size": 18,
+            "label_font": "manrope_n4",
+            "label_size": 12,
+            "background_color": "#faf8f5",
+            "text_color": "#1A1A1A",
+            "field_border_color": "#cccccc",
+            "button_bg_color": "#1A1A1A",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#000000",
+            "button_hover_text_color": "#ffffff",
+            "button_text_size": 14,
+            "success_color": "#008060",
+            "error_color": "#D82C0D"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_024aed2_kBKar7"
+      ],
       "settings": {}
     }
   },
@@ -352,6 +413,7 @@
     "foundation_phases_ERWpPG",
     "partners",
     "foundation_disclaimer",
-    "1775778024e4db39af"
+    "1775778024e4db39af",
+    "17757808461259cf22"
   ]
 }
