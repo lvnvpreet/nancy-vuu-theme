@@ -325,6 +325,7 @@
     },
     "foundation_disclaimer": {
       "type": "foundation-disclaimer",
+      "disabled": true,
       "settings": {}
     },
     "1775778024e4db39af": {
@@ -419,7 +420,7 @@
             "heading_size": 20,
             "heading_color": "#0f0f0f",
             "body_font": "manrope_n4",
-            "body_size": 16,
+            "body_size": 15,
             "body_line_height": 1.6,
             "body_color": "#0f0f0f",
             "background_color": "#ffffff"
