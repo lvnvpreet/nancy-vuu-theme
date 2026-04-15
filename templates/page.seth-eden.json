@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "about_hero_6aaApt": {
+      "type": "about-hero",
+      "name": "About — Hero",
+      "settings": {
+        "image_url": "https://cdn.shopify.com/videos/c/o/v/389fdd76a43a4c7fb98f012439993514.mp4",
+        "overlay_opacity": 15,
+        "eyebrow": "The Legacy",
+        "title_line_1": "The Architecture",
+        "title_line_2": "of Distinction"
+      }
+    },
     "manifesto": {
       "type": "manifesto",
       "settings": {
@@ -615,6 +626,7 @@
     }
   },
   "order": [
+    "about_hero_6aaApt",
     "manifesto",
     "seth_hero",
     "vitality",
