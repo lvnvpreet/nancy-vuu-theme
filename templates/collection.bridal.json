@@ -54,14 +54,14 @@
         "collection_1": {
           "type": "collection_link",
           "settings": {
-            "collection": "",
+            "collection": "luminous-veil",
             "label": ""
           }
         },
         "collection_2": {
           "type": "collection_link",
           "settings": {
-            "collection": "",
+            "collection": "celestial-grace-collection",
             "label": ""
           }
         },
