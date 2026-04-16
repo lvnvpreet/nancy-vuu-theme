@@ -72,6 +72,13 @@
             "label": ""
           }
         },
+        "collection_link_M9HF8k": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
         "collection_5": {
           "type": "collection_link",
           "settings": {
@@ -91,6 +98,7 @@
         "collection_1",
         "collection_2",
         "collection_4",
+        "collection_link_M9HF8k",
         "collection_5",
         "collection_6"
       ],
