@@ -215,6 +215,44 @@
       color: #ccc;
       font-size: .75rem;
     }
+    .nv-dossier-field .nv-phone-wrap {
+      align-items: center;
+    }
+    .nv-dossier-field .nv-phone-wrap__code {
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-bottom: 1px solid #e5e5e5 !important;
+      padding: .75rem 0 !important;
+      margin: 0 !important;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #111;
+      background: transparent;
+    }
+    .nv-dossier-field .nv-phone-wrap__input {
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-bottom: 1px solid #e5e5e5 !important;
+      padding: .75rem 0 .75rem 14px !important;
+      margin: 0 !important;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #111;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color .3s ease;
+    }
+    .nv-dossier-field .nv-phone-wrap__input::placeholder {
+      color: #ccc;
+      font-size: .75rem;
+    }
+    .nv-dossier-field .nv-phone-wrap__code:focus,
+    .nv-dossier-field .nv-phone-wrap__input:focus {
+      border-bottom-color: #c5a059 !important;
+    }
     .nv-dossier-textarea {
       resize: none;
       min-height: 80px;
@@ -396,7 +434,7 @@
             <!-- Row 4: Phone Number (full width) -->
             <div class="nv-dossier-field full">
               <label class="nv-dossier-label">Phone Number</label>
-              {%- render 'phone-field', placeholder: 'Phone Number' -%}
+              {%- render 'phone-field', placeholder: 'Phone Number', input_class: 'nv-dossier-input' -%}
             </div>
 
             <!-- Social Media — 3 col -->
