@@ -5470,3 +5470,8 @@ div + section {
 }
 @media (min-width: 768px) { .press-engage__form-wrap { padding: 5rem; } }
 .press-engage__form { display: flex; flex-direction: column; gap: 3rem; }
+.product__media img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
