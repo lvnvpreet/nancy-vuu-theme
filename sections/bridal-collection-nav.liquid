@@ -1,0 +1,147 @@
+{% comment %} sections/bridal-collection-nav.liquid {% endcomment %}
+<section id="bridal-collection-nav" class="bridal-collection-nav section-pad">
+  <style>
+    #bridal-collection-nav-{{ section.id }} {
+      background: {{ section.settings.bg_color | default: '#f8f6f2' }};
+      color: {{ section.settings.text_color | default: '#111111' }};
+    }
+    #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(3rem, 5vw, 5rem) 1.5rem;
+      text-align: center;
+    }
+    #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__eyebrow {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: .62rem;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: #9c8b6a;
+      margin-bottom: 1rem;
+    }
+    #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__title {
+      margin: 0 0 2rem;
+    }
+    #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .9rem;
+    }
+    #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__btn {
+      display: inline-flex;
+      width: 100%;
+      min-height: 64px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(17, 17, 17, 0.2);
+      background: #ffffff;
+      color: #111111;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-family: var(--font-sans);
+      font-size: .67rem;
+      font-weight: 600;
+      padding: .9rem 1rem;
+      transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+    #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__btn:hover {
+      background: #111111;
+      color: #ffffff;
+      border-color: #111111;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 900px) {
+      #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      #bridal-collection-nav-{{ section.id }} .bridal-collection-nav__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="bridal-collection-nav__inner">
+    <span class="bridal-collection-nav__eyebrow">{{ section.settings.eyebrow }}</span>
+    <h2 class="serif-font section-title-xl bridal-collection-nav__title">{{ section.settings.title }}</h2>
+
+    <div class="bridal-collection-nav__grid">
+      {%- for block in section.blocks -%}
+        {%- assign selected_collection = block.settings.collection -%}
+        {%- if selected_collection != blank -%}
+          {%- assign button_label = block.settings.label | strip -%}
+          <a class="bridal-collection-nav__btn" href="{{ selected_collection.url }}" {{ block.shopify_attributes }}>
+            {{ button_label | default: selected_collection.title }}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bridal Collection Nav",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Explore By Collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Select A Bridal Collection"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f8f6f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_link",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Custom label (optional)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Bridal Collection Nav",
+      "blocks": [
+        { "type": "collection_link" },
+        { "type": "collection_link" },
+        { "type": "collection_link" },
+        { "type": "collection_link" },
+        { "type": "collection_link" },
+        { "type": "collection_link" }
+      ]
+    }
+  ]
+}
+{% endschema %}

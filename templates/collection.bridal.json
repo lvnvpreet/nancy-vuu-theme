@@ -18,7 +18,7 @@
         "eyebrow": "The Evidence of a Promise",
         "title": "",
         "cta_label": "VIEW OUR COLLECTION",
-        "cta_link": "#product-grid"
+        "cta_link": "#bridal-collection-nav"
       }
     },
     "manifesto": {
@@ -48,12 +48,65 @@
         "body": "These collections are a curated archive of our most celebrated masterworks. The designs serve as the blueprint for your personal journey. We invite you to commission your own Made-to-Measure or Bespoke iteration, tailored precisely to your vision and silhouette."
       }
     },
-    "main": {
-      "type": "main-collection",
+    "bridal_collection_nav": {
+      "type": "bridal-collection-nav",
+      "blocks": {
+        "collection_1": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_2": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_3": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_4": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_5": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_6": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4",
+        "collection_5",
+        "collection_6"
+      ],
       "settings": {
-        "products_per_page": 48,
-        "columns": "3",
-        "group_by_type": true
+        "eyebrow": "Explore By Collection",
+        "title": "Select A Bridal Collection",
+        "bg_color": "#f8f6f2",
+        "text_color": "#111111"
       }
     },
     "1775603492b29b1e93": {
@@ -217,7 +270,7 @@
     "hero",
     "manifesto",
     "exclusivity",
-    "main",
+    "bridal_collection_nav",
     "1775603492b29b1e93",
     "about_retreats_EWU49g",
     "cross_sell_luxury_rGLrnA",
