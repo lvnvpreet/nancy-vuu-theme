@@ -68,14 +68,14 @@
         "collection_3": {
           "type": "collection_link",
           "settings": {
-            "collection": "",
+            "collection": "divine-promise",
             "label": ""
           }
         },
         "collection_4": {
           "type": "collection_link",
           "settings": {
-            "collection": "",
+            "collection": "eternal-light",
             "label": ""
           }
         },
