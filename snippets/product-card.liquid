@@ -9,10 +9,27 @@
 {%- liquid
   assign lazy = lazy_load | default: true
   assign loading = lazy | iif: 'lazy', 'eager'
+  assign inquiry_only = false
+  if product.metafields.custom.inquiry_only and product.metafields.custom.inquiry_only.value
+    assign inquiry_only = true
+  endif
+  assign inquiry_variant = product.selected_or_first_available_variant.title
+  if inquiry_variant == 'Default Title'
+    assign inquiry_variant = ''
+  endif
 -%}
 
 <div class="product-card group" itemscope itemtype="http://schema.org/Product">
-  <a href="{{ product.url }}" class="product-card__link" aria-label="{{ product.title | escape }}">
+  <a
+    href="{{ product.url }}"
+    class="product-card__link{% if inquiry_only %} js-product-inquiry-trigger{% endif %}"
+    aria-label="{{ product.title | escape }}"
+    {% if inquiry_only %}
+      data-product-title="{{ product.title | escape }}"
+      data-product-url="{{ product.url }}"
+      data-product-variant="{{ inquiry_variant | escape }}"
+      data-product-collection="{{ collection.title | default: '' | escape }}"
+    {% endif %}>
 
     <!-- Image -->
     <div class="product-card__image-wrap">
@@ -51,7 +68,9 @@
 
       <!-- Badges -->
       <div class="product-card__badges">
-        {%- if product.available == false -%}
+        {%- if inquiry_only -%}
+          <span class="badge badge--available">Available by Inquiry</span>
+        {%- elsif product.available == false -%}
           <span class="badge badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
         {%- elsif product.compare_at_price > product.price -%}
           <span class="badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
@@ -64,7 +83,9 @@
       <p class="product-card__vendor eyebrow" itemprop="brand">{{ product.vendor }}</p>
       <h3 class="product-card__title serif-font" itemprop="name">{{ product.title }}</h3>
       <div class="product-card__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        {%- if product.compare_at_price > product.price -%}
+        {%- if inquiry_only -%}
+          <span class="price price--inquiry">Price on Request</span>
+        {%- elsif product.compare_at_price > product.price -%}
           <span class="price price--sale">{{ product.price | money }}</span>
           <span class="price price--compare">{{ product.compare_at_price | money }}</span>
         {%- else -%}
@@ -78,7 +99,17 @@
   </a>
 
   <!-- Quick Add -->
-  {%- if product.variants.size == 1 and product.available -%}
+  {%- if inquiry_only -%}
+    <button
+      type="button"
+      class="btn-editorial btn-editorial--small js-product-inquiry-trigger"
+      data-product-title="{{ product.title | escape }}"
+      data-product-url="{{ product.url }}"
+      data-product-variant="{{ inquiry_variant | escape }}"
+      data-product-collection="{{ collection.title | default: '' | escape }}">
+      Request Inquiry
+    </button>
+  {%- elsif product.variants.size == 1 and product.available -%}
     <form action="/cart/add" method="post" class="product-card__quick-add">
       <input type="hidden" name="id" value="{{ product.variants.first.id }}">
       <button type="submit" class="btn-editorial btn-editorial--small">

@@ -520,14 +520,67 @@ var nvInquiryData = {
   }
 };
 
+function nvSetInquiryProductContext(payload) {
+  var productFieldWrap = document.getElementById('nv-inquiry-product-field');
+  var productDisplay = document.getElementById('nv-inquiry-product-display');
+  var productTitleInput = document.getElementById('nv-inquiry-product-title');
+  var productUrlInput = document.getElementById('nv-inquiry-product-url');
+  var productVariantInput = document.getElementById('nv-inquiry-product-variant');
+  var productCollectionInput = document.getElementById('nv-inquiry-product-collection');
+  var inquiryBody = document.querySelector('#nv-inquiry-form textarea[name="contact[body]"]');
+
+  if (!payload || !payload.title) {
+    if (productFieldWrap) productFieldWrap.style.display = 'none';
+    if (productDisplay) productDisplay.value = '';
+    if (productTitleInput) productTitleInput.value = '';
+    if (productUrlInput) productUrlInput.value = '';
+    if (productVariantInput) productVariantInput.value = '';
+    if (productCollectionInput) productCollectionInput.value = '';
+    return;
+  }
+
+  var displayText = 'Product of Interest: ' + payload.title;
+  if (payload.variant) displayText += ' | Variant: ' + payload.variant;
+
+  if (productFieldWrap) productFieldWrap.style.display = 'block';
+  if (productDisplay) productDisplay.value = displayText;
+  if (productTitleInput) productTitleInput.value = payload.title;
+  if (productUrlInput) productUrlInput.value = payload.url || '';
+  if (productVariantInput) productVariantInput.value = payload.variant || '';
+  if (productCollectionInput) productCollectionInput.value = payload.collection || '';
+
+  if (inquiryBody && !inquiryBody.value.trim()) {
+    inquiryBody.value =
+      'Product Inquiry: ' + payload.title +
+      (payload.variant ? '\nPreferred Variant: ' + payload.variant : '') +
+      (payload.collection ? '\nCollection: ' + payload.collection : '') +
+      (payload.url ? '\nProduct URL: ' + payload.url : '');
+  }
+}
+
 window.nvOpenInquiry = function(vertical) {
   var data = nvInquiryData[vertical];
   if (!data) return;
+  nvSetInquiryProductContext(null);
   document.getElementById('nv-inquiry-eyebrow').textContent = data.eyebrow;
   document.getElementById('nv-inquiry-title').textContent = data.title;
   document.getElementById('nv-inquiry-desc').textContent = data.desc;
   var tag = document.getElementById('nv-inquiry-tag');
   if (tag) tag.value = data.tag;
+  var modal = document.getElementById('nv-inquiry-modal');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+};
+
+window.nvOpenProductInquiry = function(payload) {
+  if (!payload || !payload.title) return;
+  document.getElementById('nv-inquiry-eyebrow').textContent = 'Private Product Inquiry';
+  document.getElementById('nv-inquiry-title').textContent = 'Request Availability';
+  document.getElementById('nv-inquiry-desc').textContent = 'Submit your details and our atelier concierge will contact you with pricing, availability, and customization options for this piece.';
+  var tag = document.getElementById('nv-inquiry-tag');
+  if (tag) tag.value = 'bridal-product-inquiry';
+  nvSetInquiryProductContext(payload);
   var modal = document.getElementById('nv-inquiry-modal');
   if (!modal) return;
   modal.style.display = 'flex';
@@ -546,8 +599,32 @@ window.nvCloseInquiry = function() {
     if (success) success.style.display = 'none';
     var form = document.getElementById('nv-inquiry-form');
     if (form) form.reset();
+    nvSetInquiryProductContext(null);
   }, 400);
 };
+
+document.addEventListener('click', function(e) {
+  var trigger = e.target.closest('.js-product-inquiry-trigger');
+  if (!trigger) return;
+  e.preventDefault();
+
+  var variant = trigger.getAttribute('data-product-variant') || '';
+  if (trigger.getAttribute('data-product-variant-source') === 'product-page') {
+    var select = document.getElementById('product-variant-select');
+    if (select && select.selectedIndex >= 0) {
+      var selectedText = select.options[select.selectedIndex].text || '';
+      variant = selectedText.split(' — ')[0] || variant;
+      if (variant === 'Default Title') variant = '';
+    }
+  }
+
+  window.nvOpenProductInquiry({
+    title: trigger.getAttribute('data-product-title') || '',
+    url: trigger.getAttribute('data-product-url') || '',
+    collection: trigger.getAttribute('data-product-collection') || '',
+    variant: variant
+  });
+});
 
 var inquiryModal = document.getElementById('nv-inquiry-modal');
 if (inquiryModal) {

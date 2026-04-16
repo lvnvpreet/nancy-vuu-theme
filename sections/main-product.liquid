@@ -1,6 +1,10 @@
 {% comment %} sections/main-product.liquid {% endcomment %}
 
 {%- assign product = product -%}
+{%- assign inquiry_only = false -%}
+{%- if product.metafields.custom.inquiry_only and product.metafields.custom.inquiry_only.value -%}
+  {%- assign inquiry_only = true -%}
+{%- endif -%}
 
 <section class="product-page" itemscope itemtype="http://schema.org/Product">
   <div class="product-page__inner">
@@ -50,7 +54,9 @@
 
       <div class="product-info__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
-        {%- if product.compare_at_price > product.price -%}
+        {%- if inquiry_only -%}
+          <span class="price price--inquiry">Price on Request</span>
+        {%- elsif product.compare_at_price > product.price -%}
           <span class="price price--sale" itemprop="price" content="{{ product.price | divided_by: 100.0 }}">{{ product.price | money }}</span>
           <span class="price price--compare">{{ product.compare_at_price | money }}</span>
         {%- else -%}
@@ -94,7 +100,18 @@
         </select>
 
         <div class="product-form__actions">
-          {%- if product.available -%}
+          {%- if inquiry_only -%}
+            <button
+              type="button"
+              class="btn-editorial btn-editorial--full js-product-inquiry-trigger"
+              data-product-variant-source="product-page"
+              data-product-title="{{ product.title | escape }}"
+              data-product-url="{{ product.url }}"
+              data-product-variant="{{ product.selected_or_first_available_variant.title | escape }}"
+              data-product-collection="{{ product.collections.first.title | default: '' | escape }}">
+              Request Inquiry
+            </button>
+          {%- elsif product.available -%}
             <button type="submit" name="add" class="btn-editorial btn-editorial--full" id="add-to-cart-btn">
               {{ 'products.product.add_to_cart' | t }}
             </button>
