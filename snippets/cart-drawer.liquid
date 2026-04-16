@@ -47,19 +47,17 @@
       {% endif %}
     </div>
 
-    {% if cart.item_count > 0 %}
-      <div class="cart-drawer__footer">
-        <div class="cart-drawer__subtotal">
-          <span class="eyebrow" style="margin:0;">{{ 'cart.subtotal' | t }}</span>
-          <span class="serif-font cart-drawer__total">{{ cart.total_price | money }}</span>
-        </div>
-        <p class="cart-drawer__note body-copy" style="font-size:.7rem;">
-          {{ 'cart.taxes_note' | t: default: 'Taxes and shipping calculated at checkout.' }}
-        </p>
-        <a href="/checkout" class="btn-editorial btn-editorial--full">{{ 'cart.checkout' | t }}</a>
-        <a href="/cart" class="cart-drawer__view-cart">{{ 'cart.view_cart' | t }}</a>
+    <div class="cart-drawer__footer"{% if cart.item_count == 0 %} style="display:none;"{% endif %}>
+      <div class="cart-drawer__subtotal">
+        <span class="eyebrow" style="margin:0;">{{ 'cart.subtotal' | t }}</span>
+        <span class="serif-font cart-drawer__total">{{ cart.total_price | money }}</span>
       </div>
-    {% endif %}
+      <p class="cart-drawer__note body-copy" style="font-size:.7rem;">
+        {{ 'cart.taxes_note' | t: default: 'Taxes and shipping calculated at checkout.' }}
+      </p>
+      <a href="/checkout" class="btn-editorial btn-editorial--full">{{ 'cart.checkout' | t }}</a>
+      <a href="/cart" class="cart-drawer__view-cart">{{ 'cart.view_cart' | t }}</a>
+    </div>
 
   </div>
 </div>
