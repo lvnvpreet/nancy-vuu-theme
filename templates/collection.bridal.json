@@ -65,13 +65,6 @@
             "label": ""
           }
         },
-        "collection_3": {
-          "type": "collection_link",
-          "settings": {
-            "collection": "divine-promise",
-            "label": ""
-          }
-        },
         "collection_4": {
           "type": "collection_link",
           "settings": {
@@ -97,7 +90,6 @@
       "block_order": [
         "collection_1",
         "collection_2",
-        "collection_3",
         "collection_4",
         "collection_5",
         "collection_6"
