@@ -840,7 +840,7 @@ body::after {
 }
 .badge--sold-out { background: #fff; color: var(--ink); }
 .badge--sale     { background: var(--ink); color: #fff; }
-.badge--available { background: #111; color: #fff; }
+.badge--available { background: #fff; color: var(--ink); }
 
 .price--inquiry {
   font-size: .8rem;

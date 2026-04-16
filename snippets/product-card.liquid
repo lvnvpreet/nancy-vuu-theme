@@ -69,7 +69,7 @@
       <!-- Badges -->
       <div class="product-card__badges">
         {%- if inquiry_only -%}
-          <span class="badge badge--available">Available by Inquiry</span>
+          <span class="badge badge--available">Available</span>
         {%- elsif product.available == false -%}
           <span class="badge badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
         {%- elsif product.compare_at_price > product.price -%}
