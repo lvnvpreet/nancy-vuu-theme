@@ -2084,7 +2084,7 @@ textarea.audience-modal__input { resize: none; }
   display: block;
 }
 .seth-feature--dark .seth-feature__img {
-  filter: grayscale(100%) brightness(0.9);
+  filter: none !important;
 }
 #vitality-threshold .seth-feature__img {
   filter: none;
