@@ -85,6 +85,16 @@
         {%- endif -%}
       </nav>
     </div>
+    <div class="menu-column">
+      <p class="eyebrow" style="color:#ccc;">{{ section.settings.col3_heading | default: 'Private Access' }}</p>
+      <nav>
+        {%- for link in linklists[section.settings.menu_private].links -%}
+          <a href="{{ link.url }}" onclick="toggleMenu()" data-text="{{ link.title }}">
+            <span>{{ link.title }}</span>
+          </a>
+        {%- endfor -%}
+      </nav>
+    </div>
   </div>
 
   <div class="menu-footer">
@@ -458,6 +468,12 @@
       "default": "Lifestyle & Legacy"
     },
     {
+      "type": "text",
+      "id": "col3_heading",
+      "label": "Menu column 3 heading",
+      "default": "Private Access"
+    },
+    {
       "type": "link_list",
       "id": "menu_fashion",
       "label": "Fashion House links",
@@ -467,6 +483,11 @@
       "type": "link_list",
       "id": "menu_lifestyle",
       "label": "Lifestyle & Legacy links"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_private",
+      "label": "Menu column 3 links"
     },
     {
       "type": "text",
