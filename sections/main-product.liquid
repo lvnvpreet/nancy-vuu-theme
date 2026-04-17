@@ -99,6 +99,10 @@
           {%- endfor -%}
         </select>
 
+        {%- if inquiry_only -%}
+          <p class="product-info__inquiry-note body-copy">This design is available via private inquiry. Submit your request below and our atelier concierge will contact you.</p>
+        {%- endif -%}
+
         <div class="product-form__actions">
           {%- if inquiry_only -%}
             <button
@@ -109,7 +113,7 @@
               data-product-url="{{ product.url }}"
               data-product-variant="{{ product.selected_or_first_available_variant.title | escape }}"
               data-product-collection="{{ product.collections.first.title | default: '' | escape }}">
-              Request Inquiry
+              Schedule Your Private Design Discovery
             </button>
           {%- elsif product.available -%}
             <button type="submit" name="add" class="btn-editorial btn-editorial--full" id="add-to-cart-btn">

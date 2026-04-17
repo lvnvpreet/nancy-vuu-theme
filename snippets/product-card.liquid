@@ -13,10 +13,6 @@
   if product.metafields.custom.inquiry_only and product.metafields.custom.inquiry_only.value
     assign inquiry_only = true
   endif
-  assign inquiry_variant = product.selected_or_first_available_variant.title
-  if inquiry_variant == 'Default Title'
-    assign inquiry_variant = ''
-  endif
 -%}
 
 <div class="product-card group" itemscope itemtype="http://schema.org/Product">
@@ -69,37 +65,35 @@
       </div>
     </div>
 
-    <!-- Info -->
-    <div class="product-card__info">
-      <p class="product-card__vendor eyebrow" itemprop="brand">{{ product.vendor }}</p>
-      <h3 class="product-card__title serif-font" itemprop="name">{{ product.title }}</h3>
-      <div class="product-card__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        {%- if inquiry_only -%}
-          <span class="price price--inquiry">Price on Request</span>
-        {%- elsif product.compare_at_price > product.price -%}
-          <span class="price price--sale">{{ product.price | money }}</span>
-          <span class="price price--compare">{{ product.compare_at_price | money }}</span>
-        {%- else -%}
-          <span class="price" itemprop="price" content="{{ product.price | divided_by: 100.0 }}">
-            {{ product.price | money }}
-          </span>
-        {%- endif -%}
-        <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+    {%- unless inquiry_only -%}
+      <!-- Info -->
+      <div class="product-card__info">
+        <p class="product-card__vendor eyebrow" itemprop="brand">{{ product.vendor }}</p>
+        <h3 class="product-card__title serif-font" itemprop="name">{{ product.title }}</h3>
+        <div class="product-card__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          {%- if product.compare_at_price > product.price -%}
+            <span class="price price--sale">{{ product.price | money }}</span>
+            <span class="price price--compare">{{ product.compare_at_price | money }}</span>
+          {%- else -%}
+            <span class="price" itemprop="price" content="{{ product.price | divided_by: 100.0 }}">
+              {{ product.price | money }}
+            </span>
+          {%- endif -%}
+          <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+        </div>
       </div>
-    </div>
+    {%- endunless -%}
   </a>
 
   <!-- Quick Add -->
-  {%- if inquiry_only -%}
-    <a href="{{ product.url }}" class="btn-editorial btn-editorial--small">View Product</a>
-  {%- elsif product.variants.size == 1 and product.available -%}
+  {%- if product.variants.size == 1 and product.available and inquiry_only == false -%}
     <form action="/cart/add" method="post" class="product-card__quick-add">
       <input type="hidden" name="id" value="{{ product.variants.first.id }}">
       <button type="submit" class="btn-editorial btn-editorial--small">
         {{ 'products.product.add_to_cart' | t }}
       </button>
     </form>
-  {%- elsif product.available -%}
+  {%- elsif product.available and inquiry_only == false -%}
     <a href="{{ product.url }}" class="btn-editorial btn-editorial--small">
       {{ 'products.product.select_options' | t }}
     </a>

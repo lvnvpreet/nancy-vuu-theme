@@ -813,6 +813,13 @@ body::after {
 
 .product-form__actions { margin: 1.5rem 0; }
 .product-info__description { max-width: 100%; }
+.product-info__inquiry-note {
+  margin: .75rem 0 1rem;
+  font-size: .8rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 52ch;
+}
 .product-info__bespoke-note .body-copy { font-size: .8rem; }
 
 /* ── PRODUCT CARD (collection grid) ─────────────────────── */
