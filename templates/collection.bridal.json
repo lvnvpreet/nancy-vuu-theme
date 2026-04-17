@@ -72,6 +72,13 @@
             "label": ""
           }
         },
+        "collection_link_M9HF8k": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "divine-promise",
+            "label": ""
+          }
+        },
         "collection_5": {
           "type": "collection_link",
           "settings": {
@@ -91,6 +98,7 @@
         "collection_1",
         "collection_2",
         "collection_4",
+        "collection_link_M9HF8k",
         "collection_5",
         "collection_6"
       ],
@@ -101,6 +109,61 @@
         "text_color": "#111111"
       }
     },
+    "investment_tiers_feh9h3": {
+      "type": "investment-tiers",
+      "blocks": {
+        "tier_Uz4j7P": {
+          "type": "tier",
+          "settings": {
+            "name": "Atelier Signature",
+            "tagline": "A Heritage Beginning",
+            "features": "",
+            "price": "From $1,800",
+            "cta_label": "Reserve A Private Consultation",
+            "cta_link": "#inquiry",
+            "badge": "",
+            "featured": false
+          }
+        },
+        "tier_8FRqJR": {
+          "type": "tier",
+          "settings": {
+            "name": "Made-to-Measure",
+            "tagline": "Personalized Grace",
+            "features": "",
+            "price": "From $2,800",
+            "cta_label": "RESERVE A PRIVATE CONSULTATION",
+            "cta_link": "#inquiry",
+            "badge": "",
+            "featured": false
+          }
+        },
+        "tier_9YGXeY": {
+          "type": "tier",
+          "settings": {
+            "name": "Custom Bespoke",
+            "tagline": "The Masterpiece Heirloom",
+            "features": "",
+            "price": "From $8,500",
+            "cta_label": "RESERVE A PRIVATE CONSULTATION",
+            "cta_link": "",
+            "badge": "Most Coveted",
+            "featured": true
+          }
+        }
+      },
+      "block_order": [
+        "tier_Uz4j7P",
+        "tier_8FRqJR",
+        "tier_9YGXeY"
+      ],
+      "name": "Investment Tiers",
+      "settings": {
+        "title": "Your Bridal Legacy, Master-Tailored",
+        "subtitle": "A gown is the visual foundation of your family’s history. Every silhouette is a collaborative masterpiece, hand-stitched with the precision that your story deserves. Utilizing only the most exquisite heritage textiles—luminous silks and intricate French laces—we ensure your gown feels as divine as it looks. Fashioned for Heaven, tailored for earth.",
+        "footnote": ""
+      }
+    },
     "1775603492b29b1e93": {
       "type": "_blocks",
       "blocks": {
@@ -108,7 +171,7 @@
           "type": "ai_gen_block_4347913",
           "settings": {
             "eyebrow": "NANCY VUU BRIDAL ATELIER",
-            "subtext": "Experience the precision of couture. We invite you to our private atelier to explore our exclusive made-to-measure collections and initiate your bridal bespoke journey.",
+            "subtext": "Experience the artisanal precision of couture. We invite you to our private atelier to explore our bespoke and exclusive made-to-measure collections and initiate your bridal bespoke journey.",
             "button_text": "REQUEST A CONSULTATION",
             "button_link": "#inquiry",
             "desktop_width_percent": 100,
@@ -263,6 +326,7 @@
     "manifesto",
     "exclusivity",
     "bridal_collection_nav",
+    "investment_tiers_feh9h3",
     "1775603492b29b1e93",
     "about_retreats_EWU49g",
     "cross_sell_luxury_rGLrnA",
