@@ -34,7 +34,7 @@
           {%- for media in product.media limit: 6 -%}
             <button
               class="product-gallery__thumb {% if forloop.first %}is-active{% endif %}"
-              onclick="setProductImage('{{ media | image_url: width: 1200 }}', this)"
+              onclick="setProductImage('{{ media | image_url: width: 1200 }}', '{{ media | image_url: width: 600 }}', this)"
               aria-label="View image {{ forloop.index }}">
               <img
                 src="{{ media | image_url: width: 120 }}"
@@ -136,8 +136,10 @@
 </section>
 
 <script>
-  function setProductImage(src, btn) {
-    document.getElementById('product-featured-image').src = src;
+  function setProductImage(src, srcSmall, btn) {
+    var featuredImage = document.getElementById('product-featured-image');
+    featuredImage.src = src;
+    featuredImage.srcset = srcSmall + ' 600w, ' + src + ' 1200w';
     document.querySelectorAll('.product-gallery__thumb').forEach(function(b) { b.classList.remove('is-active'); });
     btn.classList.add('is-active');
   }
