@@ -119,7 +119,7 @@
             "tagline": "A Heritage Beginning",
             "features": "",
             "price": "From $1,800",
-            "cta_label": "Inquire",
+            "cta_label": "",
             "cta_link": "",
             "badge": "",
             "featured": false
@@ -132,7 +132,7 @@
             "tagline": "Personalized Grace",
             "features": "",
             "price": "From $2,800",
-            "cta_label": "Inquire",
+            "cta_label": "",
             "cta_link": "",
             "badge": "",
             "featured": false
@@ -145,7 +145,7 @@
             "tagline": "The Masterpiece Heirloom",
             "features": "",
             "price": "From $8,500",
-            "cta_label": "Request Commission",
+            "cta_label": "",
             "cta_link": "",
             "badge": "Most Coveted",
             "featured": true
