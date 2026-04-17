@@ -62,5 +62,21 @@
         "default": "drawer"
       }
     ]
+  },
+  {
+    "name": "Product Inquiry Modal",
+    "settings": [
+      { "type": "text", "id": "inquiry_modal_eyebrow", "label": "Eyebrow", "default": "Private Product Inquiry" },
+      { "type": "text", "id": "inquiry_modal_title", "label": "Title", "default": "Request Availability" },
+      { "type": "textarea", "id": "inquiry_modal_desc", "label": "Description", "default": "Submit your details and our atelier concierge will contact you with pricing, availability, and customization options for this piece." },
+      { "type": "text", "id": "inquiry_modal_name_placeholder", "label": "Name placeholder", "default": "FULL NAME" },
+      { "type": "text", "id": "inquiry_modal_email_placeholder", "label": "Email placeholder", "default": "EMAIL ADDRESS" },
+      { "type": "text", "id": "inquiry_modal_phone_placeholder", "label": "Phone placeholder", "default": "PHONE NUMBER" },
+      { "type": "text", "id": "inquiry_modal_company_placeholder", "label": "Company placeholder", "default": "ORGANIZATION / COMPANY" },
+      { "type": "text", "id": "inquiry_modal_message_placeholder", "label": "Message placeholder", "default": "BRIEFLY DESCRIBE YOUR INTEREST..." },
+      { "type": "text", "id": "inquiry_modal_submit_label", "label": "Submit button label", "default": "Submit Inquiry" },
+      { "type": "text", "id": "inquiry_modal_success_title", "label": "Success title", "default": "Your Inquiry Has Been Received." },
+      { "type": "textarea", "id": "inquiry_modal_success_body", "label": "Success message", "default": "Our team will be in touch shortly to discuss next steps." }
+    ]
   }
 ]

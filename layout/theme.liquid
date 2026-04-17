@@ -536,14 +536,14 @@
   <!-- ═══════════════════════════════════════════════════
        GENERIC INQUIRY MODAL — Academy CTAs
        ═══════════════════════════════════════════════════ -->
-  <div id="nv-inquiry-modal" style="display:none;position:fixed;inset:0;z-index:9997;align-items:center;justify-content:center;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);padding:1.5rem;">
-    <div style="background:#fff;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative;padding:3.5rem 3rem 3rem;text-align:center;">
+  <div id="nv-inquiry-modal" style="display:none;position:fixed;inset:0;z-index:9997;align-items:center;justify-content:center;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);padding:1rem;">
+    <div style="background:#fff;width:min(92vw,430px);max-height:94vh;overflow-y:auto;position:relative;padding:3.25rem 2.25rem 2.5rem;text-align:center;">
       <button onclick="nvCloseInquiry()" style="position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.1rem;cursor:pointer;color:#aaa;">✕</button>
 
       <div id="nv-inquiry-form-wrap">
-        <span id="nv-inquiry-eyebrow" style="font-family:var(--font-sans);font-size:.55rem;letter-spacing:.5em;text-transform:uppercase;color:#c5a059;margin-bottom:1rem;display:block;"></span>
-        <h2 id="nv-inquiry-title" style="font-family:var(--font-serif);font-size:clamp(1.5rem,3vw,2.25rem);font-style:italic;color:#111;margin-bottom:1rem;"></h2>
-        <p id="nv-inquiry-desc" style="font-family:var(--font-sans);font-size:.8rem;color:#666;line-height:1.8;max-width:380px;margin:0 auto 1.5rem;"></p>
+        <span id="nv-inquiry-eyebrow" style="font-family:var(--font-sans);font-size:.55rem;letter-spacing:.5em;text-transform:uppercase;color:#c5a059;margin-bottom:1rem;display:block;">{{ settings.inquiry_modal_eyebrow | default: 'Private Product Inquiry' }}</span>
+        <h2 id="nv-inquiry-title" style="font-family:var(--font-serif);font-size:clamp(1.5rem,3vw,2.25rem);font-style:italic;color:#111;margin-bottom:1rem;">{{ settings.inquiry_modal_title | default: 'Request Availability' }}</h2>
+        <p id="nv-inquiry-desc" style="font-family:var(--font-sans);font-size:.8rem;color:#666;line-height:1.8;max-width:380px;margin:0 auto 1.5rem;">{{ settings.inquiry_modal_desc | default: 'Submit your details and our atelier concierge will contact you with pricing, availability, and customization options for this piece.' }}</p>
         <div style="width:2.5rem;height:1px;background:#c5a059;margin:0 auto 2rem;"></div>
 
         <form id="nv-inquiry-form" style="text-align:left;">
@@ -562,36 +562,35 @@
           </div>
 
           <div style="margin-bottom:1.75rem;">
-            <input type="text" name="contact[name]" placeholder="FULL NAME" required
+            <input type="text" name="contact[name]" placeholder="{{ settings.inquiry_modal_name_placeholder | default: 'FULL NAME' | escape }}" required
               style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
           </div>
           <div style="margin-bottom:1.75rem;">
-            <input type="email" name="contact[email]" placeholder="EMAIL ADDRESS" required
+            <input type="email" name="contact[email]" placeholder="{{ settings.inquiry_modal_email_placeholder | default: 'EMAIL ADDRESS' | escape }}" required
               style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
           </div>
           <div style="margin-bottom:1.75rem;">
-            <input type="tel" name="contact[phone]" placeholder="PHONE NUMBER"
-              style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
+            {%- render 'phone-field', placeholder: settings.inquiry_modal_phone_placeholder | default: 'PHONE NUMBER' -%}
           </div>
           <div style="margin-bottom:1.75rem;">
-            <input type="text" name="contact[company]" placeholder="ORGANIZATION / COMPANY"
+            <input type="text" name="contact[company]" placeholder="{{ settings.inquiry_modal_company_placeholder | default: 'ORGANIZATION / COMPANY' | escape }}"
               style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
           </div>
           <div style="margin-bottom:2rem;">
-            <textarea name="contact[body]" placeholder="BRIEFLY DESCRIBE YOUR INTEREST..." rows="4"
+            <textarea name="contact[body]" placeholder="{{ settings.inquiry_modal_message_placeholder | default: 'BRIEFLY DESCRIBE YOUR INTEREST...' | escape }}" rows="4"
               style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;resize:none;"></textarea>
           </div>
           <button type="submit"
             style="width:100%;background:#111;color:#fff;border:1px solid #111;padding:1.4rem;font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;cursor:pointer;">
-            Submit Inquiry
+            {{ settings.inquiry_modal_submit_label | default: 'Submit Inquiry' }}
           </button>
         </form>
       </div>
 
       <div id="nv-inquiry-success" style="display:none;padding:3rem 1rem;text-align:center;">
         <div style="width:8px;height:8px;background:#c5a059;border-radius:50%;margin:0 auto 1.5rem;"></div>
-        <h3 style="font-family:var(--font-serif);font-style:italic;font-size:1.75rem;color:#111;margin-bottom:1rem;">Your Inquiry Has Been Received.</h3>
-        <p style="font-family:var(--font-sans);font-size:.8rem;color:#666;line-height:1.8;">Our team will be in touch shortly to discuss next steps.</p>
+        <h3 style="font-family:var(--font-serif);font-style:italic;font-size:1.75rem;color:#111;margin-bottom:1rem;">{{ settings.inquiry_modal_success_title | default: 'Your Inquiry Has Been Received.' }}</h3>
+        <p style="font-family:var(--font-sans);font-size:.8rem;color:#666;line-height:1.8;">{{ settings.inquiry_modal_success_body | default: 'Our team will be in touch shortly to discuss next steps.' }}</p>
       </div>
     </div>
   </div>
