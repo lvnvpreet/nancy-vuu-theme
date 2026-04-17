@@ -20,16 +20,7 @@
 -%}
 
 <div class="product-card group" itemscope itemtype="http://schema.org/Product">
-  <a
-    href="{{ product.url }}"
-    class="product-card__link{% if inquiry_only %} js-product-inquiry-trigger{% endif %}"
-    aria-label="{{ product.title | escape }}"
-    {% if inquiry_only %}
-      data-product-title="{{ product.title | escape }}"
-      data-product-url="{{ product.url }}"
-      data-product-variant="{{ inquiry_variant | escape }}"
-      data-product-collection="{{ collection.title | default: '' | escape }}"
-    {% endif %}>
+  <a href="{{ product.url }}" class="product-card__link" aria-label="{{ product.title | escape }}">
 
     <!-- Image -->
     <div class="product-card__image-wrap">
@@ -100,15 +91,7 @@
 
   <!-- Quick Add -->
   {%- if inquiry_only -%}
-    <button
-      type="button"
-      class="btn-editorial btn-editorial--small js-product-inquiry-trigger"
-      data-product-title="{{ product.title | escape }}"
-      data-product-url="{{ product.url }}"
-      data-product-variant="{{ inquiry_variant | escape }}"
-      data-product-collection="{{ collection.title | default: '' | escape }}">
-      Request Inquiry
-    </button>
+    <a href="{{ product.url }}" class="btn-editorial btn-editorial--small">View Product</a>
   {%- elsif product.variants.size == 1 and product.available -%}
     <form action="/cart/add" method="post" class="product-card__quick-add">
       <input type="hidden" name="id" value="{{ product.variants.first.id }}">
