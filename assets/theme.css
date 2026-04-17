@@ -1502,21 +1502,6 @@ textarea.audience-modal__input { resize: none; }
   margin-bottom: 0 !important;
 }
 
-#nv-inquiry-modal .nv-phone-wrap__code,
-#nv-inquiry-modal .nv-phone-wrap__input {
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-  border-bottom: 1px solid #e5e5e5 !important;
-  background: transparent;
-  outline: none;
-}
-
-#nv-inquiry-modal .nv-phone-wrap__code:focus,
-#nv-inquiry-modal .nv-phone-wrap__input:focus {
-  border-bottom-color: #111 !important;
-}
-
 /* ── BTN-FILL ───────────────────────────────────────────── */
 .btn-fill {
   display: inline-block; padding: 1rem 3rem;

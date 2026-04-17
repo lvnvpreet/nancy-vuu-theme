@@ -536,6 +536,45 @@
   <!-- ═══════════════════════════════════════════════════
        GENERIC INQUIRY MODAL — Academy CTAs
        ═══════════════════════════════════════════════════ -->
+  <style>
+    #nv-inquiry-modal .nv-phone-wrap {
+      align-items: center;
+    }
+    #nv-inquiry-modal .nv-phone-wrap__code {
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-bottom: 1px solid #e5e5e5 !important;
+      padding: .75rem 0 !important;
+      margin: 0 !important;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #111;
+    }
+    #nv-inquiry-modal .nv-phone-wrap__input,
+    #nv-inquiry-modal .nv-inquiry-phone-input {
+      border: none !important;
+      border-bottom: 1px solid #e5e5e5 !important;
+      padding: .75rem 0 .75rem 14px !important;
+      margin: 0 !important;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: #111;
+      outline: none;
+      box-sizing: border-box;
+      box-shadow: none !important;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    #nv-inquiry-modal .nv-phone-wrap__code:focus,
+    #nv-inquiry-modal .nv-phone-wrap__input:focus,
+    #nv-inquiry-modal .nv-inquiry-phone-input:focus {
+      border-bottom-color: #111 !important;
+    }
+  </style>
+
   <div id="nv-inquiry-modal" style="display:none;position:fixed;inset:0;z-index:9997;align-items:center;justify-content:center;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);padding:1.5rem;">
     <div style="background:#fff;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative;padding:3.5rem 3rem 3rem;text-align:center;">
       <button onclick="nvCloseInquiry()" style="position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.1rem;cursor:pointer;color:#aaa;">✕</button>
@@ -570,7 +609,7 @@
               style="width:100%;border:none;border-bottom:1px solid #e5e5e5;padding:.75rem 0;font-family:var(--font-sans);font-size:.8rem;color:#111;background:transparent;outline:none;box-sizing:border-box;">
           </div>
           <div style="margin-bottom:1.75rem;">
-            {%- render 'phone-field', placeholder: settings.inquiry_modal_phone_placeholder | default: 'PHONE NUMBER' -%}
+            {%- render 'phone-field', placeholder: settings.inquiry_modal_phone_placeholder | default: 'PHONE NUMBER', input_class: 'nv-inquiry-phone-input' -%}
           </div>
           <div style="margin-bottom:1.75rem;">
             <input type="text" name="contact[company]" placeholder="{{ settings.inquiry_modal_company_placeholder | default: 'ORGANIZATION / COMPANY' | escape }}"
