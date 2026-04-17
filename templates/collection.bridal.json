@@ -48,61 +48,6 @@
         "body": "These collections are a curated archive of our most celebrated masterworks. The designs serve as the blueprint for your personal journey. We invite you to commission your own Made-to-Measure or Bespoke iteration, tailored precisely to your vision and silhouette."
       }
     },
-    "investment_tiers_feh9h3": {
-      "type": "investment-tiers",
-      "blocks": {
-        "tier_Uz4j7P": {
-          "type": "tier",
-          "settings": {
-            "name": "Atelier Signature",
-            "tagline": "A Heritage Beginning",
-            "features": "",
-            "price": "From $1,800",
-            "cta_label": "Inquire",
-            "cta_link": "",
-            "badge": "",
-            "featured": false
-          }
-        },
-        "tier_8FRqJR": {
-          "type": "tier",
-          "settings": {
-            "name": "Made-to-Measure",
-            "tagline": "Personalized Grace",
-            "features": "",
-            "price": "From $2,800",
-            "cta_label": "Inquire",
-            "cta_link": "",
-            "badge": "",
-            "featured": false
-          }
-        },
-        "tier_9YGXeY": {
-          "type": "tier",
-          "settings": {
-            "name": "Custom Bespoke",
-            "tagline": "The Masterpiece Heirloom",
-            "features": "",
-            "price": "From $8,500",
-            "cta_label": "Request Commission",
-            "cta_link": "",
-            "badge": "Most Coveted",
-            "featured": true
-          }
-        }
-      },
-      "block_order": [
-        "tier_Uz4j7P",
-        "tier_8FRqJR",
-        "tier_9YGXeY"
-      ],
-      "name": "Investment Tiers",
-      "settings": {
-        "title": "Your Pathway to Sovereignty",
-        "subtitle": "Defining the architectural depth of your commission",
-        "footnote": ""
-      }
-    },
     "bridal_collection_nav": {
       "type": "bridal-collection-nav",
       "blocks": {
@@ -162,6 +107,61 @@
         "title": "Select A Bridal Collection",
         "bg_color": "#f8f6f2",
         "text_color": "#111111"
+      }
+    },
+    "investment_tiers_feh9h3": {
+      "type": "investment-tiers",
+      "blocks": {
+        "tier_Uz4j7P": {
+          "type": "tier",
+          "settings": {
+            "name": "Atelier Signature",
+            "tagline": "A Heritage Beginning",
+            "features": "",
+            "price": "From $1,800",
+            "cta_label": "Inquire",
+            "cta_link": "",
+            "badge": "",
+            "featured": false
+          }
+        },
+        "tier_8FRqJR": {
+          "type": "tier",
+          "settings": {
+            "name": "Made-to-Measure",
+            "tagline": "Personalized Grace",
+            "features": "",
+            "price": "From $2,800",
+            "cta_label": "Inquire",
+            "cta_link": "",
+            "badge": "",
+            "featured": false
+          }
+        },
+        "tier_9YGXeY": {
+          "type": "tier",
+          "settings": {
+            "name": "Custom Bespoke",
+            "tagline": "The Masterpiece Heirloom",
+            "features": "",
+            "price": "From $8,500",
+            "cta_label": "Request Commission",
+            "cta_link": "",
+            "badge": "Most Coveted",
+            "featured": true
+          }
+        }
+      },
+      "block_order": [
+        "tier_Uz4j7P",
+        "tier_8FRqJR",
+        "tier_9YGXeY"
+      ],
+      "name": "Investment Tiers",
+      "settings": {
+        "title": "Your Bridal Legacy, Master-Tailored",
+        "subtitle": "A gown is the visual foundation of your family’s history. Every silhouette is a collaborative masterpiece, hand-stitched with the precision that your story deserves. Utilizing only the most exquisite heritage textiles—luminous silks and intricate French laces—we ensure your gown feels as divine as it looks. Fashioned for Heaven, tailored for earth.",
+        "footnote": ""
       }
     },
     "1775603492b29b1e93": {
