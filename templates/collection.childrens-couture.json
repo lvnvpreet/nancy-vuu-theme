@@ -123,8 +123,171 @@
       ],
       "settings": {}
     },
+    "bridal_collection_nav_zPDUbe": {
+      "type": "bridal-collection-nav",
+      "blocks": {
+        "collection_link_BXqQRw": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "breakfast-at-tiffanys-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_YNawCJ": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "eternal-garden-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_3bMhqJ": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "garden-of-eden-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_i8YrqP": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_link_zXRMFn": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_link_idhyCJ": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_link_BXqQRw",
+        "collection_link_YNawCJ",
+        "collection_link_3bMhqJ",
+        "collection_link_i8YrqP",
+        "collection_link_zXRMFn",
+        "collection_link_idhyCJ"
+      ],
+      "name": "Bridal Collection Nav",
+      "settings": {
+        "eyebrow": "Explore By Collection",
+        "title": "Select Children's Collection",
+        "bg_color": "#f8f6f2",
+        "text_color": "#111111"
+      }
+    },
+    "bridal_collection_nav_bJkLeb": {
+      "type": "bridal-collection-nav",
+      "blocks": {
+        "collection_link_kAyxA9": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "heavens-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_baEtGH": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "london-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_C3q4aF": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "royal-collection-kids-teens",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_link_kAyxA9",
+        "collection_link_baEtGH",
+        "collection_link_C3q4aF"
+      ],
+      "name": "Bridal Collection Nav",
+      "settings": {
+        "eyebrow": "",
+        "title": "",
+        "bg_color": "#f8f6f2",
+        "text_color": "#111111"
+      }
+    },
+    "bridal_collection_nav_tCGfxV": {
+      "type": "bridal-collection-nav",
+      "blocks": {
+        "collection_link_VXtNqC": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "royal-red-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_VEfUFQ": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "venice-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_MFzFtU": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "versailles-collection-kids-teens",
+            "label": ""
+          }
+        },
+        "collection_link_JzTxj7": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_link_LwNx9a": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        },
+        "collection_link_kdBJC3": {
+          "type": "collection_link",
+          "settings": {
+            "collection": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_link_VXtNqC",
+        "collection_link_VEfUFQ",
+        "collection_link_MFzFtU",
+        "collection_link_JzTxj7",
+        "collection_link_LwNx9a",
+        "collection_link_kdBJC3"
+      ],
+      "name": "Bridal Collection Nav",
+      "settings": {
+        "eyebrow": "",
+        "title": "",
+        "bg_color": "#f8f6f2",
+        "text_color": "#111111"
+      }
+    },
     "main": {
       "type": "main-collection",
+      "disabled": true,
       "settings": {
         "products_per_page": 24,
         "columns": "3",
@@ -199,6 +362,9 @@
     "manifesto",
     "exclusivity",
     "lookbook",
+    "bridal_collection_nav_zPDUbe",
+    "bridal_collection_nav_bJkLeb",
+    "bridal_collection_nav_tCGfxV",
     "main",
     "cross-sell",
     "atelier_inquiry_pXV4Xe"
