@@ -127,7 +127,7 @@
     "main": {
       "type": "main-collection",
       "settings": {
-        "products_per_page": 24,
+        "products_per_page": 40,
         "columns": "3",
         "group_by_type": false
       }
