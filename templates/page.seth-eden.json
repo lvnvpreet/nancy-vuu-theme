@@ -22,8 +22,51 @@
         "cta_link": "shopify://pages/request-atelier-consultation"
       }
     },
+    "177689546710c3215e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d0781c0_HhjNWF": {
+          "type": "ai_gen_block_d0781c0",
+          "settings": {
+            "eyebrow": "The Mandate",
+            "body": "<p>At Nancy Vuu Atelier, we believe a suit is more than a garment; it is the physical architecture of a leader's triumph. Our Seth Eden collection offers world-class bespoke custom suits for men and women, architected with the same precision and soul as our global couture pieces. From our <a href=\"https://www.nancyvuu.com\" title=\"Nancy Vuu Atelier\">San Jose Sanctuary,</a>we serve the discerning executive and visionary clientele of Palo Alto, Los Altos Hills, and Saratoga.</p>",
+            "desktop_width_percent": 100,
+            "max_width": 800,
+            "text_alignment": "center",
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "padding_horizontal": 20,
+            "padding_top_mobile": 40,
+            "padding_bottom_mobile": 40,
+            "padding_horizontal_mobile": 16,
+            "eyebrow_margin_bottom": 16,
+            "eyebrow_font": "manrope_n4",
+            "eyebrow_font_size": 14,
+            "eyebrow_font_size_mobile": 12,
+            "eyebrow_transform": "uppercase",
+            "eyebrow_letter_spacing": 0.1,
+            "eyebrow_color": "#0f0f0f",
+            "body_font": "manrope_n4",
+            "body_font_size": 25,
+            "body_font_size_mobile": 16,
+            "body_line_height": 1.8,
+            "body_color": "#0f0f0f",
+            "link_color": "#0f0f0f",
+            "link_hover_color": "#666666",
+            "link_decoration": "underline",
+            "background_color": "#faf8f5"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d0781c0_HhjNWF"
+      ],
+      "settings": {}
+    },
     "manifesto": {
       "type": "manifesto",
+      "disabled": true,
       "settings": {
         "eyebrow": "The Mandate",
         "quote": "At Nancy Vuu Atelier, we believe a suit is more than a garment; it is the physical architecture of a leader’s triumph. Our Seth Eden collection offers world-class bespoke custom suits for men and women, architected with the same precision and soul as our global couture pieces. From our San Jose sanctuary, we serve the discerning executive and visionary clientele of Palo Alto, Los Altos Hills, and Saratoga.",
@@ -629,6 +672,7 @@
   },
   "order": [
     "seth_hero_TNDT9M",
+    "177689546710c3215e",
     "manifesto",
     "seth_hero",
     "vitality",
