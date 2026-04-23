@@ -16,52 +16,64 @@
         "video_url": "https://cdn.shopify.com/videos/c/o/v/389fdd76a43a4c7fb98f012439993514.mp4",
         "eyebrow": "The House of Nancy Vuu Presents",
         "heading": "Seth Eden.",
-        "subtext": "Custom Bespoke Masterpiece Suits for Men & Women.",
+        "subtext": "Custom Bespoke Suits for Men & Women.",
         "brand_sub": "By Nancy Vuu",
         "cta_label": "Start Commissioning",
         "cta_link": "shopify://pages/request-atelier-consultation"
       }
     },
-    "177689546710c3215e": {
+    "17769129211ff8e243": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_d0781c0_HhjNWF": {
-          "type": "ai_gen_block_d0781c0",
+        "ai_gen_block_81bfb8d_wpkfcy": {
+          "type": "ai_gen_block_81bfb8d",
           "settings": {
             "eyebrow": "The Mandate",
-            "body": "<p>At Nancy Vuu Atelier, we believe a suit is more than a garment; it is the physical architecture of a leader's triumph. Our Seth Eden collection offers world-class bespoke custom suits for men and women, architected with the same precision and soul as our global couture pieces. From our <a href=\"https://www.nancyvuu.com\" title=\"Nancy Vuu Atelier\">San Jose Sanctuary,</a>we serve the discerning executive and visionary clientele of Palo Alto, Los Altos Hills, and Saratoga.</p>",
+            "body": "<p>At Nancy Vuu Atelier, we believe a suit is more than a garment; it is the physical architecture of a leader's triumph. Our Seth Eden collection offers world-class bespoke custom suits for men and women, architected with the same precision and soul as our global couture pieces. From our <a href=\"https://www.nancyvuu.com\">San Jose sanctuary</a>, we serve the discerning executive and visionary clientele of Atherton, Palo Alto, Los Altos Hills, and Saratoga.</p>",
+            "button_text": "Start the Commission",
+            "button_link": "#inquiry",
             "desktop_width_percent": 100,
             "max_width": 800,
             "text_alignment": "center",
-            "padding_top": 120,
-            "padding_bottom": 120,
-            "padding_horizontal": 20,
-            "padding_top_mobile": 40,
-            "padding_bottom_mobile": 40,
-            "padding_horizontal_mobile": 16,
-            "eyebrow_margin_bottom": 16,
+            "padding_top": 150,
+            "padding_bottom": 150,
             "eyebrow_font": "manrope_n4",
             "eyebrow_font_size": 14,
-            "eyebrow_font_size_mobile": 12,
-            "eyebrow_transform": "uppercase",
-            "eyebrow_letter_spacing": 0.1,
+            "eyebrow_letter_spacing": 0.3,
             "eyebrow_color": "#0f0f0f",
+            "eyebrow_spacing": 20,
             "body_font": "manrope_n4",
-            "body_font_size": 25,
-            "body_font_size_mobile": 16,
-            "body_line_height": 1.8,
+            "body_font_size": 24,
+            "body_line_height": 1.6,
+            "body_letter_spacing": 0.1,
+            "body_word_spacing": 0,
             "body_color": "#0f0f0f",
             "link_color": "#0f0f0f",
-            "link_hover_color": "#666666",
-            "link_decoration": "underline",
+            "body_spacing": 60,
+            "button_font": "manrope_n4",
+            "button_font_size": 13,
+            "button_letter_spacing": 0.1,
+            "button_padding_vertical": 20,
+            "button_padding_horizontal": 40,
+            "button_text_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_border_width": 1,
+            "button_border_radius": 0,
+            "button_hover_bg_color": "#0f0f0f",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#0f0f0f",
             "background_color": "#faf8f5"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_d0781c0_HhjNWF"
+        "ai_gen_block_81bfb8d_wpkfcy"
       ],
+      "settings": {}
+    },
+    "177689546710c3215e": {
+      "type": "_blocks",
       "settings": {}
     },
     "manifesto": {
@@ -672,6 +684,7 @@
   },
   "order": [
     "seth_hero_TNDT9M",
+    "17769129211ff8e243",
     "177689546710c3215e",
     "manifesto",
     "seth_hero",
