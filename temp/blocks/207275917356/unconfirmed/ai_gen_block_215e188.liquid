@@ -1,6 +1,1423 @@
+{% doc %}
+  @prompt
+    Task: Architect a high-end "Bridal Commission Application" section at the bottom of the Bespoke Bridal page.
+    
+    I. Typography & Aesthetic Requirements:
+    
+        Font Matching: All form headers and labels must match the Nancy Vuu Typography (utilizing the serif and sans-serif pairings currently active on nancyvuu.com).
+    
+        Styling: Use a minimalist, "Quiet Luxury" aesthetic. High white space, thin borders (0.5px or 1px), and a neutral palette. No aggressive colors; use soft blacks, whites, or muted greys for the input fields.
+    
+        Button Design: The "Initiate My Commission" button should be a clean, rectangular outline or solid block that matches the primary CTA buttons used in the hero sections of the site.
+    
+    II. Form Content & Architecture:
+    
+    Form Title (H2): The Bridal Commission Application
+    Form Description: Our bespoke process is a sacred collaboration. Due to the master-tailored nature of our Vietnam artisans, we only accept 4 legacy commissions per month.
+    
+    Fields to Include:
+    
+        Full Name (Text)
+    
+        Email Address (Email)
+    
+        Wedding or Event Date (Date Picker)
+    
+        Venue or Geographic Location (Text - For Estate Visitation planning)
+    
+        Desired Experience Level (Radio Buttons):
+    
+            The Couture Commission: Precision design and architectural creation of your gown.
+    
+            The Bridal Immersion & Crowning: A sacred journey of identity restoration and elevation. (Recommended for the Legacy Bride).
+    
+        Planned Investment Level for your Gown Architecture (Dropdown):
+    
+            Signature Atelier ($2,500 - $6,500)
+    
+            Custom Bespoke ($8,500 - $15,000)
+    
+            Grand Legacy ($15,000+)
+    
+        Consultation Preference (Radio Buttons):
+    
+            Private San Jose Sanctuary
+    
+            In-Residence Estate Visitation (Atherton, Woodside, Los Altos Hills, etc.)
+    
+        The Power Couple Sync (Checkbox):
+    
+            "I am interested in harmonized bespoke suiting for my partner to complement my gown."
+    
+        The Vision (Long Text):
+    
+            Placeholder: Describe the legacy, feeling, or architectural details you wish to embody on your sacred walk.
+    
+    Submit Button Text: Initiate My Commission
+    Success Message: Your vision has been received into our sanctuary. Nancy and the team are reviewing your architectural requirements; expect a personal invitation shortly. give me control access to edit all the content, padding, and spacing between letters and lines
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-bridal-commission-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding_top }}px {{ block.settings.section_padding_horizontal }}px {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-bridal-commission__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.form_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-bridal-commission__header-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.header_margin_bottom }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-bridal-commission__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.title_font_size }}px;
+    line-height: {{ block.settings.title_line_height }};
+    letter-spacing: {{ block.settings.title_letter_spacing }}em;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_margin_bottom }}px;
+  }
+
+  .ai-bridal-commission__description-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.description_font_size }}px;
+    line-height: {{ block.settings.description_line_height }};
+    letter-spacing: {{ block.settings.description_letter_spacing }}em;
+    color: {{ block.settings.description_color }};
+    margin: 0;
+  }
+
+  .ai-bridal-commission__form-wrapper-{{ ai_gen_id }} {
+    margin-top: {{ block.settings.form_margin_top }}px;
+  }
+
+  .ai-bridal-commission__field-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.field_spacing }}px;
+  }
+
+  .ai-bridal-commission__label-{{ ai_gen_id }} {
+    display: block;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.label_font_weight }};
+    font-size: {{ block.settings.label_font_size }}px;
+    line-height: {{ block.settings.label_line_height }};
+    letter-spacing: {{ block.settings.label_letter_spacing }}em;
+    color: {{ block.settings.label_color }};
+    margin-bottom: {{ block.settings.label_margin_bottom }}px;
+    text-transform: {{ block.settings.label_text_transform }};
+  }
+
+  .ai-bridal-commission__input-{{ ai_gen_id }},
+  .ai-bridal-commission__select-{{ ai_gen_id }},
+  .ai-bridal-commission__textarea-{{ ai_gen_id }} {
+    width: 100%;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.input_font_size }}px;
+    line-height: {{ block.settings.input_line_height }};
+    letter-spacing: {{ block.settings.input_letter_spacing }}em;
+    color: {{ block.settings.input_text_color }};
+    background-color: {{ block.settings.input_background_color }};
+    border: {{ block.settings.input_border_width }}px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    padding: {{ block.settings.input_padding_vertical }}px {{ block.settings.input_padding_horizontal }}px;
+    transition: border-color 0.2s ease;
+  }
+
+  .ai-bridal-commission__input-{{ ai_gen_id }}:focus,
+  .ai-bridal-commission__select-{{ ai_gen_id }}:focus,
+  .ai-bridal-commission__textarea-{{ ai_gen_id }}:focus {
+    outline: none;
+    border-color: {{ block.settings.input_focus_border_color }};
+  }
+
+  .ai-bridal-commission__textarea-{{ ai_gen_id }} {
+    min-height: {{ block.settings.textarea_min_height }}px;
+    resize: vertical;
+  }
+
+  .ai-bridal-commission__radio-group-{{ ai_gen_id }},
+  .ai-bridal-commission__checkbox-group-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.radio_checkbox_spacing }}px;
+  }
+
+  .ai-bridal-commission__radio-option-{{ ai_gen_id }},
+  .ai-bridal-commission__checkbox-option-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ai-bridal-commission__radio-{{ ai_gen_id }},
+  .ai-bridal-commission__checkbox-{{ ai_gen_id }} {
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .ai-bridal-commission__option-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.option_label_font_size }}px;
+    line-height: {{ block.settings.option_label_line_height }};
+    letter-spacing: {{ block.settings.option_label_letter_spacing }}em;
+    color: {{ block.settings.option_label_color }};
+    cursor: pointer;
+  }
+
+  .ai-bridal-commission__button-wrapper-{{ ai_gen_id }} {
+    margin-top: {{ block.settings.button_margin_top }}px;
+    text-align: {{ block.settings.button_alignment }};
+  }
+
+  .ai-bridal-commission__button-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    line-height: {{ block.settings.button_line_height }};
+    letter-spacing: {{ block.settings.button_letter_spacing }}em;
+    text-transform: {{ block.settings.button_text_transform }};
+    color: {{ block.settings.button_text_color }};
+    background-color: {{ block.settings.button_background_color }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .ai-bridal-commission__button-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.button_hover_text_color }};
+    background-color: {{ block.settings.button_hover_background_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  .ai-bridal-commission__success-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.success_font_size }}px;
+    line-height: {{ block.settings.success_line_height }};
+    letter-spacing: {{ block.settings.success_letter_spacing }}em;
+    color: {{ block.settings.success_text_color }};
+    background-color: {{ block.settings.success_background_color }};
+    border: {{ block.settings.success_border_width }}px solid {{ block.settings.success_border_color }};
+    border-radius: {{ block.settings.success_border_radius }}px;
+    padding: {{ block.settings.success_padding }}px;
+    margin-top: {{ block.settings.success_margin_top }}px;
+    text-align: center;
+  }
+
+  .ai-bridal-commission__error-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.error_font_size }}px;
+    color: {{ block.settings.error_text_color }};
+    margin-top: 8px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-bridal-commission-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_padding_top }}px {{ block.settings.mobile_padding_horizontal }}px {{ block.settings.mobile_padding_bottom }}px;
+    }
+
+    .ai-bridal-commission__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_title_font_size }}px;
+    }
+
+    .ai-bridal-commission__description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_description_font_size }}px;
+    }
+  }
+{% endstyle %}
+
+<bridal-commission-form-{{ ai_gen_id }}
+  class="ai-bridal-commission-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-bridal-commission__container-{{ ai_gen_id }}">
+    <div class="ai-bridal-commission__header-{{ ai_gen_id }}">
+      {% if block.settings.form_title != blank %}
+        <h2 class="ai-bridal-commission__title-{{ ai_gen_id }}">{{ block.settings.form_title }}</h2>
+      {% endif %}
+      {% if block.settings.form_description != blank %}
+        <div class="ai-bridal-commission__description-{{ ai_gen_id }}">{{ block.settings.form_description }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-bridal-commission__form-wrapper-{{ ai_gen_id }}">
+      {%- form 'contact' -%}
+        <input type="hidden" name="contact[bridal_commission]" value="true">
+
+        {% if form.posted_successfully? %}
+          <div
+            class="ai-bridal-commission__success-{{ ai_gen_id }}"
+            id="ai-bridal-commission-success-{{ ai_gen_id }}"
+          >
+            {{ block.settings.success_message }}
+          </div>
+        {% else %}
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label
+              for="ai-bridal-commission-name-{{ ai_gen_id }}"
+              class="ai-bridal-commission__label-{{ ai_gen_id }}"
+            >
+              {{ block.settings.label_full_name }}
+            </label>
+            <input
+              type="text"
+              id="ai-bridal-commission-name-{{ ai_gen_id }}"
+              name="contact[name]"
+              class="ai-bridal-commission__input-{{ ai_gen_id }}"
+              placeholder="{{ block.settings.placeholder_full_name }}"
+              required
+            >
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label
+              for="ai-bridal-commission-email-{{ ai_gen_id }}"
+              class="ai-bridal-commission__label-{{ ai_gen_id }}"
+            >
+              {{ block.settings.label_email }}
+            </label>
+            <input
+              type="email"
+              id="ai-bridal-commission-email-{{ ai_gen_id }}"
+              name="contact[email]"
+              class="ai-bridal-commission__input-{{ ai_gen_id }}"
+              placeholder="{{ block.settings.placeholder_email }}"
+              autocomplete="email"
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="ai-bridal-commission-email-error-{{ ai_gen_id }}"
+              {% endif %}
+              required
+            >
+            {%- if form.errors -%}
+              <div
+                id="ai-bridal-commission-email-error-{{ ai_gen_id }}"
+                class="ai-bridal-commission__error-{{ ai_gen_id }}"
+              >
+                {{ form.errors.messages.email }}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label
+              for="ai-bridal-commission-event-date-{{ ai_gen_id }}"
+              class="ai-bridal-commission__label-{{ ai_gen_id }}"
+            >
+              {{ block.settings.label_event_date }}
+            </label>
+            <input
+              type="text"
+              id="ai-bridal-commission-event-date-{{ ai_gen_id }}"
+              name="contact[event_date]"
+              class="ai-bridal-commission__input-{{ ai_gen_id }}"
+              placeholder="{{ block.settings.placeholder_event_date }}"
+            >
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label
+              for="ai-bridal-commission-location-{{ ai_gen_id }}"
+              class="ai-bridal-commission__label-{{ ai_gen_id }}"
+            >
+              {{ block.settings.label_location }}
+            </label>
+            <input
+              type="text"
+              id="ai-bridal-commission-location-{{ ai_gen_id }}"
+              name="contact[location]"
+              class="ai-bridal-commission__input-{{ ai_gen_id }}"
+              placeholder="{{ block.settings.placeholder_location }}"
+            >
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label class="ai-bridal-commission__label-{{ ai_gen_id }}">
+              {{ block.settings.label_experience_level }}
+            </label>
+            <div class="ai-bridal-commission__radio-group-{{ ai_gen_id }}">
+              <div class="ai-bridal-commission__radio-option-{{ ai_gen_id }}">
+                <input
+                  type="radio"
+                  id="ai-bridal-commission-experience-couture-{{ ai_gen_id }}"
+                  name="contact[experience_level]"
+                  value="{{ block.settings.option_experience_couture }}"
+                  class="ai-bridal-commission__radio-{{ ai_gen_id }}"
+                >
+                <label
+                  for="ai-bridal-commission-experience-couture-{{ ai_gen_id }}"
+                  class="ai-bridal-commission__option-label-{{ ai_gen_id }}"
+                >
+                  {{ block.settings.option_experience_couture }}
+                </label>
+              </div>
+              <div class="ai-bridal-commission__radio-option-{{ ai_gen_id }}">
+                <input
+                  type="radio"
+                  id="ai-bridal-commission-experience-immersion-{{ ai_gen_id }}"
+                  name="contact[experience_level]"
+                  value="{{ block.settings.option_experience_immersion }}"
+                  class="ai-bridal-commission__radio-{{ ai_gen_id }}"
+                >
+                <label
+                  for="ai-bridal-commission-experience-immersion-{{ ai_gen_id }}"
+                  class="ai-bridal-commission__option-label-{{ ai_gen_id }}"
+                >
+                  {{ block.settings.option_experience_immersion }}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label
+              for="ai-bridal-commission-investment-{{ ai_gen_id }}"
+              class="ai-bridal-commission__label-{{ ai_gen_id }}"
+            >
+              {{ block.settings.label_investment }}
+            </label>
+            <select
+              id="ai-bridal-commission-investment-{{ ai_gen_id }}"
+              name="contact[investment_level]"
+              class="ai-bridal-commission__select-{{ ai_gen_id }}"
+            >
+              <option value="">{{ block.settings.investment_placeholder }}</option>
+              <option value="{{ block.settings.option_investment_signature }}">{{ block.settings.option_investment_signature }}</option>
+              <option value="{{ block.settings.option_investment_bespoke }}">{{ block.settings.option_investment_bespoke }}</option>
+              <option value="{{ block.settings.option_investment_legacy }}">{{ block.settings.option_investment_legacy }}</option>
+            </select>
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label class="ai-bridal-commission__label-{{ ai_gen_id }}">
+              {{ block.settings.label_consultation }}
+            </label>
+            <div class="ai-bridal-commission__radio-group-{{ ai_gen_id }}">
+              <div class="ai-bridal-commission__radio-option-{{ ai_gen_id }}">
+                <input
+                  type="radio"
+                  id="ai-bridal-commission-consultation-sanctuary-{{ ai_gen_id }}"
+                  name="contact[consultation_preference]"
+                  value="{{ block.settings.option_consultation_sanctuary }}"
+                  class="ai-bridal-commission__radio-{{ ai_gen_id }}"
+                >
+                <label
+                  for="ai-bridal-commission-consultation-sanctuary-{{ ai_gen_id }}"
+                  class="ai-bridal-commission__option-label-{{ ai_gen_id }}"
+                >
+                  {{ block.settings.option_consultation_sanctuary }}
+                </label>
+              </div>
+              <div class="ai-bridal-commission__radio-option-{{ ai_gen_id }}">
+                <input
+                  type="radio"
+                  id="ai-bridal-commission-consultation-estate-{{ ai_gen_id }}"
+                  name="contact[consultation_preference]"
+                  value="{{ block.settings.option_consultation_estate }}"
+                  class="ai-bridal-commission__radio-{{ ai_gen_id }}"
+                >
+                <label
+                  for="ai-bridal-commission-consultation-estate-{{ ai_gen_id }}"
+                  class="ai-bridal-commission__option-label-{{ ai_gen_id }}"
+                >
+                  {{ block.settings.option_consultation_estate }}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <div class="ai-bridal-commission__checkbox-group-{{ ai_gen_id }}">
+              <div class="ai-bridal-commission__checkbox-option-{{ ai_gen_id }}">
+                <input
+                  type="checkbox"
+                  id="ai-bridal-commission-couple-sync-{{ ai_gen_id }}"
+                  name="contact[couple_sync]"
+                  value="yes"
+                  class="ai-bridal-commission__checkbox-{{ ai_gen_id }}"
+                >
+                <label
+                  for="ai-bridal-commission-couple-sync-{{ ai_gen_id }}"
+                  class="ai-bridal-commission__option-label-{{ ai_gen_id }}"
+                >
+                  {{ block.settings.checkbox_couple_sync }}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-bridal-commission__field-{{ ai_gen_id }}">
+            <label
+              for="ai-bridal-commission-vision-{{ ai_gen_id }}"
+              class="ai-bridal-commission__label-{{ ai_gen_id }}"
+            >
+              {{ block.settings.label_vision }}
+            </label>
+            <textarea
+              id="ai-bridal-commission-vision-{{ ai_gen_id }}"
+              name="contact[vision]"
+              class="ai-bridal-commission__textarea-{{ ai_gen_id }}"
+              placeholder="{{ block.settings.placeholder_vision }}"
+            ></textarea>
+          </div>
+
+          <div class="ai-bridal-commission__button-wrapper-{{ ai_gen_id }}">
+            <button
+              type="submit"
+              class="ai-bridal-commission__button-{{ ai_gen_id }}"
+            >
+              {{ block.settings.button_text }}
+            </button>
+          </div>
+        {% endif %}
+      {%- endform -%}
+    </div>
+  </div>
+</bridal-commission-form-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BridalCommissionForm{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const form = this.querySelector('form');
+        if (!form) return;
+
+        const successMessage = this.querySelector('.ai-bridal-commission__success-{{ ai_gen_id }}');
+        if (successMessage) {
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+
+    customElements.define('bridal-commission-form-{{ ai_gen_id }}', BridalCommissionForm{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Bridal commission form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Form content"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form title",
+      "default": "The Bridal Commission Application"
+    },
+    {
+      "type": "textarea",
+      "id": "form_description",
+      "label": "Form description",
+      "default": "Our bespoke process is a sacred collaboration. Due to the master-tailored nature of our Vietnam artisans, we only accept 4 legacy commissions per month."
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Your vision has been received into our sanctuary. Nancy and the team are reviewing your architectural requirements; expect a personal invitation shortly."
+    },
+    {
+      "type": "header",
+      "content": "Field labels"
+    },
+    {
+      "type": "text",
+      "id": "label_full_name",
+      "label": "Full name label",
+      "default": "Full Name"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_full_name",
+      "label": "Full name placeholder"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email label",
+      "default": "Email Address"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_email",
+      "label": "Email placeholder"
+    },
+    {
+      "type": "text",
+      "id": "label_event_date",
+      "label": "Event date label",
+      "default": "Wedding or Event Date"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_event_date",
+      "label": "Event date placeholder",
+      "default": "MM/DD/YYYY"
+    },
+    {
+      "type": "text",
+      "id": "label_location",
+      "label": "Location label",
+      "default": "Venue or Geographic Location"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_location",
+      "label": "Location placeholder",
+      "default": "For Estate Visitation planning"
+    },
+    {
+      "type": "text",
+      "id": "label_experience_level",
+      "label": "Experience level label",
+      "default": "Desired Experience Level"
+    },
+    {
+      "type": "text",
+      "id": "option_experience_couture",
+      "label": "Experience option 1",
+      "default": "The Couture Commission: Precision design and architectural creation of your gown."
+    },
+    {
+      "type": "text",
+      "id": "option_experience_immersion",
+      "label": "Experience option 2",
+      "default": "The Bridal Immersion & Crowning: A sacred journey of identity restoration and elevation. (Recommended for the Legacy Bride)."
+    },
+    {
+      "type": "text",
+      "id": "label_investment",
+      "label": "Investment label",
+      "default": "Planned Investment Level for your Gown Architecture"
+    },
+    {
+      "type": "text",
+      "id": "investment_placeholder",
+      "label": "Investment placeholder",
+      "default": "Select your investment level"
+    },
+    {
+      "type": "text",
+      "id": "option_investment_signature",
+      "label": "Investment option 1",
+      "default": "Signature Atelier ($2,500 - $6,500)"
+    },
+    {
+      "type": "text",
+      "id": "option_investment_bespoke",
+      "label": "Investment option 2",
+      "default": "Custom Bespoke ($8,500 - $15,000)"
+    },
+    {
+      "type": "text",
+      "id": "option_investment_legacy",
+      "label": "Investment option 3",
+      "default": "Grand Legacy ($15,000+)"
+    },
+    {
+      "type": "text",
+      "id": "label_consultation",
+      "label": "Consultation label",
+      "default": "Consultation Preference"
+    },
+    {
+      "type": "text",
+      "id": "option_consultation_sanctuary",
+      "label": "Consultation option 1",
+      "default": "Private San Jose Sanctuary"
+    },
+    {
+      "type": "text",
+      "id": "option_consultation_estate",
+      "label": "Consultation option 2",
+      "default": "In-Residence Estate Visitation (Atherton, Woodside, Los Altos Hills, etc.)"
+    },
+    {
+      "type": "text",
+      "id": "checkbox_couple_sync",
+      "label": "Couple sync checkbox text",
+      "default": "I am interested in harmonized bespoke suiting for my partner to complement my gown."
+    },
+    {
+      "type": "text",
+      "id": "label_vision",
+      "label": "Vision label",
+      "default": "The Vision"
+    },
+    {
+      "type": "textarea",
+      "id": "placeholder_vision",
+      "label": "Vision placeholder",
+      "default": "Describe the legacy, feeling, or architectural details you wish to embody on your sacred walk."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Initiate My Commission"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "form_max_width",
+      "label": "Form max width",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Header alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "button_alignment",
+      "label": "Button alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section padding top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Section padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "header_margin_bottom",
+      "label": "Header margin bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Title margin bottom",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "form_margin_top",
+      "label": "Form margin top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "field_spacing",
+      "label": "Field spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "label_margin_bottom",
+      "label": "Label margin bottom",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "radio_checkbox_spacing",
+      "label": "Radio/checkbox spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Button margin top",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "success_margin_top",
+      "label": "Success message margin top",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile padding top",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_horizontal",
+      "label": "Mobile padding horizontal",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "label": "Mobile title font size",
+      "min": 18,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "label": "Title line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "label": "Title letter spacing",
+      "min": -0.1,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "label": "Description font size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_font_size",
+      "label": "Mobile description font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_line_height",
+      "label": "Description line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "description_letter_spacing",
+      "label": "Description letter spacing",
+      "min": -0.1,
+      "max": 0.3,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Label font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "label_line_height",
+      "label": "Label line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.4
+    },
+    {
+      "type": "range",
+      "id": "label_letter_spacing",
+      "label": "Label letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "select",
+      "id": "label_font_weight",
+      "label": "Label font weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "label_text_transform",
+      "label": "Label text transform",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "uppercase", "label": "Uppercase" },
+        { "value": "lowercase", "label": "Lowercase" },
+        { "value": "capitalize", "label": "Capitalize" }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "input_font_size",
+      "label": "Input font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "input_line_height",
+      "label": "Input line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "input_letter_spacing",
+      "label": "Input letter spacing",
+      "min": -0.1,
+      "max": 0.3,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "option_label_font_size",
+      "label": "Option label font size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "option_label_line_height",
+      "label": "Option label line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "option_label_letter_spacing",
+      "label": "Option label letter spacing",
+      "min": -0.1,
+      "max": 0.3,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_line_height",
+      "label": "Button line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.4
+    },
+    {
+      "type": "range",
+      "id": "button_letter_spacing",
+      "label": "Button letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button font weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "button_text_transform",
+      "label": "Button text transform",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "uppercase", "label": "Uppercase" },
+        { "value": "lowercase", "label": "Lowercase" },
+        { "value": "capitalize", "label": "Capitalize" }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "success_font_size",
+      "label": "Success message font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "success_line_height",
+      "label": "Success message line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "success_letter_spacing",
+      "label": "Success message letter spacing",
+      "min": -0.1,
+      "max": 0.3,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "error_font_size",
+      "label": "Error message font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "option_label_color",
+      "label": "Option label",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_background_color",
+      "label": "Input background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border",
+      "default": "#d4d1ca"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_border_color",
+      "label": "Input focus border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "error_text_color",
+      "label": "Error text",
+      "default": "#d82c0d"
+    },
+    {
+      "type": "header",
+      "content": "Input style"
+    },
+    {
+      "type": "range",
+      "id": "input_border_width",
+      "label": "Input border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "label": "Input border radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "input_padding_vertical",
+      "label": "Input padding vertical",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "input_padding_horizontal",
+      "label": "Input padding horizontal",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "textarea_min_height",
+      "label": "Textarea min height",
+      "min": 80,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Hover background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Padding vertical",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 15,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Success message style"
+    },
+    {
+      "type": "color",
+      "id": "success_text_color",
+      "label": "Text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "success_background_color",
+      "label": "Background",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "color",
+      "id": "success_border_color",
+      "label": "Border",
+      "default": "#d4d1ca"
+    },
+    {
+      "type": "range",
+      "id": "success_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "success_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "success_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal commission form"
+    }
+  ]
+}
 {% endschema %}
+```
