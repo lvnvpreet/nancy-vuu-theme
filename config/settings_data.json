@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "favicon": "shopify://shop_images/NVVertical-black_1.png",
+    "share_image": "shopify://shop_images/NV_horizontal_dark.jpg",
     "color_ink": "#0f0f0f",
     "color_cream": "#faf8f5",
     "color_greige": "#ece9e3",
