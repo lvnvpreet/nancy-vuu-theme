@@ -14,9 +14,10 @@
       "name": "Seth Cinematic Hero",
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/892c9205a0504c1daccf0bd445e5f644.mp4",
+        "image": "shopify://shop_images/custom-tailored-suits-san-jose-seth-eden-hero-poster.jpg",
         "eyebrow": "The House of Nancy Vuu Presents",
         "heading": "Seth Eden.",
-        "subtext": "Custom Bespoke Suits for Men & Women.",
+        "subtext": "Bespoke Custom Suits for Men & Women.",
         "brand_sub": "By Nancy Vuu",
         "cta_label": "Start Commissioning",
         "cta_link": "shopify://pages/request-atelier-consultation"
