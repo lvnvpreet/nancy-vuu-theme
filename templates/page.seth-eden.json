@@ -104,7 +104,7 @@
         "panel_seth": {
           "type": "panel",
           "settings": {
-            "image": "shopify://shop_images/iStock-1300966679_1.jpg",
+            "image": "shopify://shop_images/luxury-bespoke-custom-tailored-suit-los-altos-seth-eden_2.jpg",
             "eyebrow": "The Mandate",
             "heading": "Seth",
             "subtext": "Architectural Authority",
@@ -114,7 +114,7 @@
         "panel_eden": {
           "type": "panel",
           "settings": {
-            "image": "shopify://shop_images/8456c15a-40f4-4fda-afc4-07d5d0bcaa3d.png",
+            "image": "shopify://shop_images/womens-bespoke-custom-power-suit-los-altos-nancy-vuu.jpg",
             "eyebrow": "The Sanctuary",
             "heading": "Eden",
             "subtext": "Restorative Presence",
@@ -219,6 +219,7 @@
         "theme": "dark",
         "image_position": "left",
         "image_height": 800,
+        "image": "shopify://shop_images/luxury-bespoke-custom-tailored-suit-palo-alto-seth-eden_1.jpg",
         "badge_text": "",
         "eyebrow": "Unrivaled Menswear Stature",
         "title_line_1": "Bespoke Custom Tailoring for Men",
@@ -300,6 +301,7 @@
         "theme": "dark",
         "image_position": "right",
         "image_height": 750,
+        "image": "shopify://shop_images/bespoke-family-custom-styling-tailored-suits-palo-alto-seth-eden.jpg",
         "badge_text": "",
         "eyebrow": "Legacy Styling & Family Portraits",
         "title_line_1": "Bespoke Family &",
