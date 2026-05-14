@@ -376,7 +376,7 @@
         "design_1": {
           "type": "design",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.31.29_PM.png",
+            "image": "shopify://shop_images/bespoke-custom-tailored-suit-silk-floral-seth-eden-los-altos-hills.png",
             "number": "Inspiration 01",
             "title": "The Floral Fashion",
             "subtitle": "Architectural Framing in Silk Jacquard"
@@ -394,7 +394,7 @@
         "design_3": {
           "type": "design",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-19_at_12.40.01_AM.png",
+            "image": "shopify://shop_images/bespoke-custom-tailored-womens-power-suits-seth-eden-atherton.png",
             "number": "Inspiration 03",
             "title": "The Exquisite 3 piece",
             "subtitle": "Structural Command in Brown Wool"
@@ -419,7 +419,7 @@
         "img_1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.46.02_PM.png",
+            "image": "shopify://shop_images/bespoke-custom-tailored-executive-suits-seth-eden-san-jose.png",
             "label": "",
             "wide": false
           }
@@ -427,7 +427,7 @@
         "img_2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/iStock-2011819012.jpg",
+            "image": "shopify://shop_images/custom-tailored-mens-suits-menswear-seth-eden-silicon-valley-bay-area.jpg",
             "label": "",
             "wide": false
           }
@@ -435,7 +435,7 @@
         "img_3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/iStock-839014260.jpg",
+            "image": "shopify://shop_images/custom-tailored-tuxedo-grooms-suit-seth-eden-san-jose.jpg",
             "label": "",
             "wide": false
           }
@@ -461,7 +461,7 @@
         "img_4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.36.17_PM.png",
+            "image": "shopify://shop_images/womens-custom-power-suit-seth-eden-san-jose-atherton-palo-alto.png",
             "label": "",
             "wide": false
           }
@@ -469,7 +469,7 @@
         "img_5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.33.53_PM.png",
+            "image": "shopify://shop_images/womens-luxury-custom-made-suits-seth-eden-saratoga.png",
             "label": "",
             "wide": false
           }
@@ -477,7 +477,7 @@
         "img_6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2026-03-18_at_11.39.53_PM.png",
+            "image": "shopify://shop_images/womens-executive-suiting-seth-eden-palo-alto-atherton.png",
             "label": "",
             "wide": false
           }
