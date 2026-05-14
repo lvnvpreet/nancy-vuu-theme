@@ -52,7 +52,7 @@
         "eyebrow": "Custom Design",
         "title": "Bespoke Bridal",
         "description": "At Nancy Vuu, the ethereal becomes tangible through two distinct paths of excellence. Whether you seek a Nancy Vuu Original—an exclusive masterpiece designed from Nancy’s visionary lens specifically for you—or you wish to see your own long-held dream gown brought to life, our atelier serves as the bridge between imagination and reality. This is an intimate partnership in co-creation; from the first sketch to the final hand-wrought stitch, we breathe life into the silhouette you’ve always imagined. You dream it; we architect it. Together, we manifest a gown that is a living testament to your heart and a singular crown for your love story.",
-        "image": "shopify://shop_images/Untitled_design_8.jpg",
+        "image": "shopify://shop_images/luxury-bespoke-custom-wedding-dress-san-jose-nancy-vuu.jpg",
         "cta_label": "Begin Commission",
         "cta_link": "shopify://pages/bespoke-bridal-gowns-custom-wedding-dresses",
         "show_chart": true,
@@ -65,7 +65,7 @@
         "ai_gen_block_3f93695_JjcP4C": {
           "type": "ai_gen_block_3f93695",
           "settings": {
-            "image": "shopify://shop_images/castle-main-socialn.jpg",
+            "image": "shopify://shop_images/nancy-vuu-bridal-immersion-napa-valley.jpg",
             "image_width": 100,
             "eyebrow": "ELEVATION OF PRESENCE | GRACE | LEGACY",
             "title": "NANCY VUU Bridal Immersions",
@@ -118,7 +118,7 @@
         "text_bg": "greige",
         "grid_ratio": "equal",
         "image_position": "right",
-        "image": "shopify://shop_images/iStock-157687323.jpg",
+        "image": "shopify://shop_images/luxury-bespoke-custom-tailored-suit-hand-stitched-full-canvas.jpg",
         "eyebrow": "Tailored for Him & Her",
         "title": "Seth Eden",
         "description": "Seth Eden Bespoke is where traditional sartorial heritage meets a modern, visionary soul.  Artistry in every thread. Our Signature Seth Eden suits represent the pinnacle of custom tailoring. Blending old-world craftsmanship with a contemporary edge, we create garments for the modern individual who demands perfection in every line.\n\nExperience a silhouette that doesn't just fit—it commands.",
@@ -293,7 +293,7 @@
         "children": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/DSC9102B_1.webp",
+            "image": "shopify://shop_images/childrens-custom-couture-luxury-childrenswear-nancy-vuu-san-jose.webp",
             "title": "Children's Couture",
             "cta": "Shop Kids",
             "link": "/collections/childrens-couture"
@@ -302,7 +302,7 @@
         "mommy": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/I1A3307.jpg",
+            "image": "shopify://shop_images/mommy-and-me-matching-custom-couture-nancy-vuu-san-jose.jpg",
             "title": "Mommy & Me",
             "cta": "Shop Matching Sets",
             "link": "/collections/mommy-me"
@@ -322,7 +322,7 @@
       "type": "womens-couture",
       "settings": {
         "section_id": "womens-couture",
-        "bg_image": "shopify://shop_images/nancy-vuu-couture.jpg",
+        "bg_image": "shopify://shop_images/luxury-bespoke-custom-womens-couture-nancy-vuu-san-jose.jpg",
         "eyebrow": "Collection",
         "title": "Women's Couture",
         "tagline": "Elegance · Power · Grace",
@@ -339,7 +339,7 @@
         "text_bg": "none",
         "grid_ratio": "7-5",
         "image_position": "left",
-        "image": "shopify://shop_images/Untitled_45_x_50_in_4.jpg",
+        "image": "shopify://shop_images/Ready-to-wear-Kingdom-Heirs-linen-collection-nancy-vuu.jpg",
         "eyebrow": "Ready to Wear",
         "title": "Kingdom Heirs",
         "description": "The intersection of mid-luxury ready-to-wear and purposeful design. A limited-edition collection crafted for those who live with purpose. Now available to shop exclusively at the Nancy Vuu Atelier in San Jose—where your wardrobe meets its highest calling.",
@@ -406,7 +406,7 @@
         "description": "The House of Vuu Foundation is the philanthropic heart of our institution, dedicated to the systemic restoration of human dignity on a global scale. Operating at the intersection of high-aesthetic craftsmanship and humanitarian strategy, we believe that every stitch is a life. We move beyond traditional aid to engineer sustainable pathways of empowerment, ensuring that vulnerable populations can reclaim their sovereign identity. By weaving a new narrative of honor into the fabric of global recovery, we are restoring the internal and external architecture of lives to their true appointment.\"",
         "donate_label": "inquire further",
         "donate_link": "shopify://pages/house-of-vuu-foundation",
-        "foundation_image": "shopify://shop_images/0CF9F33E-0984-4332-8324-AFB352D9BDDC.webp",
+        "foundation_image": "shopify://shop_images/house-of-vuu-foundation-elevating-humanity-philanthropy-nancy-vuu.webp",
         "social_instagram": "",
         "social_linkedin": "",
         "social_pinterest": ""
