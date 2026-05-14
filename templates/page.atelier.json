@@ -13,7 +13,7 @@
       "type": "atelier-hero",
       "settings": {
         "video_url": "",
-        "image": "shopify://shop_images/iStock-1322975669.jpg",
+        "image": "shopify://shop_images/bespoke-custom-wedding-dress-custom-suits-nancy-vuu-san-jose.jpg",
         "overlay_opacity": 15,
         "eyebrow": "The Nancy Vuu Master Atelier",
         "title_line_1": "Preservation &",
@@ -38,7 +38,7 @@
       "settings": {
         "section_id": "services",
         "image_position": "left",
-        "image": "shopify://shop_images/iStock-1318603419.jpg",
+        "image": "shopify://shop_images/bespoke-fit-architecure-custom-couture-san-jose-nancy-vuu.jpg",
         "service_number": "I.",
         "eyebrow": "Precision & Form",
         "title_line_1": "Couture Artistry",
@@ -54,7 +54,7 @@
       "settings": {
         "section_id": "preservation",
         "image_position": "right",
-        "image": "shopify://shop_images/iStock-1124735519.jpg",
+        "image": "shopify://shop_images/luxury-garment-care-preservation-san-jose-nancy-vuu-atelier.jpg",
         "service_number": "II.",
         "eyebrow": "Garment Care",
         "title_line_1": "Fine Fabric Care &",
@@ -68,7 +68,7 @@
     "academy_banner": {
       "type": "atelier-academy",
       "settings": {
-        "image": "shopify://shop_images/iStock-953878760.jpg",
+        "image": "shopify://shop_images/fashion-empowering-humanity-house-of-vuu-maison-arise-nancy-vuu.jpg",
         "eyebrow": "The Future of Craft",
         "title_line_1": "The Maison Arise",
         "title_line_2": "Conservatory.",
@@ -154,12 +154,12 @@
         "card_crowns": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/image10_1.jpg",
+            "image": "shopify://shop_images/bespoke-custom-wedding-dress-nancy-vuu-atelier-san-jose.jpg",
             "eyebrow": "The Crowning Moment",
             "title": "Finish the Look",
-            "description": "Hand-crafted crowns, veils, and heirloom jewelry to complete your bespoke vision.",
-            "cta_label": "Explore Crowns & Jewelry",
-            "link": "/collections/crowns-jewelry"
+            "description": "Luxury Bespoke Custom Bridal Gowns & Couture by Nancy Vuu.",
+            "cta_label": "Explore Bespoke Bridal",
+            "link": "shopify://pages/bespoke-bridal-gowns-custom-wedding-dresses"
           }
         },
         "card_retreats": {
