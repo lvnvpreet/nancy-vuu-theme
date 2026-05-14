@@ -26,7 +26,7 @@
       "type": "atelier",
       "settings": {
         "section_id": "atelier",
-        "image": "shopify://shop_images/Atelier.png",
+        "image": "shopify://shop_images/Nancy-Vuu-Atelier.png",
         "eyebrow": "1520 Southwest Expy #10, San Jose CA 95126",
         "title": "Nancy Vuu Atelier",
         "description": "A sanctuary of restoration and creation. From its humble origin as a specialized tailoring house to its current standing as a couture house for bespoke architecture—where every stitch is an engineered act of intention.",
@@ -39,8 +39,8 @@
       "settings": {
         "eyebrow": "The Collection · 2026",
         "title": "Bridal",
-        "image_feature": "shopify://shop_images/L1041963_copy_1.jpg",
-        "image_side": "shopify://shop_images/Screen_Shot_2026-03-17_at_6.11.18_PM.png",
+        "image_feature": "shopify://shop_images/nancy-vuu-bridal-collections-san-jose-palo-alto-atherton.jpg",
+        "image_side": "shopify://shop_images/nancy-vuu-bespoke-custom-wedding-dresses-san-jose.png",
         "cta_label": "Explore Bridal",
         "cta_link": "/collections/bridal"
       }
