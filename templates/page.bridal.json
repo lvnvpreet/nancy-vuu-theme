@@ -459,6 +459,45 @@
         "label_message": "Tell us about yourself and your vision for your dream gown.",
         "submit_label": "Submit Request to the Atelier"
       }
+    },
+    "17800397393aa26741": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6b4edc7_mDiPdr": {
+          "type": "ai_gen_block_6b4edc7",
+          "settings": {
+            "schema_type": "LocalBusiness",
+            "business_name": "Nancy Vuu Atelier",
+            "business_url": "",
+            "street_address": "",
+            "city": "",
+            "state": "",
+            "postal_code": "",
+            "country": "US",
+            "service_area_1": "",
+            "service_area_2": "",
+            "service_area_3": "",
+            "service_area_4": "",
+            "service_area_5": "",
+            "catalog_name": "Bespoke Bridal Services",
+            "currency": "USD",
+            "offer_1_name": "",
+            "offer_1_description": "",
+            "offer_1_price": "",
+            "offer_2_name": "",
+            "offer_2_description": "",
+            "offer_2_price": "",
+            "offer_3_name": "",
+            "offer_3_description": "",
+            "offer_3_price": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6b4edc7_mDiPdr"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -476,6 +515,7 @@
     "closer",
     "modal",
     "cross_sell_luxury_FUtVFr",
-    "atelier_inquiry_nQ8dYM"
+    "atelier_inquiry_nQ8dYM",
+    "17800397393aa26741"
   ]
 }
