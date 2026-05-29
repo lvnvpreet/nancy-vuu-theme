@@ -320,23 +320,6 @@
         "cta_link": "shopify://pages/dream-retreats"
       }
     },
-    "closer": {
-      "type": "cta-closer",
-      "settings": {
-        "overlay_opacity": 20,
-        "eyebrow": "The Final Amen",
-        "heading": "Your Legacy Awaits Its Form.",
-        "subtext": "",
-        "cta_label": "Request Private Audience",
-        "cta_link": "#inquiry",
-        "cta_style": "outline",
-        "cta2_label": "",
-        "cta2_link": "",
-        "text_color": "#111111",
-        "bg_light": false,
-        "compact": false
-      }
-    },
     "modal": {
       "type": "audience-modal",
       "settings": {
@@ -379,38 +362,6 @@
         "submit_label": "INITIATE ALIGNMENT AUDIT",
         "legal_text": "By submitting this application, I acknowledge that the Nancy Vuu Immersions are high-level strategic consultations and mentorship programs. I explicitly understand that Nancy Vuu is not a licensed attorney, marriage counselor, psychologist, therapist, or medical professional, and that these intensives are not a substitute for clinical therapy, legal advice, or professional counseling."
       }
-    },
-    "cross_sell_luxury_FUtVFr": {
-      "type": "cross-sell-luxury",
-      "blocks": {
-        "card_LpQxQq": {
-          "type": "card",
-          "settings": {
-            "eyebrow": "Designs that captivate",
-            "title": "Vuu Bridal Collection",
-            "description": "A custom gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty. We create a masterpiece that anchors your presence and captures the brilliance of who you are becoming.",
-            "cta_label": "View the Collections",
-            "link": "shopify://collections/bridal"
-          }
-        },
-        "card_HJhhK8": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/4.jpg",
-            "eyebrow": "The House of Vuu Sanctuary",
-            "title": "Bridal Immersions",
-            "description": "Located in the majestic mountains of Napa Valley, The House of Vuu Sanctuary is a sacred space for the bride to quiet the noise, find her center, and remember who she is before she walks down the aisle.",
-            "cta_label": "Explore the Bridal Immersions",
-            "link": "shopify://pages/bridal-immersions"
-          }
-        }
-      },
-      "block_order": [
-        "card_LpQxQq",
-        "card_HJhhK8"
-      ],
-      "name": "Cross-Sell Luxury",
-      "settings": {}
     },
     "atelier_inquiry_nQ8dYM": {
       "type": "atelier-inquiry",
@@ -512,9 +463,7 @@
     "heritage",
     "cross-sell-luxury",
     "about_retreats_3Dzctt",
-    "closer",
     "modal",
-    "cross_sell_luxury_FUtVFr",
     "atelier_inquiry_nQ8dYM",
     "17800397393aa26741"
   ]
