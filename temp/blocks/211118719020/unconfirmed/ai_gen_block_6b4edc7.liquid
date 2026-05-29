@@ -1,6 +1,379 @@
+{% doc %}
+  @prompt
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nancy Vuu Atelier",
+      "url": "https://nancyvuu.com/pages/bespoke-bridal-gowns-custom-wedding-dresses",
+      "logo": "https://nancyvuu.com/",
+      "image": "https://nancyvuu.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1520 Southwest Expy #10",
+        "addressLocality": "San Jose",
+        "addressRegion": "CA",
+        "postalCode": "95126",
+        "addressCountry": "US"
+      },
+      "serviceArea": [
+        {"@type": "City", "name": "San Jose"},
+        {"@type": "City", "name": "San Francisco"},
+        {"@type": "City", "name": "Atherton"},
+        {"@type": "City", "name": "Los Altos"},
+        {"@type": "City", "name": "Saratoga"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Bespoke Bridal Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Atelier Signature Bridal Gown",
+              "description": "Signature design bridal gown selections with final coronation tailoring in San Jose."
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "2500",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Bespoke Gown Commission",
+              "description": "Original vision sketching, artisan toile experience, and master draper immersion for custom luxury wedding dresses."
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "8500",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-schema-markup-{{ ai_gen_id }} {
+    display: none;
+  }
+{% endstyle %}
+
+<div class="ai-schema-markup-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{{ block.settings.schema_type }}",
+      "name": "{{ block.settings.business_name }}",
+      "url": "{{ block.settings.business_url }}",
+      {% if block.settings.logo_image %}
+        "logo": "{{ block.settings.logo_image | image_url }}",
+      {% endif %}
+      {% if block.settings.featured_image %}
+        "image": "{{ block.settings.featured_image | image_url }}",
+      {% endif %}
+      {% if block.settings.street_address != blank or block.settings.city != blank %}
+        "address": {
+          "@type": "PostalAddress"
+          {% if block.settings.street_address != blank %}
+            ,"streetAddress": "{{ block.settings.street_address }}"
+          {% endif %}
+          {% if block.settings.city != blank %}
+            ,"addressLocality": "{{ block.settings.city }}"
+          {% endif %}
+          {% if block.settings.state != blank %}
+            ,"addressRegion": "{{ block.settings.state }}"
+          {% endif %}
+          {% if block.settings.postal_code != blank %}
+            ,"postalCode": "{{ block.settings.postal_code }}"
+          {% endif %}
+          {% if block.settings.country != blank %}
+            ,"addressCountry": "{{ block.settings.country }}"
+          {% endif %}
+        },
+      {% endif %}
+      {% if block.settings.service_area_1 != blank or block.settings.service_area_2 != blank or block.settings.service_area_3 != blank or block.settings.service_area_4 != blank or block.settings.service_area_5 != blank %}
+        "serviceArea": [
+          {% if block.settings.service_area_1 != blank %}
+            {"@type": "City", "name": "{{ block.settings.service_area_1 }}"}
+          {% endif %}
+          {% if block.settings.service_area_2 != blank %}
+            ,{"@type": "City", "name": "{{ block.settings.service_area_2 }}"}
+          {% endif %}
+          {% if block.settings.service_area_3 != blank %}
+            ,{"@type": "City", "name": "{{ block.settings.service_area_3 }}"}
+          {% endif %}
+          {% if block.settings.service_area_4 != blank %}
+            ,{"@type": "City", "name": "{{ block.settings.service_area_4 }}"}
+          {% endif %}
+          {% if block.settings.service_area_5 != blank %}
+            ,{"@type": "City", "name": "{{ block.settings.service_area_5 }}"}
+          {% endif %}
+        ],
+      {% endif %}
+      {% if block.settings.offer_1_name != blank or block.settings.offer_2_name != blank %}
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "{{ block.settings.catalog_name }}",
+          "itemListElement": [
+            {% if block.settings.offer_1_name != blank %}
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "{{ block.settings.offer_1_name }}"
+                  {% if block.settings.offer_1_description != blank %}
+                    ,"description": "{{ block.settings.offer_1_description }}"
+                  {% endif %}
+                }
+                {% if block.settings.offer_1_price != blank %}
+                  ,"priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "{{ block.settings.offer_1_price }}",
+                    "priceCurrency": "{{ block.settings.currency }}"
+                  }
+                {% endif %}
+              }
+            {% endif %}
+            {% if block.settings.offer_2_name != blank %}
+              ,{
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "{{ block.settings.offer_2_name }}"
+                  {% if block.settings.offer_2_description != blank %}
+                    ,"description": "{{ block.settings.offer_2_description }}"
+                  {% endif %}
+                }
+                {% if block.settings.offer_2_price != blank %}
+                  ,"priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "{{ block.settings.offer_2_price }}",
+                    "priceCurrency": "{{ block.settings.currency }}"
+                  }
+                {% endif %}
+              }
+            {% endif %}
+            {% if block.settings.offer_3_name != blank %}
+              ,{
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "{{ block.settings.offer_3_name }}"
+                  {% if block.settings.offer_3_description != blank %}
+                    ,"description": "{{ block.settings.offer_3_description }}"
+                  {% endif %}
+                }
+                {% if block.settings.offer_3_price != blank %}
+                  ,"priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "{{ block.settings.offer_3_price }}",
+                    "priceCurrency": "{{ block.settings.currency }}"
+                  }
+                {% endif %}
+              }
+            {% endif %}
+          ]
+        }
+      {% endif %}
+    }
+  </script>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Schema markup",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Business information"
+    },
+    {
+      "type": "select",
+      "id": "schema_type",
+      "label": "Schema type",
+      "options": [
+        {
+          "value": "LocalBusiness",
+          "label": "Local business"
+        },
+        {
+          "value": "Organization",
+          "label": "Organization"
+        },
+        {
+          "value": "Store",
+          "label": "Store"
+        }
+      ],
+      "default": "LocalBusiness"
+    },
+    {
+      "type": "text",
+      "id": "business_name",
+      "label": "Business name",
+      "default": "Nancy Vuu Atelier"
+    },
+    {
+      "type": "url",
+      "id": "business_url",
+      "label": "Business URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo image"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "Featured image"
+    },
+    {
+      "type": "header",
+      "content": "Address"
+    },
+    {
+      "type": "text",
+      "id": "street_address",
+      "label": "Street address"
+    },
+    {
+      "type": "text",
+      "id": "city",
+      "label": "City"
+    },
+    {
+      "type": "text",
+      "id": "state",
+      "label": "State"
+    },
+    {
+      "type": "text",
+      "id": "postal_code",
+      "label": "Postal code"
+    },
+    {
+      "type": "text",
+      "id": "country",
+      "label": "Country code",
+      "default": "US"
+    },
+    {
+      "type": "header",
+      "content": "Service areas"
+    },
+    {
+      "type": "text",
+      "id": "service_area_1",
+      "label": "Service area 1"
+    },
+    {
+      "type": "text",
+      "id": "service_area_2",
+      "label": "Service area 2"
+    },
+    {
+      "type": "text",
+      "id": "service_area_3",
+      "label": "Service area 3"
+    },
+    {
+      "type": "text",
+      "id": "service_area_4",
+      "label": "Service area 4"
+    },
+    {
+      "type": "text",
+      "id": "service_area_5",
+      "label": "Service area 5"
+    },
+    {
+      "type": "header",
+      "content": "Offer catalog"
+    },
+    {
+      "type": "text",
+      "id": "catalog_name",
+      "label": "Catalog name",
+      "default": "Bespoke Bridal Services"
+    },
+    {
+      "type": "text",
+      "id": "currency",
+      "label": "Currency code",
+      "default": "USD"
+    },
+    {
+      "type": "header",
+      "content": "Offer 1"
+    },
+    {
+      "type": "text",
+      "id": "offer_1_name",
+      "label": "Service name"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_1_description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "offer_1_price",
+      "label": "Price"
+    },
+    {
+      "type": "header",
+      "content": "Offer 2"
+    },
+    {
+      "type": "text",
+      "id": "offer_2_name",
+      "label": "Service name"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_2_description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "offer_2_price",
+      "label": "Price"
+    },
+    {
+      "type": "header",
+      "content": "Offer 3"
+    },
+    {
+      "type": "text",
+      "id": "offer_3_name",
+      "label": "Service name"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_3_description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "offer_3_price",
+      "label": "Price"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Schema markup"
+    }
+  ]
+}
 {% endschema %}
