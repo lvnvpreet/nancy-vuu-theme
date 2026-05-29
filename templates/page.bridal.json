@@ -387,10 +387,10 @@
           "type": "card",
           "settings": {
             "eyebrow": "For the Groom",
-            "title": "Bespoke Tailored Tuxedo",
-            "description": "Your wedding day is a sacred milestone of identity. Seth Eden architects attire that stands in perfect aesthetic harmony with the House's bridal couture, creating a unified visual legacy for couples.",
-            "cta_label": "Commission His Tuxedo",
-            "link": "shopify://pages/seth-eden-bespoke-custom-suits"
+            "title": "Vuu Bridal Collection",
+            "description": "A custom gown is a breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your original design, sculpting and draping with a precision that weaves together your strength, grace, and inner beauty. We create a masterpiece that anchors your presence and captures the brilliance of who you are becoming.",
+            "cta_label": "View the Collections",
+            "link": "shopify://collections/bridal"
           }
         },
         "card_HJhhK8": {
