@@ -19,8 +19,8 @@
       "type": "bridal-hero",
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/46a6fdbc05bd4208a93a5ba1055f7a70.mp4",
-        "eyebrow": "The Sacred Architecture",
-        "title": "Bespoke Bridal Gowns",
+        "eyebrow": "Bespoke Sacred Architecture",
+        "title": "Custom Wedding Dress",
         "cta_label": "Begin the Commission",
         "cta_link": "#inquiry",
         "text_color": "#111111"
@@ -323,7 +323,6 @@
     "closer": {
       "type": "cta-closer",
       "settings": {
-        "image": "shopify://shop_images/iStock-1322975669.jpg",
         "overlay_opacity": 20,
         "eyebrow": "The Final Amen",
         "heading": "Your Legacy Awaits Its Form.",
