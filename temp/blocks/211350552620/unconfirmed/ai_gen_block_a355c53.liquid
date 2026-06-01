@@ -1,6 +1,639 @@
+{% doc %}
+  @prompt
+    create a segment for a photo or video to be full bleed with optional eyebrow, headline, and subheadline. give me full access control to adjust font size, font style, and segment height with no restrictions or retrainsts. also give me the option to have overlay of white or dark opaque over the entire segment with adjustable opague strength. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-fullbleed-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.segment_height }}px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-fullbleed-hero__media-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-fullbleed-hero__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    {% if block.settings.overlay_color == 'white' %}
+      background-color: rgba(255, 255, 255, {{ block.settings.overlay_opacity }});
+    {% else %}
+      background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity }});
+    {% endif %}
+    pointer-events: none;
+  }
+
+  .ai-fullbleed-hero__content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: {{ block.settings.vertical_alignment }};
+    align-items: {{ block.settings.horizontal_alignment }};
+    padding: {{ block.settings.content_padding }}px;
+    text-align: {{ block.settings.text_alignment }};
+    z-index: 1;
+  }
+
+  .ai-fullbleed-hero__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.eyebrow_font.family }}, {{ block.settings.eyebrow_font.fallback_families }};
+    font-weight: {{ block.settings.eyebrow_font.weight }};
+    font-style: {{ block.settings.eyebrow_font.style }};
+    font-size: {{ block.settings.eyebrow_font_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0 0 {{ block.settings.eyebrow_spacing }}px 0;
+    letter-spacing: {{ block.settings.eyebrow_letter_spacing }}px;
+    text-transform: {{ block.settings.eyebrow_text_transform }};
+  }
+
+  .ai-fullbleed-hero__headline-{{ ai_gen_id }} {
+    font-family: {{ block.settings.headline_font.family }}, {{ block.settings.headline_font.fallback_families }};
+    font-weight: {{ block.settings.headline_font.weight }};
+    font-style: {{ block.settings.headline_font.style }};
+    font-size: {{ block.settings.headline_font_size }}px;
+    color: {{ block.settings.headline_color }};
+    margin: 0 0 {{ block.settings.headline_spacing }}px 0;
+    line-height: {{ block.settings.headline_line_height }};
+    letter-spacing: {{ block.settings.headline_letter_spacing }}px;
+  }
+
+  .ai-fullbleed-hero__subheadline-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subheadline_font.family }}, {{ block.settings.subheadline_font.fallback_families }};
+    font-weight: {{ block.settings.subheadline_font.weight }};
+    font-style: {{ block.settings.subheadline_font.style }};
+    font-size: {{ block.settings.subheadline_font_size }}px;
+    color: {{ block.settings.subheadline_color }};
+    margin: 0;
+    line-height: {{ block.settings.subheadline_line_height }};
+    letter-spacing: {{ block.settings.subheadline_letter_spacing }}px;
+    max-width: {{ block.settings.subheadline_max_width }}px;
+  }
+
+  .ai-fullbleed-hero__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-fullbleed-hero__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-fullbleed-hero__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-fullbleed-hero-{{ ai_gen_id }} {
+      height: {{ block.settings.segment_height_mobile }}px;
+    }
+
+    .ai-fullbleed-hero__eyebrow-{{ ai_gen_id }} {
+      font-size: {{ block.settings.eyebrow_font_size_mobile }}px;
+    }
+
+    .ai-fullbleed-hero__headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_font_size_mobile }}px;
+    }
+
+    .ai-fullbleed-hero__subheadline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheadline_font_size_mobile }}px;
+    }
+
+    .ai-fullbleed-hero__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<full-bleed-hero-{{ ai_gen_id }} class="ai-fullbleed-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.media_type == 'image' %}
+    {% if block.settings.image %}
+      <img
+        src="{{ block.settings.image | image_url: width: 2400 }}"
+        alt="{{ block.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.image.width }}"
+        height="{{ block.settings.image.height }}"
+        class="ai-fullbleed-hero__media-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-fullbleed-hero__placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-fullbleed-hero__empty-state-{{ ai_gen_id }}">
+          Add an image or video to get started
+        </div>
+      </div>
+    {% endif %}
+  {% else %}
+    {% if block.settings.video %}
+      <video
+        class="ai-fullbleed-hero__media-{{ ai_gen_id }}"
+        autoplay
+        muted
+        loop
+        playsinline
+        {% if block.settings.video_poster %}
+          poster="{{ block.settings.video_poster | image_url: width: 2400 }}"
+        {% endif %}
+      >
+        <source src="{{ block.settings.video }}" type="video/mp4">
+      </video>
+    {% else %}
+      <div class="ai-fullbleed-hero__placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-fullbleed-hero__empty-state-{{ ai_gen_id }}">
+          Add an image or video to get started
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if block.settings.enable_overlay %}
+    <div class="ai-fullbleed-hero__overlay-{{ ai_gen_id }}"></div>
+  {% endif %}
+
+  <div class="ai-fullbleed-hero__content-{{ ai_gen_id }}">
+    {% if block.settings.eyebrow != blank %}
+      <div class="ai-fullbleed-hero__eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow }}</div>
+    {% endif %}
+
+    {% if block.settings.headline != blank %}
+      <h2 class="ai-fullbleed-hero__headline-{{ ai_gen_id }}">{{ block.settings.headline }}</h2>
+    {% endif %}
+
+    {% if block.settings.subheadline != blank %}
+      <div class="ai-fullbleed-hero__subheadline-{{ ai_gen_id }}">{{ block.settings.subheadline }}</div>
+    {% endif %}
+  </div>
+</full-bleed-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FullBleedHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const video = this.querySelector('video');
+        if (video) {
+          video.play().catch(function() {});
+        }
+      }
+    }
+
+    customElements.define('full-bleed-hero-{{ ai_gen_id }}', FullBleedHero{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Full bleed hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "video",
+      "label": "Video URL (MP4)"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video poster image"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "Enable overlay",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "dark"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "Dimensions"
+    },
+    {
+      "type": "range",
+      "id": "segment_height",
+      "label": "Desktop height",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "segment_height_mobile",
+      "label": "Mobile height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline"
+    },
+    {
+      "type": "header",
+      "content": "Content layout"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Desktop content padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding_mobile",
+      "label": "Mobile content padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow style"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "label": "Desktop font size",
+      "min": 8,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size_mobile",
+      "label": "Mobile font size",
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Headline style"
+    },
+    {
+      "type": "font_picker",
+      "id": "headline_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "headline_font_size",
+      "label": "Desktop font size",
+      "min": 10,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "headline_font_size_mobile",
+      "label": "Mobile font size",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "headline_line_height",
+      "label": "Line height",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "headline_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "headline_spacing",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Subheadline style"
+    },
+    {
+      "type": "font_picker",
+      "id": "subheadline_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheadline_font_size",
+      "label": "Desktop font size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subheadline_font_size_mobile",
+      "label": "Mobile font size",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheadline_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subheadline_line_height",
+      "label": "Line height",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "subheadline_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "subheadline_max_width",
+      "label": "Max width",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full bleed hero"
+    }
+  ]
+}
 {% endschema %}
