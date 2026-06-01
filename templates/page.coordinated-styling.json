@@ -11,50 +11,41 @@
   "sections": {
     "1780305241cabd3aa7": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "1780309043411e391e": {
+      "type": "_blocks",
       "blocks": {
-        "ai_gen_block_c3a9447_LqVXqF": {
-          "type": "ai_gen_block_c3a9447",
+        "ai_gen_block_bb4c450_h7Qzbr": {
+          "type": "ai_gen_block_bb4c450",
           "settings": {
             "left_image": "shopify://shop_images/luxury-bespoke-custom-tailored-suit-palo-alto-seth-eden_1.jpg",
             "right_image": "shopify://shop_images/DP10.jpg",
-            "hero_height": 100,
-            "hero_min_height": 600,
-            "left_image_width": 50,
-            "right_image_width": 50,
-            "text_box_vertical_position": 65,
-            "text_box_width": 100,
-            "text_box_height": 100,
-            "text_box_padding": 10,
-            "text_box_opacity": 0.4,
+            "text_box_vertical_position": 72,
+            "text_box_width": 1200,
+            "text_box_height": 310,
+            "text_box_padding_top": 60,
+            "text_box_padding_right": 80,
+            "text_box_padding_bottom": 60,
+            "text_box_padding_left": 80,
+            "text_box_opacity": 40,
             "text_box_blur": 0,
-            "headline_font": "serif",
+            "headline": "Bespoke Bridal & Sartorial Commissions Crafted for Flawless Coordination",
+            "headline_font": "libre_bodoni_n4",
             "headline_font_size": 48,
             "headline_color": "#2c2c2c",
-            "subheadline_font": "system_ui_n4",
-            "subheadline_font_size": 16,
-            "subheadline_letter_spacing": 3,
-            "subheadline_color": "#0f0f0f",
-            "cta_font": "system_ui_n4",
-            "cta_font_size": 12,
-            "cta_letter_spacing": 2,
-            "cta_padding_vertical": 16,
-            "cta_padding_horizontal": 40,
-            "cta_border_width": 1,
-            "cta_bg_color": "rgba(0,0,0,0)",
-            "cta_text_color": "#2c2c2c",
-            "cta_border_color": "#2c2c2c",
-            "cta_hover_bg_color": "#2c2c2c",
-            "cta_hover_text_color": "#ffffff",
-            "cta_hover_border_color": "#2c2c2c",
-            "headline": "Bespoke Bridal & Sartorial Commissions Crafted for Flawless Coordination",
             "subheadline": "From the boardroom to the sanctuary, we architect synchronized wardrobe legacies",
-            "cta_text": "REQUEST A PRIVATE CONSULTATION"
+            "subheadline_font": "manrope_n4",
+            "subheadline_font_size": 13,
+            "subheadline_color": "#0f0f0f",
+            "cta_text": "REQUEST A PRIVATE CONSULTATION",
+            "cta_link": "#commission-request-form"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_c3a9447_LqVXqF"
+        "ai_gen_block_bb4c450_h7Qzbr"
       ],
       "settings": {}
     },
@@ -140,6 +131,58 @@
       },
       "block_order": [
         "ai_gen_block_ea6b8f6_cMchXi"
+      ],
+      "settings": {}
+    },
+    "178030725649ae47a7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a355c53_c7Yeky": {
+          "type": "ai_gen_block_a355c53",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/bespoke-bridal-gown-custom-suiting-groom-nancy-vuu-power-couple.jpg",
+            "video": "",
+            "enable_overlay": false,
+            "overlay_color": "dark",
+            "overlay_opacity": 0.5,
+            "segment_height": 700,
+            "segment_height_mobile": 400,
+            "eyebrow": "",
+            "headline": "",
+            "subheadline": "",
+            "vertical_alignment": "center",
+            "horizontal_alignment": "center",
+            "text_alignment": "center",
+            "content_padding": 40,
+            "content_padding_mobile": 20,
+            "eyebrow_font": "assistant_n4",
+            "eyebrow_font_size": 14,
+            "eyebrow_font_size_mobile": 12,
+            "eyebrow_color": "#ffffff",
+            "eyebrow_letter_spacing": 2,
+            "eyebrow_text_transform": "uppercase",
+            "eyebrow_spacing": 10,
+            "headline_font": "assistant_n4",
+            "headline_font_size": 60,
+            "headline_font_size_mobile": 36,
+            "headline_color": "#ffffff",
+            "headline_line_height": 1.2,
+            "headline_letter_spacing": 0,
+            "headline_spacing": 20,
+            "subheadline_font": "assistant_n4",
+            "subheadline_font_size": 18,
+            "subheadline_font_size_mobile": 16,
+            "subheadline_color": "#ffffff",
+            "subheadline_line_height": 1.5,
+            "subheadline_letter_spacing": 0,
+            "subheadline_max_width": 600
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a355c53_c7Yeky"
       ],
       "settings": {}
     },
@@ -347,62 +390,11 @@
         "ai_gen_block_7c46351_gTFpUg"
       ],
       "settings": {}
-    },
-    "178030725649ae47a7": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a355c53_c7Yeky": {
-          "type": "ai_gen_block_a355c53",
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/bespoke-bridal-gown-custom-suiting-groom-nancy-vuu-power-couple.jpg",
-            "video": "",
-            "enable_overlay": false,
-            "overlay_color": "dark",
-            "overlay_opacity": 0.5,
-            "segment_height": 700,
-            "segment_height_mobile": 400,
-            "eyebrow": "",
-            "headline": "",
-            "subheadline": "",
-            "vertical_alignment": "center",
-            "horizontal_alignment": "center",
-            "text_alignment": "center",
-            "content_padding": 40,
-            "content_padding_mobile": 20,
-            "eyebrow_font": "assistant_n4",
-            "eyebrow_font_size": 14,
-            "eyebrow_font_size_mobile": 12,
-            "eyebrow_color": "#ffffff",
-            "eyebrow_letter_spacing": 2,
-            "eyebrow_text_transform": "uppercase",
-            "eyebrow_spacing": 10,
-            "headline_font": "assistant_n4",
-            "headline_font_size": 60,
-            "headline_font_size_mobile": 36,
-            "headline_color": "#ffffff",
-            "headline_line_height": 1.2,
-            "headline_letter_spacing": 0,
-            "headline_spacing": 20,
-            "subheadline_font": "assistant_n4",
-            "subheadline_font_size": 18,
-            "subheadline_font_size_mobile": 16,
-            "subheadline_color": "#ffffff",
-            "subheadline_line_height": 1.5,
-            "subheadline_letter_spacing": 0,
-            "subheadline_max_width": 600
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a355c53_c7Yeky"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "1780305241cabd3aa7",
+    "1780309043411e391e",
     "photography_press_wLgbDD",
     "main",
     "17803008335501da5c",
