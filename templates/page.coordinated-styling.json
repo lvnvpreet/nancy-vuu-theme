@@ -276,7 +276,7 @@
             "header_spacing": 60,
             "column_1_overline": "01 / Sanctuary Arrival",
             "column_1_heading": "The Dual Vision Assessment",
-            "column_1_body": "<p>We review your calendar, structural style goals, and legacy in a private studio session. <em>For clientele requiring ultimate discretion and convenience, we extend our Atelier directly to private estates and boardrooms across Silicon Valley and Napa Wine Country.</em></p>",
+            "column_1_body": "<p>We begin by understanding the architecture of your shared legacy. In an intimate consultation, we review your calendar, structural style goals, and milestone covenants, mapping out a synchronized, original blueprint exclusive to the two of you.</p>",
             "column_2_overline": "02 / The Master Build",
             "column_2_heading": "Construction & Sourcing",
             "column_2_body": "<p>Each piece is hand-drafted and tailored to your exact measurements, with fittings to ensure a flawless silhouette and unparalleled comfort.  While our artisans map physical dimensions, your garment blueprints and rare textiles are selected side-by-side to ensure tone-on-tone perfection.</p>",
@@ -317,6 +317,45 @@
           "settings": {
             "anchor_id": "alliance-form",
             "offset": -100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_99eb4e9_9KRtG6": {
+          "type": "ai_gen_block_99eb4e9",
+          "settings": {
+            "max_width": 1400,
+            "horizontal_padding": 40,
+            "vertical_padding": 120,
+            "mobile_vertical_padding": 60,
+            "grid_gap": 60,
+            "mobile_grid_gap": 40,
+            "background_color": "#FAFAFA",
+            "vertical_alignment": "center",
+            "image": "shopify://shop_images/custom-bridal-couture-bespoke-suiting-nancy-vuu-gala.jpg",
+            "image_aspect_ratio": "3/4",
+            "content_padding_left": 60,
+            "text_alignment": "left",
+            "mobile_text_alignment": "left",
+            "tagline": "THE ATELIER CONCIERGE",
+            "heading": "The Private Estate Experience",
+            "body_text": "<p>For our most discerning clientele, time and discretion are the ultimate luxuries. We extend the sanctuary of the Atelier directly to your private residence, vineyard estate, or executive boardroom. Experience the entirety of our bespoke fitting and curation process in the absolute privacy of your own domain, exclusively serving Silicon Valley and Napa Wine Country.</p>",
+            "tagline_font": "manrope_n4",
+            "tagline_size": 12,
+            "mobile_tagline_size": 11,
+            "tagline_color": "#B8A88A",
+            "tagline_letter_spacing": 0.2,
+            "tagline_margin_bottom": 20,
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 42,
+            "mobile_heading_size": 32,
+            "heading_color": "#3A3A3A",
+            "heading_line_height": 1.2,
+            "heading_margin_bottom": 25,
+            "body_font": "manrope_n4",
+            "body_size": 16,
+            "mobile_body_size": 15,
+            "body_color": "#5A5A5A",
+            "body_line_height": 1.8
           },
           "blocks": {}
         },
@@ -397,6 +436,7 @@
       "block_order": [
         "ai_gen_block_7a70578_MBJYyR",
         "ai_gen_block_0ee6718_izq6yg",
+        "ai_gen_block_99eb4e9_9KRtG6",
         "ai_gen_block_7c46351_gTFpUg"
       ],
       "settings": {}
