@@ -311,6 +311,15 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_0ee6718_izq6yg": {
+          "type": "ai_gen_block_0ee6718",
+          "name": "Anchor point",
+          "settings": {
+            "anchor_id": "alliance-form",
+            "offset": -100
+          },
+          "blocks": {}
+        },
         "ai_gen_block_7c46351_gTFpUg": {
           "type": "ai_gen_block_7c46351",
           "settings": {
@@ -387,6 +396,7 @@
       },
       "block_order": [
         "ai_gen_block_7a70578_MBJYyR",
+        "ai_gen_block_0ee6718_izq6yg",
         "ai_gen_block_7c46351_gTFpUg"
       ],
       "settings": {}
