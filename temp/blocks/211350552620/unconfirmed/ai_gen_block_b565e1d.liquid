@@ -1,6 +1,691 @@
+{% doc %}
+  @prompt
+    Please create a "Multicolumn" section with 3 equal-width columns and a soft off-white background. Center align all text and ensure there is massive, generous padding (white space) above and below the section for a high-end luxury editorial look.
+    
+    Section Header Area:
+    
+    Main Heading: "The Comprehensive Ecosystem" (Format in an elegant, thin Serif font).
+    
+    Subheading: "FLAWLESS EXECUTION ACROSS YOUR CANVAS" (Format in a thin Sans-serif font, all caps, wide letter spacing, in a muted champagne gold color).
+    
+    Column Configuration (Each column must have a tall, vertical image placeholder at the top):
+    
+    Column 1:
+    
+    Heading: "Sartorial Commissions" (Serif font).
+    
+    Body Text: "For the corporate stage, high-stakes summits, and global engagements. We construct sharp Seth Eden silhouettes of absolute executive authority." (Sans-serif font, light text color).
+    
+    Footer/Caption: Add a thin horizontal divider line below the text, followed by "BESPOKE EXECUTIVE SUITS" (Sans-serif, all caps, wide tracking, muted champagne gold).
+    
+    Column 2:
+    
+    Heading: "The Social Calendar" (Serif font).
+    
+    Body Text: "For philanthropic galas, keynotes, and media appearances. We craft synchronized evening attire that anchors your presence and redefines the room." (Sans-serif font, light text color).
+    
+    Footer/Caption: Add a thin horizontal divider line below the text, followed by "WOMEN'S COUTURE & CUSTOM TUXEDOS" (Sans-serif, all caps, wide tracking, muted champagne gold).
+    
+    Column 3:
+    
+    Heading: "Bridal Commissions" (Serif font).
+    
+    Body Text: "The crown jewel of your legacy. A breathtaking custom bridal gown and premium Seth Eden groom suiting engineered uniformly from fiber to finish." (Sans-serif font, light text color).
+    
+    Footer/Caption: Add a thin horizontal divider line below the text, followed by "THE MASTERPIECE HEIRLOOM" (Sans-serif, all caps, wide tracking, muted champagne gold).
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-multicolumn-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 0 {{ block.settings.padding_bottom }}px;
+  }
+
+  .ai-multicolumn-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-multicolumn-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-multicolumn-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.subheading_spacing }}px;
+    line-height: 1.2;
+  }
+
+  .ai-multicolumn-subheading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subheading_font.family }}, {{ block.settings.subheading_font.fallback_families }};
+    font-weight: {{ block.settings.subheading_font.weight }};
+    font-style: {{ block.settings.subheading_font.style }};
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    text-transform: uppercase;
+    letter-spacing: {{ block.settings.subheading_tracking }}px;
+    margin: 0;
+  }
+
+  .ai-multicolumn-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+    margin-top: {{ block.settings.grid_top_spacing }}px;
+  }
+
+  .ai-multicolumn-column-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-multicolumn-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    margin-bottom: {{ block.settings.image_spacing }}px;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-multicolumn-image-wrapper-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-multicolumn-image-wrapper-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: {{ block.settings.image_height }}px;
+    display: block;
+  }
+
+  .ai-multicolumn-column-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.column_heading_font.family }}, {{ block.settings.column_heading_font.fallback_families }};
+    font-weight: {{ block.settings.column_heading_font.weight }};
+    font-style: {{ block.settings.column_heading_font.style }};
+    font-size: {{ block.settings.column_heading_size }}px;
+    color: {{ block.settings.column_heading_color }};
+    margin: 0 0 {{ block.settings.column_heading_spacing }}px;
+    line-height: 1.3;
+  }
+
+  .ai-multicolumn-column-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.column_text_font.family }}, {{ block.settings.column_text_font.fallback_families }};
+    font-weight: {{ block.settings.column_text_font.weight }};
+    font-style: {{ block.settings.column_text_font.style }};
+    font-size: {{ block.settings.column_text_size }}px;
+    color: {{ block.settings.column_text_color }};
+    line-height: 1.6;
+    margin: 0 0 {{ block.settings.column_text_spacing }}px;
+  }
+
+  .ai-multicolumn-divider-{{ ai_gen_id }} {
+    width: {{ block.settings.divider_width }}px;
+    height: {{ block.settings.divider_height }}px;
+    background-color: {{ block.settings.divider_color }};
+    margin: 0 auto {{ block.settings.divider_spacing }}px;
+  }
+
+  .ai-multicolumn-caption-{{ ai_gen_id }} {
+    font-family: {{ block.settings.caption_font.family }}, {{ block.settings.caption_font.fallback_families }};
+    font-weight: {{ block.settings.caption_font.weight }};
+    font-style: {{ block.settings.caption_font.style }};
+    font-size: {{ block.settings.caption_size }}px;
+    color: {{ block.settings.caption_color }};
+    text-transform: uppercase;
+    letter-spacing: {{ block.settings.caption_tracking }}px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-multicolumn-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.6 }}px 0 {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-multicolumn-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+    }
+
+    .ai-multicolumn-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-multicolumn-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.8 }}px;
+    }
+
+    .ai-multicolumn-column-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.column_heading_size | times: 0.8 }}px;
+    }
+
+    .ai-multicolumn-image-wrapper-{{ ai_gen_id }} svg {
+      height: {{ block.settings.image_height | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-multicolumn-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-multicolumn-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank or block.settings.subheading != blank %}
+      <div class="ai-multicolumn-header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-multicolumn-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.subheading != blank %}
+          <p class="ai-multicolumn-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-multicolumn-grid-{{ ai_gen_id }}">
+      {% for i in (1..3) %}
+        {% liquid
+          assign image_key = 'column_' | append: i | append: '_image'
+          assign heading_key = 'column_' | append: i | append: '_heading'
+          assign text_key = 'column_' | append: i | append: '_text'
+          assign caption_key = 'column_' | append: i | append: '_caption'
+
+          assign column_image = block.settings[image_key]
+          assign column_heading = block.settings[heading_key]
+          assign column_text = block.settings[text_key]
+          assign column_caption = block.settings[caption_key]
+        %}
+
+        <div class="ai-multicolumn-column-{{ ai_gen_id }}">
+          <div class="ai-multicolumn-image-wrapper-{{ ai_gen_id }}">
+            {% if column_image %}
+              <img
+                src="{{ column_image | image_url: width: 800 }}"
+                alt="{{ column_image.alt | escape }}"
+                loading="lazy"
+                width="{{ column_image.width }}"
+                height="{{ column_image.height }}"
+              >
+            {% else %}
+              {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+          </div>
+
+          {% if column_heading != blank %}
+            <h3 class="ai-multicolumn-column-heading-{{ ai_gen_id }}">{{ column_heading }}</h3>
+          {% endif %}
+
+          {% if column_text != blank %}
+            <div class="ai-multicolumn-column-text-{{ ai_gen_id }}">{{ column_text }}</div>
+          {% endif %}
+
+          {% if column_caption != blank %}
+            <div class="ai-multicolumn-divider-{{ ai_gen_id }}"></div>
+            <p class="ai-multicolumn-caption-{{ ai_gen_id }}">{{ column_caption }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Multicolumn",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Comprehensive Ecosystem"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "subheading_spacing",
+      "label": "Space below heading",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "FLAWLESS EXECUTION ACROSS YOUR CANVAS"
+    },
+    {
+      "type": "font_picker",
+      "id": "subheading_font",
+      "label": "Subheading font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#c9b896"
+    },
+    {
+      "type": "range",
+      "id": "subheading_tracking",
+      "label": "Subheading letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Space below header",
+      "min": 30,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_1_heading",
+      "label": "Heading",
+      "default": "Sartorial Commissions"
+    },
+    {
+      "type": "richtext",
+      "id": "column_1_text",
+      "label": "Text",
+      "default": "<p>For the corporate stage, high-stakes summits, and global engagements. We construct sharp Seth Eden silhouettes of absolute executive authority.</p>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_1_caption",
+      "label": "Caption",
+      "default": "BESPOKE EXECUTIVE SUITS"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_2_heading",
+      "label": "Heading",
+      "default": "The Social Calendar"
+    },
+    {
+      "type": "richtext",
+      "id": "column_2_text",
+      "label": "Text",
+      "default": "<p>For philanthropic galas, keynotes, and media appearances. We craft synchronized evening attire that anchors your presence and redefines the room.</p>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_2_caption",
+      "label": "Caption",
+      "default": "WOMEN'S COUTURE & CUSTOM TUXEDOS"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_3_heading",
+      "label": "Heading",
+      "default": "Bridal Commissions"
+    },
+    {
+      "type": "richtext",
+      "id": "column_3_text",
+      "label": "Text",
+      "default": "<p>The crown jewel of your legacy. A breathtaking custom bridal gown and premium Seth Eden groom suiting engineered uniformly from fiber to finish.</p>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_3_caption",
+      "label": "Caption",
+      "default": "THE MASTERPIECE HEIRLOOM"
+    },
+    {
+      "type": "header",
+      "content": "Column style"
+    },
+    {
+      "type": "font_picker",
+      "id": "column_heading_font",
+      "label": "Column heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "column_heading_size",
+      "label": "Column heading size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "column_heading_color",
+      "label": "Column heading color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "column_heading_spacing",
+      "label": "Space below column heading",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "font_picker",
+      "id": "column_text_font",
+      "label": "Column text font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "column_text_size",
+      "label": "Column text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "column_text_color",
+      "label": "Column text color",
+      "default": "#6b6b6b"
+    },
+    {
+      "type": "range",
+      "id": "column_text_spacing",
+      "label": "Space below column text",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "font_picker",
+      "id": "caption_font",
+      "label": "Caption font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "caption_size",
+      "label": "Caption size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "caption_color",
+      "label": "Caption color",
+      "default": "#c9b896"
+    },
+    {
+      "type": "range",
+      "id": "caption_tracking",
+      "label": "Caption letter spacing",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Image style"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Placeholder height",
+      "min": 300,
+      "max": 700,
+      "step": 50,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "image_spacing",
+      "label": "Space below image",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Divider style"
+    },
+    {
+      "type": "range",
+      "id": "divider_width",
+      "label": "Divider width",
+      "min": 30,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "divider_height",
+      "label": "Divider thickness",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#c9b896"
+    },
+    {
+      "type": "range",
+      "id": "divider_spacing",
+      "label": "Space below divider",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "label": "Space above grid",
+      "min": 0,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multicolumn"
+    }
+  ]
+}
 {% endschema %}
