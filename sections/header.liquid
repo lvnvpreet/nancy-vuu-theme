@@ -31,9 +31,15 @@
 
     <!-- Right: CTA + Cart -->
     <div class="nav-right">
-      <button class="nav-cta nav-cta--desktop" data-gateway-open aria-haspopup="dialog">
-        {{- section.settings.cta_label | default: 'Request An Audience With Nancy Vuu' -}}
-      </button>
+      {%- if request.page_type == 'index' -%}
+        <button class="nav-cta nav-cta--desktop" data-gateway-open aria-haspopup="dialog">
+          {{- section.settings.cta_label | default: 'Request An Audience With Nancy Vuu' -}}
+        </button>
+      {%- else -%}
+        <a href="{{ routes.root_url }}" class="nav-cta nav-cta--desktop">
+          {{- section.settings.cta_label | default: 'Request An Audience With Nancy Vuu' -}}
+        </a>
+      {%- endif -%}
       <button
         id="cart-toggle-btn"
         onclick="openCart()"
@@ -351,6 +357,7 @@
   }
 </style>
 
+{%- if request.page_type == 'index' -%}
 <div
   id="nv-gateway-modal"
   class="nv-gateway-modal"
@@ -367,8 +374,68 @@
 
   <div class="nv-gateway-inner">
 
-    
+    <!-- Ornament -->
+    <div class="nv-gateway-ornament" aria-hidden="true">
+      <div class="nv-gateway-ornament__line"></div>
+      <div class="nv-gateway-ornament__dot"></div>
+      <div class="nv-gateway-ornament__line" style="transform:scaleX(-1);"></div>
+    </div>
+
+    <!-- Eyebrow -->
+    <p class="nv-gateway-eyebrow">{{ section.settings.gateway_eyebrow | default: 'Nancy Vuu — House of Legacy' }}</p>
+
+    <!-- Heading -->
+    <h2 id="nv-gateway-heading" class="nv-gateway-heading">
+      {{ section.settings.gateway_heading | default: 'How May We Serve<br>Your Legacy?' }}
+    </h2>
+
+    <!-- Divider gem -->
+    <div class="nv-gateway-divider">
+      <div class="nv-gateway-divider-gem"></div>
+    </div>
+
+    <!-- 4 Pathways -->
+    <div class="nv-gateway-grid">
+
+      <!-- I: Bridal -->
+      <a href="/pages/bridal-couture#inquiry" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">I — Bridal</span>
+        <h3 class="nv-gateway-card__title">Bridal Commissions<br>Couture Gowns</h3>
+        <p class="nv-gateway-card__desc">For the sovereign bride ready to commission a sacred, one-of-a-kind masterpiece.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+      <!-- II: Sartorial -->
+      <a href="/pages/seth-eden#inquiry" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">II — Sartorial</span>
+        <h3 class="nv-gateway-card__title">Sartorial Commissions<br>Bespoke Executive &amp; Groom Suits</h3>
+        <p class="nv-gateway-card__desc">For the man or woman of distinction seeking a fully commissioned wardrobe architecture.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+      <!-- III: Global -->
+      <a href="/pages/book-nancy-vuu#booking" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">III — Global</span>
+        <h3 class="nv-gateway-card__title">Global Engagements<br>Keynotes &amp; Media Appearances</h3>
+        <p class="nv-gateway-card__desc">For organizations seeking to engage Nancy Vuu on the world stage.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+      <!-- IV: Immersions -->
+      <a href="/pages/retreats#inquiry" class="nv-gateway-card">
+        <span class="nv-gateway-card__numeral">IV — Immersions</span>
+        <h3 class="nv-gateway-card__title">Executive Immersions<br>Strategic Retreats &amp; Consulting</h3>
+        <p class="nv-gateway-card__desc">For visionary leaders ready for a private alignment intensive.</p>
+        <span class="nv-gateway-card__arrow">&#8594;</span>
+      </a>
+
+    </div>
+
+    <p class="nv-gateway-footer">Every inquiry is received in confidence &amp; with intention</p>
+
+  </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
