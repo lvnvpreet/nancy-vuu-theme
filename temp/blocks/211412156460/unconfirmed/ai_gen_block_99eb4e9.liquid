@@ -1,6 +1,531 @@
+{% doc %}
+  @prompt
+    Please create an "Image with Text" section (a 50/50 side-by-side layout). Use a soft off-white background (#FAFAFA) to blend seamlessly with the rest of the luxury page, and include massive vertical padding (white space) above and below the section.
+    
+    Left Side (Image):
+    
+    Add a large, vertical placeholder image. 
+    
+    Right Side (Text Block):
+    
+    Vertical Alignment: Middle/Center.
+    
+    Horizontal Alignment: Left-aligned text, but with generous padding on the left so it doesn't touch the image.
+    
+    Tagline/Overline: "THE ATELIER CONCIERGE" (Format in a thin Sans-serif font, ALL CAPS, wide letter spacing, muted champagne gold).
+    
+    Main Heading: "The Private Estate Experience" (Format in a thin, elegant Serif font like Cormorant Garamond, dark grey).
+    
+    Body Text: "For our most discerning clientele, time and discretion are the ultimate luxuries. We extend the sanctuary of the Atelier directly to your private residence, vineyard estate, or executive boardroom. Experience the entirety of our bespoke fitting and curation process in the absolute privacy of your own domain, exclusively serving Silicon Valley and Napa Wine Country." (Format in a thin Sans-serif font like Montserrat, light grey/charcoal, with a tall, airy line height).
+    
+    No Buttons: Do not include a button in this section, as it leads directly into the intake form below it.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-text-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.vertical_padding }}px 0;
+  }
+
+  .ai-image-text-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 {{ block.settings.horizontal_padding }}px;
+  }
+
+  .ai-image-text-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.grid_gap }}px;
+    align-items: {{ block.settings.vertical_alignment }};
+  }
+
+  .ai-image-text-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    position: relative;
+  }
+
+  .ai-image-text-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-image-text-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: {{ block.settings.image_aspect_ratio }};
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-image-text-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-text-content-{{ ai_gen_id }} {
+    padding-left: {{ block.settings.content_padding_left }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-image-text-tagline-{{ ai_gen_id }} {
+    font-family: {{ block.settings.tagline_font.family }}, {{ block.settings.tagline_font.fallback_families }};
+    font-weight: {{ block.settings.tagline_font.weight }};
+    font-size: {{ block.settings.tagline_size }}px;
+    color: {{ block.settings.tagline_color }};
+    letter-spacing: {{ block.settings.tagline_letter_spacing }}em;
+    text-transform: uppercase;
+    margin: 0 0 {{ block.settings.tagline_margin_bottom }}px 0;
+  }
+
+  .ai-image-text-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    line-height: {{ block.settings.heading_line_height }};
+    margin: 0 0 {{ block.settings.heading_margin_bottom }}px 0;
+  }
+
+  .ai-image-text-body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.body_color }};
+    line-height: {{ block.settings.body_line_height }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-text-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_vertical_padding }}px 0;
+    }
+
+    .ai-image-text-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_grid_gap }}px;
+    }
+
+    .ai-image-text-content-{{ ai_gen_id }} {
+      padding-left: 0;
+      text-align: {{ block.settings.mobile_text_alignment }};
+    }
+
+    .ai-image-text-tagline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_tagline_size }}px;
+    }
+
+    .ai-image-text-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+    }
+
+    .ai-image-text-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_body_size }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-image-text-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-image-text-container-{{ ai_gen_id }}">
+    <div class="ai-image-text-grid-{{ ai_gen_id }}">
+      <div class="ai-image-text-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 1200 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+            class="ai-image-text-image-{{ ai_gen_id }}"
+          >
+        {% else %}
+          <div class="ai-image-text-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-image-text-content-{{ ai_gen_id }}">
+        {% if block.settings.tagline != blank %}
+          <div class="ai-image-text-tagline-{{ ai_gen_id }}">
+            {{ block.settings.tagline }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-image-text-heading-{{ ai_gen_id }}">
+            {{ block.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.body_text != blank %}
+          <div class="ai-image-text-body-{{ ai_gen_id }}">
+            {{ block.settings.body_text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Horizontal padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "mobile_vertical_padding",
+      "label": "Mobile vertical padding",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Gap between image and text",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_grid_gap",
+      "label": "Mobile gap",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FAFAFA"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Placeholder aspect ratio",
+      "options": [
+        {
+          "value": "3/4",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "4/5",
+          "label": "Tall (4:5)"
+        },
+        {
+          "value": "1/1",
+          "label": "Square"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape (4:3)"
+        }
+      ],
+      "default": "3/4"
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "range",
+      "id": "content_padding_left",
+      "label": "Content left padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "Mobile text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "THE ATELIER CONCIERGE"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Private Estate Experience"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>For our most discerning clientele, time and discretion are the ultimate luxuries. We extend the sanctuary of the Atelier directly to your private residence, vineyard estate, or executive boardroom. Experience the entirety of our bespoke fitting and curation process in the absolute privacy of your own domain, exclusively serving Silicon Valley and Napa Wine Country.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Tagline style"
+    },
+    {
+      "type": "font_picker",
+      "id": "tagline_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "label": "Size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_tagline_size",
+      "label": "Mobile size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "Color",
+      "default": "#B8A88A"
+    },
+    {
+      "type": "range",
+      "id": "tagline_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "unit": "em",
+      "default": 0.2
+    },
+    {
+      "type": "range",
+      "id": "tagline_margin_bottom",
+      "label": "Bottom margin",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading style"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Mobile size",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#3A3A3A"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "Line height",
+      "min": 1,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Bottom margin",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Body style"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_body_size",
+      "label": "Mobile size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Color",
+      "default": "#5A5A5A"
+    },
+    {
+      "type": "range",
+      "id": "body_line_height",
+      "label": "Line height",
+      "min": 1.5,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text"
+    }
+  ]
+}
 {% endschema %}
