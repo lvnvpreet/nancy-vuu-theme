@@ -9,181 +9,406 @@
  */
 {
   "sections": {
-    "17753441280ec98742": {
+    "1780305241cabd3aa7": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_9039eb0_G4CgeJ": {
-          "type": "ai_gen_block_9039eb0",
+        "ai_gen_block_c3a9447_LqVXqF": {
+          "type": "ai_gen_block_c3a9447",
           "settings": {
-            "hero_image": "shopify://shop_images/iStock-118854546.jpg",
-            "hero_height": 500,
-            "mobile_hero_height": 250,
-            "show_overlay": true,
-            "overlay_color": "#ffffff",
-            "overlay_opacity": 0.4,
-            "eyebrow": "",
-            "subtitle": "CONNECT WITH THE",
-            "title": "House of Nancy Vuu",
-            "text_color": "#0f0f0f",
-            "vertical_alignment": "center",
-            "horizontal_alignment": "center",
-            "text_alignment": "center",
-            "content_max_width": 800,
-            "eyebrow_size": 12,
-            "subtitle_size": 18,
-            "title_size": 60
+            "left_image": "shopify://shop_images/luxury-bespoke-custom-tailored-suit-palo-alto-seth-eden_1.jpg",
+            "right_image": "shopify://shop_images/DP10.jpg",
+            "hero_height": 100,
+            "hero_min_height": 600,
+            "left_image_width": 50,
+            "right_image_width": 50,
+            "text_box_vertical_position": 65,
+            "text_box_width": 100,
+            "text_box_height": 100,
+            "text_box_padding": 10,
+            "text_box_opacity": 0.4,
+            "text_box_blur": 0,
+            "headline_font": "serif",
+            "headline_font_size": 48,
+            "headline_color": "#2c2c2c",
+            "subheadline_font": "system_ui_n4",
+            "subheadline_font_size": 16,
+            "subheadline_letter_spacing": 3,
+            "subheadline_color": "#0f0f0f",
+            "cta_font": "system_ui_n4",
+            "cta_font_size": 12,
+            "cta_letter_spacing": 2,
+            "cta_padding_vertical": 16,
+            "cta_padding_horizontal": 40,
+            "cta_border_width": 1,
+            "cta_bg_color": "rgba(0,0,0,0)",
+            "cta_text_color": "#2c2c2c",
+            "cta_border_color": "#2c2c2c",
+            "cta_hover_bg_color": "#2c2c2c",
+            "cta_hover_text_color": "#ffffff",
+            "cta_hover_border_color": "#2c2c2c",
+            "headline": "Bespoke Bridal & Sartorial Commissions Crafted for Flawless Coordination",
+            "subheadline": "From the boardroom to the sanctuary, we architect synchronized wardrobe legacies",
+            "cta_text": "REQUEST A PRIVATE CONSULTATION"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_9039eb0_G4CgeJ"
+        "ai_gen_block_c3a9447_LqVXqF"
       ],
       "settings": {}
     },
-    "atelier_inquiry_MwdRTd": {
-      "type": "atelier-inquiry",
+    "photography_press_wLgbDD": {
+      "type": "photography-press",
       "blocks": {
-        "service_option_qbMPmW": {
-          "type": "service_option",
+        "publication_HJ6fP7": {
+          "type": "publication",
           "settings": {
-            "option_label": "Bespoke Bridal Couture",
-            "option_value": "BRIDAL IMMERSIONS, BESPOKE GOWN"
+            "name": "VOGUE"
           }
         },
-        "service_option_U9thzL": {
-          "type": "service_option",
+        "publication_cJ9LpC": {
+          "type": "publication",
           "settings": {
-            "option_label": "Bespoke Tailored Suit Gallery",
-            "option_value": "tailored suits"
+            "name": "ELLE"
           }
         },
-        "service_option_Ly6wRW": {
-          "type": "service_option",
+        "publication_E8Hb8c": {
+          "type": "publication",
           "settings": {
-            "option_label": "Red Carpet/Gala",
-            "option_value": "special occasion"
+            "name": "HARPER'S BAZAAR"
           }
         },
-        "service_option_D6M8KX": {
-          "type": "service_option",
+        "publication_eVbQhf": {
+          "type": "publication",
           "settings": {
-            "option_label": "Childrens | Teen Bespoke Couture",
-            "option_value": "Childrens | Teen Bespoke Couture"
+            "name": "THE COSMOPOLITAN"
           }
         },
-        "service_option_TjADGp": {
-          "type": "service_option",
+        "publication_UFBMYE": {
+          "type": "publication",
           "settings": {
-            "option_label": "Private Archive Collection",
-            "option_value": "Private Archive Collection"
-          }
-        },
-        "service_option_nPbdiC": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Master Tailoring & Fit Architecture",
-            "option_value": "Master Tailoring — Alterations"
-          }
-        },
-        "service_option_gY7L9V": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "Nancy Vuu | Key Note Speaker",
-            "option_value": "key note speaker"
-          }
-        },
-        "service_option_grQxG6": {
-          "type": "service_option",
-          "settings": {
-            "option_label": "Master Tailoring & Fit Architecture (Alterations)",
-            "option_value": "tailoring"
-          }
-        },
-        "service_option_YzRatH": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "Bespoke Couture / Bridal Consultation",
-            "option_value": "Bespoke Couture — Bridal Consultation"
-          }
-        },
-        "service_option_6GPj43": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "Custom Bespoke Suiting | Bespoke Wardrobe",
-            "option_value": "bespoke suits, couture, wardrobe"
-          }
-        },
-        "service_option_4AxDHg": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "DREAM Retreats",
-            "option_value": "Dream Retreats"
-          }
-        },
-        "service_option_QUD3Ui": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "Strategic Intensives",
-            "option_value": "strategic Intensives"
-          }
-        },
-        "service_option_D44eTe": {
-          "type": "service_option",
-          "disabled": true,
-          "settings": {
-            "option_label": "Maison Arise",
-            "option_value": "maison arise, dream academy"
+            "name": "BRIDES"
           }
         }
       },
       "block_order": [
-        "service_option_qbMPmW",
-        "service_option_U9thzL",
-        "service_option_Ly6wRW",
-        "service_option_D6M8KX",
-        "service_option_TjADGp",
-        "service_option_nPbdiC",
-        "service_option_gY7L9V",
-        "service_option_grQxG6",
-        "service_option_YzRatH",
-        "service_option_6GPj43",
-        "service_option_4AxDHg",
-        "service_option_QUD3Ui",
-        "service_option_D44eTe"
+        "publication_HJ6fP7",
+        "publication_cJ9LpC",
+        "publication_E8Hb8c",
+        "publication_eVbQhf",
+        "publication_UFBMYE"
       ],
-      "name": "Atelier Inquiry",
+      "name": "Photo Press Strip",
       "settings": {
-        "section_id": "inquiry",
-        "eyebrow": "The Atelier Concierge",
-        "title_line_1": "Begin Your Bespoke Journey",
-        "title_line_2": "",
-        "subtext": "Bespoke is more than a measurement; it is an architecture of identity. Whether for a sacred covenant or a global mantle, we invite you to share your vision. Our concierge team will review your inquiry with intentionality to begin the process of crafting your garment of grace.",
-        "address_eyebrow": "The San Jose & Napa Valley flagship",
-        "address_line_1": "By Appointment Only",
-        "address_line_2": "1520 Southwest Expy #10, San Jose CA 95126",
-        "phone": "408.800.2079",
-        "label_name": "FULL NAME",
-        "label_email": "CONTACT EMAIL ADDRESS",
-        "label_service": "Service of Interest",
-        "label_message": "Tell us about the occasion, the date of the event, and the legacy you wish to represent through this garment.",
-        "submit_label": "Submit Request to House of Nancy Vuu"
+        "eyebrow": "The Aesthetic Recognized By"
       }
     },
     "main": {
       "type": "main-page",
       "disabled": true,
       "settings": {}
+    },
+    "17803008335501da5c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ea6b8f6_cMchXi": {
+          "type": "ai_gen_block_ea6b8f6",
+          "settings": {
+            "title": "Your styles shouldn't just coexist. They should converse.",
+            "body": "<p>You are visionaries and leaders. Yet, when preparing for life’s most sacred covenants, couples are often forced to source their wardrobe architecture completely separately. We have eliminated that friction entirely. Our Atelier provides a singular, high-altitude sanctuary where your garments—from Nancy Vuu couture to Seth Eden bespoke suits—are drafted, curated, and structured in tandem to guarantee absolute visual harmony.</p>",
+            "desktop_width_percent": 100,
+            "content_max_width": 800,
+            "text_alignment": "center",
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "section_padding_horizontal": 40,
+            "title_font": "bodoni_moda_n4",
+            "title_size": 48,
+            "title_line_height": 1.2,
+            "title_color": "#0f0f0f",
+            "title_bottom_spacing": 30,
+            "body_font": "manrope_n4",
+            "body_size": 16,
+            "body_line_height": 1.6,
+            "body_color": "#0f0f0f",
+            "paragraph_spacing": 20,
+            "background_color": "#faf8f5"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ea6b8f6_cMchXi"
+      ],
+      "settings": {}
+    },
+    "17803020111cadc425": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17803026520d0db4a0": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b565e1d_neNQKT": {
+          "type": "ai_gen_block_b565e1d",
+          "settings": {
+            "heading": "The Comprehensive Ecosystem",
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 48,
+            "heading_color": "#0f0f0f",
+            "subheading_spacing": 20,
+            "subheading": "FLAWLESS EXECUTION ACROSS YOUR CANVAS",
+            "subheading_font": "manrope_n4",
+            "subheading_size": 14,
+            "subheading_color": "#c9b896",
+            "subheading_tracking": 2,
+            "header_spacing": 60,
+            "column_1_image": "shopify://shop_images/bespoke-tailored-suits-couples-styling-san-jose-los-altos-hill-seth-eden.jpg",
+            "column_1_heading": "Sartorial Commissions",
+            "column_1_text": "<p>For the corporate stage, high-stakes summits, and global engagements. We construct sharp Seth Eden silhouettes of absolute executive authority.</p>",
+            "column_1_caption": "BESPOKE EXECUTIVE SUITS",
+            "column_2_image": "shopify://shop_images/custom-bridal-couture-bespoke-suiting-nancy-vuu-gala.jpg",
+            "column_2_heading": "The Social Calendar",
+            "column_2_text": "<p>For philanthropic galas, keynotes, and media appearances. We craft synchronized evening attire that anchors your presence and redefines the room.</p>",
+            "column_2_caption": "WOMEN'S COUTURE & CUSTOM TUXEDOS",
+            "column_3_image": "shopify://shop_images/Untitled_design_2.jpg",
+            "column_3_heading": "Bridal Commissions",
+            "column_3_text": "<p>The crown jewel of your legacy. A breathtaking custom bridal gown and premium Seth Eden groom suiting engineered uniformly from fiber to finish.</p>",
+            "column_3_caption": "THE MASTERPIECE HEIRLOOM",
+            "column_heading_font": "bodoni_moda_n4",
+            "column_heading_size": 28,
+            "column_heading_color": "#0f0f0f",
+            "column_heading_spacing": 16,
+            "column_text_font": "manrope_n4",
+            "column_text_size": 16,
+            "column_text_color": "#6b6b6b",
+            "column_text_spacing": 25,
+            "caption_font": "manrope_n4",
+            "caption_size": 12,
+            "caption_color": "#c9b896",
+            "caption_tracking": 1.5,
+            "image_height": 500,
+            "image_spacing": 25,
+            "image_border_radius": 0,
+            "divider_width": 60,
+            "divider_height": 1,
+            "divider_color": "#c9b896",
+            "divider_spacing": 16,
+            "columns_desktop": "3",
+            "columns_mobile": "1",
+            "column_gap": 40,
+            "container_width": 1400,
+            "grid_top_spacing": 40,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "background_color": "#faf8f5"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b565e1d_neNQKT"
+      ],
+      "settings": {}
+    },
+    "178030310120f8ee21": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7a70578_MBJYyR": {
+          "type": "ai_gen_block_7a70578",
+          "settings": {
+            "heading": "The Atelier Ritual",
+            "heading_font": "bodoni_moda_n4",
+            "heading_size": 48,
+            "heading_size_mobile": 32,
+            "heading_color": "#0f0f0f",
+            "subheading": "An Intimate Partnership in Co-Creation",
+            "subheading_font": "manrope_n4",
+            "subheading_size": 16,
+            "subheading_size_mobile": 14,
+            "subheading_color": "#c9b896",
+            "subheading_letter_spacing": 3,
+            "subheading_spacing": 30,
+            "header_spacing": 60,
+            "column_1_overline": "01 / Sanctuary Arrival",
+            "column_1_heading": "The Dual Vision Assessment",
+            "column_1_body": "<p>We review your calendar, structural style goals, and legacy in a private studio session, mapping out an original blueprint exclusive to both of you.</p>",
+            "column_2_overline": "02 / The Master Build",
+            "column_2_heading": "Construction & Sourcing",
+            "column_2_body": "<p>Each piece is hand-drafted and tailored to your exact measurements, with fittings to ensure a flawless silhouette and unparalleled comfort.  While our artisans map physical dimensions, your garment blueprints and rare textiles are selected side-by-side to ensure tone-on-tone perfection.</p>",
+            "column_3_overline": "03 / The Reveal",
+            "column_3_heading": "Legacy Fitting",
+            "column_3_body": "<p>Experience private, fully integrated garment iterations. Watch your collective styling legacy become a second skin, with master tailoring executed sequentially.</p>",
+            "overline_font": "manrope_n4",
+            "overline_size": 11,
+            "overline_color": "#c9b896",
+            "overline_letter_spacing": 2.5,
+            "overline_spacing": 12,
+            "column_heading_font": "bodoni_moda_n4",
+            "column_heading_size": 24,
+            "column_heading_size_mobile": 20,
+            "column_heading_color": "#0f0f0f",
+            "column_heading_spacing": 16,
+            "body_font": "manrope_n3",
+            "body_size": 15,
+            "body_size_mobile": 14,
+            "body_color": "#6b6b6b",
+            "body_line_height": 1.8,
+            "columns_desktop": 3,
+            "container_width": 1200,
+            "column_gap": 60,
+            "column_gap_mobile": 40,
+            "columns_top_spacing": 0,
+            "background_color": "#ffffff",
+            "padding_top": 150,
+            "padding_bottom": 150,
+            "padding_top_mobile": 80,
+            "padding_bottom_mobile": 80
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_7c46351_gTFpUg": {
+          "type": "ai_gen_block_7c46351",
+          "settings": {
+            "heading": "Co-Author Your Legacy",
+            "subheading": "Due to their exclusive nature, bespoke commissions are strictly limited.",
+            "heading_size": 48,
+            "subheading_size": 14,
+            "heading_color": "#0f0f0f",
+            "subheading_color": "#2a2a2a",
+            "name_label": "First & Last Name",
+            "partner_label": "Partner's Name",
+            "email_label": "Corporate Email",
+            "phone_label": "Phone Number",
+            "milestone_label": "What milestone events are we styling you for?",
+            "checkbox_1_label": "The Altar (Bridal Commissions)",
+            "checkbox_2_label": "The Boardroom (Executive Presence)",
+            "checkbox_3_label": "Global Engagements & Galas",
+            "button_label": "Request Commission",
+            "footer_text": "All submissions are reviewed directly by The Atelier Concierge.",
+            "success_message": "<p>Your commission request has been received. Our atelier concierge will contact you shortly.</p>",
+            "heading_font": "bodoni_moda_n4",
+            "body_font": "manrope_n4",
+            "label_size": 11,
+            "label_letter_spacing": 2,
+            "input_size": 14,
+            "checkbox_label_size": 11,
+            "checkbox_letter_spacing": 1.5,
+            "button_size": 13,
+            "button_letter_spacing": 2,
+            "footer_size": 12,
+            "label_font_weight": "300",
+            "checkbox_label_weight": "300",
+            "button_font_weight": "400",
+            "background_color": "#ffffff",
+            "label_color": "#2a2a2a",
+            "input_color": "#0f0f0f",
+            "input_border_color": "#999999",
+            "input_focus_color": "#0f0f0f",
+            "placeholder_color": "#999999",
+            "checkbox_border_color": "#999999",
+            "checkbox_checked_color": "#0f0f0f",
+            "checkbox_label_color": "#999999",
+            "button_text_color": "#0f0f0f",
+            "button_border_color": "#0f0f0f",
+            "button_hover_bg": "#0f0f0f",
+            "button_hover_border": "#0f0f0f",
+            "button_hover_text": "#ffffff",
+            "footer_color": "#999999",
+            "success_color": "#008060",
+            "error_color": "#d82c0d",
+            "section_padding": 100,
+            "form_max_width": 700,
+            "header_spacing": 50,
+            "heading_margin": 16,
+            "form_top_spacing": 40,
+            "row_spacing": 35,
+            "field_gap": 30,
+            "label_margin": 10,
+            "input_padding": 10,
+            "input_border_width": 1,
+            "checkbox_group_margin": 16,
+            "checkbox_spacing": 16,
+            "checkbox_gap": 12,
+            "checkbox_size": 18,
+            "checkbox_border_width": 1,
+            "button_padding": 18,
+            "button_border_width": 1,
+            "button_top_spacing": 40,
+            "footer_top_spacing": 20,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7a70578_MBJYyR",
+        "ai_gen_block_7c46351_gTFpUg"
+      ],
+      "settings": {}
+    },
+    "178030725649ae47a7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a355c53_c7Yeky": {
+          "type": "ai_gen_block_a355c53",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/bespoke-bridal-gown-custom-suiting-groom-nancy-vuu-power-couple.jpg",
+            "video": "",
+            "enable_overlay": false,
+            "overlay_color": "dark",
+            "overlay_opacity": 0.5,
+            "segment_height": 700,
+            "segment_height_mobile": 400,
+            "eyebrow": "",
+            "headline": "",
+            "subheadline": "",
+            "vertical_alignment": "center",
+            "horizontal_alignment": "center",
+            "text_alignment": "center",
+            "content_padding": 40,
+            "content_padding_mobile": 20,
+            "eyebrow_font": "assistant_n4",
+            "eyebrow_font_size": 14,
+            "eyebrow_font_size_mobile": 12,
+            "eyebrow_color": "#ffffff",
+            "eyebrow_letter_spacing": 2,
+            "eyebrow_text_transform": "uppercase",
+            "eyebrow_spacing": 10,
+            "headline_font": "assistant_n4",
+            "headline_font_size": 60,
+            "headline_font_size_mobile": 36,
+            "headline_color": "#ffffff",
+            "headline_line_height": 1.2,
+            "headline_letter_spacing": 0,
+            "headline_spacing": 20,
+            "subheadline_font": "assistant_n4",
+            "subheadline_font_size": 18,
+            "subheadline_font_size_mobile": 16,
+            "subheadline_color": "#ffffff",
+            "subheadline_line_height": 1.5,
+            "subheadline_letter_spacing": 0,
+            "subheadline_max_width": 600
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a355c53_c7Yeky"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "17753441280ec98742",
-    "atelier_inquiry_MwdRTd",
-    "main"
+    "1780305241cabd3aa7",
+    "photography_press_wLgbDD",
+    "main",
+    "17803008335501da5c",
+    "178030725649ae47a7",
+    "17803020111cadc425",
+    "17803026520d0db4a0",
+    "178030310120f8ee21"
   ]
 }
