@@ -1,6 +1,550 @@
+{% doc %}
+  @prompt
+    I want to create a luxury services landing page template titled 'Coordinated Styling'.
+    Use elegant typography (serif headings like Bodoni, clean sans-serif body text like Manrope) with a luxury color palette: off-white cream backgrounds, deep onyx accents, and subtle muted gold details.
+    
+    Please build the page with these 5 components:
+    
+    Hero Section: Split-screen layout. Headline: 'Bespoke Bridal & Custom Suiting Crafted for Flawless Coordination.' Subheadline: 'From the boardroom to the altar, we design synchronized, custom wardrobe legacies for high-profile couples.' Add a dark, premium call-to-action button that reads 'Reserve Your Dual Consultation'.
+    
+    Text Editorial Section: Title: 'Your styles shouldn’t just coexist. They should converse.' Add elegant copy explaining that we help high-profile couples seamlessly match their wardrobes across professional and personal milestones so they never look misaligned.
+    
+    3-Column Grid Feature: Detail our three service pillars: Column 1 is 'The Boardroom Blueprint' (made-to-measure executive wear), Column 2 is 'The Social Calendar' (gala and red-carpet evening wear), and Column 3 is 'The Definitive Day' (perfectly coordinated custom bridal gowns and wedding suiting).
+    
+    Testimonial Block: A wide, minimalist quote layout celebrating our time-saving, synchronized design capabilities for high-profile couples.
+    
+    Contact/Intake Form: Create a premium contact form capturing name, partner's name, email, phone, and checkboxes asking if they are shopping for the Altar, Boardroom, or Gala."  keep it consistent with my light airy spacious aesthetic on my website. and give me control to add top and bottom padding to each segment. give me control to font, font size 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-contact-form-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+  }
+
+  .ai-contact-form__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .ai-contact-form__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .ai-contact-form__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 16px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .ai-contact-form__subtitle-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.body_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.body_color }};
+    margin: 0;
+  }
+
+  .ai-contact-form__form-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-contact-form__field-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-contact-form__label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 500;
+    color: {{ block.settings.label_color }};
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .ai-contact-form__input-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.input_size }}px;
+    padding: 14px 16px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    background-color: {{ block.settings.input_bg_color }};
+    color: {{ block.settings.input_text_color }};
+    transition: border-color 0.2s ease;
+  }
+
+  .ai-contact-form__input-{{ ai_gen_id }}:focus {
+    outline: none;
+    border-color: {{ block.settings.input_focus_border }};
+  }
+
+  .ai-contact-form__checkbox-group-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-contact-form__checkbox-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-contact-form__checkbox-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    cursor: pointer;
+  }
+
+  .ai-contact-form__checkbox-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.input_size }}px;
+    color: {{ block.settings.body_color }};
+    cursor: pointer;
+  }
+
+  .ai-contact-form__submit-{{ ai_gen_id }} {
+    padding: 18px 48px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.button_size }}px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    align-self: flex-start;
+  }
+
+  .ai-contact-form__submit-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg }};
+    color: {{ block.settings.button_hover_text }};
+  }
+
+  .ai-contact-form__success-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.success_color }};
+    padding: 16px;
+    text-align: center;
+  }
+
+  .ai-contact-form__error-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: 14px;
+    color: {{ block.settings.error_color }};
+    margin-top: 4px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-contact-form__container-{{ ai_gen_id }} {
+      padding: 0 24px;
+    }
+
+    .ai-contact-form__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.75);
+    }
+
+    .ai-contact-form__subtitle-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.body_size }}px * 0.9);
+    }
+
+    .ai-contact-form__submit-{{ ai_gen_id }} {
+      width: 100%;
+      align-self: stretch;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-contact-form-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-contact-form__container-{{ ai_gen_id }}">
+    <div class="ai-contact-form__header-{{ ai_gen_id }}">
+      {% if block.settings.title != blank %}
+        <h2 class="ai-contact-form__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      {% endif %}
+      {% if block.settings.subtitle != blank %}
+        <p class="ai-contact-form__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    {%- form 'contact' -%}
+      <input type="hidden" name="contact[form_type]" value="coordinated_styling_intake">
+      
+      <div class="ai-contact-form__form-{{ ai_gen_id }}">
+        {%- if form.posted_successfully? -%}
+          <div class="ai-contact-form__success-{{ ai_gen_id }}">
+            {{ block.settings.success_message }}
+          </div>
+        {%- else -%}
+          <div class="ai-contact-form__field-{{ ai_gen_id }}">
+            <label for="ai-contact-name-{{ ai_gen_id }}" class="ai-contact-form__label-{{ ai_gen_id }}">
+              Your Name
+            </label>
+            <input
+              type="text"
+              id="ai-contact-name-{{ ai_gen_id }}"
+              name="contact[name]"
+              class="ai-contact-form__input-{{ ai_gen_id }}"
+              value="{{ form.name }}"
+              required
+              {% if form.errors %}
+                aria-invalid="true"
+              {% endif %}
+            >
+            {%- if form.errors contains 'name' -%}
+              <div class="ai-contact-form__error-{{ ai_gen_id }}">
+                {{ form.errors.messages.name }}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="ai-contact-form__field-{{ ai_gen_id }}">
+            <label for="ai-contact-partner-{{ ai_gen_id }}" class="ai-contact-form__label-{{ ai_gen_id }}">
+              Partner's Name
+            </label>
+            <input
+              type="text"
+              id="ai-contact-partner-{{ ai_gen_id }}"
+              name="contact[partner_name]"
+              class="ai-contact-form__input-{{ ai_gen_id }}"
+            >
+          </div>
+
+          <div class="ai-contact-form__field-{{ ai_gen_id }}">
+            <label for="ai-contact-email-{{ ai_gen_id }}" class="ai-contact-form__label-{{ ai_gen_id }}">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="ai-contact-email-{{ ai_gen_id }}"
+              name="contact[email]"
+              class="ai-contact-form__input-{{ ai_gen_id }}"
+              value="{{ form.email }}"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              required
+              {% if form.errors %}
+                aria-invalid="true"
+              {% endif %}
+            >
+            {%- if form.errors contains 'email' -%}
+              <div class="ai-contact-form__error-{{ ai_gen_id }}">
+                {{ form.errors.messages.email }}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="ai-contact-form__field-{{ ai_gen_id }}">
+            <label for="ai-contact-phone-{{ ai_gen_id }}" class="ai-contact-form__label-{{ ai_gen_id }}">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="ai-contact-phone-{{ ai_gen_id }}"
+              name="contact[phone]"
+              class="ai-contact-form__input-{{ ai_gen_id }}"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="ai-contact-form__field-{{ ai_gen_id }}">
+            <label class="ai-contact-form__label-{{ ai_gen_id }}">
+              We are shopping for:
+            </label>
+            <div class="ai-contact-form__checkbox-group-{{ ai_gen_id }}">
+              <div class="ai-contact-form__checkbox-wrapper-{{ ai_gen_id }}">
+                <input
+                  type="checkbox"
+                  id="ai-contact-altar-{{ ai_gen_id }}"
+                  name="contact[shopping_for_altar]"
+                  value="The Altar"
+                  class="ai-contact-form__checkbox-{{ ai_gen_id }}"
+                >
+                <label for="ai-contact-altar-{{ ai_gen_id }}" class="ai-contact-form__checkbox-label-{{ ai_gen_id }}">
+                  The Altar (Wedding & Bridal)
+                </label>
+              </div>
+              <div class="ai-contact-form__checkbox-wrapper-{{ ai_gen_id }}">
+                <input
+                  type="checkbox"
+                  id="ai-contact-boardroom-{{ ai_gen_id }}"
+                  name="contact[shopping_for_boardroom]"
+                  value="The Boardroom"
+                  class="ai-contact-form__checkbox-{{ ai_gen_id }}"
+                >
+                <label for="ai-contact-boardroom-{{ ai_gen_id }}" class="ai-contact-form__checkbox-label-{{ ai_gen_id }}">
+                  The Boardroom (Executive Wear)
+                </label>
+              </div>
+              <div class="ai-contact-form__checkbox-wrapper-{{ ai_gen_id }}">
+                <input
+                  type="checkbox"
+                  id="ai-contact-gala-{{ ai_gen_id }}"
+                  name="contact[shopping_for_gala]"
+                  value="The Gala"
+                  class="ai-contact-form__checkbox-{{ ai_gen_id }}"
+                >
+                <label for="ai-contact-gala-{{ ai_gen_id }}" class="ai-contact-form__checkbox-label-{{ ai_gen_id }}">
+                  The Gala (Evening & Red Carpet)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="ai-contact-form__submit-{{ ai_gen_id }}">
+            {{ block.settings.submit_text }}
+          </button>
+        {%- endif -%}
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Contact intake form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Begin Your Coordinated Journey"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Share your details and we'll schedule a private dual consultation to discuss your wardrobe vision."
+    },
+    {
+      "type": "text",
+      "id": "submit_text",
+      "label": "Submit button text",
+      "default": "Submit Inquiry"
+    },
+    {
+      "type": "textarea",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you for your inquiry. Our atelier concierge will contact you within 24 hours to schedule your dual consultation."
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "input_size",
+      "label": "Input size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Button size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_bg_color",
+      "label": "Input background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border",
+      "default": "#d4d1ca"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_border",
+      "label": "Input focus border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button hover background",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success message",
+      "default": "#008060"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error message",
+      "default": "#D82C0D"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 600,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact intake form"
+    }
+  ]
+}
 {% endschema %}
