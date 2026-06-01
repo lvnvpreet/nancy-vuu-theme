@@ -311,15 +311,6 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_0ee6718_izq6yg": {
-          "type": "ai_gen_block_0ee6718",
-          "name": "Anchor point",
-          "settings": {
-            "anchor_id": "alliance-form",
-            "offset": -100
-          },
-          "blocks": {}
-        },
         "ai_gen_block_99eb4e9_9KRtG6": {
           "type": "ai_gen_block_99eb4e9",
           "settings": {
@@ -359,8 +350,18 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_0ee6718_izq6yg": {
+          "type": "ai_gen_block_0ee6718",
+          "name": "Anchor point",
+          "settings": {
+            "anchor_id": "alliance-form",
+            "offset": -100
+          },
+          "blocks": {}
+        },
         "ai_gen_block_7c46351_gTFpUg": {
           "type": "ai_gen_block_7c46351",
+          "name": "commission-request-form",
           "settings": {
             "heading": "Co-Author Your Legacy",
             "subheading": "Due to the exacting nature of our craft, bespoke commissions are strictly by appointment. For our clientele in Silicon Valley and Napa Wine Country, the Atelier experience can be extended to your private estate or boardroom upon request.",
@@ -435,8 +436,8 @@
       },
       "block_order": [
         "ai_gen_block_7a70578_MBJYyR",
-        "ai_gen_block_0ee6718_izq6yg",
         "ai_gen_block_99eb4e9_9KRtG6",
+        "ai_gen_block_0ee6718_izq6yg",
         "ai_gen_block_7c46351_gTFpUg"
       ],
       "settings": {}
