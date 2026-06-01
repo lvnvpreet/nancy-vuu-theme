@@ -1,6 +1,545 @@
+{% doc %}
+  @prompt
+    Please create a "Custom Liquid" Hero section for a high-end luxury website. The aesthetic must be extremely elegant, editorial, and minimalist.
+    
+    Please build the code using modular CSS Variables (Custom Properties) placed at the top of the <style> block. Add clear comments calling this the "USER CONTROL PANEL" so I can easily adjust the hero height, image split widths, text box opacity, font sizes, and all CTA button design elements (background color, border, text color, spacing).
+    
+    Layout & Imagery:
+    
+    Background: A 50/50 split-screen layout.
+    
+    Left Side: Image placeholder for the Groom (Sartorial).
+    
+    Right Side: Image placeholder for the Bride (Bridal).
+    
+    Both images must cover their respective halves perfectly (object-fit: cover) and span the full width of the screen.
+    
+    Center Text Overlay Box:
+    
+    Place an elegant, opaque box absolutely centered over the middle of the screen, overlapping the split between the two images.
+    
+    The box should have a semi-transparent white background (e.g., rgba(255, 255, 255, 0.85)) and a subtle blur effect to ensure the text is highly readable while still feeling light and airy.
+    
+    Add generous padding inside the box so the text has room to breathe.
+    
+    Add a very thin, subtle border to the box (e.g., 1px solid rgba(212, 175, 55, 0.2)).
+    
+    Typography (Inside the Box):
+    
+    Center all text.
+    
+    Headline (H1): "Bespoke Bridal & Sartorial Commissions Crafted for Flawless Coordination." (Format in an elegant, thin Serif font like Cormorant Garamond, dark grey).
+    
+    Subheadline (H2): "From the boardroom to the sanctuary, we architect synchronized wardrobe legacies." (Format in a thin Sans-serif font like Montserrat, ALL CAPS, wide letter spacing, smaller size, muted grey).
+    
+    Call to Action Button:
+    
+    Text: "REQUEST A PRIVATE CONSULTATION"
+    
+    give the cta a functional link and link it to the #commission-request-form at the bottom of this page. 
+    
+    Initial Style: Transparent background, dark grey text, thin dark grey border, wide letter spacing, uppercase, thin Sans-serif font. (Make sure I can change these exact properties easily via the CSS variables at the top).
+    
+    Please generate the complete HTML and CSS for this section, ensuring the "USER CONTROL PANEL" variables are clearly marked at the top of the style section., me me access to adjusting width and height of opague text box without restraint and give me control to move opaque box up and down without restraint. give me control access to ajust font size, font style and opaque box padding, give me control access to adjust the opaque strength, give me control to adjust the blur of the opaque box
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-luxury-hero-{{ ai_gen_id }} {
+    /* ========================================
+       USER CONTROL PANEL - CSS VARIABLES
+       ======================================== */
+    
+    /* Hero Dimensions */
+    --hero-height: 100vh;
+    --hero-min-height: 600px;
+    
+    /* Split Image Widths */
+    --left-image-width: 50%;
+    --right-image-width: 50%;
+    
+    /* Center Text Box - Position */
+    --text-box-vertical-position: {{ block.settings.text_box_vertical_position }}%;
+    --text-box-horizontal-position: 50%;
+    
+    /* Center Text Box - Dimensions */
+    --text-box-width: {{ block.settings.text_box_width }}px;
+    --text-box-height: {{ block.settings.text_box_height }}px;
+    --text-box-padding-top: {{ block.settings.text_box_padding_top }}px;
+    --text-box-padding-right: {{ block.settings.text_box_padding_right }}px;
+    --text-box-padding-bottom: {{ block.settings.text_box_padding_bottom }}px;
+    --text-box-padding-left: {{ block.settings.text_box_padding_left }}px;
+    
+    /* Center Text Box - Style */
+    --text-box-bg-opacity: {{ block.settings.text_box_opacity | divided_by: 100.0 }};
+    --text-box-bg-color: rgba(255, 255, 255, var(--text-box-bg-opacity));
+    --text-box-blur: {{ block.settings.text_box_blur }}px;
+    --text-box-border: 1px solid rgba(212, 175, 55, 0.2);
+    --text-box-border-radius: 0px;
+    
+    /* Typography - Headline */
+    --headline-font-family: {{ block.settings.headline_font.family }}, {{ block.settings.headline_font.fallback_families }};
+    --headline-font-weight: {{ block.settings.headline_font.weight }};
+    --headline-font-style: {{ block.settings.headline_font.style }};
+    --headline-font-size: {{ block.settings.headline_font_size }}px;
+    --headline-color: {{ block.settings.headline_color }};
+    --headline-line-height: 1.3;
+    --headline-letter-spacing: 0.5px;
+    
+    /* Typography - Subheadline */
+    --subheadline-font-family: {{ block.settings.subheadline_font.family }}, {{ block.settings.subheadline_font.fallback_families }};
+    --subheadline-font-weight: {{ block.settings.subheadline_font.weight }};
+    --subheadline-font-style: {{ block.settings.subheadline_font.style }};
+    --subheadline-font-size: {{ block.settings.subheadline_font_size }}px;
+    --subheadline-color: {{ block.settings.subheadline_color }};
+    --subheadline-letter-spacing: 3px;
+    --subheadline-text-transform: uppercase;
+    --subheadline-margin-top: 20px;
+    
+    /* CTA Button Design */
+    --cta-bg-color: transparent;
+    --cta-text-color: #2c2c2c;
+    --cta-border: 1px solid #2c2c2c;
+    --cta-border-radius: 0px;
+    --cta-padding: 16px 40px;
+    --cta-font-family: 'Montserrat', sans-serif;
+    --cta-font-size: 11px;
+    --cta-font-weight: 400;
+    --cta-letter-spacing: 2.5px;
+    --cta-text-transform: uppercase;
+    --cta-margin-top: 40px;
+    
+    /* CTA Button Hover */
+    --cta-hover-bg-color: #2c2c2c;
+    --cta-hover-text-color: #ffffff;
+    --cta-hover-border: 1px solid #2c2c2c;
+    
+    /* ======================================== */
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    height: var(--hero-height);
+    min-height: var(--hero-min-height);
+    overflow: hidden;
+  }
+  
+  .ai-luxury-hero__split-container-{{ ai_gen_id }} {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .ai-luxury-hero__image-half-{{ ai_gen_id }} {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .ai-luxury-hero__image-half--left-{{ ai_gen_id }} {
+    width: var(--left-image-width);
+  }
+  
+  .ai-luxury-hero__image-half--right-{{ ai_gen_id }} {
+    width: var(--right-image-width);
+  }
+  
+  .ai-luxury-hero__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .ai-luxury-hero__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ai-luxury-hero__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    opacity: 0.3;
+  }
+  
+  .ai-luxury-hero__text-box-{{ ai_gen_id }} {
+    position: absolute;
+    top: var(--text-box-vertical-position);
+    left: var(--text-box-horizontal-position);
+    transform: translate(-50%, -50%);
+    background-color: var(--text-box-bg-color);
+    backdrop-filter: blur(var(--text-box-blur));
+    -webkit-backdrop-filter: blur(var(--text-box-blur));
+    padding: var(--text-box-padding-top) var(--text-box-padding-right) var(--text-box-padding-bottom) var(--text-box-padding-left);
+    width: var(--text-box-width);
+    height: var(--text-box-height);
+    max-width: 95%;
+    text-align: center;
+    border: var(--text-box-border);
+    border-radius: var(--text-box-border-radius);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ai-luxury-hero__headline-{{ ai_gen_id }} {
+    font-family: var(--headline-font-family);
+    font-size: var(--headline-font-size);
+    font-weight: var(--headline-font-weight);
+    font-style: var(--headline-font-style);
+    color: var(--headline-color);
+    line-height: var(--headline-line-height);
+    letter-spacing: var(--headline-letter-spacing);
+    margin: 0;
+  }
+  
+  .ai-luxury-hero__subheadline-{{ ai_gen_id }} {
+    font-family: var(--subheadline-font-family);
+    font-size: var(--subheadline-font-size);
+    font-weight: var(--subheadline-font-weight);
+    font-style: var(--subheadline-font-style);
+    color: var(--subheadline-color);
+    letter-spacing: var(--subheadline-letter-spacing);
+    text-transform: var(--subheadline-text-transform);
+    margin: var(--subheadline-margin-top) 0 0 0;
+  }
+  
+  .ai-luxury-hero__cta-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: var(--cta-bg-color);
+    color: var(--cta-text-color);
+    border: var(--cta-border);
+    border-radius: var(--cta-border-radius);
+    padding: var(--cta-padding);
+    font-family: var(--cta-font-family);
+    font-size: var(--cta-font-size);
+    font-weight: var(--cta-font-weight);
+    letter-spacing: var(--cta-letter-spacing);
+    text-transform: var(--cta-text-transform);
+    text-decoration: none;
+    margin-top: var(--cta-margin-top);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ai-luxury-hero__cta-{{ ai_gen_id }}:hover {
+    background-color: var(--cta-hover-bg-color);
+    color: var(--cta-hover-text-color);
+    border: var(--cta-hover-border);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .ai-luxury-hero-{{ ai_gen_id }} {
+      --hero-height: 80vh;
+      --hero-min-height: 500px;
+      --text-box-width: 90%;
+      --text-box-padding-top: 40px;
+      --text-box-padding-right: 30px;
+      --text-box-padding-bottom: 40px;
+      --text-box-padding-left: 30px;
+      --headline-font-size: 32px;
+      --subheadline-font-size: 11px;
+      --cta-padding: 14px 30px;
+      --cta-font-size: 10px;
+    }
+    
+    .ai-luxury-hero__split-container-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+    
+    .ai-luxury-hero__image-half--left-{{ ai_gen_id }},
+    .ai-luxury-hero__image-half--right-{{ ai_gen_id }} {
+      width: 100%;
+      height: 50%;
+    }
+  }
+{% endstyle %}
+
+<luxury-hero-{{ ai_gen_id }} class="ai-luxury-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-luxury-hero__split-container-{{ ai_gen_id }}">
+    <div class="ai-luxury-hero__image-half-{{ ai_gen_id }} ai-luxury-hero__image-half--left-{{ ai_gen_id }}">
+      {% if block.settings.left_image %}
+        <img
+          src="{{ block.settings.left_image | image_url: width: 2000 }}"
+          alt="{{ block.settings.left_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.left_image.width }}"
+          height="{{ block.settings.left_image.height }}"
+          class="ai-luxury-hero__image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-luxury-hero__placeholder-{{ ai_gen_id }}">
+          {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="ai-luxury-hero__image-half-{{ ai_gen_id }} ai-luxury-hero__image-half--right-{{ ai_gen_id }}">
+      {% if block.settings.right_image %}
+        <img
+          src="{{ block.settings.right_image | image_url: width: 2000 }}"
+          alt="{{ block.settings.right_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.right_image.width }}"
+          height="{{ block.settings.right_image.height }}"
+          class="ai-luxury-hero__image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-luxury-hero__placeholder-{{ ai_gen_id }}">
+          {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="ai-luxury-hero__text-box-{{ ai_gen_id }}">
+      <h1 class="ai-luxury-hero__headline-{{ ai_gen_id }}">
+        {{ block.settings.headline }}
+      </h1>
+      <h2 class="ai-luxury-hero__subheadline-{{ ai_gen_id }}">
+        {{ block.settings.subheadline }}
+      </h2>
+      <a href="{{ block.settings.cta_link }}" class="ai-luxury-hero__cta-{{ ai_gen_id }}">
+        {{ block.settings.cta_text }}
+      </a>
+    </div>
+  </div>
+</luxury-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class LuxuryHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.adjustHeroHeight();
+        window.addEventListener('resize', () => this.adjustHeroHeight());
+      }
+
+      adjustHeroHeight() {
+        const vh = window.innerHeight * 0.01;
+        this.style.setProperty('--vh', `${vh}px`);
+      }
+    }
+
+    customElements.define('luxury-hero-{{ ai_gen_id }}', LuxuryHero{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Luxury split hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left image (Sartorial)"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right image (Bridal)"
+    },
+    {
+      "type": "header",
+      "content": "Text box position"
+    },
+    {
+      "type": "range",
+      "id": "text_box_vertical_position",
+      "label": "Vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Text box dimensions"
+    },
+    {
+      "type": "range",
+      "id": "text_box_width",
+      "label": "Width",
+      "min": 200,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "text_box_height",
+      "label": "Height",
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Text box padding"
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_right",
+      "label": "Right",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_left",
+      "label": "Left",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Text box style"
+    },
+    {
+      "type": "range",
+      "id": "text_box_opacity",
+      "label": "Background opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 85
+    },
+    {
+      "type": "range",
+      "id": "text_box_blur",
+      "label": "Blur strength",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Bespoke Bridal & Sartorial Commissions Crafted for Flawless Coordination"
+    },
+    {
+      "type": "font_picker",
+      "id": "headline_font",
+      "label": "Headline font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "headline_font_size",
+      "label": "Headline size",
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline color",
+      "default": "#2c2c2c"
+    },
+    {
+      "type": "text",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "From the boardroom to the sanctuary, we architect synchronized wardrobe legacies"
+    },
+    {
+      "type": "font_picker",
+      "id": "subheadline_font",
+      "label": "Subheadline font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheadline_font_size",
+      "label": "Subheadline size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "subheadline_color",
+      "label": "Subheadline color",
+      "default": "#6b6b6b"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "REQUEST A PRIVATE CONSULTATION"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxury split hero"
+    }
+  ]
+}
 {% endschema %}
