@@ -1,6 +1,646 @@
+{% doc %}
+  @prompt
+    recreate a duplicate of teh luxury split hero section and add a built in link to the cta that links to the commission request form at the bottom #commission-request-form
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-luxury-split-hero-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    position: relative;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-luxury-split-hero__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: {{ block.settings.section_height }}vh;
+    width: 100%;
+  }
+
+  .ai-luxury-split-hero__content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: {{ block.settings.content_padding }}px;
+    background-color: {{ block.settings.content_bg_color }};
+  }
+
+  .ai-luxury-split-hero__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.eyebrow_size }}px;
+    letter-spacing: {{ block.settings.eyebrow_spacing }}em;
+    text-transform: uppercase;
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0 0 {{ block.settings.eyebrow_margin }}px 0;
+  }
+
+  .ai-luxury-split-hero__heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: {{ block.settings.heading_line_height }};
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.heading_margin }}px 0;
+  }
+
+  .ai-luxury-split-hero__text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: {{ block.settings.text_line_height }};
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.text_margin }}px 0;
+    max-width: {{ block.settings.text_max_width }}ch;
+  }
+
+  .ai-luxury-split-hero__cta-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.cta_padding_v }}px {{ block.settings.cta_padding_h }}px;
+    background-color: {{ block.settings.cta_bg_color }};
+    color: {{ block.settings.cta_text_color }};
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.cta_size }}px;
+    letter-spacing: {{ block.settings.cta_spacing }}em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: {{ block.settings.cta_border_width }}px solid {{ block.settings.cta_border_color }};
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-luxury-split-hero__cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_hover_bg }};
+    color: {{ block.settings.cta_hover_text }};
+    border-color: {{ block.settings.cta_hover_border }};
+  }
+
+  .ai-luxury-split-hero__image-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    background-color: {{ block.settings.image_bg_color }};
+  }
+
+  .ai-luxury-split-hero__image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ block.settings.image_fit }};
+    object-position: {{ block.settings.image_position }};
+  }
+
+  .ai-luxury-split-hero__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-luxury-split-hero__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-luxury-split-hero__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .ai-luxury-split-hero__content-{{ ai_gen_id }} {
+      {% if block.settings.mobile_content_first %}
+        order: 1;
+      {% else %}
+        order: 2;
+      {% endif %}
+      padding: {{ block.settings.mobile_padding }}px;
+    }
+
+    .ai-luxury-split-hero__image-{{ ai_gen_id }} {
+      {% if block.settings.mobile_content_first %}
+        order: 2;
+      {% else %}
+        order: 1;
+      {% endif %}
+      min-height: {{ block.settings.mobile_image_height }}vh;
+    }
+
+    .ai-luxury-split-hero__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+    }
+
+    .ai-luxury-split-hero__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_text_size }}px;
+    }
+  }
+{% endstyle %}
+
+<luxury-split-hero-{{ ai_gen_id }} class="ai-luxury-split-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-luxury-split-hero__container-{{ ai_gen_id }}">
+    <div class="ai-luxury-split-hero__content-{{ ai_gen_id }}">
+      {% if block.settings.eyebrow != blank %}
+        <div class="ai-luxury-split-hero__eyebrow-{{ ai_gen_id }}">
+          {{ block.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-luxury-split-hero__heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if block.settings.text != blank %}
+        <div class="ai-luxury-split-hero__text-{{ ai_gen_id }}">
+          {{ block.settings.text }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.cta_text != blank %}
+        <a 
+          href="#commission-request-form" 
+          class="ai-luxury-split-hero__cta-{{ ai_gen_id }}"
+        >
+          {{ block.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="ai-luxury-split-hero__image-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1500 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% else %}
+        <div class="ai-luxury-split-hero__image-placeholder-{{ ai_gen_id }}">
+          {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</luxury-split-hero-{{ ai_gen_id }}>
+
+<script>
+(function() {
+  class LuxurySplitHero{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.setupSmoothScroll();
+    }
+
+    setupSmoothScroll() {
+      const ctaLink = this.querySelector('.ai-luxury-split-hero__cta-{{ ai_gen_id }}');
+      if (!ctaLink) return;
+
+      ctaLink.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    }
+  }
+
+  customElements.define('luxury-split-hero-{{ ai_gen_id }}', LuxurySplitHero{{ ai_gen_id }});
+})();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Luxury split hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Section height",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Bespoke Atelier"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Coordinated Styling & Custom Commissions"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Body text",
+      "default": "<p>Explore our curated approach to bridal styling or request a custom piece designed exclusively for your vision.</p>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Request Commission"
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Content background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Eyebrow spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.2
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_margin",
+      "label": "Eyebrow margin",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "Heading line height",
+      "min": 1,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "heading_margin",
+      "label": "Heading margin",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_line_height",
+      "label": "Text line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "text_margin",
+      "label": "Text margin",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "Text max width",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "ch",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "range",
+      "id": "cta_size",
+      "label": "CTA size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "cta_spacing",
+      "label": "CTA spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_v",
+      "label": "CTA vertical padding",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_h",
+      "label": "CTA horizontal padding",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_color",
+      "label": "CTA background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "CTA text color",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "range",
+      "id": "cta_border_width",
+      "label": "CTA border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "cta_border_color",
+      "label": "CTA border color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "cta_border_radius",
+      "label": "CTA border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_bg",
+      "label": "CTA hover background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_text",
+      "label": "CTA hover text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_border",
+      "label": "CTA hover border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Image background",
+      "default": "#ece9e3"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_content_first",
+      "label": "Show content first on mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding",
+      "label": "Mobile padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "label": "Mobile image height",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "vh",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Mobile heading size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Mobile text size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxury split hero"
+    }
+  ]
+}
 {% endschema %}
