@@ -1,6 +1,292 @@
+{% doc %}
+  @prompt
+    Create a luxury editorial heading section for a bridal collection page with the following:
+    - An h1 heading field (editable in theme editor) pre-filled with "Exquisite Wedding Gowns by Elite Bay Area Bridal Designer Nancy Vuu"
+    - An h2 heading field (editable in theme editor) below the h1
+    - Minimal, elegant styling consistent with quiet luxury branding — clean white background, dark text (#111111), centered alignment
+    - Typography using Bodoni Moda for the h1 and a clean sans-serif (like Manrope or Lato) for the h2
+    - Proper semantic HTML so h1 and h2 are true heading tags for SEO
+    - Padding/spacing controls in the theme editor
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-bridal-heading-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    padding-left: {{ block.settings.padding_horizontal }}px;
+    padding-right: {{ block.settings.padding_horizontal }}px;
+  }
+
+  .ai-bridal-heading__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-bridal-heading__h1-{{ ai_gen_id }} {
+    font-family: {{ block.settings.h1_font.family }}, {{ block.settings.h1_font.fallback_families }};
+    font-weight: {{ block.settings.h1_font.weight }};
+    font-style: {{ block.settings.h1_font.style }};
+    font-size: {{ block.settings.h1_size }}px;
+    line-height: {{ block.settings.h1_line_height }};
+    color: {{ block.settings.h1_color }};
+    margin: 0 0 {{ block.settings.h1_margin_bottom }}px 0;
+    letter-spacing: {{ block.settings.h1_letter_spacing }}em;
+  }
+
+  .ai-bridal-heading__h2-{{ ai_gen_id }} {
+    font-family: {{ block.settings.h2_font.family }}, {{ block.settings.h2_font.fallback_families }};
+    font-weight: {{ block.settings.h2_font.weight }};
+    font-style: {{ block.settings.h2_font.style }};
+    font-size: {{ block.settings.h2_size }}px;
+    line-height: {{ block.settings.h2_line_height }};
+    color: {{ block.settings.h2_color }};
+    margin: 0;
+    letter-spacing: {{ block.settings.h2_letter_spacing }}em;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-bridal-heading-{{ ai_gen_id }} {
+      padding-left: {{ block.settings.padding_horizontal | times: 0.5 }}px;
+      padding-right: {{ block.settings.padding_horizontal | times: 0.5 }}px;
+    }
+
+    .ai-bridal-heading__h1-{{ ai_gen_id }} {
+      font-size: {{ block.settings.h1_size | times: 0.6 }}px;
+    }
+
+    .ai-bridal-heading__h2-{{ ai_gen_id }} {
+      font-size: {{ block.settings.h2_size | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-bridal-heading-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-bridal-heading__container-{{ ai_gen_id }}">
+    {% if block.settings.h1_text != blank %}
+      <h1 class="ai-bridal-heading__h1-{{ ai_gen_id }}">
+        {{ block.settings.h1_text }}
+      </h1>
+    {% endif %}
+
+    {% if block.settings.h2_text != blank %}
+      <h2 class="ai-bridal-heading__h2-{{ ai_gen_id }}">
+        {{ block.settings.h2_text }}
+      </h2>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Bridal editorial heading",
+  "settings": [
+    {
+      "type": "header",
+      "content": "H1 heading"
+    },
+    {
+      "type": "textarea",
+      "id": "h1_text",
+      "label": "H1 text",
+      "default": "Exquisite Wedding Gowns by Elite Bay Area Bridal Designer Nancy Vuu"
+    },
+    {
+      "type": "font_picker",
+      "id": "h1_font",
+      "label": "H1 font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "h1_size",
+      "label": "H1 size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "h1_line_height",
+      "label": "H1 line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "h1_letter_spacing",
+      "label": "H1 letter spacing",
+      "min": -0.1,
+      "max": 0.2,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "h1_color",
+      "label": "H1 color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "h1_margin_bottom",
+      "label": "H1 bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "H2 heading"
+    },
+    {
+      "type": "textarea",
+      "id": "h2_text",
+      "label": "H2 text"
+    },
+    {
+      "type": "font_picker",
+      "id": "h2_font",
+      "label": "H2 font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "h2_size",
+      "label": "H2 size",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "h2_line_height",
+      "label": "H2 line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "h2_letter_spacing",
+      "label": "H2 letter spacing",
+      "min": -0.1,
+      "max": 0.2,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "h2_color",
+      "label": "H2 color",
+      "default": "#111111"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max content width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 80,
+      "step": 8,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal editorial heading"
+    }
+  ]
+}
 {% endschema %}
