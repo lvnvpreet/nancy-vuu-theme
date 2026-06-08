@@ -449,11 +449,48 @@
         "ai_gen_block_6b4edc7_mDiPdr"
       ],
       "settings": {}
+    },
+    "17809016474223d265": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d6fae80_PLtFHR": {
+          "type": "ai_gen_block_d6fae80",
+          "settings": {
+            "h1_text": "EXQUISITE WEDDING GOWNS BY BAY AREA BRIDAL DESIGNER NANCY VUU",
+            "h1_font": "manrope_n4",
+            "h1_font_size": 18,
+            "h1_color": "#0f0f0f",
+            "h1_letter_spacing": 4.5,
+            "h1_word_spacing": 3,
+            "h1_line_height": 3,
+            "h1_bottom_spacing": 20,
+            "h2_text": "A designer gown from our collection is the breathtaking embodiment of a sacred covenant—a physical testament to a lasting legacy. Our master artisans celebrate your presence, sculpting and draping signature silhouettes with a couture precision that weaves together your strength, grace, and inner beauty. Discover a luxury bridal masterpiece that anchors your moment and captures the brilliance of who you are becoming.",
+            "h2_font": "manrope_n4",
+            "h2_font_size": 28,
+            "h2_color": "#0f0f0f",
+            "h2_letter_spacing": 2,
+            "h2_word_spacing": 5,
+            "h2_line_height": 2,
+            "text_box_width": 1400,
+            "text_alignment": "center",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "padding_side": 40,
+            "background_color": "#faf8f5"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d6fae80_PLtFHR"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "scarcity",
     "hero",
+    "17809016474223d265",
     "1776897529b207833c",
     "manifesto",
     "ritual",
