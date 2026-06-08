@@ -1,6 +1,477 @@
+{% doc %}
+  @prompt
+    Duplicate the existing Collection Hero Editorial section and enhance it with two new customizable settings: an h2 title field and a subheading field. The section should maintain the existing hero layout and styling (headline with italic/end word options, CTA button), and add the h2 title above or below the main headline, and a subheading text field below it. All fields should be optional and editable in the theme editor. Match the existing luxury editorial aesthetic with Bodoni Moda headings and minimal styling.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-editorial-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: {{ block.settings.text_alignment }};
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-hero-editorial__h2-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', serif;
+    font-size: {{ block.settings.h2_size }}px;
+    font-weight: 400;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.h2_spacing }}px 0;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .ai-hero-editorial__headline-{{ ai_gen_id }} {
+    font-family: 'Bodoni Moda', serif;
+    font-size: {{ block.settings.headline_size }}px;
+    font-weight: 400;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.headline_spacing }}px 0;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+  }
+
+  .ai-hero-editorial__headline-{{ ai_gen_id }} .italic-word {
+    font-style: italic;
+  }
+
+  .ai-hero-editorial__subheading-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.subheading_size }}px;
+    font-weight: 400;
+    color: {{ block.settings.subheading_color }};
+    margin: 0 0 {{ block.settings.subheading_spacing }}px 0;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    max-width: {{ block.settings.subheading_max_width }}px;
+  }
+
+  .ai-hero-editorial__cta-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-hero-editorial__cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-editorial-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.6 }}px {{ block.settings.padding_horizontal | times: 0.6 }}px {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-hero-editorial__h2-{{ ai_gen_id }} {
+      font-size: {{ block.settings.h2_size | times: 0.7 }}px;
+    }
+
+    .ai-hero-editorial__headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_size | times: 0.6 }}px;
+    }
+
+    .ai-hero-editorial__subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.9 }}px;
+      max-width: 100%;
+    }
+
+    .ai-hero-editorial__cta-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_font_size | times: 0.9 }}px;
+      padding: {{ block.settings.button_padding_vertical | times: 0.8 }}px {{ block.settings.button_padding_horizontal | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-hero-editorial-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.h2_position == 'above' and block.settings.h2_title != blank %}
+    <h2 class="ai-hero-editorial__h2-{{ ai_gen_id }}">{{ block.settings.h2_title }}</h2>
+  {% endif %}
+
+  {% if block.settings.headline != blank %}
+    <h1 class="ai-hero-editorial__headline-{{ ai_gen_id }}">
+      {% assign words = block.settings.headline | split: ' ' %}
+      {% assign word_count = words.size %}
+      {% for word in words %}
+        {% assign word_index = forloop.index %}
+        {% if block.settings.italic_word_position == 'first' and word_index == 1 %}
+          <span class="italic-word">{{ word }}</span>
+        {% elsif block.settings.italic_word_position == 'last' and word_index == word_count %}
+          <span class="italic-word">{{ word }}</span>
+        {% elsif block.settings.italic_word_position == 'second' and word_index == 2 %}
+          <span class="italic-word">{{ word }}</span>
+        {% else %}
+          {{ word }}
+        {% endif %}
+        {% unless forloop.last %} {% endunless %}
+      {% endfor %}
+    </h1>
+  {% endif %}
+
+  {% if block.settings.h2_position == 'below' and block.settings.h2_title != blank %}
+    <h2 class="ai-hero-editorial__h2-{{ ai_gen_id }}">{{ block.settings.h2_title }}</h2>
+  {% endif %}
+
+  {% if block.settings.subheading != blank %}
+    <div class="ai-hero-editorial__subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+  {% endif %}
+
+  {% if block.settings.cta_text != blank and block.settings.cta_url != blank %}
+    <a href="{{ block.settings.cta_url }}" class="ai-hero-editorial__cta-{{ ai_gen_id }}">
+      {{ block.settings.cta_text }}
+    </a>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Collection hero editorial",
+  "settings": [
+    {
+      "type": "header",
+      "content": "H2 title"
+    },
+    {
+      "type": "text",
+      "id": "h2_title",
+      "label": "H2 title"
+    },
+    {
+      "type": "select",
+      "id": "h2_position",
+      "label": "H2 position",
+      "options": [
+        {
+          "value": "above",
+          "label": "Above headline"
+        },
+        {
+          "value": "below",
+          "label": "Below headline"
+        }
+      ],
+      "default": "above"
+    },
+    {
+      "type": "range",
+      "id": "h2_size",
+      "label": "H2 size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "h2_spacing",
+      "label": "H2 bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Bridal Collections"
+    },
+    {
+      "type": "select",
+      "id": "italic_word_position",
+      "label": "Italic word",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "first",
+          "label": "First word"
+        },
+        {
+          "value": "second",
+          "label": "Second word"
+        },
+        {
+          "value": "last",
+          "label": "Last word"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "label": "Headline size",
+      "min": 24,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "headline_spacing",
+      "label": "Headline bottom spacing",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_max_width",
+      "label": "Subheading max width",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "subheading_spacing",
+      "label": "Subheading bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Button vertical padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Button horizontal padding",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Button border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Button hover border",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection hero editorial"
+    }
+  ]
+}
 {% endschema %}
