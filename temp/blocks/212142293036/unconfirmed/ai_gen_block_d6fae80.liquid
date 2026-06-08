@@ -1,6 +1,299 @@
+{% doc %}
+  @prompt
+    create a manifesto section with an h1 and h2 title section where i can adjust front, typography, word space, line space and top and bottom of padding. give me control on side spacing too. where i can adjust the width of the text box. also allow me to adjust font size with no restrictions for both h1 and h2. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-manifesto-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    padding-left: {{ block.settings.padding_side }}px;
+    padding-right: {{ block.settings.padding_side }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-manifesto-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.text_box_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-manifesto-h1-{{ ai_gen_id }} {
+    font-family: {{ block.settings.h1_font.family }}, {{ block.settings.h1_font.fallback_families }};
+    font-weight: {{ block.settings.h1_font.weight }};
+    font-style: {{ block.settings.h1_font.style }};
+    font-size: {{ block.settings.h1_font_size }}px;
+    color: {{ block.settings.h1_color }};
+    letter-spacing: {{ block.settings.h1_letter_spacing }}px;
+    word-spacing: {{ block.settings.h1_word_spacing }}px;
+    line-height: {{ block.settings.h1_line_height }};
+    margin: 0 0 {{ block.settings.h1_bottom_spacing }}px 0;
+  }
+
+  .ai-manifesto-h2-{{ ai_gen_id }} {
+    font-family: {{ block.settings.h2_font.family }}, {{ block.settings.h2_font.fallback_families }};
+    font-weight: {{ block.settings.h2_font.weight }};
+    font-style: {{ block.settings.h2_font.style }};
+    font-size: {{ block.settings.h2_font_size }}px;
+    color: {{ block.settings.h2_color }};
+    letter-spacing: {{ block.settings.h2_letter_spacing }}px;
+    word-spacing: {{ block.settings.h2_word_spacing }}px;
+    line-height: {{ block.settings.h2_line_height }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-manifesto-{{ ai_gen_id }} {
+      padding-left: {{ block.settings.padding_side | times: 0.5 }}px;
+      padding-right: {{ block.settings.padding_side | times: 0.5 }}px;
+    }
+
+    .ai-manifesto-h1-{{ ai_gen_id }} {
+      font-size: {{ block.settings.h1_font_size | times: 0.7 }}px;
+    }
+
+    .ai-manifesto-h2-{{ ai_gen_id }} {
+      font-size: {{ block.settings.h2_font_size | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<manifesto-block-{{ ai_gen_id }} class="ai-manifesto-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-manifesto-container-{{ ai_gen_id }}">
+    {% if block.settings.h1_text != blank %}
+      <h1 class="ai-manifesto-h1-{{ ai_gen_id }}">{{ block.settings.h1_text }}</h1>
+    {% endif %}
+    {% if block.settings.h2_text != blank %}
+      <h2 class="ai-manifesto-h2-{{ ai_gen_id }}">{{ block.settings.h2_text }}</h2>
+    {% endif %}
+  </div>
+</manifesto-block-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ManifestoBlock{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+    customElements.define('manifesto-block-{{ ai_gen_id }}', ManifestoBlock{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Manifesto",
+  "settings": [
+    {
+      "type": "header",
+      "content": "H1 heading"
+    },
+    {
+      "type": "textarea",
+      "id": "h1_text",
+      "label": "H1 text",
+      "default": "Our Manifesto"
+    },
+    {
+      "type": "font_picker",
+      "id": "h1_font",
+      "label": "Font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "h1_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "color",
+      "id": "h1_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "h1_letter_spacing",
+      "label": "Letter spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "h1_word_spacing",
+      "label": "Word spacing",
+      "min": -10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "h1_line_height",
+      "label": "Line height",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "h1_bottom_spacing",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "H2 heading"
+    },
+    {
+      "type": "textarea",
+      "id": "h2_text",
+      "label": "H2 text",
+      "default": "Crafted with intention, designed for legacy"
+    },
+    {
+      "type": "font_picker",
+      "id": "h2_font",
+      "label": "Font",
+      "default": "manrope_n4"
+    },
+    {
+      "type": "range",
+      "id": "h2_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "h2_color",
+      "label": "Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "range",
+      "id": "h2_letter_spacing",
+      "label": "Letter spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "h2_word_spacing",
+      "label": "Word spacing",
+      "min": -10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "h2_line_height",
+      "label": "Line height",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "text_box_width",
+      "label": "Text box width",
+      "min": 300,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_side",
+      "label": "Side padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf8f5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Manifesto"
+    }
+  ]
+}
 {% endschema %}
