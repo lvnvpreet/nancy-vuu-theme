@@ -90,6 +90,41 @@
       ],
       "settings": {}
     },
+    "17811608509df5d484": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_57da1fc_7GjCNd": {
+          "type": "ai_gen_block_57da1fc",
+          "settings": {
+            "link_1_text": "[ Flower Girl Gowns ]",
+            "link_1_url": "",
+            "link_2_text": "[ Suiting & Ring Bearer ]",
+            "link_2_url": "",
+            "link_3_text": "[ Bar & Bat Mitzvah ]",
+            "link_3_url": "",
+            "link_4_text": "[ Quinceañera, Prom & Gala ]",
+            "link_4_url": "",
+            "font_family": "bodoni_moda_n4",
+            "font_size": 15,
+            "mobile_font_size": 12,
+            "letter_spacing": 0.1,
+            "max_width": 1200,
+            "vertical_padding": 25,
+            "link_spacing": 50,
+            "mobile_link_spacing": 20,
+            "background_color": "#faf8f5",
+            "text_color": "#0f0f0f",
+            "hover_color": "#0f0f0f",
+            "hover_opacity": 0.6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_57da1fc_7GjCNd"
+      ],
+      "settings": {}
+    },
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
@@ -397,38 +432,31 @@
         "submit_label": "Submit Request to the Atelier"
       }
     },
-    "17811608509df5d484": {
+    "178116104597711886": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_57da1fc_7GjCNd": {
-          "type": "ai_gen_block_57da1fc",
+        "ai_gen_block_0c374c0_reTBaz": {
+          "type": "ai_gen_block_0c374c0",
           "settings": {
-            "link_1_text": "[ Flower Girl Gowns ]",
-            "link_1_url": "",
-            "link_2_text": "[ Suiting & Ring Bearer ]",
-            "link_2_url": "",
-            "link_3_text": "[ Bar & Bat Mitzvah ]",
-            "link_3_url": "",
-            "link_4_text": "[ Quinceañera, Prom & Gala ]",
-            "link_4_url": "",
-            "font_family": "bodoni_moda_n4",
+            "content": "<p>The House of Nancy Vuu architects legacy children's and teen couture for discerning families across Northern California. From master-tailored boys Bar Mitzvah suits and velvet ring bearer attire in Atherton and Palo Alto, to custom flower girl dresses and luxury bespoke Quinceañera or high-end prom gowns in San Francisco and San Jose, our atelier ensures the next generation enters their sacred milestones in unparalleled, made-to-measure luxury.</p>",
+            "body_font": "manrope_n4",
             "font_size": 15,
-            "mobile_font_size": 12,
-            "letter_spacing": 0.1,
-            "max_width": 1200,
-            "vertical_padding": 25,
-            "link_spacing": 50,
-            "mobile_link_spacing": 20,
+            "font_size_mobile": 13,
+            "line_height": 1.6,
+            "letter_spacing": 0,
+            "max_width": 900,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_top_mobile": 40,
+            "padding_bottom_mobile": 40,
             "background_color": "#faf8f5",
-            "text_color": "#0f0f0f",
-            "hover_color": "#0f0f0f",
-            "hover_opacity": 0.6
+            "text_color": "#0f0f0f"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_57da1fc_7GjCNd"
+        "ai_gen_block_0c374c0_reTBaz"
       ],
       "settings": {}
     }
@@ -445,6 +473,7 @@
     "bridal_collection_nav_tCGfxV",
     "main",
     "cross-sell",
-    "atelier_inquiry_pXV4Xe"
+    "atelier_inquiry_pXV4Xe",
+    "178116104597711886"
   ]
 }
