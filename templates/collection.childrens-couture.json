@@ -49,6 +49,47 @@
         "body": "Our Children’s Couture mirrors the exact precision and standard of excellence found in our adult collections, elevating the youngest visionaries. We invite you to experience this distinction through two exclusive avenues:                 \n\n      1. The Bespoke Journey\nSecure their legacy with a distinct, tailored-to-order masterpiece. Each garment is drafted to your child's unique blueprint, available exclusively through private Atelier consultation.\n\n2. The Atelier Curated Collection\nFor those seeking immediate distinction, we maintain a highly limited selection of already-made designs and exclusive runway samples. These miniature works of art are available for immediate acquisition within the sanctuary of the Nancy Vuu Atelier."
       }
     },
+    "1781160073bd711510": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a697f7e_YakLgy": {
+          "type": "ai_gen_block_a697f7e",
+          "settings": {
+            "column_1_heading": "I — The Runway Collection",
+            "column_1_text": "Explore and acquire our current architectural couture silhouettes, ready for immediate seasonal curation.",
+            "column_2_heading": "II — Made-to-Measure",
+            "column_2_text": "Select an established House design, meticulously tailored and adjusted to your child or teen's precise structural proportions.",
+            "column_3_heading": "III — Bespoke Commission",
+            "column_3_text": "An elite, blank-canvas design journey to architect an original, one-of-a-kind masterpiece for your family's next generation legacy milestone.",
+            "heading_font": "bodoni_moda_n4",
+            "heading_font_size": 20,
+            "heading_line_height": 1.3,
+            "heading_letter_spacing": 0,
+            "heading_text_transform": "none",
+            "body_font": "manrope_n4",
+            "body_font_size": 14,
+            "body_line_height": 1.6,
+            "body_letter_spacing": 0,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "section_padding_horizontal": 20,
+            "column_padding": 40,
+            "heading_text_gap": 16,
+            "max_width": 1400,
+            "background_color": "#ffffff",
+            "heading_color": "#0f0f0f",
+            "body_color": "#0f0f0f",
+            "border_color": "#e0e0e0",
+            "border_width": 1
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a697f7e_YakLgy"
+      ],
+      "settings": {}
+    },
     "lookbook": {
       "type": "lookbook-grid",
       "blocks": {
@@ -355,12 +396,49 @@
         "label_message": "PLEASE DESCRIBE THE GARMENT AND THE SERVICES REQUIRED...",
         "submit_label": "Submit Request to the Atelier"
       }
+    },
+    "17811608509df5d484": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_57da1fc_7GjCNd": {
+          "type": "ai_gen_block_57da1fc",
+          "settings": {
+            "link_1_text": "[ Flower Girl Gowns ]",
+            "link_1_url": "",
+            "link_2_text": "[ Suiting & Ring Bearer ]",
+            "link_2_url": "",
+            "link_3_text": "[ Bar & Bat Mitzvah ]",
+            "link_3_url": "",
+            "link_4_text": "[ Quinceañera, Prom & Gala ]",
+            "link_4_url": "",
+            "font_family": "bodoni_moda_n4",
+            "font_size": 15,
+            "mobile_font_size": 12,
+            "letter_spacing": 0.1,
+            "max_width": 1200,
+            "vertical_padding": 25,
+            "link_spacing": 50,
+            "mobile_link_spacing": 20,
+            "background_color": "#faf8f5",
+            "text_color": "#0f0f0f",
+            "hover_color": "#0f0f0f",
+            "hover_opacity": 0.6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_57da1fc_7GjCNd"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero",
     "manifesto",
     "exclusivity",
+    "1781160073bd711510",
+    "17811608509df5d484",
     "lookbook",
     "bridal_collection_nav_zPDUbe",
     "bridal_collection_nav_bJkLeb",
