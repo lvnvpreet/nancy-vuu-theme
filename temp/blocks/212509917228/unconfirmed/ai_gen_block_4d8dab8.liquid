@@ -1,6 +1,359 @@
+{% doc %}
+  @prompt
+    Generate a minimalist, high-end 3-column multi-column text section to place at the absolute top of the page layout, directly beneath the header menu. The layout must have thin, elegant borders, generous luxury whitespace, and clean editorial typography. Do not include images.
+    
+    Column 1 Heading: 'I — The Runway Collection'
+    Column 1 Text: 'Explore and acquire our current architectural couture silhouettes, ready for immediate seasonal curation.'
+    
+    Column 2 Heading: 'II — Made-to-Measure'
+    Column 2 Text: 'Select an established House design, meticulously tailored and adjusted to your child or teen’s precise structural proportions.'
+    
+    Column 3 Heading: 'III — Bespoke Commission'
+    Column 3 Text: 'An elite, blank-canvas design journey to architect an original, one-of-a-kind masterpiece for your family's next generation legacy milestone.'
+    
+    Set all background colors to clean white or transparent to match a high-fashion atelier aesthetic.  Give me control access to change font typography, font size and padding in all areas.  Use Bodoni and Manrope to be consistent with my current page, Create a clean, horizontal text-link row section to sit immediately below the 3-column banner. It should look like a premium editorial sub-menu. Center-align four text links spaced evenly across the screen in a luxury serif font.
+    
+    Link 1 text: '[ Flower Girl Gowns ]'
+    Link 2 text: '[ Suiting & Ring Bearer ]'
+    Link 3 text: '[ Bar & Bat Mitzvah ]'
+    Link 4 text: '[ Quinceañera, Prom & Gala ]'
+    
+    Ensure the design is understated, sleek, and matches a high-end luxury brand layout.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-horizontal-links-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding_top }}px {{ block.settings.section_padding_horizontal }}px {{ block.settings.section_padding_bottom }}px;
+    border-top: {{ block.settings.border_top_width }}px solid {{ block.settings.border_color }};
+    border-bottom: {{ block.settings.border_bottom_width }}px solid {{ block.settings.border_color }};
+  }
+
+  .ai-horizontal-links__container-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: {{ block.settings.link_spacing }}px;
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .ai-horizontal-links__link-{{ ai_gen_id }} {
+    font-family: {{ block.settings.link_font.family }}, {{ block.settings.link_font.fallback_families }};
+    font-weight: {{ block.settings.link_font.weight }};
+    font-style: {{ block.settings.link_font.style }};
+    font-size: {{ block.settings.link_font_size }}px;
+    line-height: {{ block.settings.link_line_height }};
+    letter-spacing: {{ block.settings.link_letter_spacing }}em;
+    color: {{ block.settings.link_color }};
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .ai-horizontal-links__link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.link_hover_color }};
+    opacity: {{ block.settings.link_hover_opacity }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-horizontal-links__container-{{ ai_gen_id }} {
+      gap: {{ block.settings.link_spacing | times: 0.6 }}px;
+    }
+
+    .ai-horizontal-links__link-{{ ai_gen_id }} {
+      font-size: {{ block.settings.link_font_size | times: 0.85 }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-horizontal-links__container-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: {{ block.settings.mobile_link_spacing }}px;
+    }
+
+    .ai-horizontal-links__link-{{ ai_gen_id }} {
+      font-size: {{ block.settings.link_font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<horizontal-links-{{ ai_gen_id }} class="ai-horizontal-links-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <nav class="ai-horizontal-links__container-{{ ai_gen_id }}" aria-label="Category navigation">
+    {% if block.settings.link_1_text != blank %}
+      <a href="{{ block.settings.link_1_url }}" class="ai-horizontal-links__link-{{ ai_gen_id }}">
+        {{ block.settings.link_1_text }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.link_2_text != blank %}
+      <a href="{{ block.settings.link_2_url }}" class="ai-horizontal-links__link-{{ ai_gen_id }}">
+        {{ block.settings.link_2_text }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.link_3_text != blank %}
+      <a href="{{ block.settings.link_3_url }}" class="ai-horizontal-links__link-{{ ai_gen_id }}">
+        {{ block.settings.link_3_text }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.link_4_text != blank %}
+      <a href="{{ block.settings.link_4_url }}" class="ai-horizontal-links__link-{{ ai_gen_id }}">
+        {{ block.settings.link_4_text }}
+      </a>
+    {% endif %}
+  </nav>
+</horizontal-links-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HorizontalLinks{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+    customElements.define('horizontal-links-{{ ai_gen_id }}', HorizontalLinks{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Horizontal link row",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Link 1"
+    },
+    {
+      "type": "text",
+      "id": "link_1_text",
+      "label": "Text",
+      "default": "[ Flower Girl Gowns ]"
+    },
+    {
+      "type": "url",
+      "id": "link_1_url",
+      "label": "URL"
+    },
+    {
+      "type": "header",
+      "content": "Link 2"
+    },
+    {
+      "type": "text",
+      "id": "link_2_text",
+      "label": "Text",
+      "default": "[ Suiting & Ring Bearer ]"
+    },
+    {
+      "type": "url",
+      "id": "link_2_url",
+      "label": "URL"
+    },
+    {
+      "type": "header",
+      "content": "Link 3"
+    },
+    {
+      "type": "text",
+      "id": "link_3_text",
+      "label": "Text",
+      "default": "[ Bar & Bat Mitzvah ]"
+    },
+    {
+      "type": "url",
+      "id": "link_3_url",
+      "label": "URL"
+    },
+    {
+      "type": "header",
+      "content": "Link 4"
+    },
+    {
+      "type": "text",
+      "id": "link_4_text",
+      "label": "Text",
+      "default": "[ Quinceañera, Prom & Gala ]"
+    },
+    {
+      "type": "url",
+      "id": "link_4_url",
+      "label": "URL"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "link_font",
+      "label": "Link font",
+      "default": "bodoni_moda_n4"
+    },
+    {
+      "type": "range",
+      "id": "link_font_size",
+      "label": "Link font size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "link_line_height",
+      "label": "Link line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.4
+    },
+    {
+      "type": "range",
+      "id": "link_letter_spacing",
+      "label": "Link letter spacing",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "unit": "em",
+      "default": 0.1
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section padding top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section padding bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Section padding horizontal",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "link_spacing",
+      "label": "Link spacing (desktop)",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_link_spacing",
+      "label": "Link spacing (mobile)",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "link_hover_opacity",
+      "label": "Link hover opacity",
+      "min": 0.5,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "header",
+      "content": "Borders"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "border_top_width",
+      "label": "Border top width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "border_bottom_width",
+      "label": "Border bottom width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Horizontal link row"
+    }
+  ]
+}
 {% endschema %}
